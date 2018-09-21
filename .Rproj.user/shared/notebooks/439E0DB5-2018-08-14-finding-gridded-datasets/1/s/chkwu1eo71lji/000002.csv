@@ -1,0 +1,8 @@
+"0","load(""C:/Users/ftw712/Desktop/ebv/grids/blog/data/gridded.rda"")"
+"0","load(""C:/Users/ftw712/Desktop/ebv/grids/blog/data/notGridded.rda"")"
+"0","library(highcharter)"
+"0","load(""C:/Users/ftw712/Desktop/ebv/grids/blog/data/map.rda"")"
+"0","hc = map %>%"
+"0","hc_add_series(data=gridded,name=""gridded"",type=""mappoint"",dataLabels = list(enabled = FALSE),tooltip = list(pointFormat = ""{point.name}"")) %>%"
+"0","hc_add_series(data=notGridded,name=""not gridded (click me)"",type=""mappoint"",color=""#ff545e"",visible = FALSE,tooltip = list(pointFormat = ""{point.name}""))"
+"0","hc"

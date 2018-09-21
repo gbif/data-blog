@@ -1,0 +1,351 @@
+---
+title: Finding Gridded Datasets
+author: John Waller
+date: '2018-08-14'
+slug: finding-gridded-datasets
+categories:
+  - GBIF
+tags:
+  - rstats
+  - data quality
+  - gridded data
+lastmod: '2018-08-14T15:47:18+02:00'
+keywords: []
+description: ''
+comment: no
+toc: no
+autoCollapseToc: no
+postMetaInFooter: no
+hiddenFromHomePage: no
+contentCopyright: no
+reward: no
+mathjax: no
+mathjaxEnableSingleDollar: no
+mathjaxEnableAutoNumber: no
+hideHeaderAndFooter: no
+flowchartDiagrams:
+  enable: no
+  options: ''
+sequenceDiagrams:
+  enable: no
+  options: ''
+---
+
+<script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<script src="/rmarkdown-libs/jquery/jquery.min.js"></script>
+<link href="/rmarkdown-libs/leaflet/leaflet.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/leaflet/leaflet.js"></script>
+<link href="/rmarkdown-libs/leafletfix/leafletfix.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/Proj4Leaflet/proj4-compressed.js"></script>
+<script src="/rmarkdown-libs/Proj4Leaflet/proj4leaflet.js"></script>
+<link href="/rmarkdown-libs/rstudio_leaflet/rstudio_leaflet.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/leaflet-binding/leaflet.js"></script>
+
+
+<iframe src="https://jhnwllr.github.io/charts/franceGrid.html" style="border: none; height: 600px; width: 100%;">
+</iframe>
+<ul>
+<li><a href="https://www.gbif.org/dataset/c779b049-28f3-4daf-bbf4-0a40830819b6">EBCC Atlas of European Breeding Birds (gridded)</a></li>
+<li><a href="https://www.gbif.org/dataset/889c91a3-614f-4355-8df8-b6d0260a118c">Naturalis Biodiversity Center (NL) - Aves (not gridded)</a></li>
+</ul>
+<div id="gridded-data-in-gbif" class="section level3">
+<h3>Gridded data in GBIF</h3>
+<p>Gridded datasets are a known problem at GBIF. Many datasets have an equally-spaced points in a regular pattern. These datasets are usually systematic national surveys or data taken from some atlas (“so-called rasterized collection designs”).</p>
+<blockquote>
+<p>In this blog post I will describe how I found each gridded dataset in GBIF.</p>
+</blockquote>
+<p><img src="https://raw.githubusercontent.com/jhnwllr/charts/master/gridSnap.gif" width="60%" height="60%"
+style="display: block;margin-left: auto;margin-right: auto;"/></p>
+</div>
+<div id="what-is-the-problem" class="section level3">
+<h3>What is the problem?</h3>
+<p>Users might assume that their underlying data is reflecting a highly precise measurement of a location, but coordinates collected on a low precision might be unsuitable for species distribution modelling or some other study. Right now a user making a download at GBIF has no way of knowing if the big blob occurrence points they downloaded contains a gridded dataset. <strong>This is a problem</strong> because users might assume more precision <strong>than what is present in the download</strong>.</p>
+</div>
+<div id="how-i-quantified-griddy-ness" class="section level3">
+<h3>How I quantified griddy-ness</h3>
+<p>After a little bit of trial and error, I arrived at a simple dataset feature (or measure):</p>
+<blockquote>
+<p>Percentage of unique lat-long points with the most common nearest neighbor distance</p>
+</blockquote>
+<center>
+<h1>
+Gridded Example
+</h1>
+</center>
+<p><img src="https://raw.githubusercontent.com/jhnwllr/charts/master/griddedNN.gif" width="60%" height="60%"
+style="display: block;margin-left: auto;margin-right: auto;"/></p>
+<center>
+<h1>
+Random Example
+</h1>
+</center>
+<p><img src="https://raw.githubusercontent.com/jhnwllr/charts/master/notGriddedNN.gif" width="60%" height="60%"
+style="display: block;margin-left: auto;margin-right: auto;"/></p>
+</div>
+<div id="good-things-about-this-feature" class="section level3">
+<h3>Good things about this feature:</h3>
+<ul>
+<li>Easy to compute</li>
+<li>Easy to understand</li>
+<li>Scale independent</li>
+<li>Single dimensional</li>
+</ul>
+</div>
+<div id="bad-things-about-this-feature" class="section level3">
+<h3>Bad things about this feature:</h3>
+<ul>
+<li>Sensitive to small differences between points</li>
+<li>Sensitive to small datasets</li>
+</ul>
+</div>
+<div id="how-to-fix-the-bad-things" class="section level3">
+<h3>How to fix the bad things:</h3>
+<ul>
+<li>Filter out small datasets</li>
+<li>Round distances to nearest minimum distance (I chose 0.01 decimal degrees), which is around 1 km.</li>
+<li>Filter out datasets with most common distances below the 0.01 minimum.</li>
+<li>Filter out datasets with very few remaing unique lat-long points after filtering below 0.01 minimum.</li>
+</ul>
+<center>
+<h1>
+The spectrum from gridded to random
+</h1>
+</center>
+<p><img src="/post/2018-08-14-finding-gridded-datasets_files/figure-html/unnamed-chunk-3-1.png" width="960" /></p>
+</div>
+<div id="most-gridded-datasets-seem-to-be-located-in-europe" class="section level3">
+<h3>Most gridded datasets seem to be located in Europe</h3>
+<p><img src="https://raw.githubusercontent.com/jhnwllr/charts/master/whereGriddedLocated.gif" width="80%" height="80%"
+style="display: block;margin-left: auto;margin-right: auto;"/></p>
+</div>
+<div id="results" class="section level2">
+<h2>Results</h2>
+<ul>
+<li>There are around <strong>400</strong> gridded datasets within GBIF.</li>
+<li>This represents around <strong>10% of the 4000 large datasets</strong> (&gt; 20 unique lat-long points)</li>
+<li><strong>France publishes the most gridded datasets</strong> with 228 gridded datasets.</li>
+<li>Not all rasterized or gridded datasets are a perfect square and there is a spectrum of griddyness.</li>
+<li>At least <strong>75M</strong> occurrence records are gridded above 0.01 degrees.</li>
+<li>Most datasets (370) are <strong>gridded at 0.1°</strong> and only <strong>12 datasets are gridded at greater than 0.40°</strong> and 33 datasets are gridded <strong>below 0.1°</strong>.</li>
+</ul>
+</div>
+<div id="i-want-to-filter-gridded-datasets-from-my-download" class="section level2">
+<h2>I want to filter gridded datasets from my download!</h2>
+<p>I have processed all occurrence datasets in GBIF and produced a griddyness score for each based off of nearest neighbor distances (described above).</p>
+<div id="disclaimers" class="section level3">
+<h3>disclaimers</h3>
+<ul>
+<li>Only datasets with <strong>more than 20 unique</strong> lat-long points were processed.</li>
+<li>Datasets were downloaded in <strong>August of 2018</strong>, so new datasets might not be in the csv.</li>
+<li><strong>Mixed datasets</strong> might not be caught unless a large percentage of points are gridded.</li>
+<li>Only the <strong>first 1000 points</strong> were downloaded from each dataset, so large datasets that are gridded but only have a few unique lat-lon points will not be caught.</li>
+<li>Only looked for datasets on a grid <strong>larger than 0.01</strong> decimal degrees.</li>
+<li>Not all 15k occurrence datasets are capable of being classified.</li>
+<li>The griddedDataSets.csv contains <strong>4698 datasets</strong> of around 15,000 occurrence datasets with various levels of griddyness.</li>
+<li>Most datasets within GBIF have less than 20 unique lat-long points (from a sample of 1000 points) and are therefore difficult to classify as gridded or random.</li>
+<li>Even <strong>non-gridded datasets</strong> might not necessarily have an extremely precise lat-long occurrence records.</li>
+</ul>
+</div>
+<div id="column-definitions-for-griddeddatasets.csv" class="section level3">
+<h3>Column definitions for griddedDataSets.csv</h3>
+<ul>
+<li>datasetKey - GBIF dataset key.</li>
+<li>publishingCountry - Country that published the dataset.</li>
+<li>occCount - Total number of occurrence records in the dataset.</li>
+<li>datasetTitle - Title of dataset.</li>
+<li>percentNN - Fraction of unique lat-long points with the most common nearest neighbor distance.</li>
+<li>distanceNN - The most common nearest neighbor distance to the nearest 0.01 degrees.</li>
+<li>countNN - The count of unique lat-long points with the most common nearest neighbor distance.</li>
+<li>uniqueLatLon - The number of unique lat-long points in the dataset.</li>
+<li>lastUpdated - When I downloaded the data from GBIF.</li>
+<li>numberSampled - number of points sampled from each dataset. Will be 1000 for each.</li>
+</ul>
+<p>You can download the file here <a href="https://github.com/jhnwllr/griddedDatasets/blob/master/csv/griddedDataSets.csv">griddedDataSets.csv</a>.</p>
+</div>
+<div id="setting-the-percentnn-parameter" class="section level3">
+<h3>Setting the percentNN parameter</h3>
+<p>Below is a basic example of how to filter a GBIF download in R with griddedDataSets.csv. The main variable to adjust is the <strong>percentNN</strong> or fraction of unique lat-long points with the most common distance.</p>
+<ul>
+<li>greater than 0.75 will likely remove only gridded datasets from a download, leaving all random datasets but also many gridded datasets.</li>
+<li>greater than 0.50 will remove most gridded datasets but few random.</li>
+<li>greater than <strong>0.30</strong> will likely remove almost all gridded datasets (<strong>recommended</strong>).</li>
+<li>lower than <strong>0.30</strong> will likely only remove mostly non-gridded datasets (too conservative).</li>
+</ul>
+<p><img src="/post/2018-08-14-finding-gridded-datasets_files/figure-html/unnamed-chunk-5-1.png" width="960" /></p>
+</div>
+</div>
+<div id="r-code-to-filter-out-gridded-datasets" class="section level2">
+<h2>R-code to filter out gridded datasets</h2>
+<pre class="r"><code># filtering out gridded datasets
+
+library(rgbif)
+library(dplyr)
+
+# first load the griddedDataSets.csv
+urlFile = &#39;https://raw.githubusercontent.com/jhnwllr/griddedDatasets/master/csv/griddedDataSets.csv&#39;
+griddedDataSets = read.table(url(urlFile),header=TRUE,sep=&quot;\t&quot;,fill=TRUE,quote=&quot;&quot;)
+
+griddedDataSets = 
+griddedDataSets %&gt;% 
+filter(countNN &gt; 30) %&gt;% # only get datasets with a reasonable count of NN distances 
+filter(percentNN &gt; 0.3) %&gt;% # only filter datasets with a high percentage 
+filter(distanceNN &gt; 0.02) # filter out distances close to minimum 0.01 (important!)
+
+# Download Data
+# Emberiza bruniceps; 500 Red-headed bunting records from France
+buntingData = occ_search(taxonKey = 2491521,country = &quot;FR&quot;,limit=500,return=&quot;data&quot;)
+
+nrow(buntingData) # only total records 269 (September 2018)
+
+unique(buntingData$datasetKey) # 4 datasets
+
+# should find 2 gridded datasets
+unique(buntingData$datasetKey) %in% griddedDataSets$datasetKey 
+cleanBuntingData = buntingData[!buntingData$datasetKey %in% griddedDataSets$datasetKey,] 
+
+# only 4 occurrence records for Emberiza bruniceps found not in gridded datasets
+nrow(buntingData) </code></pre>
+<div id="what-if-a-dataset-is-not-in-griddeddatasets.csv" class="section level3">
+<h3>What if a dataset is not in griddedDatasets.csv?</h3>
+<p>Below we can also check if any datasets were not in griddedDataSets.csv.</p>
+<ol style="list-style-type: decimal">
+<li>We can either choose to remove any dataset on in the csv (very conservative).</li>
+<li>Or we can manually check each dataset in our data but not in the csv (recommended).</li>
+</ol>
+<p>In this case we see that there is one dataset in our download that is not in griddedDataSets.csv.</p>
+<pre class="r"><code># were any datasets downloaded that were not in the gridded datasets csv? 
+load(&quot;C:/Users/ftw712/Desktop/griddedDataSets.rda&quot;)
+
+# If the dataset is not in the 
+unique(buntingData$datasetKey)[!unique(buntingData$datasetKey) %in% griddedDataSets$datasetKey]
+
+# 1 dataset not in griddedDataSets.csv
+# 906b2d3f-dbd7-4c5c-acfc-c572c35c2b5a</code></pre>
+<p>We can plot the dataset <strong>not in griddedDataSets.csv</strong> using the <a href="https://www.gbif.org/developer/maps">GBIF map api</a> and see it is also most likely gridded. This illustrates that not all gridded datasets will necessarily be caught by my algorithm described above, but it should be able to remove the vast majority of gridded datasets. In the case of this dataset, it was not caught because it happens to be very large and have very few unique lat-lon points.</p>
+<pre class="r"><code>library(leaflet)
+
+prefix = &#39;https://api.gbif.org/v2/map/occurrence/density/{z}/{x}/{y}@1x.png?&#39;
+query = &#39;style=classic.poly&amp;bin=hex&amp;hexPerTile=30&amp;datasetKey=906b2d3f-dbd7-4c5c-acfc-c572c35c2b5a&#39;
+tile = paste0(prefix,query)
+
+leaflet() %&gt;%
+setView(lng = 5.4265362, lat = 43.4200248, zoom = 08) %&gt;%
+addTiles() %&gt;%  
+addTiles(urlTemplate=tile)</code></pre>
+<center>
+<h3>
+gridded dataset not in griddedDataSets.csv
+</h3>
+</center>
+<div id="htmlwidget-1" style="width:768px;height:288px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"setView":[[43.4200248,5.4265362],8,[]],"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addTiles","args":["https://api.gbif.org/v2/map/occurrence/density/{z}/{x}/{y}@1x.png?style=classic.poly&bin=hex&hexPerTile=30&datasetKey=906b2d3f-dbd7-4c5c-acfc-c572c35c2b5a",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false}]}]},"evals":[],"jsHooks":[]}</script>
+<p>In the future, I may consider downloading a larger sample from each GBIF dataset in order to catch such cases.</p>
+</div>
+<div id="computing-griddy-ness-scores-for-a-new-download-expensive" class="section level3">
+<h3>Computing griddy-ness scores for a new download (expensive)</h3>
+<p>One might want to compute griddy-ness scores for a new download. Or we might want to increase the sampling of the datasets to be more confident that we are catching all gridded datasets. This can be done in pricipal using <a href="https://cran.r-project.org/web/packages/rgbif/index.html">rgbif</a>. In general though this process will take longer and <strong>might be difficult to acheive if there are very many datasets</strong>.</p>
+<pre class="r"><code>library(rgbif)
+library(dplyr) 
+
+# Function to compute nearest neighbor features for a new download
+# D - input data from a GBIF download
+# key - focal key 
+# k - number of nearest neighbors to compute 
+
+getNNFeature = function(D,key,k) { # nearest neighbor features 
+  D = D %&gt;% filter(datasetKey == key)
+  
+  # nearest neighbors distances
+  NN = FNN::get.knn(cbind(D$decimalLongitude,D$decimalLatitude), k=k)$nn.dist 
+  
+  # Nearest Neighbor Percent Feature 
+  minimum = 0.01
+  NN = round(NN,2) # round nearest neighbors nearest 0.01
+  # adjust precision of rounding to any desired 
+  # NN = plyr::round_any(NN,0.01,ceiling) 
+  
+  TL = apply(NN,2,table) # table list
+  # distances less than minimum 
+  boolL = lapply(TL,function(x) as.numeric(names(x)) &gt; minimum) 
+  
+  # filter out those distances less than minimum
+  T = list(); for(i in 1:length(TL)) T[[i]] = TL[[i]][boolL[[i]]] 
+  
+  NNC = sapply(T,function(x) rev(sort(x))[1]) # NN point count
+  NNPF = sapply(T,function(x) rev(sort(x))[1]/sum(x)) # NN feature 
+  MCD = as.numeric(names(NNPF)) # most common distances of NN 
+  
+  NNF = cbind(
+  rbind(NNC) %&gt;% as.data.frame() %&gt;% setNames(paste0(&quot;NNC&quot;,1:k)),
+  rbind(NNPF) %&gt;% as.data.frame() %&gt;% setNames(paste0(&quot;NNPF&quot;,1:k)),
+  rbind(MCD) %&gt;% as.data.frame() %&gt;% setNames(paste0(&quot;MCD&quot;,1:k))
+  )
+  
+  NNF$key = key # add key 
+  NNF$uniqueLatLon = nrow(D)
+  
+  return(NNF) # return the nearest neighbor feature 
+}
+
+# Download Data
+# Emberiza bruniceps; 500 Red-headed bunting records from France
+buntingData = occ_search(taxonKey = 2491521,country = &quot;FR&quot;,limit=500,return=&quot;data&quot;)
+
+keys = unique(buntingData$datasetKey)
+sampleSize = 2000 # change to increase the sample size 
+
+# download a sample of data from each dataset in the download from the api 
+DL = lapply(keys,function(x) {
+occ_data(datasetKey=x,hasGeospatialIssue=FALSE,hasCoordinate=TRUE,limit=sampleSize)$data
+}) 
+occRecords = plyr::rbind.fill(DL) 
+
+# aggregate data 
+occRecords = occRecords %&gt;% 
+  group_by(datasetKey) %&gt;% 
+  select(decimalLatitude,decimalLongitude) %&gt;% 
+  count(decimalLongitude,decimalLatitude) %&gt;% as.data.frame()
+
+
+# compute the actual features 
+FL = list() # feature list
+for(key in keys) {
+    # sometimes this feature fails because 
+    # there are no points with NN dist greater than 0.01
+    out=try(getNNFeature(D=occRecords,key,k=4))
+        if(class(out) == &quot;try-error&quot;) next 
+    FL[[key]] = out
+}
+F = plyr::rbind.fill(FL) # griddyness features 
+
+griddedDataSets = F %&gt;% 
+  select(key,NNPF1,MCD1,NNC1,uniqueLatLon) %&gt;%
+  setNames(c(&quot;datasetKey&quot;,&quot;percentNN&quot;,&quot;distanceNN&quot;,&quot;countNN&quot;,&quot;uniqueLatLon&quot;))
+
+# set parameters to filter with 
+griddedDataSets = 
+griddedDataSets %&gt;% 
+filter(countNN &gt; 30) %&gt;% # only get datasets with a reasonable count of NN distances 
+filter(percentNN &gt; 0.3) %&gt;% # only filter datasets with a high percentage 
+filter(distanceNN &gt; 0.02) # filter out distances close to minimum 0.01 (important!)
+
+
+unique(buntingData$datasetKey) %in% griddedDataSets$datasetKey 
+cleanBuntingData = buntingData[!buntingData$datasetKey %in% griddedDataSets$datasetKey,] </code></pre>
+</div>
+</div>
+<div id="coordiante-cleaner-r-package" class="section level1">
+<h1>Coordiante Cleaner R package</h1>
+<p><a href="https://azizka.github.io/CoordinateCleaner/articles/Background_dataset_level_cleaning.html">Coordiante Cleaner</a> is an R package written by Alexander Zizka. This package utilizes the <strong>cd_round</strong> function to find gridded or rasterized datasets. It uses a different methodology than what is described here, but is definitely worth taking a look at.</p>
+</div>
+<div id="potential-improvements" class="section level1">
+<h1>Potential improvements</h1>
+<p>Things that might still work but probably <strong>will not</strong> improve performance:</p>
+<ul>
+<li>including more complex features</li>
+<li>including more nearest neighbor features</li>
+<li>including multiples of the most common distance</li>
+</ul>
+<p>One could imagine looking for multiples of the most common distance as a way of detecting gridded datasets. However, this will likely not improve performance because it will only help identify datasets that are already very obviously gridded, and probably just add unnecessary complexity.</p>
+<!--more-->
+</div>

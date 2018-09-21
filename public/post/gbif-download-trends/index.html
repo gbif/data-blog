@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>GBIF Download Trends - GBIF - Analytics Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="John Waller" />
+  <meta name="description" content="Explanation of toolThis tool plots the downloads through time for species or other taxonomic groups with more than 25 downloads at GBIF. Downloads at GBIF most often occur through the web interface. In a previous post, we saw that most users are downloading data from GBIF via filtering by scientific name (aka Taxon Key). Since the GBIF index currently sits at over 1 billion records (a 400&#43;GB csv), most users will simplying filter by their taxonomic group of interest and then generate a download." />
+
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.46" />
+
+
+<link rel="canonical" href="/post/gbif-download-trends/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.2.0" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+<link rel="stylesheet" href="/css//custom.css">
+
+
+<meta property="og:title" content="GBIF Download Trends" />
+<meta property="og:description" content="Explanation of toolThis tool plots the downloads through time for species or other taxonomic groups with more than 25 downloads at GBIF. Downloads at GBIF most often occur through the web interface. In a previous post, we saw that most users are downloading data from GBIF via filtering by scientific name (aka Taxon Key). Since the GBIF index currently sits at over 1 billion records (a 400&#43;GB csv), most users will simplying filter by their taxonomic group of interest and then generate a download." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/gbif-download-trends/" />
+
+
+
+<meta property="article:published_time" content="2018-08-14T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2018-08-14T15:35:14&#43;02:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="GBIF Download Trends">
+<meta itemprop="description" content="Explanation of toolThis tool plots the downloads through time for species or other taxonomic groups with more than 25 downloads at GBIF. Downloads at GBIF most often occur through the web interface. In a previous post, we saw that most users are downloading data from GBIF via filtering by scientific name (aka Taxon Key). Since the GBIF index currently sits at over 1 billion records (a 400&#43;GB csv), most users will simplying filter by their taxonomic group of interest and then generate a download.">
+
+
+<meta itemprop="datePublished" content="2018-08-14T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2018-08-14T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="554">
+
+
+
+<meta itemprop="keywords" content="rstats,shiny,downloads,gbif,users," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="GBIF Download Trends"/>
+<meta name="twitter:description" content="Explanation of toolThis tool plots the downloads through time for species or other taxonomic groups with more than 25 downloads at GBIF. Downloads at GBIF most often occur through the web interface. In a previous post, we saw that most users are downloading data from GBIF via filtering by scientific name (aka Taxon Key). Since the GBIF index currently sits at over 1 billion records (a 400&#43;GB csv), most users will simplying filter by their taxonomic group of interest and then generate a download."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">gbif analytics blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">
+	
+	<img src="GBIF-analytics-blog.png" alt="GBIF-analytics-blog" style ="width:50%;">
+	
+    
+    
+	
+      
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">GBIF Download Trends</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-08-14 </span>
+        <div class="post-category">
+            
+              <a href="/categories/gbif/"> GBIF </a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    
+    
+
+    
+    <div class="post-content">
+      <!--more-->
+<iframe src="http://178.128.167.105/shiny/gbifDownloadTrends//?_inputs_&amp;selectInput=%5B%22Animalia%20total%3A%20208011%22%2C%22Bacteria%20total%3A%20219%22%2C%22Fungi%20total%3A%205839%22%2C%22Plantae%20total%3A%20196763%22%5D&quot;" width="1000" height="780" style="border: none;" align="right">
+</iframe>
+<div id="explanation-of-tool" class="section level2">
+<h2>Explanation of tool</h2>
+<p>This tool plots the downloads through time for species or other taxonomic groups with more than 25 downloads at GBIF. Downloads at GBIF most often occur through the <a href="https://www.gbif.org/occurrence/search">web interface</a>. In a <a href="http://www.johnwalleranalytics.org/2018/05/30/gbif-download-statistics/">previous post</a>, we saw that most users are downloading data from GBIF via filtering by scientific name (aka Taxon Key). Since the GBIF index currently sits at over 1 billion records (a 400+GB csv), most users will simplying filter by their taxonomic group of interest and then generate a download.</p>
+</div>
+<div id="how-to-bookmark-a-result" class="section level2">
+<h2>How to bookmark a result?</h2>
+<p>If you would like to bookmark a result or graph to share with others, you can visit app page direcly: <a href="http://178.128.167.105/shiny/gbifDownloadTrends/">app link</a>. On this page the state of the app will be saved inside the url.</p>
+</div>
+<div id="what-counts-as-a-download" class="section level2">
+<h2>What counts as a download?</h2>
+<p>For the graphs above, I decided that it would be more meaningful to roll up downloads <strong>below</strong> the queried taxonomic level.</p>
+<ul>
+<li>If a user downloaded 5 different bird species as once, this would count as <strong>1 download</strong> for Aves and <strong>1 download</strong> for each of the species downloaded.</li>
+<li>If a user <strong>only typed in Aves</strong> in the <a href="https://www.gbif.org/occurrence/search?taxon_key=212">occurrence download interface</a> and not any other species. This would only count as 1 download for Aves and <strong>0 downloads for all bird species</strong>.</li>
+<li>Similarly, if a user only typed the order <strong>Passeriformes</strong> into the search, this would count as 1 download for <strong>Passeriformes</strong> and 1 download for <strong>Aves</strong>, but <strong>0 downloads</strong> for all the species, families, and genera within Passeriformes.</li>
+</ul>
+<p>It is possible, but not as easy, to get data from GBIF without generating a download. In fact users can stream data using the GBIF occurrence api without ever generating a download. Currently users can “download” 200k-long chunks of occurrence data without generating a download by using the api. This can be done in <a href="https://cran.r-project.org/web/packages/rgbif/index.html">rgbif</a>.</p>
+<pre class="r"><code>rgbif::occ_search(taxonKey=212, limit=200000) # get the first 200k records of Aves</code></pre>
+<p>If someone got their data using the api in this way, we would not be able to track it currently. Presumably, though, the large majority of users are getting their data directly through the <a href="https://www.gbif.org/occurrence/search">web interface</a>.</p>
+</div>
+<div id="how-did-i-get-the-download-data" class="section level2">
+<h2>How did I get the download data?</h2>
+<p>Since 2013, GBIF has been tracking, user download filters in the so-called GBIF registry. This data is in fact publicly available via the <a href="https://www.gbif.org/developer/registry">GBIF registry api</a>. Unfortunately, the data is exported in json and difficult to parse. For example, one could get the download activity on <a href="https://www.gbif.org/dataset/13b70480-bd69-11dd-b15f-b8a03c50a862">AntWeb</a> by using the following rgbif command:</p>
+<pre class="r"><code>rgbif::occ_download_dataset_activity(&quot;13b70480-bd69-11dd-b15f-b8a03c50a862&quot;)</code></pre>
+<p>But this would not be a practical way to get all of data for all downloads happening at GBIF, even though it is techinically possible. Fortunately, <strong>since I am employed at GBIF, I have direct access to the tables within the registry database</strong>. However, it was still necessary to parse the json within the regsitry table. This was no easy task but was made easier by the <a href="https://github.com/sailthru/tidyjson">tidyjson</a> package.</p>
+</div>
+<div id="technical-details" class="section level2">
+<h2>Technical details</h2>
+<ul>
+<li><p>Obviously this app was built in Shiny. You can see the code that generated this app <a href="https://github.com/jhnwllr/johnwalleranalytics-shiny-sever/tree/master/gbifDownloadTrends">here</a>.</p></li>
+<li><p>I embedded it inside this page using an iframe.</p></li>
+</ul>
+<pre class="html"><code>&lt;iframe src=http://178.128.167.105/shiny/gbifDownloadTrends/ width=&quot;1000&quot; height=&quot;780&quot; style=&quot;border: none;&quot;&gt;&lt;/iframe&gt;</code></pre>
+<ul>
+<li>I am hosting the app on a person Digital Ocean server rather than at <a href="https://www.shinyapps.io/" class="uri">https://www.shinyapps.io/</a>.</li>
+<li>The graph is generated using the <a href="http://jkunst.com/highcharter/">highcharter</a> package.</li>
+<li>The data is not <strong>live</strong>. Results are coming from a canned csv compiled in <strong>May of 2018</strong>.</li>
+</ul>
+</div>
+
+    </div>
+
+    
+    
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/rstats/">rstats</a>
+          
+          <a href="/tags/shiny/">shiny</a>
+          
+          <a href="/tags/downloads/">downloads</a>
+          
+          <a href="/tags/gbif/">gbif</a>
+          
+          <a href="/tags/users/">users</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/finding-gridded-datasets/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Finding Gridded Datasets</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://twitter.com/GBIF?lang=en" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://github.com/gbif" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.instagram.com/gbifs/?hl=en" class="iconfont icon-instagram" title="instagram"></a>
+  <a href="/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2017 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">olOwOlo</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+
+
+<script type="text/javascript" src="/dist/even.min.js?v=3.2.0"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

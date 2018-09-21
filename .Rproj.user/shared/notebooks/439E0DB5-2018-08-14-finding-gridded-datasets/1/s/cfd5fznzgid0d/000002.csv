@@ -1,0 +1,6 @@
+"0","load(""C:/Users/ftw712/Desktop/ebv/grids/blog/data/gridded.rda"")"
+"0","load(""C:/Users/ftw712/Desktop/ebv/grids/blog/data/notGridded.rda"")"
+"0","library(highcharter)"
+"0","load(""C:/Users/ftw712/Desktop/ebv/grids/blog/data/map.rda"")"
+"2","Error in .Internal(lapply(X, FUN)) : reached elapsed time limit
+"

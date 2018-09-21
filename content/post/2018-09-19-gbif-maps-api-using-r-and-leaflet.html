@@ -1,0 +1,192 @@
+---
+title: Plot almost anything using the GBIF maps api
+author: John Waller
+date: '2018-09-19'
+slug: gbif-maps-api-using-r-and-leaflet
+categories:
+  - GBIF
+tags:
+  - rstats
+  - gbif
+  - leaflet
+  - maps
+lastmod: '2018-09-19T13:49:20+02:00'
+keywords: []
+description: ''
+comment: no
+toc: no
+autoCollapseToc: no
+postMetaInFooter: no
+hiddenFromHomePage: no
+contentCopyright: no
+reward: no
+mathjax: no
+mathjaxEnableSingleDollar: no
+mathjaxEnableAutoNumber: no
+hideHeaderAndFooter: no
+flowchartDiagrams:
+  enable: no
+  options: ''
+sequenceDiagrams:
+  enable: no
+  options: ''
+---
+
+<script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<script src="/rmarkdown-libs/jquery/jquery.min.js"></script>
+<link href="/rmarkdown-libs/leaflet/leaflet.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/leaflet/leaflet.js"></script>
+<link href="/rmarkdown-libs/leafletfix/leafletfix.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/Proj4Leaflet/proj4-compressed.js"></script>
+<script src="/rmarkdown-libs/Proj4Leaflet/proj4leaflet.js"></script>
+<link href="/rmarkdown-libs/rstudio_leaflet/rstudio_leaflet.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/leaflet-binding/leaflet.js"></script>
+
+
+<p>The <a href="https://www.gbif.org/developer/maps">GBIF maps api</a> is an under-used but powerful web service provided by GBIF. The <a href="https://www.gbif.org/developer/maps">maps api</a> is used by the main GBIF portal to create the maps including the <a href="https://www.gbif.org/">big map</a> used on gbif.org. We can make a simple call to the api by <strong>pasting the link</strong> below into a <strong>web browser</strong>.</p>
+<pre class="html"><code>https://api.gbif.org/v2/map/occurrence/density/0/0/0@1x.png?style=purpleYellow.point</code></pre>
+You should end up with an image like this.
+<div>
+<p><img src="https://api.gbif.org/v2/map/occurrence/density/0/0/0@1x.png?style=purpleYellow.point" alt="GBIF-analytics-blog" style ="width:50%; height:50%;"></p>
+</div>
+<p>This api call is composed essentially of two elements</p>
+<ol style="list-style-type: decimal">
+<li>a url prefix: <a href="https://api.gbif.org/v2/map/occurrence/density/0/0/0@1x.png" class="uri">https://api.gbif.org/v2/map/occurrence/density/0/0/0@1x.png</a>?</li>
+<li>a style query: style=purpleYellow.point</li>
+</ol>
+<p>This is cool but also not very interesting or useful. But the GBIF maps api is much more powerful. You don’t need to understand everything to make a cool interactive map with GBIF data. Let’s simply overlay these tiles to an existing map in R.</p>
+<p>I will use the <a href="https://rstudio.github.io/leaflet/">leaflet R package</a>, which is a wrapper to the popular <a href="https://leafletjs.com/">javascript library</a>.</p>
+<pre class="r"><code>library(leaflet)
+
+prefix = &#39;https://api.gbif.org/v2/map/occurrence/density/{z}/{x}/{y}@1x.png?&#39;
+style = &#39;style=purpleYellow.point&#39;
+tile = paste0(prefix,style)
+
+leaflet() %&gt;%
+setView(lng = 20, lat = 20, zoom = 01) %&gt;%
+addTiles() %&gt;%  
+addTiles(urlTemplate=tile)</code></pre>
+<div id="htmlwidget-1" style="width:768px;height:288px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"setView":[[20,20],1,[]],"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addTiles","args":["https://api.gbif.org/v2/map/occurrence/density/{z}/{x}/{y}@1x.png?style=purpleYellow.point",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false}]}]},"evals":[],"jsHooks":[]}</script>
+<div id="a-single-dataset-with-polygons" class="section level2">
+<h2>A single dataset with polygons</h2>
+<p>We can also plot any dataset. Below I plot a <a href="https://www.gbif.org/dataset/906b2d3f-dbd7-4c5c-acfc-c572c35c2b5a">French dataset</a> (“Réserve Naturelle de Camargue”) without ever downloding a record.</p>
+<pre class="r"><code>library(leaflet)
+
+prefix = &#39;https://api.gbif.org/v2/map/occurrence/density/{z}/{x}/{y}@1x.png?&#39;
+style = &#39;style=classic.poly&amp;bin=hex&amp;hexPerTile=30&#39;
+datasetKey = &#39;datasetKey=906b2d3f-dbd7-4c5c-acfc-c572c35c2b5a&#39;
+tile = paste0(prefix,style,&#39;&amp;&#39;,datasetKey)
+
+leaflet() %&gt;%
+setView(lng = 5.4265362, lat = 43.4200248, zoom = 08) %&gt;%
+addTiles() %&gt;% # add default map tiles
+addTiles(urlTemplate=tile)</code></pre>
+<div id="htmlwidget-2" style="width:768px;height:288px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"setView":[[43.4200248,5.4265362],8,[]],"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addTiles","args":["https://api.gbif.org/v2/map/occurrence/density/{z}/{x}/{y}@1x.png?style=classic.poly&bin=hex&hexPerTile=30&datasetKey=906b2d3f-dbd7-4c5c-acfc-c572c35c2b5a",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false}]}]},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="other-raster-styles" class="section level2">
+<h2>Other raster styles</h2>
+<p>The main GBIF portal uses the raster style “gbif-violet” <a href="https://tile.gbif.org/ui/">documented here</a>. We can use this raster style too!</p>
+<pre class="r"><code>library(leaflet)
+
+projection = &#39;3857&#39; # projection code.
+style = &#39;style=gbif-violet&#39; # style
+tile = paste0(&#39;https://tile.gbif.org/&#39;,projection,&#39;/omt/{z}/{x}/{y}@1x.png?&#39;,style)
+
+leaflet() %&gt;%
+setView(lng = 5.4265362, lat = 43.4200248, zoom = 01) %&gt;%
+addTiles(urlTemplate=tile)</code></pre>
+<div id="htmlwidget-3" style="width:768px;height:288px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-3">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"setView":[[43.4200248,5.4265362],1,[]],"calls":[{"method":"addTiles","args":["https://tile.gbif.org/3857/omt/{z}/{x}/{y}@1x.png?style=gbif-violet",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false}]}]},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="plotting-the-gbif-style-ebird-dataset-map-in-leaflet-using-r." class="section level1">
+<h1>Plotting the GBIF-style eBird dataset map in leaflet using R.</h1>
+<p>We can also mimmick <a href="https://www.gbif.org/dataset/4fa7b334-ce0d-4e88-aaae-2e0c138d049e">the plot</a> of the largest dataset in GBIF.</p>
+<pre class="r"><code>library(leaflet)
+
+# create the gbif-violet style raster layer 
+projection = &#39;3857&#39; # projection code
+style = &#39;style=gbif-violet&#39; # style
+tileRaster = paste0(&#39;https://tile.gbif.org/&#39;,projection,&#39;/omt/{z}/{x}/{y}@1x.png?&#39;,style)
+
+# create our polygons layer 
+prefix = &#39;https://api.gbif.org/v2/map/occurrence/density/{z}/{x}/{y}@1x.png?&#39;
+polygons = &#39;style=classic.poly&amp;bin=hex&amp;hexPerTile=70&#39; # ploygon styles 
+datasetKey = &#39;datasetKey=4fa7b334-ce0d-4e88-aaae-2e0c138d049e&#39; # eBird key 
+tilePolygons = paste0(prefix,polygons,&#39;&amp;&#39;,datasetKey)
+
+# plot the styled map
+leaflet() %&gt;%
+setView(lng = 5.4265362, lat = 43.4200248, zoom = 01) %&gt;%
+addTiles(urlTemplate=tileRaster) %&gt;%
+addTiles(urlTemplate=tilePolygons)  </code></pre>
+<div id="htmlwidget-4" style="width:768px;height:336px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-4">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"setView":[[43.4200248,5.4265362],1,[]],"calls":[{"method":"addTiles","args":["https://tile.gbif.org/3857/omt/{z}/{x}/{y}@1x.png?style=gbif-violet",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false}]},{"method":"addTiles","args":["https://api.gbif.org/v2/map/occurrence/density/{z}/{x}/{y}@1x.png?style=classic.poly&bin=hex&hexPerTile=70&datasetKey=4fa7b334-ce0d-4e88-aaae-2e0c138d049e",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false}]}]},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="plotting-using-a-taxon-key" class="section level1">
+<h1>Plotting using a taxon key</h1>
+<p>Plotting all dragonfly records.</p>
+<pre class="r"><code>library(leaflet)
+
+# create style raster layer 
+projection = &#39;3857&#39; # projection code
+style = &#39;style=osm-bright&#39; # map style
+tileRaster = paste0(&#39;https://tile.gbif.org/&#39;,projection,&#39;/omt/{z}/{x}/{y}@1x.png?&#39;,style)
+
+# create our polygons layer 
+prefix = &#39;https://api.gbif.org/v2/map/occurrence/density/{z}/{x}/{y}@1x.png?&#39;
+polygons = &#39;style=fire.point&#39; # ploygon styles 
+taxonKey = &#39;taxonKey=789&#39; # taxonKey of Odonata (dragonflies and damselflies)
+tilePolygons = paste0(prefix,polygons,&#39;&amp;&#39;,taxonKey)
+
+# plot the styled map
+leaflet() %&gt;%
+setView(lng = 5.4265362, lat = 43.4200248, zoom = 01) %&gt;%
+addTiles(urlTemplate=tileRaster) %&gt;%
+addTiles(urlTemplate=tilePolygons)  </code></pre>
+<div id="htmlwidget-5" style="width:768px;height:336px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-5">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"setView":[[43.4200248,5.4265362],1,[]],"calls":[{"method":"addTiles","args":["https://tile.gbif.org/3857/omt/{z}/{x}/{y}@1x.png?style=osm-bright",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false}]},{"method":"addTiles","args":["https://api.gbif.org/v2/map/occurrence/density/{z}/{x}/{y}@1x.png?style=fire.point&taxonKey=789",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false}]}]},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="plotting-any-query" class="section level1">
+<h1>Plotting any query</h1>
+<p>It is nice that we can re-create standard GBIF maps found on the portal but it would be better if we could quickly map any query ourselves and then layer in other information. This example is <strong>more complex</strong> than the examples above but also <strong>more general</strong>. By using the so-called <strong>“ad-hoc”</strong> maps api interface, we can plot complex queries without ever downloading a record.</p>
+<p>To use the ad hoc interface with leaflet, we need to set a <a href="https://rstudio.github.io/leaflet/projections.html">custom projection</a> with <code>leafletOptions</code> and <code>leafletCRS</code>.</p>
+<p>From the leaflet R package documentation:</p>
+<blockquote>
+<p>The Leaflet package expects all point, line, and shape data to be specified in latitude and longitude using WGS 84 (a.k.a. EPSG:4326). By default, when displaying this data it projects everything to EPSG:3857 and expects that any map tiles are also displayed in EPSG:3857.</p>
+</blockquote>
+<p>The GBIF ad-hoc search can <strong>only be used with EPSG:4326</strong>. Therefore, we need to define the <strong>EPSG:4326</strong> manually. I used <a href="https://epsg.io/4326">epsg.io</a> to look up this projection and copied the code field <strong>PROJ.4</strong>. I then looked into the documentation and guessed that I need to use the crsClass <strong>L.CRS.EPSG4326</strong>.</p>
+<pre class="r"><code>library(leaflet)
+
+# need to define new projection. Only this projection will work with custom queries. 
+epsg4326 &lt;- leafletCRS(crsClass = &quot;L.CRS.EPSG4326&quot;, code = &quot;EPSG:4326&quot;,
+            proj4def = &quot;+proj=longlat +datum=WGS84 +no_defs&quot;,
+            resolutions = 2^(10:0),
+            origin =c(0,0)
+            )
+
+# create the gbif-geyser style raster layer 
+projection &lt;- &#39;4326&#39; # must use this projection code for custom maps
+style &lt;- &#39;style=gbif-geyser&#39; # I think any style will work 
+tileRaster &lt;- paste0(&#39;https://tile.gbif.org/&#39;,projection,&#39;/omt/{z}/{x}/{y}@1x.png?&#39;,style)
+
+# create the data layer with dragonfly data # Note the &quot;adhoc&quot;
+prefix &lt;- &#39;https://api.gbif.org/v2/map/occurrence/adhoc/{z}/{x}/{y}@1x.png?&#39;
+# make query 
+style &lt;- &#39;style=classic.poly&#39; # style of polygons 
+taxonKey = &#39;taxonKey=789&#39; # taxon key of Odonata 
+country = &#39;country=JP&#39; # country code of Japan
+tilePolygons = paste0(prefix,style,&#39;&amp;&#39;,taxonKey,&#39;&amp;&#39;,country)
+
+# plot the map 
+leaflet(options = leafletOptions(crs = epsg4326)) %&gt;%
+setView(lng=139.068,lat=36.4910,zoom=03) %&gt;% 
+addTiles(urlTemplate=tileRaster) %&gt;%
+addTiles(urlTemplate=tilePolygons) %&gt;%
+addMarkers(139.068,36.4910) # country centroid of Japan</code></pre>
+<div id="htmlwidget-6" style="width:768px;height:384px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-6">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG4326","code":"EPSG:4326","proj4def":"+proj=longlat +datum=WGS84 +no_defs","projectedBounds":null,"options":{"origin":[0,0],"resolutions":[1024,512,256,128,64,32,16,8,4,2,1]}}},"setView":[[36.491,139.068],3,[]],"calls":[{"method":"addTiles","args":["https://tile.gbif.org/4326/omt/{z}/{x}/{y}@1x.png?style=gbif-geyser",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false}]},{"method":"addTiles","args":["https://api.gbif.org/v2/map/occurrence/adhoc/{z}/{x}/{y}@1x.png?style=classic.poly&taxonKey=789&country=JP",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false}]},{"method":"addMarkers","args":[36.491,139.068,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[36.491,36.491],"lng":[139.068,139.068]}},"evals":[],"jsHooks":[]}</script>
+<p>All dragonfly occurrence records in in Japan with the country centroid of Japan marked.</p>
+<!--more-->
+</div>

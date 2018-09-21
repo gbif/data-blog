@@ -1,0 +1,79 @@
+---
+title: GBIF Download Trends
+author: John Waller
+date: '2018-08-14'
+slug: gbif-download-trends
+categories:
+  - GBIF
+tags:
+  - rstats
+  - shiny
+  - downloads
+  - gbif
+  - users
+lastmod: '2018-08-14T15:35:14+02:00'
+keywords: []
+description: ''
+comment: no
+toc: no
+autoCollapseToc: no
+postMetaInFooter: no
+hiddenFromHomePage: no
+contentCopyright: no
+reward: no
+mathjax: no
+mathjaxEnableSingleDollar: no
+mathjaxEnableAutoNumber: no
+hideHeaderAndFooter: no
+flowchartDiagrams:
+  enable: no
+  options: ''
+sequenceDiagrams:
+  enable: no
+  options: ''
+---
+
+
+
+<!--more-->
+<iframe src="http://178.128.167.105/shiny/gbifDownloadTrends//?_inputs_&amp;selectInput=%5B%22Animalia%20total%3A%20208011%22%2C%22Bacteria%20total%3A%20219%22%2C%22Fungi%20total%3A%205839%22%2C%22Plantae%20total%3A%20196763%22%5D&quot;" width="1000" height="780" style="border: none;" align="right">
+</iframe>
+<div id="explanation-of-tool" class="section level2">
+<h2>Explanation of tool</h2>
+<p>This tool plots the downloads through time for species or other taxonomic groups with more than 25 downloads at GBIF. Downloads at GBIF most often occur through the <a href="https://www.gbif.org/occurrence/search">web interface</a>. In a <a href="http://www.johnwalleranalytics.org/2018/05/30/gbif-download-statistics/">previous post</a>, we saw that most users are downloading data from GBIF via filtering by scientific name (aka Taxon Key). Since the GBIF index currently sits at over 1 billion records (a 400+GB csv), most users will simplying filter by their taxonomic group of interest and then generate a download.</p>
+</div>
+<div id="how-to-bookmark-a-result" class="section level2">
+<h2>How to bookmark a result?</h2>
+<p>If you would like to bookmark a result or graph to share with others, you can visit app page direcly: <a href="http://178.128.167.105/shiny/gbifDownloadTrends/">app link</a>. On this page the state of the app will be saved inside the url.</p>
+</div>
+<div id="what-counts-as-a-download" class="section level2">
+<h2>What counts as a download?</h2>
+<p>For the graphs above, I decided that it would be more meaningful to roll up downloads <strong>below</strong> the queried taxonomic level.</p>
+<ul>
+<li>If a user downloaded 5 different bird species as once, this would count as <strong>1 download</strong> for Aves and <strong>1 download</strong> for each of the species downloaded.</li>
+<li>If a user <strong>only typed in Aves</strong> in the <a href="https://www.gbif.org/occurrence/search?taxon_key=212">occurrence download interface</a> and not any other species. This would only count as 1 download for Aves and <strong>0 downloads for all bird species</strong>.</li>
+<li>Similarly, if a user only typed the order <strong>Passeriformes</strong> into the search, this would count as 1 download for <strong>Passeriformes</strong> and 1 download for <strong>Aves</strong>, but <strong>0 downloads</strong> for all the species, families, and genera within Passeriformes.</li>
+</ul>
+<p>It is possible, but not as easy, to get data from GBIF without generating a download. In fact users can stream data using the GBIF occurrence api without ever generating a download. Currently users can “download” 200k-long chunks of occurrence data without generating a download by using the api. This can be done in <a href="https://cran.r-project.org/web/packages/rgbif/index.html">rgbif</a>.</p>
+<pre class="r"><code>rgbif::occ_search(taxonKey=212, limit=200000) # get the first 200k records of Aves</code></pre>
+<p>If someone got their data using the api in this way, we would not be able to track it currently. Presumably, though, the large majority of users are getting their data directly through the <a href="https://www.gbif.org/occurrence/search">web interface</a>.</p>
+</div>
+<div id="how-did-i-get-the-download-data" class="section level2">
+<h2>How did I get the download data?</h2>
+<p>Since 2013, GBIF has been tracking, user download filters in the so-called GBIF registry. This data is in fact publicly available via the <a href="https://www.gbif.org/developer/registry">GBIF registry api</a>. Unfortunately, the data is exported in json and difficult to parse. For example, one could get the download activity on <a href="https://www.gbif.org/dataset/13b70480-bd69-11dd-b15f-b8a03c50a862">AntWeb</a> by using the following rgbif command:</p>
+<pre class="r"><code>rgbif::occ_download_dataset_activity(&quot;13b70480-bd69-11dd-b15f-b8a03c50a862&quot;)</code></pre>
+<p>But this would not be a practical way to get all of data for all downloads happening at GBIF, even though it is techinically possible. Fortunately, <strong>since I am employed at GBIF, I have direct access to the tables within the registry database</strong>. However, it was still necessary to parse the json within the regsitry table. This was no easy task but was made easier by the <a href="https://github.com/sailthru/tidyjson">tidyjson</a> package.</p>
+</div>
+<div id="technical-details" class="section level2">
+<h2>Technical details</h2>
+<ul>
+<li><p>Obviously this app was built in Shiny. You can see the code that generated this app <a href="https://github.com/jhnwllr/johnwalleranalytics-shiny-sever/tree/master/gbifDownloadTrends">here</a>.</p></li>
+<li><p>I embedded it inside this page using an iframe.</p></li>
+</ul>
+<pre class="html"><code>&lt;iframe src=http://178.128.167.105/shiny/gbifDownloadTrends/ width=&quot;1000&quot; height=&quot;780&quot; style=&quot;border: none;&quot;&gt;&lt;/iframe&gt;</code></pre>
+<ul>
+<li>I am hosting the app on a person Digital Ocean server rather than at <a href="https://www.shinyapps.io/" class="uri">https://www.shinyapps.io/</a>.</li>
+<li>The graph is generated using the <a href="http://jkunst.com/highcharter/">highcharter</a> package.</li>
+<li>The data is not <strong>live</strong>. Results are coming from a canned csv compiled in <strong>May of 2018</strong>.</li>
+</ul>
+</div>

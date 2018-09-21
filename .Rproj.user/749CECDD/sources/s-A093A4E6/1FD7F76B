@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1537357760792.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "1FD7F76B",
+    "lastKnownWriteTime" : 1537517557,
+    "last_content_update" : 1537517557034,
+    "path" : "C:/Users/ftw712/Desktop/gbifAnalyticsBlog/content/post/2018-09-19-gbif-maps-api-using-r-and-leaflet.Rmd",
+    "project_path" : "content/post/2018-09-19-gbif-maps-api-using-r-and-leaflet.Rmd",
+    "properties" : {
+        "cursorPosition" : "23,29",
+        "scrollLine" : "16"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

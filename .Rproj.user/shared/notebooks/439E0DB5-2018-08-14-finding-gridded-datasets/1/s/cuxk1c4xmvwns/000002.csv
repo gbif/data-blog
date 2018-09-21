@@ -1,0 +1,7 @@
+"0","load(""C:/Users/ftw712/Desktop/ebv/grids/blog/data/gridded.rda"")"
+"0","load(""C:/Users/ftw712/Desktop/ebv/grids/blog/data/notGridded.rda"")"
+"0","library(highcharter)"
+"0","library(dplyr)"
+"0","load(""C:/Users/ftw712/Desktop/ebv/grids/blog/data/map.rda"")"
+"2","Error: reached elapsed time limit
+"

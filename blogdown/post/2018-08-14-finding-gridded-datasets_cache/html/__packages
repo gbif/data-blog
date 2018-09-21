@@ -1,0 +1,10 @@
+base
+highcharter
+dplyr
+ggplot2
+maps
+ggthemes
+gganimate
+animation
+bindrcpp
+leaflet
