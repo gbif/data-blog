@@ -84,6 +84,24 @@
     </item>
     
     <item>
+      <title>Test</title>
+      <link>/tags/test/</link>
+      <pubDate>Fri, 21 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/test/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Test tag</title>
+      <link>/tags/test-tag/</link>
+      <pubDate>Fri, 21 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/test-tag/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Users</title>
       <link>/tags/users/</link>
       <pubDate>Tue, 14 Aug 2018 00:00:00 +0000</pubDate>

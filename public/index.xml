@@ -312,6 +312,15 @@ with lazy continuation.&lt;/p&gt;&lt;/dd&gt;
     </item>
     
     <item>
+      <title>Test Post</title>
+      <link>/post/test-post/</link>
+      <pubDate>Fri, 21 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/test-post/</guid>
+      <description>test mark down post content</description>
+    </item>
+    
+    <item>
       <title>Plot almost anything using the GBIF maps api</title>
       <link>/post/gbif-maps-api-using-r-and-leaflet/</link>
       <pubDate>Wed, 19 Sep 2018 00:00:00 +0000</pubDate>

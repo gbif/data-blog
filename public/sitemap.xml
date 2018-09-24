@@ -17,6 +17,13 @@
   </url>
   
   <url>
+    <loc>/post/test-post/</loc>
+    <lastmod>2018-09-21T15:24:11+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>/post/gbif-maps-api-using-r-and-leaflet/</loc>
     <lastmod>2018-09-19T13:49:20+02:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -59,7 +66,7 @@
   
   <url>
     <loc>/categories/gbif/</loc>
-    <lastmod>2018-09-19T13:49:20+02:00</lastmod>
+    <lastmod>2018-09-21T15:24:11+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -123,6 +130,20 @@
   <url>
     <loc>/tags/</loc>
     <lastmod>2018-08-14T15:47:18+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/test/</loc>
+    <lastmod>2018-09-21T15:24:11+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/test-tag/</loc>
+    <lastmod>2018-09-21T15:24:11+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
