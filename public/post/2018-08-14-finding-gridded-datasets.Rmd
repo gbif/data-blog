@@ -352,6 +352,9 @@ cleanBuntingData = buntingData[!buntingData$datasetKey %in% griddedDataSets$data
 
 # Potential improvements
 
+### Different Projections
+Throughout this post I have implicitly been assuming all coordinates are projected using WGS84, but this might not be the case specifically for 
+
 Things that might still work but probably **will not** improve performance: 
 
 * including more complex features

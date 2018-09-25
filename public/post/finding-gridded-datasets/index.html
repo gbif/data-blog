@@ -81,7 +81,7 @@
 
 <meta itemprop="datePublished" content="2018-08-14T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2018-08-14T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1659">
+<meta itemprop="wordCount" content="1684">
 
 
 
@@ -489,6 +489,9 @@ cleanBuntingData = buntingData[!buntingData$datasetKey %in% griddedDataSets$data
 </div>
 <div id="potential-improvements" class="section level1">
 <h1>Potential improvements</h1>
+<div id="different-projections" class="section level3">
+<h3>Different Projections</h3>
+<p>Throughout this post I have implicitly been assuming all coordinates are projected using WGS84, but this might not be the case specifically for</p>
 <p>Things that might still work but probably <strong>will not</strong> improve performance:</p>
 <ul>
 <li>including more complex features</li>
@@ -497,6 +500,7 @@ cleanBuntingData = buntingData[!buntingData$datasetKey %in% griddedDataSets$data
 </ul>
 <p>One could imagine looking for multiples of the most common distance as a way of detecting gridded datasets. However, this will likely not improve performance because it will only help identify datasets that are already very obviously gridded, and probably just add unnecessary complexity.</p>
 <!--more-->
+</div>
 </div>
 
     </div>

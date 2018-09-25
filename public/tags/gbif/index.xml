@@ -23,7 +23,7 @@
 
 &lt;p&gt;Not all markdown formatting will work work with Hugo.&lt;/p&gt;
 
-&lt;hr /&gt;
+&lt;h2 id=&#34;post-2025-09-24-template-files-example-jpg&#34;&gt;&lt;img src=&#34;/post/2025-09-24-template_files/example.jpg&#34; alt=&#34;&#34; /&gt;&lt;/h2&gt;
 
 &lt;h1 id=&#34;h1-heading-8&#34;&gt;h1 Heading 8-)&lt;/h1&gt;
 

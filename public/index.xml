@@ -35,7 +35,7 @@ What about the developer blog? An archive of the developer blog is still availab
 
 &lt;p&gt;Not all markdown formatting will work work with Hugo.&lt;/p&gt;
 
-&lt;hr /&gt;
+&lt;h2 id=&#34;post-2025-09-24-template-files-example-jpg&#34;&gt;&lt;img src=&#34;/post/2025-09-24-template_files/example.jpg&#34; alt=&#34;&#34; /&gt;&lt;/h2&gt;
 
 &lt;h1 id=&#34;h1-heading-8&#34;&gt;h1 Heading 8-)&lt;/h1&gt;
 
@@ -309,15 +309,6 @@ with lazy continuation.&lt;/p&gt;&lt;/dd&gt;
 :::&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Test Post</title>
-      <link>/post/test-post/</link>
-      <pubDate>Fri, 21 Sep 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/post/test-post/</guid>
-      <description>test mark down post content</description>
     </item>
     
     <item>
