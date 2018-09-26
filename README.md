@@ -12,7 +12,7 @@ Posts should be written in markdown. If you are unfamiliar, you can use some of 
 
 Markdown files are just simple text files with an `.md` extension. 
 
-You can download a simple `.md` blog post template [here](). 
+You can download a simple `.md` blog post template [here](https://github.com/jhnwllr/gbifAnalyticsBlog/blob/master/content/post/2025-09-24-template.md). 
 
 ### Post Template
 
@@ -51,6 +51,9 @@ sequenceDiagrams:
   options: ''
 ---
 
+# Some markdwon header text  
+I am some text. 
+
 ```
 
 Important fields to **fill in** are below: 
@@ -72,7 +75,7 @@ lastmod: '2018-09-21T15:24:11+02:00'
 ```
 And the rest of the fields can be left the same. I am not really sure if they are all needed, but just to not break the theme, I would **leave them in**. You can probably **ignore** the `lastmod field:`. 
 
-You can download a simple `.md` blog post template `./content/post/2025-09-24-template.md` [link here](). 
+You can download a simple `.md` blog post template `./content/post/2025-09-24-template.md` [link here](https://github.com/jhnwllr/gbifAnalyticsBlog/blob/master/content/post/2025-09-24-template.md). 
 
 ### How hugo works
 
@@ -100,9 +103,9 @@ I am still working out the best way to do this in practice.
 
 Some options: 
 
-1. Send me the `YYYY-MM-DD-yourPost.md` file **jwaller@gbif.org**
-2. Fork the repository and add the `YYYY-MM-DD-yourPost.md`, then do a pull request. 
-3. If you have access to the GitHub, just update the repository yourself. 
+* Send me the `YYYY-MM-DD-yourPost.md` file **jwaller@gbif.org**
+* Fork the repository and add the `YYYY-MM-DD-yourPost.md`, then do a pull request. 
+* If you have access to the GitHub, just update the repository yourself. 
 
 After `YYYY-MM-DD-yourPost.md` is in the `./content/post/` directory, [Netlify](https://www.netlify.com/) will build the blog automatically, the theme will be applied, and **your post will be online**. 
 
@@ -137,7 +140,7 @@ If you want to see the post with the blog theme applied, **but don't want to pos
 ```
 hiddenFromHomePage: yes
 ```
-You will have to set this to **no** for the blog to appear on the home page. The default is **no**.
+You will have to set this to **no** for the blog to appear on the home page. The default is **no**. You will still be able to visit your blog post but outsiders would have to guess your title to see it. 
 
 ### Locally serving the site using hugo
 
@@ -152,7 +155,7 @@ Writing a post in `.Rmd` is more complicated than writing a vanilla `.md` post.
 In order to write a blog post with embedded R code (including [html widgets](https://www.htmlwidgets.org/)), you will need to set up an environment to work in (I assume you have **Rstudio** installed). 
 
 1. Install [blogdown](https://bookdown.org/yihui/blogdown/installation.html) `install.packages("blogdown")`
-2. Install hugo in R `blogdown::install_hugo()`
+2. Install hugo in R `blogdown::install_hugo()` 
 3. Download the blog repository from GitHub
 4. Open the `gbifAnalyticsBlog.Rproj` file using Rstudio
 5. Click the `Addins` menu (you might need to restart Rstudio for the menu to appear)
@@ -162,15 +165,15 @@ In order to write a blog post with embedded R code (including [html widgets](htt
 8. Create a pull request to the main blog GitHub
 9. Post should should rebuild automatically
 
-Unless you edit a previously built `.Rmd`, you should not need to install any additional R packages. 
+Unless you edit a previously built `.Rmd`, you should not need to install any additional R packages (except the ones you use in your post). 
 
 ### Making changes to the blog appearance 
 
-Unfortunately, hugo does not document changing a theme appearance very well. [This](https://bwaycer.github.io/hugo_tutorial.hugo/themes/customizing/) I have found for how to edit a theme. 
+Unfortunately, hugo does not document how to change a theme appearance very well. [This](https://bwaycer.github.io/hugo_tutorial.hugo/themes/customizing/) is the best resource I have found for how to edit a theme. 
 
 >The following are key concepts for Hugo site customization. Hugo permits you to supplement or override any theme template or static file, with files in your working directory. When you use a theme cloned from its git repository, you do not edit the theme’s files directly. 
 
-If you want to change the blog appearance, you need to create folders and files in the **root directory** that match folders and files in the public directory. Hugo will copy and replace files in the root directory into the public directory. 
+If you want to change the blog appearance, you need to create folders and files in the **root directory** that match folders and files in the **public directory**. Hugo will copy and replace files in the root directory into the public directory. 
 
 ### css
 
