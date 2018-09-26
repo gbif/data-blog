@@ -51,7 +51,7 @@ sequenceDiagrams:
   options: ''
 ---
 
-# Some markdwon header text  
+# Some markdown header text  
 I am some text. 
 
 ```
@@ -91,7 +91,7 @@ Make sure to name your post something like `2018-08-14-finding-gridded-datasets.
 
 ### Getting your post on the blog 
 
-A post can be done by simply copying an `.md` into the gitHub `./content/post/` directory. 
+A post can be done by simply copying an `.md` into the GitHub `./content/post/` directory. 
 
 ```
 .
