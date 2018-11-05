@@ -1,5 +1,5 @@
 
-![](https://raw.githubusercontent.com/jhnwllr/gbifAnalyticsBlog/master/static/GBIF-analytics-blog.png)
+![](https://raw.githubusercontent.com/jhnwllr/gbifAnalyticsBlog/master/static/logo.png)
 
 The GBIF analytic blog is a [markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) blog generated using [hugo](https://gohugo.io/) and currently hosted using [Netlify](https://www.netlify.com/).  The blog uses a slightly modified theme called [even](https://github.com/olOwOlo/hugo-theme-even).  
 
@@ -290,6 +290,39 @@ Delete the `.md` file from from **2 locations**.
 ├───public
     └───post <- delete yourPost.md and image folder (if you added one)
 ```
+
+### How I added discoure.org comments 
+
+I connected the gbif community forum (https://discourse.gbif.org/) to the blog using the instructions found [here](https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963). 
+
+Following the instructions I added code below to `./layouts/partials/footer.html`: 
+
+```
+{{if eq .Section "post"}} 
+<div id='discourse-comments'></div>
+<script type="text/javascript">
+  DiscourseEmbed = { discourseUrl: 'https://datablog.trydiscourse.com/',
+                     discourseEmbedUrl: 'https://elegant-torvalds-f1f2a8.netlify.com{{ .URL }}' };
+
+  (function() {
+    var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+    d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+  })();
+</script>  
+{{end}}
+```
+Steps to take using discourse.gbif.org UI: 
+
+1. I went to **Admin > Customize > Embedding**
+2. Created New embeddable host
+3. Set **Path Whitelist** to `/post/.*` 
+4. Set **Post to Category** to uncategorized
+
+Things to watch out for: 
+
+* If you set **Post to Category** to something with a little lock icon the embedding will fail. This might be useful for previewing posts before posting to community forum. 
+* I had to add **{{ .URL }}** to the **discourseEmbedUrl**, since I am using hugo. 
 
 
 ### Netlify build settings 
