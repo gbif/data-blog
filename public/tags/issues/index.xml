@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Issues on GBIF Data Blog</title>
+    <link>/tags/issues/</link>
+    <description>Recent content in Issues on GBIF Data Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 26 Sep 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/issues/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>GBIF data quality issues and flags what do they mean?</title>
+      <link>/post/issues-and-flags/</link>
+      <pubDate>Wed, 26 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/issues-and-flags/</guid>
+      <description>FlagsNot all data that GBIF recieves is perfect or “fit-for-use” if you want to be politically correct.
+Data Quality flags are probably an under-used GBIF feature as some flags are not easy to understand.
+In this post I will demystify some of the data quality flags at GBIF.
+Coordinates RoundedThis flag gets the top spot because the names has two reasonable interpretations.</description>
+    </item>
+    
+  </channel>
+</rss>

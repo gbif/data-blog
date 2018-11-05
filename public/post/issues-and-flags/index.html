@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>GBIF data quality issues and flags what do they mean? - GBIF Data Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" />
+  <meta name="description" content="FlagsNot all data that GBIF recieves is perfect or “fit-for-use” if you want to be politically correct.
+Data Quality flags are probably an under-used GBIF feature as some flags are not easy to understand.
+In this post I will demystify some of the data quality flags at GBIF.
+Coordinates RoundedThis flag gets the top spot because the names has two reasonable interpretations." />
+
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.46" />
+
+
+<link rel="canonical" href="/post/issues-and-flags/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.2.0" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+<link rel="stylesheet" href="/css//custom.css">
+
+
+<meta property="og:title" content="GBIF data quality issues and flags what do they mean?" />
+<meta property="og:description" content="FlagsNot all data that GBIF recieves is perfect or “fit-for-use” if you want to be politically correct.
+Data Quality flags are probably an under-used GBIF feature as some flags are not easy to understand.
+In this post I will demystify some of the data quality flags at GBIF.
+Coordinates RoundedThis flag gets the top spot because the names has two reasonable interpretations." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/issues-and-flags/" />
+
+
+
+<meta property="article:published_time" content="2018-09-26T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2018-09-26T13:03:53&#43;02:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="GBIF data quality issues and flags what do they mean?">
+<meta itemprop="description" content="FlagsNot all data that GBIF recieves is perfect or “fit-for-use” if you want to be politically correct.
+Data Quality flags are probably an under-used GBIF feature as some flags are not easy to understand.
+In this post I will demystify some of the data quality flags at GBIF.
+Coordinates RoundedThis flag gets the top spot because the names has two reasonable interpretations.">
+
+
+<meta itemprop="datePublished" content="2018-09-26T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2018-09-26T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="216">
+
+
+
+<meta itemprop="keywords" content="issues,gbif,rstats,leaflet,maps api," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="GBIF data quality issues and flags what do they mean?"/>
+<meta name="twitter:description" content="FlagsNot all data that GBIF recieves is perfect or “fit-for-use” if you want to be politically correct.
+Data Quality flags are probably an under-used GBIF feature as some flags are not easy to understand.
+In this post I will demystify some of the data quality flags at GBIF.
+Coordinates RoundedThis flag gets the top spot because the names has two reasonable interpretations."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">GBIF Data Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">home</li>
+      </a><a href="/authors/">
+        <li class="mobile-menu-item">authors</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">tags</li>
+      </a><a href="https://www.gbif.org/">
+        <li class="mobile-menu-item">gbif.org</li>
+      </a><a href="https://www.gbif.org/analytics/global">
+        <li class="mobile-menu-item">global-trends</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">about</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">
+	<img src= "/logo.png" alt="GBIF-analytics-blog" style ="width:20%;">
+  </a>
+  
+	
+  
+  
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/authors/">authors</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://www.gbif.org/">gbif.org</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://www.gbif.org/analytics/global">global-trends</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">about</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">GBIF data quality issues and flags what do they mean?</h1>
+	  
+	  
+      <div class="post-author">John Waller</div>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-09-26 </span>
+        
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    
+    
+
+    
+    <div class="post-content">
+      <script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<script src="/rmarkdown-libs/jquery/jquery.min.js"></script>
+<link href="/rmarkdown-libs/leaflet/leaflet.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/leaflet/leaflet.js"></script>
+<link href="/rmarkdown-libs/leafletfix/leafletfix.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/Proj4Leaflet/proj4-compressed.js"></script>
+<script src="/rmarkdown-libs/Proj4Leaflet/proj4leaflet.js"></script>
+<link href="/rmarkdown-libs/rstudio_leaflet/rstudio_leaflet.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/leaflet-binding/leaflet.js"></script>
+
+
+<div id="flags" class="section level1">
+<h1>Flags</h1>
+<p>Not all data that GBIF recieves is perfect or “fit-for-use” if you want to be politically correct.</p>
+<p>Data Quality flags are probably an under-used GBIF feature as some flags are not easy to understand.</p>
+<blockquote>
+<p>In this post I will demystify some of the data quality flags at GBIF.</p>
+</blockquote>
+<div id="coordinates-rounded" class="section level3">
+<h3>Coordinates Rounded</h3>
+<p>This flag gets the top spot because the names has two reasonable interpretations.</p>
+<ol style="list-style-type: decimal">
+<li>GBIF believes the coordinates have been rounded.</li>
+<li><strong>GBIF rounded the coordinates because of too many decimal places.</strong></li>
+</ol>
+<p>It is in fact the <strong>second definition</strong> that is true.</p>
+<p>56.553677
+12.945172</p>
+</div>
+<div id="zero-coordinate" class="section level3">
+<h3>Zero Coordinate</h3>
+<p>Zero Coordinate is probably the easisest flag to understand. The record is located at <strong>(0.00°,0.00°)</strong>.</p>
+<ul>
+<li>A <strong>‘zero’</strong> only in <strong>both</strong> the <strong>decimallatitude</strong> and <strong>decimallongitude</strong> column will trigger this flag.</li>
+<li>A coordinate <strong>does not have to be exactly 0</strong> to trigger the flag.</li>
+<li>A record with both lat and long decimal places less than 0.00 will trigger the flag.</li>
+</ul>
+<p>For example, a point at (0.002383137,-0.003287347) will trigger the flag. <strong>0.001° is around 100 meters</strong>, so this is reasonable.</p>
+<p>Below I plot all the zero-coordinate flagged records in GBIF. We can see not all flagged records are <strong>exactly zero</strong>. Orange dots represent the GBIF maps view (which are rounded)</p>
+<div id="htmlwidget-1" style="width:768px;height:288px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG4326","code":"EPSG:4326","proj4def":"+proj=longlat +datum=WGS84 +no_defs","projectedBounds":null,"options":{"origin":[0,0],"resolutions":1}}},"setView":[[0,0],3,[]],"calls":[{"method":"addTiles","args":["https://tile.gbif.org/4326/omt/{z}/{x}/{y}@1x.png?style=gbif-geyser",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false}]},{"method":"addTiles","args":["https://api.gbif.org/v2/map/occurrence/adhoc/{z}/{x}/{y}@1x.png?style=orange.marker&issue=ZERO_COORDINATE",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false}]},{"method":"addMarkers","args":[0.001927418,0.001484396,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,"I am flagged but I am not exactly zero",{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addMarkers","args":[0.001927418,0.001484396,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,"I am exactly zero",{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[0.001927418,0.001927418],"lng":[0.001484396,0.001484396]}},"evals":[],"jsHooks":[]}</script>
+<!--more-->
+</div>
+</div>
+
+    </div>
+
+    
+    
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/issues/">issues</a>
+          
+          <a href="/tags/gbif/">gbif</a>
+          
+          <a href="/tags/rstats/">rstats</a>
+          
+          <a href="/tags/leaflet/">leaflet</a>
+          
+          <a href="/tags/maps-api/">maps api</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/gbif-maps-api-using-r-and-leaflet/">
+            <span class="next-text nav-default">Plot almost anything using the GBIF maps api</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+
+
+	  
+
+<div id='discourse-comments'>comments</div>
+
+<script type="text/javascript">
+  DiscourseEmbed = { discourseUrl: 'https://datablog.trydiscourse.com/',
+                     discourseEmbedUrl: 'https://elegant-torvalds-f1f2a8.netlify.com/post/gbif-maps-api-using-r-and-leaflet/' };
+
+  (function() {
+    var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+    d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+  })();
+</script>	  
+
+<div class = "copyright">
+<a class="theme-link" href="https://www.gbif.org/what-is-gbif">What is GBIF?</a>
+<span class="division">|</span>
+<a class="theme-link" href="https://www.gbif.org/developer/summary">API</a> 
+<span class="division">|</span>
+<a class="theme-link" href="https://www.gbif.org/faq">FAQ</a>
+</div>
+
+<div class = "copyright"> 
+<span class="theme-info">GBIF Secretariat</span> 
+<span class="theme-info">Universitetsparken 15</span> 
+<span class="theme-info">DK-2100 Copenhagen Ø</span> 
+<span class="theme-info" >Denmark</span>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+
+
+<script type="text/javascript" src="/dist/even.min.js?v=3.2.0"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

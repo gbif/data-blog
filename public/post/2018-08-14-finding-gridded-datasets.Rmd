@@ -1,8 +1,10 @@
 ---
 title: Finding Gridded Datasets
-author: John Waller
+authors: John Waller
 date: '2018-08-14'
 slug: finding-gridded-datasets
+tests:
+  - thing
 categories:
   - GBIF
 tags:
@@ -13,7 +15,7 @@ lastmod: '2018-08-14T15:47:18+02:00'
 keywords: []
 description: ''
 comment: no
-toc: no
+toc: ''
 autoCollapseToc: no
 postMetaInFooter: no
 hiddenFromHomePage: no
@@ -41,7 +43,7 @@ sequenceDiagrams:
 
 Gridded datasets are a known problem at GBIF. Many datasets have an equally-spaced points in a regular pattern. These datasets are usually systematic national surveys or data taken from some atlas ("so-called rasterized collection designs"). 
 
-> In this blog post I will describe how I found each gridded dataset in GBIF. 
+> In this blog post I will describe how I found gridded dataset in GBIF. 
 
 <img src="https://raw.githubusercontent.com/jhnwllr/charts/master/gridSnap.gif" width="60%" height="60%"
 style="display: block;margin-left: auto;margin-right: auto;"/>
@@ -112,8 +114,23 @@ style="display: block;margin-left: auto;margin-right: auto;"/>
 * At least **75M** occurrence records are gridded above 0.01 degrees. 
 * Most datasets (370) are **gridded at 0.1°** and only **12 datasets are gridded at greater than 0.40°** and 33 datasets are gridded **below 0.1°**.
 
-```{r, echo=FALSE, warning=FALSE,message=FALSE,fig.width=10,fig.height=8}
-```
+## You can manually review all datasets that passed my filters
+
+I have also plotted each of the datasets that have passed some basic filters  [here](https://github.com/jhnwllr/griddedDatasets/blob/master/pdf/reviewGriddedPlots.pdf). Around **530** datasets are large enough and well sampled enough to review.  
+
+```R
+library(dplyr)
+
+# first load the griddedDataSets.csv
+urlFile = 'https://raw.githubusercontent.com/jhnwllr/griddedDatasets/master/csv/griddedDataSets.csv'
+griddedDataSets = read.table(url(urlFile),header=TRUE,sep="\t",fill=TRUE,quote="")
+
+griddedDataSets = 
+griddedDataSets %>% 
+filter(countNN > 30) %>% # only get datasets with a reasonable count of NN distances 
+filter(distanceNN > 0.02) # filter out distances close to minimum 0.01 (important!)
+nrow(griddedDataSets) # datasets in the pdf
+``` 
 
 ## I want to filter gridded datasets from my download! 
 
@@ -250,6 +267,47 @@ addTiles(urlTemplate=tile)
 
 In the future, I may consider downloading a larger sample from each GBIF dataset in order to catch such cases. 
 
+# Coordiante Cleaner R package
+
+[Coordiante Cleaner](https://azizka.github.io/CoordinateCleaner/articles/Background_dataset_level_cleaning.html) is an R package written by Alexander Zizka. This package utilizes the **cd_round** function to find gridded or rasterized datasets. It uses a different methodology than what is described here, but is definitely worth taking a look at. 
+
+# Potential improvements
+
+### Different Projections
+Throughout this post I have implicitly been assuming all coordinates are projected using WGS84, but this might not be the case. For example, the UK uses something called [Ordnance Survey National Grid](https://en.wikipedia.org/wiki/Ordnance_Survey_National_Grid), and there probably other projections that might have caused me to miss a gridded dataset. 
+
+### Multiples of the most common distance 
+One could imagine looking for multiples of the most common distance as a way of detecting gridded datasets. This has the potential to improve performance, but it might also not help very much since we will likely be finding datasets that are already very 'griddy' and square. 
+
+### Gridded datasets not sampled exactly at the same point 
+Near **Alaska** you can see that sampling seems to have occurred around the same point, **but not exactly the same point**. 
+
+```r{r, echo=FALSE, warning=FALSE,message=FALSE,fig.width=8,fig.height=3}
+library(leaflet)
+
+# create the gbif-violet style raster layer 
+projection = '3857' # projection code
+style = 'style=gbif-violet' # style
+tileRaster = paste0('https://tile.gbif.org/',projection,'/omt/{z}/{x}/{y}@1x.png?',style)
+# create our polygons layer 
+prefix = 'https://api.gbif.org/v2/map/occurrence/density/{z}/{x}/{y}@1x.png?'
+polygons = 'style=classic.poly&bin=hex&hexPerTile=70' # ploygon styles 
+datasetKey = 'datasetKey=4fa7b334-ce0d-4e88-aaae-2e0c138d049e' # eBird key 
+tilePolygons = paste0(prefix)
+
+# plot the styled map
+leaflet() %>%
+setView(lng = -151.6040, lat = 60.3609, zoom = 04) %>%
+addTiles(urlTemplate=tileRaster) %>%
+addTiles(urlTemplate=tilePolygons)
+```
+
+### Looking for gridded datasets spaced smaller than 0.01 degrees
+There are probably many gridded datasets at smaller than 0.01 degrees. I chose not to look for these datasets since most environmental and climate data are at a resolution equal to or higher than 0.01 degrees. 
+
+### Sampling more than 1000 records from each dataset
+Probably the main issue preventing me finding all gridded datasets is low sampling. Large gridded datasets, but with very few unique lat-long points, will not be well sampled enough at 1000 records. **Probably higher sampling will locate more datasets**. 
+
 ### Computing griddy-ness scores for a new download (expensive)
 
 One might want to compute griddy-ness scores for a new download. Or we might want to increase the sampling of the datasets to be more confident that we are catching all gridded datasets. This can be done in pricipal using [rgbif](https://cran.r-project.org/web/packages/rgbif/index.html). In general though this process will take longer and **might be difficult to acheive if there are very many datasets**. 
@@ -346,21 +404,5 @@ cleanBuntingData = buntingData[!buntingData$datasetKey %in% griddedDataSets$data
 
 ```
 
-# Coordiante Cleaner R package
-
-[Coordiante Cleaner](https://azizka.github.io/CoordinateCleaner/articles/Background_dataset_level_cleaning.html) is an R package written by Alexander Zizka. This package utilizes the **cd_round** function to find gridded or rasterized datasets. It uses a different methodology than what is described here, but is definitely worth taking a look at. 
-
-# Potential improvements
-
-### Different Projections
-Throughout this post I have implicitly been assuming all coordinates are projected using WGS84, but this might not be the case specifically for 
-
-Things that might still work but probably **will not** improve performance: 
-
-* including more complex features
-* including more nearest neighbor features
-* including multiples of the most common distance
-
-One could imagine looking for multiples of the most common distance as a way of detecting gridded datasets. However, this will likely not improve performance because it will only help identify datasets that are already very obviously gridded, and probably just add unnecessary complexity.
 
 <!--more-->

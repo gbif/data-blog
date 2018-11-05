@@ -1,6 +1,6 @@
 ---
 title: Plot almost anything using the GBIF maps api
-author: John Waller
+authors: John Waller
 date: '2018-09-19'
 slug: gbif-maps-api-using-r-and-leaflet
 categories:
@@ -14,7 +14,7 @@ lastmod: '2018-09-19T13:49:20+02:00'
 keywords: []
 description: ''
 comment: no
-toc: no
+toc: ''
 autoCollapseToc: no
 postMetaInFooter: no
 hiddenFromHomePage: no
@@ -51,7 +51,21 @@ This is cool but also not very interesting or useful. But the GBIF maps api is m
 
 I will use the [leaflet R package](https://rstudio.github.io/leaflet/), which is a wrapper to the popular [javascript library](https://leafletjs.com/).
 
-```{r, echo=TRUE, warning=FALSE,message=FALSE,fig.width=8,fig.height=3}
+```r
+library(leaflet)
+
+prefix = 'https://api.gbif.org/v2/map/occurrence/density/{z}/{x}/{y}@1x.png?'
+style = 'style=purpleYellow.point'
+tile = paste0(prefix,style)
+
+leaflet() %>%
+setView(lng = 20, lat = 20, zoom = 01) %>%
+addTiles() %>%  
+addTiles(urlTemplate=tile)
+
+```
+
+```{r, echo=FALSE, warning=FALSE,message=FALSE,fig.width=8,fig.height=3}
 library(leaflet)
 
 prefix = 'https://api.gbif.org/v2/map/occurrence/density/{z}/{x}/{y}@1x.png?'

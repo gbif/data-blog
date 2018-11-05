@@ -234,7 +234,8 @@ html {
 body {
     padding: 0;
     margin: 0;
-    font-family: Source Sans Pro, Helvetica Neue, Arial, sans-serif;
+    font-family: Roboto, Helvetica Neue, Arial, sans-serif;
+    /* font-family: Source Sans Pro, Helvetica Neue, Arial, sans-serif; */
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -242,7 +243,7 @@ body {
     color: #34495e;
     background: #fefefe;
     scroll-behavior: smooth;
-    border-top: 3px solid #c05b4d
+    /* border-top: 3px solid #c05b4d */
 }
 
 @media screen and (max-width:800px) {
@@ -464,7 +465,8 @@ h6 {
 }
 
 .header .logo-wrapper {
-    float: left
+    text-align: center;
+	/* float: left */
 }
 
 .header .logo-wrapper .logo {
@@ -478,7 +480,8 @@ h6 {
 }
 
 .header .site-navbar {
-    float: right
+    /* float: left; */
+	text-align: center;
 }
 
 .header .site-navbar .menu {
@@ -881,6 +884,10 @@ h6 {
 
 .post .post-content figure.highlight.language-ruby>table:after {
     content: "Ruby"
+}
+
+.post .post-content figure.highlight.language-r>table:after {
+    content: "R"
 }
 
 .post .post-content figure.highlight.language-sql>table:after {
@@ -1437,6 +1444,10 @@ h6 {
 .archive .archive-post {
     padding: 3px 20px;
     border-left: 1px solid #cacaca
+}
+
+.post-author {
+	color: #8a8a8a
 }
 
 .archive .archive-post .archive-post-time {

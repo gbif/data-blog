@@ -21,7 +21,7 @@ Posts should have a specific header text.
 ```
 ---
 title: Test Post
-author: john
+authors: john
 date: '2018-09-21'
 slug: test-post
 categories:
@@ -33,7 +33,7 @@ lastmod: '2018-09-21T15:24:11+02:00'
 keywords: []
 description: ''
 comment: no
-toc: no
+toc: ''
 autoCollapseToc: no
 postMetaInFooter: no
 hiddenFromHomePage: no
@@ -68,7 +68,6 @@ categories:
 tags:
   - test tag
   - test
-lastmod: '2018-09-21T15:24:11+02:00'
 
 (The rest of the header text)
 
@@ -81,14 +80,6 @@ You can download a simple `.md` blog post template `./content/post/2025-09-24-te
 
 [Hugo](https://gohugo.io/) is a simple static site generator that will turn `.md` files into nicely styled html files. 
 
-### Naming a post
-
-Make sure to name your post something like `2018-08-14-finding-gridded-datasets.md` with `-` for spaces and the `YYYY-MM-DD` date at the front. The date at the front determines what order the post will appear on the blog. 
-
-* 2018-05-23-I-traveled-back-in-time.md
-* 2019-01-30-GBIF-Pipelines-How-To-Use.md
-* 2030-02-12-How-To-Use-VR-Dataviewer-api.md
-
 ### Getting your post on the blog 
 
 A post can be done by simply copying an `.md` into the GitHub `./content/post/` directory. 
@@ -96,15 +87,15 @@ A post can be done by simply copying an `.md` into the GitHub `./content/post/` 
 ```
 .
 ├───content
-    └───post <- put YYYY-MM-DD-yourPost.md here
+    └───post <- put yourPost.md here
 ```
 
 I am still working out the best way to do this in practice. 
 
 Some options: 
 
-* Send me the `YYYY-MM-DD-yourPost.md` file **jwaller@gbif.org**
-* Fork the repository and add the `YYYY-MM-DD-yourPost.md`, then do a pull request. 
+* Send me the `yourPost.md` file **jwaller@gbif.org**
+* Fork the repository and add the `yourPost.md`, then do a pull request. 
 * If you have access to the GitHub, just update the repository yourself. 
 
 After `YYYY-MM-DD-yourPost.md` is in the `./content/post/` directory, [Netlify](https://www.netlify.com/) will build the blog automatically, the theme will be applied, and **your post will be online**. 
@@ -200,6 +191,82 @@ To replace the flavicon change the files in the root `./static/`.
     └───GBIF-analytics-blog.png
 ```
 
+### How I added the logo to the blog
+
+To add the logo by editing `./layouts/partials/header.html`. 
+
+```
+<div class="logo-wrapper">
+  <a href="{{ "/" | relLangURL }}" class="logo">
+	<img src= "{{ .Site.Params.logoSrc }}" alt="GBIF-analytics-blog" style ="width:20%;">
+  </a>
+  <a href="{{ "/" | relLangURL }}" class="gbifLogo">
+	<img src= "{{ .Site.Params.gbifLogoSrc }}" alt="GBIF-logo" style ="width:20%;">
+  </a>
+  
+</div>
+
+```
+
+### How I added author names 
+
+I added author names by editting 
+
+* `./layouts/post/single.html` 
+* `./layouts/post/summary.html`
+
+I added the following lines. 
+```
+<div class="post-author">{{ .Params.author }}</div>
+```
+
+### Hightlight js
+
+The blog comes with syntax highlighting from the `highlight.js` library. 
+
+Currently it supports the following languages:
+
+* Apache  
+* Bash  
+* C#  
+* C++  
+* CSS  
+* CoffeeScript  
+* Diff  
+* HTML
+* XML
+* HTTP
+* Ini
+* TOML
+* JSON
+* Java
+* JavaScript
+* Makefile
+* Markdown
+* Nginx
+* Objective-C
+* PHP
+* Perl
+* Properties
+* Python
+* Ruby
+* R
+* SQL  
+* Shell 
+* Session
+
+You can add support for a language **not in the list above** by downloading a custom package from https://highlightjs.org/download/. Then replace the existing `highlight.pack.js` file with the downloaded one in `./static/lib/highlight/`. 
+
+Additionally, to make the language **name** appear at the top of the code block, instead of "code" add something like the following to `/static/dist/even.min.css`. 
+
+```
+.post .post-content figure.highlight.language-r>table:after {
+    content: "R"
+}
+
+```
+
+
 ### Other blog settings 
 
 Other settings in the blog can be set in the `./config.toml`. 
@@ -223,6 +290,7 @@ Delete the `.md` file from from **2 locations**.
 ├───public
     └───post <- delete yourPost.md and image folder (if you added one)
 ```
+
 
 ### Netlify build settings 
 

@@ -1,17 +1,11 @@
 <div class="logo-wrapper">
   <a href="{{ "/" | relLangURL }}" class="logo">
-	
-	<img src="https://raw.githubusercontent.com/jhnwllr/gbifAnalyticsBlog/master/static/GBIF-analytics-blog.png" alt="GBIF-analytics-blog" style ="width:50%;">
-	<!-- <img src="GBIF-analytics-blog.png" alt="GBIF-analytics-blog" style ="width:50%;"> -->
-	<!-- <object data="GBIF-analytics-blog.svg" type="image/svg+xml"> -->
-    <!-- <span>SVG image</span> -->
-    <!-- </object> -->
-	<!-- {{- if .Site.Params.logoTitle -}} -->
-      <!-- {{ .Site.Params.logoTitle }} -->
-    <!-- {{- else -}} -->
-      <!-- {{ .Site.Title }} -->
-    <!-- {{- end -}} -->
+	<img src= "{{ .Site.Params.logoSrc }}" alt="GBIF-analytics-blog" style ="width:20%;">
   </a>
+  <!-- <a href="https://www.gbif.org/" class="logo"> -->
+	<!-- <img src= "{{ .Site.Params.gbifLogoSrc }}" alt="GBIF-logo" style ="width:20%;"> -->
+  <!-- </a> -->
+  
 </div>
 
 <nav class="site-navbar">

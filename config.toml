@@ -1,7 +1,7 @@
 baseURL = "http://localhost:1313/"
 languageCode = "en"
 defaultContentLanguage = "en"                             # en / zh-cn / ... (This field determines which i18n file to use)
-title = "GBIF - Analytics Blog"
+title = "GBIF Data Blog"
 enableRobotsTXT = true
 enableEmoji = true
 theme = "hugo-theme-even"
@@ -22,16 +22,35 @@ copyright = ""            # default: author.name ↓        #
   filename = "sitemap.xml"
 
 [[menu.main]]             # config your menu              # 
-  name = "Home"
-  weight = 10
+  name = "home"
+  weight = 1
   identifier = "home"
   url = "/"
+[[menu.main]]             # config your menu              # 
+  name = "authors"
+  weight = 2
+  identifier = "authors"
+  url = "/authors/"
 [[menu.main]]
-  name = "Tags"
-  weight = 30
+  name = "tags"
+  weight = 3
   identifier = "tags"
   url = "/tags/"
+[[menu.main]]
+  name = "gbif.org"
+  weight = 4
+  identifier = "gbif"
+  url = "https://www.gbif.org/"
+[[menu.main]]
+  name = "global-trends"
+  weight = 5
+  identifier = "analytics"
+  url = "https://www.gbif.org/analytics/global"
 
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+  authors = "authors"
 
 [params]
   version = "3.x"           # Used to give a friendly message when you have an incompatible update
@@ -39,8 +58,10 @@ copyright = ""            # default: author.name ↓        #
 
   since = "2017"            # Site creation time          # 
 
-  # site info (optional)                                  # 
-  logoTitle = "gbif analytics blog"        # default: the title value    # 
+  # site info (optional)     
+  logoSrc = "/logo.png"
+  gbifLogoSrc= "/GBIF-2015.png"
+  logoTitle = "GBIF Data Blog"        # default: the title value    # 
   keywords = ["Hugo", "theme","even"]
   description = "Hugo theme even example site."
 
@@ -58,7 +79,7 @@ copyright = ""            # default: author.name ↓        #
 
   # 
   # Some global options, you can also close or open something in front matter for a single post, see more information from `archetypes/default.md`.
-  toc = true                                                                            # 
+  toc = false                                                                            # 
   autoCollapseToc = false   # Auto expand and collapse toc                              # 
   fancybox = true           # see https://github.com/fancyapps/fancybox                 # 
   mathjax = false           # see https://www.mathjax.org/                              # 
@@ -122,22 +143,11 @@ copyright = ""            # default: author.name ↓        #
     enable = false
     options = ""            # default: "{theme: 'simple'}"
 
-  [params.busuanzi]         # count web traffic by busuanzi                             # 
-    enable = false
-    siteUV = true
-    sitePV = true
-    pagePV = true
-
-  [params.reward]                                         # 
-    enable = false
-    wechat = "/path/to/your/wechat-qr-code.png"           # 
-    alipay = "/path/to/your/alipay-qr-code.png"           # 
-
   [params.social]                                         # 
-    c-twitter = "https://twitter.com/GBIF?lang=en"
-    g-github = "https://github.com/gbif"
-    m-instagram = "https://www.instagram.com/gbifs/?hl=en"
-
+    a-github = "https://github.com/gbif"
+    b-twitter = "https://twitter.com/GBIF?lang=en"
+    c-instagram = "https://www.instagram.com/gbifs/?hl=en"
+    d-vimeo = "https://github.com/gbif"
 # 
 # Uncomment these options to make hugo output .md files.
 #[mediaTypes]

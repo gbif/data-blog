@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>John Waller on GBIF Data Blog</title>
+    <link>/authors/john-waller/</link>
+    <description>Recent content in John Waller on GBIF Data Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 26 Sep 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/authors/john-waller/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>GBIF data quality issues and flags what do they mean?</title>
+      <link>/post/issues-and-flags/</link>
+      <pubDate>Wed, 26 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/issues-and-flags/</guid>
+      <description>FlagsNot all data that GBIF recieves is perfect or “fit-for-use” if you want to be politically correct.
+Data Quality flags are probably an under-used GBIF feature as some flags are not easy to understand.
+In this post I will demystify some of the data quality flags at GBIF.
+Coordinates RoundedThis flag gets the top spot because the names has two reasonable interpretations.</description>
+    </item>
+    
+    <item>
+      <title>Plot almost anything using the GBIF maps api</title>
+      <link>/post/gbif-maps-api-using-r-and-leaflet/</link>
+      <pubDate>Wed, 19 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/gbif-maps-api-using-r-and-leaflet/</guid>
+      <description>The GBIF maps api is an under-used but powerful web service provided by GBIF. The maps api is used by the main GBIF portal to create the maps including the big map used on gbif.org. We can make a simple call to the api by pasting the link below into a web browser.
+https://api.gbif.org/v2/map/occurrence/density/0/0/0@1x.png?style=purpleYellow.pointYou should end up with an image like this.This api call is composed essentially of two elements</description>
+    </item>
+    
+    <item>
+      <title>Finding Gridded Datasets</title>
+      <link>/post/finding-gridded-datasets/</link>
+      <pubDate>Tue, 14 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/finding-gridded-datasets/</guid>
+      <description>EBCC Atlas of European Breeding Birds (gridded)Naturalis Biodiversity Center (NL) - Aves (not gridded)Gridded data in GBIFGridded datasets are a known problem at GBIF. Many datasets have an equally-spaced points in a regular pattern. These datasets are usually systematic national surveys or data taken from some atlas (“so-called rasterized collection designs”).
+In this blog post I will describe how I found gridded dataset in GBIF.</description>
+    </item>
+    
+  </channel>
+</rss>

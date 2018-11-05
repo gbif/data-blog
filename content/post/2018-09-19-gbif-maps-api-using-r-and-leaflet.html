@@ -1,6 +1,6 @@
 ---
 title: Plot almost anything using the GBIF maps api
-author: John Waller
+authors: John Waller
 date: '2018-09-19'
 slug: gbif-maps-api-using-r-and-leaflet
 categories:
@@ -14,7 +14,7 @@ lastmod: '2018-09-19T13:49:20+02:00'
 keywords: []
 description: ''
 comment: no
-toc: no
+toc: ''
 autoCollapseToc: no
 postMetaInFooter: no
 hiddenFromHomePage: no
@@ -65,7 +65,8 @@ tile = paste0(prefix,style)
 leaflet() %&gt;%
 setView(lng = 20, lat = 20, zoom = 01) %&gt;%
 addTiles() %&gt;%  
-addTiles(urlTemplate=tile)</code></pre>
+addTiles(urlTemplate=tile)
+</code></pre>
 <div id="htmlwidget-1" style="width:768px;height:288px;" class="leaflet html-widget"></div>
 <script type="application/json" data-for="htmlwidget-1">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"setView":[[20,20],1,[]],"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addTiles","args":["https://api.gbif.org/v2/map/occurrence/density/{z}/{x}/{y}@1x.png?style=purpleYellow.point",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false}]}]},"evals":[],"jsHooks":[]}</script>
 <div id="a-single-dataset-with-polygons" class="section level2">

@@ -1,0 +1,78 @@
+---
+title: GBIF data quality issues and flags what do they mean? 
+authors: John Waller
+date: '2018-09-26'
+slug: issues-and-flags
+categories: []
+tags:
+  - issues
+  - gbif
+  - rstats
+  - leaflet
+  - maps api
+lastmod: '2018-09-26T13:03:53+02:00'
+keywords: []
+description: ''
+comment: no
+toc: ''
+autoCollapseToc: no
+postMetaInFooter: no
+hiddenFromHomePage: no
+contentCopyright: no
+reward: no
+mathjax: no
+mathjaxEnableSingleDollar: no
+mathjaxEnableAutoNumber: no
+hideHeaderAndFooter: no
+flowchartDiagrams:
+  enable: no
+  options: ''
+sequenceDiagrams:
+  enable: no
+  options: ''
+---
+
+<script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<script src="/rmarkdown-libs/jquery/jquery.min.js"></script>
+<link href="/rmarkdown-libs/leaflet/leaflet.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/leaflet/leaflet.js"></script>
+<link href="/rmarkdown-libs/leafletfix/leafletfix.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/Proj4Leaflet/proj4-compressed.js"></script>
+<script src="/rmarkdown-libs/Proj4Leaflet/proj4leaflet.js"></script>
+<link href="/rmarkdown-libs/rstudio_leaflet/rstudio_leaflet.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/leaflet-binding/leaflet.js"></script>
+
+
+<div id="flags" class="section level1">
+<h1>Flags</h1>
+<p>Not all data that GBIF recieves is perfect or “fit-for-use” if you want to be politically correct.</p>
+<p>Data Quality flags are probably an under-used GBIF feature as some flags are not easy to understand.</p>
+<blockquote>
+<p>In this post I will demystify some of the data quality flags at GBIF.</p>
+</blockquote>
+<div id="coordinates-rounded" class="section level3">
+<h3>Coordinates Rounded</h3>
+<p>This flag gets the top spot because the names has two reasonable interpretations.</p>
+<ol style="list-style-type: decimal">
+<li>GBIF believes the coordinates have been rounded.</li>
+<li><strong>GBIF rounded the coordinates because of too many decimal places.</strong></li>
+</ol>
+<p>It is in fact the <strong>second definition</strong> that is true.</p>
+<p>56.553677
+12.945172</p>
+</div>
+<div id="zero-coordinate" class="section level3">
+<h3>Zero Coordinate</h3>
+<p>Zero Coordinate is probably the easisest flag to understand. The record is located at <strong>(0.00°,0.00°)</strong>.</p>
+<ul>
+<li>A <strong>‘zero’</strong> only in <strong>both</strong> the <strong>decimallatitude</strong> and <strong>decimallongitude</strong> column will trigger this flag.</li>
+<li>A coordinate <strong>does not have to be exactly 0</strong> to trigger the flag.</li>
+<li>A record with both lat and long decimal places less than 0.00 will trigger the flag.</li>
+</ul>
+<p>For example, a point at (0.002383137,-0.003287347) will trigger the flag. <strong>0.001° is around 100 meters</strong>, so this is reasonable.</p>
+<p>Below I plot all the zero-coordinate flagged records in GBIF. We can see not all flagged records are <strong>exactly zero</strong>. Orange dots represent the GBIF maps view (which are rounded)</p>
+<div id="htmlwidget-1" style="width:768px;height:288px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG4326","code":"EPSG:4326","proj4def":"+proj=longlat +datum=WGS84 +no_defs","projectedBounds":null,"options":{"origin":[0,0],"resolutions":1}}},"setView":[[0,0],3,[]],"calls":[{"method":"addTiles","args":["https://tile.gbif.org/4326/omt/{z}/{x}/{y}@1x.png?style=gbif-geyser",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false}]},{"method":"addTiles","args":["https://api.gbif.org/v2/map/occurrence/adhoc/{z}/{x}/{y}@1x.png?style=orange.marker&issue=ZERO_COORDINATE",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false}]},{"method":"addMarkers","args":[0.001927418,0.001484396,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,"I am flagged but I am not exactly zero",{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addMarkers","args":[0.001927418,0.001484396,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,"I am exactly zero",{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[0.001927418,0.001927418],"lng":[0.001484396,0.001484396]}},"evals":[],"jsHooks":[]}</script>
+<!--more-->
+</div>
+</div>

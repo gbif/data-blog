@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Plot almost anything using the GBIF maps api - GBIF - Analytics Blog</title>
+  <title>Plot almost anything using the GBIF maps api - GBIF Data Blog</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="John Waller" />
+<meta name="author" content="olOwOlo" />
   <meta name="description" content="The GBIF maps api is an under-used but powerful web service provided by GBIF. The maps api is used by the main GBIF portal to create the maps including the big map used on gbif.org. We can make a simple call to the api by pasting the link below into a web browser.
 https://api.gbif.org/v2/map/occurrence/density/0/0/0@1x.png?style=purpleYellow.pointYou should end up with an image like this.This api call is composed essentially of two elements" />
 
@@ -104,7 +104,7 @@ https://api.gbif.org/v2/map/occurrence/density/0/0/0@1x.png?style=purpleYellow.p
 <body>
   <div id="mobile-navbar" class="mobile-navbar">
   <div class="mobile-header-logo">
-    <a href="/" class="logo">gbif analytics blog</a>
+    <a href="/" class="logo">GBIF Data Blog</a>
   </div>
   <div class="mobile-navbar-icon">
     <span></span>
@@ -115,11 +115,17 @@ https://api.gbif.org/v2/map/occurrence/density/0/0/0@1x.png?style=purpleYellow.p
 <nav id="mobile-menu" class="mobile-menu slideout-menu">
   <ul class="mobile-menu-list">
     <a href="/">
-        <li class="mobile-menu-item">Home</li>
+        <li class="mobile-menu-item">home</li>
+      </a><a href="/authors/">
+        <li class="mobile-menu-item">authors</li>
       </a><a href="/tags/">
-        <li class="mobile-menu-item">Tags</li>
+        <li class="mobile-menu-item">tags</li>
+      </a><a href="https://www.gbif.org/">
+        <li class="mobile-menu-item">gbif.org</li>
+      </a><a href="https://www.gbif.org/analytics/global">
+        <li class="mobile-menu-item">global-trends</li>
       </a><a href="/about/">
-        <li class="mobile-menu-item">About</li>
+        <li class="mobile-menu-item">about</li>
       </a>
   </ul>
 </nav>
@@ -127,26 +133,28 @@ https://api.gbif.org/v2/map/occurrence/density/0/0/0@1x.png?style=purpleYellow.p
     <header id="header" class="header">
         <div class="logo-wrapper">
   <a href="/" class="logo">
-	
-	<img src="https://raw.githubusercontent.com/jhnwllr/gbifAnalyticsBlog/master/static/GBIF-analytics-blog.png" alt="GBIF-analytics-blog" style ="width:50%;">
-	
-	
-    
-    
-	
-      
-    
+	<img src= "/logo.png" alt="GBIF-analytics-blog" style ="width:20%;">
   </a>
+  
+	
+  
+  
 </div>
 
 <nav class="site-navbar">
   <ul id="menu" class="menu">
     <li class="menu-item">
-        <a class="menu-item-link" href="/">Home</a>
+        <a class="menu-item-link" href="/">home</a>
       </li><li class="menu-item">
-        <a class="menu-item-link" href="/tags/">Tags</a>
+        <a class="menu-item-link" href="/authors/">authors</a>
       </li><li class="menu-item">
-        <a class="menu-item-link" href="/about/">About</a>
+        <a class="menu-item-link" href="/tags/">tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://www.gbif.org/">gbif.org</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://www.gbif.org/analytics/global">global-trends</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">about</a>
       </li>
   </ul>
 </nav>
@@ -159,6 +167,9 @@ https://api.gbif.org/v2/map/occurrence/density/0/0/0@1x.png?style=purpleYellow.p
     
     <header class="post-header">
       <h1 class="post-title">Plot almost anything using the GBIF maps api</h1>
+	  
+	  
+      <div class="post-author">John Waller</div>
 
       <div class="post-meta">
         <span class="post-time"> 2018-09-19 </span>
@@ -213,7 +224,8 @@ tile = paste0(prefix,style)
 leaflet() %&gt;%
 setView(lng = 20, lat = 20, zoom = 01) %&gt;%
 addTiles() %&gt;%  
-addTiles(urlTemplate=tile)</code></pre>
+addTiles(urlTemplate=tile)
+</code></pre>
 <div id="htmlwidget-1" style="width:768px;height:288px;" class="leaflet html-widget"></div>
 <script type="application/json" data-for="htmlwidget-1">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"setView":[[20,20],1,[]],"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addTiles","args":["https://api.gbif.org/v2/map/occurrence/density/{z}/{x}/{y}@1x.png?style=purpleYellow.point",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false}]}]},"evals":[],"jsHooks":[]}</script>
 <div id="a-single-dataset-with-polygons" class="section level2">
@@ -363,9 +375,9 @@ addMarkers(139.068,36.4910) # country centroid of Japan</code></pre>
       
       <nav class="post-nav">
         
-          <a class="prev" href="/post/template/">
+          <a class="prev" href="/post/issues-and-flags/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Template</span>
+            <span class="prev-text nav-default">GBIF data quality issues and flags what do they mean?</span>
             <span class="prev-text nav-mobile">Prev</span>
           </a>
         
@@ -384,11 +396,58 @@ addMarkers(139.068,36.4910) # country centroid of Japan</code></pre>
     </main>
 
     <footer id="footer" class="footer">
-      <div class="social-links">
-      <a href="https://twitter.com/GBIF?lang=en" class="iconfont icon-twitter" title="twitter"></a>
-      <a href="https://github.com/gbif" class="iconfont icon-github" title="github"></a>
-      <a href="https://www.instagram.com/gbifs/?hl=en" class="iconfont icon-instagram" title="instagram"></a>
-  <a href="/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+      
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+
+
+	  
+
+<div id='discourse-comments'>comments</div>
+
+<script type="text/javascript">
+  DiscourseEmbed = { discourseUrl: 'https://datablog.trydiscourse.com/',
+                     discourseEmbedUrl: 'https://elegant-torvalds-f1f2a8.netlify.com/post/gbif-maps-api-using-r-and-leaflet/' };
+
+  (function() {
+    var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+    d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+  })();
+</script>	  
+
+<div class = "copyright">
+<a class="theme-link" href="https://www.gbif.org/what-is-gbif">What is GBIF?</a>
+<span class="division">|</span>
+<a class="theme-link" href="https://www.gbif.org/developer/summary">API</a> 
+<span class="division">|</span>
+<a class="theme-link" href="https://www.gbif.org/faq">FAQ</a>
+</div>
+
+<div class = "copyright"> 
+<span class="theme-info">GBIF Secretariat</span> 
+<span class="theme-info">Universitetsparken 15</span> 
+<span class="theme-info">DK-2100 Copenhagen Ø</span> 
+<span class="theme-info" >Denmark</span>
 </div>
 
 <div class="copyright">
@@ -401,18 +460,6 @@ addMarkers(139.068,36.4910) # country centroid of Japan</code></pre>
     <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
   </span>
 
-  
-
-  <span class="copyright-year">
-    &copy; 
-    
-      2017 - 
-    2018
-    <span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">olOwOlo</span>
-  </span>
 </div>
     </footer>
 

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Test on GBIF - Analytics Blog</title>
+    <link>/categories/test/</link>
+    <description>Recent content in Test on GBIF - Analytics Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 14 Aug 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/test/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Finding Gridded Datasets</title>
+      <link>/post/finding-gridded-datasets/</link>
+      <pubDate>Tue, 14 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/finding-gridded-datasets/</guid>
+      <description>noEBCC Atlas of European Breeding Birds (gridded)Naturalis Biodiversity Center (NL) - Aves (not gridded)Gridded data in GBIFGridded datasets are a known problem at GBIF. Many datasets have an equally-spaced points in a regular pattern. These datasets are usually systematic national surveys or data taken from some atlas (“so-called rasterized collection designs”).
+In this blog post I will describe how I found gridded dataset in GBIF.</description>
+    </item>
+    
+  </channel>
+</rss>

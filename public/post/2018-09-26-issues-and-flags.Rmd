@@ -1,0 +1,113 @@
+---
+title: GBIF data quality issues and flags what do they mean? 
+authors: John Waller
+date: '2018-09-26'
+slug: issues-and-flags
+categories: []
+tags:
+  - issues
+  - gbif
+  - rstats
+  - leaflet
+  - maps api
+lastmod: '2018-09-26T13:03:53+02:00'
+keywords: []
+description: ''
+comment: no
+toc: ''
+autoCollapseToc: no
+postMetaInFooter: no
+hiddenFromHomePage: no
+contentCopyright: no
+reward: no
+mathjax: no
+mathjaxEnableSingleDollar: no
+mathjaxEnableAutoNumber: no
+hideHeaderAndFooter: no
+flowchartDiagrams:
+  enable: no
+  options: ''
+sequenceDiagrams:
+  enable: no
+  options: ''
+---
+
+# Flags
+Not all data that GBIF recieves is perfect or "fit-for-use" if you want to be politically correct.
+
+Data Quality flags are probably an under-used GBIF feature as some flags are not easy to understand. 
+
+> In this post I will demystify some of the data quality flags at GBIF. 
+
+### Coordinates Rounded 
+
+This flag gets the top spot because the names has two reasonable interpretations. 
+
+1. GBIF believes the coordinates have been rounded. 
+2. **GBIF rounded the coordinates because of too many decimal places.**
+
+It is in fact the **second definition** that is true. 
+
+56.553677
+12.945172
+
+
+
+### Zero Coordinate
+
+Zero Coordinate is probably the easisest flag to understand. The record is located at **(0.00°,0.00°)**. 
+
+* A **'zero'** only in **both** the **decimallatitude** and **decimallongitude** column will trigger this flag. 
+* A coordinate **does not have to be exactly 0** to trigger the flag. 
+* A record with both lat and long decimal places less than 0.00 will trigger the flag. 
+
+For example, a point at (0.002383137,-0.003287347) will trigger the flag. **0.001° is around 100 meters**, so this is reasonable. 
+
+Below I plot all the zero-coordinate flagged records in GBIF. We can see not all flagged records are **exactly zero**. Orange dots represent the GBIF maps view (which are rounded)
+
+```{r, echo=FALSE, warning=FALSE,message=FALSE,fig.width=8,fig.height=3}
+library(leaflet)
+
+# need to define new projection. Only this projection will work with custom queries. 
+epsg4326 <- leafletCRS(crsClass = "L.CRS.EPSG4326", code = "EPSG:4326",
+            proj4def = "+proj=longlat +datum=WGS84 +no_defs",
+            resolutions = 1,
+            origin =c(0,0)
+            )
+
+# create the gbif-geyser style raster layer 
+projection <- '4326' # must use this projection code for custom maps
+style <- 'style=gbif-geyser' # I think any style will work 
+tileRaster <- paste0('https://tile.gbif.org/',projection,'/omt/{z}/{x}/{y}@1x.png?',style)
+
+# create the data layer with dragonfly data # Note the "adhoc"
+prefix <- 'https://api.gbif.org/v2/map/occurrence/adhoc/{z}/{x}/{y}@1x.png?'
+# make query 
+style <- 'style=orange.marker' # style of polygons 
+taxonKey = 'taxonKey=789' # taxon key of Odonata 
+country = 'country=JP' # country code of Japan
+issue= 'issue=ZERO_COORDINATE'
+tilePolygons = paste0(prefix,style,'&',issue)
+
+
+# plot the map 
+leaflet(options = leafletOptions(crs = epsg4326)) %>%
+setView(lng=0,lat=0,zoom=3) %>% 
+addTiles(urlTemplate=tileRaster) %>%
+addTiles(urlTemplate=tilePolygons) %>%
+addMarkers(0.001484396,0.001927418, label = "I am flagged but I am not exactly zero") %>%
+addMarkers(0.001484396,0.001927418, label = "I am exactly zero")
+     
+```
+
+
+
+
+
+
+
+
+
+
+
+<!--more-->

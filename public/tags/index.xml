@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on GBIF - Analytics Blog</title>
+    <title>Tags on GBIF Data Blog</title>
     <link>/tags/</link>
-    <description>Recent content in Tags on GBIF - Analytics Blog</description>
+    <description>Recent content in Tags on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 14 Aug 2018 00:00:00 +0000</lastBuildDate>
@@ -32,7 +32,7 @@
     <item>
       <title>Gbif</title>
       <link>/tags/gbif/</link>
-      <pubDate>Wed, 24 Sep 2025 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 26 Sep 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/gbif/</guid>
       <description></description>
@@ -48,9 +48,18 @@
     </item>
     
     <item>
+      <title>Issues</title>
+      <link>/tags/issues/</link>
+      <pubDate>Wed, 26 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/issues/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Leaflet</title>
       <link>/tags/leaflet/</link>
-      <pubDate>Wed, 24 Sep 2025 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 26 Sep 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/leaflet/</guid>
       <description></description>
@@ -59,16 +68,25 @@
     <item>
       <title>Maps</title>
       <link>/tags/maps/</link>
-      <pubDate>Wed, 24 Sep 2025 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 19 Sep 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/maps/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>Maps api</title>
+      <link>/tags/maps-api/</link>
+      <pubDate>Wed, 26 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/maps-api/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Rstats</title>
       <link>/tags/rstats/</link>
-      <pubDate>Wed, 24 Sep 2025 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 26 Sep 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/rstats/</guid>
       <description></description>
