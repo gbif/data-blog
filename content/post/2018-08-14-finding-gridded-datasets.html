@@ -1,5 +1,5 @@
 ---
-title: Finding Gridded Datasets
+title: Finding gridded datasets
 authors: John Waller
 date: '2018-08-14'
 slug: finding-gridded-datasets
@@ -277,28 +277,9 @@ gridded dataset not in griddedDataSets.csv
 <div id="gridded-datasets-not-sampled-exactly-at-the-same-point" class="section level3">
 <h3>Gridded datasets not sampled exactly at the same point</h3>
 <p>Near <strong>Alaska</strong> you can see that sampling seems to have occurred around the same point, <strong>but not exactly the same point</strong>.</p>
-<p>```r{r, echo=FALSE, warning=FALSE,message=FALSE,fig.width=8,fig.height=3}
-library(leaflet)</p>
+<div id="htmlwidget-2" style="width:768px;height:288px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"setView":[[60.3609,-151.604],4,[]],"calls":[{"method":"addTiles","args":["https://tile.gbif.org/3857/omt/{z}/{x}/{y}@1x.png?style=gbif-violet",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false}]},{"method":"addTiles","args":["https://api.gbif.org/v2/map/occurrence/density/{z}/{x}/{y}@1x.png?",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false}]}]},"evals":[],"jsHooks":[]}</script>
 </div>
-</div>
-<div id="create-the-gbif-violet-style-raster-layer" class="section level1">
-<h1>create the gbif-violet style raster layer</h1>
-<p>projection = ‘3857’ # projection code
-style = ‘style=gbif-violet’ # style
-tileRaster = paste0(‘<a href="https://tile.gbif.org/" class="uri">https://tile.gbif.org/</a>’,projection,‘/<a href="mailto:omt/%7Bz%7D/%7Bx%7D/%7By%7D@1x.png" class="email">omt/{z}/{x}/{y}@1x.png</a>?’,style)
-# create our polygons layer
-prefix = ‘<a href="https://api.gbif.org/v2/map/occurrence/density/%7Bz%7D/%7Bx%7D/%7By%7D@1x.png" class="uri">https://api.gbif.org/v2/map/occurrence/density/{z}/{x}/{y}@1x.png</a>?’
-polygons = ‘style=classic.poly&amp;bin=hex&amp;hexPerTile=70’ # ploygon styles
-datasetKey = ‘datasetKey=4fa7b334-ce0d-4e88-aaae-2e0c138d049e’ # eBird key
-tilePolygons = paste0(prefix)</p>
-</div>
-<div id="plot-the-styled-map" class="section level1">
-<h1>plot the styled map</h1>
-<p>leaflet() %&gt;%
-setView(lng = -151.6040, lat = 60.3609, zoom = 04) %&gt;%
-addTiles(urlTemplate=tileRaster) %&gt;%
-addTiles(urlTemplate=tilePolygons)
-```</p>
 <div id="looking-for-gridded-datasets-spaced-smaller-than-0.01-degrees" class="section level3">
 <h3>Looking for gridded datasets spaced smaller than 0.01 degrees</h3>
 <p>There are probably many gridded datasets at smaller than 0.01 degrees. I chose not to look for these datasets since most environmental and climate data are at a resolution equal to or higher than 0.01 degrees.</p>

@@ -1,5 +1,5 @@
 ---
-title: Finding Gridded Datasets
+title: Finding gridded datasets
 authors: John Waller
 date: '2018-08-14'
 slug: finding-gridded-datasets
@@ -282,7 +282,7 @@ One could imagine looking for multiples of the most common distance as a way of 
 ### Gridded datasets not sampled exactly at the same point 
 Near **Alaska** you can see that sampling seems to have occurred around the same point, **but not exactly the same point**. 
 
-```r{r, echo=FALSE, warning=FALSE,message=FALSE,fig.width=8,fig.height=3}
+```{r, echo=FALSE, warning=FALSE,message=FALSE,fig.width=8,fig.height=3}
 library(leaflet)
 
 # create the gbif-violet style raster layer 
