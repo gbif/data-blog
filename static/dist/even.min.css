@@ -466,11 +466,13 @@ h6 {
 
 .header .logo-wrapper {
     text-align: center;
+	min-height: 100px; 
 	/* float: left */
 }
 
 .header .logo-wrapper .logo {
     font-size: 48px
+	/* min-height */
 }
 
 @media screen and (max-width:800px) {
