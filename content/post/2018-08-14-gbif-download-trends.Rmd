@@ -1,6 +1,6 @@
 ---
 title: GBIF download trends
-author: John Waller
+authors: John Waller
 date: '2018-08-14'
 slug: gbif-download-trends
 categories:
