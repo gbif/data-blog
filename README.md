@@ -302,7 +302,7 @@ Following the instructions I added code below to `./layouts/partials/footer.html
 <div id='discourse-comments'></div>
 <script type="text/javascript">
   DiscourseEmbed = { discourseUrl: 'https://datablog.trydiscourse.com/',
-                     discourseEmbedUrl: 'https://elegant-torvalds-f1f2a8.netlify.com{{ .URL }}' };
+                     discourseEmbedUrl: 'data-blog.gbif.org{{ .URL }}' };
 
   (function() {
     var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
