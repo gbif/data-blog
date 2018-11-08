@@ -301,8 +301,8 @@ Following the instructions I added code below to `./layouts/partials/footer.html
 {{if eq .Section "post"}} 
 <div id='discourse-comments'></div>
 <script type="text/javascript">
-  DiscourseEmbed = { discourseUrl: 'https://datablog.trydiscourse.com/',
-                     discourseEmbedUrl: 'data-blog.gbif.org{{ .URL }}' };
+  DiscourseEmbed = { discourseUrl: 'https://discourse.gbif.org/',
+                     discourseEmbedUrl: 'https://data-blog.gbif.org{{ .URL }}' };
 
   (function() {
     var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
@@ -317,9 +317,12 @@ Steps to take using discourse.gbif.org UI:
 1. I went to **Admin > Customize > Embedding**
 2. Created New embeddable host
 3. Set **Path Whitelist** to `/post/.*` 
-4. Set **Post to Category** to uncategorized
+4. Created new category **data-blog-preview** (staff-only)
+5. Created new category **data-blog** (everyone)
 
-Things to watch out for: 
+
+
+
 
 * If you set **Post to Category** to something with a little lock icon the embedding will fail. This might be useful for previewing posts before posting to community forum. 
 * I had to add **{{ .URL }}** to the **discourseEmbedUrl**, since I am using hugo. 
@@ -330,7 +333,7 @@ Things to watch out for:
 The build settings of the blog on netlify. 
 
 ```
-Repository: https://github.com/jhnwllr/gbifAnalyticsBlog
+Repository: https://github.com/gbif/data-blog
 Build command: hugo
 Publish directory: public
 Production branch: master
