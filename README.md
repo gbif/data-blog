@@ -1,5 +1,5 @@
 
-![](https://raw.githubusercontent.com/jhnwllr/gbifAnalyticsBlog/master/static/logo.png)
+![](https://raw.githubusercontent.com/gbif/data-blog/master/static/logo.png)
 
 The GBIF analytic blog is a [markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) blog generated using [hugo](https://gohugo.io/) and currently hosted using [Netlify](https://www.netlify.com/).  The blog uses a slightly modified theme called [even](https://github.com/olOwOlo/hugo-theme-even).  
 
@@ -12,7 +12,7 @@ Posts should be written in markdown. If you are unfamiliar, you can use some of 
 
 Markdown files are just simple text files with an `.md` extension. 
 
-You can download a simple `.md` blog post template [here](https://github.com/jhnwllr/gbifAnalyticsBlog/blob/master/content/post/2025-09-24-template.md). 
+You can download a simple `.md` blog post template [here](https://raw.githubusercontent.com/gbif/data-blog/master/content/post/2025-09-24-template.md). 
 
 ### Post Template
 
@@ -74,7 +74,7 @@ tags:
 ```
 And the rest of the fields can be left the same. I am not really sure if they are all needed, but just to not break the theme, I would **leave them in**. You can probably **ignore** the `lastmod field:`. 
 
-You can download a simple `.md` blog post template `./content/post/2025-09-24-template.md` [link here](https://github.com/jhnwllr/gbifAnalyticsBlog/blob/master/content/post/2025-09-24-template.md). 
+You can download a simple `.md` blog post template `./content/post/2025-09-24-template.md` [link here](https://raw.githubusercontent.com/gbif/data-blog/master/content/post/2025-09-24-template.md). 
 
 ### How hugo works
 
@@ -154,7 +154,7 @@ In order to write a blog post with embedded R code (including [html widgets](htt
 7. Serve site locally using **Serve Site** in `Addins` menu
 7. Write post
 8. Create a pull request to the main blog GitHub
-9. Post should should rebuild automatically
+9. Blog should should rebuild automatically
 
 Unless you edit a previously built `.Rmd`, you should not need to install any additional R packages (except the ones you use in your post). 
 
@@ -312,6 +312,10 @@ Following the instructions I added code below to `./layouts/partials/footer.html
 </script>  
 {{end}}
 ```
+**NOTE!**
+* I had to add ´{{ .URL }}´ to the **discourseEmbedUrl** to make this work. 
+* I also added ´{{if eq .Section "post"}}´ so that comments would only appear at the bottom of post pages. 
+
 Steps to take using discourse.gbif.org UI: 
 
 1. I went to **Admin > Customize > Embedding**
@@ -320,13 +324,10 @@ Steps to take using discourse.gbif.org UI:
 4. Created new category **data-blog-preview** (staff-only)
 5. Created new category **data-blog** (everyone)
 
-
-
-
-
-* If you set **Post to Category** to something with a little lock icon the embedding will fail. This might be useful for previewing posts before posting to community forum. 
-* I had to add **{{ .URL }}** to the **discourseEmbedUrl**, since I am using hugo. 
-
+How to make comments viewable to the general public: 
+1. Comments at the bottom of the page will initially show "Embedding Failed"
+2. To make comments viewable. In **discourse.gbif.org**, set category **data-blog-preview** to **data-blog**
+3. You should now see something like "loading..."
 
 ### Netlify build settings 
 

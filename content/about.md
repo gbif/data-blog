@@ -23,7 +23,7 @@ If you would like to contribute you can contact jwaller@gbif.org. **Guest blogs 
 
 # What about the developer blog? 
 
-Currently the [developter blog](http://gbif.blogspot.com/) no longer being updated but an archive will be maintained.
+Currently the [developer blog](http://gbif.blogspot.com/) no longer being updated but an archive will be maintained.
 
 # Disclaimer 
 
