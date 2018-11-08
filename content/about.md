@@ -9,16 +9,17 @@ weight: 50
 
 # What is it? 
 
-A place for GBIF staff to report interesting analytical results. 
+A place for GBIF staff and guest bloggers to contribute interesting analytical results. 
 
-* Stats
+* Statistics
+* Graphs
 * Tutorials 
 * Ideas 
 * Opinions 
 
 # Who can contribute? 
 
-This blog is mostly invite only, but if you would like to contribute you can contact jwaller@gbif.org. 
+If you would like to contribute you can contact jwaller@gbif.org. **Guest blogs are very welcome.** 
 
 # Disclaimer 
 
@@ -26,7 +27,7 @@ All posts represent the ideas of the author. No posts on this blog are to be con
 
 # What about the developer blog? 
 
-An archive of the developer blog is still available at http://gbif.blogspot.com/. Currently this blog is not being updated but an archive will be maintained. 
+Currently this (blog)["http://gbif.blogspot.com/"] no longer being updated but an archive will be maintained.
 
 
 
