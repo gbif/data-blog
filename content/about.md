@@ -9,7 +9,7 @@ weight: 50
 
 # What is it? 
 
-A place for GBIF staff and guest bloggers to contribute interesting analytical results. 
+A place for GBIF staff and guest bloggers to contribute: 
 
 * Statistics
 * Graphs
@@ -21,13 +21,15 @@ A place for GBIF staff and guest bloggers to contribute interesting analytical r
 
 If you would like to contribute you can contact jwaller@gbif.org. **Guest blogs are very welcome.** 
 
+# What about the developer blog? 
+
+Currently the [developter blog]("http://gbif.blogspot.com/") no longer being updated but an archive will be maintained.
+
 # Disclaimer 
 
 All posts represent the ideas of the author. No posts on this blog are to be considered a GBIF or Institutional policy.
 
-# What about the developer blog? 
 
-Currently this (blog)["http://gbif.blogspot.com/"] no longer being updated but an archive will be maintained.
 
 
 
