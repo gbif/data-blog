@@ -313,8 +313,8 @@ Following the instructions I added code below to `./layouts/partials/footer.html
 {{end}}
 ```
 **NOTE!**
-* I had to add ´{{ .URL }}´ to the **discourseEmbedUrl** to make this work. 
-* I also added ´{{if eq .Section "post"}}´ so that comments would only appear at the bottom of post pages. 
+* I had to add `{{ .URL }}` to the **discourseEmbedUrl** to make this work. 
+* I also added `{{if eq .Section "post"}}` so that comments would only appear at the bottom of post pages. 
 
 Steps to take using discourse.gbif.org UI: 
 
