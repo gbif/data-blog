@@ -35,9 +35,9 @@ sequenceDiagrams:
 
 
 
-<!--more-->
-<iframe src="http://178.128.167.105/shiny/gbifDownloadTrends//?_inputs_&amp;selectInput=%5B%22Animalia%20total%3A%20208011%22%2C%22Bacteria%20total%3A%20219%22%2C%22Fungi%20total%3A%205839%22%2C%22Plantae%20total%3A%20196763%22%5D&quot;" width="1000" height="780" style="border: none;" align="right">
-</iframe>
+<p><img src="/post/2018-08-14-gbif-download-trends_files/GBIF Download Trends.png" width="100%" height="100%"
+style="display: block;margin-left: auto;margin-right: auto;"/></p>
+<p><a href="http://178.128.167.105/shiny/gbifDownloadTrends//?_inputs_&selectInput=%5B%22Aves%20total%3A%2048648%22%2C%22Insecta%20total%3A%2028892%22%2C%22Mammalia%20total%3A%2050740%22%2C%22Reptilia%20total%3A%2021941%22%5D">Link To App</a></p>
 <div id="explanation-of-tool" class="section level2">
 <h2>Explanation of tool</h2>
 <p>This tool plots the downloads through time for species or other taxonomic groups with more than 25 downloads at GBIF. Downloads at GBIF most often occur through the <a href="https://www.gbif.org/occurrence/search">web interface</a>. In a <a href="http://www.johnwalleranalytics.org/2018/05/30/gbif-download-statistics/">previous post</a>, we saw that most users are downloading data from GBIF via filtering by scientific name (aka Taxon Key). Since the GBIF index currently sits at over 1 billion records (a 400+GB CSV), most users will simplying filter by their taxonomic group of interest and then generate a download.</p>
@@ -67,11 +67,7 @@ sequenceDiagrams:
 <div id="technical-details" class="section level2">
 <h2>Technical details</h2>
 <ul>
-<li><p>Obviously this app was built in Shiny. You can see the code that generated this app <a href="https://github.com/jhnwllr/johnwalleranalytics-shiny-sever/tree/master/gbifDownloadTrends">here</a>.</p></li>
-<li><p>I embedded it inside this page using an iframe.</p></li>
-</ul>
-<pre class="html"><code>&lt;iframe src=http://178.128.167.105/shiny/gbifDownloadTrends/ width=&quot;1000&quot; height=&quot;780&quot; style=&quot;border: none;&quot;&gt;&lt;/iframe&gt;</code></pre>
-<ul>
+<li>Obviously this app was built in Shiny. You can see the code that generated this app <a href="https://github.com/jhnwllr/johnwalleranalytics-shiny-sever/tree/master/gbifDownloadTrends">here</a>.</li>
 <li>I am hosting the app on a personal Digital Ocean server rather than at <a href="https://www.shinyapps.io/" class="uri">https://www.shinyapps.io/</a>.</li>
 <li>The graph is generated using the <a href="http://jkunst.com/highcharter/">highcharter</a> package.</li>
 <li>The data is not <strong>live</strong>. Results are coming from a canned CSV compiled in <strong>May of 2018</strong>.</li>
