@@ -180,8 +180,8 @@ The proper way to do this is to use a double loop cross-validation but I don't h
 2. Divide this training set in four subsets.
 3. For each subset:
 	 3.1  train a Naive Bayesian model,
-	 3.2  extract the top 15 informative words,
-4  Keep only the informative words that were selected more than once.
+	 3.2  extract the top 15 informative words.
+4.  Keep only the informative words that were selected more than once.
 
 
 The resulting list of informative words varies in length depending on the random selection but the most important ones are fairly consistent.
