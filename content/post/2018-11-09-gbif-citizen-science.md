@@ -55,6 +55,7 @@ We would like to know what is the proportion of citizen science dataset now, two
 I wrote my script in python, using the [textblob](https://textblob.readthedocs.io/en/dev/) library and the [GBIF API](https://www.gbif.org/developer/summary).
 
 I found some inspiration here:
+
 * https://www.analyticsvidhya.com/blog/2018/02/the-different-methods-deal-text-data-predictive-python/
 * https://stevenloria.com/simple-text-classification/
 
@@ -82,7 +83,7 @@ My training/testing set contains 226 CS datasets and 788 non-CS datasets. This s
 
 The code I wrote for everything below is available on [GitHub](https://github.com/ManonGros/Small-scripts-using-GBIF-API/blob/master/find_citizen_science_datasets/scripts/citizen_science_gather_dataset_descriptions.ipynb).
 
-#### Title, description, keywords, methods and additional data
+### Title, description, keywords, methods and additional data
 
 As mentioned above, I used the [GBIF API](https://www.gbif.org/developer/summary) to get the datasets' descriptions. Since I would like to predict CS datasets using only datasets' metadata, I chose to include:
 
@@ -102,18 +103,18 @@ Powdery mildews are traditionally identified using a combination of their appear
 
  NB: I didn't include datasets from [PLAZI](https://www.gbif.org/publisher/7ce8aef0-9e92-11dc-8738-b8a03c50a862) and [PANGAEA](https://www.gbif.org/publisher/d5778510-eb28-11da-8629-b8a03c50a862). Nor did I include checklists (check data classes [here](https://www.gbif.org/dataset-classes) for more information).
 
-#### Process the data
+### Process the data
 
 We would like to create a "bag of words" for each datasets, preferably with only informative words. For that, we will go through a few transformation steps.
 
-#### 1) Set everything to lower case, remove punctuation, numbers, hyphens and underscores.
+### 1) Set everything to lower case, remove punctuation, numbers, hyphens and underscores.
 
 Our example would now look like:
 
 >powdery mildew citizen science survey uk   the distribution and identity of powdery mildew species samples sent to the university of reading for the citizen science survey run between  and  the dataset has been shecked using the nbn record cleaner samples of this fungal plant disease were collected with their host plants randomly by members of the public samples were sent by post to the project convenor at the university of reading funded by the royal horticultural society who identified the different powdery mildew species powdery mildews are traditionally identified using a combination of their appearance and the identification of their host plant some plants have only one known powdery mildew so identification of the host allows an immediate tentative identification of the pathogen while others have several known mildew pathogens using a light microscope morphological features of the mildew must be found and the mildew can then be identified using a key and by comparison with published images in many cases these features can be difficult to distinguish between species or can only be found at a certain stage of the life cycle of the fungus molecular dna extraction and sequencing then completes the process as sequences are matched to a database of known powdery mildews
 
 
-#### 2) Remove most frequent words
+### 2) Remove most frequent words
 
 They are unlikely to be informative and will be a lot more to process in the analysis. I decided to remove the most frequent words by language to avoid language bias. We don't want words like "como" to be predictive just because the training set doesn't contain a lot of Spanish description for citizen science projects.
 
@@ -124,7 +125,7 @@ Our example would now be:
 > powdery mildew citizen science survey uk distribution identity powdery mildew samples sent university reading citizen science survey run between dataset has been shecked nbn record cleaner samples fungal plant disease collected with their host randomly members public samples sent post project convenor at university reading funded royal horticultural society who identified different powdery mildew powdery mildews traditionally identified combination their appearance identification their host plant some have only one known powdery mildew so identification host allows an immediate tentative identification pathogen while others have several known mildew pathogens light microscope morphological features mildew must be found mildew can then be identified key comparison with published images many cases these features can be difficult distinguish between or can only be found at certain stage life cycle fungus molecular dna extraction sequencing then completes process sequences matched known powdery mildews
 
 
-#### 3) Replace and remove some key words
+### 3) Replace and remove some key words
 
 This step involves mostly manual curation. This is partly how I get around the multi-language problem. I simply remove or translate a list of words I curated manually.
 
@@ -149,16 +150,16 @@ cat       1
  ```
 
 
-#### 4) Remove rare words - optional
+### 4) Remove rare words - optional
 
 For the same reason we removed frequent words, we would also like to remove rare words (which I defined as occurring only once).
 However, there were so many rare words that the running time was very long so I decided to keep them (the code is available though).
 
-#### 5) Correct spelling - optional
+### 5) Correct spelling - optional
 
 I gave up on correcting the spelling mistakes because it didn't make any sense for non-English datasets but the code is available.
 
-#### 6) Lemmatization
+### 6) Lemmatization
 
 Lemmatization is the process of "making words more universal". For example, the word "butterflies" would become "butterfly", etc.
 
