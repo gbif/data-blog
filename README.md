@@ -328,6 +328,7 @@ How to make comments viewable to the general public:
 1. Comments at the bottom of the page will initially show "Embedding Failed"
 2. To make comments viewable. In **discourse.gbif.org**, set category **data-blog-preview** to **data-blog**
 3. You should now see something like "loading..."
+4. Then if you re-fresh the page the comments should appear. 
 
 ### Netlify build settings 
 

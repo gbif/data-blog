@@ -24,6 +24,17 @@ Disclaimer All posts represent the ideas of the author. No posts on this blog ar
     </item>
     
     <item>
+      <title>Find citizen science datasets on GBIF</title>
+      <link>/post/gbif-citizen-science/</link>
+      <pubDate>Fri, 09 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/gbif-citizen-science/</guid>
+      <description>Can we automatically label citizen science datasets? The short answer is yes, partially.
+Why label GBIF datasets as &amp;ldquo;citizen science&amp;rdquo;? What is citizen science? Citizen science is scientific research conducted, in whole or in part, by amateur (or non-professional) scientists. Citizen science is sometimes described as &amp;ldquo;public participation in scientific research,&amp;rdquo; participatory monitoring, and participatory action research (wikipedia definition).
+Citizen science on GBIF A 2016 study showed that nearly half of all occurrence records shared through the GBIF network come from datasets with significant volunteer contributions (for more information, see our &amp;ldquo;citizen science&amp;rdquo; page on gbif.</description>
+    </item>
+    
+    <item>
       <title>GBIF data quality issues and flags what do they mean?</title>
       <link>/post/issues-and-flags/</link>
       <pubDate>Wed, 26 Sep 2018 00:00:00 +0000</pubDate>

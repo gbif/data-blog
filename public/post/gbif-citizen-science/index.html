@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Find citizen science datasets on GBIF - GBIF Data Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" />
+  <meta name="description" content="Can we automatically label citizen science datasets? The short answer is yes, partially.
+Why label GBIF datasets as &amp;ldquo;citizen science&amp;rdquo;? What is citizen science? Citizen science is scientific research conducted, in whole or in part, by amateur (or non-professional) scientists. Citizen science is sometimes described as &amp;ldquo;public participation in scientific research,&amp;rdquo; participatory monitoring, and participatory action research (wikipedia definition).
+Citizen science on GBIF A 2016 study showed that nearly half of all occurrence records shared through the GBIF network come from datasets with significant volunteer contributions (for more information, see our &amp;ldquo;citizen science&amp;rdquo; page on gbif." />
+<meta name="keywords" content="Citizen Science, prediction, machine learning" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.46" />
+
+
+<link rel="canonical" href="/post/gbif-citizen-science/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.2.0" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+<link rel="stylesheet" href="/css//custom.css">
+
+
+<meta property="og:title" content="Find citizen science datasets on GBIF" />
+<meta property="og:description" content="Can we automatically label citizen science datasets? The short answer is yes, partially.
+Why label GBIF datasets as &ldquo;citizen science&rdquo;? What is citizen science? Citizen science is scientific research conducted, in whole or in part, by amateur (or non-professional) scientists. Citizen science is sometimes described as &ldquo;public participation in scientific research,&rdquo; participatory monitoring, and participatory action research (wikipedia definition).
+Citizen science on GBIF A 2016 study showed that nearly half of all occurrence records shared through the GBIF network come from datasets with significant volunteer contributions (for more information, see our &ldquo;citizen science&rdquo; page on gbif." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/gbif-citizen-science/" />
+
+
+
+<meta property="article:published_time" content="2018-11-09T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2018-11-09T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Find citizen science datasets on GBIF">
+<meta itemprop="description" content="Can we automatically label citizen science datasets? The short answer is yes, partially.
+Why label GBIF datasets as &ldquo;citizen science&rdquo;? What is citizen science? Citizen science is scientific research conducted, in whole or in part, by amateur (or non-professional) scientists. Citizen science is sometimes described as &ldquo;public participation in scientific research,&rdquo; participatory monitoring, and participatory action research (wikipedia definition).
+Citizen science on GBIF A 2016 study showed that nearly half of all occurrence records shared through the GBIF network come from datasets with significant volunteer contributions (for more information, see our &ldquo;citizen science&rdquo; page on gbif.">
+
+
+<meta itemprop="datePublished" content="2018-11-09T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2018-11-09T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="2081">
+
+
+
+<meta itemprop="keywords" content="gbif,citizen,dataset,API," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Find citizen science datasets on GBIF"/>
+<meta name="twitter:description" content="Can we automatically label citizen science datasets? The short answer is yes, partially.
+Why label GBIF datasets as &ldquo;citizen science&rdquo;? What is citizen science? Citizen science is scientific research conducted, in whole or in part, by amateur (or non-professional) scientists. Citizen science is sometimes described as &ldquo;public participation in scientific research,&rdquo; participatory monitoring, and participatory action research (wikipedia definition).
+Citizen science on GBIF A 2016 study showed that nearly half of all occurrence records shared through the GBIF network come from datasets with significant volunteer contributions (for more information, see our &ldquo;citizen science&rdquo; page on gbif."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">GBIF Data Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">home</li>
+      </a><a href="/authors/">
+        <li class="mobile-menu-item">authors</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">tags</li>
+      </a><a href="https://www.gbif.org/">
+        <li class="mobile-menu-item">gbif.org</li>
+      </a><a href="https://www.gbif.org/analytics/global">
+        <li class="mobile-menu-item">global-trends</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">about</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">
+	<img src= "/logo.png" alt="GBIF-analytics-blog" style ="width:20%;">
+  </a>
+  
+	
+  
+  
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/authors/">authors</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://www.gbif.org/">gbif.org</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://www.gbif.org/analytics/global">global-trends</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">about</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+	
+    <header class="post-header">
+      <h1 class="post-title">Find citizen science datasets on GBIF</h1>
+	  
+	  
+      <div class="post-author">Marie Grosjean</div>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-11-09 </span>
+        <div class="post-category">
+            
+              <a href="/categories/gbif/"> GBIF </a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    
+    
+
+    
+    <div class="post-content">
+      
+
+<h1 id="can-we-automatically-label-citizen-science-datasets">Can we automatically label citizen science datasets?</h1>
+
+<p>The short answer is yes, partially.</p>
+
+<h2 id="why-label-gbif-datasets-as-citizen-science">Why label GBIF datasets as &ldquo;citizen science&rdquo;?</h2>
+
+<h3 id="what-is-citizen-science">What is citizen science?</h3>
+
+<p>Citizen science is scientific research conducted, in whole or in part, by amateur (or non-professional) scientists. Citizen science is sometimes described as &ldquo;public participation in scientific research,&rdquo; participatory monitoring, and participatory action research (<a href="https://en.wikipedia.org/wiki/Citizen_science">wikipedia definition</a>).</p>
+
+<h3 id="citizen-science-on-gbif">Citizen science on GBIF</h3>
+
+<p>A 2016 study showed that nearly half of all occurrence records shared through the GBIF network come from datasets with significant volunteer contributions (for more information, see our <a href="https://www.gbif.org/citizen-science">&ldquo;citizen science&rdquo; page</a> on gbif.org).</p>
+
+<p>We would like to know what is the proportion of citizen science dataset now, two years later.</p>
+
+<h2 id="my-analysis">My analysis</h2>
+
+<h3 id="the-tools-i-used">The tools I used</h3>
+
+<p>I wrote my script in python, using the <a href="https://textblob.readthedocs.io/en/dev/">textblob</a> library and the <a href="https://www.gbif.org/developer/summary">GBIF API</a>.</p>
+
+<p>I found some inspiration here:
+* <a href="https://www.analyticsvidhya.com/blog/2018/02/the-different-methods-deal-text-data-predictive-python/">https://www.analyticsvidhya.com/blog/2018/02/the-different-methods-deal-text-data-predictive-python/</a>
+* <a href="https://stevenloria.com/simple-text-classification/">https://stevenloria.com/simple-text-classification/</a></p>
+
+<p>My script, training set and results are available on <a href="https://github.com/ManonGros/Small-scripts-using-GBIF-API/tree/master/find_citizen_science_datasets">GitHub</a>.</p>
+
+<h3 id="my-training-and-testing-set">My training and testing set</h3>
+
+<p>Before starting my analysis, I assembled a training and testing set. I included all the datasets used to write <a href="https://doi.org/10.1016/j.biocon.2016.09.004">this publication</a> and some datasets I annotated manually.</p>
+
+<p>The criteria I used to decide what I would label as citizen science (CS) are the following:</p>
+
+<ul>
+<li>Metadata explicitly includes the words &ldquo;citizen&rdquo; or &ldquo;citizen science&rdquo; (or for the French version &ldquo;science&rdquo; or &ldquo;enquête&rdquo; participative)</li>
+<li>The metadata mentions that the dataset is partly or entirely made by volunteers</li>
+<li>Bioblitz datasets</li>
+<li>Known citizen science project (Tela-botanica, for example)</li>
+</ul>
+
+<p>What I <strong>did not</strong> consider as citizen science was:</p>
+
+<ul>
+<li>What seems like compulsory student work</li>
+<li>Personal collections or notebook (unless the description includes clue from above)</li>
+</ul>
+
+<p>My training/testing set contains 226 CS datasets and 788 non-CS datasets. This set is available on<a href="https://github.com/ManonGros/Small-scripts-using-GBIF-API/blob/master/find_citizen_science_datasets/some_manually_annotated_datasets.tsv">GitHub</a>.</p>
+
+<h3 id="obtained-and-processed-the-data">Obtained and processed the data</h3>
+
+<p>The code I wrote for everything below is available on <a href="https://github.com/ManonGros/Small-scripts-using-GBIF-API/blob/master/find_citizen_science_datasets/scripts/citizen_science_gather_dataset_descriptions.ipynb">GitHub</a>.</p>
+
+<h4 id="title-description-keywords-methods-and-additional-data">Title, description, keywords, methods and additional data</h4>
+
+<p>As mentioned above, I used the <a href="https://www.gbif.org/developer/summary">GBIF API</a> to get the datasets&rsquo; descriptions. Since I would like to predict CS datasets using only datasets&rsquo; metadata, I chose to include:</p>
+
+<ul>
+<li>The title of the dataset</li>
+<li>The contain of its description box</li>
+<li>Its keywords</li>
+<li>Its method section if any</li>
+<li>Anything contained in the &ldquo;additional information&rdquo; category</li>
+</ul>
+
+<p>I then concatenate this into a long string of character.</p>
+
+<p>For example, <a href="https://www.gbif.org/dataset/172149d2-2dc0-43fb-a7b1-57e3e4ec34a2">this  dataset</a> titled &ldquo;Powdery Mildew Citizen Science Survey, UK, 2013-2015&rdquo; would result into:</p>
+
+<blockquote>
+<p>Powdery Mildew Citizen Science Survey, UK, 2013-2015 The distribution and identity of powdery mildew species samples sent to the University of Reading for the citizen science survey run between 2013 and 2016 The dataset has been shecked using the NBN Record Cleaner. Samples of this fungal plant disease were collected with their host plants randomly by members of the public. Samples were sent by post to the project convenor at the University of Reading, funded by the Royal Horticultural Society, who identified the different powdery mildew species.
+Powdery mildews are traditionally identified using a combination of their appearance and the identification of their host plant.  Some plants have only one known powdery mildew so identification of the host allows an immediate tentative identification of the pathogen, while others have several known mildew pathogens. Using a light microscope morphological features of the mildew must be found and the mildew can then be identified using a key and by comparison with published images. In many cases these features can be difficult to distinguish between species or can only be found at a certain stage of the life cycle of the fungus. Molecular DNA extraction and sequencing then completes the process as sequences are matched to a database of known powdery mildews.</p>
+</blockquote>
+
+<p>NB: I didn&rsquo;t include datasets from <a href="https://www.gbif.org/publisher/7ce8aef0-9e92-11dc-8738-b8a03c50a862">PLAZI</a> and <a href="https://www.gbif.org/publisher/d5778510-eb28-11da-8629-b8a03c50a862">PANGAEA</a>. Nor did I include checklists (check data classes <a href="https://www.gbif.org/dataset-classes">here</a> for more information).</p>
+
+<h4 id="process-the-data">Process the data</h4>
+
+<p>We would like to create a &ldquo;bag of words&rdquo; for each datasets, preferably with only informative words. For that, we will go through a few transformation steps.</p>
+
+<h4 id="1-set-everything-to-lower-case-remove-punctuation-numbers-hyphens-and-underscores">1) Set everything to lower case, remove punctuation, numbers, hyphens and underscores.</h4>
+
+<p>Our example would now look like:</p>
+
+<blockquote>
+<p>powdery mildew citizen science survey uk   the distribution and identity of powdery mildew species samples sent to the university of reading for the citizen science survey run between  and  the dataset has been shecked using the nbn record cleaner samples of this fungal plant disease were collected with their host plants randomly by members of the public samples were sent by post to the project convenor at the university of reading funded by the royal horticultural society who identified the different powdery mildew species powdery mildews are traditionally identified using a combination of their appearance and the identification of their host plant some plants have only one known powdery mildew so identification of the host allows an immediate tentative identification of the pathogen while others have several known mildew pathogens using a light microscope morphological features of the mildew must be found and the mildew can then be identified using a key and by comparison with published images in many cases these features can be difficult to distinguish between species or can only be found at a certain stage of the life cycle of the fungus molecular dna extraction and sequencing then completes the process as sequences are matched to a database of known powdery mildews</p>
+</blockquote>
+
+<h4 id="2-remove-most-frequent-words">2) Remove most frequent words</h4>
+
+<p>They are unlikely to be informative and will be a lot more to process in the analysis. I decided to remove the most frequent words by language to avoid language bias. We don&rsquo;t want words like &ldquo;como&rdquo; to be predictive just because the training set doesn&rsquo;t contain a lot of Spanish description for citizen science projects.</p>
+
+<p>I chose the arbitrary threshold of removing the 15 most common words for each language. Note that I didn&rsquo;t optimize this threshold.</p>
+
+<p>Our example would now be:</p>
+
+<blockquote>
+<p>powdery mildew citizen science survey uk distribution identity powdery mildew samples sent university reading citizen science survey run between dataset has been shecked nbn record cleaner samples fungal plant disease collected with their host randomly members public samples sent post project convenor at university reading funded royal horticultural society who identified different powdery mildew powdery mildews traditionally identified combination their appearance identification their host plant some have only one known powdery mildew so identification host allows an immediate tentative identification pathogen while others have several known mildew pathogens light microscope morphological features mildew must be found mildew can then be identified key comparison with published images many cases these features can be difficult distinguish between or can only be found at certain stage life cycle fungus molecular dna extraction sequencing then completes process sequences matched known powdery mildews</p>
+</blockquote>
+
+<h3 id="3-replace-and-remove-some-key-words">3) Replace and remove some key words</h3>
+
+<p>This step involves mostly manual curation. This is partly how I get around the multi-language problem. I simply remove or translate a list of words I curated manually.</p>
+
+<p>This list is accessible on <a href="https://github.com/ManonGros/Small-scripts-using-GBIF-API/blob/master/find_citizen_science_datasets/wd_replace.txt">GitHub</a>.</p>
+
+<p>After this step, our example would still be the same.</p>
+
+<p><strong>About languages</strong>
+I tried using the translation function in Textblob and it worked! For about an hour. After that the Google API didn&rsquo;t respond any more so I gave up. If anyone has a better method to deal with multi-language analysis, please leave a comment. I would be very grateful.</p>
+
+<p>This is the language distribution for the GBIF datasets (excluding PLAZI and PANGAEA&rsquo;s):</p>
+
+<pre><code>eng    6591
+spa    1757
+fra    1114
+por     223
+nor       6
+zho       6
+rus       2
+glg       1
+cat       1
+</code></pre>
+
+<h3 id="4-remove-rare-words-optional">4) Remove rare words - optional</h3>
+
+<p>For the same reason we removed frequent words, we would also like to remove rare words (which I defined as occurring only once).
+However, there were so many rare words that the running time was very long so I decided to keep them (the code is available though).</p>
+
+<h3 id="5-correct-spelling-optional">5) Correct spelling - optional</h3>
+
+<p>I gave up on correcting the spelling mistakes because it didn&rsquo;t make any sense for non-English datasets but the code is available.</p>
+
+<h3 id="6-lemmatization">6) Lemmatization</h3>
+
+<p>Lemmatization is the process of &ldquo;making words more universal&rdquo;. For example, the word &ldquo;butterflies&rdquo; would become &ldquo;butterfly&rdquo;, etc.</p>
+
+<p>Our lemmatized description would be:</p>
+
+<blockquote>
+<p>powdery mildew citizen science survey uk distribution identity powdery mildew sample sent university reading citizen science survey run between dataset ha been shecked nbn record cleaner sample fungal plant disease collected with their host randomly member public sample sent post project convenor at university reading funded royal horticultural society who identified different powdery mildew powdery mildew traditionally identified combination their appearance identification their host plant some have only one known powdery mildew so identification host allows an immediate tentative identification pathogen while others have several known mildew pathogen light microscope morphological feature mildew must be found mildew can then be identified key comparison with published image many case these feature can be difficult distinguish between or can only be found at certain stage life cycle fungus molecular dna extraction sequencing then completes process sequence matched known powdery mildew</p>
+</blockquote>
+
+<h3 id="feature-selection">Feature selection</h3>
+
+<p>The feature selection is simply the process by which I select informative features. In other words: what words are important to label the datasets as CS?
+I would like a small set of informative words to avoid over-fitting my training set.</p>
+
+<p>The proper way to do this is to use a double loop cross-validation but I don&rsquo;t have enough data for that. So instead, I chose the following arbitrary method:</p>
+
+<ol>
+<li>Selected 800 random datasets as the &ldquo;training set&rdquo;.</li>
+<li>Divide this training set in four subsets.</li>
+<li>For each subset:
+ 3.1  train a Naive Bayesian model,
+ 3.2  extract the top 15 informative words,
+4  Keep only the informative words that were selected more than once.</li>
+</ol>
+
+<p>The resulting list of informative words varies in length depending on the random selection but the most important ones are fairly consistent.
+In my latest iteration, the resulting list of features was the following:</p>
+
+<pre><code>na              3
+select          3
+professional    3
+occurence       3
+school          3
+validated       3
+organised       2
+amateur         2
+dedicated       2
+spot            2
+you             2
+citizen         2
+hosted          2
+volunteer       2
+</code></pre>
+
+<h3 id="model-training">Model training</h3>
+
+<p>I then stripped my training/testing set of all the words that weren&rsquo;t informative. I kept only the list above + <code>museum</code> + <code>herbarium</code> + <code>inaturalist</code> because I thought that it would improve the outcome (but I was wrong, it didn&rsquo;t change anything).</p>
+
+<p>Our example became:</p>
+
+<pre><code>citizen citizen
+</code></pre>
+
+<p>I know, I should use a completely new training set to re-train the final model but I don&rsquo;t have enough data. So instead, I trained a decision tree on my previous 800 datasets (the ones I used for feature selection).</p>
+
+<p>I chose a decision tree model this time, because it is easier to interpret and implement.</p>
+
+<p>This is the resulting truncated tree written as pseudo-code:</p>
+
+<pre><code>if contains(citizen) == False: 
+  if contains(volunteer) == False: 
+    if contains(organised) == False: 
+      if contains(amateur) == False: return 'F'
+      if contains(amateur) == True: return 'T'
+    if contains(organised) == True: 
+      if contains(na) == False: return 'T'
+      if contains(na) == True: return 'T'
+  if contains(volunteer) == True: return 'T'
+if contains(citizen) == True: return 'T'
+</code></pre>
+
+<h3 id="test-and-performance">Test and performance</h3>
+
+<p>I tested this tree on the testing set (which was never used for the feature selection nor the training).
+This testing set contained 21 CS and 121 non-CS.</p>
+
+<p>The performance on this test set was:</p>
+
+<pre><code>Performance on testing set
+
+True positive:   9.86 %
+True negative:   85.21%
+False positive:  4.93 %
+False negative:  0.0  %
+-----------------------------------
+Accuracy:    95.07%
+</code></pre>
+
+<p>It is clearly over estimated. I ran the feature selection and training a few times and overall, the accuracy is between <strong>83</strong> and <strong>95%</strong>.
+Every time I ran my script, I got more false positives than false negatives.</p>
+
+<h3 id="results">Results</h3>
+
+<p>The result of the model prediction for the unclassified datasets is available on <a href="https://github.com/ManonGros/Small-scripts-using-GBIF-API/blob/master/find_citizen_science_datasets/test_model_subsample.tsv">GitHub</a>.</p>
+
+<p>According to my model, about more 200 datasets can be labeled as &ldquo;citizen science&rdquo; (in addition to the 226 I manually annotated), which corresponds to 1% of the total number of datasets on GBIF.</p>
+
+<p>This number is probably greatly overestimated since the model gives us more false positive than false negative. Nevertheless, it is a relatively accurate estimation.</p>
+
+<h3 id="my-conclusion">My conclusion</h3>
+
+<p>I tried to keep my model as simple as possible. Mostly because having a complicated and uninterpretable model wouldn&rsquo;t be very useful for me.</p>
+
+<p>This means that, perhaps, I could have come up with this simple model myself (without having to use any machine learning). Especially since this model would require manual curation afterwards.</p>
+
+<p>However, my script has two advantages:</p>
+
+<ul>
+<li>It transforms the input (mostly useful for non-English languages)</li>
+<li>It evaluates the model performance.</li>
+</ul>
+
+<h3 id="what-do-you-think">What do you think?</h3>
+
+<p>Should GBIF a system like this to label datasets as &ldquo;citizen science&rdquo;?
+Please let me know.</p>
+
+    </div>
+
+    
+    
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/gbif/">gbif</a>
+          
+          <a href="/tags/citizen/">citizen</a>
+          
+          <a href="/tags/dataset/">dataset</a>
+          
+          <a href="/tags/api/">API</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/issues-and-flags/">
+            <span class="next-text nav-default">GBIF data quality issues and flags what do they mean?</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+       
+<div id='discourse-comments'></div>
+<script type="text/javascript">
+  DiscourseEmbed = { discourseUrl: 'https://discourse.gbif.org/',
+                     discourseEmbedUrl: 'https://data-blog.gbif.org\/post\/gbif-citizen-science\/' };
+
+  (function() {
+    var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+    d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+  })();
+</script>  
+
+
+<div class = "copyright">
+	<a class="theme-link" href="https://www.gbif.org/what-is-gbif">What is GBIF?</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://www.gbif.org/developer/summary">API</a> 
+	<span class="division">|</span>
+	<a class="theme-link" href="https://www.gbif.org/faq">FAQ</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://discourse.gbif.org/">Community-Forum</a>
+</div>
+
+<div class = "copyright"> 
+	<span class="theme-info">GBIF Secretariat</span> 
+	<span class="theme-info">Universitetsparken 15</span> 
+	<span class="theme-info">DK-2100 Copenhagen Ø</span> 
+	<span class="theme-info" >Denmark</span>
+</div>
+
+<div class="copyright">
+	<span class="power-by">
+	Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+	</span>
+	<span class="division">|</span>
+	<span class="theme-info">
+	Theme - 
+	<a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+	</span>
+
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+
+
+<script type="text/javascript" src="/dist/even.min.js?v=3.2.0"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
