@@ -271,5 +271,5 @@ However, my script has two advantages:
 * It evaluates the model performance.
 
 ### What do you think? 
-Should GBIF a system like this to label datasets as "citizen science"? 
+Should GBIF explore a system like this to label datasets as "citizen science"? 
 Please let me know.
