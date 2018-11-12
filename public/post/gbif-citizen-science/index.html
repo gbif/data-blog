@@ -84,7 +84,7 @@ Citizen science on GBIF A 2016 study showed that nearly half of all occurrence r
 
 <meta itemprop="datePublished" content="2018-11-09T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2018-11-09T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="2080">
+<meta itemprop="wordCount" content="2079">
 
 
 
@@ -384,8 +384,11 @@ volunteer       2
 
 <p>I then stripped my training/testing set of all the words that weren&rsquo;t informative. I kept only the list above + <code>museum</code> + <code>herbarium</code> + <code>inaturalist</code> because I thought that it would improve the outcome (but I was wrong, it didn&rsquo;t change anything).</p>
 
-<p>Our example became:
-&gt; citizen citizen</p>
+<p>Our example became:</p>
+
+<blockquote>
+<p>citizen citizen</p>
+</blockquote>
 
 <p>I know, I should use a completely new training set to re-train the final model but I don&rsquo;t have enough data. So instead, I trained a decision tree on my previous 800 datasets (the ones I used for feature selection).</p>
 
