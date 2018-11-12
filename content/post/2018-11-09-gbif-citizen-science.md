@@ -124,7 +124,7 @@ Our example would now be:
 > powdery mildew citizen science survey uk distribution identity powdery mildew samples sent university reading citizen science survey run between dataset has been shecked nbn record cleaner samples fungal plant disease collected with their host randomly members public samples sent post project convenor at university reading funded royal horticultural society who identified different powdery mildew powdery mildews traditionally identified combination their appearance identification their host plant some have only one known powdery mildew so identification host allows an immediate tentative identification pathogen while others have several known mildew pathogens light microscope morphological features mildew must be found mildew can then be identified key comparison with published images many cases these features can be difficult distinguish between or can only be found at certain stage life cycle fungus molecular dna extraction sequencing then completes process sequences matched known powdery mildews
 
 
-### 3) Replace and remove some key words
+#### 3) Replace and remove some key words
 
 This step involves mostly manual curation. This is partly how I get around the multi-language problem. I simply remove or translate a list of words I curated manually.
 
@@ -149,16 +149,16 @@ cat       1
  ```
 
 
-### 4) Remove rare words - optional
+#### 4) Remove rare words - optional
 
 For the same reason we removed frequent words, we would also like to remove rare words (which I defined as occurring only once).
 However, there were so many rare words that the running time was very long so I decided to keep them (the code is available though).
 
-### 5) Correct spelling - optional
+#### 5) Correct spelling - optional
 
 I gave up on correcting the spelling mistakes because it didn't make any sense for non-English datasets but the code is available.
 
-### 6) Lemmatization
+#### 6) Lemmatization
 
 Lemmatization is the process of "making words more universal". For example, the word "butterflies" would become "butterfly", etc.
 
