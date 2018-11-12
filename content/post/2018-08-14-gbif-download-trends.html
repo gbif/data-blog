@@ -40,11 +40,11 @@ sequenceDiagrams:
 </iframe>
 <div id="explanation-of-tool" class="section level2">
 <h2>Explanation of tool</h2>
-<p>This tool plots the downloads through time for species or other taxonomic groups with more than 25 downloads at GBIF. Downloads at GBIF most often occur through the <a href="https://www.gbif.org/occurrence/search">web interface</a>. In a <a href="http://www.johnwalleranalytics.org/2018/05/30/gbif-download-statistics/">previous post</a>, we saw that most users are downloading data from GBIF via filtering by scientific name (aka Taxon Key). Since the GBIF index currently sits at over 1 billion records (a 400+GB csv), most users will simplying filter by their taxonomic group of interest and then generate a download.</p>
+<p>This tool plots the downloads through time for species or other taxonomic groups with more than 25 downloads at GBIF. Downloads at GBIF most often occur through the <a href="https://www.gbif.org/occurrence/search">web interface</a>. In a <a href="http://www.johnwalleranalytics.org/2018/05/30/gbif-download-statistics/">previous post</a>, we saw that most users are downloading data from GBIF via filtering by scientific name (aka Taxon Key). Since the GBIF index currently sits at over 1 billion records (a 400+GB CSV), most users will simplying filter by their taxonomic group of interest and then generate a download.</p>
 </div>
 <div id="how-to-bookmark-a-result" class="section level2">
 <h2>How to bookmark a result?</h2>
-<p>If you would like to bookmark a result or graph to share with others, you can visit app page direcly: <a href="http://178.128.167.105/shiny/gbifDownloadTrends/">app link</a>. On this page the state of the app will be saved inside the url.</p>
+<p>If you would like to bookmark a result or graph to share with others, you can <a href="http://178.128.167.105/shiny/gbifDownloadTrends/">visit the app page directly</a>. On this page the state of the app will be saved inside the URL.</p>
 </div>
 <div id="what-counts-as-a-download" class="section level2">
 <h2>What counts as a download?</h2>
@@ -54,15 +54,15 @@ sequenceDiagrams:
 <li>If a user <strong>only typed in Aves</strong> in the <a href="https://www.gbif.org/occurrence/search?taxon_key=212">occurrence download interface</a> and not any other species. This would only count as 1 download for Aves and <strong>0 downloads for all bird species</strong>.</li>
 <li>Similarly, if a user only typed the order <strong>Passeriformes</strong> into the search, this would count as 1 download for <strong>Passeriformes</strong> and 1 download for <strong>Aves</strong>, but <strong>0 downloads</strong> for all the species, families, and genera within Passeriformes.</li>
 </ul>
-<p>It is possible, but not as easy, to get data from GBIF without generating a download. In fact users can stream data using the GBIF occurrence api without ever generating a download. Currently users can “download” 200k-long chunks of occurrence data without generating a download by using the api. This can be done in <a href="https://cran.r-project.org/web/packages/rgbif/index.html">rgbif</a>.</p>
+<p>It is possible, but not as easy, to get data from GBIF without generating a download. In fact users can stream data using the GBIF occurrence API without ever generating a download. Currently users can “download” 200k-long chunks of occurrence data without generating a download by using the API. This can be done in <a href="https://cran.r-project.org/web/packages/rgbif/index.html">rgbif</a>.</p>
 <pre class="r"><code>rgbif::occ_search(taxonKey=212, limit=200000) # get the first 200k records of Aves</code></pre>
-<p>If someone got their data using the api in this way, we would not be able to track it currently. Presumably, though, the large majority of users are getting their data directly through the <a href="https://www.gbif.org/occurrence/search">web interface</a>.</p>
+<p>If someone got their data using the API in this way, we would not be able to track it currently. Presumably, though, the large majority of users are getting their data directly through the <a href="https://www.gbif.org/occurrence/search">web interface</a>.</p>
 </div>
 <div id="how-did-i-get-the-download-data" class="section level2">
 <h2>How did I get the download data?</h2>
-<p>Since 2013, GBIF has been tracking, user download filters in the so-called GBIF registry. This data is in fact publicly available via the <a href="https://www.gbif.org/developer/registry">GBIF registry api</a>. Unfortunately, the data is exported in json and difficult to parse. For example, one could get the download activity on <a href="https://www.gbif.org/dataset/13b70480-bd69-11dd-b15f-b8a03c50a862">AntWeb</a> by using the following rgbif command:</p>
+<p>Since 2013, GBIF has been tracking user download filters in the so-called GBIF Registry. This data is in fact publicly available via the <a href="https://www.gbif.org/developer/registry">GBIF Registry API</a>. Unfortunately, the data is exported in JSON and difficult to parse. For example, one could get the download activity on <a href="https://www.gbif.org/dataset/13b70480-bd69-11dd-b15f-b8a03c50a862">AntWeb</a> by using the following rgbif command:</p>
 <pre class="r"><code>rgbif::occ_download_dataset_activity(&quot;13b70480-bd69-11dd-b15f-b8a03c50a862&quot;)</code></pre>
-<p>But this would not be a practical way to get all of data for all downloads happening at GBIF, even though it is techinically possible. Fortunately, <strong>since I am employed at GBIF, I have direct access to the tables within the registry database</strong>. However, it was still necessary to parse the json within the regsitry table. This was no easy task but was made easier by the <a href="https://github.com/sailthru/tidyjson">tidyjson</a> package.</p>
+<p>But this would not be a practical way to get all of data for all downloads happening at GBIF, even though it is techinically possible. Fortunately, <strong>since I am employed at GBIF, I have direct access to the tables within the registry database</strong>. However, it was still necessary to parse the JSON within the registry table. This was no easy task but was made easier by the <a href="https://github.com/sailthru/tidyjson">tidyjson</a> package.</p>
 </div>
 <div id="technical-details" class="section level2">
 <h2>Technical details</h2>
@@ -72,8 +72,8 @@ sequenceDiagrams:
 </ul>
 <pre class="html"><code>&lt;iframe src=http://178.128.167.105/shiny/gbifDownloadTrends/ width=&quot;1000&quot; height=&quot;780&quot; style=&quot;border: none;&quot;&gt;&lt;/iframe&gt;</code></pre>
 <ul>
-<li>I am hosting the app on a person Digital Ocean server rather than at <a href="https://www.shinyapps.io/" class="uri">https://www.shinyapps.io/</a>.</li>
+<li>I am hosting the app on a personal Digital Ocean server rather than at <a href="https://www.shinyapps.io/" class="uri">https://www.shinyapps.io/</a>.</li>
 <li>The graph is generated using the <a href="http://jkunst.com/highcharter/">highcharter</a> package.</li>
-<li>The data is not <strong>live</strong>. Results are coming from a canned csv compiled in <strong>May of 2018</strong>.</li>
+<li>The data is not <strong>live</strong>. Results are coming from a canned CSV compiled in <strong>May of 2018</strong>.</li>
 </ul>
 </div>

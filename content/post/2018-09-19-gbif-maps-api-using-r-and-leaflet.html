@@ -1,5 +1,5 @@
 ---
-title: Plot almost anything using the GBIF maps api
+title: Plot almost anything using the GBIF maps API
 authors: John Waller
 date: '2018-09-19'
 slug: gbif-maps-api-using-r-and-leaflet
@@ -43,7 +43,7 @@ sequenceDiagrams:
 <script src="/rmarkdown-libs/leaflet-binding/leaflet.js"></script>
 
 
-<p>The <a href="https://www.gbif.org/developer/maps">GBIF maps api</a> is an under-used but powerful web service provided by GBIF. The <a href="https://www.gbif.org/developer/maps">maps api</a> is used by the main GBIF portal to create the maps including the <a href="https://www.gbif.org/">big map</a> used on gbif.org. We can make a simple call to the api by <strong>pasting the link</strong> below into a <strong>web browser</strong>.</p>
+<p>The <a href="https://www.gbif.org/developer/maps">GBIF maps API</a> is an under-used but powerful web service provided by GBIF. The <a href="https://www.gbif.org/developer/maps">maps API</a> is used by the main GBIF portal to create the maps including the <a href="https://www.gbif.org/">big map</a> used on gbif.org. We can make a simple call to the API by <strong>pasting the link</strong> below into a <strong>web browser</strong>.</p>
 <pre class="html"><code>https://api.gbif.org/v2/map/occurrence/density/0/0/0@1x.png?style=purpleYellow.point</code></pre>
 You should end up with an image like this.
 <div>
@@ -54,7 +54,7 @@ You should end up with an image like this.
 <li>a url prefix: <a href="https://api.gbif.org/v2/map/occurrence/density/0/0/0@1x.png" class="uri">https://api.gbif.org/v2/map/occurrence/density/0/0/0@1x.png</a>?</li>
 <li>a style query: style=purpleYellow.point</li>
 </ol>
-<p>This is cool but also not very interesting or useful. But the GBIF maps api is much more powerful. You don’t need to understand everything to make a cool interactive map with GBIF data. Let’s simply overlay these tiles to an existing map in R.</p>
+<p>This is cool but also not very interesting or useful. But the GBIF maps API is much more powerful. You don’t need to understand everything to make a cool interactive map with GBIF data. Let’s simply overlay these tiles to an existing map in R.</p>
 <p>I will use the <a href="https://rstudio.github.io/leaflet/">leaflet R package</a>, which is a wrapper to the popular <a href="https://leafletjs.com/">javascript library</a>.</p>
 <pre class="r"><code>library(leaflet)
 
@@ -103,7 +103,7 @@ addTiles(urlTemplate=tile)</code></pre>
 </div>
 <div id="plotting-the-gbif-style-ebird-dataset-map-in-leaflet-using-r." class="section level1">
 <h1>Plotting the GBIF-style eBird dataset map in leaflet using R.</h1>
-<p>We can also mimmick <a href="https://www.gbif.org/dataset/4fa7b334-ce0d-4e88-aaae-2e0c138d049e">the plot</a> of the largest dataset in GBIF.</p>
+<p>We can also mimic <a href="https://www.gbif.org/dataset/4fa7b334-ce0d-4e88-aaae-2e0c138d049e">the plot</a> of the largest dataset in GBIF.</p>
 <pre class="r"><code>library(leaflet)
 
 # create the gbif-violet style raster layer 
@@ -113,8 +113,8 @@ tileRaster = paste0(&#39;https://tile.gbif.org/&#39;,projection,&#39;/omt/{z}/{x
 
 # create our polygons layer 
 prefix = &#39;https://api.gbif.org/v2/map/occurrence/density/{z}/{x}/{y}@1x.png?&#39;
-polygons = &#39;style=classic.poly&amp;bin=hex&amp;hexPerTile=70&#39; # ploygon styles 
-datasetKey = &#39;datasetKey=4fa7b334-ce0d-4e88-aaae-2e0c138d049e&#39; # eBird key 
+polygons = &#39;style=classic.poly&amp;bin=hex&amp;hexPerTile=70&#39; # polygon styles
+datasetKey = &#39;datasetKey=4fa7b334-ce0d-4e88-aaae-2e0c138d049e&#39; # eBird key
 tilePolygons = paste0(prefix,polygons,&#39;&amp;&#39;,datasetKey)
 
 # plot the styled map
@@ -137,7 +137,7 @@ tileRaster = paste0(&#39;https://tile.gbif.org/&#39;,projection,&#39;/omt/{z}/{x
 
 # create our polygons layer 
 prefix = &#39;https://api.gbif.org/v2/map/occurrence/density/{z}/{x}/{y}@1x.png?&#39;
-polygons = &#39;style=fire.point&#39; # ploygon styles 
+polygons = &#39;style=fire.point&#39; # polygon styles
 taxonKey = &#39;taxonKey=789&#39; # taxonKey of Odonata (dragonflies and damselflies)
 tilePolygons = paste0(prefix,polygons,&#39;&amp;&#39;,taxonKey)
 
@@ -151,8 +151,8 @@ addTiles(urlTemplate=tilePolygons)  </code></pre>
 </div>
 <div id="plotting-any-query" class="section level1">
 <h1>Plotting any query</h1>
-<p>It is nice that we can re-create standard GBIF maps found on the portal but it would be better if we could quickly map any query ourselves and then layer in other information. This example is <strong>more complex</strong> than the examples above but also <strong>more general</strong>. By using the so-called <strong>“ad-hoc”</strong> maps api interface, we can plot complex queries without ever downloading a record.</p>
-<p>To use the ad hoc interface with leaflet, we need to set a <a href="https://rstudio.github.io/leaflet/projections.html">custom projection</a> with <code>leafletOptions</code> and <code>leafletCRS</code>.</p>
+<p>It is nice that we can re-create standard GBIF maps found on the portal but it would be better if we could quickly map any query ourselves and then layer in other information. This example is <strong>more complex</strong> than the examples above but also <strong>more general</strong>. By using the so-called <strong>“ad-hoc”</strong> maps API interface, we can plot complex queries without ever downloading a record.</p>
+<p>To use the ad-hoc interface with leaflet, we need to set a <a href="https://rstudio.github.io/leaflet/projections.html">custom projection</a> with <code>leafletOptions</code> and <code>leafletCRS</code>.</p>
 <p>From the leaflet R package documentation:</p>
 <blockquote>
 <p>The Leaflet package expects all point, line, and shape data to be specified in latitude and longitude using WGS 84 (a.k.a. EPSG:4326). By default, when displaying this data it projects everything to EPSG:3857 and expects that any map tiles are also displayed in EPSG:3857.</p>
