@@ -236,8 +236,7 @@ html {
 body {
     padding: 0;
     margin: 0;
-    font-family: Roboto, Helvetica Neue, Arial, sans-serif;
-    /* font-family: Source Sans Pro, Helvetica Neue, Arial, sans-serif; */
+    font-family: Source Sans Pro, Helvetica Neue, Arial, sans-serif;
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
