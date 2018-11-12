@@ -208,9 +208,7 @@ volunteer       2
 I then stripped my training/testing set of all the words that weren't informative. I kept only the list above + `museum` + `herbarium` + `inaturalist` because I thought that it would improve the outcome (but I was wrong, it didn't change anything).
 
 Our example became:
-```
-citizen citizen
-```
+> citizen citizen
 
 I know, I should use a completely new training set to re-train the final model but I don't have enough data. So instead, I trained a decision tree on my previous 800 datasets (the ones I used for feature selection).
 
