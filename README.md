@@ -110,7 +110,7 @@ To host static content (images) associated with a particular blog post, you need
 .
 ├───content
     ├───post
-        ├───template
+        ├───template.md
         └───2025-09-24-template_files <- put images here
             └───example.jpg
 ```
