@@ -1,14 +1,14 @@
 
 ![](https://raw.githubusercontent.com/gbif/data-blog/master/static/logo.png)
 
-The GBIF analytic blog is a [markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) blog generated using [hugo](https://gohugo.io/) and currently hosted using [Netlify](https://www.netlify.com/).  The blog uses a slightly modified theme called [even](https://github.com/olOwOlo/hugo-theme-even).  
+The GBIF [data blog](https://data-blog.gbif.org/) is a [markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) blog generated using [hugo](https://gohugo.io/) and currently hosted using [Netlify](https://www.netlify.com/).  The blog uses a slightly modified theme called [even](https://github.com/olOwOlo/hugo-theme-even).  
 
 ### TLDR recommended blog-writing workflow 
 
 1. Write a post in markdown named like `YYYY-MM-DD-your-post.md`
 2. Preview with a simple online [markdown editor](https://stackedit.io/app#)
 3. Save plots or images into an image folder named like `YYYY-MM-DD-your-post_files`
-4. Copy/paste [header text](https://github.com/gbif/data-blog/blob/master/templates/header.txt) and put on the of your `.md` file. 
+4. Copy/paste [header text](https://github.com/gbif/data-blog/blob/master/templates/header.txt) into your `.md` file. Template [here](https://raw.githubusercontent.com/gbif/data-blog/master/content/post/2025-09-24-template.md)
 5. Edit header text. (probably set the value in the header text to `hiddenFromHomePage: yes`) 
 6. Clone the repository locally `git clone https://github.com/gbif/data-blog.git`
 7. Copy `YYYY-MM-DD-your-post.md` and `YYYY-MM-DD-title-of-your-post_files` into `./content/post/`
