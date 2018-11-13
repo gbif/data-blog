@@ -11,17 +11,37 @@ The GBIF [data blog](https://data-blog.gbif.org/) is a [markdown](https://github
 4. Copy/paste [header text](https://github.com/gbif/data-blog/blob/master/templates/header.txt) into your `.md` file 
 5. Edit header text. (probably set the value in the header text to `hiddenFromHomePage: yes`) 
 ```
+---
 title: Your post
-author: Your Name
+authors: Your Name
 date: '2018-09-21'
-slug: your-post
+slug: test-post
 categories:
   - GBIF
 tags:
   - test tag
   - test
-
-(The rest of the header text)
+lastmod: '2018-09-21T15:24:11+02:00'
+keywords: []
+description: ''
+comment: no
+toc: ''
+autoCollapseToc: no
+postMetaInFooter: no
+hiddenFromHomePage: yes
+contentCopyright: no
+reward: no
+mathjax: no
+mathjaxEnableSingleDollar: no
+mathjaxEnableAutoNumber: no
+hideHeaderAndFooter: no
+flowchartDiagrams:
+  enable: no
+  options: ''
+sequenceDiagrams:
+  enable: no
+  options: ''
+---
 
 ```
 6. Clone the repository locally `git clone https://github.com/gbif/data-blog.git`
