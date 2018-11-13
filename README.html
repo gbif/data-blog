@@ -320,8 +320,8 @@ $(document).ready(function () {
 <li>Copy/paste <a href="https://github.com/gbif/data-blog/blob/master/templates/header.txt">header text</a> into your <code>.md</code> file</li>
 <li>Edit header text. (probably set the value in the header text to <code>hiddenFromHomePage: yes</code>)</li>
 </ol>
-<pre><code>title: your post
-author: John Waller
+<pre><code>title: Your post
+author: Your Name
 date: &#39;2018-09-21&#39;
 slug: your-post
 categories:
@@ -401,8 +401,8 @@ sequenceDiagrams:
 I am some text. 
 </code></pre>
 <p>Important fields to <strong>fill in</strong> are below:</p>
-<pre><code>title: Test Post
-author: john
+<pre><code>title: Your post
+author: Your Name
 date: &#39;2018-09-21&#39;
 slug: test-post
 categories:
@@ -426,7 +426,7 @@ tags:
 <pre><code>.
 ├───content
     └───post &lt;- put YYYY-MM-DD-your-post.md here</code></pre>
-<p>I am still working out the best way to do this in practice.</p>
+<p>I am still working out the best way to do this in practice, but see the <strong>TLDR recommended blog-writing workflow</strong>.</p>
 <p>Some options:</p>
 <ul>
 <li>Send me the <code>YYYY-MM-DD-your-post.md</code> file <strong><a href="mailto:jwaller@gbif.org" class="email">jwaller@gbif.org</a></strong></li>
@@ -540,6 +540,10 @@ tags:
 <p>The following are key concepts for Hugo site customization. Hugo permits you to supplement or override any theme template or static file, with files in your working directory. When you use a theme cloned from its git repository, you do not edit the theme’s files directly.</p>
 </blockquote>
 <p>If you want to change the blog appearance, you need to create folders and files in the <strong>root directory</strong> that match folders and files in the <strong>public directory</strong>. Hugo will copy and replace files in the root directory into the public directory.</p>
+<div id="general-blog-settings" class="section level3">
+<h3>General blog settings</h3>
+<p>Other settings in the blog can be set in the <code>./config.toml</code>.</p>
+</div>
 <div id="css" class="section level3">
 <h3>css</h3>
 <p>Changes to theme css can be done using.</p>
@@ -579,10 +583,6 @@ tags:
 </ul>
 <p>I added the following lines.</p>
 <pre><code>&lt;div class=&quot;post-author&quot;&gt;{{ .Params.author }}&lt;/div&gt;</code></pre>
-</div>
-<div id="other-blog-settings" class="section level3">
-<h3>Other blog settings</h3>
-<p>Other settings in the blog can be set in the <code>./config.toml</code>.</p>
 </div>
 <div id="deleting-a-post-that-has-already-been-added-to-the-blog" class="section level3">
 <h3>Deleting a post that has already been added to the blog</h3>

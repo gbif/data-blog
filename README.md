@@ -99,8 +99,8 @@ I am some text.
 Important fields to **fill in** are below: 
 
 ```
-title: Test Post
-author: john
+title: Your post
+author: Your Name
 date: '2018-09-21'
 slug: test-post
 categories:
@@ -130,7 +130,7 @@ A post can be done by simply copying an `.md` into the **gbif/data-blog** `./con
     └───post <- put YYYY-MM-DD-your-post.md here
 ```
 
-I am still working out the best way to do this in practice. 
+I am still working out the best way to do this in practice, but see the **TLDR recommended blog-writing workflow**. 
 
 Some options: 
 
@@ -260,6 +260,10 @@ Unfortunately, hugo does not document how to change a theme appearance very well
 
 If you want to change the blog appearance, you need to create folders and files in the **root directory** that match folders and files in the **public directory**. Hugo will copy and replace files in the root directory into the public directory. 
 
+### General blog settings 
+
+Other settings in the blog can be set in the `./config.toml`. 
+
 ### css
 
 Changes to theme css can be done using. 
@@ -314,10 +318,6 @@ I added the following lines.
 ```
 <div class="post-author">{{ .Params.author }}</div>
 ```
-
-### Other blog settings 
-
-Other settings in the blog can be set in the `./config.toml`. 
 
 ### Deleting a post that has already been added to the blog 
 
