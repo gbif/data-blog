@@ -17,7 +17,7 @@
       <pubDate>Tue, 14 Aug 2018 00:00:00 +0000</pubDate>
       
       <guid>/post/finding-gridded-datasets/</guid>
-      <description>EBCC Atlas of European Breeding Birds (gridded)Naturalis Biodiversity Center (NL) - Aves (not gridded)Gridded data in GBIFGridded datasets are a known problem at GBIF. Many datasets have an equally-spaced points in a regular pattern. These datasets are usually systematic national surveys or data taken from some atlas (“so-called rasterized collection designs”).
+      <description>EBCC Atlas of European Breeding Birds (gridded)Naturalis Biodiversity Center (NL) - Aves (not gridded)Gridded data in GBIFGridded datasets are a known problem at GBIF. Many datasets have equally-spaced points in a regular pattern. These datasets are usually systematic national surveys or data taken from some atlas (“so-called rasterized collection designs”).
 In this blog post I will describe how I found gridded dataset in GBIF.</description>
     </item>
     

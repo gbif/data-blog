@@ -23,12 +23,12 @@ Citizen science on GBIF A 2016 study showed that nearly half of all occurrence r
     </item>
     
     <item>
-      <title>Plot almost anything using the GBIF maps api</title>
+      <title>Plot almost anything using the GBIF maps API</title>
       <link>/post/gbif-maps-api-using-r-and-leaflet/</link>
       <pubDate>Wed, 19 Sep 2018 00:00:00 +0000</pubDate>
       
       <guid>/post/gbif-maps-api-using-r-and-leaflet/</guid>
-      <description>The GBIF maps api is an under-used but powerful web service provided by GBIF. The maps api is used by the main GBIF portal to create the maps including the big map used on gbif.org. We can make a simple call to the api by pasting the link below into a web browser.
+      <description>The GBIF maps API is an under-used but powerful web service provided by GBIF. The maps API is used by the main GBIF portal to create the maps including the big map used on gbif.org. We can make a simple call to the API by pasting the link below into a web browser.
 https://api.gbif.org/v2/map/occurrence/density/0/0/0@1x.png?style=purpleYellow.pointYou should end up with an image like this.This api call is composed essentially of two elements</description>
     </item>
     
@@ -39,7 +39,7 @@ https://api.gbif.org/v2/map/occurrence/density/0/0/0@1x.png?style=purpleYellow.p
       
       <guid>/post/gbif-download-trends/</guid>
       <description>Link To App
-Explanation of toolThis tool plots the downloads through time for species or other taxonomic groups with more than 25 downloads at GBIF. Downloads at GBIF most often occur through the web interface. In a previous post, we saw that most users are downloading data from GBIF via filtering by scientific name (aka Taxon Key). Since the GBIF index currently sits at over 1 billion records (a 400+GB csv), most users will simplying filter by their taxonomic group of interest and then generate a download.</description>
+Explanation of toolThis tool plots the downloads through time for species or other taxonomic groups with more than 25 downloads at GBIF. Downloads at GBIF most often occur through the web interface. In a previous post, we saw that most users are downloading data from GBIF via filtering by scientific name (aka Taxon Key). Since the GBIF index currently sits at over 1 billion records (a 400+GB CSV), most users will simplying filter by their taxonomic group of interest and then generate a download.</description>
     </item>
     
     <item>

@@ -52,9 +52,9 @@ sequenceDiagrams:
 </ul>
 <div id="gridded-data-in-gbif" class="section level3">
 <h3>Gridded data in GBIF</h3>
-<p>Gridded datasets are a known problem at GBIF. Many datasets have an equally-spaced points in a regular pattern. These datasets are usually systematic national surveys or data taken from some atlas (“so-called rasterized collection designs”).</p>
+<p>Gridded datasets are a known problem at GBIF. Many datasets have equally-spaced points in a regular pattern. These datasets are usually systematic national surveys or data taken from some atlas (“so-called rasterized collection designs”).</p>
 <blockquote>
-<p>In this blog post I will describe how I found gridded datasets in GBIF.</p>
+<p>In this blog post I will describe how I found gridded dataset in GBIF.</p>
 </blockquote>
 <p><img src="https://raw.githubusercontent.com/jhnwllr/charts/master/gridSnap.gif" width="60%" height="60%"
 style="display: block;margin-left: auto;margin-right: auto;"/></p>
@@ -68,7 +68,7 @@ style="display: block;margin-left: auto;margin-right: auto;"/></p>
 <p>After a little bit of trial and error, I arrived at a simple dataset feature (or measure):</p>
 <blockquote>
 <p>Percentage of unique lat-long points
-with the most common nearest neighbour distance</p>
+with the most common nearest neighbor distance</p>
 </blockquote>
 <center>
 <h1>
@@ -149,12 +149,12 @@ nrow(griddedDataSets) # datasets in the pdf</code></pre>
 </div>
 <div id="i-want-to-filter-gridded-datasets-from-my-download" class="section level2">
 <h2>I want to filter gridded datasets from my download!</h2>
-<p>I have processed all occurrence datasets in GBIF and produced a griddyness score for each based on nearest neighbour distances (described above).</p>
+<p>I have processed all occurrence datasets in GBIF and produced a griddyness score for each based off of nearest neighbor distances (described above).</p>
 <div id="disclaimers" class="section level3">
 <h3>disclaimers</h3>
 <ul>
 <li>Only datasets with <strong>more than 20 unique</strong> lat-long points were processed.</li>
-<li>Datasets were downloaded in <strong>August of 2018</strong>, so new datasets might not be in the CSV.</li>
+<li>Datasets were downloaded in <strong>August of 2018</strong>, so new datasets might not be in the csv.</li>
 <li><strong>Mixed datasets</strong> might not be caught unless a large percentage of points are gridded.</li>
 <li>Only the <strong>first 1000 points</strong> were downloaded from each dataset, so large datasets that are gridded but only have a few unique lat-lon points will not be caught.</li>
 <li>Only looked for datasets on a grid <strong>larger than 0.01</strong> decimal degrees.</li>
@@ -171,9 +171,9 @@ nrow(griddedDataSets) # datasets in the pdf</code></pre>
 <li>publishingCountry - Country that published the dataset.</li>
 <li>occCount - Total number of occurrence records in the dataset.</li>
 <li>datasetTitle - Title of dataset.</li>
-<li>percentNN - Fraction of unique lat-long points with the most common nearest neighbour distance.</li>
-<li>distanceNN - The most common nearest neighbour distance to the nearest 0.01 degrees.</li>
-<li>countNN - The count of unique lat-long points with the most common nearest neighbour distance.</li>
+<li>percentNN - Fraction of unique lat-long points with the most common nearest neighbor distance.</li>
+<li>distanceNN - The most common nearest neighbor distance to the nearest 0.01 degrees.</li>
+<li>countNN - The count of unique lat-long points with the most common nearest neighbor distance.</li>
 <li>uniqueLatLon - The number of unique lat-long points in the dataset.</li>
 <li>lastUpdated - When I downloaded the data from GBIF.</li>
 <li>numberSampled - number of points sampled from each dataset. Will be 1000 for each.</li>
@@ -227,11 +227,11 @@ nrow(buntingData) </code></pre>
 <h3>What if a dataset is not in griddedDatasets.csv?</h3>
 <p>Below we can also check if any datasets were not in griddedDataSets.csv.</p>
 <ol style="list-style-type: decimal">
-<li>We can either choose to remove any dataset on in the CSV (very conservative).</li>
-<li>Or we can manually check each dataset in our data but not in the CSV (recommended).</li>
+<li>We can either choose to remove any dataset on in the csv (very conservative).</li>
+<li>Or we can manually check each dataset in our data but not in the csv (recommended).</li>
 </ol>
 <p>In this case we see that there is one dataset in our download that is not in griddedDataSets.csv.</p>
-<pre class="r"><code># were any datasets downloaded that were not in the gridded datasets CSV?
+<pre class="r"><code># were any datasets downloaded that were not in the gridded datasets csv? 
 load(&quot;C:/Users/ftw712/Desktop/griddedDataSets.rda&quot;)
 
 # If the dataset is not in the 
@@ -239,7 +239,7 @@ unique(buntingData$datasetKey)[!unique(buntingData$datasetKey) %in% griddedDataS
 
 # 1 dataset not in griddedDataSets.csv
 # 906b2d3f-dbd7-4c5c-acfc-c572c35c2b5a</code></pre>
-<p>We can plot the dataset <strong>not in griddedDataSets.csv</strong> using the <a href="https://www.gbif.org/developer/maps">GBIF map API</a> and see it is also most likely gridded. This illustrates that not all gridded datasets will necessarily be caught by my algorithm described above, but it should be able to remove the vast majority of gridded datasets. In the case of this dataset, it was not caught because it happens to be very large and have very few unique lat-lon points.</p>
+<p>We can plot the dataset <strong>not in griddedDataSets.csv</strong> using the <a href="https://www.gbif.org/developer/maps">GBIF map api</a> and see it is also most likely gridded. This illustrates that not all gridded datasets will necessarily be caught by my algorithm described above, but it should be able to remove the vast majority of gridded datasets. In the case of this dataset, it was not caught because it happens to be very large and have very few unique lat-lon points.</p>
 <pre class="r"><code>library(leaflet)
 
 prefix = &#39;https://api.gbif.org/v2/map/occurrence/density/{z}/{x}/{y}@1x.png?&#39;
@@ -294,23 +294,23 @@ gridded dataset not in griddedDataSets.csv
 <pre class="r"><code>library(rgbif)
 library(dplyr) 
 
-# Function to compute nearest neighbour features for a new download
+# Function to compute nearest neighbor features for a new download
 # D - input data from a GBIF download
-# key - focal key
-# k - number of nearest neighbours to compute
+# key - focal key 
+# k - number of nearest neighbors to compute 
 
-getNNFeature = function(D,key,k) { # nearest neighbour features
+getNNFeature = function(D,key,k) { # nearest neighbor features 
   D = D %&gt;% filter(datasetKey == key)
-
-  # nearest neighbours distances
-  NN = FNN::get.knn(cbind(D$decimalLongitude,D$decimalLatitude), k=k)$nn.dist
-
-  # Nearest Neighbour Percent Feature
+  
+  # nearest neighbors distances
+  NN = FNN::get.knn(cbind(D$decimalLongitude,D$decimalLatitude), k=k)$nn.dist 
+  
+  # Nearest Neighbor Percent Feature 
   minimum = 0.01
-  NN = round(NN,2) # round nearest neighbours nearest 0.01
-  # adjust precision of rounding to any desired
-  # NN = plyr::round_any(NN,0.01,ceiling)
-
+  NN = round(NN,2) # round nearest neighbors nearest 0.01
+  # adjust precision of rounding to any desired 
+  # NN = plyr::round_any(NN,0.01,ceiling) 
+  
   TL = apply(NN,2,table) # table list
   # distances less than minimum 
   boolL = lapply(TL,function(x) as.numeric(names(x)) &gt; minimum) 
@@ -330,8 +330,8 @@ getNNFeature = function(D,key,k) { # nearest neighbour features
   
   NNF$key = key # add key 
   NNF$uniqueLatLon = nrow(D)
-
-  return(NNF) # return the nearest neighbour feature
+  
+  return(NNF) # return the nearest neighbor feature 
 }
 
 # Download Data

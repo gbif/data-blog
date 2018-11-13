@@ -41,7 +41,7 @@ sequenceDiagrams:
 
 ### Gridded data in GBIF
 
-Gridded datasets are a known problem at GBIF. Many datasets have an equally-spaced points in a regular pattern. These datasets are usually systematic national surveys or data taken from some atlas ("so-called rasterized collection designs"). 
+Gridded datasets are a known problem at GBIF. Many datasets have equally-spaced points in a regular pattern. These datasets are usually systematic national surveys or data taken from some atlas ("so-called rasterized collection designs"). 
 
 > In this blog post I will describe how I found gridded dataset in GBIF. 
 
