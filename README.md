@@ -5,14 +5,14 @@ The GBIF [data blog](https://data-blog.gbif.org/) is a [markdown](https://github
 
 ### TLDR recommended blog-writing workflow 
 
-1. Write a post in markdown named like `YYYY-MM-DD-your-post.md`
+1. Write a post in markdown named like `YYYY-MM-DD-your-post.md` [blog post template here](https://raw.githubusercontent.com/gbif/data-blog/master/templates/2025-09-24-template.md)
 2. Preview with a simple online [markdown editor](https://stackedit.io/app#)
 3. Save plots or images into an image folder named like `YYYY-MM-DD-your-post_files`
-4. Copy/paste [header text](https://github.com/gbif/data-blog/blob/master/templates/header.txt) into your `.md` file. [blog post template here](https://raw.githubusercontent.com/gbif/data-blog/master/templates/2025-09-24-template.md)
+4. Copy/paste [header text](https://github.com/gbif/data-blog/blob/master/templates/header.txt) into your `.md` file 
 5. Edit header text. (probably set the value in the header text to `hiddenFromHomePage: yes`) 
 ```
-title: your post
-author: John Waller
+title: Your post
+author: Your Name
 date: '2018-09-21'
 slug: your-post
 categories:
@@ -25,7 +25,7 @@ tags:
 
 ```
 6. Clone the repository locally `git clone https://github.com/gbif/data-blog.git`
-7. Copy `YYYY-MM-DD-your-post.md` and `YYYY-MM-DD-title-of-your-post_files` into `./content/post/`
+7. Copy `YYYY-MM-DD-your-post.md` and `YYYY-MM-DD-your-post_files` into `./content/post/`
 ```
 .
 ├───content
@@ -36,7 +36,7 @@ tags:
 ```
 8. Push your changes to **gbif/data-blog** (or create pull request). 
 9. Get [someone](https://github.com/jhnwllr) with admin access to **gbif/data-blog** to invite you as a collaborator (**Settings** > **Collaborators & teams**).
-10. Check your post at https://data-blog.gbif.org/post/title-of-your-post/ (netilify will build your post automatically)
+10. Check your post at https://data-blog.gbif.org/post/your-post/ (Netlify will build your post automatically)
 11. **Find mistakes** 
 12. Fix mistakes and push changes to **gbif/data-blog** until satisfied. 
 13. Switch to `hiddenFromHomePage: no`
@@ -51,18 +51,19 @@ Posts should be written in markdown. If you are unfamiliar, you can use some of 
 
 Markdown files are just simple text files with an `.md` extension. 
 
-You can download a simple `.md` blog post template [here](https://raw.githubusercontent.com/gbif/data-blog/master/content/post/2025-09-24-template.md). 
+You can download a simple `.md` [blog post template here](https://raw.githubusercontent.com/gbif/data-blog/master/templates/2025-09-24-template.md) 
 
 ### Post Template
 
-Posts should have a specific header text. 
+Posts should have a specific header text. [blog post template here](https://raw.githubusercontent.com/gbif/data-blog/master/templates/2025-09-24-template.md) 
+ 
 
 ```
 ---
-title: Test Post
-authors: john
+title: Your post
+authors: Your Name
 date: '2018-09-21'
-slug: test-post
+slug: your-post
 categories:
   - GBIF
 tags:
@@ -121,45 +122,45 @@ You can download a simple `.md` blog post template `./content/post/2025-09-24-te
 
 ### Getting your post on the blog 
 
-A post can be done by simply copying an `.md` into the GitHub `./content/post/` directory. 
+A post can be done by simply copying an `.md` into the **gbif/data-blog** `./content/post/` directory. 
 
 ```
 .
 ├───content
-    └───post <- put yourPost.md here
+    └───post <- put YYYY-MM-DD-your-post.md here
 ```
 
 I am still working out the best way to do this in practice. 
 
 Some options: 
 
-* Send me the `yourPost.md` file **jwaller@gbif.org**
-* Fork the repository and add the `yourPost.md`, then do a pull request. 
-* If you have access to the GitHub, just update the repository yourself. 
+* Send me the `YYYY-MM-DD-your-post.md` file **jwaller@gbif.org**
+* Fork the repository and add the `YYYY-MM-DD-your-post.md`, then do a pull request. 
+* If you have access to **github.com/gbif/data-blog**, just update the repository yourself. 
 
-After `YYYY-MM-DD-yourPost.md` is in the `./content/post/` directory, [Netlify](https://www.netlify.com/) will build the blog automatically, the theme will be applied, and **your post will be online**. 
+After `YYYY-MM-DD-your-post.md` is in the `./content/post/` directory, [Netlify](https://www.netlify.com/) will build the blog automatically, the theme will be applied, and **your post will be online** at  https://data-blog.gbif.org/post/title-of-your-post/. 
 
 ### Insert an image or other static content 
 
 You can always link images from some online hosting service, but it is probably better to associate images directly with a blog post. 
 
-To host static content (images) associated with a particular blog post, you need to **create a folder** in the post directory. For the template post `2025-09-24-template.md`, I created a folder named `./content/post/2025-09-24-template_files/`. 
+To host static content (images) associated with a particular blog post, you need to **create a folder** in the post directory. For `YYYY-MM-DD-your-post.md` you can create a folder named `./content/post/YYYY-MM-DD-your-post_files/`. 
 
 ```
 .
 ├───content
     ├───post
-        ├───template.md
-        └───2025-09-24-template_files <- put images here
-            └───example.jpg
+        ├───YYYY-MM-DD-your-post.md
+        └───YYYY-MM-DD-your-post_files <- put images here
+            └───plot1.jpg
 ```
 
 Then to link an [image in markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#images), use a path like this to the image. 
 
 ```
-![example](/post/2025-09-24-template_files/example.jpg)
+![example](/post/YYYY-MM-DD-your-post_files/plot1.jpg)
 ```
-Note the lack of **/content/** in the path. This is because the image is being linked from the `./public/post/2025-09-24-template_files/`. The `./public/` folder becomes the `.` root directory when the site is built by hugo.  
+Note the lack of **/content/** in the path. This is because the image is being linked from the `./public/post/YYYY-MM-DD-your-post_files/`. The `./public/` folder becomes the `.` root directory when the site is built by hugo.  
 
 ### Previewing a post
 
@@ -170,11 +171,11 @@ If you want to see the post with the blog theme applied, **but don't want to pos
 ```
 hiddenFromHomePage: yes
 ```
-You will have to set this to **no** for the blog to appear on the home page. The default is **no**. You will still be able to visit your blog post but outsiders would have to guess your title to see it. 
+You will have to set this to **no** for the blog to appear on the home page. The default is **no**. You will still be able to visit your blog post but outsiders would have to guess your title to see it (or navigate with the arrows). 
 
 ### Locally serving the site using hugo
 
-You can download and serve the blog locally using [hugo server](https://gohugo.io/commands/hugo_server/). This is probably not necessary. I would just ask to become a collaborator on the before trying to do this as netlify will build the post automatically. 
+You can download and serve the blog locally using [hugo server](https://gohugo.io/commands/hugo_server/). This is probably not necessary. I would just ask to become a collaborator before trying to do this as netlify will build the post automatically. 
 
 ### Writing a post in Rmarkdown
 
@@ -200,68 +201,6 @@ Unless you edit a previously built `.Rmd`, you should not need to install any ad
 ### Inserting images into an Rmarkdown post
 
 If you want to insert an image into an Rmarkdown post, but this image **is not** generated by a plot and **not from** an external source, you should put files into a folder like  `./static/post/2025-09-24-template_files/` rather than `./content/post/2025-09-24-template_files/`. This seems to be blogdown specific. Probably if you named your folder something other than `YYYY-MM-DD-title_files`, you could put it in the **content** folder, but it is probably better to keep all the R associated static files together. 
-
-### Making changes to the blog appearance 
-
-Unfortunately, hugo does not document how to change a theme appearance very well. [This](https://bwaycer.github.io/hugo_tutorial.hugo/themes/customizing/) is the best resource I have found for how to edit a theme. 
-
->The following are key concepts for Hugo site customization. Hugo permits you to supplement or override any theme template or static file, with files in your working directory. When you use a theme cloned from its git repository, you do not edit the theme’s files directly. 
-
-If you want to change the blog appearance, you need to create folders and files in the **root directory** that match folders and files in the **public directory**. Hugo will copy and replace files in the root directory into the public directory. 
-
-### css
-
-Changes to theme css can be done using. 
-
-```
-.
-├───static
-    └───dist 
-        └───even.min.css
-```
-
-**NOTE!** editing the `./public/dist/even.min.css` will have no effect on the blog appearance because it is replaced by `./static/dist/even.min.css` when hugo builds the blog. 
-
-### flavicon and logo image
-
-To replace the flavicon change the files in the root `./static/`. 
-
-```
-.
-├───static
-    ├───favicon-16x16.png
-    ├───favicon-32x32.png
-    └───GBIF-analytics-blog.png
-```
-
-### How I added the logo to the blog
-
-To add the logo by editing `./layouts/partials/header.html`. 
-
-```
-<div class="logo-wrapper">
-  <a href="{{ "/" | relLangURL }}" class="logo">
-	<img src= "{{ .Site.Params.logoSrc }}" alt="GBIF-analytics-blog" style ="width:20%;">
-  </a>
-  <a href="{{ "/" | relLangURL }}" class="gbifLogo">
-	<img src= "{{ .Site.Params.gbifLogoSrc }}" alt="GBIF-logo" style ="width:20%;">
-  </a>
-  
-</div>
-
-```
-
-### How I added author names 
-
-I added author names by editting 
-
-* `./layouts/post/single.html` 
-* `./layouts/post/summary.html`
-
-I added the following lines. 
-```
-<div class="post-author">{{ .Params.author }}</div>
-```
 
 ### Hightlight js
 
@@ -309,6 +248,72 @@ Additionally, to make the language **name** appear at the top of the code block,
 
 ```
 
+See and example post using highlight.js [here](https://github.com/gbif/data-blog/blob/master/templates/highlight-js.md). 
+
+
+Making changes to the blog appearance 
+------
+
+Unfortunately, hugo does not document how to change a theme appearance very well. [This](https://bwaycer.github.io/hugo_tutorial.hugo/themes/customizing/) is the best resource I have found for how to edit a theme. 
+
+>The following are key concepts for Hugo site customization. Hugo permits you to supplement or override any theme template or static file, with files in your working directory. When you use a theme cloned from its git repository, you do not edit the theme’s files directly. 
+
+If you want to change the blog appearance, you need to create folders and files in the **root directory** that match folders and files in the **public directory**. Hugo will copy and replace files in the root directory into the public directory. 
+
+### css
+
+Changes to theme css can be done using. 
+
+```
+.
+├───static
+    └───dist 
+        └───even.min.css
+```
+
+**NOTE!** editing the `./public/dist/even.min.css` will have no effect on the blog appearance because it is replaced by `./static/dist/even.min.css` when hugo builds the blog. 
+
+### flavicon and logo image
+
+To replace the flavicon change the files in the root `./static/`. 
+
+```
+.
+├───static
+    ├───favicon-16x16.png
+    ├───favicon-32x32.png
+    └───GBIF-analytics-blog.png
+```
+
+### How I added the logo to the blog
+
+To add the logo by editing `./layouts/partials/header.html`. 
+
+```
+<div class="logo-wrapper">
+  <a href="{{ "/" | relLangURL }}" class="logo">
+	<img src= "{{ .Site.Params.logoSrc }}" alt="GBIF-analytics-blog" style ="width:20%;">
+  </a>
+</div>
+
+```
+I set the following variable in `config.toml`
+
+```
+logoSrc = "/logo.png"
+```
+
+### How I added author names 
+
+I added author names by editting 
+
+* `./layouts/post/single.html` 
+* `./layouts/post/summary.html`
+
+I added the following lines. 
+```
+<div class="post-author">{{ .Params.author }}</div>
+```
 
 ### Other blog settings 
 
@@ -323,7 +328,7 @@ Delete the `.md` file from from **2 locations**.
 ```
 .
 ├───content
-    └───post <- delete yourPost.md and image folder (if you added one)
+    └───post <- delete YYYY-MM-DD-your-post.md and image folder (if you added one)
 ```
 
 2. Delete the `.md` file from `./public/post/`
@@ -331,7 +336,7 @@ Delete the `.md` file from from **2 locations**.
 ```
 .
 ├───public
-    └───post <- delete yourPost.md and image folder (if you added one)
+    └───post <- delete YYYY-MM-DD-your-post.md and image folder (if you added one)
 ```
 
 ### How I added discoure.org comments 

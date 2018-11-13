@@ -59,8 +59,8 @@ copyright = ""            # default: author.name ↓        #
   since = "2017"            # Site creation time          # 
 
   # site info (optional)     
-  logoSrc = "/logo.png"
-  gbifLogoSrc= "/GBIF-2015.png"
+  logoSrc = "/logo.png" # the logo on the top of the page 
+  gbifLogoSrc= "/GBIF-2015.png" # ignore unless you want to add gbif logo somewhere
   logoTitle = "GBIF Data Blog"        # default: the title value    # 
   keywords = ["Hugo", "theme","even"]
   description = "Hugo theme even example site."
