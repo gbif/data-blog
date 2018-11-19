@@ -49,7 +49,7 @@ You can filter [GBIF occurrences](https://www.gbif.org/occurrence/search?q=) by 
 
 ## Images
 
-GBIF's searching interface has a [gallery](https://www.gbif.org/occurrence/gallery), which displays directly all the images available for the occurrences selected.
+GBIF's searching interface has a [gallery](https://www.gbif.org/occurrence/gallery), which displays directly the first image available for each occurrences selected.
 
 <img src="/post/2018-11-19-gbif-multimedia_files/example_gallery.png" alt="drawing" width="400"/>
 
@@ -74,7 +74,8 @@ What exactly can you make available through GBIF?
 
 ## Media types
 
-In theory, you could share any type of media defined by the [Dublin Core Metadata Initiative](http://dublincore.org/documents/dcmi-type-vocabulary/#H7). However, the recommended terms are:  
+In theory, you could share any type of media defined by the [Dublin Core Metadata Initiative](http://dublincore.org/documents/dcmi-type-vocabulary/#H7). However, the recommended terms are: 
+
 * [Collection](http://dublincore.org/documents/dcmi-type-vocabulary/#dcmitype-Collection)
 * [StillImage](http://dublincore.org/documents/dcmi-type-vocabulary/#dcmitype-StillImage)
 * [Sound](http://dublincore.org/documents/dcmi-type-vocabulary/#dcmitype-Sound)
@@ -100,6 +101,7 @@ In practice, any format that can be interpreted by [Apache Tika](https://github.
 As mentioned at the beginning of this post, GBIF doesn't host any multimedia file for now. This means that you cannot upload pictures or audio files directly on GBIF. They must be hosted on another system. What you should provide, is a URL or URI for each media file you wish to make available.
 
 When sharing your URLs and URIs, keep the following points in mind:
+
 * The URL provided must be a direct link to the file. For example: https://ipt.gbif.org/media/UAIC1008871_X.jpg. 
 * Embedded images or preview links such as: http://161.111.171.57/herbarioV/visorVCat.php?img=MA-01-00070296, don't currently work. 
 * The file extension doesn't always have to be specified in the URL (see for example the URLs provided with [this occurrence](https://www.gbif.org/occurrence/1019735016) from [The Hemiptera collection (EH) of the Muséum national d'Histoire naturelle](https://www.gbif.org/dataset/d9474ec2-061c-4858-bfdd-e10ba6aca397)).
@@ -126,6 +128,7 @@ The better way to share your images, sounds or videos, would be to use extension
 (Definition from the [Darwin Core Archive - How-to wiki](https://github.com/gbif/ipt/wiki/DwCAHowToGuide).)
 
 GBIF currently supports two types of extensions:
+
 * [Simple multimedia](http://rs.gbif.org/extension/gbif/1.0/multimedia.xml)
 * [Audubon Media Description](http://rs.gbif.org/extension/ac/audubon.xml) (partial support for now)
 
@@ -142,6 +145,7 @@ For more information about the terms available in each extension, please check t
 ## Examples
 
 Here are a few datasets using different methods to share their media. Don't hesitate to check out their Darwin Core Archive to see how it looks like.
+
 * [This macroinvertebrate deep-sea dataset](https://www.gbif.org/dataset/4a53a180-f0c8-4dd8-a1fb-18768668edc9) uses the dwc:associatedMedia field.
 * [The cnidarians collection (IK) of the Muséum national d'Histoire naturelle](https://www.gbif.org/dataset/b5cdf587-3342-48ec-9130-ba1281d7166f) uses Simple multimedia extension.
 * A great example of the use of the Audubon Media Description is this [Xeno-canto dataset](https://www.gbif.org/dataset/b1047888-ae52-4179-9dd5-5448ea342a24). 
@@ -151,6 +155,7 @@ Here are a few datasets using different methods to share their media. Don't hesi
 As you might know, you can publish resources on GBIF using alternatives to Darwin Core Archives.
 
 See, for example, the two systems below:
+
 * [BioCaSe](http://www.biocase.org)
 * [Symbiota](http://symbiota.org)
 
