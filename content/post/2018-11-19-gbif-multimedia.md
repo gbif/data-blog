@@ -161,7 +161,7 @@ As you might know, you can publish resources on GBIF using alternatives to Darwi
 
 See, for example, the two systems below:
 
-* [BioCaSe](http://www.biocase.org)
+* [BioCASe](http://www.biocase.org)
 * [Symbiota](http://symbiota.org)
 
 I have never set up nor used either of these systems so I am not the best person to advise on this but I can try to give some links.
