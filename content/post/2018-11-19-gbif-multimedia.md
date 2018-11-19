@@ -140,6 +140,7 @@ Whether you decide to use one extension or the other, you need to generate a fil
 * an [occurrenceID](https://dwc.tdwg.org/terms/#occurrenceID) field (referring to the occurrence or specimen concerned),
 * unique identifiers (`dcterms:identifier`), links to the media (`dcterms:source` or `accessURI`),
 * etc.
+
 This file should be mapped with the proper terms and integrated in the Darwin Core Archive.
 
 For more information about the terms available in each extension, please check the [references](#references).
