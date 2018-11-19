@@ -49,7 +49,7 @@ You can filter [GBIF occurrences](https://www.gbif.org/occurrence/search?q=) by 
 
 ## Images
 
-GBIF's searching interface has a [gallery](https://www.gbif.org/occurrence/gallery), which displays directly the first image available for each occurrences selected.
+GBIF's searching interface has a [gallery](https://www.gbif.org/occurrence/gallery), which displays directly the first image available for each occurrence selected.
 
 <img src="/post/2018-11-19-gbif-multimedia_files/example_gallery.png" alt="drawing" width="400"/>
 
