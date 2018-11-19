@@ -56,7 +56,7 @@ GBIF's searching interface has a [gallery](https://www.gbif.org/occurrence/galle
 
 You can also visualize images for a particular occurrence, by simply clicking on it. See for example, this [occurrence with two images](https://www.gbif.org/occurrence/1822411383) from [the Norwegian Species Observation Service](https://www.gbif.org/dataset/b124e1e0-4755-430f-9eab-894f25a9b59c).
 
-<img src="/post/2018-11-19-gbif-multimedia_files/example_occurrence_with_image.png" alt="drawing" width="200"/>
+<img src="/post/2018-11-19-gbif-multimedia_files/example_occurrence_with_image.png" alt="drawing" width="200" style="display: inline-block;/>
 
 All the images belonging to a same dataset are visible on [its page](https://www.gbif.org/dataset/b124e1e0-4755-430f-9eab-894f25a9b59c). The same goes for all the images belonging to datasets published under the same organization: see [this example](https://www.gbif.org/publisher/d3978a37-635a-4ae3-bb85-7b4d41bc0b88).
 
