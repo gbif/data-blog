@@ -43,7 +43,7 @@ NB: GBIF **does not** host multimedia files and there is no way to upload pictur
 
 # Media displayed on the GBIF portal
 
-Let's say that you are looking for [pictures of otters](https://www.gbif.org/occurrence/search?media_type=StillImage&taxon_key=2433753), or perhaps you would like to listen to the [call of a sea eagle](https://www.gbif.org/occurrence/search?media_type=Sound&taxon_key=2480444).
+Let's say that you are looking for [pictures of otters](https://www.gbif.org/occurrence/search?media_type=StillImage&taxon_key=2433753), or perhaps the [call of a sea eagle](https://www.gbif.org/occurrence/search?media_type=Sound&taxon_key=2480444).
 
 You can filter [GBIF occurrences](https://www.gbif.org/occurrence/search?q=) by Media Type. Once you found what you are looking for, you can visualize and/or hear it directly on the GBIF portal.
 
