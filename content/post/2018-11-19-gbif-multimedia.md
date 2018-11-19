@@ -115,6 +115,7 @@ The simplest way to share your media would be to use the [associatedMedia](https
 This field can handle one or several URLs separated by a pipe symbol: `|`.
 
 For example:
+
 * `https://ipt.gbif.org/media/UAIC1008871_X.jpg`
 * `https://ipt.gbif.org/media/UAIC1008871_X.jpg | https://ipt.gbif.org/media/UAIC1052169_Pheidole_obtusospinosa_65mm_3x_compedit_lg.jpg`
 
@@ -135,6 +136,7 @@ GBIF currently supports two types of extensions:
 Both of these extensions will allow you to share detailed information about your media such as `creator`, `description`, `license`, etc. However, the Audubon Media Description is way more exhaustive.
 
 Whether you decide to use one extension or the other, you need to generate a file containing:
+
 * an [occurrenceID](https://dwc.tdwg.org/terms/#occurrenceID) field (referring to the occurrence or specimen concerned),
 * unique identifiers (`dcterms:identifier`), links to the media (`dcterms:source` or `accessURI`),
 * etc.
