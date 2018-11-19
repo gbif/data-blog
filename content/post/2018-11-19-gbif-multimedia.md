@@ -1,7 +1,7 @@
 ---
 title: Sharing images, sounds and videos on GBIF
 authors: Marie Grosjean
-date: '2000-11-15'
+date: '2018-11-19'
 slug: gbif-multimedia
 categories:
   - GBIF
@@ -22,7 +22,7 @@ comment: no
 toc: ''
 autoCollapseToc: no
 postMetaInFooter: no
-hiddenFromHomePage: yes
+hiddenFromHomePage: no
 contentCopyright: no
 reward: no
 mathjax: no
@@ -106,7 +106,7 @@ When sharing your URLs and URIs, keep the following points in mind:
 
 * The file extension doesn't always have to be specified in the URL (see for example the URLs provided with [this occurrence](https://www.gbif.org/occurrence/1019735016) from [The Hemiptera collection (EH) of the Muséum national d'Histoire naturelle](https://www.gbif.org/dataset/d9474ec2-061c-4858-bfdd-e10ba6aca397)).
 
-* The GBIF system resizes images for thumbnails, therefore you should avoid providing resized images as it would lower your image quality. Please provide the best-resolution possible.
+* GBIF resizes images for thumbnails, so you should provide the best-resolution possible.
 
 For the next two sections, I assume that you are somewhat familiar [Darwin Core Archives](https://github.com/gbif/ipt/wiki/DwCAHowToGuide) and [IPTs](https://github.com/gbif/ipt/wiki).
 
