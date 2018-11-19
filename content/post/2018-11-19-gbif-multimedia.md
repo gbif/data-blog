@@ -103,7 +103,7 @@ As mentioned at the beginning of this post, GBIF doesn't host any multimedia fil
 When sharing your URLs and URIs, keep the following points in mind:
 
 * The URL provided must be a direct link to the file. For example: https://ipt.gbif.org/media/UAIC1008871_X.jpg. 
-* Embedded images or preview links such as: http://161.111.171.57/herbarioV/visorVCat.php?img=MA-01-00070296, don't currently work. 
+* Embedded images or preview links such as: https://ipt.gbif.org/media/viewer/UAIC1008871_X.html, don't currently work. 
 * The file extension doesn't always have to be specified in the URL (see for example the URLs provided with [this occurrence](https://www.gbif.org/occurrence/1019735016) from [The Hemiptera collection (EH) of the Muséum national d'Histoire naturelle](https://www.gbif.org/dataset/d9474ec2-061c-4858-bfdd-e10ba6aca397)).
 
 Note that for the two sub-paragraphs below, I assume that you are somewhat familiar [Darwin Core Archives](https://github.com/gbif/ipt/wiki/DwCAHowToGuide) and [IPTs](https://github.com/gbif/ipt/wiki).
@@ -178,6 +178,7 @@ GBIF doesn't give any official recommendation to set a license on your multimedi
 For example: `https://creativecommons.org/licenses/by-nc/4.0/`
 
 All the occurrences on GBIF have one of the three following licenses:
+
 * [CC0](https://creativecommons.org/publicdomain/zero/1.0/), for data made available for any use without any restrictions
 * [CC BY](https://creativecommons.org/licenses/by/4.0/), for data made available for any use with appropriate attribution
 * [CC BY-NC](https://creativecommons.org/licenses/by-nc/4.0/), for data made available for any non-commercial use with appropriate attribution
