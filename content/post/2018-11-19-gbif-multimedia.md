@@ -39,7 +39,7 @@ sequenceDiagrams:
 
 This blog post covers the publication of multimedia on GBIF. However, it is not intended to be a documentation. For more information, please check the [references below](#references).
 
-NB: GBIF **does not** host multimedia files and there is no way to upload pictures on the platform. For more information, please read the [how to publish](#how-to-publish-media-in-a-Darwin-Core-Archive) paragraphs.
+NB: GBIF **does not** host multimedia files and there is no way to upload pictures on the platform. For more information, please read the [how to publish](#how-to-publish-media-in-a-darwin-core-archive) paragraphs.
 
 # Media displayed on the GBIF portal
 
