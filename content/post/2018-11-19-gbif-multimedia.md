@@ -51,7 +51,7 @@ You can filter [GBIF occurrences](https://www.gbif.org/occurrence/search) by Med
 
 GBIF's searching interface has a [gallery](https://www.gbif.org/occurrence/gallery), which displays the first image available for each occurrence selected.
 
-<img src="/post/2018-11-19-gbif-multimedia_files/example_gallery.png" alt="example gallery" width="400"/>
+<img src="/post/2018-11-19-gbif-multimedia_files/example_gallery.png" alt="example gallery" width="600"/>
 
 You can also view images for a particular occurrence, by simply clicking on it. See for example, this [occurrence with two images](https://www.gbif.org/occurrence/1822411383) from [the Norwegian Species Observation Service](https://www.gbif.org/dataset/b124e1e0-4755-430f-9eab-894f25a9b59c).
 
@@ -91,7 +91,7 @@ For more information about media types, you can check the [references](#referenc
 
 ## Formats
 
-I explained in the previous paragraph that GBIF integrates only images, sound and videos for now. But which formats are supported?
+I explained in the previous paragraph that GBIF integrates only images, sound and videos. But which formats are supported?
 
 In practice, any format that can be interpreted by [Apache Tika](https://github.com/apache/tika) is supported. This should include the formats in this [IANA Media Type list](https://www.iana.org/assignments/media-types/media-types.xhtml) (now called MIME types).
 
@@ -105,6 +105,8 @@ When sharing your URLs and URIs, keep the following points in mind:
 * Images embedded on web pages like https://ipt.gbif.org/media/viewer/UAIC1008871_X.html won't work, but can be provided in addition to the direct link.
 
 * The file extension doesn't always have to be specified in the URL (see for example the URLs provided with [this occurrence](https://www.gbif.org/occurrence/1019735016) from [The Hemiptera collection (EH) of the Muséum national d'Histoire naturelle](https://www.gbif.org/dataset/d9474ec2-061c-4858-bfdd-e10ba6aca397)).
+
+* The GBIF system resizes images for thumbnails, therefore you should avoid providing resized images as it would lower your image quality. Please provide the best-resolution possible.
 
 For the next two sections, I assume that you are somewhat familiar [Darwin Core Archives](https://github.com/gbif/ipt/wiki/DwCAHowToGuide) and [IPTs](https://github.com/gbif/ipt/wiki).
 
