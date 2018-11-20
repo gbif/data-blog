@@ -317,20 +317,44 @@ $(document).ready(function () {
 <li>Write a post in markdown named like <code>YYYY-MM-DD-your-post.md</code> <a href="https://raw.githubusercontent.com/gbif/data-blog/master/templates/2025-09-24-template.md">blog post template here</a></li>
 <li>Preview with a simple online <a href="https://stackedit.io/app#">markdown editor</a></li>
 <li>Save plots or images into an image folder named like <code>YYYY-MM-DD-your-post_files</code></li>
+</ol>
+<pre><code># embed with this template
+![example](/post/YYYY-MM-DD-your-post_files/plot1.jpg)</code></pre>
+<ol start="4" style="list-style-type: decimal">
 <li>Copy/paste <a href="https://github.com/gbif/data-blog/blob/master/templates/header.txt">header text</a> into your <code>.md</code> file</li>
 <li>Edit header text. (probably set the value in the header text to <code>hiddenFromHomePage: yes</code>)</li>
 </ol>
-<pre><code>title: Your post
-author: Your Name
+<pre><code>---
+title: Your post
+authors: Your Name
 date: &#39;2018-09-21&#39;
-slug: your-post
+slug: test-post
 categories:
   - GBIF
 tags:
   - test tag
   - test
-
-(The rest of the header text)
+lastmod: &#39;2018-09-21T15:24:11+02:00&#39;
+keywords: []
+description: &#39;&#39;
+comment: no
+toc: &#39;&#39;
+autoCollapseToc: no
+postMetaInFooter: no
+hiddenFromHomePage: yes
+contentCopyright: no
+reward: no
+mathjax: no
+mathjaxEnableSingleDollar: no
+mathjaxEnableAutoNumber: no
+hideHeaderAndFooter: no
+flowchartDiagrams:
+  enable: no
+  options: &#39;&#39;
+sequenceDiagrams:
+  enable: no
+  options: &#39;&#39;
+---
 </code></pre>
 <ol start="6" style="list-style-type: decimal">
 <li>Clone the repository locally <code>git clone https://github.com/gbif/data-blog.git</code></li>
@@ -343,7 +367,7 @@ tags:
         └───YYYY-MM-DD-your-post_files &lt;- put images here
             └───plot1.jpg</code></pre>
 <ol start="8" style="list-style-type: decimal">
-<li>Push your changes to <strong>gbif/data-blog</strong> (or create pull request).</li>
+<li>Push your changes to <strong>gbif/data-blog</strong> (or create pull request or edit with github ui).</li>
 <li>Get <a href="https://github.com/jhnwllr">someone</a> with admin access to <strong>gbif/data-blog</strong> to invite you as a collaborator (<strong>Settings</strong> &gt; <strong>Collaborators &amp; teams</strong>).</li>
 <li>Check your post at <a href="https://data-blog.gbif.org/post/your-post/" class="uri">https://data-blog.gbif.org/post/your-post/</a> (Netlify will build your post automatically)</li>
 <li><strong>Find mistakes</strong></li>

@@ -8,6 +8,12 @@ The GBIF [data blog](https://data-blog.gbif.org/) is a [markdown](https://github
 1. Write a post in markdown named like `YYYY-MM-DD-your-post.md` [blog post template here](https://raw.githubusercontent.com/gbif/data-blog/master/templates/2025-09-24-template.md)
 2. Preview with a simple online [markdown editor](https://stackedit.io/app#)
 3. Save plots or images into an image folder named like `YYYY-MM-DD-your-post_files`
+
+```
+# embed with this template
+![example](/post/YYYY-MM-DD-your-post_files/plot1.jpg)
+```
+
 4. Copy/paste [header text](https://github.com/gbif/data-blog/blob/master/templates/header.txt) into your `.md` file 
 5. Edit header text. (probably set the value in the header text to `hiddenFromHomePage: yes`) 
 ```
@@ -54,7 +60,7 @@ sequenceDiagrams:
         └───YYYY-MM-DD-your-post_files <- put images here
             └───plot1.jpg
 ```
-8. Push your changes to **gbif/data-blog** (or create pull request). 
+8. Push your changes to **gbif/data-blog** (or create pull request or edit with github ui). 
 9. Get [someone](https://github.com/jhnwllr) with admin access to **gbif/data-blog** to invite you as a collaborator (**Settings** > **Collaborators & teams**).
 10. Check your post at https://data-blog.gbif.org/post/your-post/ (Netlify will build your post automatically)
 11. **Find mistakes** 
