@@ -41,9 +41,7 @@ In this case I want to use a **Circumpolar Arctic Map** which already here is pr
 The map projection for this is 'laea' (*Lambert Azimuthal Equal Area* for those of you out in mercator land) and it is well suited to polar perspective.  
 So the task is to identify the Plant records that fall within this shape file of land areas in the Arctic region.
 
-
 ![arctic](/post/2018-11-22-R_shapefiles_GBIF/arcticPlot.png)
-
 
 ## The GBIF data
 Since we are not going to work on GBIF data directly in the portal, we have to download a subset to work on in R. Now, the more data we grab the bigger the risk that we will blow through memory. These are the steps taken to reduce the initial GBIF data download:
@@ -57,8 +55,9 @@ Due to the size of the download file the R function *fread()* is recommended for
 ```r
 gbif <- fread("arctic_plants.txt", sep = "\t", header = TRUE, na.strings = "\\N")
 ```
+
 ## Putting it together in R
-
-
+It would be sensible to insert a warning here that the R script relies on a deal packages and that there could be some dependencies that need to be resolved before these will load. Make sure these are installed:  
+rgeos, maptools, proj4, data.table, rgdal, dplyr, raster
 
 
