@@ -41,9 +41,9 @@ In this case I want to use a **Circumpolar Arctic Map** which is already here pr
 The map projection for this is 'laea' (*Lambert Azimuthal Equal Area* for those of you out in mercator land) and it is well suited to polar perspective.
 So the task is to identify the Plant records that fall within this shape file of land areas in the Arctic region.
 
-```
+
 ![arctic](/post/2018-11-22-R_shapefiles_GBIF/arcticPlot.png)
-```
+
 ~~ARCTIC MAP PROJECTION~~
 
 ## The GBIF data
