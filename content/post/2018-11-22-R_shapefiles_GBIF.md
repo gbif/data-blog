@@ -39,7 +39,8 @@ It happens sometimes that users need GBIF data that fall within specific boundar
 ## The shapefile
 In this case I want to use a **Circumpolar Arctic Map** which already here is providing us with some challenges.  
 The map projection for this is 'laea' (*Lambert Azimuthal Equal Area* for those of you out in mercator land) and it is well suited to polar perspective.  
-So the task is to identify the Plant records that fall within this shape file of land areas in the Arctic region.
+So the task is to identify the Plant records that fall within this shape file of land areas in the Arctic region.  
+The arctic shape file can be downloaded here: [Bioclimate subzones](https://github.com/jlegind/Polygon-Shapefile-Occurrence-Filter/blob/master/Bioclimate_Subzones%5B1%5D.zip)
 
 ![arctic](/post/2018-11-22-R_shapefiles_GBIF/arcticPlot.png)
 
@@ -57,7 +58,60 @@ gbif <- fread("arctic_plants.txt", sep = "\t", header = TRUE, na.strings = "\\N"
 ```
 
 ## Putting it together in R
-It would be sensible to insert a warning here that the R script relies on a deal packages and that there could be some dependencies that need to be resolved before these will load. Make sure these are installed:  
-rgeos, maptools, proj4, data.table, rgdal, dplyr, raster
+It would be sensible to insert a warning here that the R script relies on a suite of packages and that there could be some dependencies that need to be resolved before these will load. Make sure these are installed:  
+*rgeos, maptools, proj4, data.table, rgdal, dplyr, raster*
+
+Assuming the shape file archive is unpacked and in the work directory:
+```r
+shpfile <- "Bioclimate_Subzones.shp"
+```
+The *readOGR* function from the *rgdal* package is used to pull the shape data into a spatial vector object in R.  
+Now comes a function that takes as arguments the shapefile (.shp), a data frame/data table, the three column names we need lat/long coordinates and the record ID, and lastly the datum for the GBIF records.
+```r
+#'Filter georeferenced records by shapefile
+#'
+#' @param shapefile A shapefile object (.shp)
+#' @param occurrence_df A data frame of georeferenced records. For large csv use fread()
+#' @param lat The column name for latitude in the data frame
+#' @param lon The column name for longitude in the data frame
+#' @param gbifid A unique record key
+#' @param map_crs The datum assigned to the occurrence data frame
+#' @param mkplot Whether to draw the map plots. Can be very expensive
+occurrence.from.shapefile <- function(shapefile, occurrence_df, lat, lon, gbifid, map_crs = "+proj=longlat +datum=WGS84", mkplot = FALSE){
+    
+    shape <- readOGR(shapefile)
+    print(proj4string(shape))
+    
+    #subset the GBIF data into a data frame
+    occ.map <- data.frame(occurrence_df[[lon]], occurrence_df[[lat]], occurrence_df[[gbifid]])
+    print(str(occ.map, 1))
+    #simplify column names
+    names(occ.map)[1:3] <- c('long', 'lat', 'gbifid')
+    print(head(occ.map, 10))
+    #turning the data frame into a "spatial points data frame"
+    coordinates(occ.map) <- c("long", "lat")
+    #defining the datum 
+    proj4string(occ.map) <- CRS(map_crs)
+    #reprojecting the 'gbif' data frame to the same as in the 'shape' object 
+    occ.map <- spTransform(occ.map, proj4string(shape))
+    
+    #Identifying records from gbif that fall within the shape polygons
+    inside <- occ.map[apply(gIntersects(occ.map, shape, byid = TRUE), 2, any),]
+    print(mkplot)
+    if(mkplot){
+        raster::plot(shape)
+        points(inside, col = "olivedrab3")
+    }  
+    
+    #Prepare data frame for joining with the occcurrence df so only records 
+    #that fall inside the polygons get selected 
+    res.gbif <- data.frame(inside@data)
+    final.gbif <- gbif %>% semi_join(res.gbif, by = c(gbifid = "gbifid"))
+    
+    #write.csv(final.gbif, file = "gbif_records_by_shapefile.csv", sep = "\t", col.names = FALSE)
+    return(final.gbif)
+}  
+```
+
 
 
