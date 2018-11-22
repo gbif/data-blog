@@ -316,13 +316,12 @@ $(document).ready(function () {
 <ol style="list-style-type: decimal">
 <li>Write a post in markdown named like <code>YYYY-MM-DD-your-post.md</code> <a href="https://raw.githubusercontent.com/gbif/data-blog/master/templates/2025-09-24-template.md">blog post template here</a></li>
 <li>Preview with a simple online <a href="https://stackedit.io/app#">markdown editor</a></li>
-<li>Save plots or images into an image folder named like <code>YYYY-MM-DD-your-post_files</code></li>
+<li>Save plots or images into an image folder named like <code>./content/post/YYYY-MM-DD-your-post_files</code></li>
 </ol>
 <pre><code># embed with this template
 ![example](/post/YYYY-MM-DD-your-post_files/plot1.jpg)</code></pre>
 <ol start="4" style="list-style-type: decimal">
 <li>Copy/paste <a href="https://github.com/gbif/data-blog/blob/master/templates/header.txt">header text</a> into your <code>.md</code> file</li>
-<li>Edit header text. (probably set the value in the header text to <code>hiddenFromHomePage: yes</code>)</li>
 </ol>
 <pre><code>---
 title: Your post
@@ -356,6 +355,17 @@ sequenceDiagrams:
   options: &#39;&#39;
 ---
 </code></pre>
+<ol start="5" style="list-style-type: decimal">
+<li>Edit important fields in header text:</li>
+</ol>
+<ul>
+<li><code>title: Your post</code> &lt;- your title</li>
+<li><code>authors: Your Name</code> &lt;- your author name</li>
+<li><code>date: &#39;2018-09-21&#39;</code> &lt;- the order the post will appear on blog</li>
+<li><code>slug: test-post</code> &lt;- name that will appear in the link</li>
+<li><code>tags:</code> &lt;- category tags for post</li>
+<li><code>hiddenFromHomePage: yes</code> &lt;- keeps people from seeing your post as you work on it</li>
+</ul>
 <ol start="6" style="list-style-type: decimal">
 <li>Clone the repository locally <code>git clone https://github.com/gbif/data-blog.git</code></li>
 <li>Copy <code>YYYY-MM-DD-your-post.md</code> and <code>YYYY-MM-DD-your-post_files</code> into <code>./content/post/</code></li>
