@@ -21,11 +21,29 @@
     </item>
     
     <item>
+      <title>Arctic</title>
+      <link>/tags/arctic/</link>
+      <pubDate>Thu, 22 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/arctic/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Citizen</title>
       <link>/tags/citizen/</link>
       <pubDate>Fri, 09 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/citizen/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Darwin Core</title>
+      <link>/tags/darwin-core/</link>
+      <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/darwin-core/</guid>
       <description></description>
     </item>
     
@@ -57,6 +75,15 @@
     </item>
     
     <item>
+      <title>Dublin Core</title>
+      <link>/tags/dublin-core/</link>
+      <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/dublin-core/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Gbif</title>
       <link>/tags/gbif/</link>
       <pubDate>Fri, 09 Nov 2018 00:00:00 +0000</pubDate>
@@ -71,6 +98,24 @@
       <pubDate>Tue, 14 Aug 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/gridded-data/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Howto</title>
+      <link>/tags/howto/</link>
+      <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/howto/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Image</title>
+      <link>/tags/image/</link>
+      <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/image/</guid>
       <description></description>
     </item>
     
@@ -95,7 +140,7 @@
     <item>
       <title>Maps</title>
       <link>/tags/maps/</link>
-      <pubDate>Wed, 19 Sep 2018 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 22 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/maps/</guid>
       <description></description>
@@ -111,11 +156,56 @@
     </item>
     
     <item>
+      <title>Media</title>
+      <link>/tags/media/</link>
+      <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/media/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Multimedia</title>
+      <link>/tags/multimedia/</link>
+      <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/multimedia/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Publish</title>
+      <link>/tags/publish/</link>
+      <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/publish/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>R</title>
+      <link>/tags/r/</link>
+      <pubDate>Thu, 22 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/r/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Rstats</title>
       <link>/tags/rstats/</link>
       <pubDate>Wed, 19 Sep 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/rstats/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Shapefile</title>
+      <link>/tags/shapefile/</link>
+      <pubDate>Thu, 22 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/shapefile/</guid>
       <description></description>
     </item>
     
@@ -129,11 +219,29 @@
     </item>
     
     <item>
+      <title>Sound</title>
+      <link>/tags/sound/</link>
+      <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/sound/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Users</title>
       <link>/tags/users/</link>
       <pubDate>Tue, 14 Aug 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/users/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Video</title>
+      <link>/tags/video/</link>
+      <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/video/</guid>
       <description></description>
     </item>
     

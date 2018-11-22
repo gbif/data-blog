@@ -7,7 +7,7 @@ The GBIF [data blog](https://data-blog.gbif.org/) is a [markdown](https://github
 
 1. Write a post in markdown named like `YYYY-MM-DD-your-post.md` [blog post template here](https://raw.githubusercontent.com/gbif/data-blog/master/templates/2025-09-24-template.md)
 2. Preview with a simple online [markdown editor](https://stackedit.io/app#)
-3. Save plots or images into an image folder named like `YYYY-MM-DD-your-post_files`
+3. Save plots or images into an image folder named like `./content/post/YYYY-MM-DD-your-post_files`
 
 ```
 # embed with this template
@@ -15,7 +15,6 @@ The GBIF [data blog](https://data-blog.gbif.org/) is a [markdown](https://github
 ```
 
 4. Copy/paste [header text](https://github.com/gbif/data-blog/blob/master/templates/header.txt) into your `.md` file 
-5. Edit header text. (probably set the value in the header text to `hiddenFromHomePage: yes`) 
 ```
 ---
 title: Your post
@@ -50,6 +49,15 @@ sequenceDiagrams:
 ---
 
 ```
+5. Edit important fields in header text: 
+ 
+ - `title: Your post` <- your title 
+ - `authors: Your Name` <- your author name
+ - `date: '2018-09-21'` <- the order the post will appear on blog
+ - `slug: test-post` <- name that will appear in the link 
+ - `tags:` <- category tags for post
+ - `hiddenFromHomePage: yes` <- keeps people from seeing your post as you work on it
+
 6. Clone the repository locally `git clone https://github.com/gbif/data-blog.git`
 7. Copy `YYYY-MM-DD-your-post.md` and `YYYY-MM-DD-your-post_files` into `./content/post/`
 ```
