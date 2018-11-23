@@ -3,6 +3,8 @@
 
 The GBIF [data blog](https://data-blog.gbif.org/) is a [markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) blog generated using [hugo](https://gohugo.io/) and currently hosted using [Netlify](https://www.netlify.com/).  The blog uses a slightly modified theme called [even](https://github.com/olOwOlo/hugo-theme-even).  
 
+How to write a blog post 
+------
 ### TLDR recommended blog-writing workflow 
 
 1. Write a post in markdown named like `YYYY-MM-DD-your-post.md` [blog post template here](https://raw.githubusercontent.com/gbif/data-blog/master/templates/2025-09-24-template.md)
@@ -76,6 +78,9 @@ sequenceDiagrams:
 13. Switch to `hiddenFromHomePage: no`
 14. Ask [someone](https://github.com/jhnwllr) with admin access to [https://discourse.gbif.org/](https://discourse.gbif.org/) to turn on comments for you.  
 
+
+More details on how to write a post
+------
 ### Writing a post in markdown
 
 Posts should be written in markdown. If you are unfamiliar, you can use some of the links below. 
