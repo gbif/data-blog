@@ -112,6 +112,9 @@ occurrence.from.shapefile <- function(shapefile, occurrence_df, lat, lon, gbifid
     return(final.gbif)
 }  
 ```
-
+A brief explanation of the CRS function used is in order; the occ.map spatial points data frame becomes associated with the Coordinate Reference System (the *map_crs* argument).
+```r
+proj4string(occ.map) <- CRS(map_crs)
+``` 
 
 
