@@ -78,7 +78,7 @@
 
 <meta itemprop="datePublished" content="2018-11-22T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2018-11-22T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="383">
+<meta itemprop="wordCount" content="728">
 
 
 
@@ -198,7 +198,8 @@
 
 <p>In this case I want to use a <strong>Circumpolar Arctic Map</strong> which already here is providing us with some challenges.<br />
 The map projection for this is &lsquo;laea&rsquo; (<em>Lambert Azimuthal Equal Area</em> for those of you out in mercator land) and it is well suited to polar perspective.<br />
-So the task is to identify the Plant records that fall within this shape file of land areas in the Arctic region.</p>
+So the task is to identify the Plant records that fall within this shape file of land areas in the Arctic region.<br />
+The arctic shape file can be downloaded here: <a href="https://github.com/jlegind/Polygon-Shapefile-Occurrence-Filter/blob/master/Bioclimate_Subzones%5B1%5D.zip">Bioclimate subzones</a></p>
 
 <p><img src="/post/2018-11-22-R_shapefiles_GBIF/arcticPlot.png" alt="arctic" /></p>
 
@@ -220,8 +221,66 @@ Due to the size of the download file the R function <em>fread()</em> is recommen
 
 <h2 id="putting-it-together-in-r">Putting it together in R</h2>
 
-<p>It would be sensible to insert a warning here that the R script relies on a deal packages and that there could be some dependencies that need to be resolved before these will load. Make sure these are installed:<br />
-rgeos, maptools, proj4, data.table, rgdal, dplyr, raster</p>
+<p>It would be sensible to insert a warning here that the R script relies on a suite of packages and that there could be some dependencies that need to be resolved before these will load. Make sure these are installed:<br />
+<em>rgeos, maptools, proj4, data.table, rgdal, dplyr, raster</em></p>
+
+<p>Assuming the shape file archive is unpacked and in the work directory:</p>
+
+<pre><code class="language-r">shpfile &lt;- &quot;Bioclimate_Subzones.shp&quot;
+</code></pre>
+
+<p>The <em>readOGR</em> function from the <em>rgdal</em> package is used to pull the shape data into a spatial vector object in R.<br />
+Now comes a function that takes as arguments the shapefile (.shp), a data frame/data table, the three column names we need lat/long coordinates and the record ID, and lastly the datum for the GBIF records.</p>
+
+<pre><code class="language-r">#'Filter georeferenced records by shapefile
+#'
+#' @param shapefile A shapefile object (.shp)
+#' @param occurrence_df A data frame of georeferenced records. For large csv use fread()
+#' @param lat The column name for latitude in the data frame
+#' @param lon The column name for longitude in the data frame
+#' @param gbifid A unique record key
+#' @param map_crs The datum assigned to the occurrence data frame
+#' @param mkplot Whether to draw the map plots. Can be very expensive
+occurrence.from.shapefile &lt;- function(shapefile, occurrence_df, lat, lon, gbifid, map_crs = &quot;+proj=longlat +datum=WGS84&quot;, mkplot = FALSE){
+    
+    shape &lt;- readOGR(shapefile)
+    print(proj4string(shape))
+    
+    #subset the GBIF data into a data frame
+    occ.map &lt;- data.frame(occurrence_df[[lon]], occurrence_df[[lat]], occurrence_df[[gbifid]])
+    print(str(occ.map, 1))
+    #simplify column names
+    names(occ.map)[1:3] &lt;- c('long', 'lat', 'gbifid')
+    print(head(occ.map, 10))
+    #turning the data frame into a &quot;spatial points data frame&quot;
+    coordinates(occ.map) &lt;- c(&quot;long&quot;, &quot;lat&quot;)
+    #defining the datum 
+    proj4string(occ.map) &lt;- CRS(map_crs)
+    #reprojecting the 'gbif' data frame to the same as in the 'shape' object 
+    occ.map &lt;- spTransform(occ.map, proj4string(shape))
+    
+    #Identifying records from gbif that fall within the shape polygons
+    inside &lt;- occ.map[apply(gIntersects(occ.map, shape, byid = TRUE), 2, any),]
+    print(mkplot)
+    if(mkplot){
+        raster::plot(shape)
+        points(inside, col = &quot;olivedrab3&quot;)
+    }  
+    
+    #Prepare data frame for joining with the occcurrence df so only records 
+    #that fall inside the polygons get selected 
+    res.gbif &lt;- data.frame(inside@data)
+    final.gbif &lt;- gbif %&gt;% semi_join(res.gbif, by = c(gbifid = &quot;gbifid&quot;))
+    
+    #write.csv(final.gbif, file = &quot;gbif_records_by_shapefile.csv&quot;, sep = &quot;\t&quot;, col.names = FALSE)
+    return(final.gbif)
+}  
+</code></pre>
+
+<p>A brief explanation of the CRS function used is in order; the occ.map spatial points data frame becomes associated with the Coordinate Reference System (the <em>map_crs</em> argument).</p>
+
+<pre><code class="language-r">proj4string(occ.map) &lt;- CRS(map_crs)
+</code></pre>
 
     </div>
 
