@@ -53,8 +53,8 @@ sequenceDiagrams:
  
  - `title: Your post` <- your title 
  - `authors: Your Name` <- your author name
- - `date: '2018-09-21'` <- the order the post will appear on blog
- - `slug: test-post` <- name that will appear in the link 
+ - `date: '2018-09-21'` <- the order the post will appear on blog. Does not necessarily have to be the same as the date in  `YYYY-MM-DD-your-post.md`. 
+ - `slug: your-post` <- name that will appear in the url https://data-blog.gbif.org/post/your-post/ 
  - `tags:` <- category tags for post
  - `hiddenFromHomePage: yes` <- keeps people from seeing your post as you work on it
 
@@ -136,7 +136,7 @@ Important fields to **fill in** are below:
 title: Your post
 author: Your Name
 date: '2018-09-21'
-slug: test-post
+slug: your-post
 categories:
   - GBIF
 tags:
@@ -172,7 +172,7 @@ Some options:
 * Fork the repository and add the `YYYY-MM-DD-your-post.md`, then do a pull request. 
 * If you have access to **github.com/gbif/data-blog**, just update the repository yourself. 
 
-After `YYYY-MM-DD-your-post.md` is in the `./content/post/` directory, [Netlify](https://www.netlify.com/) will build the blog automatically, the theme will be applied, and **your post will be online** at  https://data-blog.gbif.org/post/title-of-your-post/. 
+After `YYYY-MM-DD-your-post.md` is in the `./content/post/` directory, [Netlify](https://www.netlify.com/) will build the blog automatically, the theme will be applied, and **your post will be online** at  https://data-blog.gbif.org/post/your-post/. Where **/your-post/** is the **slug** you gave your post in the header text.  
 
 ### Insert an image or other static content 
 
@@ -205,11 +205,11 @@ If you want to see the post with the blog theme applied, **but don't want to pos
 ```
 hiddenFromHomePage: yes
 ```
-You will have to set this to **no** for the blog to appear on the home page. The default is **no**. You will still be able to visit your blog post but outsiders would have to guess your title to see it (or navigate with the arrows). 
+You will have to set this to **no** for the blog to appear on the home page. The default is **no**. You will still be able to visit your blog post but outsiders would have to guess your title to see it (or navigate with the arrows).  
 
 ### Locally serving the site using hugo
 
-You can download and serve the blog locally using [hugo server](https://gohugo.io/commands/hugo_server/). This is probably not necessary. I would just ask to become a collaborator before trying to do this as netlify will build the post automatically. 
+You can download and serve the blog locally using [hugo server](https://gohugo.io/commands/hugo_server/). **This is probably not necessary.** I would just ask to become a collaborator before trying to do this as netlify will build the post automatically. 
 
 ### Writing a post in Rmarkdown
 
