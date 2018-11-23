@@ -97,7 +97,7 @@ occurrence.from.shapefile <- function(shapefile, occurrence_df, lat, lon, gbifid
     
     #Identifying records from gbif that fall within the shape polygons
     inside <- occ.map[apply(gIntersects(occ.map, shape, byid = TRUE), 2, any),]
-    print(mkplot)
+
     if(mkplot){
         raster::plot(shape)
         points(inside, col = "olivedrab3")
@@ -107,8 +107,7 @@ occurrence.from.shapefile <- function(shapefile, occurrence_df, lat, lon, gbifid
     #that fall inside the polygons get selected 
     res.gbif <- data.frame(inside@data)
     final.gbif <- gbif %>% semi_join(res.gbif, by = c(gbifid = "gbifid"))
-    
-    #write.csv(final.gbif, file = "gbif_records_by_shapefile.csv", sep = "\t", col.names = FALSE)
+        
     return(final.gbif)
 }  
 ```
@@ -116,5 +115,19 @@ A brief explanation of the CRS function used is in order; the occ.map spatial po
 ```r
 proj4string(occ.map) <- CRS(map_crs)
 ``` 
+This allows us to reproject the GBIF data to the same projection that the shape file comes with which is, as mentioned above, the *Lambert Azimuthal Equal Area* projection.  
+The next part of the function picks out the GBIF record IDs which are located within the polygons in the shape file. Now we are ready to join the initial GBIF records data frame with the selected GBIF IDs we have found (res.gbif) for the final data frame output.  
+
+Of course it would be really nice to have a plot of the shape file with the occurrence records displayed. If RStudio is used the plot will render in the Plots tab when the *mkplot* parameter is set to TRUE.  
+![arctic_plants](/post/2018-11-22-R_shapefiles_GBIF/arcticPlantsBlog.png)
+
+
+
+
+
+
+
+
+
 
 
