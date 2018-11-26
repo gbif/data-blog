@@ -120,7 +120,7 @@ The next part of the function picks out the GBIF record IDs which are located wi
 
 Of course it would be really nice to have a plot of the shape file with the occurrence records displayed. If RStudio is used the plot will render in the Plots tab when the *mkplot* parameter is set to TRUE.  
 ![arctic_plants](/post/2018-11-22-R_shapefiles_GBIF/arcticPlantsBlog.png)
-The ![complete R code can be found here](https://github.com/jlegind/Polygon-Shapefile-Occurrence-Filter/blob/master/arctic6.R)
+![The complete R code can be found here.](https://github.com/jlegind/Polygon-Shapefile-Occurrence-Filter/blob/master/arctic6.R)
 
 
 
