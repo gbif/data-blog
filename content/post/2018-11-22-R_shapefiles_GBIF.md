@@ -116,7 +116,7 @@ A brief explanation of the CRS function used is in order; the occ.map spatial po
 proj4string(occ.map) <- CRS(map_crs)
 ``` 
 This allows us to reproject the GBIF data to the same projection that the shape file comes with which is, as mentioned above, the *Lambert Azimuthal Equal Area* projection.  
-The next part of the function picks out the GBIF record IDs which are located within the polygons in the shape file. Now we are ready to join the initial GBIF records data frame with the selected GBIF IDs we have found (res.gbif) for the final data frame output.  
+The next part of the function picks out the GBIF record IDs which are located within the polygons in the shape file. Now we are ready to join the initial GBIF records data frame with the selected GBIF IDs we have found (res.gbif) for the final data frame output. The filtered output comes to 11,108 GBIF plant records.  
 
 Of course it would be really nice to have a plot of the shape file with the occurrence records displayed. If RStudio is used the plot will render in the Plots tab when the *mkplot* parameter is set to TRUE.  
 ![arctic_plants](/post/2018-11-22-R_shapefiles_GBIF/arcticPlantsBlog.png)
