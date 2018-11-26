@@ -60,7 +60,15 @@ gbif <- fread("arctic_plants.txt", sep = "\t", header = TRUE, na.strings = "\\N"
 
 ## Putting it together in R
 It would be sensible to insert a warning here that the R script relies on a suite of packages and that there could be some dependencies that need to be resolved before these will load. Make sure these are installed:  
-*rgeos, maptools, proj4, data.table, rgdal, dplyr, raster*
+```r
+library(rgeos)
+library(maptools)
+library(proj4)
+library(data.table)
+library(rgdal)
+library(dplyr)
+library(raster)
+```
 
 Assuming the shape file archive is unpacked and in the work directory:
 ```r
