@@ -49,7 +49,8 @@ Since we are not going to work on GBIF data directly in the portal, we have to d
 
  1. As the target is the *arctic region* it would be reasonable to query for all plant records above 55 degrees latitude. This returns a file of about ~35 million records. This is too large.
  2. Remove records within Sweden, Finland, Denmark and Great Britain.
- 3. Filter records out that have the geospatial issues flag and now we are down to ~12 million records. Further reductions are possible with some judicious taxonomic discrimination. The records are available from GBIF using this [filtered search](https://www.gbif.org/occurrence/search?country=NO&country=FI&country=IS&country=RU&country=CA&country=US&country=SJ&taxon_key=6&geometry=POLYGON((-180%2055,180%2055,180%2090,-180%2090,-180%2055))) 
+ 3. Filter records out that have the geospatial issues flag and now we are down to ~12 million records. Further reductions are possible with some judicious taxonomic discrimination.  
+ The records are available from GBIF using this [filtered search](https://www.gbif.org/occurrence/search?country=NO&country=FI&country=IS&country=RU&country=CA&country=US&country=SJ&taxon_key=6&geometry=POLYGON((-180%2055,180%2055,180%2090,-180%2090,-180%2055))) 
   
  
 The GBIF download comes with many columns but for the purpose of using the shape file we only need the coordinates and the unique record ID. More on this later.
