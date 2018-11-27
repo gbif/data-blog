@@ -259,6 +259,9 @@ According to my model, about more 200 datasets can be labeled as "citizen scienc
 
 This number is probably greatly overestimated since the model gives us more false positive than false negative. Nevertheless, it is a relatively accurate estimation.
 
+**Edit 2018-11-27**: I checked the predictions and made a list of citizen science datasets on GBIF available on [GitHub](https://github.com/ManonGros/Small-scripts-using-GBIF-API/blob/master/find_citizen_science_datasets/citizen_science_datasets_26nove2018_not_reviewed.tsv). I also tagged these datasets in the API using a machineTag. You can now look for them with the following call: http://api.gbif.org/v1/dataset?machineTagNamespace=citizenScience.mgrosjean.gbif.org.
+If you don't agree with any of these annotations, please let me know and I will update the tags.
+
 ### My conclusion
 
 I tried to keep my model as simple as possible. Mostly because having a complicated and uninterpretable model wouldn't be very useful for me.
