@@ -156,7 +156,7 @@ Here are a few datasets using different methods to share their media. Don't hesi
 * [The cnidarians collection (IK) of the Muséum national d'Histoire naturelle](https://www.gbif.org/dataset/b5cdf587-3342-48ec-9130-ba1281d7166f) uses the Simple Multimedia extension (get Darwin Core Archive [here](http://collections.mnhn.fr/ipt/archive.do?r=mnhn-ik)).
 * A great example of the use of the Audubon Media Description is this [Xeno-canto dataset](https://www.gbif.org/dataset/b1047888-ae52-4179-9dd5-5448ea342a24) (get Darwin Core Archive [here](https://drive.google.com/uc?export=download&id=1BaOpaKxXaCyg77TohaX3UWyUHaLEZCVt)).
 
-**Edit:** See how GBIF displays the mutlimedia mapping. Example of [two specimens of Stephanohelia gracilis](https://www.gbif.org/occurrence/1265882494) from [The cnidarians collection (IK) of the Muséum national d'Histoire naturelle](https://www.gbif.org/dataset/b5cdf587-3342-48ec-9130-ba1281d7166f). Here are two still `JPEG` images but `the comments` show possible alternatives for other formats and types of media.
+**Edit:** See how GBIF displays the mutlimedia mapping. Example of [two specimens of Stephanohelia gracilis](https://www.gbif.org/occurrence/1265882494) from [The cnidarians collection (IK) of the Muséum national d'Histoire naturelle](https://www.gbif.org/dataset/b5cdf587-3342-48ec-9130-ba1281d7166f). Here are two `JPEG` images but `the comments` show possible alternatives for other formats and types of media.
 <img src="/post/2018-11-19-gbif-multimedia_files/example_still_image_1265882494.png" alt="multimedia mapping displayed on GBIF" width="800"/>
 
 # How to publish media outside of Darwin Core Archives
