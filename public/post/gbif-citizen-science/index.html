@@ -84,7 +84,7 @@ Citizen science on GBIF A 2016 study showed that nearly half of all occurrence r
 
 <meta itemprop="datePublished" content="2018-11-09T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2018-11-09T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="2079">
+<meta itemprop="wordCount" content="2139">
 
 
 
@@ -435,6 +435,9 @@ Every time I ran my script, I got more false positives than false negatives.</p>
 <p>According to my model, about more 200 datasets can be labeled as &ldquo;citizen science&rdquo; (in addition to the 226 I manually annotated), which corresponds to 1% of the total number of datasets on GBIF.</p>
 
 <p>This number is probably greatly overestimated since the model gives us more false positive than false negative. Nevertheless, it is a relatively accurate estimation.</p>
+
+<p><strong>Edit 2018-11-27</strong>: I checked the predictions and made a list of citizen science datasets on GBIF available on <a href="https://github.com/ManonGros/Small-scripts-using-GBIF-API/blob/master/find_citizen_science_datasets/citizen_science_datasets_26nove2018_not_reviewed.tsv">GitHub</a>. I also tagged these datasets in the API using a machineTag. You can now look for them with the following call: <a href="http://api.gbif.org/v1/dataset?machineTagNamespace=citizenScience.mgrosjean.gbif.org">http://api.gbif.org/v1/dataset?machineTagNamespace=citizenScience.mgrosjean.gbif.org</a>.
+If you don&rsquo;t agree with any of these annotations, please let me know and I will update the tags.</p>
 
 <h3 id="my-conclusion">My conclusion</h3>
 

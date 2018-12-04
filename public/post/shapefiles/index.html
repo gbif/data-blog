@@ -78,7 +78,7 @@
 
 <meta itemprop="datePublished" content="2018-11-22T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2018-11-22T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="728">
+<meta itemprop="wordCount" content="871">
 
 
 
@@ -210,7 +210,9 @@ The arctic shape file can be downloaded here: <a href="https://github.com/jlegin
 <ol>
 <li>As the target is the <em>arctic region</em> it would be reasonable to query for all plant records above 55 degrees latitude. This returns a file of about ~35 million records. This is too large.</li>
 <li>Remove records within Sweden, Finland, Denmark and Great Britain.</li>
-<li>Filter records out that have the geospatial issues flag and now we are down to ~6 million records.</li>
+<li>Filter records out that have the geospatial issues flag and now we are down to ~12 million records. Further reductions are possible with some judicious taxonomic discrimination.<br />
+The records are available from GBIF using this <a href="https://www.gbif.org/occurrence/search?country=NO&amp;country=FI&amp;country=IS&amp;country=RU&amp;country=CA&amp;country=US&amp;country=SJ&amp;taxon_key=6&amp;geometry=POLYGON((-180%2055,180%2055,180%2090,-180%2090,-180%2055))">filtered search</a>
+<br /></li>
 </ol>
 
 <p>The GBIF download comes with many columns but for the purpose of using the shape file we only need the coordinates and the unique record ID. More on this later.
@@ -221,8 +223,16 @@ Due to the size of the download file the R function <em>fread()</em> is recommen
 
 <h2 id="putting-it-together-in-r">Putting it together in R</h2>
 
-<p>It would be sensible to insert a warning here that the R script relies on a suite of packages and that there could be some dependencies that need to be resolved before these will load. Make sure these are installed:<br />
-<em>rgeos, maptools, proj4, data.table, rgdal, dplyr, raster</em></p>
+<p>It would be sensible to insert a warning here that the R script relies on a suite of packages and that there could be some dependencies that need to be resolved before these will load. Make sure these are installed:</p>
+
+<pre><code class="language-r">library(rgeos)
+library(maptools)
+library(proj4)
+library(data.table)
+library(rgdal)
+library(dplyr)
+library(raster)
+</code></pre>
 
 <p>Assuming the shape file archive is unpacked and in the work directory:</p>
 
@@ -261,7 +271,7 @@ occurrence.from.shapefile &lt;- function(shapefile, occurrence_df, lat, lon, gbi
     
     #Identifying records from gbif that fall within the shape polygons
     inside &lt;- occ.map[apply(gIntersects(occ.map, shape, byid = TRUE), 2, any),]
-    print(mkplot)
+
     if(mkplot){
         raster::plot(shape)
         points(inside, col = &quot;olivedrab3&quot;)
@@ -271,8 +281,7 @@ occurrence.from.shapefile &lt;- function(shapefile, occurrence_df, lat, lon, gbi
     #that fall inside the polygons get selected 
     res.gbif &lt;- data.frame(inside@data)
     final.gbif &lt;- gbif %&gt;% semi_join(res.gbif, by = c(gbifid = &quot;gbifid&quot;))
-    
-    #write.csv(final.gbif, file = &quot;gbif_records_by_shapefile.csv&quot;, sep = &quot;\t&quot;, col.names = FALSE)
+        
     return(final.gbif)
 }  
 </code></pre>
@@ -281,6 +290,13 @@ occurrence.from.shapefile &lt;- function(shapefile, occurrence_df, lat, lon, gbi
 
 <pre><code class="language-r">proj4string(occ.map) &lt;- CRS(map_crs)
 </code></pre>
+
+<p>This allows us to reproject the GBIF data to the same projection that the shape file comes with which is, as mentioned above, the <em>Lambert Azimuthal Equal Area</em> projection.<br />
+The next part of the function picks out the GBIF record IDs which are located within the polygons in the shape file. Now we are ready to join the initial GBIF records data frame with the selected GBIF IDs we have found (res.gbif) for the final data frame output. The filtered output comes to 11,108 GBIF plant records.</p>
+
+<p>Of course it would be really nice to have a plot of the shape file with the occurrence records displayed. If RStudio is used the plot will render in the Plots tab when the <em>mkplot</em> parameter is set to TRUE.<br />
+<img src="/post/2018-11-22-R_shapefiles_GBIF/arcticPlantsBlog.png" alt="arctic_plants" />
+The complete <a href="https://github.com/jlegind/Polygon-Shapefile-Occurrence-Filter/blob/master/arctic6.R">R code can be found here.</a></p>
 
     </div>
 
