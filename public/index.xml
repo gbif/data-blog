@@ -24,6 +24,15 @@ What about the developer blog? Currently the developer blog no longer being upda
     </item>
     
     <item>
+      <title>GBIF citizen science data</title>
+      <link>/post/gbif-citizen-science-data/</link>
+      <pubDate>Mon, 10 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/gbif-citizen-science-data/</guid>
+      <description>no</description>
+    </item>
+    
+    <item>
       <title>Using shapefiles on GBIF data with R</title>
       <link>/post/shapefiles/</link>
       <pubDate>Thu, 22 Nov 2018 00:00:00 +0000</pubDate>

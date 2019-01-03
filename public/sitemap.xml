@@ -10,6 +10,13 @@
   </url>
   
   <url>
+    <loc>/post/gbif-citizen-science-data/</loc>
+    <lastmod>2018-12-10T11:34:10+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>/post/shapefiles/</loc>
     <lastmod>2018-11-21T15:24:11+02:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -59,6 +66,13 @@
   </url>
   
   <url>
+    <loc>/authors/</loc>
+    <lastmod>2018-12-10T11:34:10+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/tags/api/</loc>
     <lastmod>2018-11-09T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -74,6 +88,7 @@
   
   <url>
     <loc>/authors/</loc>
+    <lastmod>2018-12-10T11:34:10+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -87,6 +102,13 @@
   <url>
     <loc>/tags/citizen/</loc>
     <lastmod>2018-11-09T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/citizen-science/</loc>
+    <lastmod>2018-12-10T11:34:10+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -128,7 +150,7 @@
   
   <url>
     <loc>/categories/gbif/</loc>
-    <lastmod>2018-11-21T15:24:11+02:00</lastmod>
+    <lastmod>2018-12-10T11:34:10+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -233,7 +255,7 @@
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2018-11-21T15:24:11+02:00</lastmod>
+    <lastmod>2018-12-10T11:34:10+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -254,7 +276,7 @@
   
   <url>
     <loc>/tags/rstats/</loc>
-    <lastmod>2018-09-19T13:49:20+02:00</lastmod>
+    <lastmod>2018-12-10T11:34:10+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

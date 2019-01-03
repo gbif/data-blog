@@ -1,0 +1,44 @@
+---
+title: GBIF citizen science data
+author: John Waller
+date: '2018-12-10'
+slug: gbif-citizen-science-data
+categories:
+  - GBIF
+tags:
+  - citizen science
+  - rstats
+lastmod: '2018-12-10T11:34:10+01:00'
+draft: yes
+keywords: []
+description: ''
+authors: ''
+comment: no
+toc: no
+autoCollapseToc: no
+postMetaInFooter: no
+hiddenFromHomePage: no
+contentCopyright: no
+reward: no
+mathjax: no
+mathjaxEnableSingleDollar: no
+mathjaxEnableAutoNumber: no
+hideHeaderAndFooter: no
+flowchartDiagrams:
+  enable: no
+  options: ''
+sequenceDiagrams:
+  enable: no
+  options: ''
+---
+
+
+```{r}
+
+```
+
+![](/post/2018-12-10-gbif-citizen-science-data_files/growthOfCitizenScience.jpg)
+
+
+
+<!--more-->
