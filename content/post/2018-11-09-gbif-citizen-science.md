@@ -44,7 +44,7 @@ Citizen science is scientific research conducted, in whole or in part, by amateu
 
 ### Citizen science on GBIF
 
-A 2016 study showed that nearly half of all occurrence records shared through the GBIF network come from datasets with significant volunteer contributions (for more information, see our ["citizen science" page](https://www.gbif.org/citizen-science) on gbif.org).
+[A 2016 study](https://doi.org/10.1016/j.biocon.2016.09.004) showed that nearly half of all occurrence records shared through the GBIF network come from datasets with significant volunteer contributions (for more information, see our ["citizen science" page](https://www.gbif.org/citizen-science) on gbif.org).
 
 We would like to know what is the proportion of citizen science dataset now, two years later.
 
