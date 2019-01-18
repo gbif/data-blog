@@ -31,7 +31,7 @@ sequenceDiagrams:
   options: ''
 ---
 
-# What is citizen science 
+# What is citizen science?
 
 Citizen science is scientific research conducted, in whole or in part, by amateur (or non-professional) scientists. Biodiversity observations by citizen scientists have become significant in the last 10 years thanks to projects like: 
 
