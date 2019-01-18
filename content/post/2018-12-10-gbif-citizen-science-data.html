@@ -62,37 +62,38 @@ sequenceDiagrams:
 <p><img src="/post/2018-12-10-gbif-citizen-science-data_files/citizenScienceBarplotWeb.jpg" /></p>
 <p><strong>6 of the top 10</strong> datasets on the GBIF network are citizen science datasets.</p>
 </div>
-<div id="birds-are-very-very-popular" class="section level1">
-<h1>Birds are very very popular…</h1>
+<div id="birds-are-very-popular-in-citizen-science" class="section level1">
+<h1>Birds are very popular in citizen science</h1>
+<p><strong>617 of the top 800 species</strong> observed by citizen scientists are birds.</p>
+<ul>
+<li>Top <strong>bird</strong> 1st place (seagull, 8M records)</li>
+<li>Top <strong>insect</strong> 426th place (red admiral butterfly, 200k records)</li>
+<li>Top <strong>mammal</strong> 540th place (row deer, 140k records)</li>
+<li>Top <strong>plant</strong> 645th place (common nettle, 100k records)</li>
+</ul>
+<p>Here I plot the top 800 species in citizen science in terms of occurrence count.</p>
 <p><img src="/post/2018-12-10-gbif-citizen-science-data_files/top800speciesBarplotWeb.jpg" /></p>
 <p><a href="https://jhnwllr.github.io/charts/csPlotTopSpecies.html">interactive version of graph above</a></p>
-<p><strong>Top 800 species</strong> in citizen science (in terms of number of occurrence records). <strong>617</strong> of the top 800 species observed by citizen scientists are birds.</p>
-<ul>
-<li><strong>1st place</strong> (seagull, 8M records)</li>
-<li>First insect <strong>426th place</strong> (red admiral butterfly, 200k records)</li>
-<li>First mammal <strong>540th place</strong> (row deer, 140k records)</li>
-<li>First plant <strong>645th place</strong> (common nettle, 100k records)</li>
-</ul>
 </div>
 <div id="there-are-8-000-000-seagull-occurrence-records" class="section level1">
 <h1>There are &gt; 8 000 000 seagull occurrence records</h1>
-<p><img src="/post/2018-12-10-gbif-citizen-science-data_files/LarusArgentatus.JPG" alt="roe deer" width="65%"></p>
+<p><img src="/post/2018-12-10-gbif-citizen-science-data_files/LarusArgentatus.JPG" alt="roe deer" width="50%"></p>
 <p><a href="https://www.gbif.org/occurrence/1913125694">image source</a></p>
 </div>
 <div id="top-insect-is-the-red-admiral-butterfly-200k-records" class="section level1">
 <h1>Top insect is the red admiral butterfly 200k records</h1>
-<p><img src="/post/2018-12-10-gbif-citizen-science-data_files/VanessaAtalanta.JPG" alt="roe deer" width="65%"></p>
+<p><img src="/post/2018-12-10-gbif-citizen-science-data_files/VanessaAtalanta.JPG" alt="roe deer" width="50%"></p>
 <p><a href="https://www.gbif.org/occurrence/1913125579">image source</a></p>
 </div>
 <div id="top-mammal-is-the-roe-deer-140k-records" class="section level1">
 <h1>Top mammal is the roe deer 140k records</h1>
-<p><img src="/post/2018-12-10-gbif-citizen-science-data_files/CapreolusCapreolus.JPG" alt="roe deer" width=65%"></p>
+<p><img src="/post/2018-12-10-gbif-citizen-science-data_files/CapreolusCapreolus.JPG" alt="roe deer" width=50%"></p>
 <p><a href="https://www.gbif.org/occurrence/1883110155">image source</a></p>
 </div>
 <div id="top-plant-is-the-common-nettle-100k-records" class="section level1">
 <h1>Top plant is the common nettle 100k records</h1>
-<p><img src="/post/2018-12-10-gbif-citizen-science-data_files/UrticaDioica.jpg" alt="common nettle" width=65%"></p>
-<p><a href="https://www.gbif.org/occurrence/1807282155">image source</a></p>
+<p><img src="/post/2018-12-10-gbif-citizen-science-data_files/UrticaDioica.jpg" alt="common nettle" width=50%"></p>
+<p><a href="https://www.gbif.org/occurrence/1802757183">image source</a></p>
 </div>
 <div id="citizen-science-is-less-biodiverse-than-professional-science" class="section level1">
 <h1>Citizen science is less biodiverse than professional science</h1>
@@ -101,18 +102,20 @@ sequenceDiagrams:
 <blockquote>
 <p>So while citizen science is an important and growing part of biodiversity data, it cannot replace well-curated professional museum collections and other professional sources.</p>
 </blockquote>
-<p>While citizen scientists have observed over <strong>50% of GBIF records</strong> (500 Million!), they have <strong>only 20% of the genera</strong> observed by professional scientists (50k out of around 200k genera).</p>
+<p>While citizen scientists have observed over <strong>50% of GBIF records</strong> (500 Million!), they have <strong>only 20% of the genera</strong> observed by professional scientists (50k out of around 200k genera). <strong>So while citizen science will probably not replace professional science</strong>, it is still and important and growing part of biodiveristy monitoring and data collection. No doubt the biodiversity of citizen science observations will continue to increase as more specialists start using apps like <a href="https://www.inaturalist.org/home">iNaturalist</a>. Perhaps citizen scientists will observe 60k or 70k genera by the end of 2019, and do it for free!</p>
 </div>
 <div id="technical-details" class="section level1">
 <h1>Technical details</h1>
 <ul>
 <li><a href="https://github.com/jhnwllr/citizen-science">Link</a> to gitHub with data and R code.<br />
 </li>
-<li><a href="https://data-blog.gbif.org/post/gbif-citizen-science/">Link</a> to in a previous where we describe how we found citizen science datasets.</li>
+<li><a href="https://data-blog.gbif.org/post/gbif-citizen-science/">Link</a> to a previous blog post where we describe how we classified citizen science datasets.</li>
+<li>As of the writing of this blog there are <strong>412 datasets</strong> classified as citizen science on the GBIF network.</li>
 </ul>
 <p>You too can get a list of the citizen science datasets using the gbif api. Paste the following link into a web browser and get a list of citizen science datasets via the GBIF api.</p>
 <pre><code>http://api.gbif.org/v1/dataset?machineTagNamespace=citizenScience.mgrosjean.gbif.org&amp;limit=500
 </code></pre>
-<p>As of the writing of this blog there are <strong>412 datasets</strong> classified as citizen science on the GBIF network.</p>
+<p>There is also a static csv table <a href="https://github.com/jhnwllr/citizen-science/blob/master/data/citizenScienceTable.csv">here</a>.
+Do you know a citizen science dataset that is not in the list? Leave a comment.</p>
 <!--more-->
 </div>
