@@ -125,6 +125,7 @@ http://api.gbif.org/v1/dataset?machineTagNamespace=citizenScience.mgrosjean.gbif
 
 ```
 There is also a static csv table [here](https://github.com/jhnwllr/citizen-science/blob/master/data/citizenScienceTable.csv). 
+
 Do you know a citizen science dataset that is not in the list? Leave a comment. 
 
 
