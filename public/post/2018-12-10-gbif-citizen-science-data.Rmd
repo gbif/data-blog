@@ -99,7 +99,7 @@ For the last few years, citizen science observations make up around 50% of the b
 
 [image source](https://www.gbif.org/occurrence/1807282155)
 
-# Citizen science is less diverse than professional science
+# Citizen science is less biodiverse than professional science
 
 ![](/post/2018-12-10-gbif-citizen-science-data_files/genusCountsCSWeb.jpg)
 
