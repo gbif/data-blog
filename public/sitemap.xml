@@ -66,13 +66,6 @@
   </url>
   
   <url>
-    <loc>/authors/</loc>
-    <lastmod>2018-12-10T11:34:10+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/tags/api/</loc>
     <lastmod>2018-11-09T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -88,7 +81,6 @@
   
   <url>
     <loc>/authors/</loc>
-    <lastmod>2018-12-10T11:34:10+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -206,7 +198,7 @@
   
   <url>
     <loc>/authors/john-waller/</loc>
-    <lastmod>2018-09-19T13:49:20+02:00</lastmod>
+    <lastmod>2018-12-10T11:34:10+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
