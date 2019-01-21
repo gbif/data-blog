@@ -44,6 +44,8 @@ Citizen science is scientific research conducted, in whole or in part, by amateu
 * [Dansk Ornitologisk Forening](http://www.dof.dk/)
 * [Great Back Yard Bird Count](http://gbbc.birdcount.org/)
 
+> Citizen science is scientific research conducted, in whole or in part, by amateur (or non-professional) scientists. Citizen science is sometimes described as “public participation in scientific research,” participatory monitoring, and participatory action research (wikipedia).
+
 # The rise of citizen science on the GBIF network
 
 ![](/post/2018-12-10-gbif-citizen-science-data_files/growthOfCitizenScienceWeb.jpg)
