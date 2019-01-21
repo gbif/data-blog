@@ -41,7 +41,7 @@ Citizen science is scientific research conducted, in whole or in part, by amateu
 * [Artsdatabanken Norway](https://www.artsdatabanken.no/)
 * [Southern African Bird Atlas](http://sabap2.adu.org.za/)
 * [Bird Life Austrailia](https://birdlife.org.au/)
-* [Dansk Ornitoligisk Forening](http://www.dof.dk/)
+* [Dansk Ornitologisk Forening](http://www.dof.dk/)
 * [Great Back Yard Bird Count](http://gbbc.birdcount.org/)
 
 # The rise of citizen science on the GBIF network
