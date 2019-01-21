@@ -83,25 +83,25 @@ Here I plot the top 800 species in citizen science in terms of occurrence count.
 
 <img src="/post/2018-12-10-gbif-citizen-science-data_files/LarusArgentatus.JPG" alt="roe deer" width="50%">
 
-[image source](https://www.gbif.org/occurrence/1913125694)
+[*Larus argentatus* subsp. *argenteus*](https://www.gbif.org/occurrence/1913125694) by G.Droege via Botanic Garden and Botanical Museum Berlin-Dahlem. Photo licensed under [CC BY-SA 3.0](http://creativecommons.org/licenses/by-sa/3.0/)
 
 # Top insect is the red admiral butterfly 200k records 
 
 <img src="/post/2018-12-10-gbif-citizen-science-data_files/VanessaAtalanta.JPG" alt="roe deer" width="50%">
 
-[image source](https://www.gbif.org/occurrence/1913125579)
+[*Vanessa atalanta*](https://www.gbif.org/occurrence/1913125579) by W.-H. Kusber via BoBO - Botanic Garden and Botanical Museum Berlin-Dahlem Observations. Photo licensed under [CC BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0/)
 
 # Top mammal is the roe deer 140k records 
 
 <img src="/post/2018-12-10-gbif-citizen-science-data_files/CapreolusCapreolus.JPG" alt="roe deer" width=50%">
 
-[image source](https://www.gbif.org/occurrence/1883110155)
+[*Capreolus capreolus*](https://www.gbif.org/occurrence/1883110155) by Trine Brevig via the Norwegian Species Observation Service. Photo licensed under [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/)
 
 # Top plant is the common nettle 100k records
 
 <img src="/post/2018-12-10-gbif-citizen-science-data_files/UrticaDioica.jpg" alt="common nettle" width=50%">
 
-[image source](https://www.gbif.org/occurrence/1802757183)
+[*Urtica dioica* subsp. *dioica*](https://www.gbif.org/occurrence/1802757183) by Peter de Lange via iNaturalist. No copyright.
 
 # Citizen science is less biodiverse than professional science
 
