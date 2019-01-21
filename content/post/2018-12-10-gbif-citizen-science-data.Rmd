@@ -9,7 +9,6 @@ tags:
   - citizen science
   - rstats
 lastmod: '2018-12-10T11:34:10+01:00'
-draft: no
 keywords: []
 description: ''
 comment: no

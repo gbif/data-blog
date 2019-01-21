@@ -48,17 +48,7 @@ https://api.gbif.org/v2/map/occurrence/density/0/0/0@1x.png?style=purpleYellow.p
       
       <guid>/post/gbif-download-trends/</guid>
       <description>Link To App
-Explanation of toolThis tool plots the downloads through time for species or other taxonomic groups with more than 25 downloads at GBIF. Downloads at GBIF most often occur through the web interface. In a previous post, we saw that most users are downloading data from GBIF via filtering by scientific name (aka Taxon Key). Since the GBIF index currently sits at over 1 billion records (a 400+GB CSV), most users will simplying filter by their taxonomic group of interest and then generate a download.</description>
-    </item>
-    
-    <item>
-      <title>GBIF data quality issues and flags what do they mean?</title>
-      <link>/post/issues-and-flags/</link>
-      <pubDate>Tue, 26 Sep 2000 00:00:00 +0000</pubDate>
-      
-      <guid>/post/issues-and-flags/</guid>
-      <description>GBIF gets records from around 1600 (and counting) occurrence datasets.Not all of the data-providers have the time or resources to make sure their datasets are free from errors.
-As a service to the biodiversity user community, GBIF flags records that might contain an obvious issue. Some flags are not easy to understand, and most users are probably not aware that they exist or filter them all out by default by leaving the “include records where coordinates are flagged as suspcious” unchecked.</description>
+Explanation of toolThis tool plots the downloads through time for species or other taxonomic groups with more than 25 downloads at GBIF. Downloads at GBIF most often occur through the web interface. In a previous post, we saw that most users are downloading data from GBIF via filtering by scientific name (aka Taxon Key). Since the GBIF index currently sits at over 1 billion records (a 400+GB csv), most users will simplying filter by their taxonomic group of interest and then generate a download.</description>
     </item>
     
   </channel>
