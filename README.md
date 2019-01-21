@@ -29,13 +29,14 @@ tags:
   - test tag
   - test
 lastmod: '2018-09-21T15:24:11+02:00'
+draft : yes
 keywords: []
 description: ''
 comment: no
 toc: ''
 autoCollapseToc: no
 postMetaInFooter: no
-hiddenFromHomePage: yes
+hiddenFromHomePage: no
 contentCopyright: no
 reward: no
 mathjax: no
@@ -58,7 +59,7 @@ sequenceDiagrams:
  - `date: '2018-09-21'` <- the order the post will appear on blog. Does not necessarily have to be the same as the date in  `YYYY-MM-DD-your-post.md`. 
  - `slug: your-post` <- name that will appear in the url https://data-blog.gbif.org/post/your-post/ 
  - `tags:` <- category tags for post
- - `hiddenFromHomePage: yes` <- keeps people from seeing your post as you work on it
+ - `draft: yes` <- keeps people from seeing your post as you work on it
 
 6. Clone the repository locally `git clone https://github.com/gbif/data-blog.git`
 7. Copy `YYYY-MM-DD-your-post.md` and `YYYY-MM-DD-your-post_files` into `./content/post/`
@@ -75,7 +76,7 @@ sequenceDiagrams:
 10. Check your post at https://data-blog.gbif.org/post/your-post/ (Netlify will build your post automatically)
 11. **Find mistakes** 
 12. Fix mistakes and push changes to **gbif/data-blog** until satisfied. 
-13. Switch to `hiddenFromHomePage: no`
+13. Switch to `draft: no`
 14. Ask [someone](https://github.com/jhnwllr) with admin access to [https://discourse.gbif.org/](https://discourse.gbif.org/) to turn on comments for you.  
 
 
@@ -109,6 +110,7 @@ tags:
   - test tag
   - test
 lastmod: '2018-09-21T15:24:11+02:00'
+draft: yes
 keywords: []
 description: ''
 comment: no
@@ -205,12 +207,12 @@ Note the lack of **/content/** in the path. This is because the image is being l
 
 You can preview the post using any markdown [online editor](https://stackedit.io/app#). 
 
-If you want to see the post with the blog theme applied, **but don't want to post to appear yet on the home page**, you can set `hiddenFromHomePage` to **yes** in the header text. 
+If you want to see the post with the blog theme applied, **but don't want to post to appear yet on the home page**, you can set `draft` to **yes** in the header text. 
 
 ```
-hiddenFromHomePage: yes
+draft: yes
 ```
-You will have to set this to **no** for the blog to appear on the home page. The default is **no**. You will still be able to visit your blog post but outsiders would have to guess your title to see it (or navigate with the arrows).  
+You will have to set this to **no** for the blog to appear on the home page. You can visit your blog post by going to `https://data-blog.gbif.org/post/your-post-slug-name/`. This way you can share the post internally without the post being very public. There is a very small chance that someone could guess your blog post's name but since the repository is open, we shouldn't be too concerned about that anyway. Just be happy somebody is reading it. 
 
 ### Locally serving the site using hugo
 
