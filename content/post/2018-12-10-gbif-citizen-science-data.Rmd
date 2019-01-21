@@ -1,7 +1,7 @@
 ---
 title: Will citizen science take over? 
 authors: John Waller
-date: '2018-12-10'
+date: '2019-01-21'
 slug: gbif-citizen-science-data
 categories:
   - GBIF
