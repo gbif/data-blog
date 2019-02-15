@@ -81,7 +81,7 @@ And even for groups like dragonflies, generating a global species richness map c
 
 # Intuition and comparison
 
-Below I plot the **global genus counts of animals** (kingdom Animalia) by country according GBIF occurrence data. On this map the **United States has the more animal genera than Brazil**, and **Iceland has similar animal genus counts to most African countries**. Obviously one can infer there are likely large **data-gaps** present on this map  **without needing a checklist from each country**.  
+Below I plot the **global genus counts of animals** (kingdom Animalia) by country according GBIF occurrence data. On this map the **United States has more animal genera than Brazil**, and **Iceland has similar animal genus counts to most African countries**. Obviously one can infer there are likely large **data-gaps** present on this map  **without needing a checklist from each country**.  
 
 ![](/post/2019-02-15-hunger-mapping_files/genusCountAnimals.png)
 
