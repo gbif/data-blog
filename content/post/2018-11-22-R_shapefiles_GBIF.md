@@ -1,6 +1,6 @@
 ---
 title: Using shapefiles on GBIF data with R
-authors: Jan Kristoffer Legind
+author: Jan Kristoffer Legind
 date: '2018-11-22'
 slug: Shapefiles
 categories:

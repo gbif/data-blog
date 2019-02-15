@@ -1,6 +1,6 @@
 ---
 title: Plot almost anything using the GBIF maps api
-authors: John Waller
+author: John Waller
 date: '2018-09-19'
 slug: gbif-maps-api-using-r-and-leaflet
 categories:

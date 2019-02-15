@@ -1,6 +1,6 @@
 ---
 title: GBIF data quality issues and flags what do they mean? 
-authors: 
+author: 
 date: '2000-09-26'
 slug: issues-and-flags
 categories:

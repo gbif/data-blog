@@ -30,6 +30,15 @@
     </item>
     
     <item>
+      <title>Biodiversity</title>
+      <link>/tags/biodiversity/</link>
+      <pubDate>Mon, 28 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/biodiversity/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Citizen</title>
       <link>/tags/citizen/</link>
       <pubDate>Fri, 09 Nov 2018 00:00:00 +0000</pubDate>
@@ -57,9 +66,18 @@
     </item>
     
     <item>
+      <title>Data gaps</title>
+      <link>/tags/data-gaps/</link>
+      <pubDate>Mon, 28 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/data-gaps/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Data quality</title>
       <link>/tags/data-quality/</link>
-      <pubDate>Tue, 14 Aug 2018 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 28 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/data-quality/</guid>
       <description></description>
@@ -116,6 +134,15 @@
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/howto/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hunger map</title>
+      <link>/tags/hunger-map/</link>
+      <pubDate>Mon, 28 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/hunger-map/</guid>
       <description></description>
     </item>
     

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data gaps on GBIF Data Blog</title>
+    <link>/tags/data-gaps/</link>
+    <description>Recent content in Data gaps on GBIF Data Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 28 Jan 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/data-gaps/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hunger Mapping</title>
+      <link>/post/hunger-mapping/</link>
+      <pubDate>Mon, 28 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/hunger-mapping/</guid>
+      <description>&lt;h1 id=&#34;where-are-we-missing-biodiversity-data&#34;&gt;Where are we missing biodiversity data?&lt;/h1&gt;
+
+&lt;p&gt;A &lt;strong&gt;hunger map&lt;/strong&gt; is a map of missing biodiversity data (a biodiversity &lt;strong&gt;data gap&lt;/strong&gt;). The main challenge with hunger mapping is proving that a species &lt;a href=&#34;https://en.wikipedia.org/wiki/Evidence_of_absence&#34;&gt;does not exist but should exist&lt;/a&gt;  in a region. Hunger maps are important because they could be used to prioritize funding and digitization efforts. Currently, &lt;a href=&#34;https://www.gbif.org/what-is-gbif&#34;&gt;GBIF&lt;/a&gt; has no way of telling what species are missing from where. In this blog post I review some potential ways GBIF could make global biodiversity hunger maps.&lt;/p&gt;
+
+&lt;h1 id=&#34;checklists&#34;&gt;Checklists&lt;/h1&gt;
+
+&lt;p&gt;With the checklist approach one simply compares GBIF occurrence data with &lt;strong&gt;a list of species that should be in the country&lt;/strong&gt; (or area). This is the &lt;strong&gt;gold standard&lt;/strong&gt; of hunger mapping and should be the preferred method &lt;strong&gt;if a checklist exists&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/post/2019-01-28-hunger-mapping_files/iNaturalistMap.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Here we see &lt;a href=&#34;https://www.inaturalist.org/taxa/102661-Hetaerina-cruentata&#34;&gt;iNaturalists approach to hunger mapping&lt;/a&gt;. All checklists seen on &lt;a href=&#34;https://www.inaturalist.org/home&#34;&gt;iNauturalist&lt;/a&gt; are &lt;strong&gt;user supplied&lt;/strong&gt;, meaning that a checklist is created for a region by using the same data that the observation is based on.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;From iNaturalist&amp;rsquo;s help page: &lt;br&gt;&lt;br&gt;
+&amp;ldquo;Every place has a default check list, and whenever an observation is made within the place&amp;rsquo;s boundaries and it has achieved research-grade status, the species observed will get automatically added to the place&amp;rsquo;s check list.&amp;rdquo; &amp;ndash; &lt;a href=&#34;https://www.inaturalist.org/pages/help&#34;&gt;source&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Obviously GBIF would not want to count occurrences as regional checklists as &lt;strong&gt;GBIF would be eating its own tail.&lt;/strong&gt; Ideally we would want a set of &lt;strong&gt;regional checklists&lt;/strong&gt; that have been created &lt;strong&gt;without the use of pre-existing GBIF occurrence datasets&lt;/strong&gt;. This way we can tell what species should be in a certain country and compare with what species we have lat-lon occurrence data.&lt;/p&gt;
+
+&lt;p&gt;Here are some examples of some &lt;strong&gt;regional checklists&lt;/strong&gt; published on GBIF:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.gbif.org/dataset/e09e1e1f-2460-4017-a964-e999abd2bf66&#34;&gt;Korean Peninsula Flora&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.gbif.org/dataset/2c0abc5f-bffd-471b-a932-2288a87668bb&#34;&gt;Catalogue of Texas spiders&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.gbif.org/dataset/91fecd78-0986-4713-9c36-77532846ee25&#34;&gt;Lista de táxones de la flora vascular española&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.gbif.org/dataset/2b94a042-fe01-4d9f-8995-d996c21d33cd&#34;&gt;Checklist of Danish Fungi&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.gbif.org/dataset/7a9bccd4-32fc-420e-a73b-352b92267571&#34;&gt;Checklist of Beetles (Coleoptera) of Canada and Alaska. Second Edition.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.gbif.org/dataset/a7350d23-6727-4eb6-ae0b-6f86fc8d6a71&#34;&gt;Checklist of Danish Flies and Mosquitoes (Diptera)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.gbif.org/dataset/848271aa-6a4f-4bae-a055-7081f3e70c4b&#34;&gt;Catalogue of the Lepidoptera of Belgium&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Non-regional (species) checklists like the &lt;a href=&#34;https://www.gbif.org/dataset/672aca30-f1b5-43d3-8a2b-c1606125fa1b&#34;&gt;Mammal Species of the World&lt;/a&gt; are not as useful for hunger mapping. Currently, regional checklist data is &lt;strong&gt;very patchy and disorganized&lt;/strong&gt;. And if a country is very data-poor, &lt;strong&gt;it is even less likely to have a regional checklist&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h1 id=&#34;predictive-modelling&#34;&gt;Predictive modelling&lt;/h1&gt;
+
+&lt;p&gt;While well-curated regional checklists are the gold standard of hunger mapping, they are very hard to organize and use. Another approach would be to generate species denisty maps through statistical modelling.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/post/2019-01-28-hunger-mapping_files/Birds_all_spp.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;For example, this bird diversity map was produced by &lt;a href=&#34;https://biodiversitymapping.org/wordpress/index.php/home/&#34;&gt;biodiversity mapping&lt;/a&gt;, using a statistical modeling approach &lt;a href=&#34;https://www.pnas.org/content/110/28/E2602.abstract&#34;&gt;citation&lt;/a&gt;. Such modelling approaches could be used to compare predicted versus observed species counts. Unfortunately generating global species richness maps requires fairly good global coverage.&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;
+&lt;img src=&#34;/post/2019-01-28-hunger-mapping_files/molDragonflies.png&#34; alt=&#34;&#34; /&gt;
+&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;And even for groups like dragonflies, generating a global species richness map can be difficult, as we can see with this &lt;a href=&#34;https://mol.org/&#34;&gt;map of life&lt;/a&gt; &lt;a href=&#34;https://mol.org/patterns/richnessrarity?taxa=dragonflies&amp;amp;indicator=sr&#34;&gt;species richness map&lt;/a&gt; for dragonflies.&lt;/p&gt;
+
+&lt;h1 id=&#34;intuition-and-comparison&#34;&gt;Intuition and comparison&lt;/h1&gt;
+
+&lt;p&gt;Below I plot the &lt;strong&gt;global genus counts of animals&lt;/strong&gt; (kingdom Animalia) by country according GBIF occurrence data. On this map the &lt;strong&gt;United States has the more animal genera than Brazil&lt;/strong&gt;, and &lt;strong&gt;Iceland has similar animal genus counts to most of Africa&lt;/strong&gt;. Obviously one can infer there are likely large &lt;strong&gt;data-gaps&lt;/strong&gt; present on this map  &lt;strong&gt;without needing a checklist from each country&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/post/2019-01-28-hunger-mapping_files/genusCountAnimals.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt; &lt;a href=&#34;https://biodiversitymapping.org/wordpress/index.php/home/&#34;&gt;interactive map available here&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Often an expert only needs taxon counts from a certain area to be able to judge if a data gap is present or not. Additionally even non-experts would be able to guess that &lt;a href=&#34;https://www.gbif.org/country/CD/summary&#34;&gt;DRP Congo&lt;/a&gt; should have  &lt;strong&gt;greater than two times&lt;/strong&gt; the animal genus count of &lt;a href=&#34;https://www.gbif.org/country/IS/summary&#34;&gt;Iceland&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/post/2019-01-28-hunger-mapping_files/icelandGenusCount.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;interactive-global-genus-count-maps&#34;&gt;Interactive global genus count maps&lt;/h1&gt;
+
+&lt;p&gt;Below I link to some interactive genus count maps. These maps should be used for illustration and comparison purposes only, since counting taxonomic units is a hard problem even at the genus level. The numbers might &lt;strong&gt;very much inflated by duplicates and synonyms&lt;/strong&gt; (or other issues). In the maps above I have not run any quality controls like excluding extinct species and synonyms. Still the maps broadly highlight where the GBIF network might be hungry for data.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://jhnwllr.github.io/charts/Plants_genusKey.html&#34;&gt;Plants &amp;ndash; kingdom Plantae genus count map&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://jhnwllr.github.io/charts/Animals_genusKey.html&#34;&gt;Animals &amp;ndash; kingodm  Animalia genus count map&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://jhnwllr.github.io/charts/Mammalia_genusKey.html&#34;&gt;Mammals &amp;ndash; class Mammalia genus count map&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://jhnwllr.github.io/charts/Amphibia_genusKey.html&#34;&gt;Amphibians &amp;ndash; class Amphibia genus count map&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://jhnwllr.github.io/charts/Ants_genusKey.html&#34;&gt;Ants &amp;ndash;  family Formicidae genus count map&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://jhnwllr.github.io/charts/Aves_genusKey.html&#34;&gt;Birds &amp;ndash; class Aves genus count map&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://jhnwllr.github.io/charts/Butterflies_genusKey.html&#34;&gt;Butterflies &amp;ndash; order Lepidoptera genus count map&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://jhnwllr.github.io/charts/Dragonflies_genusKey.html&#34;&gt;Dragonflies &amp;ndash; order Odonata genus count map&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://jhnwllr.github.io/charts/Frogs_genusKey.html&#34;&gt;Frogs &amp;ndash; order Anura genus count map&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://jhnwllr.github.io/charts/Fungi_genusKey.html&#34;&gt;Fungi &amp;ndash; kingdom Fungi genus count map&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://jhnwllr.github.io/charts/Pinosida_genusKey.html&#34;&gt;Conifer Trees &amp;ndash; class Pinopsida genus count map&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://jhnwllr.github.io/charts/Reptilia_genusKey.html&#34;&gt;Reptiles &amp;ndash; class Reptilia genus count map&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;problems-with-counting-species&#34;&gt;Problems with counting species&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;One issue that will effect any method is species counting.&lt;/strong&gt; How to divide species will always be controversial. So even if we have a checklist or a model prediction of a species count this will need to be reconciled somehow with the GBIF backbone.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;We are currently working with Catalogue of Life and other partners to try to deliver a more seamless and complete working checklist of all species but, right now, our view of the available data includes hundreds of thousands of scientific names which may or may not be accepted species.&amp;rdquo; &lt;br&gt; &amp;ndash; &lt;a href=&#34;https://www.gbif.org/about-species-counts&#34;&gt;GBIF&amp;rsquo;s statement about species counts&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Even for common species like the European herring gull (Larus argentus) there are &lt;a href=&#34;https://www.gbif.org/occurrence/gallery?taxon_key=9741811&amp;amp;taxon_key=9741394&amp;amp;taxon_key=9806227&amp;amp;taxon_key=5846445&amp;amp;taxon_key=8794868&amp;amp;taxon_key=9493513&amp;amp;taxon_key=8754531&amp;amp;taxon_key=2481139&amp;amp;taxon_key=9793385&amp;amp;taxon_key=9250315&amp;amp;taxon_key=8731929&amp;amp;taxon_key=9401820&amp;amp;taxon_key=6178140&amp;amp;taxon_key=9132226&amp;amp;taxon_key=9813593&#34;&gt;15 unique names&lt;/a&gt;. Some of these names are subspecies names but some are simply duplicates. Cleaning up names for something less common than a seagull will be even more difficult.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/post/2019-01-28-hunger-mapping_files/larusArgentus.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;conclusions&#34;&gt;Conclusions&lt;/h1&gt;
+
+&lt;p&gt;Hunger mapping would be greatly aided by well-curated and clean dataset of regional checklists. Unfortunately, checklists datasets are currently very disorganized. Even if a checklist for a certain group exists in one region does not mean it will exist in another region. In the future GBIF occurrence datasets may act as default checklists.&lt;/p&gt;
+
+&lt;p&gt;Still with a little bit of domain knowledge and some common sense we can roughly map where we probably want to prioritize funding in the future. Looking at the animal genus counts of the countries in Asia and Africa, shows that the &lt;a href=&#34;https://www.gbif.org/programme/82629/bifa-biodiversity-information-fund-for-asia&#34;&gt;BIFA&lt;/a&gt; and &lt;a href=&#34;https://www.gbif.org/programme/82243/bid-biodiversity-information-for-development&#34;&gt;BID&lt;/a&gt; projects are money well spent.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

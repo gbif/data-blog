@@ -1,6 +1,6 @@
 ---
 title: Finding citizen science datasets on GBIF
-authors: Marie Grosjean
+author: Marie Grosjean
 date: '2018-11-09'
 slug: gbif-citizen-science
 categories:

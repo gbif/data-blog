@@ -1,6 +1,6 @@
 ---
 title: Sharing images, sounds and videos on GBIF
-authors: Marie Grosjean
+author: Marie Grosjean
 date: '2018-11-19'
 slug: gbif-multimedia
 categories:

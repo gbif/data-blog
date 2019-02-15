@@ -50,7 +50,7 @@ copyright = ""            # default: author.name ↓        #
 [taxonomies]
   category = "categories"
   tag = "tags"
-  authors = "authors"
+  author = "authors"
 
 [params]
   version = "3.x"           # Used to give a friendly message when you have an incompatible update
