@@ -85,7 +85,7 @@ Below I plot the **global genus counts of animals** (kingdom Animalia) by countr
 
 ![](/post/2019-02-15-hunger-mapping_files/genusCountAnimals.png)
 
-<br> [interactive map available here](https://biodiversitymapping.org/wordpress/index.php/home/)
+<br> [interactive map available here](https://jhnwllr.github.io/charts/Animals_genusKey.html)
 
 Often an expert only needs taxon counts from a certain area to be able to judge if a data gap is present or not. Additionally even non-experts would be able to guess that [DRP Congo](https://www.gbif.org/country/CD/summary) should have  **greater than two times** the animal genus count of [Iceland](https://www.gbif.org/country/IS/summary). 
 
