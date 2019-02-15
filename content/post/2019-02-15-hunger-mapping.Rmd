@@ -1,16 +1,16 @@
 ---
-title: Hunger Mapping
+title: 'Hunger mapping'
 author: John Waller
-date: '2019-01-28'
+date: '2019-02-15'
 slug: hunger-mapping
 categories:
   - GBIF
 tags:
-  - hunger map
-  - biodiversity
+  - hunger maps
   - data gaps
   - data quality
-lastmod: '2019-01-28T09:49:11+01:00'
+lastmod: '2019-02-15T10:10:56+01:00'
+draft: yes
 keywords: []
 description: ''
 authors: ''
@@ -33,15 +33,15 @@ sequenceDiagrams:
   options: ''
 ---
 
-# Where are we missing biodiversity data?  
+# Where are we missing biodiversity data?
 
-A **hunger map** is a map of missing biodiversity data (a biodiversity **data gap**). The main challenge with hunger mapping is proving that a species [does not exist but should exist](https://en.wikipedia.org/wiki/Evidence_of_absence)  in a region. Hunger maps are important because they could be used to prioritize funding and digitization efforts. Currently, [GBIF](https://www.gbif.org/what-is-gbif) has no way of telling what species are missing from where. In this blog post I review some potential ways GBIF could make global biodiversity hunger maps. 
+A **hunger map** is a map of missing biodiversity data (a biodiversity **data gap**). The main challenge with hunger mapping is proving that a species [does not exist but should exist](https://en.wikipedia.org/wiki/Evidence_of_absence)  in a region. Hunger maps are important because they could be used to prioritize funding and digitization efforts. Currently, [GBIF](https://www.gbif.org/what-is-gbif) has no way of telling what species are missing from where. In this blog post I review some potential ways GBIF could make global biodiversity hunger maps.
 
 # Checklists 
 
 With the checklist approach one simply compares GBIF occurrence data with **a list of species that should be in the country** (or area). This is the **gold standard** of hunger mapping and should be the preferred method **if a checklist exists**. 
 
-![](/post/2019-01-28-hunger-mapping_files/iNaturalistMap.png)
+![](/post/2019-02-15-hunger-mapping_files/iNaturalistMap.png)
 
 Here we see [iNaturalists approach to hunger mapping](https://www.inaturalist.org/taxa/102661-Hetaerina-cruentata). All checklists seen on [iNauturalist](https://www.inaturalist.org/home) are **user supplied**, meaning that a checklist is created for a region by using the same data that the observation is based on.  
 
@@ -58,25 +58,22 @@ Here are some examples of some **regional checklists** published on GBIF:
 https://www.gbif.org/dataset/2c0abc5f-bffd-471b-a932-2288a87668bb)
 * [Lista de táxones de la flora vascular española](https://www.gbif.org/dataset/91fecd78-0986-4713-9c36-77532846ee25)
 * [Checklist of Danish Fungi](https://www.gbif.org/dataset/2b94a042-fe01-4d9f-8995-d996c21d33cd)
-* [Checklist of Beetles (Coleoptera) of Canada and Alaska. Second Edition.]
-(https://www.gbif.org/dataset/7a9bccd4-32fc-420e-a73b-352b92267571)
-* [Checklist of Danish Flies and Mosquitoes (Diptera)]
-(https://www.gbif.org/dataset/a7350d23-6727-4eb6-ae0b-6f86fc8d6a71)
-* [Catalogue of the Lepidoptera of Belgium]
- (https://www.gbif.org/dataset/848271aa-6a4f-4bae-a055-7081f3e70c4b)
+* [Checklist of Beetles of Canada and Alaska](https://www.gbif.org/dataset/7a9bccd4-32fc-420e-a73b-352b92267571)
+* [Checklist of Danish Flies and Mosquitoes](https://www.gbif.org/dataset/a7350d23-6727-4eb6-ae0b-6f86fc8d6a71)
+* [Catalogue of the Lepidoptera of Belgium](https://www.gbif.org/dataset/848271aa-6a4f-4bae-a055-7081f3e70c4b)
 
-Non-regional (species) checklists like the [Mammal Species of the World](https://www.gbif.org/dataset/672aca30-f1b5-43d3-8a2b-c1606125fa1b) are not as useful for hunger mapping. Currently, regional checklist data is **very patchy and disorganized**. And if a country is very data-poor, **it is even less likely to have a regional checklist**. 
+Currently, regional checklist data is **very patchy and disorganized**. And if a country is very data-poor, **it is even less likely to have a regional checklist**. 
 
 # Predictive modelling
 
 While well-curated regional checklists are the gold standard of hunger mapping, they are very hard to organize and use. Another approach would be to generate species denisty maps through statistical modelling.  
 
-![](/post/2019-01-28-hunger-mapping_files/Birds_all_spp.jpg)
+![](/post/2019-02-15-hunger-mapping_files/Birds_all_spp.jpg)
 
 For example, this bird diversity map was produced by [biodiversity mapping](https://biodiversitymapping.org/wordpress/index.php/home/), using a statistical modeling approach [citation](https://www.pnas.org/content/110/28/E2602.abstract). Such modelling approaches could be used to compare predicted versus observed species counts. Unfortunately generating global species richness maps requires fairly good global coverage. 
 
 <br>
-![](/post/2019-01-28-hunger-mapping_files/molDragonflies.png)
+![](/post/2019-02-15-hunger-mapping_files/molDragonflies.png)
 <br>
 
 And even for groups like dragonflies, generating a global species richness map can be difficult, as we can see with this [map of life](https://mol.org/) [species richness map](https://mol.org/patterns/richnessrarity?taxa=dragonflies&indicator=sr) for dragonflies. 
@@ -86,13 +83,13 @@ And even for groups like dragonflies, generating a global species richness map c
 
 Below I plot the **global genus counts of animals** (kingdom Animalia) by country according GBIF occurrence data. On this map the **United States has the more animal genera than Brazil**, and **Iceland has similar animal genus counts to most of Africa**. Obviously one can infer there are likely large **data-gaps** present on this map  **without needing a checklist from each country**.  
 
-![](/post/2019-01-28-hunger-mapping_files/genusCountAnimals.png)
+![](/post/2019-02-15-hunger-mapping_files/genusCountAnimals.png)
 
 <br> [interactive map available here](https://biodiversitymapping.org/wordpress/index.php/home/)
 
 Often an expert only needs taxon counts from a certain area to be able to judge if a data gap is present or not. Additionally even non-experts would be able to guess that [DRP Congo](https://www.gbif.org/country/CD/summary) should have  **greater than two times** the animal genus count of [Iceland](https://www.gbif.org/country/IS/summary). 
 
-![](/post/2019-01-28-hunger-mapping_files/icelandGenusCount.png)
+![](/post/2019-02-15-hunger-mapping_files/icelandGenusCount.png)
 
 
 # Interactive global genus count maps
@@ -122,7 +119,7 @@ Below I link to some interactive genus count maps. These maps should be used for
 
 Even for common species like the European herring gull (Larus argentus) there are [15 unique names](https://www.gbif.org/occurrence/gallery?taxon_key=9741811&taxon_key=9741394&taxon_key=9806227&taxon_key=5846445&taxon_key=8794868&taxon_key=9493513&taxon_key=8754531&taxon_key=2481139&taxon_key=9793385&taxon_key=9250315&taxon_key=8731929&taxon_key=9401820&taxon_key=6178140&taxon_key=9132226&taxon_key=9813593). Some of these names are subspecies names but some are simply duplicates. Cleaning up names for something less common than a seagull will be even more difficult. 
 
-![](/post/2019-01-28-hunger-mapping_files/larusArgentus.png)
+![](/post/2019-02-15-hunger-mapping_files/larusArgentus.png)
 
 
 # Conclusions 
@@ -130,7 +127,6 @@ Even for common species like the European herring gull (Larus argentus) there ar
 Hunger mapping would be greatly aided by well-curated and clean dataset of regional checklists. Unfortunately, checklists datasets are currently very disorganized. Even if a checklist for a certain group exists in one region does not mean it will exist in another region. In the future GBIF occurrence datasets may act as default checklists. 
 
 Still with a little bit of domain knowledge and some common sense we can roughly map where we probably want to prioritize funding in the future. Looking at the animal genus counts of the countries in Asia and Africa, shows that the [BIFA](https://www.gbif.org/programme/82629/bifa-biodiversity-information-fund-for-asia) and [BID](https://www.gbif.org/programme/82243/bid-biodiversity-information-for-development) projects are money well spent. 
-
 
 
 

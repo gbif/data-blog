@@ -6,18 +6,18 @@
     <description>Recent content in Hunger maps on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 14 Feb 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 15 Feb 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/hunger-maps/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Hunger Mapping</title>
+      <title>Hunger mapping</title>
       <link>/post/hunger-mapping/</link>
-      <pubDate>Thu, 14 Feb 2019 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 15 Feb 2019 00:00:00 +0000</pubDate>
       
       <guid>/post/hunger-mapping/</guid>
-      <description></description>
+      <description>Where are we missing biodiversity data?A hunger map is a map of missing biodiversity data (a biodiversity data gap). The main challenge with hunger mapping is proving that a species does not exist but should exist in a region. Hunger maps are important because they could be used to prioritize funding and digitization efforts. Currently, GBIF has no way of telling what species are missing from where. In this blog post I review some potential ways GBIF could make global biodiversity hunger maps.</description>
     </item>
     
   </channel>

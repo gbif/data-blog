@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Marie Grosjean on GBIF Data Blog</title>
+    <link>/author/marie-grosjean/</link>
+    <description>Recent content in Marie Grosjean on GBIF Data Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 19 Nov 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/author/marie-grosjean/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Sharing images, sounds and videos on GBIF</title>
+      <link>/post/gbif-multimedia/</link>
+      <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/gbif-multimedia/</guid>
+      <description>This blog post covers the publication of multimedia on GBIF. However, it is not intended to be documentation. For more information, please check the references below.
+NB: GBIF does not host original multimedia files and there is no way to upload pictures to the platform. For more information, please read the how to publish paragraphs.
+Media displayed on the GBIF portal Let&amp;rsquo;s say that you are looking for pictures of otters, or perhaps the call of a sea eagle.</description>
+    </item>
+    
+    <item>
+      <title>Finding citizen science datasets on GBIF</title>
+      <link>/post/gbif-citizen-science/</link>
+      <pubDate>Fri, 09 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/gbif-citizen-science/</guid>
+      <description>Can we automatically label citizen science datasets? The short answer is yes, partially.
+Why label GBIF datasets as &amp;ldquo;citizen science&amp;rdquo;? What is citizen science? Citizen science is scientific research conducted, in whole or in part, by amateur (or non-professional) scientists. Citizen science is sometimes described as &amp;ldquo;public participation in scientific research,&amp;rdquo; participatory monitoring, and participatory action research (wikipedia definition).
+Citizen science on GBIF A 2016 study showed that nearly half of all occurrence records shared through the GBIF network come from datasets with significant volunteer contributions (for more information, see our &amp;ldquo;citizen science&amp;rdquo; page on gbif.</description>
+    </item>
+    
+  </channel>
+</rss>

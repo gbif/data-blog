@@ -11,7 +11,7 @@
   
   <url>
     <loc>/post/hunger-mapping/</loc>
-    <lastmod>2019-01-28T09:49:11+01:00</lastmod>
+    <lastmod>2019-02-15T10:10:56+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -73,13 +73,6 @@
   </url>
   
   <url>
-    <loc>/authors/</loc>
-    <lastmod>2019-01-28T09:49:11+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/tags/api/</loc>
     <lastmod>2018-11-09T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -94,15 +87,7 @@
   </url>
   
   <url>
-    <loc>/authors/</loc>
-    <lastmod>2019-01-28T09:49:11+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/biodiversity/</loc>
-    <lastmod>2019-01-28T09:49:11+01:00</lastmod>
+    <loc>/author/</loc>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -136,14 +121,14 @@
   
   <url>
     <loc>/tags/data-gaps/</loc>
-    <lastmod>2019-01-28T09:49:11+01:00</lastmod>
+    <lastmod>2019-02-15T10:10:56+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/data-quality/</loc>
-    <lastmod>2019-01-28T09:49:11+01:00</lastmod>
+    <lastmod>2019-02-15T10:10:56+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -171,7 +156,7 @@
   
   <url>
     <loc>/categories/gbif/</loc>
-    <lastmod>2019-01-28T09:49:11+01:00</lastmod>
+    <lastmod>2019-02-15T10:10:56+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -205,8 +190,8 @@
   </url>
   
   <url>
-    <loc>/tags/hunger-map/</loc>
-    <lastmod>2019-01-28T09:49:11+01:00</lastmod>
+    <loc>/tags/hunger-maps/</loc>
+    <lastmod>2019-02-15T10:10:56+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -226,8 +211,15 @@
   </url>
   
   <url>
-    <loc>/authors/john-waller/</loc>
-    <lastmod>2018-08-14T15:47:18+02:00</lastmod>
+    <loc>/author/jan-kristoffer-legind/</loc>
+    <lastmod>2018-11-21T15:24:11+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/author/john-waller/</loc>
+    <lastmod>2019-02-15T10:10:56+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -254,6 +246,13 @@
   </url>
   
   <url>
+    <loc>/author/marie-grosjean/</loc>
+    <lastmod>2018-11-15T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/tags/media/</loc>
     <lastmod>2018-11-15T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -269,7 +268,7 @@
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2019-01-28T09:49:11+01:00</lastmod>
+    <lastmod>2019-02-15T10:10:56+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

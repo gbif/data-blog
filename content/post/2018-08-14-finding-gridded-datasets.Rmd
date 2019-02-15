@@ -1,6 +1,6 @@
 ---
 title: Finding gridded datasets
-authors: John Waller
+author: John Waller
 date: '2018-08-14'
 slug: finding-gridded-datasets
 tests:

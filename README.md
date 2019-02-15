@@ -20,7 +20,7 @@ How to write a blog post
 ```
 ---
 title: Your post
-authors: Your Name
+author: Your Name
 date: '2018-09-21'
 slug: test-post
 categories:
