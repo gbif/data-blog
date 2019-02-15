@@ -45,7 +45,7 @@ With the checklist approach one simply compares GBIF occurrence data with **a li
 
 Here we see [iNaturalists approach to hunger mapping](https://www.inaturalist.org/taxa/102661-Hetaerina-cruentata). All checklists seen on [iNauturalist](https://www.inaturalist.org/home) are **user supplied**, meaning that a checklist is created for a region by using the same data that the observation is based on.  
 
-> From iNaturalist's help page: <br><br>
+> From iNaturalists' help page: <br><br>
 "Every place has a default check list, and whenever an observation is made within the place's boundaries and it has achieved research-grade status, the species observed will get automatically added to the place's check list." -- [source](https://www.inaturalist.org/pages/help)
 
 Obviously GBIF would not want to count occurrences as regional checklists as **GBIF would be eating its own tail.** Ideally we would want a set of **regional checklists** that have been created **without the use of pre-existing GBIF occurrence datasets**. This way we can tell what species should be in a certain country and compare with what species we have lat-lon occurrence data. 
@@ -87,7 +87,7 @@ Below I plot the **global genus counts of animals** (kingdom Animalia) by countr
 
 <br> [interactive map available here](https://jhnwllr.github.io/charts/Animals_genusKey.html)
 
-Often an expert only needs taxon counts from a certain area to be able to judge if a data gap is present or not. Additionally even non-experts would be able to guess that [DRP Congo](https://www.gbif.org/country/CD/summary) should have  **greater than two times** the animal genus count of [Iceland](https://www.gbif.org/country/IS/summary). 
+Often an expert only needs taxon counts from a certain area to be able to judge if a data gap is present or not. Additionally even non-experts would be able to guess that [DR Congo](https://www.gbif.org/country/CD/summary) should have  **greater than two times** the animal genus count of [Iceland](https://www.gbif.org/country/IS/summary). 
 
 ![](/post/2019-02-15-hunger-mapping_files/icelandGenusCount.png)
 
