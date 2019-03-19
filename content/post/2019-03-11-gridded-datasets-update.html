@@ -1,0 +1,102 @@
+---
+title: Gridded Datasets Update
+author: John Waller
+date: '2019-03-11'
+slug: gridded-datasets-update
+categories:
+  - GBIF
+tags:
+  - gridded data
+  - data quality
+lastmod: '2019-02-21T10:23:10+01:00'
+draft: yes
+keywords: []
+description: ''
+authors: ''
+comment: no
+toc: ''
+autoCollapseToc: no
+postMetaInFooter: no
+hiddenFromHomePage: no
+contentCopyright: no
+reward: no
+mathjax: no
+mathjaxEnableSingleDollar: no
+mathjaxEnableAutoNumber: no
+hideHeaderAndFooter: no
+flowchartDiagrams:
+  enable: no
+  options: ''
+sequenceDiagrams:
+  enable: no
+  options: ''
+---
+
+
+
+<p><img src="https://raw.githubusercontent.com/jhnwllr/charts/master/gridSnap.gif" width="60%" height="60%"
+style="display: block;margin-left: auto;margin-right: auto;"/></p>
+<div id="gridded-datasets-are-now-flagged-on-the-gbif-registry" class="section level1">
+<h1>Gridded datasets are now flagged on the GBIF registry</h1>
+<p>This update builds on work from a <a href="https://data-blog.gbif.org/post/finding-gridded-datasets/">previous blog post</a>.</p>
+<blockquote>
+<p>Gridded datasets are broadly <strong>datasets that have low coordinate precision</strong> due to rasterized sampling or rounding. This can be a data quality issue because a user might assume an occurrence record has more precision than it actually does.</p>
+</blockquote>
+</div>
+<div id="current-statistics" class="section level1">
+<h1>Current statistics</h1>
+<ul>
+<li><strong>572</strong> datasets are currently flagged as gridded or rasterized on the registry.</li>
+<li><strong>488</strong> of these are rasterized at around 0.1 decimal degrees (around 10 km)</li>
+<li><strong>40</strong> datasets are rasterized at &gt;0.1 decimal degrees <a href="https://www.gbif.org/dataset/81c2b870-f762-11e1-a439-00145eb45e9a">example</a></li>
+</ul>
+<p>These <strong>final 40 datasets</strong> with very large spacing are probably of most concern to those doing research projects with GBIF data.</p>
+</div>
+<div id="what-datasets-were-flagged" class="section level1">
+<h1>What datasets were flagged?</h1>
+<ul>
+<li>Datasets with <strong>&gt;20 unique lat-lon points</strong>.</li>
+<li>Datasets that have <strong>&gt;30% of their unique lat-lon points with the same nearest neighbor distance</strong></li>
+<li>Only datasets with a nearest neighbor distances &gt;0.02 decimal degrees were flagged.</li>
+<li>WGS84 is assumed to calcuate distances.</li>
+<li><strong>All uniuqe occurrence points</strong> from each GBIF dataset have been used this time.</li>
+</ul>
+</div>
+<div id="how-can-this-information-be-used" class="section level1">
+<h1>How can this information be used?</h1>
+<p>The current algorithm for detecting gridded datasets relies on nearest neighbor distances between unique occurrence points. This is described in more detail in a <a href="https://data-blog.gbif.org/post/finding-gridded-datasets/">previous post</a>.</p>
+<p>This produces a simple measure of distance in decimal degrees that can be used for filtering out datasets that might have a coordinate precision above what is expected from the study. The following api call will get all of the datasets flagged as “gridded” on the GBIF registry.</p>
+<pre><code>http://api.gbif.org/v1/dataset?machineTagNamespace=griddedDataSet.jwaller.gbif.org&amp;limit=1000
+</code></pre>
+<p>This information can be incorporated easily into popular R packages for data cleaning, such as <a href="https://github.com/ropensci/CoordinateCleaner">CoordinateCleaner</a>. While this happens, I have created a simple function to extract rasterized keys from the registry. The following will install a package that can be used for extracting flagged datasets from the registry.</p>
+<pre class="r"><code># Installation
+devtools::install_github(&quot;jhnwllr/griddedDatasets&quot;, subdir=&quot;gbifgridded&quot;)
+</code></pre>
+<p>You can now use the <code>gbifgridded::getGriddedKeys</code> function to filter out low resolution datasets.</p>
+<pre class="r"><code>library(rgbif)
+library(dplyr) 
+
+# taxon key for Syntrichia norvegica Weber, 1804 (a moss)
+taxonKey=2671266
+
+# Get occurrence data for a moss occurring in SWEDEN
+occData &lt;- occ_data(taxonKey=taxonKey,
+country=&quot;SE&quot;, # get only from SWEDEN to limit results
+hasGeospatialIssue=FALSE, # remove those with other geospatial issues 
+hasCoordinate=TRUE, # get only with coordinates
+limit=1000)$data # get first 1000 records
+
+# only get dataset keys with spacing greater than around 10 km
+keysToFilter &lt;- gbifgridded::getGriddedKeys(minDistance = 0.1) 
+
+nrow(occData)
+
+cleanData &lt;- occData %&gt;% # should be around 140 occurrence records
+filter(!datasetKey %in% keysToFilter) 
+
+nrow(cleanData) # should remove around 50 low resolution occurrences 
+</code></pre>
+<p>You can also run the function with no arguments to get a list of all the datasetkeys that are gridded.</p>
+<pre class="r"><code>gbifgridded::getGriddedKeys()</code></pre>
+<!--more-->
+</div>

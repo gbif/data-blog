@@ -6,10 +6,21 @@
     <description>Recent content in Gridded data on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 14 Aug 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 11 Mar 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/gridded-data/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Gridded Datasets Update</title>
+      <link>/post/gridded-datasets-update/</link>
+      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/gridded-datasets-update/</guid>
+      <description>Gridded datasets are now flagged on the GBIF registryThis update builds on work from a previous blog post.
+Gridded datasets are broadly datasets that have low coordinate precision due to rasterized sampling or rounding. This can be a data quality issue because a user might assume an occurrence record has more precision than it actually does.
+Current statistics572 datasets are currently flagged as gridded or rasterized on the registry.</description>
+    </item>
     
     <item>
       <title>Finding gridded datasets</title>

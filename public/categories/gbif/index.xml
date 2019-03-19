@@ -6,10 +6,32 @@
     <description>Recent content in GBIF on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 15 Feb 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 19 Mar 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/gbif/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Country Centroids</title>
+      <link>/post/country-centroids/</link>
+      <pubDate>Tue, 19 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/country-centroids/</guid>
+      <description>Country Centroids are a known data quality issue within the GBIF network.
+Sometimes data publishers will not know the exact lat-lon location of a record and will enter the lat-long center of the country instead. This is a data issue because users might be unaware that an observation is pinned to a country center and assume it is a precise location.
+Below I plot the top country centroids found on GBIF within at least 1km.</description>
+    </item>
+    
+    <item>
+      <title>Gridded Datasets Update</title>
+      <link>/post/gridded-datasets-update/</link>
+      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/gridded-datasets-update/</guid>
+      <description>Gridded datasets are now flagged on the GBIF registryThis update builds on work from a previous blog post.
+Gridded datasets are broadly datasets that have low coordinate precision due to rasterized sampling or rounding. This can be a data quality issue because a user might assume an occurrence record has more precision than it actually does.
+Current statistics572 datasets are currently flagged as gridded or rasterized on the registry.</description>
+    </item>
     
     <item>
       <title>Hunger mapping</title>

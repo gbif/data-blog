@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Centroids on GBIF Data Blog</title>
+    <link>/tags/centroids/</link>
+    <description>Recent content in Centroids on GBIF Data Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 19 Mar 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/centroids/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Country Centroids</title>
+      <link>/post/country-centroids/</link>
+      <pubDate>Tue, 19 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/country-centroids/</guid>
+      <description>Country Centroids are a known data quality issue within the GBIF network.
+Sometimes data publishers will not know the exact lat-lon location of a record and will enter the lat-long center of the country instead. This is a data issue because users might be unaware that an observation is pinned to a country center and assume it is a precise location.
+Below I plot the top country centroids found on GBIF within at least 1km.</description>
+    </item>
+    
+  </channel>
+</rss>

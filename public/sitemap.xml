@@ -10,6 +10,20 @@
   </url>
   
   <url>
+    <loc>/post/country-centroids/</loc>
+    <lastmod>2019-02-21T10:23:10+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/post/gridded-datasets-update/</loc>
+    <lastmod>2019-02-21T10:23:10+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>/post/hunger-mapping/</loc>
     <lastmod>2019-02-15T10:10:56+01:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -99,6 +113,13 @@
   </url>
   
   <url>
+    <loc>/tags/centroids/</loc>
+    <lastmod>2019-02-21T10:23:10+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/tags/citizen/</loc>
     <lastmod>2018-11-09T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -128,7 +149,7 @@
   
   <url>
     <loc>/tags/data-quality/</loc>
-    <lastmod>2019-02-15T10:10:56+01:00</lastmod>
+    <lastmod>2019-02-21T10:23:10+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -156,7 +177,7 @@
   
   <url>
     <loc>/categories/gbif/</loc>
-    <lastmod>2019-02-15T10:10:56+01:00</lastmod>
+    <lastmod>2019-02-21T10:23:10+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -177,7 +198,7 @@
   
   <url>
     <loc>/tags/gridded-data/</loc>
-    <lastmod>2018-08-14T15:47:18+02:00</lastmod>
+    <lastmod>2019-02-21T10:23:10+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -219,7 +240,7 @@
   
   <url>
     <loc>/author/john-waller/</loc>
-    <lastmod>2019-02-15T10:10:56+01:00</lastmod>
+    <lastmod>2019-02-21T10:23:10+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -268,7 +289,7 @@
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2019-02-15T10:10:56+01:00</lastmod>
+    <lastmod>2019-02-21T10:23:10+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
