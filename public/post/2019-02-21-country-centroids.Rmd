@@ -60,9 +60,9 @@ Publishers might not only pin occurrences to the center of country but might als
 <img src = "/post/2019-02-21-country-centroids_files/hawaiiCentroid.png" style="display: block;margin-left: auto;margin-right: auto;"/>
 
 
-# Some countries like Monoco are too small to filter
+# Some countries like Monaco are too small to filter
 
-Some countries and provinces are small enough that it does not make sense to filter them out even if they happen to be close to known centroids. For example, if GBIF were to flag all records within 2km of the **Monoco centroid**, we would incorrectly flag more than 27k records that [might even be in France]( http://api.gbif.org/v1/geocode/reverse?lat=43.75479&lng=7.40942). 
+Some countries and provinces are small enough that it does not make sense to filter them out even if they happen to be close to known centroids. For example, if GBIF were to flag all records within 2km of the **Monaco centroid**, we would incorrectly flag more than 27k records that [might even be in France]( http://api.gbif.org/v1/geocode/reverse?lat=43.75479&lng=7.40942). 
 
 <img src = "/post/2019-02-21-country-centroids_files/monocoCentroid.png" style="display: block;margin-left: auto;margin-right: auto;"/>
 
