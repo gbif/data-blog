@@ -143,13 +143,12 @@ NHM_clean <- cc_cen(NHM,
 lon = "decimalLongitude", 
 lat = "decimalLatitude", 
 buffer = 2000, # radius of circle around centroid to look for centroids
-min_area = 1000, # min area of country or province in sqkm to check for centroids
 value = "clean",
 test="both")
 
 nrow(NHM_clean) # should be around 20 records less than 10 000 
 
 ```
-
+<!-- min_area = 1000, # min area of country or province in sqkm to check for centroids -->
 
 <!--more-->
