@@ -6,7 +6,7 @@
     <description>Recent content in Gridded data on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 19 Mar 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 21 Mar 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/gridded-data/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Gridded Datasets Update</title>
       <link>/post/gridded-datasets-update/</link>
-      <pubDate>Tue, 19 Mar 2019 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 21 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>/post/gridded-datasets-update/</guid>
       <description>Gridded datasets are now flagged on the GBIF registryThis update builds on work from a previous blog post.
