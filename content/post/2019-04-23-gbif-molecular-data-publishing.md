@@ -106,7 +106,7 @@ There are two ways to convey this type of information:
 
 In the first case, the information can be structured using defined terms, which makes it easier for users to compare methods once the data is aggregated with other dataset. In addition to that, this is a good way to make the information compatible across platforms. For example, the [BIOWIDE eDNA Fungi dataset](https://doi.org/10.15468/nesbvx) uses [GGNB extensions](http://rs.gbif.org/extension/ggbn/). However, GBIF doesn't index extensions. Which means that the information isn't displayed on the portal. In fact, it is only available to users downloading the raw Darwin Core archive (see screenshot below).
 
-<img src="2019-04-23-gbif-molecular-data-publishing_images/raw_DwcA_download.png" alt="Download Raw DwC-A" width="600"/>
+<img src="post/2019-04-23-gbif-molecular-data-publishing_images/raw_DwcA_download.png" alt="Download Raw DwC-A" width="600"/>
 
 The alternative is to use some of the [Darwin Core terms](https://dwc.tdwg.org/terms/). For example, [Mgnify](https://www.gbif.org/publisher/ab733144-7043-4e88-bd4f-fca7bf858880) organized its datasets as follow:
 
