@@ -87,6 +87,7 @@ Hopefully, the rest of this blog post might give you a better idea of what is po
 <img align="right" src="https://upload.wikimedia.org/wikipedia/commons/c/c0/Carolus_Linnaeus.jpg" alt="Portrait of Carl von Linné (Carolus Linnaeus) - Public domain" width="300"/>
 
 As mentioned in our [FAQ](https://www.gbif.org/faq?question=how-can-i-publish-molecular-data-to-gbif):
+
 > A basic requirement [on GBIF] is that organisms are identified–either using Linnean classification or another accepted taxonomy (e.g. DNA-based Species Hypotheses (SH) for fungi). If a specific taxonomy is not available, organisms may be identified to the nearest possible taxon (e.g. Bacteria).
 
 In other words, checklists, occurrence and sampling-event datasets must contain scientific names (our system doesn't handle OTUs). If you would like to check what can be matched to the GBIF taxonomy, please try out our name matching tool: https://www.gbif.org/tools/species-lookup.
@@ -120,7 +121,7 @@ Note that the methods can also be described in the datasets metadata. For exampl
 A third option could be to do both: structure the information in extensions and make it available in [Darwin Core terms](https://dwc.tdwg.org/terms/). This approach would require more work but would ensure that the information is structured and accessible to more users.
 
 
-## Extensions available
+### Extensions available
 
 A few extensions are currently available for structuring laboratory protocols. As mentioned previously, [BIOWIDE eDNA Fungi dataset](https://doi.org/10.15468/nesbvx) uses [GGNB extensions](http://rs.gbif.org/extension/ggbn/).
 The [MIxS sample extension](https://rs.gbif.org/sandbox/extension/mixs_sample.xml) can also be an alternative.
@@ -164,7 +165,6 @@ Publishing molecular data on GBIF is like publishing any other type of data, it 
 * [Extensions](https://tools.gbif.org/dwca-validator/extensions.do)
 * [MeasurmentOrFact extension](http://rs.tdwg.org/dwc/terms/#measurementorfact)
 * [GGNB extensions](http://rs.gbif.org/extension/ggbn/)
-
 * Frøslev T, Ejrnæs R (2018). BIOWIDE eDNA Fungi dataset. Danish Biodiversity Information Facility. Occurrence dataset https://doi.org/10.15468/nesbvx accessed via GBIF.org on 2019-04-17.
 * PlutoF (2019). UNITE - Unified system for the DNA based fungal species linked to the classification. Version 1.2. Checklist dataset https://doi.org/10.15156/bio/587474 accessed via GBIF.org on 2019-04-17.
 * Cox F, Newsham K, Robinson C, Sweetlove M (2019). Microbial Fungi in soils on different Sub-Antarctic islands. SCAR - Microbial Antarctic Resource System. Metadata dataset https://doi.org/10.15468/jekfdj accessed via GBIF.org on 2019-04-17. + [all the SCAR - Microbial Antarctic Resource System metadata-only datasets](https://www.gbif.org/dataset/search?type=METADATA&publishing_org=af290483-8639-4b58-87fb-a4824c65e577)
