@@ -104,7 +104,7 @@ There are two ways to convey this type of information:
 * Using non-core extensions
 * Using [Darwin Core terms](https://dwc.tdwg.org/terms/) only
 
-In the first case, the information can be structured using defined terms, which makes it easier for users to compare methods once the data is aggregated with other dataset. In addition to that, this is a good way to make the information compatible across platforms. For example, the [BIOWIDE eDNA Fungi dataset](https://doi.org/10.15468/nesbvx) uses [GGNB extensions](http://rs.gbif.org/extension/ggbn/). However, GBIF doesn't index extensions. Which means that the information isn't displayed on the portal. In fact, it is only available to users downloading the raw Darwin Core archive (see screenshot below).
+In the first case, the information can be structured using defined terms, which makes it easier for users to compare methods once the data is aggregated with other dataset. In addition to that, this is a good way to make the information compatible across platforms. For example, the [BIOWIDE eDNA Fungi dataset](https://doi.org/10.15468/nesbvx) uses [GGBN extensions](http://rs.gbif.org/extension/ggbn/). However, GBIF doesn't index extensions. Which means that the information isn't displayed on the portal. In fact, it is only available to users downloading the raw Darwin Core archive (see screenshot below).
 
 <img src="/post/2019-04-23-gbif-molecular-data-publishing_images/raw_DwcA_download.png" alt="Download Raw DwC-A" width="600"/>
 
@@ -123,7 +123,7 @@ A third option could be to do both: structure the information in extensions and 
 
 ### Extensions available
 
-A few extensions are currently available for structuring laboratory protocols. As mentioned previously, [BIOWIDE eDNA Fungi dataset](https://doi.org/10.15468/nesbvx) uses [GGNB extensions](http://rs.gbif.org/extension/ggbn/).
+A few extensions are currently available for structuring laboratory protocols. As mentioned previously, [BIOWIDE eDNA Fungi dataset](https://doi.org/10.15468/nesbvx) uses [GGBN extensions](http://rs.gbif.org/extension/ggbn/).
 The [MIxS sample extension](https://rs.gbif.org/sandbox/extension/mixs_sample.xml) can also be an alternative.
 
 Keep in mind that GBIF doesn't maintain extensions (it is up to the community) so some extensions available can become deprecated.
@@ -134,7 +134,7 @@ You cannot make your sequences available directly on GBIF but you can reference 
 
 The [dwc:associatedSequences](https://dwc.tdwg.org/terms/#dwc:associatedSequences) field should contain a reference to a sequence (for example to EBI or EMBL) not the sequence itself, see for example, the [Centre for Biodiversity Genomics - Canadian Specimens](https://doi.org/10.15468/mbwnw9).
 
-The [GGNB extensions](http://rs.gbif.org/extension/ggbn/) allow to share sequences but it is not indexed by the system and is therefore available only in the raw Darwin Core archive, see the [BIOWIDE eDNA Fungi dataset](https://doi.org/10.15468/nesbvx).
+The [GGBN extensions](http://rs.gbif.org/extension/ggbn/) allow to share sequences but it is not indexed by the system and is therefore available only in the raw Darwin Core archive, see the [BIOWIDE eDNA Fungi dataset](https://doi.org/10.15468/nesbvx).
 
 # Environmental data
 
@@ -164,7 +164,7 @@ Publishing molecular data on GBIF is like publishing any other type of data, it 
 * [Name matching tool](https://www.gbif.org/tools/species-lookup)
 * [Extensions](https://tools.gbif.org/dwca-validator/extensions.do)
 * [MeasurmentOrFact extension](http://rs.tdwg.org/dwc/terms/#measurementorfact)
-* [GGNB extensions](http://rs.gbif.org/extension/ggbn/)
+* [GGBN extensions](http://rs.gbif.org/extension/ggbn/)
 * Frøslev T, Ejrnæs R (2018). BIOWIDE eDNA Fungi dataset. Danish Biodiversity Information Facility. Occurrence dataset https://doi.org/10.15468/nesbvx accessed via GBIF.org on 2019-04-17.
 * PlutoF (2019). UNITE - Unified system for the DNA based fungal species linked to the classification. Version 1.2. Checklist dataset https://doi.org/10.15156/bio/587474 accessed via GBIF.org on 2019-04-17.
 * Cox F, Newsham K, Robinson C, Sweetlove M (2019). Microbial Fungi in soils on different Sub-Antarctic islands. SCAR - Microbial Antarctic Resource System. Metadata dataset https://doi.org/10.15468/jekfdj accessed via GBIF.org on 2019-04-17. + [all the SCAR - Microbial Antarctic Resource System metadata-only datasets](https://www.gbif.org/dataset/search?type=METADATA&publishing_org=af290483-8639-4b58-87fb-a4824c65e577)
