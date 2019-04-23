@@ -18,7 +18,7 @@ comment: no
 toc: no
 autoCollapseToc: no
 postMetaInFooter: no
-hiddenFromHomePage: no
+hiddenFromHomePage: yes
 contentCopyright: no
 reward: no
 mathjax: no
@@ -35,6 +35,8 @@ sequenceDiagrams:
 
 
 # challenges with checklist datasets 
+
+You might be thinking why not do a global analysis. This is a valid thought, however, 
 
 Currently checklist datasets on GBIF have variable levels of organization and structure. 
 
