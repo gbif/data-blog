@@ -101,8 +101,8 @@ If no scientific name is available, you can always publish metadata-only dataset
 The sampling protocol, sequencing technology, quality control and sequence analysis pipelines make a huge difference in what can be detected at the microscopic level. For metagenomics datasets, the set of methods employed is probably the most valuable piece of information for a data user.
 There are two ways to convey this type of information:
 
-* Using extensions
-* **Not** using extensions
+* Using non-core extensions
+* Using [Darwin Core terms](https://dwc.tdwg.org/terms/) only
 
 In the first case, the information can be structured using defined terms, which makes it easier for users to compare methods once the data is aggregated with other dataset. In addition to that, this is a good way to make the information compatible across platforms. For example, the [BIOWIDE eDNA Fungi dataset](https://doi.org/10.15468/nesbvx) uses [GGNB extensions](http://rs.gbif.org/extension/ggbn/). However, GBIF doesn't index extensions. Which means that the information isn't displayed on the portal. In fact, it is only available to users downloading the raw Darwin Core archive (see screenshot below).
 
