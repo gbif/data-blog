@@ -42,7 +42,7 @@ sequenceDiagrams:
 
 GBIF is trying to make it easier to share molecular-based data. In fact, this past year alone, we worked with [UNITE](https://unite.ut.ee) to integrate species hypothesis for fungi and with EMBL-[EBI](https://www.ebi.ac.uk) to publish 295 metagenomics datasets.
 
-Unfortunately, the documentation is not as quick to follow. Although we have now an [FAQ](https://www.gbif.org/faq?question=how-can-i-publish-molecular-data-to-gbif) on the topic, I thought that anyone could use a blog post with some advice and examples.
+Unfortunately, the documentation is not as easy to follow. Although we have now an [FAQ](https://www.gbif.org/faq?question=how-can-i-publish-molecular-data-to-gbif) on the topic, I thought that anyone could use a blog post with some advice and examples.
 
 Note that this blog post is not intended to be documentation. The information written is subject to change, feel free to leave comments if you have any question or suggestion.
 

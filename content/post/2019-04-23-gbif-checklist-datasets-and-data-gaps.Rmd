@@ -1,0 +1,63 @@
+---
+title: GBIF checklist datasets and data gaps
+author: John Waller
+date: '2019-04-23'
+slug: gbif-checklist-datasets-and-data-gaps
+categories:
+  - GBIF
+tags:
+  - data gaps
+  - data quality
+  - checklists
+lastmod: '2019-04-23T09:02:19+02:00'
+draft: yes
+keywords: []
+description: ''
+authors: ''
+comment: no
+toc: no
+autoCollapseToc: no
+postMetaInFooter: no
+hiddenFromHomePage: no
+contentCopyright: no
+reward: no
+mathjax: no
+mathjaxEnableSingleDollar: no
+mathjaxEnableAutoNumber: no
+hideHeaderAndFooter: no
+flowchartDiagrams:
+  enable: no
+  options: ''
+sequenceDiagrams:
+  enable: no
+  options: ''
+---
+
+
+# challenges with checklist datasets 
+
+Currently checklist datasets on GBIF have variable levels of organization and structure. 
+
+For the purposes of identifying data gaps, the most useful additional information would be linking a checklist to a region. 
+
+By far the biggest publisher of checklist datasets in Plazi. Plazi is an organization that extracts biodiversity information from 
+
+Non-technically "a checklist" implies that it is an exhaustive list. 
+
+For Plazi checklists, this is not true. 
+
+For example Sweden keeps a checklist of all life occurring in Sweden, but even this checklist is not completely exhaustive. 
+
+61,500 species occurring in Sweden
+
+https://www.gbif.org/dataset/de8934f4-a136-481c-a87a-b0b202b80a31
+
+
+* known knowns: in a checklist and has an occurrences 
+* known uknowns: in a checklist but no occurrence
+
+* unknown unknowns: not in a checklist and no occurrence (biodiversity dark matter)
+
+Bootstrap your way into identifying data gaps. 
+
+<!--more-->
