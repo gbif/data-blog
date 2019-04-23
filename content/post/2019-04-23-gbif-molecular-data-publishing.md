@@ -54,8 +54,8 @@ Note that this blog post is not intended to be documentation. The information wr
 The term `molecular-based data` refers to any type of data associated to some genetic material (DNA or RNA sequence, genotype, etc.).
 These data can  be sorted in one of the two following categories:
 
-* the genetic material comes from an observable specimen (whether it is macro or microscopic).
-* the genetic material is the only evidence of a given organism or community, see for example metagenomics samples.
+* the genetic material comes from an **observable specimen** (whether it is macro or microscopic).
+* the genetic material is the **only evidence of a given organism or community**, see for example metagenomics samples.
 
 These two categories have different implications in terms of quality control but this will be the topic of an other post.
 
