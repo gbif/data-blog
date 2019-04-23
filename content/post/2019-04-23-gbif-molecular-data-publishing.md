@@ -2,7 +2,7 @@
 title: Molecular-based data on GBIF - Sharing your data
 authors: Marie Grosjean
 date: '2000-11-15'
-slug: gbif-multimedia
+slug: gbif-molecular-data
 categories:
   - GBIF
 tags:
