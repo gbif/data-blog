@@ -1,6 +1,6 @@
 ---
 title: Sequence-based data on GBIF - Sharing your data
-authors: Marie Grosjean
+author: Marie Grosjean
 date: '2019-04-24'
 slug: gbif-molecular-data
 categories:
