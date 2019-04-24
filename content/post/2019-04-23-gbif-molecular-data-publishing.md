@@ -1,7 +1,7 @@
 ---
-title: Molecular-based data on GBIF - Sharing your data
+title: Sequence-based data on GBIF - Sharing your data
 authors: Marie Grosjean
-date: '2000-11-15'
+date: '2019-04-24'
 slug: gbif-molecular-data
 categories:
   - GBIF
@@ -40,18 +40,18 @@ sequenceDiagrams:
   options: ''
 ---
 
-GBIF is trying to make it easier to share molecular-based data. In fact, this past year alone, we worked with [UNITE](https://unite.ut.ee) to integrate species hypothesis for fungi and with EMBL-[EBI](https://www.ebi.ac.uk) to publish 295 metagenomics datasets.
+GBIF is trying to make it easier to share sequence-based data. In fact, this past year alone, we worked with [UNITE](https://unite.ut.ee) to integrate species hypothesis for fungi and with EMBL-[EBI](https://www.ebi.ac.uk) to publish 295 metagenomics datasets.
 
-Unfortunately, the documentation is not as quick to follow. Although we have now an [FAQ](https://www.gbif.org/faq?question=how-can-i-publish-molecular-data-to-gbif) on the topic, I thought that anyone could use a blog post with some advice and examples.
+Unfortunately, documentation is not as quick to follow. Although we have now an [FAQ](https://www.gbif.org/faq?question=how-can-i-publish-molecular-data-to-gbif) on the topic, I thought that anyone could use a blog post with some advice and examples.
 
 Note that this blog post is not intended to be documentation. The information written is subject to change, feel free to leave comments if you have any question or suggestion.
 
 <img src="https://www.publicdomainpictures.net/pictures/40000/velka/--1359709322C31.jpg#.XLcmtPqn2pQ.link" alt="Structure Of DNA - Public Domain" width="600"/>
 
-# Type of molecular-based data on GBIF
+# Type of sequence-based data on GBIF
 
 
-The term `molecular-based data` refers to any type of data associated to some genetic material (DNA or RNA sequence, genotype, etc.).
+The term `sequence-based data` or `molecular-based data` refers to any type of data associated to some genetic material (DNA or RNA sequence, genotype, etc.).
 These data can  be sorted in one of the two following categories:
 
 * the genetic material comes from an **observable specimen** (whether it is macro or microscopic).
@@ -84,7 +84,7 @@ Hopefully, the rest of this blog post might give you a better idea of what is po
 
 # Linnaean classification and non-Linnaean classification
 
-<img align="right" src="https://upload.wikimedia.org/wikipedia/commons/c/c0/Carolus_Linnaeus.jpg" alt="Portrait of Carl von Linné (Carolus Linnaeus) - Public domain" width="300"/>
+<img align="right" style="padding: 15px" src="https://upload.wikimedia.org/wikipedia/commons/c/c0/Carolus_Linnaeus.jpg" alt="Portrait of Carl von Linné (Carolus Linnaeus) - Public domain" width="300"/>
 
 As mentioned in our [FAQ](https://www.gbif.org/faq?question=how-can-i-publish-molecular-data-to-gbif):
 
@@ -99,12 +99,12 @@ If no scientific name is available, you can always publish metadata-only dataset
 # Protocols and analysis pipelines
 
 The sampling protocol, sequencing technology, quality control and sequence analysis pipelines make a huge difference in what can be detected at the microscopic level. For metagenomics datasets, the set of methods employed is probably the most valuable piece of information for a data user.
-There are two ways to convey this type of information:
+There are two ways to convey this type of information in a tabular form:
 
 * Using non-core extensions
 * Using [Darwin Core terms](https://dwc.tdwg.org/terms/) only
 
-In the first case, the information can be structured using defined terms, which makes it easier for users to compare methods once the data is aggregated with other dataset. In addition to that, this is a good way to make the information compatible across platforms. For example, the [BIOWIDE eDNA Fungi dataset](https://doi.org/10.15468/nesbvx) uses [GGBN extensions](http://rs.gbif.org/extension/ggbn/). However, GBIF doesn't index extensions. Which means that the information isn't displayed on the portal. In fact, it is only available to users downloading the raw Darwin Core archive (see screenshot below).
+In the first case, the information can be structured using defined terms, which makes it easier for users to compare methods once the data is aggregated with other dataset. In addition to that, this is a good way to make the information compatible across platforms. For example, the [BIOWIDE eDNA Fungi dataset](https://doi.org/10.15468/nesbvx) uses [GGBN extensions](http://rs.gbif.org/extension/ggbn/). However, GBIF won't index these extenstions as it indexes only Core and Multimedia ones. Which means that the information isn't displayed on the portal. In fact, it is only available to users downloading the raw Darwin Core archive (see screenshot below).
 
 <img src="/post/2019-04-23-gbif-molecular-data-publishing_images/raw_DwcA_download.png" alt="Download Raw DwC-A" width="600"/>
 
