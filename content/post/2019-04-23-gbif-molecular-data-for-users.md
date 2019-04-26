@@ -138,7 +138,7 @@ If you are not sure whether a given occurrence is a true positive, I suggest tha
 
 
 * Is the `Basis of record`, `Material sample`?
-* Is the occurrence associated with an observation, a specimen or an *in vitro* culture?
+* Is the occurrence associated with an observation, a specimen, an *in vitro* culture or an environmental sample?
 * Which sequencing technology was used?
 * What are the read length?
 * How stringent was the quality control?
