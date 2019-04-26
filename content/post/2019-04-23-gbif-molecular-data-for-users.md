@@ -132,10 +132,9 @@ Essentially, what I am saying is that **the number and length of the reads matte
 
 # 7 points to check in case of doubt
 
-<img align="left" padding = "10 px" src="/post/2019-04-23-gbif-molecular-data-for-users-files/corvid.jpeg" alt="Corvid image" width="100"/>
+<img align="left" padding = "10 px" src="/post/2019-04-23-gbif-molecular-data-for-users-files/corvid.jpeg" alt="Corvid image" width="80"/>
 
 If you are not sure whether a given occurrence is a true positive, I suggest that you check the following points. Even if everything seems to check out, you should consider the occurrence like any other (with the appropriate level of skepticism).
-
 
 
 * Is the `Basis of record`, `Material sample`?
@@ -150,6 +149,6 @@ If you are not sure whether a given occurrence is a true positive, I suggest tha
 
 The location of this type of information might vary depending on the data provider. I suggest that you check the method description in the dataset's metadata and the raw Darwin Core Archives (see the screenshot below). The information might be available in some extensions or mapped to the Darwin Core terms. For example, in [Mgnify](https://www.gbif.org/publisher/ab733144-7043-4e88-bd4f-fca7bf858880) datasets, the total number of reads in a sample are given in the event file under [dwc:sampleSizeValue](https://dwc.tdwg.org/terms/#dwc:sampleSizeValue) and [dwc:sampleSizeUnit](https://dwc.tdwg.org/terms/#dwc:sampleSizeUnit) and the number of reads matched to a specific taxon are given in the occurrence file under [dwc:organismQuantity](https://dwc.tdwg.org/terms/#dwc:organismQuantity) and [dwc:organismQuantityType](https://dwc.tdwg.org/terms/#dwc:organismQuantityType). You can check [my previous post about sequence-based data publishing](https://data-blog.gbif.org/post/gbif-molecular-data/) for more information.
 
-<img src="/post/2019-03-27-gbif-molecular-data-publishing/raw_DwcA_download.png" alt="Download Raw DwC-A" width="700"/>
+<img src="/post/2019-04-23-gbif-molecular-data-publishing_images/raw_DwcA_download.png" alt="Download Raw DwC-A" width="700"/>
 
 Please let me know if this post is useful and don't hesitate to add any comment if you notice anything missing.
