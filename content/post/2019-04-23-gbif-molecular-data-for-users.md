@@ -119,11 +119,11 @@ The reads are often grouped into [Operational taxonomic unit](https://en.wikiped
 **Depending on the programs and the reference database used, you will get very different results.** This might be obvious but if my reference database contains only prokayotes, I won't be able to identify anything else. Some reads from eukaryotes might even match to some organisms in my database, thereby creating false positives.
 Of course, these programs generate matching scores and setting a stringent threshold can reduce the amount of false positives but some still persist.
 
-Note that the number of reads matched to a given species cannot be directly interpreted as the abundance of that particular species in the sample. Yes if you have more of genetic material available, you will get more reads but this relation is not linear.
+Note that the number of reads matched to a given species cannot be directly interpreted as the abundance of that particular species in the sample. Yes if you have more of genetic material available, you will get more reads but this relationship is not linear.
 
-You should also pay attention to the total number of clean reads generated. 10 reads out matching bacteria A out of 100 is not the same as 10 out of 10,000 (check the last paragraph to know where to find the information).
+You should also pay attention to the total number of clean reads generated. 10 reads out matching bacteria A out of 100 is not the same as 10 out of 10,000 (check the last paragraph to know where to find this information).
 
-It makes sense to have a cut off based on the percentage or number of reads matching a given taxon. Sequencing errors are unlikely to occur systematically on the same sequences, which means that one read can be affected but not many. So if high percentage of reads match the same taxon, this occurrence is more likely a true positive. Or the other way around, if only one read matches a taxon you should be more careful when interpreting the data.
+It makes sense to have a cut off based on the percentage or number of reads matching a given taxon. Sequencing errors are unlikely to occur systematically on the same sequences, which means that one read can be affected but not many. So if a high percentage of reads matchs the same taxon, this occurrence is more likely a true positive. Or the other way around, if only one read matches a taxon you should be more careful when interpreting the data.
 
 You should also pay attention to read length. Longer reads are "larger" pieces of the puzzles, programs can assign them to taxa with higher confidence levels.
 
@@ -138,7 +138,7 @@ If you are not sure whether a given occurrence is a true positive, I suggest tha
 
 
 * Is the `Basis of record`, `Material sample`?
-* Is the occurrence associated with an observation, a specimen, an *in vitro* culture or an environmental sample?
+* Is the occurrence associated with: an observation, a specimen, an *in vitro* culture or an environmental sample?
 * Which sequencing technology was used?
 * What are the read length?
 * How stringent was the quality control?
