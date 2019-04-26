@@ -83,7 +83,7 @@ Even just changing a parameter in of the the steps of the quality control can ch
 Here is another simplified illustration of the problem:
 <img src="/post/2019-04-23-gbif-molecular-data-for-users-files/different_pipeline.jpeg" alt="Over-simplified effect of different piplelines on species detection" width="700"/>
 
-I cannot explain the subtleties of sequencing theologies nor can I list all the different program used to process reads these are entire fields on their own. I trust that the data providers to know what they are doing. And if you download that from the same data source, you will probably have a homogeneous and reliable basis for your analysis. However, I will attempt to give a very high level overview of what is happening before you access these "genetic" occurrences on GBIF.
+I cannot explain the subtleties of sequencing theologies nor can I list all the different program used to process reads, these are entire fields on their own. I trust that the data providers to know what they are doing. And if you download occurrences from the same data source, you will probably have a homogeneous and reliable basis for your analysis. However, I will attempt to give a very high level overview of what is happening before you access these "genetic" occurrences on GBIF.
 
 In order to explain this, I will use the metaphor of a jigsaw puzzle.
 <img src="/post/2019-04-23-gbif-molecular-data-for-users-files/metagenomics.jpeg" alt="Over-simplified processing of metagenomics samples" width="700"/>
@@ -144,10 +144,10 @@ If you are not sure whether a given occurrence is a true positive, I suggest tha
 * What was the reference database used?
 * How many reads match your taxon of interest and how many reads were in the sample?
 
-**Where to find the infromation necessary to answers these questions?**
+**Where to find the information necessary to answers these questions?**
 
 The location of this type of information might vary depending on the data provider. I suggest that you check the method description in the dataset's metadata and the raw Darwin Core Archives (see the screenshot below). The information might be available in some extensions or mapped to the Darwin Core terms. For example, in [Mgnify](https://www.gbif.org/publisher/ab733144-7043-4e88-bd4f-fca7bf858880) datasets, the total number of reads in a sample are given in the event file under [dwc:sampleSizeValue](https://dwc.tdwg.org/terms/#dwc:sampleSizeValue) and [dwc:sampleSizeUnit](https://dwc.tdwg.org/terms/#dwc:sampleSizeUnit) and the number of reads matched to a specific taxon are given in the occurrence file under [dwc:organismQuantity](https://dwc.tdwg.org/terms/#dwc:organismQuantity) and [dwc:organismQuantityType](https://dwc.tdwg.org/terms/#dwc:organismQuantityType). You can check [my previous post about sequence-based data publishing](https://data-blog.gbif.org/post/gbif-molecular-data/) for more information.
 
 <img src="/post/2019-03-27-gbif-molecular-data-publishing/raw_DwcA_download.png" alt="Download Raw DwC-A" width="700"/>
 
-Please let me know if this post is useful and don't hesiate to add any comment if you notice anything missing.
+Please let me know if this post is useful and don't hesitate to add any comment if you notice anything missing.
