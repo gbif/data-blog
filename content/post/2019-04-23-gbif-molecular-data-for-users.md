@@ -132,7 +132,7 @@ Essentially, what I am saying is that **the number and length of the reads matte
 
 # 7 points to check in case of doubt
 
-<img src="/post/2019-04-23-gbif-molecular-data-for-users-files/corvid.jpeg" alt="Corvid image" width="700"/>
+<img align="left" padding = "10 px" src="/post/2019-04-23-gbif-molecular-data-for-users-files/corvid.jpeg" alt="Corvid image" width="100"/>
 
 If you are not sure whether a given occurrence is a true positive, I suggest that you check the following points. Even if everything seems to check out, you should consider the occurrence like any other (with the appropriate level of skepticism).
 
