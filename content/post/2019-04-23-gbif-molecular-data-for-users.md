@@ -154,6 +154,6 @@ The location of this type of information might vary depending on the data provid
 The information might be available in some extensions or mapped to the Darwin Core terms. For example, in [Mgnify](https://www.gbif.org/publisher/ab733144-7043-4e88-bd4f-fca7bf858880) datasets, the total number of reads in a sample are given in the event file under [dwc:sampleSizeValue](https://dwc.tdwg.org/terms/#dwc:sampleSizeValue) and [dwc:sampleSizeUnit](https://dwc.tdwg.org/terms/#dwc:sampleSizeUnit) and the number of reads matched to a specific taxon are given in the occurrence file under [dwc:organismQuantity](https://dwc.tdwg.org/terms/#dwc:organismQuantity) and [dwc:organismQuantityType](https://dwc.tdwg.org/terms/#dwc:organismQuantityType). You can check [my previous post about sequence-based data publishing](https://data-blog.gbif.org/post/gbif-molecular-data/) for more information.
 See for example, [this occurrence](https://www.gbif.org/occurrence/2027240778):
 
-<img src="/post/2019-04-23-gbif-molecular-data-publishing_images/read_number.png" alt="Download Raw DwC-A" width="700"/>
+<img src="/post/2019-04-23-gbif-molecular-data-for-users-files/read_number.png" alt="Download Raw DwC-A" width="700"/>
 
 Please let me know if this post is useful and don't hesitate to add any comment if you notice anything missing.
