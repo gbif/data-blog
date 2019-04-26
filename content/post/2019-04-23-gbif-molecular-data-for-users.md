@@ -121,7 +121,7 @@ Of course, these programs generate matching scores and setting a stringent thres
 
 Note that the number of reads matched to a given species cannot be directly interpreted as the abundance of that particular species in the sample. Yes if you have more of genetic material available, you will get more reads but this relation is not linear.
 
-You should also pay attention to the total number of clean reads generated. 10 reads out matching bacteria A out of 100 is not the same as 10 out of 10,000 (check the last paragraph to know where to find the informtion).
+You should also pay attention to the total number of clean reads generated. 10 reads out matching bacteria A out of 100 is not the same as 10 out of 10,000 (check the last paragraph to know where to find the information).
 
 It makes sense to have a cut off based on the percentage or number of reads matching a given taxon. Sequencing errors are unlikely to occur systematically on the same sequences, which means that one read can be affected but not many. So if high percentage of reads match the same taxon, this occurrence is more likely a true positive. Or the other way around, if only one read matches a taxon you should be more careful when interpreting the data.
 
