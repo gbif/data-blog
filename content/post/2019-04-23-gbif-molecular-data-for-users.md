@@ -136,6 +136,8 @@ Essentially, what I am saying is that **the number and length of the reads matte
 
 If you are not sure whether a given occurrence is a true positive, I suggest that you check the following points. Even if everything seems to check out, you should consider the occurrence like any other (with the appropriate level of skepticism).
 
+
+
 * Is the `Basis of record`, `Material sample`?
 * Is the occurrence associated with an observation, a specimen or an *in vitro* culture?
 * Which sequencing technology was used?
