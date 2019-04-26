@@ -93,7 +93,7 @@ In order to explain this, I will use the metaphor of a jigsaw puzzle.
 
 The samples are prepared and sequenced. A popular growingly approach is [shotgun sequencing](https://en.wikipedia.org/wiki/Shotgun_sequencing), you might also see the term [high-throughput technology](https://en.wikipedia.org/wiki/DNA_sequencing#High-throughput_methods) or NGS technology which is a catch-all term for an array of methods applying to genome sequencing, genome resequencing, transcriptome profiling (RNA-Seq), DNA-protein interactions (ChIP-sequencing), and epigenome characterization.
 
-When comparing data from different sources, it might be a good idea to check which technology was used and was its indented purpose: which organisms are targeted? Prokaryotes, eukaryotes, both? Which genomics regions are targeted? Is everything sequences or only the 16s? What is the error rate for these technology? What is the length of the sequences generated? etc.
+When comparing data from different sources, it might be a good idea to check which technology was used and was its indented purpose: which organisms are targeted? Prokaryotes, eukaryotes, both? Which genomics regions are targeted? Is everything sequenced or only the 16s? What is the error rate for this technology? What is the length of the sequences generated? etc.
 
 In any case, most of these methods will generate `reads` that are essentially short DNA sequences (represented in my figure by puzzle pieces). The goal will then be to figure out where these reads come from.
 
