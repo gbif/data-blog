@@ -140,7 +140,7 @@ If you are not sure whether a given occurrence is a true positive, I suggest tha
 * Is the `Basis of record`, `Material sample`?
 * Is the occurrence associated with: an observation, a specimen, an *in vitro* culture or an environmental sample?
 * Which sequencing technology was used?
-* What are the read length?
+* What is the reads length?
 * How stringent was the quality control?
 * What was the reference database used?
 * How many reads match your taxon of interest and how many reads were in the sample?
