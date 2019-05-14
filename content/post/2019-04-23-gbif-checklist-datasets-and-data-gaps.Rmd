@@ -33,14 +33,14 @@ sequenceDiagrams:
   options: ''
 ---
 
-> A **checklist dataset** is a bit of a catch-all term describing any dataset that contains primarily a list of taxanomic names. The lines between a checklist dataset and an occurrence dataset can be blurry.
+> A **checklist dataset** is a bit of a catch-all term describing any dataset that contains primarily a list of taxonomic names. The lines between a checklist dataset and an occurrence dataset can be blurry.
 
-There are at least 6 dataset catagories **GBIF** classifies as checklists. 
+**GBIF** classifies at least 6 types of datasets as checklists. 
 
 1. **National (or regional) list of species** [example](https://www.gbif.org/dataset/de8934f4-a136-481c-a87a-b0b202b80a31)
 2. **Taxanomic list of species** [example](https://www.gbif.org/dataset/7ddf754f-d193-4cc9-b351-99906754a03b)
 3. Species description [example](https://www.gbif.org/dataset/02db0742-97fe-4ff8-8917-c8d2591d12a1)
-4. Checklists made up of other checklists [GBIF backbone taxanomy](https://www.gbif.org/dataset/d7dddbf4-2cf0-4f39-9b2a-bb099caae36c) & [Catalogue of Life](https://www.gbif.org/dataset/7ddf754f-d193-4cc9-b351-99906754a03b)
+4. Checklists made up of other checklists [GBIF backbone taxonomy](https://www.gbif.org/dataset/d7dddbf4-2cf0-4f39-9b2a-bb099caae36c) & [Catalogue of Life](https://www.gbif.org/dataset/7ddf754f-d193-4cc9-b351-99906754a03b)
 5. Checklists with occurrences [example](https://www.gbif.org/dataset/e09e1e1f-2460-4017-a964-e999abd2bf66)
 6. Checklists made from occurrences [example](https://www.gbif.org/dataset/b6a01612-c202-4310-9559-caa82aa3f957)
 
@@ -50,7 +50,7 @@ The **GBIF Backbone Taxonomy** is a [checklist dataset](https://www.gbif.org/dat
 
 > The **GBIF backbone taxonomy** is a list of **>2 million names** used to match and group the records on GBIF.
 
-Not [every name](https://www.gbif.org/species/5141022) in the GBIF backbone has occurrences and names with occurrences are not distributed equally. One way to tell if the GBIF network is collecting occurrences for at least the **named taxanomic** groups is by comparing the **species names in the backbone versus the species names with occurrences**. 
+Not [every name](https://www.gbif.org/species/5141022) in the GBIF backbone has occurrences and names with occurrences are not distributed equally. One way to tell if the GBIF network is collecting occurrences for at least the **named taxonomic** groups is by comparing the **species names in the backbone versus the species names with occurrences**. 
 
 
 # How much of the GBIF backbone is covered by occurrences?  
@@ -80,7 +80,7 @@ The GBIF backbone is not a complete list!
 
 # Using checklists to look for regional data gaps 
 
-To explore whether checklists datasets are useful for identifying regional data gaps. I have decided to look at checklist from two regions  and **West Europe** and **West Africa**. These regions represent areas where **data coverage** and **checklist supply** are different. 
+To explore whether checklists datasets are useful for identifying regional data gaps. I have decided to look at checklists from two regions  and **West Europe** and **West Africa**. These regions represent areas where **data coverage** and **checklist supply** are different. 
 
 # West Europe† checklisted species 
 
@@ -185,6 +185,31 @@ Here we see that while the percentages seem quite good, the number of checkliste
 Most checklist species in West Africa are small checklists published by [Plazi](https://www.gbif.org/dataset/search?type=CHECKLIST&publishing_org=7ce8aef0-9e92-11dc-8738-b8a03c50a862) and [Biodiversity Data Journal](https://www.gbif.org/dataset/search?type=CHECKLIST&publishing_org=750a8724-fa66-4c27-b645-bd58ac5ee010). [Benin LFS](https://www.gbif.org/dataset/dba21dbc-ea38-4bbf-b50f-ba3d256e1f73) publisher seems to be the only semi-large national publisher in West Africa. Most likely the number of species with occurrences is greater than the number of species in checklists in West Africa. 
 
 
+<sub>
+Common Name Dictionary 
+
+butterflies and moths Lepidoptera
+insects Insecta
+beetles Coleoptera
+reptiles Reptilia
+mammals Mammalia
+birds Aves
+flowering plants Magnoliopsida
+fungi Fungi
+dragonflies Odonata
+flies Diptera
+ants and wasps Hymenoptera
+spiders Araneae
+gilled mushrooms Agaricales
+snails and slugs Gastropoda
+crabs lobsters shrimp Decapoda
+conifers Pinales
+whales Cetacea
+red algae Rhodophyta
+true bugs Hemiptera
+bacteria Bacteria
+amphibians Amphibia 
+</sub>
 
 
 <!--more-->
