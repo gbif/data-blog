@@ -10,6 +10,13 @@
   </url>
   
   <url>
+    <loc>/post/gbif-checklist-datasets-and-data-gaps/</loc>
+    <lastmod>2019-04-23T09:02:19+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>/post/gbif-molecular-data-quality/</loc>
     <lastmod>2019-04-23T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -19,13 +26,6 @@
   <url>
     <loc>/post/gbif-molecular-data/</loc>
     <lastmod>2019-04-23T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>/post/gbif-checklist-datasets-and-data-gaps/</loc>
-    <lastmod>2019-04-23T09:02:19+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -225,14 +225,14 @@
   </url>
   
   <url>
-    <loc>/tags/gbif/</loc>
-    <lastmod>2019-04-23T00:00:00+00:00</lastmod>
+    <loc>/categories/gbif/</loc>
+    <lastmod>2019-04-23T09:02:19+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/gbif/</loc>
+    <loc>/tags/gbif/</loc>
     <lastmod>2019-04-23T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
@@ -380,7 +380,7 @@
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2019-04-23T00:00:00+00:00</lastmod>
+    <lastmod>2019-04-23T09:02:19+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

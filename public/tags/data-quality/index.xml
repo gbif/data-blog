@@ -6,7 +6,7 @@
     <description>Recent content in Data quality on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 23 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 14 May 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/data-quality/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,12 +14,12 @@
     <item>
       <title>GBIF checklist datasets and data gaps</title>
       <link>/post/gbif-checklist-datasets-and-data-gaps/</link>
-      <pubDate>Tue, 23 Apr 2019 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 14 May 2019 00:00:00 +0000</pubDate>
       
       <guid>/post/gbif-checklist-datasets-and-data-gaps/</guid>
       <description>A checklist dataset is a bit of a catch-all term describing any dataset that contains primarily a list of taxonomic names. The lines between a checklist dataset and an occurrence dataset can be blurry.
 GBIF classifies at least 6 types of datasets as checklists.
-National (or regional) list of species exampleTaxonomic list of species exampleSpecies description exampleChecklists made up of other checklists GBIF backbone taxonomy &amp;amp; Catalogue of LifeChecklists with occurrences exampleChecklists made from occurrences exampleThe top two are probably what most people imagine when they think of a checklist dataset.</description>
+National (or regional) lists of species exampleTaxonomic list of species exampleSpecies description exampleChecklists made up of other checklists GBIF backbone taxonomy &amp;amp; Catalogue of LifeChecklists with occurrences exampleChecklists made from occurrences exampleThe top two are probably what most people imagine when they think of a checklist dataset.</description>
     </item>
     
     <item>
