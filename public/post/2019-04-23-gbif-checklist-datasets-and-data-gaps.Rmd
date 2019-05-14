@@ -18,7 +18,7 @@ comment: no
 toc: ''
 autoCollapseToc: no
 postMetaInFooter: no
-hiddenFromHomePage: yes
+hiddenFromHomePage: no
 contentCopyright: no
 reward: no
 mathjax: no
@@ -38,7 +38,7 @@ sequenceDiagrams:
 **GBIF** classifies at least 6 types of datasets as checklists. 
 
 1. **National (or regional) list of species** [example](https://www.gbif.org/dataset/de8934f4-a136-481c-a87a-b0b202b80a31)
-2. **Taxanomic list of species** [example](https://www.gbif.org/dataset/7ddf754f-d193-4cc9-b351-99906754a03b)
+2. **Taxonomic list of species** [example](https://www.gbif.org/dataset/7ddf754f-d193-4cc9-b351-99906754a03b)
 3. Species description [example](https://www.gbif.org/dataset/02db0742-97fe-4ff8-8917-c8d2591d12a1)
 4. Checklists made up of other checklists [GBIF backbone taxonomy](https://www.gbif.org/dataset/d7dddbf4-2cf0-4f39-9b2a-bb099caae36c) & [Catalogue of Life](https://www.gbif.org/dataset/7ddf754f-d193-4cc9-b351-99906754a03b)
 5. Checklists with occurrences [example](https://www.gbif.org/dataset/e09e1e1f-2460-4017-a964-e999abd2bf66)
