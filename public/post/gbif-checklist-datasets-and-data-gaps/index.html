@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>GBIF checklist datasets and data gaps - GBIF Data Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="John Waller" />
+  <meta name="description" content="A checklist dataset is a bit of a catch-all term describing any dataset that contains primarily a list of taxanomic names. The lines between a checklist dataset and an occurrence dataset can be blurry.
+There are at least 6 dataset catagories GBIF classifies as checklists.
+National (or regional) list of species exampleTaxanomic list of species exampleSpecies description exampleChecklists made up of other checklists GBIF backbone taxanomy &amp;amp; Catalogue of LifeChecklists with occurrences exampleChecklists made from occurrences exampleThe top two are probably what most people imagine when they think of a checklist dataset." />
+
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.42" />
+
+
+<link rel="canonical" href="/post/gbif-checklist-datasets-and-data-gaps/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.2.0" rel="stylesheet">
+
+
+
+
+<link rel="stylesheet" href="/css//custom.css">
+
+
+<meta property="og:title" content="GBIF checklist datasets and data gaps" />
+<meta property="og:description" content="A checklist dataset is a bit of a catch-all term describing any dataset that contains primarily a list of taxanomic names. The lines between a checklist dataset and an occurrence dataset can be blurry.
+There are at least 6 dataset catagories GBIF classifies as checklists.
+National (or regional) list of species exampleTaxanomic list of species exampleSpecies description exampleChecklists made up of other checklists GBIF backbone taxanomy &amp; Catalogue of LifeChecklists with occurrences exampleChecklists made from occurrences exampleThe top two are probably what most people imagine when they think of a checklist dataset." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/gbif-checklist-datasets-and-data-gaps/" />
+
+
+
+<meta property="article:published_time" content="2019-04-23T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2019-04-23T09:02:19&#43;02:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="GBIF checklist datasets and data gaps">
+<meta itemprop="description" content="A checklist dataset is a bit of a catch-all term describing any dataset that contains primarily a list of taxanomic names. The lines between a checklist dataset and an occurrence dataset can be blurry.
+There are at least 6 dataset catagories GBIF classifies as checklists.
+National (or regional) list of species exampleTaxanomic list of species exampleSpecies description exampleChecklists made up of other checklists GBIF backbone taxanomy &amp; Catalogue of LifeChecklists with occurrences exampleChecklists made from occurrences exampleThe top two are probably what most people imagine when they think of a checklist dataset.">
+
+
+<meta itemprop="datePublished" content="2019-04-23T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-04-23T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="699">
+
+
+
+<meta itemprop="keywords" content="data gaps,data quality,checklists," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="GBIF checklist datasets and data gaps"/>
+<meta name="twitter:description" content="A checklist dataset is a bit of a catch-all term describing any dataset that contains primarily a list of taxanomic names. The lines between a checklist dataset and an occurrence dataset can be blurry.
+There are at least 6 dataset catagories GBIF classifies as checklists.
+National (or regional) list of species exampleTaxanomic list of species exampleSpecies description exampleChecklists made up of other checklists GBIF backbone taxanomy &amp; Catalogue of LifeChecklists with occurrences exampleChecklists made from occurrences exampleThe top two are probably what most people imagine when they think of a checklist dataset."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">GBIF Data Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">home</li>
+      </a><a href="https://discourse.gbif.org/c/data-blog">
+        <li class="mobile-menu-item">community-forum</li>
+      </a><a href="https://www.gbif.org/">
+        <li class="mobile-menu-item">gbif.org</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">about</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">
+	<img src= "/logo.png" alt="GBIF-analytics-blog" style ="width:20%;">
+  </a>
+  
+	
+  
+  
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://discourse.gbif.org/c/data-blog">community-forum</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://www.gbif.org/">gbif.org</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">about</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+	
+    <header class="post-header">
+      <h1 class="post-title">GBIF checklist datasets and data gaps</h1>
+	  
+	  
+      <div class="post-author">John Waller</div>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-04-23 </span>
+        <div class="post-category">
+            
+              <a href="/categories/gbif/"> GBIF </a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    
+    
+
+    
+    <div class="post-content">
+      <blockquote>
+<p>A <strong>checklist dataset</strong> is a bit of a catch-all term describing any dataset that contains primarily a list of taxanomic names. The lines between a checklist dataset and an occurrence dataset can be blurry.</p>
+</blockquote>
+<p>There are at least 6 dataset catagories <strong>GBIF</strong> classifies as checklists.</p>
+<ol style="list-style-type: decimal">
+<li><strong>National (or regional) list of species</strong> <a href="https://www.gbif.org/dataset/de8934f4-a136-481c-a87a-b0b202b80a31">example</a></li>
+<li><strong>Taxanomic list of species</strong> <a href="https://www.gbif.org/dataset/7ddf754f-d193-4cc9-b351-99906754a03b">example</a></li>
+<li>Species description <a href="https://www.gbif.org/dataset/02db0742-97fe-4ff8-8917-c8d2591d12a1">example</a></li>
+<li>Checklists made up of other checklists <a href="https://www.gbif.org/dataset/d7dddbf4-2cf0-4f39-9b2a-bb099caae36c">GBIF backbone taxanomy</a> &amp; <a href="https://www.gbif.org/dataset/7ddf754f-d193-4cc9-b351-99906754a03b">Catalogue of Life</a></li>
+<li>Checklists with occurrences <a href="https://www.gbif.org/dataset/e09e1e1f-2460-4017-a964-e999abd2bf66">example</a></li>
+<li>Checklists made from occurrences <a href="https://www.gbif.org/dataset/b6a01612-c202-4310-9559-caa82aa3f957">example</a></li>
+</ol>
+<p>The top two are probably what most people imagine when they think of a <strong>checklist dataset</strong>. GBIF has published a <a href="https://assets.ctfassets.net/uo17ejk9rkwj/62uueQ2eNGyUyu0yeoEc8i/a9736e0554edff75fdc129f11d031181/gbif_national_checklists_best_practice_guide_en_v1.0.pdf">guide</a> on best practices for making checklist datasets.</p>
+<p>The <strong>GBIF Backbone Taxonomy</strong> is a <a href="https://www.gbif.org/dataset/d7dddbf4-2cf0-4f39-9b2a-bb099caae36c">checklist dataset</a> of names GBIF uses in order to classify all the species used in the different datasets. The backbone taxonomy dataset is in fact a large group of other selected checklist <a href="https://www.gbif.org/dataset/d7dddbf4-2cf0-4f39-9b2a-bb099caae36c/constituents">datasets</a>, including large parts of the <strong>Catalogue of Life</strong>.</p>
+<blockquote>
+<p>The <strong>GBIF backbone taxonomy</strong> is a list of <strong>&gt;2 million names</strong> used to match and group the records on GBIF.</p>
+</blockquote>
+<p>Not <a href="https://www.gbif.org/species/5141022">every name</a> in the GBIF backbone has occurrences and names with occurrences are not distributed equally. One way to tell if the GBIF network is collecting occurrences for at least the <strong>named taxanomic</strong> groups is by comparing the <strong>species names in the backbone versus the species names with occurrences</strong>.</p>
+<div id="how-much-of-the-gbif-backbone-is-covered-by-occurrences" class="section level1">
+<h1>How much of the GBIF backbone is covered by occurrences?</h1>
+<p>Here I plot <strong>the percentage of the GBIF backbone with at least 1 occurrence</strong> for popular groups.</p>
+<p><img src="/post/2019-04-23-gbif-checklist-datasets-and-data-gaps_files/popularGroupsCoverageBackbone.svg" /></p>
+<p>We see that the GBIF network has successfully collected occurences for <strong>94% of birds</strong> but only <strong>51% of named insects</strong>.</p>
+<p><strong>Beetles</strong>, <strong>moths</strong>, <strong>butterflies</strong>, <strong>ants</strong>, and <strong>flies</strong> make up the majoriy of the missing insects. Each group having around only 50% of their named species with occurrences, with <strong>dragonflies</strong> (78%) not contributing greatly to the missing insects.</p>
+<p><strong>Flowering plants</strong> (Magnoliopsida) are a large and well-studied group of plants. The herbariums contributing to GBIF are no doubt responsible for the 86% coverage seen in this group.</p>
+<p>Other small groups with fairly large animals (<strong>mammals</strong>, <strong>reptiles</strong>, <strong>amphibians</strong>) are all well covered.</p>
+<p><strong>Bacteria</strong> have 89% coverage but this must be due to the lack of named records within GBIF.</p>
+<div style="text-align: center; font-size:120%">
+<p>The GBIF backbone is not a complete list!</p>
+</div>
+<div style="text-align: center;">
+<blockquote class="twitter-tweet tw-align-center" data-lang="en">
+<p lang="en" dir="ltr">
+.<a href="https://twitter.com/australtaxonomy?ref_src=twsrc%5Etfw"><span class="citation">@australtaxonomy</span></a>: ‘Given that around 70% of Australian species remain undiscovered and un-named, we have no real way to assess invisible extinctions - species that go extinct before they are discovered by taxonomists.’ This is why continued collecting is critically important. <a href="https://t.co/Gr8WLiTVtg">pic.twitter.com/Gr8WLiTVtg</a>
+</p>
+— Nick Porch (<span class="citation">@InvertoPhiles</span>) <a href="https://twitter.com/InvertoPhiles/status/1125233614243807232?ref_src=twsrc%5Etfw">May 6, 2019</a>
+</blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
+</div>
+<div id="using-checklists-to-look-for-regional-data-gaps" class="section level1">
+<h1>Using checklists to look for regional data gaps</h1>
+<p>To explore whether checklists datasets are useful for identifying regional data gaps. I have decided to look at checklist from two regions and <strong>West Europe</strong> and <strong>West Africa</strong>. These regions represent areas where <strong>data coverage</strong> and <strong>checklist supply</strong> are different.</p>
+</div>
+<div id="west-europe-checklisted-species" class="section level1">
+<h1>West Europe† checklisted species</h1>
+<p>The <strong>percentage of checklisted species with at least 1 occurrence</strong> for popular groups.</p>
+<p><img src="/post/2019-04-23-gbif-checklist-datasets-and-data-gaps_files/westEuropeCoveragePopularGroups.svg" /></p>
+<div style="text-align:right;">
+<sub >† Austria, Belgium, Denmark, Finland, France, Germany, Iceland, Ireland, Lithuania, Netherlands, Norway, Sweden, Switzerland</sup>
+</div>
+<div style="text-align:right;">
+<p><sub>
+log <a href="/post/2019-04-23-gbif-checklist-datasets-and-data-gaps_files/logScaleWestEuropeCoveragePopularGroups.svg">svg</a> | <a href="/post/2019-04-23-gbif-checklist-datasets-and-data-gaps_files/logScaleWestEuropeCoveragePopularGroups.jpg">jpg</a> linear <a href="/post/2019-04-23-gbif-checklist-datasets-and-data-gaps_files/westEuropeCoveragePopularGroups.svg">svg</a> | <a href="/post/2019-04-23-gbif-checklist-datasets-and-data-gaps_files/westEuropeCoveragePopularGroups.jpg">jpg</a>
+</sub></p>
+</div>
+</div>
+<div id="west-africa-checklisted-species" class="section level1">
+<h1>West Africa† checklisted species</h1>
+<p><img src="/post/2019-04-23-gbif-checklist-datasets-and-data-gaps_files/westAfricaCoveragePopularGroups.svg" /></p>
+<div style="text-align:right;">
+<sub>† Benin, Ghana, Liberia, Mali, Mauritania, Niger, Nigeria, Senegal, Togo</sup>
+</div>
+<div style="text-align:right;">
+<p><sub>
+log <a href="/post/2019-04-23-gbif-checklist-datasets-and-data-gaps_files/logWestAfricaCoveragePopularGroups.svg">svg</a> | <a href="/post/2019-04-23-gbif-checklist-datasets-and-data-gaps_files/logWestAfricaCoveragePopularGroups.jpg">jpg</a> linear <a href="/post/2019-04-23-gbif-checklist-datasets-and-data-gaps_files/linearWestAfricaCoveragePopularGroups.svg">svg</a> | <a href="/post/2019-04-23-gbif-checklist-datasets-and-data-gaps_files/linearWestAfricaCoveragePopularGroups.jpg">jpg</a>
+</sub></p>
+</div>
+</div>
+<div id="fewer-checklisted-species-in-west-africa" class="section level1">
+<h1>Fewer checklisted species in West Africa</h1>
+<style>
+table {
+  border-collapse: collapse;
+}
+
+table, td, th {
+  padding:0px 0px 0px 40px;
+  <!-- margin: 0 auto; -->
+}
+</style>
+<table>
+<tr>
+<th>
+</th>
+<th>
+<b>West Europe</b>
+</th>
+<th>
+<b>West Africa</b>
+</th>
+</tr>
+<tr>
+<td>
+<b>Insects<b/>
+</td>
+<td>
+53,000
+</td>
+<td>
+800
+</td>
+</tr>
+<tr>
+<td>
+<b>Fungi<b/>
+</td>
+<td>
+29,000
+</td>
+<td>
+50
+</td>
+</tr>
+</tr>
+<tr>
+<td>
+<b>Flies<b/>
+</td>
+<td>
+16,500
+</td>
+<td>
+190
+</td>
+</tr>
+</tr>
+<tr>
+<tr>
+<td>
+<b>Spiders<b/>
+</td>
+<td>
+1,600
+</td>
+<td>
+5
+</td>
+</tr>
+</tr>
+<tr>
+<td>
+<b>Mammals<b/>
+</td>
+<td>
+210
+</td>
+<td>
+240
+</td>
+</tr>
+<tr>
+<td>
+<b>Birds<b/>
+</td>
+<td>
+780
+</td>
+<td>
+600
+</td>
+</tr>
+<tr>
+<td>
+<b>Dragonflies<b/>
+</td>
+<td>
+108
+</td>
+<td>
+160
+</td>
+</tr>
+<tr>
+<td>
+<b>Amphibians<b/>
+</td>
+<td>
+95
+</td>
+<td>
+60
+</td>
+</tr>
+</table>
+<p>Here we see that while the percentages seem quite good, the number of checklisted species in West Africa are in some cases <strong>orders of magnitude less</strong> than what is in West Europe. Although some West African groups (<strong>Mammals</strong>, <strong>Birds</strong>, <strong>Dragonflies</strong>) do have more checklisted species than West Europe.</p>
+</div>
+<div id="checklist-supply-is-much-lower-in-west-africa" class="section level1">
+<h1>Checklist supply is much lower in <b><span style="color: #FDAF02">West Africa</span></b></h1>
+<p><img src="/post/2019-04-23-gbif-checklist-datasets-and-data-gaps_files/histogramOfChecklistDatasetSize.svg" /></p>
+<p><b><span style="color: #509E2F">West Europe</span></b> has many more <strong>large national publishers</strong> than <b><span style="color: #FDAF02">West Africa</span></b>.</p>
+<p>Most checklist species in West Africa are small checklists published by <a href="https://www.gbif.org/dataset/search?type=CHECKLIST&amp;publishing_org=7ce8aef0-9e92-11dc-8738-b8a03c50a862">Plazi</a> and <a href="https://www.gbif.org/dataset/search?type=CHECKLIST&amp;publishing_org=750a8724-fa66-4c27-b645-bd58ac5ee010">Biodiversity Data Journal</a>. <a href="https://www.gbif.org/dataset/dba21dbc-ea38-4bbf-b50f-ba3d256e1f73">Benin LFS</a> publisher seems to be the only semi-large national publisher in West Africa. Most likely the number of species with occurrences is greater than the number of species in checklists in West Africa.</p>
+<!--more-->
+</div>
+
+    </div>
+
+    
+    
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/data-gaps/">data gaps</a>
+          
+          <a href="/tags/data-quality/">data quality</a>
+          
+          <a href="/tags/checklists/">checklists</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/gridded-datasets-update/">
+            <span class="next-text nav-default">Gridded Datasets Update</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+       
+<div id='discourse-comments'></div>
+<script type="text/javascript">
+  DiscourseEmbed = { discourseUrl: 'https://discourse.gbif.org/',
+                     discourseEmbedUrl: 'https://data-blog.gbif.org\/post\/gbif-checklist-datasets-and-data-gaps\/' };
+
+  (function() {
+    var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+    d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+  })();
+</script>  
+
+
+<div class = "copyright">
+	<a class="theme-link" href="https://www.gbif.org/what-is-gbif">What is GBIF?</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://www.gbif.org/developer/summary">API</a> 
+	<span class="division">|</span>
+	<a class="theme-link" href="https://www.gbif.org/faq">FAQ</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://discourse.gbif.org/">Community-Forum</a>
+</div>
+
+<div class = "copyright"> 
+	<span class="theme-info">GBIF Secretariat</span> 
+	<span class="theme-info">Universitetsparken 15</span> 
+	<span class="theme-info">DK-2100 Copenhagen Ø</span> 
+	<span class="theme-info" >Denmark</span>
+</div>
+
+<div class="copyright">
+	<span class="power-by">
+	Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+	</span>
+	<span class="division">|</span>
+	<span class="theme-info">
+	Theme - 
+	<a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+	</span>
+
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+<script type="text/javascript" src="/dist/even.min.js?v=3.2.0"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

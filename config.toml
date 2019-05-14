@@ -27,9 +27,9 @@ copyright = ""            # default: author.name ↓        #
   identifier = "home"
   url = "/"
 [[menu.main]]             # config your menu              # 
-  name = "community forum posts"
+  name = "community-forum"
   weight = 2
-  identifier = "community forum posts"
+  identifier = "community-forum"
   url = "https://discourse.gbif.org/c/data-blog"  
   
 # [[menu.main]]             # config your menu              # 
@@ -44,7 +44,7 @@ copyright = ""            # default: author.name ↓        #
   # url = "/tags/"
 [[menu.main]]
   name = "gbif.org"
-  weight = 2
+  weight = 3
   identifier = "gbif"
   url = "https://www.gbif.org/"
 # [[menu.main]]

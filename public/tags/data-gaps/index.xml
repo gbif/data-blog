@@ -6,10 +6,21 @@
     <description>Recent content in Data gaps on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 15 Feb 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 23 Apr 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/data-gaps/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>GBIF checklist datasets and data gaps</title>
+      <link>/post/gbif-checklist-datasets-and-data-gaps/</link>
+      <pubDate>Tue, 23 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/gbif-checklist-datasets-and-data-gaps/</guid>
+      <description>A checklist dataset is a bit of a catch-all term describing any dataset that contains primarily a list of taxanomic names. The lines between a checklist dataset and an occurrence dataset can be blurry.
+There are at least 6 dataset catagories GBIF classifies as checklists.
+National (or regional) list of species exampleTaxanomic list of species exampleSpecies description exampleChecklists made up of other checklists GBIF backbone taxanomy &amp;amp; Catalogue of LifeChecklists with occurrences exampleChecklists made from occurrences exampleThe top two are probably what most people imagine when they think of a checklist dataset.</description>
+    </item>
     
     <item>
       <title>Hunger mapping</title>
