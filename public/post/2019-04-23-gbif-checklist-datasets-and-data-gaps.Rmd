@@ -82,7 +82,7 @@ The GBIF backbone is not a complete list!
 
 # Using checklists to look for regional data gaps 
 
-To explore whether checklists datasets are useful for identifying regional data gaps. I have decided to look at checklists from two regions  and **West Europe** and **West Africa**. These regions represent areas where **data coverage** and **checklist supply** are different. 
+To explore whether checklists datasets are useful for identifying regional data gaps, I have decided to look at checklists from two regions  and **West Europe** and **West Africa**. These regions represent areas where **data coverage** and **checklist supply** are different. 
 
 # West Europe† checklisted species 
 
