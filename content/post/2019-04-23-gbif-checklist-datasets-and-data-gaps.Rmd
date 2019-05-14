@@ -59,6 +59,8 @@ Here I plot **the percentage of the GBIF backbone with at least 1 occurrence** f
 
 ![](/post/2019-04-23-gbif-checklist-datasets-and-data-gaps_files/popularGroupsCoverageBackbone.svg)
 
+<div style="text-align:right;"><sub>common name dictionary: [csv](/post/2019-04-23-gbif-checklist-datasets-and-data-gaps_files/commonNameDictionary.csv)</sup></div>
+
 We see that the GBIF network has successfully collected occurences for **94% of birds** but only **51% of named insects**. 
 
 **Beetles**, **moths**, **butterflies**, **ants**, and **flies** make up the majoriy of the missing insects. Each group having around only 50% of their named species with occurrences, with **dragonflies** (78%) not contributing greatly to the missing insects. 
@@ -183,33 +185,5 @@ Here we see that while the percentages seem quite good, the number of checkliste
 
 
 Most checklist species in West Africa are small checklists published by [Plazi](https://www.gbif.org/dataset/search?type=CHECKLIST&publishing_org=7ce8aef0-9e92-11dc-8738-b8a03c50a862) and [Biodiversity Data Journal](https://www.gbif.org/dataset/search?type=CHECKLIST&publishing_org=750a8724-fa66-4c27-b645-bd58ac5ee010). [Benin LFS](https://www.gbif.org/dataset/dba21dbc-ea38-4bbf-b50f-ba3d256e1f73) publisher seems to be the only semi-large national publisher in West Africa. Most likely the number of species with occurrences is greater than the number of species in checklists in West Africa. 
-
-
-<sub>
-Common Name Dictionary 
-
-butterflies and moths Lepidoptera
-insects Insecta
-beetles Coleoptera
-reptiles Reptilia
-mammals Mammalia
-birds Aves
-flowering plants Magnoliopsida
-fungi Fungi
-dragonflies Odonata
-flies Diptera
-ants and wasps Hymenoptera
-spiders Araneae
-gilled mushrooms Agaricales
-snails and slugs Gastropoda
-crabs lobsters shrimp Decapoda
-conifers Pinales
-whales Cetacea
-red algae Rhodophyta
-true bugs Hemiptera
-bacteria Bacteria
-amphibians Amphibia 
-</sub>
-
 
 <!--more-->

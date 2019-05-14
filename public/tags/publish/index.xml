@@ -6,10 +6,21 @@
     <description>Recent content in Publish on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 19 Nov 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 24 Apr 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/publish/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Sequence-based data on GBIF - Sharing your data</title>
+      <link>/post/gbif-molecular-data/</link>
+      <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/gbif-molecular-data/</guid>
+      <description>GBIF is trying to make it easier to share sequence-based data. In fact, this past year alone, we worked with UNITE to integrate species hypothesis for fungi and with EMBL-EBI to publish 295 metagenomics datasets.
+Unfortunately, documentation is not as quick to follow. Although we have now an FAQ on the topic, I thought that anyone could use a blog post with some advice and examples.
+Note that this blog post is not intended to be documentation.</description>
+    </item>
     
     <item>
       <title>Sharing images, sounds and videos on GBIF</title>
@@ -20,17 +31,6 @@
       <description>This blog post covers the publication of multimedia on GBIF. However, it is not intended to be documentation. For more information, please check the references below.
 NB: GBIF does not host original multimedia files and there is no way to upload pictures to the platform. For more information, please read the how to publish paragraphs.
 Media displayed on the GBIF portal Let&amp;rsquo;s say that you are looking for pictures of otters, or perhaps the call of a sea eagle.</description>
-    </item>
-    
-    <item>
-      <title>Molecular-based data on GBIF - Sharing your data</title>
-      <link>/post/gbif-molecular-data/</link>
-      <pubDate>Wed, 15 Nov 2000 00:00:00 +0000</pubDate>
-      
-      <guid>/post/gbif-molecular-data/</guid>
-      <description>GBIF is trying to make it easier to share molecular-based data. In fact, this past year alone, we worked with UNITE to integrate species hypothesis for fungi and with EMBL-EBI to publish 295 metagenomics datasets.
-Unfortunately, the documentation is not as easy to follow. Although we have now an FAQ on the topic, I thought that anyone could use a blog post with some advice and examples.
-Note that this blog post is not intended to be documentation.</description>
     </item>
     
   </channel>

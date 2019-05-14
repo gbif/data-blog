@@ -36,14 +36,14 @@ sequenceDiagrams:
 
 
 <blockquote>
-<p>A <strong>checklist dataset</strong> is a bit of a catch-all term describing any dataset that contains primarily a list of taxanomic names. The lines between a checklist dataset and an occurrence dataset can be blurry.</p>
+<p>A <strong>checklist dataset</strong> is a bit of a catch-all term describing any dataset that contains primarily a list of taxonomic names. The lines between a checklist dataset and an occurrence dataset can be blurry.</p>
 </blockquote>
-<p>There are at least 6 dataset catagories <strong>GBIF</strong> classifies as checklists.</p>
+<p><strong>GBIF</strong> classifies at least 6 types of datasets as checklists.</p>
 <ol style="list-style-type: decimal">
 <li><strong>National (or regional) list of species</strong> <a href="https://www.gbif.org/dataset/de8934f4-a136-481c-a87a-b0b202b80a31">example</a></li>
 <li><strong>Taxanomic list of species</strong> <a href="https://www.gbif.org/dataset/7ddf754f-d193-4cc9-b351-99906754a03b">example</a></li>
 <li>Species description <a href="https://www.gbif.org/dataset/02db0742-97fe-4ff8-8917-c8d2591d12a1">example</a></li>
-<li>Checklists made up of other checklists <a href="https://www.gbif.org/dataset/d7dddbf4-2cf0-4f39-9b2a-bb099caae36c">GBIF backbone taxanomy</a> &amp; <a href="https://www.gbif.org/dataset/7ddf754f-d193-4cc9-b351-99906754a03b">Catalogue of Life</a></li>
+<li>Checklists made up of other checklists <a href="https://www.gbif.org/dataset/d7dddbf4-2cf0-4f39-9b2a-bb099caae36c">GBIF backbone taxonomy</a> &amp; <a href="https://www.gbif.org/dataset/7ddf754f-d193-4cc9-b351-99906754a03b">Catalogue of Life</a></li>
 <li>Checklists with occurrences <a href="https://www.gbif.org/dataset/e09e1e1f-2460-4017-a964-e999abd2bf66">example</a></li>
 <li>Checklists made from occurrences <a href="https://www.gbif.org/dataset/b6a01612-c202-4310-9559-caa82aa3f957">example</a></li>
 </ol>
@@ -52,11 +52,14 @@ sequenceDiagrams:
 <blockquote>
 <p>The <strong>GBIF backbone taxonomy</strong> is a list of <strong>&gt;2 million names</strong> used to match and group the records on GBIF.</p>
 </blockquote>
-<p>Not <a href="https://www.gbif.org/species/5141022">every name</a> in the GBIF backbone has occurrences and names with occurrences are not distributed equally. One way to tell if the GBIF network is collecting occurrences for at least the <strong>named taxanomic</strong> groups is by comparing the <strong>species names in the backbone versus the species names with occurrences</strong>.</p>
+<p>Not <a href="https://www.gbif.org/species/5141022">every name</a> in the GBIF backbone has occurrences and names with occurrences are not distributed equally. One way to tell if the GBIF network is collecting occurrences for at least the <strong>named taxonomic</strong> groups is by comparing the <strong>species names in the backbone versus the species names with occurrences</strong>.</p>
 <div id="how-much-of-the-gbif-backbone-is-covered-by-occurrences" class="section level1">
 <h1>How much of the GBIF backbone is covered by occurrences?</h1>
 <p>Here I plot <strong>the percentage of the GBIF backbone with at least 1 occurrence</strong> for popular groups.</p>
 <p><img src="/post/2019-04-23-gbif-checklist-datasets-and-data-gaps_files/popularGroupsCoverageBackbone.svg" /></p>
+<div style="text-align:right;">
+<sub>common name dictionary: <a href="/post/2019-04-23-gbif-checklist-datasets-and-data-gaps_files/commonNameDictionary.csv">csv</a></sup>
+</div>
 <p>We see that the GBIF network has successfully collected occurences for <strong>94% of birds</strong> but only <strong>51% of named insects</strong>.</p>
 <p><strong>Beetles</strong>, <strong>moths</strong>, <strong>butterflies</strong>, <strong>ants</strong>, and <strong>flies</strong> make up the majoriy of the missing insects. Each group having around only 50% of their named species with occurrences, with <strong>dragonflies</strong> (78%) not contributing greatly to the missing insects.</p>
 <p><strong>Flowering plants</strong> (Magnoliopsida) are a large and well-studied group of plants. The herbariums contributing to GBIF are no doubt responsible for the 86% coverage seen in this group.</p>
@@ -77,7 +80,7 @@ sequenceDiagrams:
 </div>
 <div id="using-checklists-to-look-for-regional-data-gaps" class="section level1">
 <h1>Using checklists to look for regional data gaps</h1>
-<p>To explore whether checklists datasets are useful for identifying regional data gaps. I have decided to look at checklist from two regions and <strong>West Europe</strong> and <strong>West Africa</strong>. These regions represent areas where <strong>data coverage</strong> and <strong>checklist supply</strong> are different.</p>
+<p>To explore whether checklists datasets are useful for identifying regional data gaps. I have decided to look at checklists from two regions and <strong>West Europe</strong> and <strong>West Africa</strong>. These regions represent areas where <strong>data coverage</strong> and <strong>checklist supply</strong> are different.</p>
 </div>
 <div id="west-europe-checklisted-species" class="section level1">
 <h1>West Europe† checklisted species</h1>

@@ -6,19 +6,28 @@
     <description>Recent content in OTU on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 15 Nov 2000 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 26 Apr 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/otu/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Molecular-based data on GBIF - Sharing your data</title>
+      <title>Sequenced-based data on GBIF - What you need to know before analyzing data</title>
+      <link>/post/gbif-molecular-data-quality/</link>
+      <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/gbif-molecular-data-quality/</guid>
+      <description>As I mentioned in my previous post, a lot more sequence-based data has been made available on GBIF this past year. MGnify alone, published 295 datasets for a total of 13,285,109 occurrences. Even though most of these occurrences are Bacteria or Chromista, more than a million of them are animals and more than 300,000 are plants. So chances are, that even if you are not interested in bacteria, you might encounter sequence-based data on GBIF.</description>
+    </item>
+    
+    <item>
+      <title>Sequence-based data on GBIF - Sharing your data</title>
       <link>/post/gbif-molecular-data/</link>
-      <pubDate>Wed, 15 Nov 2000 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>/post/gbif-molecular-data/</guid>
-      <description>GBIF is trying to make it easier to share molecular-based data. In fact, this past year alone, we worked with UNITE to integrate species hypothesis for fungi and with EMBL-EBI to publish 295 metagenomics datasets.
-Unfortunately, the documentation is not as easy to follow. Although we have now an FAQ on the topic, I thought that anyone could use a blog post with some advice and examples.
+      <description>GBIF is trying to make it easier to share sequence-based data. In fact, this past year alone, we worked with UNITE to integrate species hypothesis for fungi and with EMBL-EBI to publish 295 metagenomics datasets.
+Unfortunately, documentation is not as quick to follow. Although we have now an FAQ on the topic, I thought that anyone could use a blog post with some advice and examples.
 Note that this blog post is not intended to be documentation.</description>
     </item>
     

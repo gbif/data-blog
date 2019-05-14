@@ -6,10 +6,30 @@
     <description>Recent content in Posts on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 23 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 26 Apr 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Sequenced-based data on GBIF - What you need to know before analyzing data</title>
+      <link>/post/gbif-molecular-data-quality/</link>
+      <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/gbif-molecular-data-quality/</guid>
+      <description>As I mentioned in my previous post, a lot more sequence-based data has been made available on GBIF this past year. MGnify alone, published 295 datasets for a total of 13,285,109 occurrences. Even though most of these occurrences are Bacteria or Chromista, more than a million of them are animals and more than 300,000 are plants. So chances are, that even if you are not interested in bacteria, you might encounter sequence-based data on GBIF.</description>
+    </item>
+    
+    <item>
+      <title>Sequence-based data on GBIF - Sharing your data</title>
+      <link>/post/gbif-molecular-data/</link>
+      <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/gbif-molecular-data/</guid>
+      <description>GBIF is trying to make it easier to share sequence-based data. In fact, this past year alone, we worked with UNITE to integrate species hypothesis for fungi and with EMBL-EBI to publish 295 metagenomics datasets.
+Unfortunately, documentation is not as quick to follow. Although we have now an FAQ on the topic, I thought that anyone could use a blog post with some advice and examples.
+Note that this blog post is not intended to be documentation.</description>
+    </item>
     
     <item>
       <title>GBIF checklist datasets and data gaps</title>
@@ -17,9 +37,9 @@
       <pubDate>Tue, 23 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>/post/gbif-checklist-datasets-and-data-gaps/</guid>
-      <description>A checklist dataset is a bit of a catch-all term describing any dataset that contains primarily a list of taxanomic names. The lines between a checklist dataset and an occurrence dataset can be blurry.
-There are at least 6 dataset catagories GBIF classifies as checklists.
-National (or regional) list of species exampleTaxanomic list of species exampleSpecies description exampleChecklists made up of other checklists GBIF backbone taxanomy &amp;amp; Catalogue of LifeChecklists with occurrences exampleChecklists made from occurrences exampleThe top two are probably what most people imagine when they think of a checklist dataset.</description>
+      <description>A checklist dataset is a bit of a catch-all term describing any dataset that contains primarily a list of taxonomic names. The lines between a checklist dataset and an occurrence dataset can be blurry.
+GBIF classifies at least 6 types of datasets as checklists.
+National (or regional) list of species exampleTaxanomic list of species exampleSpecies description exampleChecklists made up of other checklists GBIF backbone taxonomy &amp;amp; Catalogue of LifeChecklists with occurrences exampleChecklists made from occurrences exampleThe top two are probably what most people imagine when they think of a checklist dataset.</description>
     </item>
     
     <item>
@@ -122,17 +142,6 @@ https://api.gbif.org/v2/map/occurrence/density/0/0/0@1x.png?style=purpleYellow.p
       <guid>/post/gbif-download-trends/</guid>
       <description>Link To App
 Explanation of toolThis tool plots the downloads through time for species or other taxonomic groups with more than 25 downloads at GBIF. Downloads at GBIF most often occur through the web interface. In a previous post, we saw that most users are downloading data from GBIF via filtering by scientific name (aka Taxon Key). Since the GBIF index currently sits at over 1 billion records (a 400+GB csv), most users will simplying filter by their taxonomic group of interest and then generate a download.</description>
-    </item>
-    
-    <item>
-      <title>Molecular-based data on GBIF - Sharing your data</title>
-      <link>/post/gbif-molecular-data/</link>
-      <pubDate>Wed, 15 Nov 2000 00:00:00 +0000</pubDate>
-      
-      <guid>/post/gbif-molecular-data/</guid>
-      <description>GBIF is trying to make it easier to share molecular-based data. In fact, this past year alone, we worked with UNITE to integrate species hypothesis for fungi and with EMBL-EBI to publish 295 metagenomics datasets.
-Unfortunately, the documentation is not as easy to follow. Although we have now an FAQ on the topic, I thought that anyone could use a blog post with some advice and examples.
-Note that this blog post is not intended to be documentation.</description>
     </item>
     
     <item>
