@@ -33,7 +33,7 @@ sequenceDiagrams:
   options: ''
 ---
 
-> A **checklist dataset** is a bit of a catch-all term describing any dataset that contains primarily a list of taxonomic names. The lines between a checklist dataset and an occurrence dataset can be blurry.
+> A **checklist dataset** is a catch-all term describing any dataset that contains primarily a list of taxonomic names. The lines between a checklist dataset and an occurrence dataset can be blurry.
 
 **GBIF** classifies at least 6 types of datasets as checklists. 
 

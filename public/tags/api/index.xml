@@ -6,10 +6,19 @@
     <description>Recent content in API on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 09 Nov 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 15 May 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/api/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Big National Checklists</title>
+      <link>/post/big-national-checklists/</link>
+      <pubDate>Wed, 15 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/big-national-checklists/</guid>
+      <description>link to interactive mapBig 15-300K total namesMedium 5-15K total namesSmall 0-5K total namesHere I plot the total names in checklists published on GBIF linked to a single country. A checklist dataset is a term for any dataset that contains primarily a list of taxonomic names. National species checklists are lists of species recorded from a country usually through some organized effort. GBIF has published a guide on best practices for making national checklist datasets, which advises making national checklists as big as possible.</description>
+    </item>
     
     <item>
       <title>Finding citizen science datasets on GBIF</title>
