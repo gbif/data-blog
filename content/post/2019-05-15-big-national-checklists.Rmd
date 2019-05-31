@@ -35,7 +35,7 @@ sequenceDiagrams:
 
 <img src="/post/2019-05-15-big-national-checklists_files/europeMap.gif" alt="" width="586px"/>
 
-# [link to interactive map](/post/2019-05-15-big-national-checklists_files/checklistMap.html)
+[link to interactive map](/post/2019-05-15-big-national-checklists_files/checklistMap.html)
 
 * <b><span style="color:#bd0026">Big</span></b> 15-300K total names
 * <b><span style="color:#fd8d3c">Medium</span></b> 5-15K total names
@@ -46,6 +46,8 @@ sequenceDiagrams:
 # <b><span style="color:#bd0026">Big</span></b> national lists 
 
 ![](/post/2019-05-15-big-national-checklists_files/worldMap.jpg)
+
+[link to interactive map](/post/2019-05-15-big-national-checklists_files/checklistMap.html)
 
 Only a few countries have large national checklists over 15,000 names. 
 
@@ -132,13 +134,13 @@ The **United States** does not have any large checklists on GBIF, but it does pu
 
 GBIF has recently implemented a [species download utility](https://www.gbif.org/occurrence/download), so generating "a national checklist" derived from occurrences is now very easy. **Although this is probably not the best way to make a checklist**. 
 
-
 # Not many checklists where we might want them the most
 
 Most of Asia is occurrence and checklist-poor. 
 
 <img src="/post/2019-05-15-big-national-checklists_files/lowRegions.gif" alt="drawing"/>
 
+[link to interactive map](/post/2019-05-15-big-national-checklists_files/checklistMap.html)
 
 # Will occurrence datasets become the default checklists? 
 
