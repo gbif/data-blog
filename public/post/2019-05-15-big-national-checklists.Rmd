@@ -107,7 +107,7 @@ Only a few countries have large national checklists over 15,000 names.
 
 # No big checklists in **USA**, **Australia**, **Great Britain**...
 
-<img src="/post/2019-05-15-big-national-checklists_files/usaChecklist.png" alt="drawing" width="586px"/>
+<!-- <img src="/post/2019-05-15-big-national-checklists_files/usaChecklist.png" alt="drawing" width="586px"/> -->
 
 Even though the **USA**, **Australia**, and **Great Britain** share with GBIF [massive amounts](https://www.gbif.org/occurrence/search?country=GB&country=US&country=AU) of occurrence records (>600M records combined), they do not seem to publish many checklists. 
 
@@ -116,6 +116,7 @@ This could be for multiple reasons:
 1. Perhaps checklists exist but are **simply not published on GBIF**. 
 2. Alternatively, the "checklists" in these countries could be included in **occurrence datasets**. 
 3. Or the countries feel that occurrence datasets are **superior and sufficient**. 
+4. Or I have missed the checklist. (You can comment if you think I have missed a checklist)
 
 **Austrailia** does not publish anything classified as a checklist on GBIF, but the [Atlas of Living of Austrailia](https://www.gbif.org/publisher/3c5e4331-7f2f-4a8d-aa56-81ece7014fc8) serves as default checklist of Austrailia. 
 
