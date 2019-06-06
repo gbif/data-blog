@@ -10,7 +10,7 @@ tags:
   - data gaps
   - API
 lastmod: '2019-05-15T09:32:20+02:00'
-draft: yes
+draft: no
 keywords: []
 description: ''
 authors: ''
@@ -18,7 +18,7 @@ comment: no
 toc: ''
 autoCollapseToc: no
 postMetaInFooter: no
-hiddenFromHomePage: yes
+hiddenFromHomePage: no
 contentCopyright: no
 reward: no
 mathjax: no
@@ -150,9 +150,9 @@ Creating national checklists is a big job. They are valuable, but governments an
 
 GBIF currently has 27,000 things it calls [checklist datasets](https://www.gbif.org/dataset/search?q=benin&type=CHECKLIST). Even after filtering out 200 datasets from  global publishers, this still leaves a large amount of datasets needing to be tied to a region. 
 
-Checklists are not always tied to any region in a consistent way. There is actually a standard way to link a checklist to a country code or region that I did not know about before starting this post. It is through the distribution [extension](http://rs.gbif.org/extension/gbif/1.0/distribution.xml), which has a `countryCode` field. **64%** of the checklists I tagged have **filled in the extension**. The remaining untagged datasets have not filled in this extension. 
+Checklists are not always tied to any region in a consistent way. There is a standard way to link a checklist to a country code or region that I did not know about before starting this post. It is through the distribution [extension](http://rs.gbif.org/extension/gbif/1.0/distribution.xml), which has a `countryCode` field. **64%** of the checklists I tagged have **filled in the extension**. The remaining untagged datasets have not filled in this extension. 
 
-In order to reduce the size of the tagging job, I decided only to tag datasets with more than 500-1000 species names. I have only tagged checklist so far that are tied to one country and ignored checklists that might be regional like [Fauna Europaea](https://www.gbif.org/en/dataset/90d9e8a6-0ce1-472d-b682-3451095dbc5a). **Fauna Europaea** incidentally has very good [polygon-linked data](https://fauna-eu.org/cdm_dataportal/taxon/ae31893a-2421-4871-8cb4-984587702100). Unfortunately, Fauna Europaea **does has not filled in the distribution extension**. 
+In order to reduce the size of the tagging job, I decided only to tag datasets with more than 500-1000 species names. I have only tagged checklist so far that are tied to one country and ignored checklists that might be regional like [Fauna Europaea](https://www.gbif.org/en/dataset/90d9e8a6-0ce1-472d-b682-3451095dbc5a). **Fauna Europaea** incidentally has very good [polygon-linked data](https://fauna-eu.org/cdm_dataportal/taxon/ae31893a-2421-4871-8cb4-984587702100). Unfortunately, Fauna Europaea **has not filled in the distribution extension**. 
 
 <img src="/post/2019-05-15-big-national-checklists_files/faunaEuropea.png" alt="drawing"/>
 

@@ -10,7 +10,7 @@ tags:
   - data gaps
   - API
 lastmod: '2019-05-15T09:32:20+02:00'
-draft: yes
+draft: no
 keywords: []
 description: ''
 authors: ''
@@ -18,7 +18,7 @@ comment: no
 toc: ''
 autoCollapseToc: no
 postMetaInFooter: no
-hiddenFromHomePage: yes
+hiddenFromHomePage: no
 contentCopyright: no
 reward: no
 mathjax: no
@@ -182,8 +182,8 @@ sequenceDiagrams:
 <div id="manual-tagging-of-checklist-data" class="section level2">
 <h2>Manual tagging of checklist data</h2>
 <p>GBIF currently has 27,000 things it calls <a href="https://www.gbif.org/dataset/search?q=benin&amp;type=CHECKLIST">checklist datasets</a>. Even after filtering out 200 datasets from global publishers, this still leaves a large amount of datasets needing to be tied to a region.</p>
-<p>Checklists are not always tied to any region in a consistent way. There is actually a standard way to link a checklist to a country code or region that I did not know about before starting this post. It is through the distribution <a href="http://rs.gbif.org/extension/gbif/1.0/distribution.xml">extension</a>, which has a <code>countryCode</code> field. <strong>64%</strong> of the checklists I tagged have <strong>filled in the extension</strong>. The remaining untagged datasets have not filled in this extension.</p>
-<p>In order to reduce the size of the tagging job, I decided only to tag datasets with more than 500-1000 species names. I have only tagged checklist so far that are tied to one country and ignored checklists that might be regional like <a href="https://www.gbif.org/en/dataset/90d9e8a6-0ce1-472d-b682-3451095dbc5a">Fauna Europaea</a>. <strong>Fauna Europaea</strong> incidentally has very good <a href="https://fauna-eu.org/cdm_dataportal/taxon/ae31893a-2421-4871-8cb4-984587702100">polygon-linked data</a>. Unfortunately, Fauna Europaea <strong>does has not filled in the distribution extension</strong>.</p>
+<p>Checklists are not always tied to any region in a consistent way. There is a standard way to link a checklist to a country code or region that I did not know about before starting this post. It is through the distribution <a href="http://rs.gbif.org/extension/gbif/1.0/distribution.xml">extension</a>, which has a <code>countryCode</code> field. <strong>64%</strong> of the checklists I tagged have <strong>filled in the extension</strong>. The remaining untagged datasets have not filled in this extension.</p>
+<p>In order to reduce the size of the tagging job, I decided only to tag datasets with more than 500-1000 species names. I have only tagged checklist so far that are tied to one country and ignored checklists that might be regional like <a href="https://www.gbif.org/en/dataset/90d9e8a6-0ce1-472d-b682-3451095dbc5a">Fauna Europaea</a>. <strong>Fauna Europaea</strong> incidentally has very good <a href="https://fauna-eu.org/cdm_dataportal/taxon/ae31893a-2421-4871-8cb4-984587702100">polygon-linked data</a>. Unfortunately, Fauna Europaea <strong>has not filled in the distribution extension</strong>.</p>
 <p><img src="/post/2019-05-15-big-national-checklists_files/faunaEuropea.png" alt="drawing"/></p>
 <blockquote>
 <p>Using this biggest-first stategy, I have been able to tag around <strong>85% of total names in checklists</strong> (not in global lists), tagging around 600 datasets with country codes.</p>
