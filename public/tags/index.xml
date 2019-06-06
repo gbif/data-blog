@@ -6,7 +6,7 @@
     <description>Recent content in Tags on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 15 May 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 06 Jun 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>API</title>
       <link>/tags/api/</link>
-      <pubDate>Wed, 15 May 2019 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 06 Jun 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/api/</guid>
       <description></description>
@@ -41,7 +41,7 @@
     <item>
       <title>Checklists</title>
       <link>/tags/checklists/</link>
-      <pubDate>Wed, 15 May 2019 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 06 Jun 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/checklists/</guid>
       <description></description>
@@ -86,7 +86,7 @@
     <item>
       <title>Data gaps</title>
       <link>/tags/data-gaps/</link>
-      <pubDate>Wed, 15 May 2019 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 06 Jun 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/data-gaps/</guid>
       <description></description>
