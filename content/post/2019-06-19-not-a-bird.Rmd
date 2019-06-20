@@ -9,7 +9,7 @@ tags:
   - API
   - downloads
 lastmod: '2019-06-19T15:58:23+02:00'
-draft: yes
+draft: no
 keywords: []
 description: ''
 authors: ''
@@ -17,7 +17,7 @@ comment: no
 toc: ''
 autoCollapseToc: no
 postMetaInFooter: no
-hiddenFromHomePage: yes
+hiddenFromHomePage: no
 contentCopyright: no
 reward: no
 mathjax: no
@@ -33,7 +33,9 @@ sequenceDiagrams:
 ---
 
 
-Recently we were asked on [GitHub](https://github.com/gbif/portal-feedback/issues/2053) whether there was a way to get all animal occurrences that are not a bird. This seems like an easy enough request, but unfortunately, there is currently no way to **exclude groups** from a download search and get everything but a certain group. A user can get all birds, but they can't get **no birds**!
+Recently we were asked on [GitHub](https://github.com/gbif/portal-feedback/issues/2053) whether there was a way to get all animal occurrences that are not a bird. This seems like an easy enough request, but unfortunately, there is currently no way to **exclude groups** from a download search and get everything but a certain group. 
+
+> A user can get all birds, but they can't get **no birds**!
 
 I thought this was an interesting question and probably useful for other people wanting smaller downloads, since there are currenly around half a billion occurrence records for birds. I decided to get all the class keys that were not Aves (212) and make a no birds animal search query.    
 
@@ -44,7 +46,7 @@ https://www.gbif.org/occurrence/search?taxon_key=119&taxon_key=120&taxon_key=121
 
 This query above is all the taxon keys for [classes that are not birds](https://www.gbif.org/species/search?rank=CLASS&highertaxon_key=1&status=ACCEPTED&status=DOUBTFUL). You could also add `taxon_key=6` to the end of this and get all plants and animals that are not a bird. 
 
-This brute-force approach of getting everything that is not of interest only works if your end query has less than 200 taxon keys.  Fortunately for the case of animals, there are only 100 non-bird classes.
+This brute-force approach of getting everything that is not of interest only works if your end query has **less than 200 taxon keys**.  Fortunately for the case of animals, **there are only 100 non-bird classes**.
 
 I generated this query using this R code. 
 

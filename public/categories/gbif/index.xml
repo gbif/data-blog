@@ -17,8 +17,9 @@
       <pubDate>Wed, 19 Jun 2019 00:00:00 +0000</pubDate>
       
       <guid>/post/not-a-bird/</guid>
-      <description>Recently we were asked on GitHub whether there was a way to get all animal occurrences that are not a bird. This seems like an easy enough request, but unfortunately, there is currently no way to exclude groups from a download search and get everything but a certain group. A user can get all birds, but they can’t get no birds!
-I thought this was an interesting question and probably useful for other people wanting smaller downloads, since there are currenly around half a billion occurrence records for birds.</description>
+      <description>Recently we were asked on GitHub whether there was a way to get all animal occurrences that are not a bird. This seems like an easy enough request, but unfortunately, there is currently no way to exclude groups from a download search and get everything but a certain group.
+A user can get all birds, but they can’t get no birds!
+I thought this was an interesting question and probably useful for other people wanting smaller downloads, since there are currenly around half a billion occurrence records for birds.</description>
     </item>
     
     <item>
