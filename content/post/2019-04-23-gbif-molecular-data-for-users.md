@@ -78,7 +78,7 @@ I tried to illustrate the two types of sequence-based data available on GBIF. Se
 # Sequencing protocols and processing pipelines affect significantly what is detected
 
 This might not surprise anyone but the **same sample** sequenced with different technologies and processed with different bio-informatics pipelines can give very **different results**.
-Even just changing a parameter in of the the steps of the quality control can change which organisms you will detect. This is why you must take into account the protocols and pipelines used when analyzing this type of occurrence, **especially** if you are pooling together data from different sources.
+Even just changing a parameter in one of the the steps of the quality control can change which organisms you will detect. This is why you must take into account the protocols and pipelines used when analyzing this type of occurrence, **especially** if you are pooling together data from different sources.
 
 Here is another simplified illustration of the problem:
 <img src="/post/2019-04-23-gbif-molecular-data-for-users-files/different_pipeline.jpeg" alt="Over-simplified effect of different piplelines on species detection" width="700"/>
@@ -91,7 +91,7 @@ In order to explain this, I will use the metaphor of a jigsaw puzzle.
 
 ### Sampling and sequencing
 
-The samples are prepared and sequenced. A popular growingly approach is [shotgun sequencing](https://en.wikipedia.org/wiki/Shotgun_sequencing), you might also see the term [high-throughput technology](https://en.wikipedia.org/wiki/DNA_sequencing#High-throughput_methods) or NGS technology which is a catch-all term for an array of methods applying to genome sequencing, genome resequencing, transcriptome profiling (RNA-Seq), DNA-protein interactions (ChIP-sequencing), and epigenome characterization.
+The samples are prepared and sequenced. A growingly popular approach is [shotgun sequencing](https://en.wikipedia.org/wiki/Shotgun_sequencing), you might also encounter the term [high-throughput technology](https://en.wikipedia.org/wiki/DNA_sequencing#High-throughput_methods) or NGS technology which is a catch-all term for an array of methods applying to genome sequencing, genome resequencing, transcriptome profiling (RNA-Seq), DNA-protein interactions (ChIP-sequencing), and epigenome characterization.
 
 When comparing data from different sources, it might be a good idea to check which technology was used and was its indented purpose: which organisms are targeted? Prokaryotes, eukaryotes, both? Which genomics regions are targeted? Is everything sequenced or only the 16s? What is the error rate for this technology? What is the length of the sequences generated? etc.
 
