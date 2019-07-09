@@ -18,7 +18,7 @@
       
       <guid>/post/exploring-es50-for-gbif/</guid>
       <description>jpg | pdf | svg
-Roderic Page has suggested that GBIF could make es50 maps similar to what organizations like OBIS are already doing. I decided to make one for land animals (graph above).
+It has been suggested that GBIF could make es50 maps similar to what organizations like OBIS are already doing. I decided to make one for land animals (graph above).
 es50 (Hulbert index) is the statistically expected number of unique species in a random sample of 50 occurrence records, and is an indicator of biodiversity richness. The score can be computed without random sampling, but the mean of infinite random sampling will produce the same result.</description>
     </item>
     
