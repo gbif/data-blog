@@ -253,15 +253,15 @@
   </url>
   
   <url>
-    <loc>/tags/gbif/</loc>
-    <lastmod>2019-04-23T00:00:00+00:00</lastmod>
+    <loc>/categories/gbif/</loc>
+    <lastmod>2019-06-25T14:39:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/gbif/</loc>
-    <lastmod>2019-06-25T14:39:06+02:00</lastmod>
+    <loc>/tags/gbif/</loc>
+    <lastmod>2019-04-23T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
