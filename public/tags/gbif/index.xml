@@ -1,38 +1,34 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>GBIF on GBIF Data Blog</title>
+    <title>Gbif on GBIF Data Blog</title>
     <link>/tags/gbif/</link>
-    <description>Recent content in GBIF on GBIF Data Blog</description>
+    <description>Recent content in Gbif on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 26 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 09 Nov 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/gbif/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Sequenced-based data on GBIF - What you need to know before analyzing data</title>
-      <link>/post/gbif-molecular-data-quality/</link>
-      <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
+      <title>Finding citizen science datasets on GBIF</title>
+      <link>/post/gbif-citizen-science/</link>
+      <pubDate>Fri, 09 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/gbif-molecular-data-quality/</guid>
-      <description>As I mentioned in my previous post, a lot more sequence-based data has been made available on GBIF this past year. MGnify alone, published 295 datasets for a total of 13,285,109 occurrences. Even though most of these occurrences are Bacteria or Chromista, more than a million of them are animals and more than 300,000 are plants. So chances are, that even if you are not interested in bacteria, you might encounter sequence-based data on GBIF.</description>
+      <guid>/post/gbif-citizen-science/</guid>
+      <description>Can we automatically label citizen science datasets? The short answer is yes, partially.
+Why label GBIF datasets as &amp;ldquo;citizen science&amp;rdquo;? What is citizen science? Citizen science is scientific research conducted, in whole or in part, by amateur (or non-professional) scientists. Citizen science is sometimes described as &amp;ldquo;public participation in scientific research,&amp;rdquo; participatory monitoring, and participatory action research (wikipedia definition).
+Citizen science on GBIF A 2016 study showed that nearly half of all occurrence records shared through the GBIF network come from datasets with significant volunteer contributions (for more information, see our &amp;ldquo;citizen science&amp;rdquo; page on gbif.</description>
     </item>
     
     <item>
-      <title>Sequence-based data on GBIF - Sharing your data</title>
-      <link>/post/gbif-molecular-data/</link>
-      <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
+      <title>Plot almost anything using the GBIF maps api</title>
+      <link>/post/gbif-maps-api-using-r-and-leaflet/</link>
+      <pubDate>Wed, 19 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/gbif-molecular-data/</guid>
-      <description>GBIF is trying to make it easier to share sequence-based data. In fact, this past year alone, we worked with UNITE to integrate species hypothesis for fungi and with EMBL-EBI to publish 295 metagenomics datasets.
-Unfortunately, documentation is not as quick to follow. Although we have now an FAQ on the topic, I thought that anyone could use a blog post with some advice and examples.
-Note that this blog post is not intended to be documentation.</description>
-    </item>
-    
-  </channel>
-</rss> api by pasting the link below into a web browser.
+      <guid>/post/gbif-maps-api-using-r-and-leaflet/</guid>
+      <description>The GBIF maps api is an under-used but powerful web service provided by GBIF. The maps api is used by the main GBIF portal to create the maps including the big map used on gbif.org. We can make a simple call to the api by pasting the link below into a web browser.
 https://api.gbif.org/v2/map/occurrence/density/0/0/0@1x.png?style=purpleYellow.pointYou should end up with an image like this.This api call is composed essentially of two elements</description>
     </item>
     

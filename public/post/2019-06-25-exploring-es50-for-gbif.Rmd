@@ -52,7 +52,7 @@ You might be thinking, why do this strange statistical exercise? Why not just us
 
 ![](/post/2019-06-25-exploring-es50-for-gbif_files/effortAndSpeciesCounts.svg) 
 
-Here I plot the number of unique animal genus counts versus the number occurrence records for a global grid equal area hexagons (on land). The amount of occurrence records in a region has is highly predictive of the number of unique animal species that region will have. According to raw GBIF records, **Belgium**, **Sweden**, and parts of the **USA** are more biodiverse than **Brazil** and **Madagascar**. And **Iceland** is nearly as species rich as parts of **Brazil**. If GBIF were to plot raw species count maps, it would obviously be non-sense because of **sampling bias**.
+Here I plot the unique animal genus counts versus the number occurrence records for a global grid equal area hexagons (on land). The amount of occurrence records in a region has is highly predictive of the number of unique animal species that region will have. According to raw GBIF records, **Belgium**, **Sweden**, and parts of the **USA** are more biodiverse than **Brazil** and **Madagascar**. And **Iceland** is nearly as species rich as parts of **Brazil**. If GBIF were to plot raw species count maps, it would obviously be non-sense because of **sampling bias**.
 
 > Without some correction for sampling bias we might want to turn **all of Belgium** into a Nature reserve.
 
@@ -60,13 +60,13 @@ Here I plot the number of unique animal genus counts versus the number occurrenc
 
 ![](/post/2019-06-25-exploring-es50-for-gbif_files/globalOccurrenceCounts_1.svg)
 
-Records in North America, Europe, Austrailia, and South Africa make up close to 85% of all occurrence records collected by the GBIF network. And [70%](https://www.gbif.org/occurrence/search?has_coordinate=true&has_geospatial_issue=false&geometry=POLYGON((-180%2035,180%2035,180%2090,-180%2090,-180%2035))) of all occurrence records are found north of 35°. This heavy sampling bias, means most groups will have their center of diversity shifted to the north or Austrailia. 
+Records in North America, Europe, Austrailia, and South Africa make up close to 85% of all occurrence records collected by the GBIF network. And [70%](https://www.gbif.org/occurrence/search?has_coordinate=true&has_geospatial_issue=false&geometry=POLYGON((-180%2035,180%2035,180%2090,-180%2090,-180%2035))) of all occurrence records are found north of 35°. This heavy sampling bias, means most groups will have their center of diversity shifted to the north. 
 
 # Most raw species-count maps will mirror occurrence-count maps
 
 ![](/post/2019-06-25-exploring-es50-for-gbif_files/globalSpeciesCounts_1.svg)
 
-Here is the raw genus count map for animals. It is not hard to see that it simply **mirrors sampling effort**. Unfortunatly most groups (with the exception of birds) will probably have maps that look this way. You might be thinking that the [log-scale map]() would look better. 
+Here is the raw genus count map for animals. It is not hard to see that it simply **mirrors sampling effort**. Unfortunatly most groups (with the exception of birds) will probably have maps that look this way.  
 
 # <span style="color:#3288BD"><b><u>Low</u></b></span> species counts in a known hotspot
 
@@ -87,7 +87,7 @@ Here I plot latitde curves for <span style="color:#D54355"><b>es50</b></span> an
 
 # es50 fail cases
 
-**es50** does sometimes produce nicer looking maps (see fail cases below), but it does not give us what most people want - **species counts**! Unfortunately very few  taxonomic groups (i.e. probably only birds) are well-sampled enough globally to produce species-count maps that are not mirrored occurrence count graphs. Another drawback of es50 is that your group needs to have a reasonable expectation of having >50 species within a given grid cell. Although **50 is a somewhat arbitrary choice**, it is large enough to be meaningful but small enough to still be used in less diverse groups and regions.  
+**es50** does sometimes produce nicer looking maps (see fail cases below), but it does not give us what most people want - **species counts**. Unfortunately very few  taxonomic groups (i.e. probably only birds) are well-sampled enough globally to produce species-count maps that are not mirrored occurrence count graphs. Another drawback of es50 is that your group needs to have a reasonable expectation of having >50 species within a given grid cell (although **50 is a somewhat arbitrary choice**). 
 
 > [OBIS Warning](https://obis.org/indicators/documentation/): ES50 assumes that individuals are randomly distributed, the **sample size** is sufficiently **large**, the samples are taxonomically similar, and that all of the samples have been taken in the **same manner**.
 
@@ -100,11 +100,11 @@ In this map there are **many places where there are fewer than 50 frog species**
 
 ![](/post/2019-06-25-exploring-es50-for-gbif_files/map_es50_300_216.svg)
 
-In this map, the insect data seems to be too highly biased to produce a reasonable es50 result. Perhaps due to malaise trap proejcts, such as the [Swedish Malaise Trap Project](https://www.gbif.org/en/dataset/38c1351d-9cfe-42c0-97da-02d2c8be141c). There could also be other high-effort inventory projects in the USA and Europe that violate the **same manner**. 
+In this map, the insect data seems to be too highly biased to produce a reasonable es50 result. Perhaps due to malaise trap proejcts, such as the [Swedish Malaise Trap Project](https://www.gbif.org/en/dataset/38c1351d-9cfe-42c0-97da-02d2c8be141c). There could also be other high-effort inventory projects in the USA and Europe that violate the **same manner** assumption. 
 
 # es50 maps for other groups
 
-All of the plots below are based equally-spaced (480 km apart) and equal-area hexagons. I generated the grids using [dggridR](https://cran.r-project.org/web/packages/dggridR/vignettes/dggridR.html). I also removed fossils and livinig specimens from the occurrence records. I packaged what I did into an R package `gbifrasters`. 
+All of the plots below are based equally-spaced (480 km apart) and equal-area hexagons. I generated the grids using [dggridR](https://cran.r-project.org/web/packages/dggridR/vignettes/dggridR.html). I also removed fossils and livinig specimens from the occurrence records.  
 
 
 ### es50 map links:
