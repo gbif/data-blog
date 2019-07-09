@@ -6,10 +6,21 @@
     <description>Recent content in John Waller on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 19 Jun 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 25 Jun 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/author/john-waller/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Exploring es50 for GBIF</title>
+      <link>/post/exploring-es50-for-gbif/</link>
+      <pubDate>Tue, 25 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/exploring-es50-for-gbif/</guid>
+      <description>jpg | pdf | svg
+Roderic Page has suggested that GBIF could make es50 maps similar to what organizations like OBIS are already doing. I decided to make one for land animals (graph above).
+es50 (Hulbert index) is the statistically expected number of unique species in a random sample of 50 occurrence records, and is an indicator of biodiversity richness. The score can be computed without random sampling, but the mean of infinite random sampling will produce the same result.</description>
+    </item>
     
     <item>
       <title>Not a bird download</title>

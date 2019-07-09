@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Exploring es50 for GBIF - GBIF Data Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="John Waller" />
+  <meta name="description" content="jpg | pdf | svg
+Roderic Page has suggested that GBIF could make es50 maps similar to what organizations like OBIS are already doing. I decided to make one for land animals (graph above).
+es50 (Hulbert index) is the statistically expected number of unique species in a random sample of 50 occurrence records, and is an indicator of biodiversity richness. The score can be computed without random sampling, but the mean of infinite random sampling will produce the same result." />
+
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.42" />
+
+
+<link rel="canonical" href="/post/exploring-es50-for-gbif/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.2.0" rel="stylesheet">
+
+
+
+
+<link rel="stylesheet" href="/css//custom.css">
+
+
+<meta property="og:title" content="Exploring es50 for GBIF" />
+<meta property="og:description" content="jpg | pdf | svg
+Roderic Page has suggested that GBIF could make es50 maps similar to what organizations like OBIS are already doing. I decided to make one for land animals (graph above).
+es50 (Hulbert index) is the statistically expected number of unique species in a random sample of 50 occurrence records, and is an indicator of biodiversity richness. The score can be computed without random sampling, but the mean of infinite random sampling will produce the same result." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/exploring-es50-for-gbif/" />
+
+
+
+<meta property="article:published_time" content="2019-06-25T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2019-06-25T14:39:06&#43;02:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Exploring es50 for GBIF">
+<meta itemprop="description" content="jpg | pdf | svg
+Roderic Page has suggested that GBIF could make es50 maps similar to what organizations like OBIS are already doing. I decided to make one for land animals (graph above).
+es50 (Hulbert index) is the statistically expected number of unique species in a random sample of 50 occurrence records, and is an indicator of biodiversity richness. The score can be computed without random sampling, but the mean of infinite random sampling will produce the same result.">
+
+
+<meta itemprop="datePublished" content="2019-06-25T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-06-25T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="910">
+
+
+
+<meta itemprop="keywords" content="es50,data gaps,maps," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Exploring es50 for GBIF"/>
+<meta name="twitter:description" content="jpg | pdf | svg
+Roderic Page has suggested that GBIF could make es50 maps similar to what organizations like OBIS are already doing. I decided to make one for land animals (graph above).
+es50 (Hulbert index) is the statistically expected number of unique species in a random sample of 50 occurrence records, and is an indicator of biodiversity richness. The score can be computed without random sampling, but the mean of infinite random sampling will produce the same result."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">GBIF Data Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">home</li>
+      </a><a href="https://discourse.gbif.org/c/data-blog">
+        <li class="mobile-menu-item">community-forum</li>
+      </a><a href="https://www.gbif.org/">
+        <li class="mobile-menu-item">gbif.org</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">about</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">
+	<img src= "/logo.png" alt="GBIF-analytics-blog" style ="width:20%;">
+  </a>
+  
+	
+  
+  
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://discourse.gbif.org/c/data-blog">community-forum</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://www.gbif.org/">gbif.org</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">about</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+	
+    <header class="post-header">
+      <h1 class="post-title">Exploring es50 for GBIF</h1>
+	  
+	  
+      <div class="post-author">John Waller</div>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-06-25 </span>
+        <div class="post-category">
+            
+              <a href="/categories/gbif/"> GBIF </a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    
+    
+
+    
+    <div class="post-content">
+      <p><img src="/post/2019-06-25-exploring-es50-for-gbif_files/map_es50_300_1.svg" /></p>
+<div style="text-align:right;">
+<p><sub>
+<a href="post/2019-06-25-exploring-es50-for-gbif_files/map_es50_300_1.jpg">jpg</a> | <a href="post/2019-06-25-exploring-es50-for-gbif_files/map_es50_300_1.pdf">pdf</a> | <a href="post/2019-06-25-exploring-es50-for-gbif_files/map_es50_300_1.svg">svg</a></p>
+</div>
+<p><a href="https://twitter.com/rdmpage">Roderic Page</a> has <a href="https://discourse.gbif.org/t/hunger-mapping-gbif-data-blog/607/3">suggested</a> that GBIF could make <strong>es50</strong> maps similar to what organizations like <strong>OBIS</strong> are <a href="https://www.researchgate.net/figure/Hurlberts-index-ES50-calculated-on-a-grid-of-5x5-degrees-ES50-is-the-expected_fig4_242783847">already doing</a>. I decided to make one for <strong>land animals</strong> (graph above).</p>
+<blockquote>
+<p><strong>es50 (Hulbert index)</strong> is the statistically expected number of unique species in a random sample of 50 occurrence records, and is an indicator of biodiversity richness. The score can be computed without random sampling, but the mean of infinite random sampling will produce the same result. <br><br> <a href="https://obis.org/indicators/documentation/">Obis Definition here</a></p>
+</blockquote>
+<p>Here I plot a global es50 map for <strong>animal genera</strong> on GBIF. So each es50 score represent the expected number of unique animal genera from a sample of 50 occurrence records. I chose to use genus counts here for efficiency and to avoid naming issues, since I did not do any extensive quality control. Each hexagon is about 480 km across and of equal area, as you can see some distortion towards the poles. <br> <a href="/post/2019-06-25-exploring-es50-for-gbif_files/wireframe.jpg">link to grid</a></p>
+<p>You might be thinking, why do this strange statistical exercise? Why not just use species counts? Well, one of the main advantages of es50 is that it somewhat corrects for <strong>sampling bias</strong>.</p>
+<div id="species-richness-is-correlated-with-effort" class="section level1">
+<h1>Species <strong>richness</strong> is correlated with <strong>effort</strong></h1>
+<p><img src="/post/2019-06-25-exploring-es50-for-gbif_files/effortAndSpeciesCounts.svg" /></p>
+<p>Here I plot the number of unique animal genus counts versus the number occurrence records for a global grid equal area hexagons (on land). The amount of occurrence records in a region has is highly predictive of the number of unique animal species that region will have. According to raw GBIF records, <strong>Belgium</strong>, <strong>Sweden</strong>, and parts of the <strong>USA</strong> are more biodiverse than <strong>Brazil</strong> and <strong>Madagascar</strong>. And <strong>Iceland</strong> is nearly as species rich as parts of <strong>Brazil</strong>. If GBIF were to plot raw species count maps, it would obviously be non-sense because of <strong>sampling bias</strong>.</p>
+<blockquote>
+<p>Without some correction for sampling bias we might want to turn <strong>all of Belgium</strong> into a Nature reserve.</p>
+</blockquote>
+</div>
+<div id="occurrence-records-are-highly-biased-to-the-north" class="section level1">
+<h1>Occurrence records are highly biased to the <span style="color:#D53E4F"><b>north</b></span></h1>
+<p><img src="/post/2019-06-25-exploring-es50-for-gbif_files/globalOccurrenceCounts_1.svg" /></p>
+<p>Records in North America, Europe, Austrailia, and South Africa make up close to 85% of all occurrence records collected by the GBIF network. And <a href="https://www.gbif.org/occurrence/search?has_coordinate=true&amp;has_geospatial_issue=false&amp;geometry=POLYGON((-180%2035,180%2035,180%2090,-180%2090,-180%2035))">70%</a> of all occurrence records are found north of 35°. This heavy sampling bias, means most groups will have their center of diversity shifted to the north or Austrailia.</p>
+</div>
+<div id="most-raw-species-count-maps-will-mirror-occurrence-count-maps" class="section level1">
+<h1>Most raw species-count maps will mirror occurrence-count maps</h1>
+<p><img src="/post/2019-06-25-exploring-es50-for-gbif_files/globalSpeciesCounts_1.svg" /></p>
+<p>Here is the raw genus count map for animals. It is not hard to see that it simply <strong>mirrors sampling effort</strong>. Unfortunatly most groups (with the exception of birds) will probably have maps that look this way. You might be thinking that the <a href="">log-scale map</a> would look better.</p>
+</div>
+<div id="low-species-counts-in-a-known-hotspot" class="section level1">
+<h1><span style="color:#3288BD"><b><u>Low</u></b></span> species counts in a known hotspot</h1>
+<p><img width="100%" src="/post/2019-06-25-exploring-es50-for-gbif_files/miniMapSpCount_1.svg"></img></p>
+<p>This a raw animal genus count map of <strong>South East Asia</strong> shows <span style="color:#3288BD"><b><u>low</u></b></span>-to-<span style="color:#ABDDA4"><b><u>medium</u></b></span> animal diversity even though this region is a known <a href="https://discourse.gbif.org/t/hunger-mapping-gbif-data-blog/607/">biodiversity hotspot</a>. The sampling effort in this region is <a href="/post/2019-06-25-exploring-es50-for-gbif_files/miniMapOccCounts_1.svg">here</a>.</p>
+</div>
+<div id="high-es50-scores-in-a-known-hotspot" class="section level1">
+<h1><span style="color:#D53E4F"><b><u>High</u></b></span> es50 scores in a known hotspot</h1>
+<p><img width="100%" src="/post/2019-06-25-exploring-es50-for-gbif_files/miniMapEs501.svg"></img></p>
+<p>Our <strong>es50</strong> plot shows most of South East Asia as having medium to high diversity. Although there is still some noise and the result might not be transparent as a simple count map, es50 is able to highlight actual regions of high biodiversity.</p>
+<p><img width="100%" src="/post/2019-06-25-exploring-es50-for-gbif_files/latGraphs_1.svg"></img></p>
+<p>Here I plot latitde curves for <span style="color:#D54355"><b>es50</b></span> and <span style="color:#3487BD"><b>genus counts</b></span> for animal genera. While the es50 curve seems to be <strong>still slightly biased near 50°N</strong>, the curve obviously is much closer to capturing relative diversity than our genus count curve, which is <strong>total bi-modal nonsense</strong> and only really shows us effort.</p>
+</div>
+<div id="es50-fail-cases" class="section level1">
+<h1>es50 fail cases</h1>
+<p><strong>es50</strong> does sometimes produce nicer looking maps (see fail cases below), but it does not give us what most people want - <strong>species counts</strong>! Unfortunately very few taxonomic groups (i.e. probably only birds) are well-sampled enough globally to produce species-count maps that are not mirrored occurrence count graphs. Another drawback of es50 is that your group needs to have a reasonable expectation of having &gt;50 species within a given grid cell. Although <strong>50 is a somewhat arbitrary choice</strong>, it is large enough to be meaningful but small enough to still be used in less diverse groups and regions.</p>
+<blockquote>
+<p><a href="https://obis.org/indicators/documentation/">OBIS Warning</a>: ES50 assumes that individuals are randomly distributed, the <strong>sample size</strong> is sufficiently <strong>large</strong>, the samples are taxonomically similar, and that all of the samples have been taken in the <strong>same manner</strong>.</p>
+</blockquote>
+<div id="es50-for-frogs---few-places-with-50-species-sample-size-violation" class="section level3">
+<h3>es50 for frogs - few places with &gt;50 species (sample size violation)</h3>
+<p><img src="/post/2019-06-25-exploring-es50-for-gbif_files/map_es50_300_952.svg" /></p>
+<p>In this map there are <strong>many places where there are fewer than 50 frog species</strong> even though I use fairly large hexagons. In these cases, GBIF might want to change the threshold from 50 species to something smaller.</p>
+</div>
+<div id="es50-for-insects---biased-sampling-same-manner-violoation" class="section level3">
+<h3>es50 for insects - biased sampling (same manner violoation)</h3>
+<p><img src="/post/2019-06-25-exploring-es50-for-gbif_files/map_es50_300_216.svg" /></p>
+<p>In this map, the insect data seems to be too highly biased to produce a reasonable es50 result. Perhaps due to malaise trap proejcts, such as the <a href="https://www.gbif.org/en/dataset/38c1351d-9cfe-42c0-97da-02d2c8be141c">Swedish Malaise Trap Project</a>. There could also be other high-effort inventory projects in the USA and Europe that violate the <strong>same manner</strong>.</p>
+</div>
+</div>
+<div id="es50-maps-for-other-groups" class="section level1">
+<h1>es50 maps for other groups</h1>
+<p>All of the plots below are based equally-spaced (480 km apart) and equal-area hexagons. I generated the grids using <a href="https://cran.r-project.org/web/packages/dggridR/vignettes/dggridR.html">dggridR</a>. I also removed fossils and livinig specimens from the occurrence records. I packaged what I did into an R package <code>gbifrasters</code>.</p>
+<div id="es50-map-links" class="section level3">
+<h3>es50 map links:</h3>
+<ul>
+<li><strong>Mammals</strong> <a href="post/2019-06-25-exploring-es50-for-gbif_files/map_es50_300_359.jpg">jpg</a> | <a href="/post/2019-06-25-exploring-es50-for-gbif_files/map_es50_300_359.pdf">pdf</a> | <a href="/post/2019-06-25-exploring-es50-for-gbif_files/map_es50_300_359.svg">svg</a> (based on species counts)</li>
+<li><strong>Birds</strong> <a href="/post/2019-06-25-exploring-es50-for-gbif_files/map_es50_300_212.jpg">jpg</a> | <a href="/post/2019-06-25-exploring-es50-for-gbif_files/map_es50_300_212.pdf">pdf</a> | <a href="/post/2019-06-25-exploring-es50-for-gbif_files/map_es50_300_212.svg">svg</a> (based on species counts)</li>
+<li><strong>Frogs</strong> <a href="/post/2019-06-25-exploring-es50-for-gbif_files/map_es50_300_952.jpg">jpg</a> | <a href="/post/2019-06-25-exploring-es50-for-gbif_files/map_es50_300_952.pdf">pdf</a> | <a href="/post/2019-06-25-exploring-es50-for-gbif_files/map_es50_300_952.svg">svg</a> (based on species counts)</li>
+<li><strong>Vascular Plants</strong> <a href="/post/2019-06-25-exploring-es50-for-gbif_files/map_es50_300_7707728.jpg">jpg</a> | <a href="/post/2019-06-25-exploring-es50-for-gbif_files/map_es50_300_7707728.pdf">pdf</a> | <a href="/post/2019-06-25-exploring-es50-for-gbif_files/map_es50_300_7707728.svg">svg</a> (based on genus counts)</li>
+<li><strong>Insects</strong> <a href="/post/2019-06-25-exploring-es50-for-gbif_files/map_es50_300_216.jpg">jpg</a> | <a href="/post/2019-06-25-exploring-es50-for-gbif_files/map_es50_300_216.pdf">pdf</a> | <a href="/post/2019-06-25-exploring-es50-for-gbif_files/map_es50_300_216.svg">svg</a> (based on genus counts)</li>
+</ul>
+<!--more-->
+</div>
+</div>
+
+    </div>
+
+    
+    
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/es50/">es50</a>
+          
+          <a href="/tags/data-gaps/">data gaps</a>
+          
+          <a href="/tags/maps/">maps</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/not-a-bird/">
+            <span class="next-text nav-default">Not a bird download</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+       
+<div id='discourse-comments'></div>
+<script type="text/javascript">
+  DiscourseEmbed = { discourseUrl: 'https://discourse.gbif.org/',
+                     discourseEmbedUrl: 'https://data-blog.gbif.org\/post\/exploring-es50-for-gbif\/' };
+
+  (function() {
+    var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+    d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+  })();
+</script>  
+
+
+<div class = "copyright">
+	<a class="theme-link" href="https://www.gbif.org/what-is-gbif">What is GBIF?</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://www.gbif.org/developer/summary">API</a> 
+	<span class="division">|</span>
+	<a class="theme-link" href="https://www.gbif.org/faq">FAQ</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://discourse.gbif.org/">Community-Forum</a>
+</div>
+
+<div class = "copyright"> 
+	<span class="theme-info">GBIF Secretariat</span> 
+	<span class="theme-info">Universitetsparken 15</span> 
+	<span class="theme-info">DK-2100 Copenhagen Ø</span> 
+	<span class="theme-info" >Denmark</span>
+</div>
+
+<div class="copyright">
+	<span class="power-by">
+	Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+	</span>
+	<span class="division">|</span>
+	<span class="theme-info">
+	Theme - 
+	<a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+	</span>
+
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+<script type="text/javascript" src="/dist/even.min.js?v=3.2.0"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

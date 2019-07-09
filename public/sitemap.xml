@@ -10,6 +10,13 @@
   </url>
   
   <url>
+    <loc>/post/exploring-es50-for-gbif/</loc>
+    <lastmod>2019-06-25T14:39:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>/post/not-a-bird/</loc>
     <lastmod>2019-06-19T15:58:23+02:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -191,7 +198,7 @@
   
   <url>
     <loc>/tags/data-gaps/</loc>
-    <lastmod>2019-05-15T09:32:20+02:00</lastmod>
+    <lastmod>2019-06-25T14:39:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -239,6 +246,13 @@
   </url>
   
   <url>
+    <loc>/tags/es50/</loc>
+    <lastmod>2019-06-25T14:39:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/tags/gbif/</loc>
     <lastmod>2019-04-23T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -247,7 +261,7 @@
   
   <url>
     <loc>/categories/gbif/</loc>
-    <lastmod>2019-06-19T15:58:23+02:00</lastmod>
+    <lastmod>2019-06-25T14:39:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -317,7 +331,7 @@
   
   <url>
     <loc>/author/john-waller/</loc>
-    <lastmod>2019-06-19T15:58:23+02:00</lastmod>
+    <lastmod>2019-06-25T14:39:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -331,7 +345,7 @@
   
   <url>
     <loc>/tags/maps/</loc>
-    <lastmod>2018-11-21T15:24:11+02:00</lastmod>
+    <lastmod>2019-06-25T14:39:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -394,7 +408,7 @@
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2019-06-19T15:58:23+02:00</lastmod>
+    <lastmod>2019-06-25T14:39:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
