@@ -34,7 +34,7 @@ sequenceDiagrams:
 ---
 
 
-![](/post/2019-06-25-exploring-es50-for-gbif_files/map_es50_300_1.svg) 
+![](/post/2019-06-25-exploring-es50-for-gbif_files/map_es50_300_1.jpg) 
 
 <div style="text-align:right;"><sub>
 [jpg](post/2019-06-25-exploring-es50-for-gbif_files/map_es50_300_1.jpg) | [pdf](post/2019-06-25-exploring-es50-for-gbif_files/map_es50_300_1.pdf) | [svg](post/2019-06-25-exploring-es50-for-gbif_files/map_es50_300_1.svg)

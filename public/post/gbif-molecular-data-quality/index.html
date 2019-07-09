@@ -221,7 +221,7 @@ These data can  be sorted in one of the two following categories:</p>
 <h1 id="sequencing-protocols-and-processing-pipelines-affect-significantly-what-is-detected">Sequencing protocols and processing pipelines affect significantly what is detected</h1>
 
 <p>This might not surprise anyone but the <strong>same sample</strong> sequenced with different technologies and processed with different bio-informatics pipelines can give very <strong>different results</strong>.
-Even just changing a parameter in of the the steps of the quality control can change which organisms you will detect. This is why you must take into account the protocols and pipelines used when analyzing this type of occurrence, <strong>especially</strong> if you are pooling together data from different sources.</p>
+Even just changing a parameter in one of the the steps of the quality control can change which organisms you will detect. This is why you must take into account the protocols and pipelines used when analyzing this type of occurrence, <strong>especially</strong> if you are pooling together data from different sources.</p>
 
 <p>Here is another simplified illustration of the problem:
 <img src="/post/2019-04-23-gbif-molecular-data-for-users-files/different_pipeline.jpeg" alt="Over-simplified effect of different piplelines on species detection" width="700"/></p>
@@ -233,7 +233,7 @@ Even just changing a parameter in of the the steps of the quality control can ch
 
 <h3 id="sampling-and-sequencing">Sampling and sequencing</h3>
 
-<p>The samples are prepared and sequenced. A popular growingly approach is <a href="https://en.wikipedia.org/wiki/Shotgun_sequencing">shotgun sequencing</a>, you might also see the term <a href="https://en.wikipedia.org/wiki/DNA_sequencing#High-throughput_methods">high-throughput technology</a> or NGS technology which is a catch-all term for an array of methods applying to genome sequencing, genome resequencing, transcriptome profiling (RNA-Seq), DNA-protein interactions (ChIP-sequencing), and epigenome characterization.</p>
+<p>The samples are prepared and sequenced. A growingly popular approach is <a href="https://en.wikipedia.org/wiki/Shotgun_sequencing">shotgun sequencing</a>, you might also encounter the term <a href="https://en.wikipedia.org/wiki/DNA_sequencing#High-throughput_methods">high-throughput technology</a> or NGS technology which is a catch-all term for an array of methods applying to genome sequencing, genome resequencing, transcriptome profiling (RNA-Seq), DNA-protein interactions (ChIP-sequencing), and epigenome characterization.</p>
 
 <p>When comparing data from different sources, it might be a good idea to check which technology was used and was its indented purpose: which organisms are targeted? Prokaryotes, eukaryotes, both? Which genomics regions are targeted? Is everything sequenced or only the 16s? What is the error rate for this technology? What is the length of the sequences generated? etc.</p>
 
@@ -264,7 +264,7 @@ Of course, these programs generate matching scores and setting a stringent thres
 
 <p>Note that the number of reads matched to a given species cannot be directly interpreted as the abundance of that particular species in the sample. Yes if you have more of genetic material available, you will get more reads but this relationship is not linear.</p>
 
-<p>You should also pay attention to the total number of clean reads generated. 10 reads out matching bacteria A out of 100 is not the same as 10 out of 10,000 (check the last paragraph to know where to find this information).</p>
+<p>You should also pay attention to the total number of clean reads generated. 10 reads matching bacteria A out of 100 is not the same as 10 out of 10,000 (check the last paragraph to know where to find this information).</p>
 
 <p>It makes sense to have a cut off based on the percentage or number of reads matching a given taxon. Sequencing errors are unlikely to occur systematically on the same sequences, which means that one read can be affected but not many. So if a high percentage of reads matchs the same taxon, this occurrence is more likely a true positive. Or the other way around, if only one read matches a taxon you should be more careful when interpreting the data.</p>
 
