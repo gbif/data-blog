@@ -201,7 +201,8 @@
 <p>You might be thinking, why do this strange statistical exercise? Why not just use species counts? Well, one of the main advantages of es50 is that it somewhat corrects for <strong>sampling bias</strong>.</p>
 <div id="species-richness-is-correlated-with-effort" class="section level1">
 <h1>Species <strong>richness</strong> is correlated with <strong>effort</strong></h1>
-<p><img src="/post/2019-06-25-exploring-es50-for-gbif_files/effortAndSpeciesCounts.svg" /></p>
+<!-- ![](/post/2019-06-25-exploring-es50-for-gbif_files/effortAndSpeciesCounts.svg)  -->
+<p><img width="100%" src="/post/2019-06-25-exploring-es50-for-gbif_files/effortAndSpeciesCounts.svg"></img></p>
 <p>Here I plot the unique animal genus counts versus the number occurrence records for a global grid equal area hexagons (on land). The amount of occurrence records in a region has is highly predictive of the number of unique animal species that region will have. According to raw GBIF records, <strong>Belgium</strong>, <strong>Sweden</strong>, and parts of the <strong>USA</strong> are more biodiverse than <strong>Brazil</strong> and <strong>Madagascar</strong>. And <strong>Iceland</strong> is nearly as species rich as parts of <strong>Brazil</strong>. If GBIF were to plot raw species count maps, it would obviously be non-sense because of <strong>sampling bias</strong>.</p>
 <blockquote>
 <p>Without some correction for sampling bias we might want to turn <strong>all of Belgium</strong> into a Nature reserve.</p>
@@ -227,7 +228,7 @@
 <p><img width="100%" src="/post/2019-06-25-exploring-es50-for-gbif_files/miniMapEs501.svg"></img></p>
 <p>Our <strong>es50</strong> plot shows most of South East Asia as having medium to high diversity. Although there is still some noise and the result might not be transparent as a simple count map, es50 is able to highlight actual regions of high biodiversity.</p>
 <p><img width="100%" src="/post/2019-06-25-exploring-es50-for-gbif_files/latGraphs_1.svg"></img></p>
-<p>Here I plot latitde curves for <span style="color:#D54355"><b>es50</b></span> and <span style="color:#3487BD"><b>genus counts</b></span> for animal genera. While the es50 curve seems to be <strong>still slightly biased near 50°N</strong>, the curve obviously is much closer to capturing relative diversity than our genus count curve, which is <strong>total bi-modal nonsense</strong> and only really shows us effort.</p>
+<p>Here I plot latitude curves for <span style="color:#D54355"><b>es50</b></span> and <span style="color:#3487BD"><b>genus counts</b></span> for animal genera. While the es50 curve seems to be <strong>still slightly biased near 50°N</strong>, the curve obviously is much closer to capturing relative diversity than our genus count curve, which is <strong>total bi-modal nonsense</strong> and only really shows us effort.</p>
 </div>
 <div id="es50-fail-cases" class="section level1">
 <h1>es50 fail cases</h1>

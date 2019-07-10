@@ -50,7 +50,8 @@ You might be thinking, why do this strange statistical exercise? Why not just us
 
 # Species **richness** is correlated with **effort**
 
-![](/post/2019-06-25-exploring-es50-for-gbif_files/effortAndSpeciesCounts.svg) 
+<!-- ![](/post/2019-06-25-exploring-es50-for-gbif_files/effortAndSpeciesCounts.svg)  -->
+<img width="100%" src="/post/2019-06-25-exploring-es50-for-gbif_files/effortAndSpeciesCounts.svg"></img>
 
 Here I plot the unique animal genus counts versus the number occurrence records for a global grid equal area hexagons (on land). The amount of occurrence records in a region has is highly predictive of the number of unique animal species that region will have. According to raw GBIF records, **Belgium**, **Sweden**, and parts of the **USA** are more biodiverse than **Brazil** and **Madagascar**. And **Iceland** is nearly as species rich as parts of **Brazil**. If GBIF were to plot raw species count maps, it would obviously be non-sense because of **sampling bias**.
 
@@ -83,7 +84,7 @@ Our **es50** plot shows most of South East Asia as having medium to high diversi
 
 <img width="100%" src="/post/2019-06-25-exploring-es50-for-gbif_files/latGraphs_1.svg"></img>
 
-Here I plot latitde curves for <span style="color:#D54355"><b>es50</b></span> and <span style="color:#3487BD"><b>genus counts</b></span> for animal genera. While the es50 curve seems to be **still slightly biased near 50°N**, the curve obviously is much closer to capturing relative diversity than our genus count curve, which is **total bi-modal nonsense** and only really shows us effort. 
+Here I plot latitude curves for <span style="color:#D54355"><b>es50</b></span> and <span style="color:#3487BD"><b>genus counts</b></span> for animal genera. While the es50 curve seems to be **still slightly biased near 50°N**, the curve obviously is much closer to capturing relative diversity than our genus count curve, which is **total bi-modal nonsense** and only really shows us effort. 
 
 # es50 fail cases
 
