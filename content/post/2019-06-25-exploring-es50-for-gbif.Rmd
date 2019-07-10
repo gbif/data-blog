@@ -48,7 +48,7 @@ Here I plot a global es50 map for **animal genera** on GBIF. Each es50 score rep
 
 You might be thinking, why do this strange statistical exercise? Why not just use species counts? Well, one of the main advantages of es50 is that it somewhat corrects for **sampling bias**.
 
-# Species **richness** is correlated with **effort**
+# Species <b>richness</b> is correlated with <b>effort</b>
 
 <!-- ![](/post/2019-06-25-exploring-es50-for-gbif_files/effortAndSpeciesCounts.svg)  -->
 <img width="100%" src="/post/2019-06-25-exploring-es50-for-gbif_files/effortAndSpeciesCounts.svg"></img>
