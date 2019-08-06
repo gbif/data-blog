@@ -6,10 +6,19 @@
     <description>Recent content in Downloads on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 19 Jun 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 11 Jul 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/downloads/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Downloading occurrences from a long species lists on GBIF</title>
+      <link>/post/downloading-long-species-lists-on-gbif/</link>
+      <pubDate>Thu, 11 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/downloading-long-species-lists-on-gbif/</guid>
+      <description>Until recently it was not possible to download more than a few hundred species at the same time. This is unfortunately is still true for downloads through the portal, which are limited to around 200 taxon keys (species, genus, family, kingdom …). This is due to limitations in browser and the http GET limit. A recent change, has now made it possible to request more species names (up to 9000) in some cases through an http request.</description>
+    </item>
     
     <item>
       <title>Not a bird download</title>

@@ -1,0 +1,142 @@
+---
+title: Downloading occurrences from a long species lists on GBIF
+author: John Waller
+date: '2019-07-11'
+slug: downloading-long-species-lists-on-gbif
+categories:
+  - GBIF
+tags:
+  - API
+  - downloads
+  - invasive species
+lastmod: '2019-07-11T16:26:18+02:00'
+draft: yes
+keywords: []
+description: ''
+authors: ''
+comment: no
+toc: ''
+autoCollapseToc: no
+postMetaInFooter: no
+hiddenFromHomePage: yes
+contentCopyright: no
+reward: no
+mathjax: no
+mathjaxEnableSingleDollar: no
+mathjaxEnableAutoNumber: no
+hideHeaderAndFooter: no
+flowchartDiagrams:
+  enable: no
+  options: ''
+sequenceDiagrams:
+  enable: no
+  options: ''
+---
+
+
+Until recently it was not possible to download more than a few hundred species at the same time. This is unfortunately is still true for downloads through the portal, which are **limited to around 200 taxon keys** (species, genus, family, kingdom ...). This is due to **limitations in browser** and the [http GET limit](). A recent change, has now made it possible to request more species names (**up to 9000**) in some cases through an http request. 
+
+I made some large downloads using this method: 
+
+* [5,000 species download](https://www.gbif.org/occurrence/download/0009331-190621201848488) **succeeds**
+* [9,000 species download](https://www.gbif.org/occurrence/download/0010219-190621201848488) **succeeds** 
+* [10,000 species download](https://www.gbif.org/occurrence/download/0010226-190621201848488) **fails**
+
+> **NOTE:** If your request can easily be summarized into higher taxon groups, it still makes more sense to download just that taxon group. For example, if you just want to download all [dragonflies](https://www.gbif.org/occurrence/search?taxon_key=789), all [mammals](https://www.gbif.org/occurrence/search?taxon_key=359), or all [vascular plants](https://www.gbif.org/occurrence/search?taxon_key=7707728). These requests don't require anything special. 
+
+One potential use-case for downloading 1000s of species at a time is [invasive species lists](https://www.gbif.org/publisher/cdef28b1-db4e-4c58-aa71-3c5238c2d0b5). These lists are unlikely to have species that can be easily summarized into a single higher taxonomic unit (genus, family, order, class). 
+
+Now getting >2000 many taxon keys in one download is a bit more complicated than running a simple portal search, but you would not want to enter >200 scientific names by hand anyway. Below I use the <br>[Belgium Invasive Species List](https://www.gbif.org/dataset/6d9e952f-948c-4483-9807-575348147c7e), which has 2562 names. Invasive species lists are a perfect use-case for using a large amount of taxon keys because it is hard to narrow down the list to a higher taxon rank. That is, most invasive species do not come from one big group like Birds (Aves), mammals, vascular plants ect. 
+
+Previously it was not possible to make such a download. 
+
+
+[really long GBIF.org query]() **fails**
+
+
+# Step 1. Creating your download request 
+
+Below I prepare called `request.json`. You could prepare this file any way you want. The file will end up looking like [this](). Make sure to change `YourEmail@email.com` and `YourUserName` the text below. 
+
+
+```r
+library(dplyr)
+library(stringr)
+
+# Getting the taxon keys
+species_list <- read.csv("taxon.txt",sep="\t") %>%
+pull(taxonID) %>% # get only the GBIF backbone taxon keys
+str_replace_all("https://www.gbif.org/species/","") %>% # clean name
+paste(collapse=",")
+
+# change creator to your GBIF user name
+# change notification_address to your email
+prefix = 
+'{
+"creator": "YourUserName",
+"notification_address": [
+"YourEmail@email.com"
+],
+"sendNotification": true,
+"format": "SIMPLE_CSV",
+"predicate": {
+"type": "and",
+"predicates": [
+{
+"type": "in",
+"key": "TAXON_KEY",
+"values": ['
+
+suffix = ']}]}}'
+
+json_string <- paste(prefix,species_list,suffix,collapse="") # combine together
+
+# save this file somewhere to use for download request
+writeLines(json_string,file("request.json"))
+
+```
+You can download `request.json` [here](). 
+
+
+# Step 2. Make the request
+
+Now we can use `httr` to start the download. 
+
+```r
+library(httr)
+library(dplyr)
+
+user = "" # fill in your username
+pwd = "" # fill in your password
+email = "" # fill in your email
+url = "http://api.gbif.org/v1/occurrence/download/request"
+
+POST(url = url, 
+config = authenticate(user, pwd), 
+add_headers("Content-Type: application/json"),
+body = upload_file("request.json"), # path to your local file
+encode = 'json') %>% 
+content(as = "text")
+
+# "0011213-190621201848488" # id number
+``` 
+If you are logged in you can go [here](https://www.gbif.org/occurrence/download/) to see your download. This is the link to the download I made: <br> https://www.gbif.org/occurrence/download/0011213-190621201848488. Your download will have a different id number. 
+
+
+You could also use `curl` directly if you prefer to do that. 
+
+```
+curl --include --user user:password --header "Content-Type: application/json" --data @request.json http://api.gbif.org/v1/occurrence/download/request
+
+```
+
+> **NOTE:** As of the writing of this post, I have not gotten a **rgbif::occ_download()** to make a long species list download. 
+
+This is because `rgbif` does not use the IN() predicate, which saves space. 
+
+```
+
+```
+
+
+<!--more-->

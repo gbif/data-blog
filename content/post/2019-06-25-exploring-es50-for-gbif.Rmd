@@ -1,7 +1,7 @@
 ---
 title: Exploring es50 for GBIF
 author: John Waller
-date: '2019-06-25'
+date: '2019-07-10'
 slug: exploring-es50-for-gbif
 categories:
   - GBIF
@@ -56,6 +56,7 @@ You might be thinking, why do this strange statistical exercise? Why not just us
 Here I plot the unique animal genus counts versus the number occurrence records for a global grid equal area hexagons (on land). The amount of occurrence records in a region has is highly predictive of the number of unique animal species that region will have. According to raw GBIF records, **Belgium**, **Sweden**, and parts of the **USA** are more biodiverse than **Brazil** and **Madagascar**. And **Iceland** is nearly as species rich as parts of **Brazil**. If GBIF were to plot raw species count maps, it would obviously be non-sense because of **sampling bias**.
 
 > Without some correction for sampling bias we might want to turn **all of Belgium** into a Nature reserve.
+
 
 # Occurrence records are highly biased to the <span style="color:#D53E4F"><b>north</b></span>
 

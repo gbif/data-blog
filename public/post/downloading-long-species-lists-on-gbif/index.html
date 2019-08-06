@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Downloading occurrences from a long species lists on GBIF - GBIF Data Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="John Waller" />
+  <meta name="description" content="Until recently it was not possible to download more than a few hundred species at the same time. This is unfortunately is still true for downloads through the portal, which are limited to around 200 taxon keys (species, genus, family, kingdom …). This is due to limitations in browser and the http GET limit. A recent change, has now made it possible to request more species names (up to 9000) in some cases through an http request." />
+
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.42" />
+
+
+<link rel="canonical" href="/post/downloading-long-species-lists-on-gbif/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.2.0" rel="stylesheet">
+
+
+
+
+<link rel="stylesheet" href="/css//custom.css">
+
+
+<meta property="og:title" content="Downloading occurrences from a long species lists on GBIF" />
+<meta property="og:description" content="Until recently it was not possible to download more than a few hundred species at the same time. This is unfortunately is still true for downloads through the portal, which are limited to around 200 taxon keys (species, genus, family, kingdom …). This is due to limitations in browser and the http GET limit. A recent change, has now made it possible to request more species names (up to 9000) in some cases through an http request." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/downloading-long-species-lists-on-gbif/" />
+
+
+
+<meta property="article:published_time" content="2019-07-11T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2019-07-11T16:26:18&#43;02:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Downloading occurrences from a long species lists on GBIF">
+<meta itemprop="description" content="Until recently it was not possible to download more than a few hundred species at the same time. This is unfortunately is still true for downloads through the portal, which are limited to around 200 taxon keys (species, genus, family, kingdom …). This is due to limitations in browser and the http GET limit. A recent change, has now made it possible to request more species names (up to 9000) in some cases through an http request.">
+
+
+<meta itemprop="datePublished" content="2019-07-11T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-07-11T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="577">
+
+
+
+<meta itemprop="keywords" content="API,downloads,invasive species," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Downloading occurrences from a long species lists on GBIF"/>
+<meta name="twitter:description" content="Until recently it was not possible to download more than a few hundred species at the same time. This is unfortunately is still true for downloads through the portal, which are limited to around 200 taxon keys (species, genus, family, kingdom …). This is due to limitations in browser and the http GET limit. A recent change, has now made it possible to request more species names (up to 9000) in some cases through an http request."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">GBIF Data Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">home</li>
+      </a><a href="https://discourse.gbif.org/c/data-blog">
+        <li class="mobile-menu-item">community-forum</li>
+      </a><a href="https://www.gbif.org/">
+        <li class="mobile-menu-item">gbif.org</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">about</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">
+	<img src= "/logo.png" alt="GBIF-analytics-blog" style ="width:20%;">
+  </a>
+  
+	
+  
+  
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://discourse.gbif.org/c/data-blog">community-forum</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://www.gbif.org/">gbif.org</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">about</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+	
+    <header class="post-header">
+      <h1 class="post-title">Downloading occurrences from a long species lists on GBIF</h1>
+	  
+	  
+      <div class="post-author">John Waller</div>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-07-11 </span>
+        <div class="post-category">
+            
+              <a href="/categories/gbif/"> GBIF </a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    
+    
+
+    
+    <div class="post-content">
+      <p>Until recently it was not possible to download more than a few hundred species at the same time. This is unfortunately is still true for downloads through the portal, which are <strong>limited to around 200 taxon keys</strong> (species, genus, family, kingdom …). This is due to <strong>limitations in browser</strong> and the <a href="">http GET limit</a>. A recent change, has now made it possible to request more species names (<strong>up to 9000</strong>) in some cases through an http request.</p>
+<p>I made some large downloads using this method:</p>
+<ul>
+<li><a href="https://www.gbif.org/occurrence/download/0009331-190621201848488">5,000 species download</a> <strong>succeeds</strong></li>
+<li><a href="https://www.gbif.org/occurrence/download/0010219-190621201848488">9,000 species download</a> <strong>succeeds</strong></li>
+<li><a href="https://www.gbif.org/occurrence/download/0010226-190621201848488">10,000 species download</a> <strong>fails</strong></li>
+</ul>
+<blockquote>
+<p><strong>NOTE:</strong> If your request can easily be summarized into higher taxon groups, it still makes more sense to download just that taxon group. For example, if you just want to download all <a href="https://www.gbif.org/occurrence/search?taxon_key=789">dragonflies</a>, all <a href="https://www.gbif.org/occurrence/search?taxon_key=359">mammals</a>, or all <a href="https://www.gbif.org/occurrence/search?taxon_key=7707728">vascular plants</a>. These requests don’t require anything special.</p>
+</blockquote>
+<p>One potential use-case for downloading 1000s of species at a time is <a href="https://www.gbif.org/publisher/cdef28b1-db4e-4c58-aa71-3c5238c2d0b5">invasive species lists</a>. These lists are unlikely to have species that can be easily summarized into a single higher taxonomic unit (genus, family, order, class).</p>
+<p>Now getting &gt;2000 many taxon keys in one download is a bit more complicated than running a simple portal search, but you would not want to enter &gt;200 scientific names by hand anyway. Below I use the <br><a href="https://www.gbif.org/dataset/6d9e952f-948c-4483-9807-575348147c7e">Belgium Invasive Species List</a>, which has 2562 names. Invasive species lists are a perfect use-case for using a large amount of taxon keys because it is hard to narrow down the list to a higher taxon rank. That is, most invasive species do not come from one big group like Birds (Aves), mammals, vascular plants ect.</p>
+<p>Previously it was not possible to make such a download.</p>
+<p><a href="">really long GBIF.org query</a> <strong>fails</strong></p>
+<div id="step-1.-creating-your-download-request" class="section level1">
+<h1>Step 1. Creating your download request</h1>
+<p>Below I prepare called <code>request.json</code>. You could prepare this file any way you want. The file will end up looking like <a href="">this</a>. Make sure to change <code>YourEmail@email.com</code> and <code>YourUserName</code> the text below.</p>
+<pre class="r"><code>library(dplyr)
+library(stringr)
+
+# Getting the taxon keys
+species_list &lt;- read.csv(&quot;taxon.txt&quot;,sep=&quot;\t&quot;) %&gt;%
+pull(taxonID) %&gt;% # get only the GBIF backbone taxon keys
+str_replace_all(&quot;https://www.gbif.org/species/&quot;,&quot;&quot;) %&gt;% # clean name
+paste(collapse=&quot;,&quot;)
+
+# change creator to your GBIF user name
+# change notification_address to your email
+prefix = 
+&#39;{
+&quot;creator&quot;: &quot;YourUserName&quot;,
+&quot;notification_address&quot;: [
+&quot;YourEmail@email.com&quot;
+],
+&quot;sendNotification&quot;: true,
+&quot;format&quot;: &quot;SIMPLE_CSV&quot;,
+&quot;predicate&quot;: {
+&quot;type&quot;: &quot;and&quot;,
+&quot;predicates&quot;: [
+{
+&quot;type&quot;: &quot;in&quot;,
+&quot;key&quot;: &quot;TAXON_KEY&quot;,
+&quot;values&quot;: [&#39;
+
+suffix = &#39;]}]}}&#39;
+
+json_string &lt;- paste(prefix,species_list,suffix,collapse=&quot;&quot;) # combine together
+
+# save this file somewhere to use for download request
+writeLines(json_string,file(&quot;request.json&quot;))
+</code></pre>
+<p>You can download <code>request.json</code> <a href="">here</a>.</p>
+</div>
+<div id="step-2.-make-the-request" class="section level1">
+<h1>Step 2. Make the request</h1>
+<p>Now we can use <code>httr</code> to start the download.</p>
+<pre class="r"><code>library(httr)
+library(dplyr)
+
+user = &quot;&quot; # fill in your username
+pwd = &quot;&quot; # fill in your password
+email = &quot;&quot; # fill in your email
+url = &quot;http://api.gbif.org/v1/occurrence/download/request&quot;
+
+POST(url = url, 
+config = authenticate(user, pwd), 
+add_headers(&quot;Content-Type: application/json&quot;),
+body = upload_file(&quot;request.json&quot;), # path to your local file
+encode = &#39;json&#39;) %&gt;% 
+content(as = &quot;text&quot;)
+
+# &quot;0011213-190621201848488&quot; # id number</code></pre>
+<p>If you are logged in you can go <a href="https://www.gbif.org/occurrence/download/">here</a> to see your download. This is the link to the download I made: <br> <a href="https://www.gbif.org/occurrence/download/0011213-190621201848488" class="uri">https://www.gbif.org/occurrence/download/0011213-190621201848488</a>. Your download will have a different id number.</p>
+<p>You could also use <code>curl</code> directly if you prefer to do that.</p>
+<pre><code>curl --include --user user:password --header &quot;Content-Type: application/json&quot; --data @request.json http://api.gbif.org/v1/occurrence/download/request
+</code></pre>
+<blockquote>
+<p><strong>NOTE:</strong> As of the writing of this post, I have not gotten a <strong>rgbif::occ_download()</strong> to make a long species list download.</p>
+</blockquote>
+<p>This is because <code>rgbif</code> does not use the IN() predicate, which saves space.</p>
+<pre><code></code></pre>
+<!--more-->
+</div>
+
+    </div>
+
+    
+    
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/api/">API</a>
+          
+          <a href="/tags/downloads/">downloads</a>
+          
+          <a href="/tags/invasive-species/">invasive species</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/citizen-science-on-gbif-2019/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Citizen Science on GBIF - 2019</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/exploring-es50-for-gbif/">
+            <span class="next-text nav-default">Exploring es50 for GBIF</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+       
+<div id='discourse-comments'></div>
+<script type="text/javascript">
+  DiscourseEmbed = { discourseUrl: 'https://discourse.gbif.org/',
+                     discourseEmbedUrl: 'https://data-blog.gbif.org\/post\/downloading-long-species-lists-on-gbif\/' };
+
+  (function() {
+    var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+    d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+  })();
+</script>  
+
+
+<div class = "copyright">
+	<a class="theme-link" href="https://www.gbif.org/what-is-gbif">What is GBIF?</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://www.gbif.org/developer/summary">API</a> 
+	<span class="division">|</span>
+	<a class="theme-link" href="https://www.gbif.org/faq">FAQ</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://discourse.gbif.org/">Community-Forum</a>
+</div>
+
+<div class = "copyright"> 
+	<span class="theme-info">GBIF Secretariat</span> 
+	<span class="theme-info">Universitetsparken 15</span> 
+	<span class="theme-info">DK-2100 Copenhagen Ø</span> 
+	<span class="theme-info" >Denmark</span>
+</div>
+
+<div class="copyright">
+	<span class="power-by">
+	Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+	</span>
+	<span class="division">|</span>
+	<span class="theme-info">
+	Theme - 
+	<a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+	</span>
+
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+<script type="text/javascript" src="/dist/even.min.js?v=3.2.0"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

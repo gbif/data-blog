@@ -6,7 +6,7 @@
     <description>Recent content in Tags on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 19 Jun 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 11 Jul 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>API</title>
       <link>/tags/api/</link>
-      <pubDate>Wed, 19 Jun 2019 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 11 Jul 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/api/</guid>
       <description></description>
@@ -59,7 +59,7 @@
     <item>
       <title>Citizen science</title>
       <link>/tags/citizen-science/</link>
-      <pubDate>Mon, 21 Jan 2019 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 02 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/citizen-science/</guid>
       <description></description>
@@ -86,7 +86,7 @@
     <item>
       <title>Data gaps</title>
       <link>/tags/data-gaps/</link>
-      <pubDate>Tue, 25 Jun 2019 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 10 Jul 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/data-gaps/</guid>
       <description></description>
@@ -113,7 +113,7 @@
     <item>
       <title>Downloads</title>
       <link>/tags/downloads/</link>
-      <pubDate>Wed, 19 Jun 2019 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 11 Jul 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/downloads/</guid>
       <description></description>
@@ -149,7 +149,7 @@
     <item>
       <title>Es50</title>
       <link>/tags/es50/</link>
-      <pubDate>Tue, 25 Jun 2019 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 10 Jul 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/es50/</guid>
       <description></description>
@@ -219,6 +219,15 @@
     </item>
     
     <item>
+      <title>Invasive species</title>
+      <link>/tags/invasive-species/</link>
+      <pubDate>Thu, 11 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/invasive-species/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Issues</title>
       <link>/tags/issues/</link>
       <pubDate>Tue, 26 Sep 2000 00:00:00 +0000</pubDate>
@@ -239,7 +248,7 @@
     <item>
       <title>Maps</title>
       <link>/tags/maps/</link>
-      <pubDate>Tue, 25 Jun 2019 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 10 Jul 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/maps/</guid>
       <description></description>
