@@ -22,10 +22,10 @@ copyright = ""            # default: author.name ↓        #
   filename = "sitemap.xml"
 
 [[menu.main]]             # config your menu              # 
-  name = "home"
+  name = "posts"
   weight = 1
   identifier = "home"
-  url = "/"
+  url = "/categories/gbif/"
 [[menu.main]]             # config your menu              # 
   name = "community-forum"
   weight = 2

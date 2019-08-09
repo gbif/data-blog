@@ -10,6 +10,13 @@
   </url>
   
   <url>
+    <loc>/post/occurrence-density-by-country/</loc>
+    <lastmod>2019-08-07T09:57:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>/post/citizen-science-on-gbif-2019/</loc>
     <lastmod>2019-08-02T08:39:12+02:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -267,15 +274,15 @@
   </url>
   
   <url>
-    <loc>/categories/gbif/</loc>
-    <lastmod>2019-08-02T08:39:12+02:00</lastmod>
+    <loc>/tags/gbif/</loc>
+    <lastmod>2019-04-23T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/gbif/</loc>
-    <lastmod>2019-04-23T00:00:00+00:00</lastmod>
+    <loc>/categories/gbif/</loc>
+    <lastmod>2019-08-07T09:57:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -352,7 +359,7 @@
   
   <url>
     <loc>/author/john-waller/</loc>
-    <lastmod>2019-08-02T08:39:12+02:00</lastmod>
+    <lastmod>2019-08-07T09:57:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -429,7 +436,7 @@
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2019-08-02T08:39:12+02:00</lastmod>
+    <lastmod>2019-08-07T09:57:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

@@ -6,10 +6,19 @@
     <description>Recent content in GBIF on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 02 Aug 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 07 Aug 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/gbif/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Occurrence Density By Country</title>
+      <link>/post/occurrence-density-by-country/</link>
+      <pubDate>Wed, 07 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/occurrence-density-by-country/</guid>
+      <description>library(kableExtra)## Warning: package &amp;#39;kableExtra&amp;#39; was built under R version 3.5.3library(knitr)library(kableExtra)options(kableExtra.html.bsTable = TRUE)dt &amp;lt;- mtcars[1:5, 1:6]kable(dt) %&amp;gt;% kable_styling(bootstrap_options = c(&amp;quot;striped&amp;quot;, &amp;quot;hover&amp;quot;, &amp;quot;condensed&amp;quot;))mpgcyldisphpdratwtMazda RX421.061601103.902.620Mazda RX4 Wag21.061601103.</description>
+    </item>
     
     <item>
       <title>Citizen Science on GBIF - 2019</title>

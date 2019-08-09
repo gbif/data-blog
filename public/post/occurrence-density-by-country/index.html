@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Occurrence Density By Country - GBIF Data Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="John Waller" />
+  <meta name="description" content="library(kableExtra)## Warning: package &amp;#39;kableExtra&amp;#39; was built under R version 3.5.3library(knitr)library(kableExtra)options(kableExtra.html.bsTable = TRUE)dt &amp;lt;- mtcars[1:5, 1:6]kable(dt) %&amp;gt;% kable_styling(bootstrap_options = c(&amp;quot;striped&amp;quot;, &amp;quot;hover&amp;quot;, &amp;quot;condensed&amp;quot;))mpgcyldisphpdratwtMazda RX421.061601103.902.620Mazda RX4 Wag21.061601103." />
+
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.42" />
+
+
+<link rel="canonical" href="/post/occurrence-density-by-country/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.2.0" rel="stylesheet">
+
+
+
+
+<link rel="stylesheet" href="/css//custom.css">
+
+
+<meta property="og:title" content="Occurrence Density By Country" />
+<meta property="og:description" content="library(kableExtra)## Warning: package &#39;kableExtra&#39; was built under R version 3.5.3library(knitr)library(kableExtra)options(kableExtra.html.bsTable = TRUE)dt &lt;- mtcars[1:5, 1:6]kable(dt) %&gt;% kable_styling(bootstrap_options = c(&quot;striped&quot;, &quot;hover&quot;, &quot;condensed&quot;))mpgcyldisphpdratwtMazda RX421.061601103.902.620Mazda RX4 Wag21.061601103." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/occurrence-density-by-country/" />
+
+
+
+<meta property="article:published_time" content="2019-08-07T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2019-08-07T09:57:06&#43;02:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Occurrence Density By Country">
+<meta itemprop="description" content="library(kableExtra)## Warning: package &#39;kableExtra&#39; was built under R version 3.5.3library(knitr)library(kableExtra)options(kableExtra.html.bsTable = TRUE)dt &lt;- mtcars[1:5, 1:6]kable(dt) %&gt;% kable_styling(bootstrap_options = c(&quot;striped&quot;, &quot;hover&quot;, &quot;condensed&quot;))mpgcyldisphpdratwtMazda RX421.061601103.902.620Mazda RX4 Wag21.061601103.">
+
+
+<meta itemprop="datePublished" content="2019-08-07T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-08-07T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="75">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Occurrence Density By Country"/>
+<meta name="twitter:description" content="library(kableExtra)## Warning: package &#39;kableExtra&#39; was built under R version 3.5.3library(knitr)library(kableExtra)options(kableExtra.html.bsTable = TRUE)dt &lt;- mtcars[1:5, 1:6]kable(dt) %&gt;% kable_styling(bootstrap_options = c(&quot;striped&quot;, &quot;hover&quot;, &quot;condensed&quot;))mpgcyldisphpdratwtMazda RX421.061601103.902.620Mazda RX4 Wag21.061601103."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">GBIF Data Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/categories/gbif/">
+        <li class="mobile-menu-item">posts</li>
+      </a><a href="https://discourse.gbif.org/c/data-blog">
+        <li class="mobile-menu-item">community-forum</li>
+      </a><a href="https://www.gbif.org/">
+        <li class="mobile-menu-item">gbif.org</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">about</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">
+	<img src= "/logo.png" alt="GBIF-analytics-blog" style ="width:20%;">
+  </a>
+  
+	
+  
+  
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/categories/gbif/">posts</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://discourse.gbif.org/c/data-blog">community-forum</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://www.gbif.org/">gbif.org</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">about</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+	
+    <header class="post-header">
+      <h1 class="post-title">Occurrence Density By Country</h1>
+	  
+	  
+      <div class="post-author">John Waller</div>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-08-07 </span>
+        <div class="post-category">
+            
+              <a href="/categories/gbif/"> GBIF </a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    
+    
+
+    
+    <div class="post-content">
+      <script src="/rmarkdown-libs/kePrint/kePrint.js"></script>
+<link href="/rmarkdown-libs/bsTable/bootstrapTable.min.css" rel="stylesheet" />
+
+
+<pre class="r"><code>library(kableExtra)</code></pre>
+<pre><code>## Warning: package &#39;kableExtra&#39; was built under R version 3.5.3</code></pre>
+<pre class="r"><code>library(knitr)
+library(kableExtra)
+options(kableExtra.html.bsTable = TRUE)
+dt &lt;- mtcars[1:5, 1:6]
+kable(dt) %&gt;% 
+kable_styling(bootstrap_options = c(&quot;striped&quot;, &quot;hover&quot;, &quot;condensed&quot;))</code></pre>
+<table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+mpg
+</th>
+<th style="text-align:right;">
+cyl
+</th>
+<th style="text-align:right;">
+disp
+</th>
+<th style="text-align:right;">
+hp
+</th>
+<th style="text-align:right;">
+drat
+</th>
+<th style="text-align:right;">
+wt
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Mazda RX4
+</td>
+<td style="text-align:right;">
+21.0
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+160
+</td>
+<td style="text-align:right;">
+110
+</td>
+<td style="text-align:right;">
+3.90
+</td>
+<td style="text-align:right;">
+2.620
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Mazda RX4 Wag
+</td>
+<td style="text-align:right;">
+21.0
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+160
+</td>
+<td style="text-align:right;">
+110
+</td>
+<td style="text-align:right;">
+3.90
+</td>
+<td style="text-align:right;">
+2.875
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Datsun 710
+</td>
+<td style="text-align:right;">
+22.8
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+108
+</td>
+<td style="text-align:right;">
+93
+</td>
+<td style="text-align:right;">
+3.85
+</td>
+<td style="text-align:right;">
+2.320
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Hornet 4 Drive
+</td>
+<td style="text-align:right;">
+21.4
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+258
+</td>
+<td style="text-align:right;">
+110
+</td>
+<td style="text-align:right;">
+3.08
+</td>
+<td style="text-align:right;">
+3.215
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Hornet Sportabout
+</td>
+<td style="text-align:right;">
+18.7
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
+360
+</td>
+<td style="text-align:right;">
+175
+</td>
+<td style="text-align:right;">
+3.15
+</td>
+<td style="text-align:right;">
+3.440
+</td>
+</tr>
+</tbody>
+</table>
+<!--more-->
+
+    </div>
+
+    
+    
+
+    
+    
+
+    <footer class="post-footer">
+      
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/citizen-science-on-gbif-2019/">
+            <span class="next-text nav-default">Citizen Science on GBIF - 2019</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+       
+<div id='discourse-comments'></div>
+<script type="text/javascript">
+  DiscourseEmbed = { discourseUrl: 'https://discourse.gbif.org/',
+                     discourseEmbedUrl: 'https://data-blog.gbif.org\/post\/occurrence-density-by-country\/' };
+
+  (function() {
+    var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+    d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+  })();
+</script>  
+
+
+<div class = "copyright">
+	<a class="theme-link" href="https://www.gbif.org/what-is-gbif">What is GBIF?</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://www.gbif.org/developer/summary">API</a> 
+	<span class="division">|</span>
+	<a class="theme-link" href="https://www.gbif.org/faq">FAQ</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://discourse.gbif.org/">Community-Forum</a>
+</div>
+
+<div class = "copyright"> 
+	<span class="theme-info">GBIF Secretariat</span> 
+	<span class="theme-info">Universitetsparken 15</span> 
+	<span class="theme-info">DK-2100 Copenhagen Ø</span> 
+	<span class="theme-info" >Denmark</span>
+</div>
+
+<div class="copyright">
+	<span class="power-by">
+	Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+	</span>
+	<span class="division">|</span>
+	<span class="theme-info">
+	Theme - 
+	<a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+	</span>
+
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+<script type="text/javascript" src="/dist/even.min.js?v=3.2.0"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
