@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tree list on GBIF Data Blog</title>
+    <link>/tags/tree-list/</link>
+    <description>Recent content in Tree list on GBIF Data Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 28 Aug 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/tree-list/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Downloading occurrences from a long list of species</title>
+      <link>/post/downloading-long-species-lists-on-gbif/</link>
+      <pubDate>Wed, 28 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/downloading-long-species-lists-on-gbif/</guid>
+      <description>It is now possible to download up to 100,000 names on GBIF!
+Until recently it was not possible to download occurrences for more than a few hundred species at the same time, but is now possible to request more species names (up to 100,000 taxonkeys).
+For those multiple taxa downloaders out there, GBIF now supports download requests of up to 100,000(!) taxa. That should cover most use cases :) For such large requests, however, you will need to POST you query to the Occurrence Download API service: https://t.</description>
+    </item>
+    
+  </channel>
+</rss>

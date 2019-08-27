@@ -1,15 +1,15 @@
 ---
-title: Downloading occurrences from a long species lists on GBIF
+title: Downloading occurrences from a long list of species
 author: John Waller
-date: '2019-07-11'
+date: '2019-08-28'
 slug: downloading-long-species-lists-on-gbif
 categories:
   - GBIF
 tags:
   - API
   - downloads
-  - invasive species
-lastmod: '2019-07-11T16:26:18+02:00'
+  - tree list
+lastmod: '2019-08-28T16:26:18+02:00'
 draft: yes
 keywords: []
 description: ''
@@ -35,86 +35,63 @@ sequenceDiagrams:
 
 
 
-<p>Until recently it was not possible to download more than a few hundred species at the same time. This is unfortunately is still true for downloads through the portal, which are <strong>limited to around 200 taxon keys</strong> (species, genus, family, kingdom …). This is due to <strong>limitations in browser</strong> and the <a href="">http GET limit</a>. A recent change, has now made it possible to request more species names (<strong>up to 9000</strong>) in some cases through an http request.</p>
-<p>I made some large downloads using this method:</p>
-<ul>
-<li><a href="https://www.gbif.org/occurrence/download/0009331-190621201848488">5,000 species download</a> <strong>succeeds</strong></li>
-<li><a href="https://www.gbif.org/occurrence/download/0010219-190621201848488">9,000 species download</a> <strong>succeeds</strong></li>
-<li><a href="https://www.gbif.org/occurrence/download/0010226-190621201848488">10,000 species download</a> <strong>fails</strong></li>
-</ul>
 <blockquote>
-<p><strong>NOTE:</strong> If your request can easily be summarized into higher taxon groups, it still makes more sense to download just that taxon group. For example, if you just want to download all <a href="https://www.gbif.org/occurrence/search?taxon_key=789">dragonflies</a>, all <a href="https://www.gbif.org/occurrence/search?taxon_key=359">mammals</a>, or all <a href="https://www.gbif.org/occurrence/search?taxon_key=7707728">vascular plants</a>. These requests don’t require anything special.</p>
+<p>It is now possible to download up to <strong>100,000</strong> names on <strong>GBIF!</strong></p>
 </blockquote>
-<p>One potential use-case for downloading 1000s of species at a time is <a href="https://www.gbif.org/publisher/cdef28b1-db4e-4c58-aa71-3c5238c2d0b5">invasive species lists</a>. These lists are unlikely to have species that can be easily summarized into a single higher taxonomic unit (genus, family, order, class).</p>
-<p>Now getting &gt;2000 many taxon keys in one download is a bit more complicated than running a simple portal search, but you would not want to enter &gt;200 scientific names by hand anyway. Below I use the <br><a href="https://www.gbif.org/dataset/6d9e952f-948c-4483-9807-575348147c7e">Belgium Invasive Species List</a>, which has 2562 names. Invasive species lists are a perfect use-case for using a large amount of taxon keys because it is hard to narrow down the list to a higher taxon rank. That is, most invasive species do not come from one big group like Birds (Aves), mammals, vascular plants ect.</p>
-<p>Previously it was not possible to make such a download.</p>
-<p><a href="">really long GBIF.org query</a> <strong>fails</strong></p>
-<div id="step-1.-creating-your-download-request" class="section level1">
-<h1>Step 1. Creating your download request</h1>
-<p>Below I prepare called <code>request.json</code>. You could prepare this file any way you want. The file will end up looking like <a href="">this</a>. Make sure to change <code>YourEmail@email.com</code> and <code>YourUserName</code> the text below.</p>
+<p>Until recently it was not possible to download occurrences for more than a few hundred species at the same time, but is now possible to request more species names (<strong>up to 100,000 taxonkeys</strong>).</p>
+<blockquote class="twitter-tweet">
+<p lang="en" dir="ltr">
+For those multiple taxa downloaders out there, GBIF now supports download requests of up to 100,000(!) taxa. That <em>should</em> cover most use cases :) For such large requests, however, you will need to POST you query to the Occurrence Download API service: <a href="https://t.co/fyaJUGz5oG">https://t.co/fyaJUGz5oG</a>
+</p>
+— GBIF (<span class="citation">@GBIF</span>) <a href="https://twitter.com/GBIF/status/1161291636862803968?ref_src=twsrc%5Etfw">August 13, 2019</a>
+</blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote>
+<p><strong>NOTE:</strong> If your request can easily be summarized into higher taxon groups, it still makes more sense to download just that taxon group. For example, if you just want to download all <a href="https://www.gbif.org/occurrence/search?taxon_key=789">dragonflies</a>, all <br> <a href="https://www.gbif.org/occurrence/search?taxon_key=359">mammals</a>, or all <a href="https://www.gbif.org/occurrence/search?taxon_key=7707728">vascular plants</a>. These requests don’t require anything special.</p>
+</blockquote>
+<p>Downloads through the <a href="https://www.gbif.org/occurrence/search">web interface</a> are still <strong>limited to around 200 names (taxonkeys)</strong> (species, genus, family, kingdom). This is due to <a href="https://stackoverflow.com/questions/812925/what-is-the-maximum-possible-length-of-a-query-string">limitations in browser</a>. <a href="https://www.gbif.org/occurrence/search?taxon_key=2103261&amp;taxon_key=2473325&amp;taxon_key=2473332&amp;taxon_key=2473336&amp;taxon_key=2473337&amp;taxon_key=2473339&amp;taxon_key=2473341&amp;taxon_key=2473353&amp;taxon_key=2473356&amp;taxon_key=2473362&amp;taxon_key=2473365&amp;taxon_key=2473421&amp;taxon_key=2473442&amp;taxon_key=2473446&amp;taxon_key=2473447&amp;taxon_key=2473454&amp;taxon_key=2473455&amp;taxon_key=2473463&amp;taxon_key=2473465&amp;taxon_key=2473477&amp;taxon_key=2473479&amp;taxon_key=2473482&amp;taxon_key=2473483&amp;taxon_key=2473484&amp;taxon_key=2473492&amp;taxon_key=2473507&amp;taxon_key=2473510&amp;taxon_key=2473514&amp;taxon_key=2473529&amp;taxon_key=2473534&amp;taxon_key=2473535&amp;taxon_key=2473539&amp;taxon_key=2473540&amp;taxon_key=2473543&amp;taxon_key=2473544&amp;taxon_key=2473545&amp;taxon_key=2473559&amp;taxon_key=2473562&amp;taxon_key=2473574&amp;taxon_key=2473577&amp;taxon_key=2473588&amp;taxon_key=2473599&amp;taxon_key=2473605&amp;taxon_key=2473606&amp;taxon_key=2473612&amp;taxon_key=2473613&amp;taxon_key=2473614&amp;taxon_key=2473621&amp;taxon_key=2473622&amp;taxon_key=2473628&amp;taxon_key=2473629&amp;taxon_key=2473633&amp;taxon_key=2473641&amp;taxon_key=2473642&amp;taxon_key=2473645&amp;taxon_key=2473646&amp;taxon_key=2473647&amp;taxon_key=2473648&amp;taxon_key=2473649&amp;taxon_key=2473650&amp;taxon_key=2473654&amp;taxon_key=2473655&amp;taxon_key=2473657&amp;taxon_key=2473659&amp;taxon_key=2473663&amp;taxon_key=2473678&amp;taxon_key=2473680&amp;taxon_key=2473682&amp;taxon_key=2473695&amp;taxon_key=2473696&amp;taxon_key=2473700&amp;taxon_key=2473702&amp;taxon_key=2473719&amp;taxon_key=2473732&amp;taxon_key=2473733&amp;taxon_key=2473744&amp;taxon_key=2473776&amp;taxon_key=2473958&amp;taxon_key=2474021&amp;taxon_key=2474029&amp;taxon_key=2474045&amp;taxon_key=2474051&amp;taxon_key=2474055&amp;taxon_key=2474060&amp;taxon_key=2474074&amp;taxon_key=2474075&amp;taxon_key=2474077&amp;taxon_key=2474078&amp;taxon_key=2474079&amp;taxon_key=2474084&amp;taxon_key=2474087&amp;taxon_key=2474089&amp;taxon_key=2474095&amp;taxon_key=2474096&amp;taxon_key=2474098&amp;taxon_key=2474099&amp;taxon_key=2474100&amp;taxon_key=2474101&amp;taxon_key=2474107&amp;taxon_key=2474113&amp;taxon_key=2474120&amp;taxon_key=2474127&amp;taxon_key=2474128&amp;taxon_key=2474138&amp;taxon_key=2474139&amp;taxon_key=2474141&amp;taxon_key=2474145&amp;taxon_key=2474156&amp;taxon_key=2474162&amp;taxon_key=2474163&amp;taxon_key=2474165&amp;taxon_key=2474170&amp;taxon_key=2474238&amp;taxon_key=2474251&amp;taxon_key=2474252&amp;taxon_key=2474259&amp;taxon_key=2474263&amp;taxon_key=2474264&amp;taxon_key=2474320&amp;taxon_key=2474328&amp;taxon_key=2474332&amp;taxon_key=2474337&amp;taxon_key=2474343&amp;taxon_key=2474345&amp;taxon_key=2474351&amp;taxon_key=2474354&amp;taxon_key=2474356&amp;taxon_key=2474360&amp;taxon_key=2474363&amp;taxon_key=2474370&amp;taxon_key=2474372&amp;taxon_key=2474377&amp;taxon_key=2474381&amp;taxon_key=2474382&amp;taxon_key=2474383&amp;taxon_key=2474386&amp;taxon_key=2474388&amp;taxon_key=2474389&amp;taxon_key=2474390&amp;taxon_key=2474391&amp;taxon_key=2474392&amp;taxon_key=2474393&amp;taxon_key=2474398&amp;taxon_key=2474400&amp;taxon_key=2474404&amp;taxon_key=2474407&amp;taxon_key=2474416&amp;taxon_key=2474443&amp;taxon_key=2474448&amp;taxon_key=2474453&amp;taxon_key=2474455&amp;taxon_key=2474460&amp;taxon_key=2474468&amp;taxon_key=2474472&amp;taxon_key=2474478&amp;taxon_key=2474479&amp;taxon_key=2474481&amp;taxon_key=2474482&amp;taxon_key=2474484&amp;taxon_key=2474486&amp;taxon_key=2474489&amp;taxon_key=2474493&amp;taxon_key=2474520&amp;taxon_key=2474521&amp;taxon_key=2474522&amp;taxon_key=2474523&amp;taxon_key=2474524&amp;taxon_key=2474525&amp;taxon_key=2474533&amp;taxon_key=2474535&amp;taxon_key=2474540&amp;taxon_key=2474542&amp;taxon_key=2474543&amp;taxon_key=2474544&amp;taxon_key=2474547&amp;taxon_key=2474548&amp;taxon_key=2474558&amp;taxon_key=2474575&amp;taxon_key=2474585&amp;taxon_key=2474588&amp;taxon_key=2474589&amp;taxon_key=2474590&amp;taxon_key=2474596&amp;taxon_key=2474597&amp;taxon_key=2474598&amp;taxon_key=2474599&amp;taxon_key=2474603&amp;taxon_key=2474605&amp;taxon_key=2474607&amp;taxon_key=2474611&amp;taxon_key=2474612&amp;taxon_key=2474614&amp;taxon_key=2474615&amp;taxon_key=2474616&amp;taxon_key=2474619&amp;taxon_key=2474620&amp;taxon_key=2474622&amp;taxon_key=2474627&amp;taxon_key=2474628&amp;taxon_key=2474636&amp;taxon_key=2474638&amp;taxon_key=2474639&amp;taxon_key=2474640&amp;taxon_key=2474648&amp;taxon_key=2474653&amp;taxon_key=2474656&amp;taxon_key=2474657&amp;taxon_key=2474658&amp;taxon_key=2474659&amp;taxon_key=2474669&amp;taxon_key=2474670&amp;taxon_key=2474671&amp;taxon_key=2474681&amp;taxon_key=2474684&amp;taxon_key=2474685&amp;taxon_key=2474702&amp;taxon_key=2474703&amp;taxon_key=2474707&amp;taxon_key=2474711&amp;taxon_key=2474715&amp;taxon_key=2474724&amp;taxon_key=2474728&amp;taxon_key=2474732&amp;taxon_key=2474736&amp;taxon_key=2474738&amp;taxon_key=2474747&amp;taxon_key=2474748&amp;taxon_key=2474750&amp;taxon_key=2474754&amp;taxon_key=2474795&amp;taxon_key=2474796&amp;taxon_key=2474797&amp;taxon_key=2474801&amp;taxon_key=2474825&amp;taxon_key=2474830&amp;taxon_key=2474831&amp;taxon_key=2474836&amp;taxon_key=2474837&amp;taxon_key=2474842&amp;taxon_key=2474844&amp;taxon_key=2474846&amp;taxon_key=2474848&amp;taxon_key=2474850&amp;taxon_key=2474855&amp;taxon_key=2474863&amp;taxon_key=2474864&amp;taxon_key=2474868&amp;taxon_key=2474872&amp;taxon_key=2474873&amp;taxon_key=2474874&amp;taxon_key=2474878&amp;taxon_key=2474880&amp;taxon_key=2474882&amp;taxon_key=2474884&amp;taxon_key=2474887&amp;taxon_key=2474890&amp;taxon_key=2474896&amp;taxon_key=2474897&amp;taxon_key=2474898&amp;taxon_key=2474902&amp;taxon_key=2474903&amp;taxon_key=2474904&amp;taxon_key=2474909&amp;taxon_key=2474913&amp;taxon_key=2474918&amp;taxon_key=2474921&amp;taxon_key=2474925&amp;taxon_key=2474936&amp;taxon_key=2474937&amp;taxon_key=2474941&amp;taxon_key=2474942&amp;taxon_key=2474943&amp;taxon_key=2474944&amp;taxon_key=2474945&amp;taxon_key=2474949&amp;taxon_key=2474950&amp;taxon_key=2474953&amp;taxon_key=2474960&amp;taxon_key=2474961&amp;taxon_key=2474963&amp;taxon_key=2474965&amp;taxon_key=2474966&amp;taxon_key=2474967&amp;taxon_key=2474968&amp;taxon_key=2474971&amp;taxon_key=2474976&amp;taxon_key=2474981&amp;taxon_key=2474982&amp;taxon_key=2475001&amp;taxon_key=2475012&amp;taxon_key=2475016&amp;taxon_key=2475017&amp;taxon_key=2475033&amp;taxon_key=2475035&amp;taxon_key=2475036&amp;taxon_key=2475038&amp;taxon_key=2475040&amp;taxon_key=2475049&amp;taxon_key=2475050&amp;taxon_key=2475051">Here</a> I try to search for 300 bird species and it <strong>fails</strong>.</p>
+<div id="downloading-occurrences-for-60000-tree-species-using-rgbif-and-taxize" class="section level1">
+<h1>Downloading occurrences for 60,000 tree species using rgbif and taxize</h1>
+<p>One good reason to download data using a long list of names, would be if your group of interest is non-monophyletic. <strong>Trees</strong> are a non-monophyletic taxonomic group that include a variety of plant species that have independently evolved a trunk and branches. The
+<a href="https://www.bgci.org/">Botanic Gardens Conservation <br> International</a> maintains a <a href="https://tools.bgci.org/global_tree_search.php">long list</a> of <strong>&gt;60,000</strong> tree species. You can download a csv <a href="https://tools.bgci.org/global_tree_search_trees_1_3.csv">here</a> or the one I used for the example below <a href="/post/2019-07-11-downloading-long-species-lists-on-gbif_files/global_tree_search_trees_1_3.csv">here</a>.</p>
+<p>Matching and downloading takes around <strong>30 minutes</strong>, so run with fewer names if you don’t want to wait that long. This requires the latest development version of <code>rgbif</code>.</p>
+<pre class="r"><code>install.packages(&quot;devtools&quot;)
+devtools::install_github(&quot;ropensci/rgbif&quot;)</code></pre>
+<p>The important part here is to use <code>rgbif::occ_download</code> with <code>type=&quot;in&quot;</code> and to <strong>fill in your gbif credentials</strong>.</p>
+<pre class="r"><code># fill in your gbif.org credentials 
+user &lt;- &quot;&quot; # your gbif.org username 
+pwd &lt;- &quot;&quot; # your gbif.org password
+email &lt;- &quot;&quot; # your email </code></pre>
 <pre class="r"><code>library(dplyr)
-library(stringr)
+library(purrr)
+library(readr)  
+library(magrittr) # for %T&gt;% pipe
+library(rgbif) # for occ_download
+library(taxize) # for get_gbifid_
 
-# Getting the taxon keys
-species_list &lt;- read.csv(&quot;taxon.txt&quot;,sep=&quot;\t&quot;) %&gt;%
-pull(taxonID) %&gt;% # get only the GBIF backbone taxon keys
-str_replace_all(&quot;https://www.gbif.org/species/&quot;,&quot;&quot;) %&gt;% # clean name
-paste(collapse=&quot;,&quot;)
+# The 60,000 tree names file I downloaded from BGCI
+file_url &lt;- &quot;http://127.0.0.1:4321/post/2019-07-11-downloading-long-species-lists-on-gbif_files/global_tree_search_trees_1_3.csv&quot;
 
-# change creator to your GBIF user name
-# change notification_address to your email
-prefix = 
-&#39;{
-&quot;creator&quot;: &quot;YourUserName&quot;,
-&quot;notification_address&quot;: [
-&quot;YourEmail@email.com&quot;
-],
-&quot;sendNotification&quot;: true,
-&quot;format&quot;: &quot;SIMPLE_CSV&quot;,
-&quot;predicate&quot;: {
-&quot;type&quot;: &quot;and&quot;,
-&quot;predicates&quot;: [
-{
-&quot;type&quot;: &quot;in&quot;,
-&quot;key&quot;: &quot;TAXON_KEY&quot;,
-&quot;values&quot;: [&#39;
+# match the names 
+gbif_taxon_keys &lt;- 
+readr::read_csv(file_url) %&gt;% 
+pull(&quot;Taxon name&quot;) %&gt;% # use fewer names if you want to just test 
+taxize::get_gbifid_(method=&quot;backbone&quot;) %&gt;% # match names to the GBIF backbone to get taxonkeys
+imap(~ .x %&gt;% mutate(original_sciname = .y)) %&gt;% # add original name back into data.frame
+bind_rows() %T&gt;% # combine all data.frames into one
+readr::write_tsv(path = &quot;all_matches.tsv&quot;) %&gt;% # save as side effect for you to inspect if you want
+filter(matchtype == &quot;EXACT&quot; &amp; status == &quot;ACCEPTED&quot;) %&gt;% # get only accepted and matched names
+pull(usagekey) # get the gbif taxonkeys
 
-suffix = &#39;]}]}}&#39;
-
-json_string &lt;- paste(prefix,species_list,suffix,collapse=&quot;&quot;) # combine together
-
-# save this file somewhere to use for download request
-writeLines(json_string,file(&quot;request.json&quot;))
+# !!very important here to use &quot;type=in&quot;!!
+# make the download request to GBIF 
+occ_download(
+sprintf(&quot;taxonKey = %s&quot;, paste0(gbif_taxon_keys, collapse = &quot;,&quot;)),
+type=&quot;in&quot;, 
+format = &quot;SIMPLE_CSV&quot;, 
+curlopts = list(verbose=TRUE),
+user=user,pwd=pwd,email=email)
 </code></pre>
-<p>You can download <code>request.json</code> <a href="">here</a>.</p>
-</div>
-<div id="step-2.-make-the-request" class="section level1">
-<h1>Step 2. Make the request</h1>
-<p>Now we can use <code>httr</code> to start the download.</p>
-<pre class="r"><code>library(httr)
-library(dplyr)
-
-user = &quot;&quot; # fill in your username
-pwd = &quot;&quot; # fill in your password
-email = &quot;&quot; # fill in your email
-url = &quot;http://api.gbif.org/v1/occurrence/download/request&quot;
-
-POST(url = url, 
-config = authenticate(user, pwd), 
-add_headers(&quot;Content-Type: application/json&quot;),
-body = upload_file(&quot;request.json&quot;), # path to your local file
-encode = &#39;json&#39;) %&gt;% 
-content(as = &quot;text&quot;)
-
-# &quot;0011213-190621201848488&quot; # id number</code></pre>
-<p>If you are logged in you can go <a href="https://www.gbif.org/occurrence/download/">here</a> to see your download. This is the link to the download I made: <br> <a href="https://www.gbif.org/occurrence/download/0011213-190621201848488" class="uri">https://www.gbif.org/occurrence/download/0011213-190621201848488</a>. Your download will have a different id number.</p>
-<p>You could also use <code>curl</code> directly if you prefer to do that.</p>
-<pre><code>curl --include --user user:password --header &quot;Content-Type: application/json&quot; --data @request.json http://api.gbif.org/v1/occurrence/download/request
-</code></pre>
-<blockquote>
-<p><strong>NOTE:</strong> As of the writing of this post, I have not gotten a <strong>rgbif::occ_download()</strong> to make a long species list download.</p>
-</blockquote>
-<p>This is because <code>rgbif</code> does not use the IN() predicate, which saves space.</p>
-<pre><code></code></pre>
+<p>The results should now be on your downloads user page <a href="https://www.gbif.org/user/download" class="uri">https://www.gbif.org/user/download</a>.</p>
 <!--more-->
 </div>

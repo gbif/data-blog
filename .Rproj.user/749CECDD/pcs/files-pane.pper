@@ -1,9 +1,13 @@
 {
-    "path" : "C:/Users/ftw712/Desktop/data-blog",
+    "path" : "C:/Users/ftw712/Desktop/data-blog/content/post",
     "sortOrder" : [
         {
             "ascending" : true,
             "columnIndex" : 2
+        },
+        {
+            "ascending" : false,
+            "columnIndex" : 4
         }
     ]
 }

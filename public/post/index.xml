@@ -6,18 +6,30 @@
     <description>Recent content in Posts on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 07 Aug 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 28 Aug 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Occurrence Density By Country</title>
+      <title>Downloading occurrences from a long list of species</title>
+      <link>/post/downloading-long-species-lists-on-gbif/</link>
+      <pubDate>Wed, 28 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/downloading-long-species-lists-on-gbif/</guid>
+      <description>It is now possible to download up to 100,000 names on GBIF!
+Until recently it was not possible to download occurrences for more than a few hundred species at the same time, but is now possible to request more species names (up to 100,000 taxonkeys).
+For those multiple taxa downloaders out there, GBIF now supports download requests of up to 100,000(!) taxa. That should cover most use cases :) For such large requests, however, you will need to POST you query to the Occurrence Download API service: https://t.</description>
+    </item>
+    
+    <item>
+      <title>Occurrence Density by Country - 2019</title>
       <link>/post/occurrence-density-by-country/</link>
       <pubDate>Wed, 07 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>/post/occurrence-density-by-country/</guid>
-      <description>library(kableExtra)## Warning: package &amp;#39;kableExtra&amp;#39; was built under R version 3.5.3library(knitr)library(kableExtra)options(kableExtra.html.bsTable = TRUE)dt &amp;lt;- mtcars[1:5, 1:6]kable(dt) %&amp;gt;% kable_styling(bootstrap_options = c(&amp;quot;striped&amp;quot;, &amp;quot;hover&amp;quot;, &amp;quot;condensed&amp;quot;))mpgcyldisphpdratwtMazda RX421.061601103.902.620Mazda RX4 Wag21.061601103.</description>
+      <description>Here I present a table of occurrence density by country.
+Country/Territory can be any region with an iso-2 code. Only countries larger than 10,000 km2 are shown.Density is the total number of occurrence records occurring inside the country (Note this does not mean the record was necessarily published by the country).Change (2017) is the change in density since 2017.Non-bird density is the total density which is not coming from class Aves (i.</description>
     </item>
     
     <item>
@@ -28,15 +40,6 @@
       <guid>/post/citizen-science-on-gbif-2019/</guid>
       <description>Citizen Science datasets on GBIF plotted with all other (gray) GBIF datasets (&amp;gt;100K occurrences). There are many citizen science datasets with millions of occurrences (eBird, (Swedish) Artportalen), and the top 3 datasets on GBIF are all citizen science datasets. But in terms of number of unique species, only iNaturalist competes with large museum datasets like Smithsonian NMNH.
 Because of very large datasets like eBird and Artportalen, Citizen Science makes up a large percentage of the total occurrence records on GBIF.</description>
-    </item>
-    
-    <item>
-      <title>Downloading occurrences from a long species lists on GBIF</title>
-      <link>/post/downloading-long-species-lists-on-gbif/</link>
-      <pubDate>Thu, 11 Jul 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/downloading-long-species-lists-on-gbif/</guid>
-      <description>Until recently it was not possible to download more than a few hundred species at the same time. This is unfortunately is still true for downloads through the portal, which are limited to around 200 taxon keys (species, genus, family, kingdom …). This is due to limitations in browser and the http GET limit. A recent change, has now made it possible to request more species names (up to 9000) in some cases through an http request.</description>
     </item>
     
     <item>

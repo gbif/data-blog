@@ -10,6 +10,13 @@
   </url>
   
   <url>
+    <loc>/post/downloading-long-species-lists-on-gbif/</loc>
+    <lastmod>2019-08-28T16:26:18+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>/post/occurrence-density-by-country/</loc>
     <lastmod>2019-08-07T09:57:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -19,13 +26,6 @@
   <url>
     <loc>/post/citizen-science-on-gbif-2019/</loc>
     <lastmod>2019-08-02T08:39:12+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>/post/downloading-long-species-lists-on-gbif/</loc>
-    <lastmod>2019-07-11T16:26:18+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -151,7 +151,7 @@
   
   <url>
     <loc>/tags/api/</loc>
-    <lastmod>2019-07-11T16:26:18+02:00</lastmod>
+    <lastmod>2019-08-28T16:26:18+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -240,7 +240,7 @@
   
   <url>
     <loc>/tags/downloads/</loc>
-    <lastmod>2019-07-11T16:26:18+02:00</lastmod>
+    <lastmod>2019-08-28T16:26:18+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -282,7 +282,7 @@
   
   <url>
     <loc>/categories/gbif/</loc>
-    <lastmod>2019-08-07T09:57:06+02:00</lastmod>
+    <lastmod>2019-08-28T16:26:18+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -337,13 +337,6 @@
   </url>
   
   <url>
-    <loc>/tags/invasive-species/</loc>
-    <lastmod>2019-07-11T16:26:18+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/tags/issues/</loc>
     <lastmod>2018-09-26T13:03:53+02:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -359,7 +352,7 @@
   
   <url>
     <loc>/author/john-waller/</loc>
-    <lastmod>2019-08-07T09:57:06+02:00</lastmod>
+    <lastmod>2019-08-28T16:26:18+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -436,7 +429,7 @@
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2019-08-07T09:57:06+02:00</lastmod>
+    <lastmod>2019-08-28T16:26:18+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -499,7 +492,14 @@
   
   <url>
     <loc>/tags/</loc>
-    <lastmod>2019-07-11T16:26:18+02:00</lastmod>
+    <lastmod>2019-08-28T16:26:18+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/tree-list/</loc>
+    <lastmod>2019-08-28T16:26:18+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

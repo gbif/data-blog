@@ -6,7 +6,7 @@
     <description>Recent content in Tags on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 11 Jul 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 28 Aug 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>API</title>
       <link>/tags/api/</link>
-      <pubDate>Thu, 11 Jul 2019 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 28 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/api/</guid>
       <description></description>
@@ -113,7 +113,7 @@
     <item>
       <title>Downloads</title>
       <link>/tags/downloads/</link>
-      <pubDate>Thu, 11 Jul 2019 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 28 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/downloads/</guid>
       <description></description>
@@ -215,15 +215,6 @@
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/image/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Invasive species</title>
-      <link>/tags/invasive-species/</link>
-      <pubDate>Thu, 11 Jul 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/invasive-species/</guid>
       <description></description>
     </item>
     
@@ -386,6 +377,15 @@
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/sound/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tree list</title>
+      <link>/tags/tree-list/</link>
+      <pubDate>Wed, 28 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/tree-list/</guid>
       <description></description>
     </item>
     
