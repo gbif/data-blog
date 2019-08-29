@@ -84,7 +84,7 @@ For those multiple taxa downloaders out there, GBIF now supports download reques
 
 <meta itemprop="datePublished" content="2019-08-28T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-08-28T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="491">
+<meta itemprop="wordCount" content="505">
 
 
 
@@ -223,7 +223,7 @@ library(rgbif) # for occ_download
 library(taxize) # for get_gbifid_
 
 # The 60,000 tree names file I downloaded from BGCI
-file_url &lt;- &quot;http://127.0.0.1:4321/post/2019-07-11-downloading-long-species-lists-on-gbif_files/global_tree_search_trees_1_3.csv&quot;
+file_url &lt;- &quot;https://data-blog.gbif.org/post/2019-07-11-downloading-long-species-lists-on-gbif_files/global_tree_search_trees_1_3.csv&quot;
 
 # match the names 
 gbif_taxon_keys &lt;- 
@@ -234,7 +234,10 @@ imap(~ .x %&gt;% mutate(original_sciname = .y)) %&gt;% # add original name back 
 bind_rows() %T&gt;% # combine all data.frames into one
 readr::write_tsv(path = &quot;all_matches.tsv&quot;) %&gt;% # save as side effect for you to inspect if you want
 filter(matchtype == &quot;EXACT&quot; &amp; status == &quot;ACCEPTED&quot;) %&gt;% # get only accepted and matched names
+filter(kingdom == &quot;Plantae&quot;) %&gt;% # remove anything that might have matched to a non-plant
 pull(usagekey) # get the gbif taxonkeys
+
+
 
 # !!very important here to use &quot;type=in&quot;!!
 # make the download request to GBIF 
@@ -245,6 +248,7 @@ format = &quot;SIMPLE_CSV&quot;,
 curlopts = list(verbose=TRUE),
 user=user,pwd=pwd,email=email)
 </code></pre>
+<!-- hasGeospatialIssue  -->
 <p>The results should now be on your downloads user page <a href="https://www.gbif.org/user/download" class="uri">https://www.gbif.org/user/download</a>.</p>
 <!--more-->
 </div>
