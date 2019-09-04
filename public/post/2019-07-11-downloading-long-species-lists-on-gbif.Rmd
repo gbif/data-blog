@@ -10,7 +10,7 @@ tags:
   - downloads
   - tree list
 lastmod: '2019-08-28T16:26:18+02:00'
-draft: yes
+draft: no
 keywords: []
 description: ''
 authors: ''
@@ -18,7 +18,7 @@ comment: no
 toc: ''
 autoCollapseToc: no
 postMetaInFooter: no
-hiddenFromHomePage: yes
+hiddenFromHomePage: no
 contentCopyright: no
 reward: no
 mathjax: no
@@ -32,7 +32,6 @@ sequenceDiagrams:
   enable: no
   options: ''
 ---
-
 
 > It is now possible to download up to **100,000** names on **GBIF!**
 

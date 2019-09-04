@@ -33,7 +33,6 @@ sequenceDiagrams:
   options: ''
 ---
 
-
 > It is now possible to download up to **100,000** names on **GBIF!**
 
 Until recently it was not possible to download occurrences for more than a few hundred species at the same time, but it is now possible to request more species names (**up to 100,000 taxonkeys**). 
