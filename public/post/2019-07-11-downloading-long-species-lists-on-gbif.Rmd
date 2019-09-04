@@ -95,15 +95,56 @@ pull(usagekey) # get the gbif taxonkeys
 # make the download request to GBIF 
 occ_download(
 sprintf("taxonKey = %s", paste0(gbif_taxon_keys, collapse = ",")),
+"hasGeospatialIssue = FALSE",
 type="in", 
-format = "SIMPLE_CSV", 
-curlopts = list(verbose=TRUE),
+format = "SIMPLE_CSV",
 user=user,pwd=pwd,email=email)
 
 ```
-<!-- hasGeospatialIssue  -->
+
+`"basisOfRecord = OBSERVATION,MACHINE_OBSERVATION,HUMAN_OBSERVATION,MATERIAL_SAMPLE,LITERATURE"`
+
+
+`"hasGeospatialIssue = FALSE"`
 
 The results should now be on your downloads user page https://www.gbif.org/user/download. 
 
+# Example using Python
+
+The same example is also available in Python [here](https://github.com/ManonGros/Small-scripts-using-GBIF-API/tree/master/query_species_list). Note that this particular code doesn't use the `pygbif` library but `request` and the GBIF API. It calls two functions available in the same folder, just download [this file](https://github.com/ManonGros/Small-scripts-using-GBIF-API/blob/master/query_species_list/functions_query_from_species_list.py) before running the following code:
+
+```Python
+import pandas as pd
+import requests
+import json
+import io
+from functions_query_from_species_list import *
+
+login = ""
+password = ""
+URL_species_file = "https://data-blog.gbif.org/post/2019-07-11-downloading-long-species-lists-on-gbif_files/global_tree_search_trees_1_3.csv"
+
+# Get Taxon Keys
+species_list = pd.read_csv(URL_species_file, encoding='latin-1')
+taxon_keys = match_species(species_list, "Taxon name")
+
+# filter keys however you see fit
+key_list = taxon_keys.loc[(taxon_keys["matchType"]=="EXACT") & (taxon_keys["status"]=="ACCEPTED")].usageKey.tolist()
+
+# Make download query
+download_query = {}
+download_query["creator"] = ""
+download_query["notificationAddresses"] = [""]
+download_query["sendNotification"] = True
+download_query["format"] = "SIMPLE_CSV"
+download_query["predicate"] = {
+    "type": "in",
+    "key": "TAXON_KEY",
+    "values": key_list
+}
+
+# Generate download
+create_download_given_query(login, password, download_query)
+```
 
 <!--more-->

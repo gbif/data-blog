@@ -95,15 +95,21 @@ pull(usagekey) # get the gbif taxonkeys
 # make the download request to GBIF 
 occ_download(
 sprintf("taxonKey = %s", paste0(gbif_taxon_keys, collapse = ",")),
+"hasGeospatialIssue = FALSE",
 type="in", 
-format = "SIMPLE_CSV", 
-curlopts = list(verbose=TRUE),
+format = "SIMPLE_CSV",
 user=user,pwd=pwd,email=email)
 
 ```
-<!-- hasGeospatialIssue  -->
+
+`"basisOfRecord = OBSERVATION,MACHINE_OBSERVATION,HUMAN_OBSERVATION,MATERIAL_SAMPLE,LITERATURE"`
+
+
+`"hasGeospatialIssue = FALSE"`
 
 The results should now be on your downloads user page https://www.gbif.org/user/download. 
+
+# Example using Python
 
 The same example is also available in Python [here](https://github.com/ManonGros/Small-scripts-using-GBIF-API/tree/master/query_species_list). Note that this particular code doesn't use the `pygbif` library but `request` and the GBIF API. It calls two functions available in the same folder, just download [this file](https://github.com/ManonGros/Small-scripts-using-GBIF-API/blob/master/query_species_list/functions_query_from_species_list.py) before running the following code:
 

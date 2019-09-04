@@ -90,12 +90,48 @@ pull(usagekey) # get the gbif taxonkeys
 # make the download request to GBIF 
 occ_download(
 sprintf(&quot;taxonKey = %s&quot;, paste0(gbif_taxon_keys, collapse = &quot;,&quot;)),
+&quot;hasGeospatialIssue = FALSE&quot;,
 type=&quot;in&quot;, 
-format = &quot;SIMPLE_CSV&quot;, 
-curlopts = list(verbose=TRUE),
+format = &quot;SIMPLE_CSV&quot;,
 user=user,pwd=pwd,email=email)
 </code></pre>
-<!-- hasGeospatialIssue  -->
+<p><code>&quot;basisOfRecord = OBSERVATION,MACHINE_OBSERVATION,HUMAN_OBSERVATION,MATERIAL_SAMPLE,LITERATURE&quot;</code></p>
+<p><code>&quot;hasGeospatialIssue = FALSE&quot;</code></p>
 <p>The results should now be on your downloads user page <a href="https://www.gbif.org/user/download" class="uri">https://www.gbif.org/user/download</a>.</p>
+</div>
+<div id="example-using-python" class="section level1">
+<h1>Example using Python</h1>
+<p>The same example is also available in Python <a href="https://github.com/ManonGros/Small-scripts-using-GBIF-API/tree/master/query_species_list">here</a>. Note that this particular code doesn’t use the <code>pygbif</code> library but <code>request</code> and the GBIF API. It calls two functions available in the same folder, just download <a href="https://github.com/ManonGros/Small-scripts-using-GBIF-API/blob/master/query_species_list/functions_query_from_species_list.py">this file</a> before running the following code:</p>
+<pre class="python"><code>import pandas as pd
+import requests
+import json
+import io
+from functions_query_from_species_list import *
+
+login = &quot;&quot;
+password = &quot;&quot;
+URL_species_file = &quot;https://data-blog.gbif.org/post/2019-07-11-downloading-long-species-lists-on-gbif_files/global_tree_search_trees_1_3.csv&quot;
+
+# Get Taxon Keys
+species_list = pd.read_csv(URL_species_file, encoding=&#39;latin-1&#39;)
+taxon_keys = match_species(species_list, &quot;Taxon name&quot;)
+
+# filter keys however you see fit
+key_list = taxon_keys.loc[(taxon_keys[&quot;matchType&quot;]==&quot;EXACT&quot;) &amp; (taxon_keys[&quot;status&quot;]==&quot;ACCEPTED&quot;)].usageKey.tolist()
+
+# Make download query
+download_query = {}
+download_query[&quot;creator&quot;] = &quot;&quot;
+download_query[&quot;notificationAddresses&quot;] = [&quot;&quot;]
+download_query[&quot;sendNotification&quot;] = True
+download_query[&quot;format&quot;] = &quot;SIMPLE_CSV&quot;
+download_query[&quot;predicate&quot;] = {
+    &quot;type&quot;: &quot;in&quot;,
+    &quot;key&quot;: &quot;TAXON_KEY&quot;,
+    &quot;values&quot;: key_list
+}
+
+# Generate download
+create_download_given_query(login, password, download_query)</code></pre>
 <!--more-->
 </div>
