@@ -6,21 +6,10 @@
     <description>Recent content in John Waller on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 28 Aug 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 07 Aug 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/author/john-waller/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Downloading occurrences from a long list of species</title>
-      <link>/post/downloading-long-species-lists-on-gbif/</link>
-      <pubDate>Wed, 28 Aug 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/downloading-long-species-lists-on-gbif/</guid>
-      <description>It is now possible to download up to 100,000 names on GBIF!
-Until recently it was not possible to download occurrences for more than a few hundred species at the same time, but is now possible to request more species names (up to 100,000 taxonkeys).
-For those multiple taxa downloaders out there, GBIF now supports download requests of up to 100,000(!) taxa. That should cover most use cases :) For such large requests, however, you will need to POST you query to the Occurrence Download API service: https://t.</description>
-    </item>
     
     <item>
       <title>Occurrence Density by Country - 2019</title>
