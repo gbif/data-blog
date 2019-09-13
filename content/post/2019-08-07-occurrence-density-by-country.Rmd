@@ -55,6 +55,7 @@ options(kableExtra.html.bsTable = TRUE)
 
 # dt %>% glimpse()
 
+
 risen = c("AL","AR","AZ","BO","BR","CI","CM","GA","GE","GW","ID","KH","LT","LV","MA","MD","SL","SN","TG","TZ","UY","VN")
 
 dt %>%
@@ -72,8 +73,8 @@ country == "Netherlands" ~ "Ranks <b>1st</b> in record density, <b>7th in total 
 country == "France" ~ "<b>Highest</b> occurrence record density and non-bird density among large countries ( >500,000km<sup>2</sup>).",
 countrycode %in% risen ~ "<u><b>Density</b> risen above <b>1 record per km<sup>2</sup></b> since 2017.</u>",
 TRUE ~ " ")) %>%
-mutate(country = 
-cell_spec(country,
+mutate(country_label = 
+cell_spec(country_label,
 "html",
 escape=FALSE,
 bold=TRUE,
@@ -83,7 +84,7 @@ occ_record_density > 50 ~ "#4B9E46",
 occ_record_density < 50 & occ_record_density > 1 ~ "#34495E",
 occ_record_density < 1 ~ "red"
 ))) %>%
-select(rank,country,occ_record_density,density_change_from_2017 ,non_bird_density,GBIF_records,suffix,note) %>% 
+select(rank,country_label,occ_record_density,density_change_from_2017 ,non_bird_density,GBIF_records,suffix,note) %>% 
 kable(format = "html", escape = FALSE,
 col.names = c(
 " ",
@@ -136,8 +137,8 @@ filter(area_sqkm > 500e3) %>%
 mutate(rank = row_number()) %>%
 mutate(note = case_when(
 TRUE ~ " ")) %>%
-mutate(country = 
-cell_spec(country,
+mutate(country_label = 
+cell_spec(country_label,
 "html",
 escape=FALSE,
 bold=TRUE,
@@ -147,7 +148,7 @@ occ_record_density > 50 ~ "#4B9E46",
 occ_record_density < 50 & occ_record_density > 1 ~ "#34495E",
 occ_record_density < 1 ~ "red"
 ))) %>% 
-select(rank,country,occ_record_density,density_change_from_2017 ,non_bird_density,GBIF_records,suffix,note) %>% 
+select(rank,country_label,occ_record_density,density_change_from_2017 ,non_bird_density,GBIF_records,suffix,note) %>% 
 kable(format = "html", escape = FALSE,
 col.names = c(
 " ",
