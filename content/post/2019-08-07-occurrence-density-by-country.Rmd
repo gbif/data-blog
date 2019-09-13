@@ -50,7 +50,7 @@ library(dplyr)
 library(formattable)
 library(roperators)
 
-dt = readr::read_tsv("C:/Users/ftw712/Desktop/export_density_table.tsv")
+dt = readr::read_tsv("C:/Users/ftw712/Desktop/export_density_table2.tsv")
 options(kableExtra.html.bsTable = TRUE)
 
 # dt %>% glimpse()
@@ -60,7 +60,7 @@ risen = c("AL","AR","AZ","BO","BR","CI","CM","GA","GE","GW","ID","KH","LT","LV",
 dt %>%
 mutate(rank = row_number()) %>%
 mutate(note = case_when(
-country == "United States" ~ "Highest number of total records (<b>450M</b>), but <b>only 5 non-bird records</b> per km<sup>2</sup>. Ranked 37th in non-bird record density (3rd among large countries >500,000km<sup>2</sup>).",
+countrycode == "US" ~ "Highest number of total records (<b>450M</b>), but <b>only 5 non-bird records</b> per km<sup>2</sup>. Ranked 37th in non-bird record density (3rd among large countries >500,000km<sup>2</sup>).",
 country == "Belize" ~ "Far fewer non-bird records.",
 country == "Benin" ~ "Ranks <b>1st</b> in non-bird record density in <b>Africa</b>.",
 country == "Kazakhstan" ~ "Ranks <b>last</b> record density in <b>Europe</b>.",
@@ -95,7 +95,7 @@ col.names = c(
 " ",
 "Note")) %>% 
 column_spec(6,width="3em") %>%
-column_spec(2,width="12em") %>%
+column_spec(2,width="13em") %>%
 kable_styling(bootstrap_options = c("hover", "condensed"),fixed_thead = TRUE) %>%
 pack_rows("Greater than 50 occurrences per km<sup>2</sup>", 1, 17,escape=FALSE) %>%
 pack_rows(" ", 18, 113) %>%
@@ -119,7 +119,7 @@ library(dplyr)
 library(formattable)
 library(roperators)
 
-dt = readr::read_tsv("C:/Users/ftw712/Desktop/export_density_table.tsv")
+dt = readr::read_tsv("C:/Users/ftw712/Desktop/export_density_table2.tsv")
 options(kableExtra.html.bsTable = TRUE)
 
 # dt %>% glimpse()

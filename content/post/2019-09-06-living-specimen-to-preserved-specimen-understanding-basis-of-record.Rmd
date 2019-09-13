@@ -1,0 +1,80 @@
+---
+title: understanding basis of record living specimen, preserved specimen, machine observation 
+author: John Waller
+date: '2019-09-06'
+slug: living-specimen-to-preserved-specimen-understanding-basis-of-record
+categories:
+  - GBIF
+tags:
+  - data quality
+lastmod: '2019-09-06T10:40:05+02:00'
+draft: yes
+keywords: []
+description: ''
+authors: ''
+comment: no
+toc: ''
+autoCollapseToc: no
+postMetaInFooter: no
+hiddenFromHomePage: no
+contentCopyright: no
+reward: no
+mathjax: no
+mathjaxEnableSingleDollar: no
+mathjaxEnableAutoNumber: no
+hideHeaderAndFooter: no
+flowchartDiagrams:
+  enable: no
+  options: ''
+sequenceDiagrams:
+  enable: no
+  options: ''
+---
+
+ 
+Recently a user noticed that there were Asian Red Pandas (Ailuridae) occurring in North America. 
+
+The vocabulary used by GBIF comes from TDWG. https://dwc.tdwg.org/terms/#livingspecimen
+
+![https://api.gbif.org/v1/image/unsafe/https%3A%2F%2Fapp.coeli.cat%2Fcoeli%2FICUB-NAT%2FHeritageObject%2FN909033%2FportraitMedia]()
+
+
+This user correctly looked to **basis of record** to diagnose the problem. 
+
+But all of the records were "Preserved Specimen". 
+
+Did a musuem staff member make a mistake? 
+
+
+Sometimes a preserved specimen will be harvested for a museum from a zoo. In such cases, the animal never occurred naturally. It went from "living specimen - > preserved specimen" so to speak, so the musuem staff correctly labeled the specimen. 
+
+https://www.gbif.org/occurrence/map?taxon_key=9673
+
+
+Unfortunately, there is no easy way to filter such cases. In the future it might be possible to construct niche models or identify 
+
+
+https://www.gbif.org/occurrence/map?taxon_key=9673
+
+
+
+"Preserved specimen" usually means the record comes from a museum like this one: 
+https://www.gbif.org/occurrence/1802522627
+
+Sometimes a preserved specimen will be harvested for a museum from a zoo. In such cases, the animal never occurred naturally. It went from "living specimen - > preserved specimen" so to speak. 
+
+This occurrence went from a zoo (Seattle; Woodland Park Zoo) to a museum, and presumably never occurred in its natural habitat. 
+https://www.gbif.org/occurrence/1702720584
+
+The vocabulary used by GBIF comes from TDWG. https://dwc.tdwg.org/terms/#livingspecimen
+
+Unfortunately, there is no easy way to filter such cases. Perhaps cross checking with a checklist of North American mammals might help.
+
+
+
+basisofrecord 
+
+
+
+
+<!--more-->

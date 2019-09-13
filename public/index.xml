@@ -24,6 +24,30 @@ What about the developer blog? Currently the developer blog no longer being upda
     </item>
     
     <item>
+      <title>Biodiversity Hotspots Density Table</title>
+      <link>/post/biodiversity-hotspots-density-table/</link>
+      <pubDate>Tue, 10 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/biodiversity-hotspots-density-table/</guid>
+      <description>NAMEocc_densityocc_density_no_birdsCalifornia Floristic Province136.178.09Forests of East Australia78.2629.85Polynesia-Micronesia63.8841.59North American Coastal Plain49.593.70Cape Floristic Region43.506.42New Caledonia26.9426.10New Zealand23.</description>
+    </item>
+    
+    <item>
+      <title>understanding basis of record living specimen, preserved specimen, machine observation</title>
+      <link>/post/living-specimen-to-preserved-specimen-understanding-basis-of-record/</link>
+      <pubDate>Fri, 06 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/living-specimen-to-preserved-specimen-understanding-basis-of-record/</guid>
+      <description>Recently a user noticed that there were Asian Red Pandas (Ailuridae) occurring in North America.
+The vocabulary used by GBIF comes from TDWG. https://dwc.tdwg.org/terms/#livingspecimen
+https://api.gbif.org/v1/image/unsafe/https%3A%2F%2Fapp.coeli.cat%2Fcoeli%2FICUB-NAT%2FHeritageObject%2FN909033%2FportraitMedia
+This user correctly looked to basis of record to diagnose the problem.
+But all of the records were “Preserved Specimen”.
+Did a musuem staff member make a mistake?
+Sometimes a preserved specimen will be harvested for a museum from a zoo. In such cases, the animal never occurred naturally.</description>
+    </item>
+    
+    <item>
       <title>Downloading occurrences from a long list of species in R and Python</title>
       <link>/post/downloading-long-species-lists-on-gbif/</link>
       <pubDate>Wed, 04 Sep 2019 00:00:00 +0000</pubDate>

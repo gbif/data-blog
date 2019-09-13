@@ -1,0 +1,78 @@
+---
+title: Biodiversity Hotspots Density Table
+author: John Waller
+date: '2019-09-10'
+slug: biodiversity-hotspots-density-table
+categories:
+  - GBIF
+tags:
+  - hotspots
+  - data gaps
+lastmod: '2019-09-10T13:55:38+02:00'
+draft: yes
+keywords: []
+description: ''
+authors: ''
+comment: no
+toc: ''
+autoCollapseToc: no
+postMetaInFooter: no
+hiddenFromHomePage: no
+contentCopyright: no
+reward: no
+mathjax: no
+mathjaxEnableSingleDollar: no
+mathjaxEnableAutoNumber: no
+hideHeaderAndFooter: no
+flowchartDiagrams:
+  enable: no
+  options: ''
+sequenceDiagrams:
+  enable: no
+  options: ''
+---
+
+```{R,echo=FALSE,message=FALSE,warning=FALSE}
+
+library(kableExtra)
+library(knitr)
+library(dplyr)
+library(formattable)
+library(roperators)
+
+
+# dt = readRDS(file = "C:/Users/ftw712/Desktop/hotspot_density_table.rda")
+
+dt = readr::read_tsv("C:/Users/ftw712/Desktop/hotspot_density_table.tsv")
+
+dt = dt %>% 
+  mutate(occ_density = round(occ_density,2)) %>%
+  mutate(occ_density_no_birds = round(occ_density_no_birds,2)) 
+  # %>%
+  # filter(Type == "hotspot area")
+
+# glimpse(dt)
+
+
+options(kableExtra.html.bsTable = TRUE)
+
+dt %>%
+  mutate(NAME = 
+  cell_spec(NAME,
+  "html",
+  escape=FALSE,
+  bold=TRUE,
+  link=urls)) %>%
+  select(NAME,occ_density, occ_density_no_birds) %>%
+  arrange(-occ_density) %>%
+  kable(format = "html",escape=FALSE) %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"),fixed_thead = TRUE)
+
+
+
+
+```
+
+
+
+<!--more-->

@@ -6,10 +6,19 @@
     <description>Recent content in Data gaps on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 10 Jul 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 10 Sep 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/data-gaps/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Biodiversity Hotspots Density Table</title>
+      <link>/post/biodiversity-hotspots-density-table/</link>
+      <pubDate>Tue, 10 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/biodiversity-hotspots-density-table/</guid>
+      <description>NAMEocc_densityocc_density_no_birdsCalifornia Floristic Province136.178.09Forests of East Australia78.2629.85Polynesia-Micronesia63.8841.59North American Coastal Plain49.593.70Cape Floristic Region43.506.42New Caledonia26.9426.10New Zealand23.</description>
+    </item>
     
     <item>
       <title>Exploring es50 for GBIF</title>

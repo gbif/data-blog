@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hotspots on GBIF Data Blog</title>
+    <link>/tags/hotspots/</link>
+    <description>Recent content in Hotspots on GBIF Data Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 10 Sep 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/hotspots/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Biodiversity Hotspots Density Table</title>
+      <link>/post/biodiversity-hotspots-density-table/</link>
+      <pubDate>Tue, 10 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/biodiversity-hotspots-density-table/</guid>
+      <description>NAMEocc_densityocc_density_no_birdsCalifornia Floristic Province136.178.09Forests of East Australia78.2629.85Polynesia-Micronesia63.8841.59North American Coastal Plain49.593.70Cape Floristic Region43.506.42New Caledonia26.9426.10New Zealand23.</description>
+    </item>
+    
+  </channel>
+</rss>
