@@ -13,9 +13,18 @@
     <item>
       <title>GBIF</title>
       <link>/categories/gbif/</link>
-      <pubDate>Tue, 10 Sep 2019 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 16 Sep 2019 00:00:00 +0000</pubDate>
       
       <guid>/categories/gbif/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Taxonomy</title>
+      <link>/categories/taxonomy/</link>
+      <pubDate>Mon, 16 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/taxonomy/</guid>
       <description></description>
     </item>
     

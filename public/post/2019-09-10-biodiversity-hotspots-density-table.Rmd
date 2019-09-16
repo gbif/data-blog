@@ -32,6 +32,9 @@ sequenceDiagrams:
   options: ''
 ---
 
+![](/post/2019-09-10-biodiversity-hotspots-density-table_files/all_regions_map.svg)
+
+
 ```{R,echo=FALSE,message=FALSE,warning=FALSE}
 
 library(kableExtra)
@@ -46,9 +49,16 @@ library(roperators)
 dt = readr::read_tsv("C:/Users/ftw712/Desktop/hotspot_density_table.tsv")
 
 dt = dt %>% 
-  mutate(occ_density = round(occ_density,2)) %>%
-  mutate(occ_density_no_birds = round(occ_density_no_birds,2)) 
-  # %>%
+  mutate(occ_density_land = round(occ_density_land,2)) %>%
+  mutate(occ_density_no_birds_land = round(occ_density_no_birds_land,2)) %>%
+  mutate(occ_count_label = 
+  case_when(
+  occ_count > 1e6 ~ round(occ_count/1e6,0),
+  occ_count > 1e3 ~ round(occ_count/1e3,0),
+  TRUE ~ occ_count
+  ))
+  
+  
   # filter(Type == "hotspot area")
 
 # glimpse(dt)
@@ -63,11 +73,10 @@ dt %>%
   escape=FALSE,
   bold=TRUE,
   link=urls)) %>%
-  select(NAME,occ_density, occ_density_no_birds) %>%
-  arrange(-occ_density) %>%
+  select(NAME,occ_count_label,occ_density_land,occ_density_no_birds_land) %>%
+  arrange(-occ_density_land) %>%
   kable(format = "html",escape=FALSE) %>%
   kable_styling(bootstrap_options = c("hover", "condensed"),fixed_thead = TRUE)
-
 
 
 

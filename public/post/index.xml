@@ -6,10 +6,20 @@
     <description>Recent content in Posts on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 10 Sep 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 16 Sep 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Six questions answered about the GBIF Backbone Taxomomy</title>
+      <link>/post/gbif-backbone-taxonomy/</link>
+      <pubDate>Mon, 16 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/gbif-backbone-taxonomy/</guid>
+      <description>This past week our informatics team has been updating the Backbone taxonomy on GBIF.org. This is a fairly disruptive process which sometimes involves massive taxonomic changes but DON’T PANIC.
+This update is a good thing. It means that some of the taxonomic issues reported have been addressed (see for example this issue concerning the Xylophagidae family) and that new species are now visible on GBIF. Plus, it gives me an excellent opportunity to talk about the GBIF backbone taxonomy and answer some of the questions you might have.</description>
+    </item>
     
     <item>
       <title>Biodiversity Hotspots Density Table</title>
@@ -17,7 +27,7 @@
       <pubDate>Tue, 10 Sep 2019 00:00:00 +0000</pubDate>
       
       <guid>/post/biodiversity-hotspots-density-table/</guid>
-      <description>NAMEocc_densityocc_density_no_birdsCalifornia Floristic Province136.178.09Forests of East Australia78.2629.85Polynesia-Micronesia63.8841.59North American Coastal Plain49.593.70Cape Floristic Region43.506.42New Caledonia26.9426.10New Zealand23.</description>
+      <description>NAMEocc_count_labelocc_density_landocc_density_no_birds_landCalifornia Floristic Province40136.178.09Forests of East Australia2078.2629.85Polynesia-Micronesia363.8841.59North American Coastal Plain6149.593.70Cape Floristic Region343.506.</description>
     </item>
     
     <item>

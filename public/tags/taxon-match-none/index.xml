@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Taxon match none on GBIF Data Blog</title>
+    <link>/tags/taxon-match-none/</link>
+    <description>Recent content in Taxon match none on GBIF Data Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 16 Sep 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/taxon-match-none/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Six questions answered about the GBIF Backbone Taxomomy</title>
+      <link>/post/gbif-backbone-taxonomy/</link>
+      <pubDate>Mon, 16 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/gbif-backbone-taxonomy/</guid>
+      <description>This past week our informatics team has been updating the Backbone taxonomy on GBIF.org. This is a fairly disruptive process which sometimes involves massive taxonomic changes but DON’T PANIC.
+This update is a good thing. It means that some of the taxonomic issues reported have been addressed (see for example this issue concerning the Xylophagidae family) and that new species are now visible on GBIF. Plus, it gives me an excellent opportunity to talk about the GBIF backbone taxonomy and answer some of the questions you might have.</description>
+    </item>
+    
+  </channel>
+</rss>

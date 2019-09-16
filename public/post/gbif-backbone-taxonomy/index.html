@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Six questions answered about the GBIF Backbone Taxomomy - GBIF Data Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Marie Grosjean" />
+  <meta name="description" content="This past week our informatics team has been updating the Backbone taxonomy on GBIF.org. This is a fairly disruptive process which sometimes involves massive taxonomic changes but DON’T PANIC.
+This update is a good thing. It means that some of the taxonomic issues reported have been addressed (see for example this issue concerning the Xylophagidae family) and that new species are now visible on GBIF. Plus, it gives me an excellent opportunity to talk about the GBIF backbone taxonomy and answer some of the questions you might have." />
+<meta name="keywords" content="taxonomy, backbone, Catalogue of Life, taxon" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.42" />
+
+
+<link rel="canonical" href="/post/gbif-backbone-taxonomy/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.2.0" rel="stylesheet">
+
+
+
+
+<link rel="stylesheet" href="/css//custom.css">
+
+
+<meta property="og:title" content="Six questions answered about the GBIF Backbone Taxomomy" />
+<meta property="og:description" content="This past week our informatics team has been updating the Backbone taxonomy on GBIF.org. This is a fairly disruptive process which sometimes involves massive taxonomic changes but DON’T PANIC.
+This update is a good thing. It means that some of the taxonomic issues reported have been addressed (see for example this issue concerning the Xylophagidae family) and that new species are now visible on GBIF. Plus, it gives me an excellent opportunity to talk about the GBIF backbone taxonomy and answer some of the questions you might have." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/gbif-backbone-taxonomy/" />
+
+
+
+<meta property="article:published_time" content="2019-09-16T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2019-09-16T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Six questions answered about the GBIF Backbone Taxomomy">
+<meta itemprop="description" content="This past week our informatics team has been updating the Backbone taxonomy on GBIF.org. This is a fairly disruptive process which sometimes involves massive taxonomic changes but DON’T PANIC.
+This update is a good thing. It means that some of the taxonomic issues reported have been addressed (see for example this issue concerning the Xylophagidae family) and that new species are now visible on GBIF. Plus, it gives me an excellent opportunity to talk about the GBIF backbone taxonomy and answer some of the questions you might have.">
+
+
+<meta itemprop="datePublished" content="2019-09-16T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-09-16T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1547">
+
+
+
+<meta itemprop="keywords" content="taxonomy,backbone,GBIF,checklist,Catalogue of Life,Col,Taxon match none,Taxon match higherrank,Taxon match fuzzy," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Six questions answered about the GBIF Backbone Taxomomy"/>
+<meta name="twitter:description" content="This past week our informatics team has been updating the Backbone taxonomy on GBIF.org. This is a fairly disruptive process which sometimes involves massive taxonomic changes but DON’T PANIC.
+This update is a good thing. It means that some of the taxonomic issues reported have been addressed (see for example this issue concerning the Xylophagidae family) and that new species are now visible on GBIF. Plus, it gives me an excellent opportunity to talk about the GBIF backbone taxonomy and answer some of the questions you might have."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">GBIF Data Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/categories/gbif/">
+        <li class="mobile-menu-item">posts</li>
+      </a><a href="https://discourse.gbif.org/c/data-blog">
+        <li class="mobile-menu-item">community-forum</li>
+      </a><a href="https://www.gbif.org/">
+        <li class="mobile-menu-item">gbif.org</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">about</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">
+	<img src= "/logo.png" alt="GBIF-analytics-blog" style ="width:20%;">
+  </a>
+  
+	
+  
+  
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/categories/gbif/">posts</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://discourse.gbif.org/c/data-blog">community-forum</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://www.gbif.org/">gbif.org</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">about</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+	
+    <header class="post-header">
+      <h1 class="post-title">Six questions answered about the GBIF Backbone Taxomomy</h1>
+	  
+	  
+      <div class="post-author">Marie Grosjean</div>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-09-16 </span>
+        <div class="post-category">
+            
+              <a href="/categories/gbif/"> GBIF </a>
+            
+              <a href="/categories/taxonomy/"> Taxonomy </a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    
+    
+
+    
+    <div class="post-content">
+      
+
+<p>This past week our informatics team has been updating the Backbone taxonomy on GBIF.org. This is a fairly disruptive process which sometimes involves massive taxonomic changes but <strong>DON’T PANIC</strong>.</p>
+
+<p>This update is a good thing. It means that some of the taxonomic issues reported have been addressed (see for example <a href="https://github.com/gbif/portal-feedback/issues/1461">this issue concerning the Xylophagidae family</a>)  and that new species are now visible on GBIF.
+Plus, it gives me an excellent opportunity to talk about the GBIF backbone taxonomy and answer some of the questions you might have.</p>
+
+<p>This being a blogpost and all, I cannot write about everything (the building of the backbone in itself is a <strong>very</strong> long topic). So, if you have any questions relating to this topic, please leave a comment :)</p>
+
+<h1 id="what-is-the-gbif-backbone-taxonomy">What is the GBIF Backbone taxonomy?</h1>
+
+<p>The Backbone taxonomy is actually <a href="https://www.gbif.org/dataset/d7dddbf4-2cf0-4f39-9b2a-bb099caae36c">a GBIF dataset</a>. But not just any dataset, it is probably the most important dataset for GBIF. On its page, it is defined as</p>
+
+<blockquote>
+<p>a single synthetic management classification with the goal of covering all names GBIF is dealing with.</p>
+</blockquote>
+
+<p>The newest version (September 2019) contains 5,858,143 names. Most of these names are animals. Plus, a large part of these names are actually synonyms (see pie charts below).
+<img src="https://github.com/gbif/data-blog/raw/master/content/post/2019-08-19-gbif-backbone-taxonomy/stats.september2019.jpeg" alt="Statistics Backbone taxonomy - September 2019" /></p>
+
+<p>If you are interested, I suggest that you browse <a href="https://www.gbif.org/species/search">our web interface</a> or check out the <a href="https://www.gbif.org/developer/species">Species API</a></p>
+
+<h1 id="why-does-gbif-need-a-backbone">Why does GBIF need a backbone?</h1>
+
+<p>The backbone is needed to organize the data available on GBIF. Without it, we wouldn’t be able to do any taxonomic search and it would be difficult to generate consistent statistics and maps.</p>
+
+<p>As you can imagine, not everyone uses the same classifications or names. This results in considerable variations in higher taxa and a large number of synonyms. The backbone aims to bring all these names together and organize them.</p>
+
+<h1 id="how-is-the-backbone-generated">How is the backbone generated?</h1>
+
+<p>The backbone is built from <a href="https://www.gbif.org/dataset/d7dddbf4-2cf0-4f39-9b2a-bb099caae36c/constituents">other checklists</a>. These include:
+* 55 authority checklists,
+* a checklist generated from the type specimens shared on GBIF,
+* two large sources for <strong>stable</strong> Operational Taxonomic Units (OTUs): <a href="https://www.gbif.org/dataset/4cec8fef-f129-4966-89b7-4f8439aba058">iBOL Barcode Index Numbers</a> and the <a href="https://www.gbif.org/dataset/61a5f178-b5fb-4484-b6d8-9b129739e59d">UNITE Species Hypothesis identifiers</a>,
+* and <a href="https://www.gbif.org/publisher/7ce8aef0-9e92-11dc-8738-b8a03c50a862">any checklist shared by PLAZI.org</a> on GBIF (currently 26,908).</p>
+
+<p>These checklists are <a href="https://github.com/gbif/checklistbank/blob/master/checklistbank-nub/nub-sources.tsv">ordered by priority</a> starting with the <a href="https://www.catalogueoflife.org">Catalogue of Life</a>. This order is crucial as it shapes the taxonomy.</p>
+
+<blockquote>
+<p>Note that many sequence-based occurrences have no Latin names but are named using species hypotheses (UNITE: fungi) or Barcode Index Numbers (iBOL: primarly animals). This is why adding these two major sources of stable OTUs to the latest backbone taxonomy significantly improves GBIF’s indexing functionality for sequence-based biodiversity data.</p>
+</blockquote>
+
+<p>Most of the assembly process is automated and the curation happens in the source checklists prior to that.
+Before reading the rest of my explanation, check out my little illustrated summary (e.g. the animation on the right).</p>
+
+<p><img align="right" style="padding: 15px" src="https://media.giphy.com/media/dyQz30zMX1rmhkevwg/giphy.gif" alt="Backbone building" width="500"/></p>
+
+<p>As you can see our algorithm starts with the <a href="https://www.gbif.org/species/search?rank=KINGDOM&amp;status=ACCEPTED">eight kingdoms</a>, then adds the taxa from the <a href="https://www.gbif.org/dataset/7ddf754f-d193-4cc9-b351-99906754a03b">Catalogue of life</a> before adding other sources in order of priority. New taxa are ignored if their statuses conflict with what was previously added.</p>
+
+<p>Afterward, the synonyms are identified and some infra-specifics are added. Note that:
+* The synonyms respect authors.
+* The author match is necessarily loose to accommodate variations such as abbreviations.
+* Authors are preferred from nomenclators.
+* Names that appear only in a nomenclatural database are included but flagged as &ldquo;doubtful accepted&rdquo;.
+* The same canonical names with different authors are allowed twice, but only one is ever accepted.</p>
+
+<p>Finally, the algorithm identifies the homotypic group of names sharing the same basionym. <strong>Only one name is accepted per homotypic group</strong> and all the other names are marked as synonyms as they are homotypic.
+The most trusted first name added stays as the accepted name.</p>
+
+<p>We also add autonyms when needed.</p>
+
+<p>Each node included in the graph representing the new backbone is associated with an identifier (for example, the identifier for <em>Arthropoda</em> is 54: <a href="https://www.gbif.org/species/54">https://www.gbif.org/species/54</a>). Wherever possible, GBIF will reuse the same identifier issued for a taxon concept in the previous backbone.</p>
+
+<p>The backbone building process follows a few more rules, if you are interested I suggest that you check out <a href="https://de.slideshare.net/mdoering/gbif-checklist-bank-and-the-backbone">these slides</a> on the topic and leave a comment here if you have any question.</p>
+
+<blockquote>
+<p>The backbone contains major Linnaean ranks of Kingdom to Species plus subspecies, variety and forma. However, it <strong>doesn’t</strong> include:
+* Non-major Linnean ranks (e.g. sub-family, tribe, etc.),
+* Hybrid formulas and cultivars,
+* Working names (candidatus, placeholder names and non-stable OTUs).</p>
+</blockquote>
+
+<p>The Catalogue of Life and other institutions work on they taxonomic checklists and review feedback messages all year round.
+However, we generate and update the backbone only once or twice a year. As I mentioned before, this is a fairly disruptive process which requires us to put our system on hold while we are re-processing all the data. This means that we re-interpret every single record in light of the new taxonomy (all the names are matched against the new backbone). In the best case scenario this might take 48h. Then we check for any obvious bugs and errors (which can also take a few days). Once everything is in order, the update goes live. During that time, the data content cannot be updated as the ingestion system is paused.
+Our informatics team has been laying out groundwork to make this process easier and faster in the future. Thanks to these efforts and the Catalogue of Life + (see the last paragraph), we will have a faster turnover.</p>
+
+<h1 id="where-to-report-issues">Where to report issues?</h1>
+
+<p><img align="right" style="padding: 15px" src="https://github.com/gbif/data-blog/blob/master/content/post/2019-08-19-gbif-backbone-taxonomy/feedback.png" alt="Screenshot feedback form" width="300"/></p>
+
+<p>The backbone isn’t perfect, you might encounter taxonomic errors or spelling mistakes. If this is the case, please report it via our feedback system (see screenshot) or <a href="https://github.com/gbif/portal-feedback/issues">directly on GitHub</a>. Be as precise as possible and include links and references if available.
+We really appreciate all the help we can get and will forward your message to the relevant people.</p>
+
+<h1 id="missing-names-and-species-what-to-do-about-it">Missing names and species, what to do about it?</h1>
+
+<p>You might find that some names are simply missing from the taxonomy. This happens and we would be grateful if you could report it (along with references).
+You can also contribute even more by <a href="https://www.gbif.org/publishing-data">creating and sharing your own checklist</a>.</p>
+
+<p>If you are a data provider and that some of the names that you used cannot be found in the backbone, here is what you should do:
+* Keep the name as it is but add higher ranks taxa (our algorithm might not recognize the scientific name used but it can still find a higher taxon).
+* Add the type status if your specimen is a type (the name will be integrated to the next update).
+* Try some troubleshooting (see paragraph below).</p>
+
+<h1 id="associated-flags-taxon-match-none-taxon-match-fuzzy-taxon-match-higherrank">Associated flags: “Taxon match none”, “Taxon match fuzzy”, “Taxon Match higherrank”</h1>
+
+<p>These flags are not related to the backbone itself, they are generated by our matching algorithm when it cannot find an exact match for a given name.
+The backbone has its own sets of flags associated with the building process. I won’t go into details here but if you are interested, leave a comment.</p>
+
+<p>When you upload a dataset on GBIF, it almost always contains scientific names. Each name is matched to the GBIF backbone taxonomy. Sometimes an exact match is found amongst the names and synonyms of the backbone but not always. Perhaps, the name is missing from the taxonomy or it is mis-spelled?
+Depending on what can be found (or not), your records might be getting one of the following flags:</p>
+
+<table>
+<thead>
+<tr>
+<th>Flag</th>
+<th>Meaning</th>
+<th>Example</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Taxon match fuzzy</td>
+<td>A match with a different spelling was found.</td>
+<td><em>Pelagodes antiquadrarius</em> and <em>Pelagodes antiquadraria</em></td>
+</tr>
+
+<tr>
+<td>Taxon Match higherrank</td>
+<td>No match was found at the same taxonomic rank but one was found for a higher rank.</td>
+<td><em>Hylatomus pileatus</em> and <em>Hylatomus</em></td>
+</tr>
+
+<tr>
+<td>Taxon match none</td>
+<td>No match was found.</td>
+<td><em>Flagellate</em></td>
+</tr>
+</tbody>
+</table>
+
+<p>As a data provider, there are a few things you can do to avoid these flags.
+1. You can use our <a href="https://www.gbif.org/developer/species">API</a> and/or our <a href="https://www.gbif.org/tools/species-lookup">name matching tool</a> to check for name matching before you share your data on GBIF.</p>
+
+<ol>
+<li><p>Our matching algorithm uses the taxonomic information provided if available (e.g. kingdom, family, etc). Sometimes, just adding the kingdom will help remove any ambiguity in the matching. There are some cases though, where the backbone taxonomy was so different from the one provided that no match could be found, although the species existed in the backbone. If you suspect that this is the case, <a href="https://www.gbif.org/species/search?q=">check the backbone</a> and remove some of the taxa.</p></li>
+
+<li><p>Check technical issues as well. For example, you might get these flags if you provide the author name both in the scientificName field and the <a href="https://dwc.tdwg.org/terms/#dwc:scientificNameAuthorship">scientificNameAuthorship</a> field since these two are concatenated.</p></li>
+</ol>
+
+<h1 id="the-near-future-of-the-taxonomy-the-catalogue-of-life-plus">The (near) future of the taxonomy: The Catalogue of Life Plus</h1>
+
+<p>You might feel like the system I just described lacks some flexibility. Well, you are not the only one. This is why major global initiatives (<a href="https://www.gbif.org">GBIF</a>, <a href="https://ibol.org">iBOL</a>, <a href="https://www.biodiversitylibrary.org">BHL</a>, <a href="https://eol.org">EOL</a>) are currently working on the <a href="https://github.com/Sp2000/colplus">Catalogue of Life Plus</a> (CoL+ for short).
+The CoL+ project aims to create a shared taxonomy with a faster turnover, daily integration of newly described species and a more collaborative process.
+The idea is to have a better, more flexible taxonomy which will be curated by a larger community.
+We are not quite there yet but if you are interested, please check out <a href="https://github.com/Sp2000/colplus">their repository</a>.</p>
+
+    </div>
+
+    
+    
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/taxonomy/">taxonomy</a>
+          
+          <a href="/tags/backbone/">backbone</a>
+          
+          <a href="/tags/gbif/">GBIF</a>
+          
+          <a href="/tags/checklist/">checklist</a>
+          
+          <a href="/tags/catalogue-of-life/">Catalogue of Life</a>
+          
+          <a href="/tags/col/">Col</a>
+          
+          <a href="/tags/taxon-match-none/">Taxon match none</a>
+          
+          <a href="/tags/taxon-match-higherrank/">Taxon match higherrank</a>
+          
+          <a href="/tags/taxon-match-fuzzy/">Taxon match fuzzy</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/biodiversity-hotspots-density-table/">
+            <span class="next-text nav-default">Biodiversity Hotspots Density Table</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+       
+<div id='discourse-comments'></div>
+<script type="text/javascript">
+  DiscourseEmbed = { discourseUrl: 'https://discourse.gbif.org/',
+                     discourseEmbedUrl: 'https://data-blog.gbif.org\/post\/gbif-backbone-taxonomy\/' };
+
+  (function() {
+    var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+    d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+  })();
+</script>  
+
+
+<div class = "copyright">
+	<a class="theme-link" href="https://www.gbif.org/what-is-gbif">What is GBIF?</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://www.gbif.org/developer/summary">API</a> 
+	<span class="division">|</span>
+	<a class="theme-link" href="https://www.gbif.org/faq">FAQ</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://discourse.gbif.org/">Community-Forum</a>
+</div>
+
+<div class = "copyright"> 
+	<span class="theme-info">GBIF Secretariat</span> 
+	<span class="theme-info">Universitetsparken 15</span> 
+	<span class="theme-info">DK-2100 Copenhagen Ø</span> 
+	<span class="theme-info" >Denmark</span>
+</div>
+
+<div class="copyright">
+	<span class="power-by">
+	Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+	</span>
+	<span class="division">|</span>
+	<span class="theme-info">
+	Theme - 
+	<a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+	</span>
+
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+<script type="text/javascript" src="/dist/even.min.js?v=3.2.0"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

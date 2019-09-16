@@ -30,11 +30,38 @@
     </item>
     
     <item>
+      <title>Backbone</title>
+      <link>/tags/backbone/</link>
+      <pubDate>Mon, 16 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/backbone/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Catalogue of Life</title>
+      <link>/tags/catalogue-of-life/</link>
+      <pubDate>Mon, 16 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/catalogue-of-life/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Centroids</title>
       <link>/tags/centroids/</link>
       <pubDate>Tue, 19 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/centroids/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Checklist</title>
+      <link>/tags/checklist/</link>
+      <pubDate>Mon, 16 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/checklist/</guid>
       <description></description>
     </item>
     
@@ -62,6 +89,15 @@
       <pubDate>Fri, 02 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/citizen-science/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Col</title>
+      <link>/tags/col/</link>
+      <pubDate>Mon, 16 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/col/</guid>
       <description></description>
     </item>
     
@@ -158,7 +194,7 @@
     <item>
       <title>GBIF</title>
       <link>/tags/gbif/</link>
-      <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 16 Sep 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/gbif/</guid>
       <description></description>
@@ -386,6 +422,42 @@
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/sound/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Taxon match fuzzy</title>
+      <link>/tags/taxon-match-fuzzy/</link>
+      <pubDate>Mon, 16 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/taxon-match-fuzzy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Taxon match higherrank</title>
+      <link>/tags/taxon-match-higherrank/</link>
+      <pubDate>Mon, 16 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/taxon-match-higherrank/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Taxon match none</title>
+      <link>/tags/taxon-match-none/</link>
+      <pubDate>Mon, 16 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/taxon-match-none/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Taxonomy</title>
+      <link>/tags/taxonomy/</link>
+      <pubDate>Mon, 16 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/taxonomy/</guid>
       <description></description>
     </item>
     

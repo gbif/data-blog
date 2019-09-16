@@ -10,6 +10,13 @@
   </url>
   
   <url>
+    <loc>/post/gbif-backbone-taxonomy/</loc>
+    <lastmod>2019-09-16T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>/post/biodiversity-hotspots-density-table/</loc>
     <lastmod>2019-09-10T13:55:38+02:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -184,6 +191,20 @@
   </url>
   
   <url>
+    <loc>/tags/backbone/</loc>
+    <lastmod>2019-09-16T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/catalogue-of-life/</loc>
+    <lastmod>2019-09-16T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/categories/</loc>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
@@ -192,6 +213,13 @@
   <url>
     <loc>/tags/centroids/</loc>
     <lastmod>2019-02-21T10:23:10+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/checklist/</loc>
+    <lastmod>2019-09-16T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -213,6 +241,13 @@
   <url>
     <loc>/tags/citizen-science/</loc>
     <lastmod>2019-08-02T08:39:12+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/col/</loc>
+    <lastmod>2019-09-16T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -288,15 +323,15 @@
   </url>
   
   <url>
-    <loc>/categories/gbif/</loc>
-    <lastmod>2019-09-10T13:55:38+02:00</lastmod>
+    <loc>/tags/gbif/</loc>
+    <lastmod>2019-09-16T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/gbif/</loc>
-    <lastmod>2019-04-23T00:00:00+00:00</lastmod>
+    <loc>/categories/gbif/</loc>
+    <lastmod>2019-09-16T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -408,7 +443,7 @@
   
   <url>
     <loc>/author/marie-grosjean/</loc>
-    <lastmod>2019-04-23T00:00:00+00:00</lastmod>
+    <lastmod>2019-09-16T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -457,7 +492,7 @@
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2019-09-10T13:55:38+02:00</lastmod>
+    <lastmod>2019-09-16T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -521,6 +556,41 @@
   <url>
     <loc>/tags/</loc>
     <lastmod>2019-08-28T16:26:18+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/taxon-match-fuzzy/</loc>
+    <lastmod>2019-09-16T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/taxon-match-higherrank/</loc>
+    <lastmod>2019-09-16T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/taxon-match-none/</loc>
+    <lastmod>2019-09-16T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/taxonomy/</loc>
+    <lastmod>2019-09-16T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/taxonomy/</loc>
+    <lastmod>2019-09-16T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
