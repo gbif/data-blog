@@ -12,7 +12,7 @@ tags:
   - GBIF
   - checklist
   - Catalogue of Life
-  - Col+
+  - Col
   - Taxon match none
   - Taxon match higherrank
   - Taxon match fuzzy
