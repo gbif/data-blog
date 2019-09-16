@@ -1,7 +1,7 @@
 ---
 title: Six questions answered about the GBIF Backbone Taxomomy
 author: Marie Grosjean
-date: '2019-09-18'
+date: '2019-09-16'
 slug: gbif-backbone-taxonomy
 categories:
   - GBIF
@@ -17,7 +17,7 @@ tags:
   - Taxon match higherrank
   - Taxon match fuzzy
 lastmod: '2019-09-16'
-draft: no
+draft: yes
 keywords: ['taxonomy', 'backbone', 'Catalogue of Life', 'taxon']
 description: ''
 comment: no
