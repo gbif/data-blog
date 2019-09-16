@@ -53,7 +53,7 @@ The Backbone taxonomy is actually [a GBIF dataset](https://www.gbif.org/dataset/
 > a single synthetic management classification with the goal of covering all names GBIF is dealing with.
 
 The newest version (September 2019) contains 5,858,143 names. Most of these names are animals. Plus, a large part of these names are actually synonyms (see pie charts below).
-![Statistics Backbone taxonomy - September 2019](https://github.com/gbif/data-blog/raw/master/content/post/2019-08-19-gbif-backbone-taxonomy/stats.september2019.001.jpeg)
+![Statistics Backbone taxonomy - September 2019](/post/2019-08-19-gbif-backbone-taxonomy/stats.september2019.001.jpeg)
 
 If you are interested, I suggest that you browse [our web interface](https://www.gbif.org/species/search) or check out the [Species API](https://www.gbif.org/developer/species)
 
@@ -68,6 +68,7 @@ As you can imagine, not everyone uses the same classifications or names. This re
 # How is the backbone generated?
 
 The backbone is built from [other checklists](https://www.gbif.org/dataset/d7dddbf4-2cf0-4f39-9b2a-bb099caae36c/constituents). These include:
+
 * 55 authority checklists,
 * a checklist generated from the type specimens shared on GBIF,
 * two large sources for **stable** Operational Taxonomic Units (OTUs): [iBOL Barcode Index Numbers](https://www.gbif.org/dataset/4cec8fef-f129-4966-89b7-4f8439aba058) and the [UNITE Species Hypothesis identifiers](https://www.gbif.org/dataset/61a5f178-b5fb-4484-b6d8-9b129739e59d),
@@ -82,9 +83,10 @@ Before reading the rest of my explanation, check out my little illustrated summa
 
 <img align="right" style="padding: 15px" src="https://media.giphy.com/media/dyQz30zMX1rmhkevwg/giphy.gif" alt="Backbone building" width="500"/>
 
-As you can see our algorithm starts with the [eight kingdoms](https://www.gbif.org/species/search?rank=KINGDOM&status=ACCEPTED), then adds the taxa from the [Catalogue of life](https://www.gbif.org/dataset/7ddf754f-d193-4cc9-b351-99906754a03b) before adding other sources in order of priority. New taxa are ignored if their statuses conflict with what was previously added.
+As you can see our algorithm starts with the [eight kingdoms](https://www.gbif.org/species/search?rank=KINGDOM&status=ACCEPTED), then adds the taxa from the <br> [Catalogue of life](https://www.gbif.org/dataset/7ddf754f-d193-4cc9-b351-99906754a03b) before adding other sources in order of priority. New taxa are ignored if their statuses conflict with what was previously added.
 
 Afterward, the synonyms are identified and some infra-specifics are added. Note that:
+
 * The synonyms respect authors.
 * The author match is necessarily loose to accommodate variations such as abbreviations.
 * Authors are preferred from nomenclators.
@@ -98,37 +100,41 @@ We also add autonyms when needed.
 
 Each node included in the graph representing the new backbone is associated with an identifier (for example, the identifier for *Arthropoda* is 54: https://www.gbif.org/species/54). Wherever possible, GBIF will reuse the same identifier issued for a taxon concept in the previous backbone.
 
-The backbone building process follows a few more rules, if you are interested I suggest that you check out [these slides](https://de.slideshare.net/mdoering/gbif-checklist-bank-and-the-backbone) on the topic and leave a comment here if you have any question.
+The backbone building process follows a few more rules, if you are interested I suggest that you check out <br>[these slides](https://de.slideshare.net/mdoering/gbif-checklist-bank-and-the-backbone) on the topic and leave a comment here if you have any question.
  
 > The backbone contains major Linnaean ranks of Kingdom to Species plus subspecies, variety and forma. However, it **doesn’t** include:
+>
 > * Non-major Linnean ranks (e.g. sub-family, tribe, etc.),
 > * Hybrid formulas and cultivars,
 > * Working names (candidatus, placeholder names and non-stable OTUs).
 
 The Catalogue of Life and other institutions work on they taxonomic checklists and review feedback messages all year round.
+
 However, we generate and update the backbone only once or twice a year. As I mentioned before, this is a fairly disruptive process which requires us to put our system on hold while we are re-processing all the data. This means that we re-interpret every single record in light of the new taxonomy (all the names are matched against the new backbone). In the best case scenario this might take 48h. Then we check for any obvious bugs and errors (which can also take a few days). Once everything is in order, the update goes live. During that time, the data content cannot be updated as the ingestion system is paused.
-Our informatics team has been laying out groundwork to make this process easier and faster in the future. Thanks to these efforts and the Catalogue of Life + (see the last paragraph), we will have a faster turnover.
+
+**Our informatics team has been laying out groundwork to make this process easier and faster in the future.** Thanks to these efforts and the Catalogue of Life + (see the last paragraph), we will have a faster turnover.
 
 
 # Where to report issues?
 
-<img align="right" style="padding: 15px" src="https://github.com/gbif/data-blog/blob/master/content/post/2019-08-19-gbif-backbone-taxonomy/feedback.png" alt="Screenshot feedback form" width="300"/>
+<img align="right" style="padding: 15px" src="/post/2019-08-19-gbif-backbone-taxonomy/feedback.png" alt="Screenshot feedback form" width="300"/>
 
-The backbone isn’t perfect, you might encounter taxonomic errors or spelling mistakes. If this is the case, please report it via our feedback system (see screenshot) or [directly on GitHub](https://github.com/gbif/portal-feedback/issues). Be as precise as possible and include links and references if available.
+The backbone isn’t perfect, you might encounter taxonomic errors or spelling mistakes. If this is the case, please report it via our feedback system (see screenshot) or <br>[directly on GitHub](https://github.com/gbif/portal-feedback/issues). Be as precise as possible and include links and references if available.
 We really appreciate all the help we can get and will forward your message to the relevant people.
 
 
 # Missing names and species, what to do about it?
 
 You might find that some names are simply missing from the taxonomy. This happens and we would be grateful if you could report it (along with references).
-You can also contribute even more by [creating and sharing your own checklist](https://www.gbif.org/publishing-data).
+You can also contribute even more by creating and sharing your own <br>[checklist](https://www.gbif.org/publishing-data).
 
 If you are a data provider and that some of the names that you used cannot be found in the backbone, here is what you should do:
+
 * Keep the name as it is but add higher ranks taxa (our algorithm might not recognize the scientific name used but it can still find a higher taxon).
 * Add the type status if your specimen is a type (the name will be integrated to the next update).
 * Try some troubleshooting (see paragraph below).
 
-# Associated flags: “Taxon match none”, “Taxon match fuzzy”, “Taxon Match higherrank” 
+# Associated flags: Taxon match none, Taxon match fuzzy, Taxon Match higherrank 
 
 These flags are not related to the backbone itself, they are generated by our matching algorithm when it cannot find an exact match for a given name.
 The backbone has its own sets of flags associated with the building process. I won’t go into details here but if you are interested, leave a comment.
@@ -136,17 +142,61 @@ The backbone has its own sets of flags associated with the building process. I w
 When you upload a dataset on GBIF, it almost always contains scientific names. Each name is matched to the GBIF backbone taxonomy. Sometimes an exact match is found amongst the names and synonyms of the backbone but not always. Perhaps, the name is missing from the taxonomy or it is mis-spelled?
 Depending on what can be found (or not), your records might be getting one of the following flags:
 
-| Flag | Meaning | Example |
-|------|---------|---------|
-| Taxon match fuzzy | A match with a different spelling was found. | *Pelagodes antiquadrarius* and *Pelagodes antiquadraria* |
-| Taxon Match higherrank | No match was found at the same taxonomic rank but one was found for a higher rank. | *Hylatomus pileatus* and *Hylatomus* |
-| Taxon match none | No match was found. | *Flagellate* |
 
-As a data provider, there are a few things you can do to avoid these flags.
+<style>
+#gbiftable {
+  font-family: font-family: Source Sans Pro, Helvetica Neue, Arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#gbiftable td, #gbiftable th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#gbiftable tr:nth-child(even){background-color: #f2f2f2;}
+
+#gbiftable tr:hover {background-color: #ddd;}
+
+#gbiftable th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4B9E46;
+  color: white;
+}
+</style>
+
+
+<table id="gbiftable">
+  <tr>
+    <th>Flag</th>
+    <th>Meaning</th>
+    <th>Example</th>
+  </tr>
+  <tr>
+    <td>Taxon match fuzzy</td>
+    <td>A match with a different spelling was found.</td>
+    <td><i>Pelagodes antiquadrarius</i> and <i>Pelagodes antiquadraria</i></td>
+  </tr>
+  <tr>
+    <td>Taxon Match higherrank</td>
+    <td>No match was found at the same taxonomic rank but one was found for a higher rank.</td>
+    <td><i>Hylatomus pileatus</i> and <i>Hylatomus</i></td>
+  </tr>
+  <tr>
+    <td>Taxon match none</td>
+    <td>No match was found.</td>
+    <td><i>Flagellate</i></td>
+  </tr>
+</table>
+
+
+As a data provider, there are a few things you can do to avoid these flags:
+
 1. You can use our [API](https://www.gbif.org/developer/species) and/or our [name matching tool](https://www.gbif.org/tools/species-lookup) to check for name matching before you share your data on GBIF.
-
 2. Our matching algorithm uses the taxonomic information provided if available (e.g. kingdom, family, etc). Sometimes, just adding the kingdom will help remove any ambiguity in the matching. There are some cases though, where the backbone taxonomy was so different from the one provided that no match could be found, although the species existed in the backbone. If you suspect that this is the case, [check the backbone](https://www.gbif.org/species/search?q=) and remove some of the taxa.
-
 3. Check technical issues as well. For example, you might get these flags if you provide the author name both in the scientificName field and the [scientificNameAuthorship](https://dwc.tdwg.org/terms/#dwc:scientificNameAuthorship) field since these two are concatenated.
 
 # The (near) future of the taxonomy: The Catalogue of Life Plus
