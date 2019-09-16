@@ -112,7 +112,7 @@ Our informatics team has been laying out groundwork to make this process easier 
 
 # Where to report issues?
 
-<img align="right" style="padding: 15px" src="https://github.com/gbif/data-blog/blob/master/content/post/2019-08-19-gbif-backbone-taxonomy/feedback.png" alt="Screenshot feedback form" width="300"/>
+<img align="right" style="padding: 15px" src="/post/2019-08-19-gbif-backbone-taxonomy/feedback.png" alt="Screenshot feedback form" width="300"/>
 
 The backbone isn’t perfect, you might encounter taxonomic errors or spelling mistakes. If this is the case, please report it via our feedback system (see screenshot) or [directly on GitHub](https://github.com/gbif/portal-feedback/issues). Be as precise as possible and include links and references if available.
 We really appreciate all the help we can get and will forward your message to the relevant people.
