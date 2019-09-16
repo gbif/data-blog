@@ -53,7 +53,7 @@ The Backbone taxonomy is actually [a GBIF dataset](https://www.gbif.org/dataset/
 > a single synthetic management classification with the goal of covering all names GBIF is dealing with.
 
 The newest version (September 2019) contains 5,858,143 names. Most of these names are animals. Plus, a large part of these names are actually synonyms (see pie charts below).
-![Statistics Backbone taxonomy - September 2019](https://github.com/gbif/data-blog/raw/master/content/post/2019-08-19-gbif-backbone-taxonomy/stats.september2019.jpeg)
+![Statistics Backbone taxonomy - September 2019](https://github.com/gbif/data-blog/raw/master/content/post/2019-08-19-gbif-backbone-taxonomy/stats.september2019.001.jpeg)
 
 If you are interested, I suggest that you browse [our web interface](https://www.gbif.org/species/search) or check out the [Species API](https://www.gbif.org/developer/species)
 
