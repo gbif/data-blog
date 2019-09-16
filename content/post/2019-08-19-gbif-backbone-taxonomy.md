@@ -17,7 +17,7 @@ tags:
   - Taxon match higherrank
   - Taxon match fuzzy
 lastmod: '2019-09-16'
-draft: yes
+draft: no
 keywords: ['taxonomy', 'backbone', 'Catalogue of Life', 'taxon']
 description: ''
 comment: no
