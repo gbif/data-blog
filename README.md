@@ -29,6 +29,7 @@ tags:
   - test tag
   - test
 lastmod: '2018-09-21T15:24:11+02:00'
+draft: yes
 keywords: []
 description: ''
 comment: no
@@ -59,7 +60,7 @@ sequenceDiagrams:
  - `slug: your-post` <- name that will appear in the url https://data-blog.gbif.org/post/your-post/ 
  - `tags:` <- category tags for post
  - `hiddenFromHomePage: yes` <- keeps people from seeing your post as you work on it
-
+ - `draft: yes` <- keeps the post off of navigation as you work on it 
 6. Clone the repository locally `git clone https://github.com/gbif/data-blog.git`
 7. Copy `YYYY-MM-DD-your-post.md` and `YYYY-MM-DD-your-post_files` into `./content/post/`
 ```
@@ -75,7 +76,7 @@ sequenceDiagrams:
 10. Check your post at https://data-blog.gbif.org/post/your-post/ (Netlify will build your post automatically)
 11. **Find mistakes** 
 12. Fix mistakes and push changes to **gbif/data-blog** until satisfied. 
-13. Switch to `hiddenFromHomePage: no`
+13. Switch to `hiddenFromHomePage: no` and `draft: no`
 14. Ask [someone](https://github.com/jhnwllr) with admin access to [https://discourse.gbif.org/](https://discourse.gbif.org/) to turn on comments for you.  
 
 
