@@ -22,27 +22,23 @@ This update is a good thing. It means that some of the taxonomic issues reported
     </item>
     
     <item>
-      <title>Biodiversity Hotspots Density Table</title>
+      <title>Biodiversity hotspots and GBIF data</title>
       <link>/post/biodiversity-hotspots-density-table/</link>
       <pubDate>Tue, 10 Sep 2019 00:00:00 +0000</pubDate>
       
       <guid>/post/biodiversity-hotspots-density-table/</guid>
-      <description>NAMEocc_count_labelocc_density_landocc_density_no_birds_landCalifornia Floristic Province40136.178.09Forests of East Australia2078.2629.85Polynesia-Micronesia363.8841.59North American Coastal Plain6149.593.70Cape Floristic Region343.506.</description>
+      <description>GBIF organizes and gives statistics for countries and areas, but we do not do a good job of reporting on occurrence data for other areas that might be more biologically relevant or important. Currently the Critical Ecosystem Partnership Fund (CEPF) recognizes 35 biodiversity hotspots.
+For a region to be considered a hotspot it must:
+Contain at least 1,500 endemic species of vascular plants (found nowhere else on Earth).</description>
     </item>
     
     <item>
-      <title>understanding basis of record living specimen, preserved specimen, machine observation</title>
+      <title>Understanding basis of record - a living specimen becomes a preserved specimen</title>
       <link>/post/living-specimen-to-preserved-specimen-understanding-basis-of-record/</link>
       <pubDate>Fri, 06 Sep 2019 00:00:00 +0000</pubDate>
       
       <guid>/post/living-specimen-to-preserved-specimen-understanding-basis-of-record/</guid>
-      <description>Recently a user noticed that there were Asian Red Pandas (Ailuridae) occurring in North America.
-The vocabulary used by GBIF comes from TDWG. https://dwc.tdwg.org/terms/#livingspecimen
-https://api.gbif.org/v1/image/unsafe/https%3A%2F%2Fapp.coeli.cat%2Fcoeli%2FICUB-NAT%2FHeritageObject%2FN909033%2FportraitMedia
-This user correctly looked to basis of record to diagnose the problem.
-But all of the records were “Preserved Specimen”.
-Did a musuem staff member make a mistake?
-Sometimes a preserved specimen will be harvested for a museum from a zoo. In such cases, the animal never occurred naturally.</description>
+      <description>Recently a user noticed that there were Asian Red Pandas (Ailuridae) occurring in North America, and wondered if someone had made a mistake. When an occurrence observation comes from a zoo or botanical garden, it is usually considered a living specimen, but when it comes from a museum it is usually called a preserved specimen. This label helps users remove records that they might not want, which come from zoos.</description>
     </item>
     
     <item>

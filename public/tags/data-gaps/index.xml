@@ -12,12 +12,14 @@
     
     
     <item>
-      <title>Biodiversity Hotspots Density Table</title>
+      <title>Biodiversity hotspots and GBIF data</title>
       <link>/post/biodiversity-hotspots-density-table/</link>
       <pubDate>Tue, 10 Sep 2019 00:00:00 +0000</pubDate>
       
       <guid>/post/biodiversity-hotspots-density-table/</guid>
-      <description>NAMEocc_count_labelocc_density_landocc_density_no_birds_landCalifornia Floristic Province40136.178.09Forests of East Australia2078.2629.85Polynesia-Micronesia363.8841.59North American Coastal Plain6149.593.70Cape Floristic Region343.506.</description>
+      <description>GBIF organizes and gives statistics for countries and areas, but we do not do a good job of reporting on occurrence data for other areas that might be more biologically relevant or important. Currently the Critical Ecosystem Partnership Fund (CEPF) recognizes 35 biodiversity hotspots.
+For a region to be considered a hotspot it must:
+Contain at least 1,500 endemic species of vascular plants (found nowhere else on Earth).</description>
     </item>
     
     <item>

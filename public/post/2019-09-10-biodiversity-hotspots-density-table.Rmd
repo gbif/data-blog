@@ -1,5 +1,5 @@
 ---
-title: Biodiversity Hotspots Density Table
+title: Biodiversity hotspots and GBIF data
 author: John Waller
 date: '2019-09-10'
 slug: biodiversity-hotspots-density-table
@@ -32,8 +32,32 @@ sequenceDiagrams:
   options: ''
 ---
 
-![](/post/2019-09-10-biodiversity-hotspots-density-table_files/all_regions_map.svg)
+**GBIF** organizes and gives statistics for [countries and areas](https://www.gbif.org/the-gbif-network), but we do not do a good job of reporting on occurrence data for other areas that might be more biologically relevant or important. Currently the [Critical Ecosystem Partnership Fund](https://www.cepf.net) (CEPF) recognizes **35 biodiversity hotspots**. 
 
+>For a region to be considered a **hotspot** it must: 
+>
+> * Contain at least **1,500** endemic species of vascular plants (found nowhere else on Earth).
+> * Have **lost** at least **70 percent** of its primary native vegetation.
+> 
+> A **biodiversity hotspot** by this [definition](https://zenodo.org/record/3261807#.XYCMeigzZaR) is a region that is diverse and under threat. 
+
+Using **vascular plants** as a proxy for total biodiversity is reasonable, because:
+
+1. Vascular plants are a well-studied group [>200 M occurrences](https://www.gbif.org/occurrence/search?taxon_key=7707728) (only birds have more)
+2. Most of the diversity of a region will correlate with its plant diversity 
+
+Below I plot 35 biodiversity hotspots I obtained from this hotspot shapefile [here](https://zenodo.org/record/3261807#.XYCMeigzZaR). I calculate some simple statistics to judge how well the **GBIF network** is doing at collecting data from these areas. 
+
+* **Total Count**: the total number of occurrences records (with coordinates) on GBIF.
+* **Record Density** (on land): number of occurrences / land area of hotspot
+* **Non-bird Density** (on land):	number of not-bird occurrences / land area of hotspot
+* **Record Density** (with water): number of occurrences / total area of hotspot including water
+
+![](/post/2019-09-10-biodiversity-hotspots-density-table_files/all_regions_map.svg)
+<div style="text-align:right;"><sub>
+[jpg](/post/2019-09-10-biodiversity-hotspots-density-table_files/all_regions_map.jpg) | [pdf](/post/2019-09-10-biodiversity-hotspots-density-table_files/all_regions_map.pdf) | [svg](/post/2019-09-10-biodiversity-hotspots-density-table_files/all_regions_map.svg) | [csv](/post/2019-09-10-biodiversity-hotspots-density-table_files/hotspot_density_table.tsv)|
+[shapefile](https://zenodo.org/record/3261807#.XYCl0CgzZaS)
+</div>
 
 ```{R,echo=FALSE,message=FALSE,warning=FALSE}
 
@@ -42,46 +66,114 @@ library(knitr)
 library(dplyr)
 library(formattable)
 library(roperators)
+library(purrr)
+library(ggplot2)
+library(RColorBrewer)
+library(sf)
 
-
-# dt = readRDS(file = "C:/Users/ftw712/Desktop/hotspot_density_table.rda")
+# http://127.0.0.1:4321/post/2019-09-10-biodiversity-hotspots-density-table_files/hotspot_density_table.tsv
 
 dt = readr::read_tsv("C:/Users/ftw712/Desktop/hotspot_density_table.tsv")
+
+map_color = 
+c("#F2D3A0", 
+"#DC587D", 
+"#B4C7BD", 
+"#CE725F", 
+"#AB65A7", 
+"#FAF5B3", 
+"#EEF2B7",
+"#F2CA9D",
+"#EBC6A4",
+"#CF865C",
+"#E34C8C",
+"#D7C5D1",
+"#90ABB5",
+"#9174AE",
+"#E2C4AF",
+"#888986",
+"#BE72AA",
+"#7395B7",
+"#A1856E",
+"#99CE97",
+"#D2DCBA",
+"#E0C7C6",
+"#ABC6B0",
+"#F2E5A4",
+"#E94EA5",
+"#BDBEC8",
+"#BB8257",
+"#D5656E",
+"#7684B5",
+"#A2CAA3",
+"#94867A",
+"#AE8463",
+"#B4C2BC",
+"#F4DEA5")
+
 
 dt = dt %>% 
   mutate(occ_density_land = round(occ_density_land,2)) %>%
   mutate(occ_density_no_birds_land = round(occ_density_no_birds_land,2)) %>%
+  mutate(occ_density_water = round(occ_density_water,2)) %>%
   mutate(occ_count_label = 
   case_when(
   occ_count > 1e6 ~ round(occ_count/1e6,0),
   occ_count > 1e3 ~ round(occ_count/1e3,0),
   TRUE ~ occ_count
-  ))
+  )) %>%
+  mutate(occ_count_letter = 
+  case_when(
+  occ_count > 1e6 ~ "M",
+  occ_count < 1e6 ~ "K"
+  )) %>%
+  arrange(-occ_density_land) %>%
+  mutate(rank = row_number()) %>%
+  mutate(NAME_label = map_chr(NAME,~ paste(stringi::stri_wrap(.x, width=18,whitespace_only=TRUE),collapse="<br>") )) %>%
+  mutate(NAME_label = paste0('<span style="border-bottom: 2px solid ',map_color,'">',NAME_label,'</span>'))
   
-  
-  # filter(Type == "hotspot area")
-
-# glimpse(dt)
 
 
 options(kableExtra.html.bsTable = TRUE)
+options(knitr.kable.NA = '')
 
 dt %>%
-  mutate(NAME = 
-  cell_spec(NAME,
+  mutate(NAME_label = 
+  cell_spec(NAME_label,
   "html",
   escape=FALSE,
   bold=TRUE,
-  link=urls)) %>%
-  select(NAME,occ_count_label,occ_density_land,occ_density_no_birds_land) %>%
+  link=urls,
+  color="#34495E")) %>%
+  select(rank,NAME_label,occ_count_label,occ_count_letter,occ_density_land,occ_density_no_birds_land,occ_density_water) %>%
   arrange(-occ_density_land) %>%
-  kable(format = "html",escape=FALSE) %>%
-  kable_styling(bootstrap_options = c("hover", "condensed"),fixed_thead = TRUE)
-
+  kable(format = "html",escape=FALSE,
+  col.names = c(
+  " ",
+  "Hotspot",
+  "Total Count",
+  " ",
+  "Record Density\n(on land)",
+  "Non-bird Density\n(on land)",
+  "Record Density\n(with water)"
+  )) %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"),fixed_thead = TRUE) %>%
+  column_spec(2,width="15em") 
 
 
 ```
 
+
+# Many hotspots with fewer than 1 record/km<sup>2</sup>
+
+https://www.gbif.org/dataset/0c77bfef-bbbc-43f9-9583-98bd4b9d5b77/project
+https://www.gbif.org/en/dataset/efd8e007-c9ae-4a60-abfc-060c2d760821/project
+
+Here we see that there are many accepted biodiversity hotspots with fewer than 1 occurrence record per km<sup>2</sup>
+
+0.14 Greenland
+0.22 Antartica
+0.80 
 
 
 <!--more-->

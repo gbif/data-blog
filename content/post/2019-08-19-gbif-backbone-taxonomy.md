@@ -18,7 +18,7 @@ tags:
   - Taxon match fuzzy
 lastmod: '2019-09-16'
 draft: yes
-keywords: ['taxonomy', 'backbone', 'Catalogue of Life', 'taxon','otu']
+keywords: ['taxonomy', 'backbone', 'Catalogue of Life', 'taxon']
 description: ''
 comment: no
 toc: ''
