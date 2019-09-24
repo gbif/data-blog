@@ -1,7 +1,7 @@
 ---
 title: Six questions answered about the GBIF Backbone Taxomomy
 author: Marie Grosjean
-date: '2019-09-16'
+date: '2019-09-24'
 slug: gbif-backbone-taxonomy
 categories:
   - GBIF
