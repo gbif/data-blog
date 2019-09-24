@@ -72,7 +72,7 @@ The backbone is built from [other checklists](https://www.gbif.org/dataset/d7ddd
 * 55 authority checklists,
 * a checklist generated from the type specimens shared on GBIF,
 * two large sources for **stable** Operational Taxonomic Units (OTUs): [iBOL Barcode Index Numbers](https://www.gbif.org/dataset/4cec8fef-f129-4966-89b7-4f8439aba058) and the [UNITE Species Hypothesis identifiers](https://www.gbif.org/dataset/61a5f178-b5fb-4484-b6d8-9b129739e59d),
-* and [any checklist shared by PLAZI.org](https://www.gbif.org/publisher/7ce8aef0-9e92-11dc-8738-b8a03c50a862) on GBIF (currently 26,908).
+* and [any checklist shared by PLAZI.org](https://www.gbif.org/publisher/7ce8aef0-9e92-11dc-8738-b8a03c50a862) on GBIF (currently 27,054 but not all these were available when the backbone was generated).
 
 These checklists are [ordered by priority](https://github.com/gbif/checklistbank/blob/master/checklistbank-nub/nub-sources.tsv) starting with the [Catalogue of Life](https://www.catalogueoflife.org). This order is crucial as it shapes the taxonomy.
 
