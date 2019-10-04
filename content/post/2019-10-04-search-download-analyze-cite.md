@@ -2,7 +2,7 @@
 title: Search, download, analyze and cite (repeat if necessary)
 author: Daniel Noesgaard
 date: '2019-10-04'
-slug: when-and-how-to-cite-GBIF-data
+slug: search-download-analyze-cite
 categories: []
 tags:
   - use
