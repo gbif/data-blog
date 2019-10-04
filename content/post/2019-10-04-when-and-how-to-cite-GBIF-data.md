@@ -9,7 +9,7 @@ tags:
   - citation
   - rgbif
   - API
-lastmod: '2018-09-24T09:15:04+02:00'
+lastmod: '2018-09-24T11:35:04+02:00'
 draft: no
 keywords: []
 description: ''
@@ -59,3 +59,28 @@ GBIF provides ready-to-use citations including DOIs for individual datasets ([ex
 However, getting authors and journal editors to comply with this has not been quite as successful. Of said 3941 papers, less than 10 per cent included a DOI in their citation of GBIF-mediated data. What did the rest do? Cue word cloud:
 
 ![word cloud](/post/2019-10-04-when-and-how-to-cite-GBIF-data_files/citation_wordcloud2small.png)
+
+Countless variations of a reference to GBIF—often the GBIF portal—with one single thing in common: Not one of them acknowledges the data publishers whose work their papers rely on.
+
+## The problem
+
+So why are so many authors and/or journal editors getting this wrong? I've been reaching out to quite a few of these and these are some of the responses I get:
+
+> "simply a mistake that was not caught in the proofreading stage..."
+> "very difficult ... putting them all in the references of one paper with limited length would also be impossible"
+> "I dont remember seeing the information about specific DOI when downloading"
+
+etc.
+
+So there's a definitely a human problem here. But to some extent also a technical one that hasn't really been sufficiently addressed.
+
+## Searching for data vs. downloading data
+
+When you go to GBIF.org to get data, the search interface that allows you to select and filter data by taxa, time, geography, etc. is powered by the GBIF search API. This is of course invisible to users of the portal. They will simply do their search and refine filters until the have the data they want—and then download it—ready to use and cite.
+
+A lot of users, however, access data using the search API—either directly or through a third-party tool, like rgbif or pygbif. Because the search API is fast and able to provide most users with all that they _need_, most simply retrieve that data directly without going through the download step. This means they won't have a DOI to cite and there's no persistent record of the data downloaded.
+
+This is a problem because 1) the majority of these API users do not acknowledge the data publishers at all, and 2) their research is often ends up being unreproducible. While the latter is a problem for science, the former is a violation of the GBIF user agreement.
+
+## The solution?
+
