@@ -54,7 +54,7 @@ and also
 
 > comply with the terms and conditions included in the licence selected by each Data Publisher, and the licensing information included with each data download
 
-GBIF provides ready-to-use citations including DOIs for individual datasets ([example](https://www.gbif.org/dataset/50c9509d-22c7-4a22-a47d-8c48425ef4a7#citation)) and for downloads of records from one or more datasets ([example](https://www.gbif.org/occurrence/download/0009471-190918142434337)). In the latter example, an author is able to cite the data in a single reference (i.e. GBIF.org (03 October 2019) GBIF Occurrence Download https://doi.org/10.15468/dl.0cgwkh) even though this download includes data from 22 different datasets/publishers.
+GBIF provides ready-to-use citations including DOIs for individual datasets ([example](https://www.gbif.org/dataset/50c9509d-22c7-4a22-a47d-8c48425ef4a7#citation)) and for downloads of records from one or more datasets ([example](https://www.gbif.org/occurrence/download/0009471-190918142434337)). In the latter example, an author is able to cite the data in a single reference (i.e. _GBIF.org (03 October 2019) GBIF Occurrence Download https://doi.org/10.15468/dl.0cgwkh_) even though this download includes data from 22 different datasets/publishers.
 
 However, getting authors and journal editors to comply with this has not been quite as successful. Of said 3941 papers, less than 10 per cent included a DOI in their citation of GBIF-mediated data. What did the rest do? Cue word cloud:
 
