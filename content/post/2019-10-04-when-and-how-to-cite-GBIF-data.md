@@ -9,7 +9,7 @@ tags:
   - citation
   - rgbif
   - API
-lastmod: '2018-09-24T11:35:04+02:00'
+lastmod: '2018-09-24T09:15:04+02:00'
 draft: no
 keywords: []
 description: ''
@@ -66,8 +66,12 @@ Countless variations of a reference to GBIF—often the GBIF portal—with one s
 
 So why are so many authors and/or journal editors getting this wrong? I've been reaching out to quite a few of these and these are some of the responses I get:
 
+> "we forgot to include the DOI..."
+> 
 > "simply a mistake that was not caught in the proofreading stage..."
+> 
 > "very difficult ... putting them all in the references of one paper with limited length would also be impossible"
+> 
 > "I dont remember seeing the information about specific DOI when downloading"
 
 etc.
