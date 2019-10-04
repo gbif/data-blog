@@ -10,7 +10,7 @@ tags:
   - rgbif
   - API
 lastmod: '2018-09-24T09:15:04+02:00'
-draft: yes
+draft: no
 keywords: []
 description: ''
 comment: no
