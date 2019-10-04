@@ -94,4 +94,4 @@ For API users—with the exception of a very narrow set of use cases— I believ
 
 In practice, this is already very easy to do in e.g. rgbif, as two routes are offered for obtaining occurrence data: occ_search and occ_download. Other tools, however, do not provide this feature, so users need to take extra, sometimes complicated steps to comply with the user agreement.
 
-If an API user is unable or unwilling to go through these steps required to acknowledge data publishers, they should **not** be using the API for getting data. We need to ensure that our guidelines reflect this and that third-party tools highlight that users are responsible for providing due credit to data publishers.
+Bottomline: If an API user is unable or unwilling to go through these steps required to acknowledge data publishers, they should **not** be using the API for getting data. We need to ensure that our guidelines reflect this and that third-party tools highlight that users are responsible for providing due credit to data publishers.
