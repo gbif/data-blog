@@ -88,7 +88,7 @@ This is a problem because 1) the majority of these API users do not acknowledge 
 
 ### The solution?
 
-For users getting data through GBIF.org we need to be better at emphasizing importance of citing the DOI. We will continue to work with authors and journal editors to improve this.
+For users getting data through GBIF.org we need to be better at emphasizing the importance of citing the DOI. We will continue to work with authors and journal editors to improve this.
 
 For API users—with the exception of a very narrow set of use cases— I believe everyone should be able to incorporate a "download" step in their data processing. I'm not advocating against using the API at all, but merely arguing that it makes sense to use the search API for preliminary searches and filter refinement—and then using the download API for finally obtaining the actually data to be analyzed. Or if it's easier to use the data straight from the search API, just do a download with identical filters, log the DOI, and you're set. You don't even have to wait for the download to finish!
 
