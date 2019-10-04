@@ -58,4 +58,4 @@ GBIF provides ready-to-use citations including DOIs for individual datasets ([ex
 
 However, getting authors and journal editors to comply with this has not been quite as successful. Of said 3941 papers, less than 10 per cent included a DOI in their citation of GBIF-mediated data. What did the rest do? Cue word cloud:
 
-![word cloud](/post/2019-10-04-when-and-how-to-cite-GBIF-data_files/citation_wordcloud.png)
+![word cloud](/post/2019-10-04-when-and-how-to-cite-GBIF-data_files/citation_wordcloud2small.png)
