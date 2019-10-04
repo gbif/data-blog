@@ -80,7 +80,7 @@ So there's a definitely a human problem here. But to some extent also a technica
 
 ### Searching for data vs. downloading data
 
-When you go to GBIF.org to get data, the search interface that allows you to select and filter data by taxa, time, geography, etc. is powered by the GBIF search API. This is of course invisible to users of the portal. They will simply do their search and refine filters until the have the data they want—and then download it—ready to use and cite.
+When you go to GBIF.org to get data, the search interface that allows you to select and filter data by taxa, time, geography, etc. is powered by the GBIF search API. This is of course invisible to users of the portal. They will simply do their search and refine filters until they have the data they want—and then download it—ready to use and cite.
 
 A lot of users, however, access data using the search API—either directly or through a third-party tool, like rgbif or pygbif. Because the search API is fast and able to provide most users with all that they _need_, most simply retrieve that data directly without going through the download step. This means they won't have a DOI to cite and there's no persistent record of the data downloaded.
 
