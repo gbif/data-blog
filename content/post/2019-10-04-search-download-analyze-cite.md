@@ -36,11 +36,11 @@ sequenceDiagrams:
 
 There is a lot of GBIF-mediated data available. More than [1.3 B occurrence records](https://www.gbif.org/occurrence/search) covering hundreds of thousands of species in all part of the worlds. All free, open and available at the touch of a button. Users can download data through the GBIF.org portal, via the [GBIF API](https://www.gbif.org/developer/summary), or one of the third-party tools available for programmatic access, e.g. rgbif. 
 
-If there one area in which GBIF has been immensely successful, it's making the data available to users. 
+If there is one area in which GBIF has been immensely successful, it's making the data available to users. 
 
 ### Using data
 
-Data is used a lot, too. One of my responsibilities is to track uses of GBIF-mediated data, especially in scientific literature. This is a somehwat complicated business, explained [elsewhere](https://www.gbif.org/literature-tracking), but as of today (4 October 2019) we've logged [3941](https://www.gbif.org/resource/search?contentType=literature&literatureType=journal&relevance=GBIF_USED&peerReview=true) peer-reviewed journal articles that to some extent rely of GBIF-mediated data to reach their conclusions.
+Data is used a lot, too. One of my responsibilities is to track uses of GBIF-mediated data, especially in scientific literature. This is a somewhat complicated business, explained [elsewhere](https://www.gbif.org/literature-tracking), but as of today (4 October 2019) we've logged [3941](https://www.gbif.org/resource/search?contentType=literature&literatureType=journal&relevance=GBIF_USED&peerReview=true) peer-reviewed journal articles that to some extent rely of GBIF-mediated data to reach their conclusions.
 
 In other words, people are definitely getting the data AND using it in their research.
 
