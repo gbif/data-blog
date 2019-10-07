@@ -33,9 +33,19 @@ What about the developer blog? Currently the developer blog no longer being upda
     </item>
     
     <item>
+      <title>Search, download, analyze and cite (repeat if necessary)</title>
+      <link>/post/search-download-analyze-cite/</link>
+      <pubDate>Fri, 04 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/search-download-analyze-cite/</guid>
+      <description>Finding and accessing data There is a lot of GBIF-mediated data available. More than 1.3 B occurrence records covering hundreds of thousands of species in all part of the worlds. All free, open and available at the touch of a button. Users can download data through the GBIF.org portal, via the GBIF API, or one of the third-party tools available for programmatic access, e.g. rgbif.
+If there is one area in which GBIF has been immensely successful, it&amp;rsquo;s making the data available to users.</description>
+    </item>
+    
+    <item>
       <title>Six questions answered about the GBIF Backbone Taxomomy</title>
       <link>/post/gbif-backbone-taxonomy/</link>
-      <pubDate>Mon, 16 Sep 2019 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 24 Sep 2019 00:00:00 +0000</pubDate>
       
       <guid>/post/gbif-backbone-taxonomy/</guid>
       <description>This past week our informatics team has been updating the Backbone taxonomy on GBIF.org. This is a fairly disruptive process which sometimes involves massive taxonomic changes but DON’T PANIC.

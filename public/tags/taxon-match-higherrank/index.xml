@@ -6,7 +6,7 @@
     <description>Recent content in Taxon match higherrank on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 16 Sep 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 24 Sep 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/taxon-match-higherrank/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Six questions answered about the GBIF Backbone Taxomomy</title>
       <link>/post/gbif-backbone-taxonomy/</link>
-      <pubDate>Mon, 16 Sep 2019 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 24 Sep 2019 00:00:00 +0000</pubDate>
       
       <guid>/post/gbif-backbone-taxonomy/</guid>
       <description>This past week our informatics team has been updating the Backbone taxonomy on GBIF.org. This is a fairly disruptive process which sometimes involves massive taxonomic changes but DON’T PANIC.
