@@ -3,7 +3,8 @@ title: Search, download, analyze and cite (repeat if necessary)
 author: Daniel Noesgaard
 date: '2019-10-04'
 slug: search-download-analyze-cite
-categories: []
+categories: 
+ - GBIF
 tags:
   - use
   - citation
