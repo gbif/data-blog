@@ -1,7 +1,7 @@
 ---
 title: Understanding basis of record - a living specimen becomes a preserved specimen 
 author: John Waller
-date: '2019-09-06'
+date: '2019-10-07'
 slug: living-specimen-to-preserved-specimen-understanding-basis-of-record
 categories:
   - GBIF
@@ -67,7 +67,7 @@ redpandacat [record](https://www.gbif.org/occurrence/2311336698) CC BY-NC-SA 4.0
 </div>
 </div>
 
-The Asian Red Panda the user [found](https://www.gbif.org/occurrence/1702720584) in the United States was labeled as a **preserved specimen** because it had been collected in the United States from a zoo. So the red panda really was from the United States!
+The Asian Red Panda the user [found](https://www.gbif.org/occurrence/1702720584) in the United States was labeled as a **preserved specimen** because it had been collected in the United States from a zoo. So the red panda really was from the **United States**!
 
 > **occurrence record ID**: [1702720584](https://www.gbif.org/occurrence/1702720584) <br>
 > **Locality**: Seattle; Woodland Park **Zoo**<br>
@@ -76,7 +76,9 @@ The Asian Red Panda the user [found](https://www.gbif.org/occurrence/1702720584)
 
 <img width="100%" src="/post/2019-09-06-living-specimen-to-preserved-specimen-understanding-basis-of-record_files/occPage1.png"></img>
 
-Such edged cases are difficult to filter using **basis of record** only. Probably the best way to filter these cases would be to filter any record that has "Zoo" or "Botanical Garden" in the **verbatim locality** column, although this would require downloading the larger **Darwin Core Files**. Perhaps in the future GBIF should consider flagging records that occur near zoos or botanical gardens. 
+Such edged cases are difficult to filter using **basis of record** only. Probably the best way to filter these cases would be to filter any record that has "Zoo" or "Botanical Garden" in the **verbatim locality** column, although this would require downloading the larger **Darwin Core Files**. 
+
+> Perhaps in the future GBIF should consider flagging records that occur near zoos or botanical gardens. 
 
 <img width="100%" src="/post/2019-09-06-living-specimen-to-preserved-specimen-understanding-basis-of-record_files/downloadOptions.png"></img>
 

@@ -24,6 +24,15 @@ What about the developer blog? Currently the developer blog no longer being upda
     </item>
     
     <item>
+      <title>Understanding basis of record - a living specimen becomes a preserved specimen</title>
+      <link>/post/living-specimen-to-preserved-specimen-understanding-basis-of-record/</link>
+      <pubDate>Mon, 07 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/living-specimen-to-preserved-specimen-understanding-basis-of-record/</guid>
+      <description>Recently a user noticed that there were Asian Red Pandas (Ailuridae) occurring in North America, and wondered if someone had made a mistake. When an occurrence observation comes from a zoo or botanical garden, it is usually considered a living specimen, but when it comes from a museum it is usually called a preserved specimen. This label helps users remove records that they might not want, which come from zoos.</description>
+    </item>
+    
+    <item>
       <title>Six questions answered about the GBIF Backbone Taxomomy</title>
       <link>/post/gbif-backbone-taxonomy/</link>
       <pubDate>Mon, 16 Sep 2019 00:00:00 +0000</pubDate>
@@ -42,15 +51,6 @@ This update is a good thing. It means that some of the taxonomic issues reported
       <description>GBIF organizes and gives statistics for countries and areas, but we do not do a good job of reporting on occurrence data for other areas that might be more biologically relevant or important. Currently the Critical Ecosystem Partnership Fund (CEPF) recognizes 35 biodiversity hotspots.
 For a region to be considered a hotspot it must:
 Contain at least 1,500 endemic species of vascular plants (found nowhere else on Earth).</description>
-    </item>
-    
-    <item>
-      <title>Understanding basis of record - a living specimen becomes a preserved specimen</title>
-      <link>/post/living-specimen-to-preserved-specimen-understanding-basis-of-record/</link>
-      <pubDate>Fri, 06 Sep 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/living-specimen-to-preserved-specimen-understanding-basis-of-record/</guid>
-      <description>Recently a user noticed that there were Asian Red Pandas (Ailuridae) occurring in North America, and wondered if someone had made a mistake. When an occurrence observation comes from a zoo or botanical garden, it is usually considered a living specimen, but when it comes from a museum it is usually called a preserved specimen. This label helps users remove records that they might not want, which come from zoos.</description>
     </item>
     
     <item>

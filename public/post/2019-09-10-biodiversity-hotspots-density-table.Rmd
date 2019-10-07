@@ -71,9 +71,50 @@ library(ggplot2)
 library(RColorBrewer)
 library(sf)
 
-# http://127.0.0.1:4321/post/2019-09-10-biodiversity-hotspots-density-table_files/hotspot_density_table.tsv
+# url = "http://127.0.0.1:4321/post/2019-09-10-biodiversity-hotspots-density-table_files/hotspot_density_table.tsv"
 
+# dt = readr::read_tsv(url)
 dt = readr::read_tsv("C:/Users/ftw712/Desktop/hotspot_density_table.tsv")
+
+
+hotspot_colors_tribble = tibble::tribble(
+~hotspots,   ~colors,
+"California Floristic Province", "#F2D3A0",
+"Forests of East Australia", "#DC587D",
+"Polynesia-Micronesia", "#B4C7BD",
+"North American Coastal Plain", "#CE725F",
+"Cape Floristic Region", "#AB65A7",
+"New Caledonia", "#FAF5B3",
+"New Zealand", "#EEF2B7",
+"Mesoamerica", "#F2CA9D",
+"Mediterranean Basin", "#EBC6A4",
+"Caribbean Islands", "#CF865C",
+"Western Ghats and Sri Lanka", "#E34C8C",
+"Japan", "#D7C5D1",
+"Southwest Australia", "#90ABB5",
+"Tropical Andes", "#9174AE",
+"Madrean Pine-Oak Woodlands", "#E2C4AF",
+"East Melanesian Islands", "#888986",
+"Tumbes-Choco-Magdalena", "#BE72AA",
+"Succulent Karoo", "#7395B7",
+"Chilean Winter Rainfall and Valdivian Forests", "#A1856E",
+"Atlantic Forest", "#99CE97",
+"Philippines", "#D2DCBA",
+"Madagascar and the Indian Ocean Islands", "#E0C7C6",
+"Himalaya", "#ABC6B0",
+"Mountains of Southwest China", "#F2E5A4",
+"Wallacea", "#E94EA5",
+"Indo-Burma", "#BDBEC8",
+"Caucasus", "#BB8257",
+"Eastern Afromontane", "#D5656E",
+"Sundaland", "#7684B5",
+"Guinean Forests of West Africa", "#A2CAA3",
+"Coastal Forests of Eastern Africa", "#94867A",
+"Cerrado", "#AE8463",
+"Irano-Anatolian", "#C6BBD1",
+"Horn of Africa", "#B4C2BC",
+"Mountains of Central Asia", "#F4DEA4"
+)
 
 map_color = 
 c("#F2D3A0", 
@@ -130,50 +171,51 @@ dt = dt %>%
   arrange(-occ_density_land) %>%
   mutate(rank = row_number()) %>%
   mutate(NAME_label = map_chr(NAME,~ paste(stringi::stri_wrap(.x, width=18,whitespace_only=TRUE),collapse="<br>") )) %>%
-  mutate(NAME_label = paste0('<span style="border-bottom: 2px solid ',map_color,'">',NAME_label,'</span>'))
-  
+  mutate(NAME_label = paste0('<span style="border-bottom: 2px solid ',map_color,'">',NAME_label,'</span>')) %>%
+  mutate(link_to_gbif_data="click me")
 
 
 options(kableExtra.html.bsTable = TRUE)
 options(knitr.kable.NA = '')
 
 dt %>%
-  mutate(NAME_label = 
+mutate(link_to_gbif_data = 
+  cell_spec(link_to_gbif_data,
+  "html",
+  escape=FALSE,
+  bold=FALSE,
+  link=urls,
+  color="#34495E")) %>%  
+mutate(NAME_label = 
   cell_spec(NAME_label,
   "html",
   escape=FALSE,
   bold=TRUE,
   link=urls,
   color="#34495E")) %>%
-  select(rank,NAME_label,occ_count_label,occ_count_letter,occ_density_land,occ_density_no_birds_land,occ_density_water) %>%
+  select(rank,NAME_label,occ_count_label,occ_count_letter,occ_density_land,occ_density_no_birds_land,link_to_gbif_data) %>%
   arrange(-occ_density_land) %>%
   kable(format = "html",escape=FALSE,
   col.names = c(
   " ",
   "Hotspot",
+  
   "Total Count",
   " ",
   "Record Density\n(on land)",
   "Non-bird Density\n(on land)",
-  "Record Density\n(with water)"
+  "link to data"
   )) %>%
   kable_styling(bootstrap_options = c("hover", "condensed"),fixed_thead = TRUE) %>%
+  pack_rows("<div style='text-align: center;'>All below have a record density less than Iceland 12.38</div>",7, 6,escape=FALSE,bold=FALSE) %>%
+  pack_rows("<div style='text-align: center;'>All below have a record density less than Antartica 0.22</div>",31, 32,escape=FALSE,bold=FALSE,hline_before=TRUE) %>%
   column_spec(2,width="15em") 
 
 
 ```
 
 
-# Many hotspots with fewer than 1 record/km<sup>2</sup>
-
-https://www.gbif.org/dataset/0c77bfef-bbbc-43f9-9583-98bd4b9d5b77/project
-https://www.gbif.org/en/dataset/efd8e007-c9ae-4a60-abfc-060c2d760821/project
-
-Here we see that there are many accepted biodiversity hotspots with fewer than 1 occurrence record per km<sup>2</sup>
-
-0.14 Greenland
-0.22 Antartica
-0.80 
+# 
 
 
 <!--more-->
