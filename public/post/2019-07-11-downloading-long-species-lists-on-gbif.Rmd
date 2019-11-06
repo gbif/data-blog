@@ -250,7 +250,7 @@ create_download_given_query(login, password, download_query)
 
 # Acknowledgements 
 
-GBIF thanks the project [Tracking Invasive Alien Species(TrIAS)](https://www.gbif.org/network/b153643d-735a-440f-a0e9-428b4f9d1cd2) for funding the work required to provide these enhancements to all users of GBIF. TrIAS is a Belgian open science project that makes extensive use of GBIF services, see e.g. the [methodology for their national checklist of alien species](https://www.gbif.org/dataset/6d9e952f-948c-4483-9807-575348147c7e#methodology).
+GBIF thanks the project [Tracking Invasive Alien Species (TrIAS)](https://www.gbif.org/network/b153643d-735a-440f-a0e9-428b4f9d1cd2) for funding the work required to provide these enhancements to all users of GBIF. TrIAS is a Belgian open science project that makes extensive use of GBIF services, see e.g. the [methodology for their national checklist of alien species](https://www.gbif.org/dataset/6d9e952f-948c-4483-9807-575348147c7e#methodology).
 
 
 <!--more-->
