@@ -6,10 +6,21 @@
     <description>Recent content in John Waller on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 07 Oct 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 14 Nov 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/author/john-waller/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Biodiversity hotspots and GBIF data</title>
+      <link>/post/biodiversity-hotspots-density-table/</link>
+      <pubDate>Thu, 14 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/biodiversity-hotspots-density-table/</guid>
+      <description>GBIF organizes and gives statistics for countries and areas, but we do not do a good job of reporting on occurrence data for other areas that might be more biologically relevant or important. Currently the Critical Ecosystem Partnership Fund (CEPF) recognizes 35 biodiversity hotspots.
+For a region to be considered a hotspot it must:
+Contain at least 1,500 endemic species of vascular plants (found nowhere else on Earth).</description>
+    </item>
     
     <item>
       <title>Understanding basis of record - a living specimen becomes a preserved specimen</title>
@@ -18,17 +29,6 @@
       
       <guid>/post/living-specimen-to-preserved-specimen-understanding-basis-of-record/</guid>
       <description>Recently a user noticed that there were Asian Red Pandas (Ailuridae) occurring in North America, and wondered if someone had made a mistake. When an occurrence observation comes from a zoo or botanical garden, it is usually considered a living specimen, but when it comes from a museum it is usually called a preserved specimen. This label helps users remove records that they might not want, which come from zoos.</description>
-    </item>
-    
-    <item>
-      <title>Biodiversity hotspots and GBIF data</title>
-      <link>/post/biodiversity-hotspots-density-table/</link>
-      <pubDate>Tue, 10 Sep 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/biodiversity-hotspots-density-table/</guid>
-      <description>GBIF organizes and gives statistics for countries and areas, but we do not do a good job of reporting on occurrence data for other areas that might be more biologically relevant or important. Currently the Critical Ecosystem Partnership Fund (CEPF) recognizes 35 biodiversity hotspots.
-For a region to be considered a hotspot it must:
-Contain at least 1,500 endemic species of vascular plants (found nowhere else on Earth).</description>
     </item>
     
     <item>

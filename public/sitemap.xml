@@ -10,6 +10,13 @@
   </url>
   
   <url>
+    <loc>/post/biodiversity-hotspots-density-table/</loc>
+    <lastmod>2019-09-10T13:55:38+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>/post/living-specimen-to-preserved-specimen-understanding-basis-of-record/</loc>
     <lastmod>2019-09-06T10:40:05+02:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -26,13 +33,6 @@
   <url>
     <loc>/post/gbif-backbone-taxonomy/</loc>
     <lastmod>2019-09-24T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>/post/biodiversity-hotspots-density-table/</loc>
-    <lastmod>2019-09-10T13:55:38+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -344,15 +344,15 @@
   </url>
   
   <url>
-    <loc>/categories/gbif/</loc>
-    <lastmod>2019-09-06T10:40:05+02:00</lastmod>
+    <loc>/tags/gbif/</loc>
+    <lastmod>2019-09-24T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/gbif/</loc>
-    <lastmod>2019-09-24T00:00:00+00:00</lastmod>
+    <loc>/categories/gbif/</loc>
+    <lastmod>2019-09-10T13:55:38+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -429,7 +429,7 @@
   
   <url>
     <loc>/author/john-waller/</loc>
-    <lastmod>2019-09-06T10:40:05+02:00</lastmod>
+    <lastmod>2019-09-10T13:55:38+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -513,7 +513,7 @@
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2019-09-06T10:40:05+02:00</lastmod>
+    <lastmod>2019-09-10T13:55:38+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -610,14 +610,14 @@
   </url>
   
   <url>
-    <loc>/categories/taxonomy/</loc>
+    <loc>/tags/taxonomy/</loc>
     <lastmod>2019-09-24T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/taxonomy/</loc>
+    <loc>/categories/taxonomy/</loc>
     <lastmod>2019-09-24T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>

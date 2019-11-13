@@ -6,7 +6,7 @@
     <description>Recent content in Data gaps on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 10 Sep 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 14 Nov 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/data-gaps/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Biodiversity hotspots and GBIF data</title>
       <link>/post/biodiversity-hotspots-density-table/</link>
-      <pubDate>Tue, 10 Sep 2019 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 14 Nov 2019 00:00:00 +0000</pubDate>
       
       <guid>/post/biodiversity-hotspots-density-table/</guid>
       <description>GBIF organizes and gives statistics for countries and areas, but we do not do a good job of reporting on occurrence data for other areas that might be more biologically relevant or important. Currently the Critical Ecosystem Partnership Fund (CEPF) recognizes 35 biodiversity hotspots.
