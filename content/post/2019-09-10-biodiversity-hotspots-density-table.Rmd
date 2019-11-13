@@ -49,9 +49,9 @@ Using **vascular plants** as a proxy for total biodiversity is reasonable, becau
 Below I plot 35 biodiversity hotspots I obtained from this hotspot shapefile [here](https://zenodo.org/record/3261807#.XYCMeigzZaR). I calculate some simple statistics to judge how well the **GBIF network** is doing at collecting data from these areas. 
 
 * **Total Count**: the total number of occurrences records (with coordinates) on GBIF.
-* **Record Density** (on land): number of occurrences / land area of hotspot
-* **Non-bird Density** (on land):	number of not-bird occurrences / land area of hotspot
-* **Record Density** (with water): number of occurrences / total area of hotspot including water
+* **Record Density** (on land): number of occurrences / land area (km2) of hotspot
+* **Non-bird Density** (on land):	number of not-bird occurrences / land area (km2) of hotspot
+* **Record Density** (with water): number of occurrences / total area (km2) of hotspot including water
 
 ![](/post/2019-09-10-biodiversity-hotspots-density-table_files/all_regions_map.svg)
 <div style="text-align:right;"><sub>
@@ -215,7 +215,9 @@ mutate(NAME_label =
 ```
 
 
-# 
+# Other hotspots
+
+These hotspots are not the only interesting places. Other places like the The [WWF Global 200 project](https://www.worldwildlife.org/publications/global-200) or similarly the [world protected areas](https://www.protectedplanet.net/) might also be interesting polygons for GBIF to report on.
 
 
 <!--more-->
