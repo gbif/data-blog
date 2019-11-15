@@ -51,7 +51,6 @@ Below I plot 35 biodiversity hotspots I obtained from this hotspot shapefile [he
 * **Total Count**: the total number of occurrences records (with coordinates) on GBIF.
 * **Record Density** (on land): number of occurrences / land area (km2) of hotspot
 * **Non-bird Density** (on land):	number of not-bird occurrences / land area (km2) of hotspot
-* **Record Density** (with water): number of occurrences / total area (km2) of hotspot including water
 
 ![](/post/2019-09-10-biodiversity-hotspots-density-table_files/all_regions_map.svg)
 <div style="text-align:right;"><sub>
