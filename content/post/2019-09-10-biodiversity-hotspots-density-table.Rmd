@@ -207,8 +207,7 @@ mutate(NAME_label =
   "link to data"
   )) %>%
   kable_styling(bootstrap_options = c("hover", "condensed"),fixed_thead = TRUE) %>%
-  pack_rows("<div style='text-align: center;'>All below have a record density less than Iceland 12.38</div>",7, 6,escape=FALSE,bold=FALSE) %>%
-  pack_rows("<div style='text-align: center;'>All below have a record density less than Antartica 0.22</div>",31, 32,escape=FALSE,bold=FALSE,hline_before=TRUE) %>%
+  pack_rows("<div style='text-align: center;'>All below have a record density less than Iceland 12.38</div>",11, 12,escape=FALSE,bold=FALSE) %>%
   column_spec(2,width="15em") 
 
 
