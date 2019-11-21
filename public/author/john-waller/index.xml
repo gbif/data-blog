@@ -12,14 +12,14 @@
     
     
     <item>
-      <title>Biodiversity hotspots and GBIF data</title>
+      <title>Biodiversity hotspot polygons and GBIF data</title>
       <link>/post/biodiversity-hotspots-density-table/</link>
       <pubDate>Thu, 14 Nov 2019 00:00:00 +0000</pubDate>
       
       <guid>/post/biodiversity-hotspots-density-table/</guid>
-      <description>GBIF organizes and gives statistics for countries and areas, but we do not do a good job of reporting on occurrence data for other areas that might be more biologically relevant or important. Currently the Critical Ecosystem Partnership Fund (CEPF) recognizes 35 biodiversity hotspots.
-For a region to be considered a hotspot it must:
-Contain at least 1,500 endemic species of vascular plants (found nowhere else on Earth).</description>
+      <description>Idea Post
+GBIF organizes and gives statistics for countries and areas, but we do not report on occurrence data for other areas that might be more biologically relevant or important. Should GBIF be doing this? This blog post represents what such reporting might look like if it were done. Currently GBIF has no plans to start doing such reporting.
+Currently the Critical Ecosystem Partnership Fund (CEPF) recognizes these biodiversity hotspots.</description>
     </item>
     
     <item>
