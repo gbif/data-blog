@@ -1,7 +1,7 @@
 ---
 title: How to choose a dataset class on GBIF?
 author: Marie Grosjean
-date: '1990-12-05'
+date: '2019-12-04'
 slug: choose-dataset-type
 categories:
   - GBIF
@@ -16,7 +16,7 @@ tags:
   - dataset type
   - dataset classes
   - metadata
-lastmod: '2019-12-05'
+lastmod: '2019-12-04'
 draft: no
 keywords: ['dataset', 'metadata', 'checklist', 'occurrence', 'sampling-event']
 description: ''
@@ -24,7 +24,7 @@ comment: no
 toc: ''
 autoCollapseToc: no
 postMetaInFooter: no
-hiddenFromHomePage: yes
+hiddenFromHomePage: no
 contentCopyright: no
 reward: no
 mathjax: no
