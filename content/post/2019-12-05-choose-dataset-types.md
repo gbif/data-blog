@@ -60,6 +60,7 @@ The first step to help you choose a dataset type is to ask yourself the right qu
 
 ![5 questions to choos a dataset type](/post/2019-12-05-choose-dataset-types/which_dataset_type_to_choose_questions.jpg)
 
+Note that this is a little bit more complex than that when extensions are taken into account. For example, checklists can contain occurrences. However, I won't dive into the details here as this could be the topic of an other blogpost.
 
 # Data quality requirements associated with each class
 
@@ -76,12 +77,12 @@ That being said, the schema below summarizes the information required for each c
 
 This type of datasets contain the most information and is therefore the most valuable for the community. We have an [introduction page](https://www.gbif.org/sampling-event-data) on the topic. If you are considering publishing sampling-events, this is a good place to start but I will make an even shorter introduction here.
 
-Sampling-event datasets can seem a bit more complicated that other datasets with because they need two files:
+Sampling-event datasets can seem a bit more complicated than other datasets because they need two files:
 
-* One discribing events
+* One describing events
 * One describing the occurrences associated with each event
 
-Each occurrence is link to its event thanks to the [eventID](https://dwc.tdwg.org/terms/#dwc:eventID) columns.
+Each occurrence is linked to its event thanks to the [eventID](https://dwc.tdwg.org/terms/#dwc:eventID) columns.
 The example below illustrates how sampling-event datasets are structured.
 
 ![Sampling-event dataset example](/post/2019-12-05-choose-dataset-types/schema_sampling_event.jpg)
