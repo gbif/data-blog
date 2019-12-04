@@ -60,7 +60,7 @@ The first step to help you choose a dataset type is to ask yourself the right qu
 
 ![5 questions to choos a dataset type](/post/2019-12-05-choose-dataset-types/which_dataset_type_to_choose_questions.jpg)
 
-Note that this is a little bit more complex than that when extensions are taken into account. For example, checklists can contain occurrences. However, I won't dive into the details here as this could be the topic of an other blogpost.
+Note that this is a little bit more complex than that when extensions are taken into account. For example, checklists can contain occurrences. However, I won't dive into the details here as this could be the topic of another blogpost.
 
 # Data quality requirements associated with each class
 
