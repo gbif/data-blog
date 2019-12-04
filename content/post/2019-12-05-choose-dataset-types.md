@@ -58,7 +58,7 @@ In other words, the distinction between the different classes is not always very
 
 The first step to help you choose a dataset type is to ask yourself the right questions. The five questions below might not cover every single case but I hope it can help most of you:
 
-![5 questions to choos a dataset type](https://github.com/gbif/data-blog/blob/master/content/post/2019-12-05-choose-dataset-types/which_dataset_type_to_choose_questions.jpg)
+![5 questions to choos a dataset type](http://github.com/gbif/data-blog/blob/master/content/post/2019-12-05-choose-dataset-types/which_dataset_type_to_choose_questions.jpg)
 
 
 # Data quality requirements associated with each class
@@ -69,7 +69,7 @@ These requirements are detailed on our [Data quality requirements](https://www.g
 
 That being said, the schema below summarizes the information required for each classes:
 
-![Dataset classes and requirements](https://github.com/gbif/data-blog/blob/master/content/post/2019-12-05-choose-dataset-types/dataset_classes_and_requirements.jpg)
+![Dataset classes and requirements](http://github.com/gbif/data-blog/blob/master/content/post/2019-12-05-choose-dataset-types/dataset_classes_and_requirements.jpg)
 
 
 # Sampling-event datasets
@@ -84,7 +84,7 @@ Sampling-event datasets can seem a bit more complicated that other datasets with
 Each occurrence is link to its event thanks to the [eventID](https://dwc.tdwg.org/terms/#dwc:eventID) columns.
 The example below illustrates how sampling-event datasets are structured.
 
-![Sampling-event dataset example](https://github.com/gbif/data-blog/blob/master/content/post/2019-12-05-choose-dataset-types/schema_sampling_event.jpg)
+![Sampling-event dataset example](http://github.com/gbif/data-blog/blob/master/content/post/2019-12-05-choose-dataset-types/schema_sampling_event.jpg)
 
 # Conclusion
 
