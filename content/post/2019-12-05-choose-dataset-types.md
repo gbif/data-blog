@@ -41,7 +41,7 @@ sequenceDiagrams:
 
 If you are a (first time) publisher on GBIF and you are trying to decide which type of dataset would best fit your data, this blogpost is for you.
 
-All the records shared on GBIF are organized into datasets. Each dataset is associated with some metadata decribing its content (the classic "what, where, when, how"). The dataset's content depends strongly on the dataset's class. GBIF currently support four types of dataset:
+All the records shared on GBIF are organized into datasets. Each dataset is associated with some metadata describing its content (the classic "what, where, when, how"). The dataset's content depends strongly on the dataset's class. GBIF currently support four types of dataset:
 
 * Resouce datasets (e.g. metadata-only datasets)
 * Checklists
