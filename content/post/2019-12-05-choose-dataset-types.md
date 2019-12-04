@@ -63,7 +63,7 @@ The first step to help you choose a dataset type is to ask yourself the right qu
 
 # Data quality requirements associated with each class
 
-The data quality requirements describe what you should provide for each dataset class. It doesn't mean that the data won't be indexed if some values are missing, but these requirements summerize what can be considered meaningful information for each class.
+The data quality requirements describe what you should provide for each dataset class. It doesn't mean that the data won't be indexed if some values are missing, but these requirements summarize what can be considered meaningful information for each class.
 
 These requirements are detailed on our [Data quality requirements](https://www.gbif.org/data-quality-requirements) pages. I strongly suggest that you consult these pages before sharing data on GBIF.
 
