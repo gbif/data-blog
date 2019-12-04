@@ -74,7 +74,7 @@ That being said, the schema below summarizes the information required for each c
 
 # Sampling-event datasets
 
-This type of datasets contain the most information and is therefore the most valuable for the community. We have an [introduction page](https://www.gbif.org/sampling-event-data) on the topic. If you are considering publishing sampling-events, this is a good place to start but I will make an even smaller shorter introduction here.
+This type of datasets contain the most information and is therefore the most valuable for the community. We have an [introduction page](https://www.gbif.org/sampling-event-data) on the topic. If you are considering publishing sampling-events, this is a good place to start but I will make an even shorter introduction here.
 
 Sampling-event datasets can seem a bit more complicated that other datasets with because they need two files:
 
