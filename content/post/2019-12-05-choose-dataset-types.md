@@ -43,12 +43,12 @@ If you are a (first time) publisher on GBIF and you are trying to decide which t
 
 All the records shared on GBIF are organized into datasets. Each dataset is associated with some metadata describing its content (the classic "what, where, when, how"). The dataset's content depends strongly on the dataset's class. GBIF currently support four types of dataset:
 
-* Resouce datasets (e.g. metadata-only datasets)
+* Resource datasets (e.g. metadata-only datasets)
 * Checklists
 * Occurrence datasets
 * Sampling-event datasets
 
-These classes are discribed in detail on our [Dataset classes page](https://www.gbif.org/dataset-classes) along with links to examples and documenation. As mentioned on this page:
+These classes are described in detail on our [Dataset classes page](https://www.gbif.org/dataset-classes) along with links to examples and documentation. As mentioned on this page:
 
 > The four classes of datasets supported by GBIF start simply and become progressively richer, more structured and more complex.
 
