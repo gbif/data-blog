@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Metadata on GBIF Data Blog</title>
+    <link>/tags/metadata/</link>
+    <description>Recent content in Metadata on GBIF Data Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 04 Dec 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/metadata/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to choose a dataset class on GBIF?</title>
+      <link>/post/choose-dataset-type/</link>
+      <pubDate>Wed, 04 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/choose-dataset-type/</guid>
+      <description>If you are a (first time) publisher on GBIF and you are trying to decide which type of dataset would best fit your data, this blogpost is for you.
+All the records shared on GBIF are organized into datasets. Each dataset is associated with some metadata describing its content (the classic &amp;ldquo;what, where, when, why, how&amp;rdquo;). The dataset&amp;rsquo;s content depends strongly on the dataset&amp;rsquo;s class. GBIF currently support four types of dataset:</description>
+    </item>
+    
+  </channel>
+</rss>

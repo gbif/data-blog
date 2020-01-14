@@ -6,10 +6,30 @@
     <description>Recent content in GBIF on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 14 Nov 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 08 Jan 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/gbif/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Metagenomics Occurrences on GBIF</title>
+      <link>/post/metagenomics-occurrences-on-gbif/</link>
+      <pubDate>Wed, 08 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/metagenomics-occurrences-on-gbif/</guid>
+      <description>Most mgnify occurrences are bacteria at the genus levelBut there are other like &amp;gt;100K occurrunces of plants and animals matched to the species rank. There has been some dicussion that these type of matches might be un-reliable.
+Since it is hard to tell if something simply labeled “Reptile”, “Mammal”, or “Vascular Plant”, but not resolved to a lower level is a legitimate occurrence, I will be focusing mostly on occurrences resovled to the species level.</description>
+    </item>
+    
+    <item>
+      <title>How to choose a dataset class on GBIF?</title>
+      <link>/post/choose-dataset-type/</link>
+      <pubDate>Wed, 04 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/choose-dataset-type/</guid>
+      <description>If you are a (first time) publisher on GBIF and you are trying to decide which type of dataset would best fit your data, this blogpost is for you.
+All the records shared on GBIF are organized into datasets. Each dataset is associated with some metadata describing its content (the classic &amp;ldquo;what, where, when, why, how&amp;rdquo;). The dataset&amp;rsquo;s content depends strongly on the dataset&amp;rsquo;s class. GBIF currently support four types of dataset:</description>
+    </item>
     
     <item>
       <title>Biodiversity hotspot polygons and GBIF data</title>

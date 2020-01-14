@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>How to choose a dataset class on GBIF? - GBIF Data Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Marie Grosjean" />
+  <meta name="description" content="If you are a (first time) publisher on GBIF and you are trying to decide which type of dataset would best fit your data, this blogpost is for you.
+All the records shared on GBIF are organized into datasets. Each dataset is associated with some metadata describing its content (the classic &amp;ldquo;what, where, when, why, how&amp;rdquo;). The dataset&amp;rsquo;s content depends strongly on the dataset&amp;rsquo;s class. GBIF currently support four types of dataset:" />
+<meta name="keywords" content="dataset, metadata, checklist, occurrence, sampling-event" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.42" />
+
+
+<link rel="canonical" href="/post/choose-dataset-type/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.2.0" rel="stylesheet">
+
+
+
+
+<link rel="stylesheet" href="/css//custom.css">
+
+
+<meta property="og:title" content="How to choose a dataset class on GBIF?" />
+<meta property="og:description" content="If you are a (first time) publisher on GBIF and you are trying to decide which type of dataset would best fit your data, this blogpost is for you.
+All the records shared on GBIF are organized into datasets. Each dataset is associated with some metadata describing its content (the classic &ldquo;what, where, when, why, how&rdquo;). The dataset&rsquo;s content depends strongly on the dataset&rsquo;s class. GBIF currently support four types of dataset:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/choose-dataset-type/" />
+
+
+
+<meta property="article:published_time" content="2019-12-04T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2019-12-04T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="How to choose a dataset class on GBIF?">
+<meta itemprop="description" content="If you are a (first time) publisher on GBIF and you are trying to decide which type of dataset would best fit your data, this blogpost is for you.
+All the records shared on GBIF are organized into datasets. Each dataset is associated with some metadata describing its content (the classic &ldquo;what, where, when, why, how&rdquo;). The dataset&rsquo;s content depends strongly on the dataset&rsquo;s class. GBIF currently support four types of dataset:">
+
+
+<meta itemprop="datePublished" content="2019-12-04T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-12-04T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="469">
+
+
+
+<meta itemprop="keywords" content="publish,GBIF,checklist,occurrence,sampling-event,dataset,dataset type,dataset classes,metadata," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="How to choose a dataset class on GBIF?"/>
+<meta name="twitter:description" content="If you are a (first time) publisher on GBIF and you are trying to decide which type of dataset would best fit your data, this blogpost is for you.
+All the records shared on GBIF are organized into datasets. Each dataset is associated with some metadata describing its content (the classic &ldquo;what, where, when, why, how&rdquo;). The dataset&rsquo;s content depends strongly on the dataset&rsquo;s class. GBIF currently support four types of dataset:"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">GBIF Data Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/categories/gbif/">
+        <li class="mobile-menu-item">posts</li>
+      </a><a href="https://discourse.gbif.org/c/data-blog">
+        <li class="mobile-menu-item">community-forum</li>
+      </a><a href="https://www.gbif.org/">
+        <li class="mobile-menu-item">gbif.org</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">about</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">
+	<img src= "/logo.png" alt="GBIF-analytics-blog" style ="width:20%;">
+  </a>
+  
+	
+  
+  
+</div>
+
+<nav class="site-navbar">
+
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/categories/gbif/">posts</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://discourse.gbif.org/c/data-blog">community-forum</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://www.gbif.org/">gbif.org</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">about</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+	
+    <header class="post-header">
+      <h1 class="post-title">How to choose a dataset class on GBIF?</h1>
+	  
+	  
+      <div class="post-author">Marie Grosjean</div>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-12-04 </span>
+        <div class="post-category">
+            
+              <a href="/categories/gbif/"> GBIF </a>
+            
+              <a href="/categories/publishing/"> Publishing </a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    
+    
+
+    
+    <div class="post-content">
+      
+
+<p>If you are a (first time) publisher on GBIF and you are trying to decide which type of dataset would best fit your data, this blogpost is for you.</p>
+
+<p>All the records shared on GBIF are organized into datasets. Each dataset is associated with some metadata describing its content (the classic &ldquo;what, where, when, why, how&rdquo;). The dataset&rsquo;s content depends strongly on the dataset&rsquo;s class. GBIF currently support four types of dataset:</p>
+
+<ul>
+<li>Resource datasets (e.g. metadata-only datasets)</li>
+<li>Checklists</li>
+<li>Occurrence datasets</li>
+<li>Sampling-event datasets</li>
+</ul>
+
+<p>These classes are described in detail on our <a href="https://www.gbif.org/dataset-classes">Dataset classes page</a> along with links to examples and documentation. As mentioned on this page:</p>
+
+<blockquote>
+<p>The four classes of datasets supported by GBIF start simply and become progressively richer, more structured and more complex.</p>
+</blockquote>
+
+<p>In other words, the distinction between the different classes is not always very obvious. This is why I tried to put together a quick guide to help you choose the class that fits best your data.</p>
+
+<h1 id="five-questions-to-help-you-decide">Five questions to help you decide</h1>
+
+<p>The first step to help you choose a dataset type is to ask yourself the right questions. The five questions below might not cover every single case but I hope it can help most of you:</p>
+
+<p><img src="/post/2019-12-05-choose-dataset-types/which_dataset_type_to_choose_questions.jpg" alt="5 questions to choos a dataset type" /></p>
+
+<p>Note that this is a little bit more complex than that when extensions are taken into account. For example, checklists can contain occurrences. However, I won&rsquo;t dive into the details here as this could be the topic of another blogpost.</p>
+
+<h1 id="data-quality-requirements-associated-with-each-class">Data quality requirements associated with each class</h1>
+
+<p>The data quality requirements describe what you should provide for each dataset class. It doesn&rsquo;t mean that the data won&rsquo;t be indexed if some values are missing, but these requirements summarize what can be considered meaningful information for each class.</p>
+
+<p>These requirements are detailed on our <a href="https://www.gbif.org/data-quality-requirements">Data quality requirements</a> pages. I strongly suggest that you consult these pages before sharing data on GBIF.</p>
+
+<p>That being said, the schema below summarizes the information required for each classes:</p>
+
+<p><img src="/post/2019-12-05-choose-dataset-types/dataset_classes_and_requirements.jpg" alt="Dataset classes and requirements" /></p>
+
+<h1 id="sampling-event-datasets">Sampling-event datasets</h1>
+
+<p>This type of datasets contain the most information and is therefore the most valuable for the community. We have an <a href="https://www.gbif.org/sampling-event-data">introduction page</a> on the topic. If you are considering publishing sampling-events, this is a good place to start but I will make an even shorter introduction here.</p>
+
+<p>Sampling-event datasets can seem a bit more complicated than other datasets because they need two files:</p>
+
+<ul>
+<li>One describing events</li>
+<li>One describing the occurrences associated with each event</li>
+</ul>
+
+<p>Each occurrence is linked to its event thanks to the <a href="https://dwc.tdwg.org/terms/#dwc:eventID">eventID</a> columns.
+The example below illustrates how sampling-event datasets are structured.</p>
+
+<p><img src="/post/2019-12-05-choose-dataset-types/schema_sampling_event.jpg" alt="Sampling-event dataset example" /></p>
+
+<h1 id="conclusion">Conclusion</h1>
+
+<p>I hope this short guide is useful. Don&rsquo;t hesitate to <a href="https://www.gbif.org/dataset/search?q=">browse the datasets available on GBIF</a> and check what other data providers chose.</p>
+
+<p>If your data cannot fit into any of the classes supported by GBIF, please leave a comment or send an email to helpdesk@gbif.org.</p>
+
+    </div>
+
+    
+    
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/publish/">publish</a>
+          
+          <a href="/tags/gbif/">GBIF</a>
+          
+          <a href="/tags/checklist/">checklist</a>
+          
+          <a href="/tags/occurrence/">occurrence</a>
+          
+          <a href="/tags/sampling-event/">sampling-event</a>
+          
+          <a href="/tags/dataset/">dataset</a>
+          
+          <a href="/tags/dataset-type/">dataset type</a>
+          
+          <a href="/tags/dataset-classes/">dataset classes</a>
+          
+          <a href="/tags/metadata/">metadata</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/metagenomics-occurrences-on-gbif/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Metagenomics Occurrences on GBIF</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/biodiversity-hotspots-density-table/">
+            <span class="next-text nav-default">Biodiversity hotspot polygons and GBIF data</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      
+
+
+ 
+<div>
+<h3>This post represents the ideas of the author.</h3>
+</div>
+<div id='discourse-comments'></div>
+<script type="text/javascript">
+  DiscourseEmbed = { discourseUrl: 'https://discourse.gbif.org/',
+                     discourseEmbedUrl: 'https://data-blog.gbif.org\/post\/choose-dataset-type\/' };
+
+  (function() {
+    var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+    d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+  })();
+</script>  
+
+
+<div class = "copyright">
+	<a class="theme-link" href="https://www.gbif.org/what-is-gbif">What is GBIF?</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://www.gbif.org/developer/summary">API</a> 
+	<span class="division">|</span>
+	<a class="theme-link" href="https://www.gbif.org/faq">FAQ</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://discourse.gbif.org/">Community-Forum</a>
+</div>
+
+<div class = "copyright"> 
+	<span class="theme-info">GBIF Secretariat</span> 
+	<span class="theme-info">Universitetsparken 15</span> 
+	<span class="theme-info">DK-2100 Copenhagen Ø</span> 
+	<span class="theme-info" >Denmark</span>
+</div>
+
+<div class="copyright">
+	<span class="power-by">
+	Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+	</span>
+	<span class="division">|</span>
+	<span class="theme-info">
+	Theme - 
+	<a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+	</span>
+
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+<script type="text/javascript" src="/dist/even.min.js?v=3.2.0"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

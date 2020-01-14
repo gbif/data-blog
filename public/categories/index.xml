@@ -13,9 +13,18 @@
     <item>
       <title>GBIF</title>
       <link>/categories/gbif/</link>
-      <pubDate>Thu, 14 Nov 2019 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 08 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>/categories/gbif/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Publishing</title>
+      <link>/categories/publishing/</link>
+      <pubDate>Wed, 04 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/publishing/</guid>
       <description></description>
     </item>
     
