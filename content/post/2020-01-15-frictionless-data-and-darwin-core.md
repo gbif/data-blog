@@ -8,7 +8,7 @@ categories:
 tags:
   - Frictionless Data
 lastmod: '2020-01-15T09:37:51+01:00'
-draft: yes
+draft: no
 keywords: []
 description: ''
 authors: ''
