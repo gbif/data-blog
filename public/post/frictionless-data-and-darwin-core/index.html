@@ -199,19 +199,19 @@
 
 <h1 id="how-does-frictionless-data-differ-from-darwin-core">How does Frictionless data differ from Darwin Core?</h1>
 
-<p>Being <strong>domain agnostic</strong>, Frictionless Data is open to all sorts of data, not just biodversity related fields.
+<p>Being <strong>domain agnostic</strong>, Frictionless Data is open to all sorts of data, not just biodiversity related fields.
 It allows <strong>truly relational</strong> model as you can express primary and foreign keys in each of your data resources &ndash; bye-bye star schema!</p>
 
 <p>The <a href="https://frictionlessdata.io/specs/">specifications</a> are well documented, simple still flexible and less prone to misinterpretation.
-A very nice feature is that <strong>fields contraints</strong> can be added to the data model.
+A very nice feature is that <strong>field constraints</strong> can be added to the data model.
 The <br><a href="https://frictionlessdata.io/software/">software library</a> offers a bunch of tools such as a Data reader/writer, Data validator and a Data pipelines framework. Some are provided as libraries for various languages, other are online tools.</p>
 
 <h1 id="what-is-frictionlessdarwincore">What is FrictionlessDarwinCore?</h1>
 
-<p>Thanks to <a href="https://toolfund.frictionlessdata.io/">Frictionless Data Tool Fund</a>, I developped a <strong>Python</strong> tool that automatically converts <strong>Darwin Core Archive</strong> into a <strong>Frictionless Data Packages</strong>.</p>
+<p>Thanks to <a href="https://toolfund.frictionlessdata.io/">Frictionless Data Tool Fund</a>, I developed a <strong>Python</strong> tool that automatically converts <strong>Darwin Core Archive</strong> into a <strong>Frictionless Data Packages</strong>.</p>
 
 <p>The following use case will put the tool in context:
-Let&rsquo;s assume an arachnologist wants to work on GBIF mediated data. She starts by defining a query on GBIF.org such as <strong>give me all occurrences of Miturgidae of Belgium</strong>. The query return 1.635 occurrence records involving 4 datasets and she download the results as a DarwinCore Archive, <a href="https://doi.org/10.15468/dl.athbcd">DOI=10.15468/dl.athbcd</a>.
+Let&rsquo;s assume an archaeologist wants to work on GBIF mediated data. She starts by defining a query on GBIF.org such as <strong>give me all occurrences of Miturgidae of Belgium</strong>. The query return 1.635 occurrence records involving 4 datasets and she download the results as a DarwinCore Archive, <a href="https://doi.org/10.15468/dl.athbcd">DOI=10.15468/dl.athbcd</a>.
 Then she converts it with FrictionlessDarwinCore into a Data Package</p>
 
 <pre><code class="language-script">fdwca 0039602-191105090559680.zip MiturgidaeBE_DP.zip
@@ -258,7 +258,7 @@ TABLE [1]
 <li><strong>enumerable-constraint</strong>: This field value should be equal to one of the values in the enumeration constraint.</li>
 <li><strong>type-or-format-error</strong>: The value can’t be cast based on the schema type and format for this field.</li>
 <li><strong>required-constraint</strong>: This field is a required field, but it contains no value.</li>
-<li><strong>unique-contraint</strong>: This field is a unique field but it contains a value that has been used in another row.
+<li><strong>unique-constraint</strong>: This field is a unique field but it contains a value that has been used in another row.
 See Goodtables GitHub repo - <a href="https://github.com/frictionlessdata/goodtables-py#data-quality-errors">Data Quality Errors</a> for a complete list of errors.</li>
 </ul>
 
@@ -298,7 +298,7 @@ See Goodtables GitHub repo - <a href="https://github.com/frictionlessdata/goodta
 },
 </code></pre>
 
-<p>Runing goodtables again will give this:</p>
+<p>Running goodtables again will give this:</p>
 
 <pre><code class="language-script">goodtables MiturgidaeBE_DP/data_package.json
 ...
@@ -331,10 +331,10 @@ See Goodtables GitHub repo - <a href="https://github.com/frictionlessdata/goodta
 
 <h1 id="future-directions">Future directions</h1>
 
-<p>The conversion tool is hopefully just a begining and I hope it may help the TDWG/GBIF community reflection on Data exchange standards.
+<p>The conversion tool is hopefully just a beginning and I hope it may help the TDWG/GBIF community reflection on Data exchange standards.
 I&rsquo;ll be happy to discuss it on GBIF community forum or elsewhere.</p>
 
-<p>For users, I will be very happy to integrate my Frictionless tool into GBIF.org with the possiblity for users to directly download Data Packages.</p>
+<p>For users, I will be very happy to integrate my Frictionless tool into GBIF.org with the possibility for users to directly download Data Packages.</p>
 
 <p>For publishers, on the other side of the data pipeline, I would also encourage to use Frictionless Data because it breaks the DwC star-schema limitation.</p>
 
@@ -342,7 +342,7 @@ I&rsquo;ll be happy to discuss it on GBIF community forum or elsewhere.</p>
 
 <h1 id="how-to-contribute">How to contribute</h1>
 
-<p>You are encouraged to contribute by identifying/reporting issues or incompatiblities and helping to solve them via the <a href="https://github.com/frictionlessdata/FrictionlessDarwinCore/releases">tool github repository</a>.</p>
+<p>You are encouraged to contribute by identifying/reporting issues or incompatibilities and helping to solve them via the <a href="https://github.com/frictionlessdata/FrictionlessDarwinCore/releases">tool github repository</a>.</p>
     </div>
 
     
