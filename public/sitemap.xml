@@ -10,6 +10,13 @@
   </url>
   
   <url>
+    <loc>/post/frictionless-data-and-darwin-core/</loc>
+    <lastmod>2020-01-15T09:37:51+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>/post/metagenomics-occurrences-on-gbif/</loc>
     <lastmod>2020-01-08T09:46:16+01:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -199,6 +206,13 @@
   </url>
   
   <url>
+    <loc>/author/andr%C3%A9-heughebaert/</loc>
+    <lastmod>2020-01-15T09:37:51+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/tags/arctic/</loc>
     <lastmod>2018-11-21T15:24:11+02:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -207,6 +221,7 @@
   
   <url>
     <loc>/author/</loc>
+    <lastmod>2020-01-15T09:37:51+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -372,8 +387,15 @@
   </url>
   
   <url>
+    <loc>/tags/frictionless-data/</loc>
+    <lastmod>2020-01-15T09:37:51+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/categories/gbif/</loc>
-    <lastmod>2020-01-08T09:46:16+01:00</lastmod>
+    <lastmod>2020-01-15T09:37:51+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -555,7 +577,7 @@
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2020-01-08T09:46:16+01:00</lastmod>
+    <lastmod>2020-01-15T09:37:51+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

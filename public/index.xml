@@ -24,6 +24,17 @@ What about the developer blog? Currently the developer blog no longer being upda
     </item>
     
     <item>
+      <title>Frictionless Data and Darwin Core</title>
+      <link>/post/frictionless-data-and-darwin-core/</link>
+      <pubDate>Wed, 15 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/frictionless-data-and-darwin-core/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Frictionless data&lt;/strong&gt; is about removing the friction in working with data through the creation of tools, standards, and best practices for publishing data using the Data Package standard, a containerization format for any kind of data. It offers specifications and software around data publication, transport and consumption. Similarly to Darwin Core, data resources are presented in CSV files while the data model is described in a JSON structure.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Metagenomics Occurrences on GBIF</title>
       <link>/post/metagenomics-occurrences-on-gbif/</link>
       <pubDate>Wed, 08 Jan 2020 00:00:00 +0000</pubDate>

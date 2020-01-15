@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Frictionless Data and Darwin Core - GBIF Data Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="André Heughebaert" />
+  <meta name="description" content="Frictionless data is about removing the friction in working with data through the creation of tools, standards, and best practices for publishing data using the Data Package standard, a containerization format for any kind of data. It offers specifications and software around data publication, transport and consumption. Similarly to Darwin Core, data resources are presented in CSV files while the data model is described in a JSON structure.
+
+" />
+
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.42" />
+
+
+<link rel="canonical" href="/post/frictionless-data-and-darwin-core/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.2.0" rel="stylesheet">
+
+
+
+
+<link rel="stylesheet" href="/css//custom.css">
+
+
+<meta property="og:title" content="Frictionless Data and Darwin Core" />
+<meta property="og:description" content="Frictionless data is about removing the friction in working with data through the creation of tools, standards, and best practices for publishing data using the Data Package standard, a containerization format for any kind of data. It offers specifications and software around data publication, transport and consumption. Similarly to Darwin Core, data resources are presented in CSV files while the data model is described in a JSON structure.
+
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/frictionless-data-and-darwin-core/" />
+
+
+
+<meta property="article:published_time" content="2020-01-15T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2020-01-15T09:37:51&#43;01:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Frictionless Data and Darwin Core">
+<meta itemprop="description" content="Frictionless data is about removing the friction in working with data through the creation of tools, standards, and best practices for publishing data using the Data Package standard, a containerization format for any kind of data. It offers specifications and software around data publication, transport and consumption. Similarly to Darwin Core, data resources are presented in CSV files while the data model is described in a JSON structure.
+
+">
+
+
+<meta itemprop="datePublished" content="2020-01-15T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-01-15T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1024">
+
+
+
+<meta itemprop="keywords" content="Frictionless Data," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Frictionless Data and Darwin Core"/>
+<meta name="twitter:description" content="Frictionless data is about removing the friction in working with data through the creation of tools, standards, and best practices for publishing data using the Data Package standard, a containerization format for any kind of data. It offers specifications and software around data publication, transport and consumption. Similarly to Darwin Core, data resources are presented in CSV files while the data model is described in a JSON structure.
+
+"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">GBIF Data Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/categories/gbif/">
+        <li class="mobile-menu-item">posts</li>
+      </a><a href="https://discourse.gbif.org/c/data-blog">
+        <li class="mobile-menu-item">community-forum</li>
+      </a><a href="https://www.gbif.org/">
+        <li class="mobile-menu-item">gbif.org</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">about</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">
+	<img src= "/logo.png" alt="GBIF-analytics-blog" style ="width:20%;">
+  </a>
+  
+	
+  
+  
+</div>
+
+<nav class="site-navbar">
+
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/categories/gbif/">posts</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://discourse.gbif.org/c/data-blog">community-forum</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://www.gbif.org/">gbif.org</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">about</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+	
+    <header class="post-header">
+      <h1 class="post-title">Frictionless Data and Darwin Core</h1>
+	  
+	  
+      <div class="post-author">André Heughebaert</div>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-01-15 </span>
+        <div class="post-category">
+            
+              <a href="/categories/gbif/"> GBIF </a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    
+    
+
+    
+    <div class="post-content">
+      <p><strong>Frictionless data</strong> is about removing the friction in working with data through the creation of tools, standards, and best practices for publishing data using the Data Package standard, a containerization format for any kind of data. It offers specifications and software around data publication, transport and consumption. Similarly to Darwin Core, data resources are presented in CSV files while the data model is described in a JSON structure.</p>
+
+<p></p>
+
+<blockquote>
+<p><a href="https://frictionlessdata.io/">Frictionless Data</a> is an <a href="https://okfn.org/">Open Knowledge Foundation</a> project which started over 10 years ago as a community-driven effort.</p>
+</blockquote>
+
+<h1 id="how-does-frictionless-data-differ-from-darwin-core">How does Frictionless data differ from Darwin Core?</h1>
+
+<p>Being <strong>domain agnostic</strong>, Frictionless Data is open to all sorts of data, not just biodversity related fields.
+It allows <strong>truly relational</strong> model as you can express primary and foreign keys in each of your data resources &ndash; bye-bye star schema!</p>
+
+<p>The <a href="https://frictionlessdata.io/specs/">specifications</a> are well documented, simple still flexible and less prone to misinterpretation.
+A very nice feature is that <strong>fields contraints</strong> can be added to the data model.
+The <br><a href="https://frictionlessdata.io/software/">software library</a> offers a bunch of tools such as a Data reader/writer, Data validator and a Data pipelines framework. Some are provided as libraries for various languages, other are online tools.</p>
+
+<h1 id="what-is-frictionlessdarwincore">What is FrictionlessDarwinCore?</h1>
+
+<p>Thanks to <a href="https://toolfund.frictionlessdata.io/">Frictionless Data Tool Fund</a>, I developped a <strong>Python</strong> tool that automatically converts <strong>Darwin Core Archive</strong> into a <strong>Frictionless Data Packages</strong>.</p>
+
+<p>The following use case will put the tool in context:
+Let&rsquo;s assume an arachnologist wants to work on GBIF mediated data. She starts by defining a query on GBIF.org such as <strong>give me all occurrences of Miturgidae of Belgium</strong>. The query return 1.635 occurrence records involving 4 datasets and she download the results as a DarwinCore Archive, <a href="https://doi.org/10.15468/dl.athbcd">DOI=10.15468/dl.athbcd</a>.
+Then she converts it with FrictionlessDarwinCore into a Data Package</p>
+
+<pre><code class="language-script">fdwca 0039602-191105090559680.zip MiturgidaeBE_DP.zip
+</code></pre>
+
+<p>From now on, she can use any Frictionless software to access the data.
+<a href="https://goodtables.readthedocs.io/en/latest/">Goodtables</a> is a validation tool that check compliance with Data package specifications (both schema and data).</p>
+
+<pre><code class="language-script">goodtables MiturgidaeBE_DP.zip
+</code></pre>
+
+<p>In an ideal world, it should succeed. But very often, it gives a bunch of useful errors that informs you some data constraints are in violation. All reported errors start with: [row,column] [error]</p>
+
+<pre><code class="language-script">DATASET
+=======
+{'error-count': 4047,
+ 'preset': 'nested',
+ 'table-count': 3,
+ 'time': 7.171,
+ 'valid': False}
+
+TABLE [1]
+=========
+{'datapackage': 'MiturgidaeBE_DP.zip',
+ 'error-count': 3265,
+ 'headers': ['gbifID',
+              'abstract',
+...
+              'repatriated'],
+  'row-count': 1636,
+  'schema': 'table-schema',
+  'source': '/var/folders/19/mrkkz1tx34l98n1rs3qr3xr00000gn/T/tmp111dpxv7-datapackage/occurrence.txt',
+  'time': 6.939,
+ 'valid': False}
+...
+[9,64] [enumerable-constraint] The value &quot;PRESERVED_SPECIMEN&quot; in row 9 and column 64 does not conform to the given enumeration: &quot;['PreservedSpecimen', 'FossilSpecimen', 'LivingSpecimen', 'MaterialSample', 'Event', 'HumanObservation', 'MachineObservation', 'Taxon', 'Occurrence']&quot;
+[6,135] [type-or-format-error] The value &quot;3535.0&quot; in row 6 and column 135 is not type &quot;integer&quot; and format &quot;default&quot;
+...
+</code></pre>
+
+<p>Let&rsquo;s see some of them:</p>
+
+<ul>
+<li><strong>enumerable-constraint</strong>: This field value should be equal to one of the values in the enumeration constraint.</li>
+<li><strong>type-or-format-error</strong>: The value can’t be cast based on the schema type and format for this field.</li>
+<li><strong>required-constraint</strong>: This field is a required field, but it contains no value.</li>
+<li><strong>unique-contraint</strong>: This field is a unique field but it contains a value that has been used in another row.
+See Goodtables GitHub repo - <a href="https://github.com/frictionlessdata/goodtables-py#data-quality-errors">Data Quality Errors</a> for a complete list of errors.</li>
+</ul>
+
+<p>Fortunately, our researcher can fine tune these quality checks by modifying the constraints SHE WANTS in datapackage.json (unzip the data package first).</p>
+
+<p>Here she wants to validate that year, month and day fields are present and have a reasonable value. Here is how it looks like in the datapackage.json.</p>
+
+<pre><code class="language-JSON">{
+  &quot;name&quot;: &quot;year&quot;,
+  &quot;type&quot;: &quot;integer&quot;,
+  &quot;rdfType&quot;: &quot;http://rs.tdwg.org/dwc/terms/year&quot;,
+  &quot;constraints&quot;: {
+    &quot;required&quot;: true,
+    &quot;minimum&quot;: 1000,
+    &quot;maximum&quot;: 2050
+  }
+},
+{
+  &quot;name&quot;: &quot;month&quot;,
+  &quot;type&quot;: &quot;integer&quot;,
+  &quot;rdfType&quot;: &quot;http://rs.tdwg.org/dwc/terms/month&quot;,
+  &quot;constraints&quot;: {
+    &quot;required&quot;: true,
+    &quot;minimum&quot;: 1,
+    &quot;maximum&quot;: 12
+  }
+},
+{
+  &quot;name&quot;: &quot;day&quot;,
+  &quot;type&quot;: &quot;integer&quot;,
+  &quot;rdfType&quot;: &quot;http://rs.tdwg.org/dwc/terms/day&quot;,
+  &quot;constraints&quot;: {
+    &quot;required&quot;: true,
+    &quot;minimum&quot;: 1,
+    &quot;maximum&quot;: 31
+  }
+},
+</code></pre>
+
+<p>Runing goodtables again will give this:</p>
+
+<pre><code class="language-script">goodtables MiturgidaeBE_DP/data_package.json
+...
+[2,103] [required-constraint] Column 103 is a required field, but row 2 has no value
+[2,104] [required-constraint] Column 104 is a required field, but row 2 has no value
+[2,105] [required-constraint] Column 105 is a required field, but row 2 has no value
+[3,103] [required-constraint] Column 103 is a required field, but row 3 has no value
+[3,104] [required-constraint] Column 104 is a required field, but row 3 has no value
+...
+[3,105] [type-or-format-error] The value &quot;avril&quot; in row 3 and column 105 is not type &quot;integer&quot; and format &quot;default&quot;
+[4,105] [type-or-format-error] The value &quot;avril&quot; in row 4 and column 105 is not type &quot;integer&quot; and format &quot;default&quot;
+[5,105] [type-or-format-error] The value &quot;Avril&quot; in row 5 and column 105 is not type &quot;integer&quot; and format &quot;default&quot;
+</code></pre>
+
+<p>Now, our researcher can access the occurrences(and verbatim) records through one of the <strong>Data Package reader</strong> libraries (in Java, Julia, Mathlab, Go, Panda PHP, Python, R, Ruby) or even directly import them into OpenRefine or SQL.</p>
+
+<h1 id="status-of-the-conversion-tool">Status of the conversion tool</h1>
+
+<p>FrictionlessDarwinCore v1.0 main features are:</p>
+
+<ul>
+<li>Support all standards DarwinCore terms</li>
+<li>Support default values in DarwinCore schema</li>
+<li>Enable Fields constraints: for further data validation, with goodtables</li>
+<li>Accept DarwinCore Archive from local path or URL</li>
+<li>Command line interface, no Python programming skill needed</li>
+</ul>
+
+<p>Does it converts all DwCA? Honestly no, but it converts all GBIF.org downloads, all IPT produced archives and most of the others, such as those from PLAZI (27.000+) or Pangaea (7.000+).</p>
+
+<h1 id="future-directions">Future directions</h1>
+
+<p>The conversion tool is hopefully just a begining and I hope it may help the TDWG/GBIF community reflection on Data exchange standards.
+I&rsquo;ll be happy to discuss it on GBIF community forum or elsewhere.</p>
+
+<p>For users, I will be very happy to integrate my Frictionless tool into GBIF.org with the possiblity for users to directly download Data Packages.</p>
+
+<p>For publishers, on the other side of the data pipeline, I would also encourage to use Frictionless Data because it breaks the DwC star-schema limitation.</p>
+
+<p>Cross disciplinary interoperability will be achieved when all discipline silos will adopt a common data exchange system. Domain experts should continue to adopt, and maintain, domain specific vocabularies and ontologies. At the same time, data should be exposed to a wider audience (humans and machines) by using the most widely accepted standard.</p>
+
+<h1 id="how-to-contribute">How to contribute</h1>
+
+<p>You are encouraged to contribute by identifying/reporting issues or incompatiblities and helping to solve them via the <a href="https://github.com/frictionlessdata/FrictionlessDarwinCore/releases">tool github repository</a>.</p>
+    </div>
+
+    
+    
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/frictionless-data/">Frictionless Data</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/metagenomics-occurrences-on-gbif/">
+            <span class="next-text nav-default">Metagenomics Occurrences on GBIF</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      
+
+
+ 
+<div>
+<h3>This post represents the ideas of the author.</h3>
+</div>
+<div id='discourse-comments'></div>
+<script type="text/javascript">
+  DiscourseEmbed = { discourseUrl: 'https://discourse.gbif.org/',
+                     discourseEmbedUrl: 'https://data-blog.gbif.org\/post\/frictionless-data-and-darwin-core\/' };
+
+  (function() {
+    var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+    d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+  })();
+</script>  
+
+
+<div class = "copyright">
+	<a class="theme-link" href="https://www.gbif.org/what-is-gbif">What is GBIF?</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://www.gbif.org/developer/summary">API</a> 
+	<span class="division">|</span>
+	<a class="theme-link" href="https://www.gbif.org/faq">FAQ</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://discourse.gbif.org/">Community-Forum</a>
+</div>
+
+<div class = "copyright"> 
+	<span class="theme-info">GBIF Secretariat</span> 
+	<span class="theme-info">Universitetsparken 15</span> 
+	<span class="theme-info">DK-2100 Copenhagen Ø</span> 
+	<span class="theme-info" >Denmark</span>
+</div>
+
+<div class="copyright">
+	<span class="power-by">
+	Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+	</span>
+	<span class="division">|</span>
+	<span class="theme-info">
+	Theme - 
+	<a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+	</span>
+
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+<script type="text/javascript" src="/dist/even.min.js?v=3.2.0"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
