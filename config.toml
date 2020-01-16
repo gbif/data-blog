@@ -8,7 +8,7 @@ theme = "hugo-theme-even"
 
 preserveTaxonomyNames = true
 hasCJKLanguage = true     # has chinese/japanese/korean ? # 
-paginate = 25                                              # 
+paginate = 50                                              # 
 disqusShortname = ""      # disqus_shortname
 googleAnalytics = ""      # UA-XXXXXXXX-X
 copyright = ""            # default: author.name ↓        # 

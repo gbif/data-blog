@@ -28,7 +28,8 @@
       <pubDate>Wed, 08 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>/post/metagenomics-occurrences-on-gbif/</guid>
-      <description>Most mgnify occurrences are bacteria at the genus levelBut there are other like &amp;gt;100K occurrunces of plants and animals matched to the species rank. There has been some dicussion that these type of matches might be un-reliable.
+      <description>Most mgnify occurrences are bacteria at the genus levelBut there are other occurrunces of plants and animals matched to the species rank.
+There has been some dicussion that these type of matches might be un-reliable.
 Since it is hard to tell if something simply labeled “Reptile”, “Mammal”, or “Vascular Plant”, but not resolved to a lower level is a legitimate occurrence, I will be focusing mostly on occurrences resovled to the species level.</description>
     </item>
     
