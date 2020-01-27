@@ -53,7 +53,7 @@ For those multiple taxa downloaders out there, GBIF now supports download reques
 <div id="downloading-occurrences-for-60000-tree-species-using-rgbif-and-taxize" class="section level1">
 <h1>Downloading occurrences for 60,000 tree species using rgbif and taxize</h1>
 <blockquote>
-<p><strong>NOTE:</strong> This post has been updated on January 27, 2020 to reflect the new occ_download interface. See dicussions <a href="https://github.com/ropensci/rgbif/issues/362">here</a>.</p>
+<p><strong>NOTE:</strong> This post has been updated on January 27, 2020 to reflect the new occ_download interface. See discussions <a href="https://github.com/ropensci/rgbif/issues/362">here</a>.</p>
 </blockquote>
 <p>One good reason to download data using a long list of names, would be if your group of interest is non-monophyletic. <strong>Trees</strong> are a non-monophyletic group that include a variety of plant species that have independently evolved a trunk and branches. The
 <a href="https://www.bgci.org/">Botanic Gardens Conservation <br> International</a> maintains a <a href="https://tools.bgci.org/global_tree_search.php">long list</a> of <strong>&gt;60,000</strong> tree species. You can download a csv <a href="https://tools.bgci.org/global_tree_search_trees_1_3.csv">here</a> or the one I used for the example below <a href="/post/2019-07-11-downloading-long-species-lists-on-gbif_files/global_tree_search_trees_1_3.csv">here</a>.</p>
@@ -102,7 +102,7 @@ user=user,pwd=pwd,email=email
 <ul>
 <li>Matched tree species from above <code>pred_in(&quot;taxonKey&quot;, gbif_taxon_keys)</code></li>
 <li>With these basis of record <code>pred_in(&quot;basisOfRecord&quot;, c('PRESERVED_SPECIMEN','HUMAN_OBSERVATION','OBSERVATION','MACHINE_OBSERVATION'))</code></li>
-<li>Greater than 5000 meters eleveation <code>pred_gt(&quot;elevation&quot;, 5000)</code></li>
+<li>Greater than 5000 meters elevation <code>pred_gt(&quot;elevation&quot;, 5000)</code></li>
 <li>Is found in the United States <code>pred(&quot;country&quot;, &quot;US&quot;)</code></li>
 <li>Has coordinates <code>pred(&quot;hasCoordinate&quot;, TRUE)</code></li>
 <li>Has no gbif geospatial issues <code>pred(&quot;hasGeospatialIssue&quot;, FALSE)</code></li>
@@ -122,8 +122,8 @@ user=user,pwd=pwd,email=email
 )
 </code></pre>
 </div>
-<div id="buidling-a-complex-download-requests-without-rgbif-in-r" class="section level1">
-<h1>Buidling a complex download requests without rgbif in R</h1>
+<div id="building-a-complex-download-requests-without-rgbif-in-r" class="section level1">
+<h1>Building a complex download requests without rgbif in R</h1>
 <p>You also make complex downloads without using rgbif. In this example I download all tree species that occur inside Chile(CL). Some other predicate examples can be found here <a href="https://www.gbif.org/developer/occurrence#download" class="uri">https://www.gbif.org/developer/occurrence#download</a>.</p>
 <p>Fill in your gbif.org credentials</p>
 <pre class="r"><code>user &lt;- &quot;&quot; # your gbif.org username 

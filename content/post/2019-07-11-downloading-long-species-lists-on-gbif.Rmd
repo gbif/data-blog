@@ -46,7 +46,7 @@ Downloads through the [web interface](https://www.gbif.org/occurrence/search) ar
 
 # Downloading occurrences for 60,000 tree species using rgbif and taxize
 
-> **NOTE:** This post has been updated on January 27, 2020 to reflect the new occ_download interface. See dicussions [here](https://github.com/ropensci/rgbif/issues/362).
+> **NOTE:** This post has been updated on January 27, 2020 to reflect the new occ_download interface. See discussions [here](https://github.com/ropensci/rgbif/issues/362).
 
 One good reason to download data using a long list of names, would be if your group of interest is non-monophyletic. **Trees** are a non-monophyletic group that include a variety of plant species that have independently evolved a trunk and branches. The 
 [Botanic Gardens Conservation <br> International](https://www.bgci.org/) maintains a [long list](https://tools.bgci.org/global_tree_search.php) of **>60,000** tree species. You can download a csv [here](https://tools.bgci.org/global_tree_search_trees_1_3.csv) or the one I used for the example below [here](/post/2019-07-11-downloading-long-species-lists-on-gbif_files/global_tree_search_trees_1_3.csv). 
@@ -108,7 +108,7 @@ In the example below, I download all **tree species** which are
 
 * Matched tree species from above `pred_in("taxonKey", gbif_taxon_keys)`
 * With these basis of record `pred_in("basisOfRecord", c('PRESERVED_SPECIMEN','HUMAN_OBSERVATION','OBSERVATION','MACHINE_OBSERVATION'))`
-* Greater than 5000 meters eleveation `pred_gt("elevation", 5000)` 
+* Greater than 5000 meters elevation `pred_gt("elevation", 5000)` 
 * Is found in the United States `pred("country", "US")`
 * Has coordinates `pred("hasCoordinate", TRUE)`
 * Has no gbif geospatial issues `pred("hasGeospatialIssue", FALSE)`
@@ -130,7 +130,7 @@ user=user,pwd=pwd,email=email
 
 ```
 
-# Buidling a complex download requests without rgbif in R 
+# Building a complex download requests without rgbif in R 
 
 You also make complex downloads without using rgbif. In this example I download all tree species that occur inside Chile(CL). Some other predicate examples can be found here https://www.gbif.org/developer/occurrence#download.
 
