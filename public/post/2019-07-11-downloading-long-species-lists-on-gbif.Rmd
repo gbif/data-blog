@@ -46,6 +46,8 @@ Downloads through the [web interface](https://www.gbif.org/occurrence/search) ar
 
 # Downloading occurrences for 60,000 tree species using rgbif and taxize
 
+> **NOTE:** This post has been updated on January 27, 2020 to reflect the new occ_download interface. See dicussions [here](https://github.com/ropensci/rgbif/issues/362).
+
 One good reason to download data using a long list of names, would be if your group of interest is non-monophyletic. **Trees** are a non-monophyletic group that include a variety of plant species that have independently evolved a trunk and branches. The 
 [Botanic Gardens Conservation <br> International](https://www.bgci.org/) maintains a [long list](https://tools.bgci.org/global_tree_search.php) of **>60,000** tree species. You can download a csv [here](https://tools.bgci.org/global_tree_search_trees_1_3.csv) or the one I used for the example below [here](/post/2019-07-11-downloading-long-species-lists-on-gbif_files/global_tree_search_trees_1_3.csv). 
 
@@ -56,7 +58,7 @@ install.packages("devtools")
 devtools::install_github("ropensci/rgbif")
 ```
 
-The important part here is to use `rgbif::occ_download` with `type="in"` and to **fill in your gbif credentials**. 
+The important part here is to use `rgbif::occ_download` with `pred_in` and to **fill in your gbif credentials**. 
 
 ```R
 # fill in your gbif.org credentials 
@@ -88,23 +90,49 @@ filter(matchtype == "EXACT" & status == "ACCEPTED") %>% # get only accepted and 
 filter(kingdom == "Plantae") %>% # remove anything that might have matched to a non-plant
 pull(usagekey) # get the gbif taxonkeys
 
-# !!very important here to use "type=in"!!
-# make the download request to GBIF 
+# gbif_taxon_keys should be a long vector like this c(2977832,2977901,2977966,2977835,2977863)
+
+# !!very important here to use pred_in!!
 occ_download(
-sprintf("taxonKey = %s", paste0(gbif_taxon_keys, collapse = ",")),
-"hasGeospatialIssue = FALSE",
-type="in", 
+pred_in("taxonKey", gbif_taxon_keys),
 format = "SIMPLE_CSV",
-user=user,pwd=pwd,email=email)
+user=user,pwd=pwd,email=email
+)
 
 ```
 The results should now be on your downloads user page https://www.gbif.org/user/download.
 
-> **NOTE:** As of the writing of this post, **complex downloads** with extra options like `"hasGeospatialIssue = FALSE"` or `"basisOfRecord = OBSERVATION"` will not work with `rgbif::occ_download`. But this is being worked on. See dicussions [here](https://github.com/ropensci/rgbif/issues/362).
+**More complex downloads** are also possible with the new `rgbif` `occ_download` interface: 
 
-# Buidling a complex request yourself in R
+In the example below, I download all **tree species** which are 
 
-While `rgbif` is being improved, you can still make complex downloads (with more than one predicate) with very large taxa lists, **if you build the json request yourself**. In this example I download all tree species that occur inside Chile(CL). Some other predicate examples can be found here https://www.gbif.org/developer/occurrence#download.
+* Matched tree species from above `pred_in("taxonKey", gbif_taxon_keys)`
+* With these basis of record `pred_in("basisOfRecord", c('PRESERVED_SPECIMEN','HUMAN_OBSERVATION','OBSERVATION','MACHINE_OBSERVATION'))`
+* Greater than 5000 meters eleveation `pred_gt("elevation", 5000)` 
+* Is found in the United States `pred("country", "US")`
+* Has coordinates `pred("hasCoordinate", TRUE)`
+* Has no gbif geospatial issues `pred("hasGeospatialIssue", FALSE)`
+* Is greater than or equal to the year 1990 `pred_gte("year", 1990)`
+
+```
+# use matched gbif_taxon_keys from above 
+occ_download(
+pred_in("taxonKey", gbif_taxon_keys),
+pred_in("basisOfRecord", c('PRESERVED_SPECIMEN','HUMAN_OBSERVATION','OBSERVATION','MACHINE_OBSERVATION')),
+pred_gt("elevation", 5000),
+pred("country", "US"),
+pred("hasCoordinate", TRUE),
+pred("hasGeospatialIssue", FALSE),
+pred_gte("year", 1990),
+format = "SIMPLE_CSV",
+user=user,pwd=pwd,email=email
+)
+
+```
+
+# Buidling a complex download requests without rgbif in R 
+
+You also make complex downloads without using rgbif. In this example I download all tree species that occur inside Chile(CL). Some other predicate examples can be found here https://www.gbif.org/developer/occurrence#download.
 
 
 Fill in your gbif.org credentials 
@@ -191,7 +219,6 @@ writeLines(file("request.json")) # save the json request to use in httr::POST
 
 
 ```
-
 
 Now run the download job.
 
