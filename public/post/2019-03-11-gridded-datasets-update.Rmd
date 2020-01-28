@@ -45,7 +45,7 @@ This update builds on work from a [previous blog post](https://data-blog.gbif.or
 
 * **572** datasets are currently flagged as gridded or rasterized on the registry.
 * **488** of these are regularly spaced at 0.1 decimal degrees (around 10 km)
-* **40** datasets  are reguarly spaced at >0.1 decimal degrees [example](https://www.gbif.org/dataset/81c2b870-f762-11e1-a439-00145eb45e9a)
+* **40** datasets  are regularly spaced at >0.1 decimal degrees [example](https://www.gbif.org/dataset/81c2b870-f762-11e1-a439-00145eb45e9a)
 
 These **final 40 datasets** with very large spacing are probably of most concern to those needing precise location information. 
 
@@ -54,8 +54,8 @@ These **final 40 datasets** with very large spacing are probably of most concern
 * Datasets with **>20 unique lat-lon points**.
 * Datasets that have **>30% of their unique lat-lon points with the same nearest neighbor distance**
 * Only datasets with a nearest neighbor distances **>0.02 decimal degrees were flagged**.
-* WGS84 is assumed to calcuate distances in decimal degrees. 
-* **All uniuqe occurrence points** from each GBIF dataset have been used this time. This means I was able to flag more datasets.  
+* WGS84 is assumed to calculate distances in decimal degrees. 
+* **All unique occurrence points** from each GBIF dataset have been used this time. This means I was able to flag more datasets.  
 
 
 # How can this information be used? 
