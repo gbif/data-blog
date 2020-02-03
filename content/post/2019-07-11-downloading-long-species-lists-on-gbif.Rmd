@@ -51,11 +51,10 @@ Downloads through the [web interface](https://www.gbif.org/occurrence/search) ar
 One good reason to download data using a long list of names, would be if your group of interest is non-monophyletic. **Trees** are a non-monophyletic group that include a variety of plant species that have independently evolved a trunk and branches. The 
 [Botanic Gardens Conservation <br> International](https://www.bgci.org/) maintains a [long list](https://tools.bgci.org/global_tree_search.php) of **>60,000** tree species. You can download a csv [here](https://tools.bgci.org/global_tree_search_trees_1_3.csv) or the one I used for the example below [here](/post/2019-07-11-downloading-long-species-lists-on-gbif_files/global_tree_search_trees_1_3.csv). 
 
-Matching and downloading takes around **30 minutes**, so run with fewer names if you don't want to wait that long. This requires the latest development version of `rgbif`. 
+Matching and downloading takes around **30 minutes**, so run with fewer names if you don't want to wait that long. This requires the latest version of `rgbif`. 
 
 ```R
-install.packages("devtools")
-devtools::install_github("ropensci/rgbif")
+install.packages("rgbif")
 ```
 
 The important part here is to use `rgbif::occ_download` with `pred_in` and to **fill in your gbif credentials**. 
