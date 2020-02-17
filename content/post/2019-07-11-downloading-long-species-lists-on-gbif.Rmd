@@ -262,7 +262,7 @@ key_list = taxon_keys.loc[(taxon_keys["matchType"]=="EXACT") & (taxon_keys["stat
 download_query = {}
 download_query["creator"] = ""
 download_query["notificationAddresses"] = [""]
-download_query["sendNotification"] = True
+download_query["sendNotification"] = False # if set to be True, don't forget to add a notificationAddresses above
 download_query["format"] = "SIMPLE_CSV"
 download_query["predicate"] = {
     "type": "in",
