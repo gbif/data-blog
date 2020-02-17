@@ -57,9 +57,8 @@ For those multiple taxa downloaders out there, GBIF now supports download reques
 </blockquote>
 <p>One good reason to download data using a long list of names, would be if your group of interest is non-monophyletic. <strong>Trees</strong> are a non-monophyletic group that include a variety of plant species that have independently evolved a trunk and branches. The
 <a href="https://www.bgci.org/">Botanic Gardens Conservation <br> International</a> maintains a <a href="https://tools.bgci.org/global_tree_search.php">long list</a> of <strong>&gt;60,000</strong> tree species. You can download a csv <a href="https://tools.bgci.org/global_tree_search_trees_1_3.csv">here</a> or the one I used for the example below <a href="/post/2019-07-11-downloading-long-species-lists-on-gbif_files/global_tree_search_trees_1_3.csv">here</a>.</p>
-<p>Matching and downloading takes around <strong>30 minutes</strong>, so run with fewer names if you don’t want to wait that long. This requires the latest development version of <code>rgbif</code>.</p>
-<pre class="r"><code>install.packages(&quot;devtools&quot;)
-devtools::install_github(&quot;ropensci/rgbif&quot;)</code></pre>
+<p>Matching and downloading takes around <strong>30 minutes</strong>, so run with fewer names if you don’t want to wait that long. This requires the latest version of <code>rgbif</code>.</p>
+<pre class="r"><code>install.packages(&quot;rgbif&quot;)</code></pre>
 <p>The important part here is to use <code>rgbif::occ_download</code> with <code>pred_in</code> and to <strong>fill in your gbif credentials</strong>.</p>
 <pre class="r"><code># fill in your gbif.org credentials 
 user &lt;- &quot;&quot; # your gbif.org username 
@@ -236,7 +235,7 @@ key_list = taxon_keys.loc[(taxon_keys[&quot;matchType&quot;]==&quot;EXACT&quot;)
 download_query = {}
 download_query[&quot;creator&quot;] = &quot;&quot;
 download_query[&quot;notificationAddresses&quot;] = [&quot;&quot;]
-download_query[&quot;sendNotification&quot;] = True
+download_query[&quot;sendNotification&quot;] = False # if set to be True, don&#39;t forget to add a notificationAddresses above
 download_query[&quot;format&quot;] = &quot;SIMPLE_CSV&quot;
 download_query[&quot;predicate&quot;] = {
     &quot;type&quot;: &quot;in&quot;,
