@@ -63,7 +63,7 @@ However, the vast majority of occurrences **have no record-level license** attac
 
 Based on the outcome of the consultation, and the agreement reached with data publishers, the decision was taken that to reach the goal of machine-readable license for all occurrence dataset, GBIF would in all cases use the license given by the data owner in their metadata, while the data owner / publisher would ensure that this accurately reflects the content of the dataset - choosing the most restrictive available license for datasets with mixed licensing, and excluding records from the published dataset that cannot be satisfied by the agreed licensing schemes.
 
-As of the writing of this post, only **4 datasets** now have **2 or more occurrence licenses** due to record-by-record parsing by GBIF. 
+As of the writing of this post, only **4 datasets** have **2 or more occurrence licenses** due to record-by-record parsing by GBIF. 
 
 1. [iNaturalist research-grade observations](https://www.gbif.org/occurrence/search?dataset_key=50c9509d-22c7-4a22-a47d-8c48425ef4a7)
 2. [Insectarium de Montréal (IMQC)](https://www.gbif.org/occurrence/search?dataset_key=3484c814-c0f1-453c-8501-50d4846c4ba6)
