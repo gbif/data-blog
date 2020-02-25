@@ -6,10 +6,23 @@
     <description>Recent content in Taxonomy on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 24 Sep 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 21 Feb 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/taxonomy/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Does Biodiversity Informatics 💘 Wikidata?</title>
+      <link>/post/wikidata/</link>
+      <pubDate>Fri, 21 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/wikidata/</guid>
+      <description>&lt;h2 id=&#34;open-online-apis-are-fantastic&#34;&gt;Open online APIs are fantastic!&lt;/h2&gt;
+
+&lt;p&gt;You can use someone else&amp;rsquo;s infrastructure to create workflows, do research and create products without giving anything in return, except acknowledgement. But wait a minute! Why is everyone not using them? Why do we create our own data sources and suck up the costs in time and money? Not to mention the duplication of effort.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Six questions answered about the GBIF Backbone Taxomomy</title>

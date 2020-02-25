@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>GBIF occurrence license processing - GBIF Data Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="John Waller" />
+  <meta name="description" content="GBIF will now process occurrence licenses record-by-record.
+iNaturalist research-grade observations 
+Previously all occurrence licenses defaulted to their dataset license (provided by the publisher). This was in line with what as stated in our terms of use:
+
+" />
+
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.42" />
+
+
+<link rel="canonical" href="/post/gbif-occurrence-license-processing/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.2.0" rel="stylesheet">
+
+
+
+
+<link rel="stylesheet" href="/css//custom.css">
+
+
+<meta property="og:title" content="GBIF occurrence license processing" />
+<meta property="og:description" content="GBIF will now process occurrence licenses record-by-record.
+
+iNaturalist research-grade observations 
+
+
+
+Previously all occurrence licenses defaulted to their dataset license (provided by the publisher). This was in line with what as stated in our terms of use:
+
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/gbif-occurrence-license-processing/" />
+
+
+
+<meta property="article:published_time" content="2020-02-21T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2020-02-21T09:37:10&#43;01:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="GBIF occurrence license processing">
+<meta itemprop="description" content="GBIF will now process occurrence licenses record-by-record.
+
+iNaturalist research-grade observations 
+
+
+
+Previously all occurrence licenses defaulted to their dataset license (provided by the publisher). This was in line with what as stated in our terms of use:
+
+">
+
+
+<meta itemprop="datePublished" content="2020-02-21T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-02-21T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="541">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="GBIF occurrence license processing"/>
+<meta name="twitter:description" content="GBIF will now process occurrence licenses record-by-record.
+
+iNaturalist research-grade observations 
+
+
+
+Previously all occurrence licenses defaulted to their dataset license (provided by the publisher). This was in line with what as stated in our terms of use:
+
+"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">GBIF Data Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/categories/gbif/">
+        <li class="mobile-menu-item">posts</li>
+      </a><a href="https://discourse.gbif.org/c/data-blog">
+        <li class="mobile-menu-item">community-forum</li>
+      </a><a href="https://www.gbif.org/">
+        <li class="mobile-menu-item">gbif.org</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">about</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">
+	<img src= "/logo.png" alt="GBIF-analytics-blog" style ="width:20%;">
+  </a>
+  
+	
+  
+  
+</div>
+
+<nav class="site-navbar">
+
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/categories/gbif/">posts</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://discourse.gbif.org/c/data-blog">community-forum</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://www.gbif.org/">gbif.org</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">about</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+	
+    <header class="post-header">
+      <h1 class="post-title">GBIF occurrence license processing</h1>
+	  
+	  
+      <div class="post-author">John Waller</div>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-02-21 </span>
+        <div class="post-category">
+            
+              <a href="/categories/gbif/"> GBIF </a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    
+    
+
+    
+    <div class="post-content">
+      <p><strong>GBIF</strong> will now process occurrence licenses record-by-record.</p>
+
+<p><center><h3><strong>iNaturalist research-grade observations</strong></h3> </center></p>
+
+<p><img src="/post/2020-02-21-gbif-occurrence-license-processing_files/problem-fix.jpg" alt="" /></p>
+
+<p>Previously all <strong>occurrence licenses</strong> defaulted to their <strong>dataset license</strong> (provided by the publisher). This was in line with what as stated in our terms of use:</p>
+
+<p></p>
+
+<blockquote>
+<p>We support publishers’ use of CC BY-NC, and we will make reasonable efforts to honor the intent of such licensing, even where its inheritance extends additional restrictions to other aggregated data that are more freely licensed by themselves. <a href="https://www.gbif.org/terms">terms of use</a>.</p>
+</blockquote>
+
+<p>But this did not work well for datasets made up of records contributed by thousands of inidividuals like <strong>iNaturalist</strong>. <a href="https://forum.inaturalist.org/t/inaturalist-data-on-gbif-shows-only-cc-by-nc-excluding-cc0-and-cc-by/9952/30">discussion here</a></p>
+
+<p><img src="/post/2020-02-21-gbif-occurrence-license-processing_files/iNaturalistScreenShot.jpg" alt="" /></p>
+
+<h2 id="types-of-licenses-gbif-accepts">Types of licenses GBIF accepts</h2>
+
+<p>GBIF still accepts 3 types of <strong>creative commons</strong> licenses for an occurrence record:</p>
+
+<ol>
+<li><strong>CC0</strong> : under which data are made available for any use without restriction</li>
+<li><strong>CC BY</strong> : under which data are made available for any use provided that attribution is appropriately given for the sources of data used, in the manner specified by the owner</li>
+<li><strong>CC BY-NC</strong> : under which data are made available for any use provided that attribution is appropriately given and provided the use is not for commercial purposes</li>
+</ol>
+
+<p>However, the vast majority of occurrences <strong>have no record-level license</strong> attached to them at all.</p>
+
+<p><img src="/post/2020-02-21-gbif-occurrence-license-processing_files/licenses.svg" alt="" /></p>
+
+<p>Because of this GBIF ususally defaults to using the licenses supplied by the publisher in the meta-data for the occurrence records within that dataset.</p>
+
+<p>As of the writing of this post, only <strong>4 datasets</strong> now have <strong>2 or more occurrence licenses</strong> due to record-by-record parsing by GBIF.</p>
+
+<ol>
+<li><a href="https://www.gbif.org/occurrence/search?dataset_key=50c9509d-22c7-4a22-a47d-8c48425ef4a7">iNaturalist research-grade observations</a></li>
+<li><a href="https://www.gbif.org/occurrence/search?dataset_key=3484c814-c0f1-453c-8501-50d4846c4ba6">Insectarium de Montréal (IMQC)</a></li>
+<li><a href="https://www.gbif.org/occurrence/search?dataset_key=eaf9401e-a5e3-4a27-89ad-2d6ac6559167">Natural history museum data on Canadian Arctic marine benthos</a></li>
+<li><a href="https://www.gbif.org/occurrence/search?dataset_key=ad4c9413-95bc-4b3c-a1e9-b7cf16f391a2">A new western Canadian record of Epeoloides pilosulus (Cresson)</a></li>
+</ol>
+
+<h2 id="current-processing-logic">Current processing logic</h2>
+
+<p>The occurrence-level license field is a text field, meaning the values from records in +19K <br><a href="https://www.gbif.org/dataset/search?type=OCCURRENCE">occurrence datasets</a> vary widely. Some variants we could interpret easily, whereas others cannot be. In most cases records will still get their dataset-level license applied to them. In situations where we cannot parse or interpret the character string into one of the <strong>3 creative commons licenses</strong> mentioned above, we will default to the <strong>dataset license</strong>.</p>
+
+<p>Currently, GBIF uses this <a href="https://github.com/gbif/parsers/blob/master/src/main/resources/dictionaries/parse/license.tsv">dictionary</a> to parse licenses. So if you are a data publisher and want you want your record-by-record occurrences licenses to parse correctly, you can use a supported string from the dictionary or <strong>preferably</strong> use one of the following character strings in the license field:</p>
+
+<ol>
+<li><code>https://creativecommons.org/publicdomain/zero/1.0/legalcode</code></li>
+<li><code>https://creativecommons.org/licenses/by/4.0/legalcode</code></li>
+<li><code>https://creativecommons.org/licenses/by-nc/4.0/legalcode</code></li>
+</ol>
+
+<p>Less than 30 datasets have more than one license supplied to them, but only 4 datasets have 2 or more parsable licenses that GBIF accepts. The remaining datasets have one of the following scenarios:</p>
+
+<ol>
+<li>Un-parsable licenses (for example: &ldquo;Joe&rsquo;s special license&rdquo;)</li>
+<li>Left the field blank</li>
+<li>Unsupported licenses (for example: &ldquo;<a href="http://creativecommons.org/licenses/by-sa/1.0/legalcode&quot;">http://creativecommons.org/licenses/by-sa/1.0/legalcode&quot;</a>)</li>
+</ol>
+
+<p>in which case we have given the occurrences the license supplied by the publisher in the meta-data, <strong>which has to be one of the 3 supported creative commons licenses</strong>.</p>
+
+<p>We are in the process of contacting publishers in which their occurrence licenses disagrees dicerbably from the license on the individual occurrence records.</p>
+
+<h2 id="multimedia-licenses-not-changed">Multimedia licenses not changed!</h2>
+
+<p>None of the above dicussion will have any change to <strong>images</strong>, <strong>video</strong>, or <strong>audio</strong> licenses given to GBIF. These types of licenses have always been parsed individually. See this <a href="https://data-blog.gbif.org/post/gbif-multimedia/">post</a> for more information about GBIF multimedia licenses.</p>
+    </div>
+
+    
+    
+
+    
+    
+
+    <footer class="post-footer">
+      
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/wikidata/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Does Biodiversity Informatics 💘 Wikidata?</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/frictionless-data-and-darwin-core/">
+            <span class="next-text nav-default">Frictionless Data and Darwin Core</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      
+
+
+ 
+<div>
+<h3>This post represents the ideas of the author.</h3>
+</div>
+<div id='discourse-comments'></div>
+<script type="text/javascript">
+  DiscourseEmbed = { discourseUrl: 'https://discourse.gbif.org/',
+                     discourseEmbedUrl: 'https://data-blog.gbif.org\/post\/gbif-occurrence-license-processing\/' };
+
+  (function() {
+    var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+    d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+  })();
+</script>  
+
+
+<div class = "copyright">
+	<a class="theme-link" href="https://www.gbif.org/what-is-gbif">What is GBIF?</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://www.gbif.org/developer/summary">API</a> 
+	<span class="division">|</span>
+	<a class="theme-link" href="https://www.gbif.org/faq">FAQ</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://discourse.gbif.org/">Community-Forum</a>
+</div>
+
+<div class = "copyright"> 
+	<span class="theme-info">GBIF Secretariat</span> 
+	<span class="theme-info">Universitetsparken 15</span> 
+	<span class="theme-info">DK-2100 Copenhagen Ø</span> 
+	<span class="theme-info" >Denmark</span>
+</div>
+
+<div class="copyright">
+	<span class="power-by">
+	Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+	</span>
+	<span class="division">|</span>
+	<span class="theme-info">
+	Theme - 
+	<a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+	</span>
+
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+<script type="text/javascript" src="/dist/even.min.js?v=3.2.0"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

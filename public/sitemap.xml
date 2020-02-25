@@ -10,6 +10,20 @@
   </url>
   
   <url>
+    <loc>/post/wikidata/</loc>
+    <lastmod>2020-02-21T13:15:00+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/post/gbif-occurrence-license-processing/</loc>
+    <lastmod>2020-02-21T09:37:10+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>/post/frictionless-data-and-darwin-core/</loc>
     <lastmod>2020-01-15T09:37:51+01:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -296,6 +310,13 @@
   </url>
   
   <url>
+    <loc>/tags/col/</loc>
+    <lastmod>2019-09-24T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/tags/dna/</loc>
     <lastmod>2019-04-23T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -394,15 +415,15 @@
   </url>
   
   <url>
-    <loc>/tags/gbif/</loc>
-    <lastmod>2019-12-04T00:00:00+00:00</lastmod>
+    <loc>/categories/gbif/</loc>
+    <lastmod>2020-02-21T13:15:00+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/gbif/</loc>
-    <lastmod>2020-01-15T09:37:51+01:00</lastmod>
+    <loc>/tags/gbif/</loc>
+    <lastmod>2019-12-04T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -423,7 +444,7 @@
   
   <url>
     <loc>/tags/gbif/</loc>
-    <lastmod>2018-11-09T00:00:00+00:00</lastmod>
+    <lastmod>2020-02-21T13:15:00+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -479,7 +500,7 @@
   
   <url>
     <loc>/author/john-waller/</loc>
-    <lastmod>2020-01-08T09:46:16+01:00</lastmod>
+    <lastmod>2020-02-21T09:37:10+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -494,6 +515,13 @@
   <url>
     <loc>/tags/leaflet/</loc>
     <lastmod>2018-09-19T13:49:20+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/lod/</loc>
+    <lastmod>2020-02-21T13:15:00+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -577,7 +605,7 @@
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2020-01-15T09:37:51+01:00</lastmod>
+    <lastmod>2020-02-21T13:15:00+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -599,6 +627,13 @@
   <url>
     <loc>/tags/quality/</loc>
     <lastmod>2019-04-23T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/author/quentin-groom--deborah-paul/</loc>
+    <lastmod>2020-02-21T13:15:00+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -688,15 +723,15 @@
   </url>
   
   <url>
-    <loc>/tags/taxonomy/</loc>
+    <loc>/categories/taxonomy/</loc>
     <lastmod>2019-09-24T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/taxonomy/</loc>
-    <lastmod>2019-09-24T00:00:00+00:00</lastmod>
+    <loc>/tags/taxonomy/</loc>
+    <lastmod>2020-02-21T13:15:00+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -725,6 +760,13 @@
   <url>
     <loc>/tags/video/</loc>
     <lastmod>2018-11-15T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/wikidata/</loc>
+    <lastmod>2020-02-21T13:15:00+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

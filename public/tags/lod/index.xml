@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lod on GBIF Data Blog</title>
+    <link>/tags/lod/</link>
+    <description>Recent content in Lod on GBIF Data Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 21 Feb 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/lod/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Does Biodiversity Informatics 💘 Wikidata?</title>
+      <link>/post/wikidata/</link>
+      <pubDate>Fri, 21 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/wikidata/</guid>
+      <description>&lt;h2 id=&#34;open-online-apis-are-fantastic&#34;&gt;Open online APIs are fantastic!&lt;/h2&gt;
+
+&lt;p&gt;You can use someone else&amp;rsquo;s infrastructure to create workflows, do research and create products without giving anything in return, except acknowledgement. But wait a minute! Why is everyone not using them? Why do we create our own data sources and suck up the costs in time and money? Not to mention the duplication of effort.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

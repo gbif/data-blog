@@ -111,6 +111,15 @@
     </item>
     
     <item>
+      <title>Col</title>
+      <link>/tags/col/</link>
+      <pubDate>Tue, 24 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/col/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>DNA</title>
       <link>/tags/dna/</link>
       <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
@@ -248,7 +257,7 @@
     <item>
       <title>Gbif</title>
       <link>/tags/gbif/</link>
-      <pubDate>Fri, 09 Nov 2018 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 21 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>/tags/gbif/</guid>
       <description></description>
@@ -314,6 +323,15 @@
       <pubDate>Wed, 19 Sep 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/leaflet/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lod</title>
+      <link>/tags/lod/</link>
+      <pubDate>Fri, 21 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/lod/</guid>
       <description></description>
     </item>
     
@@ -527,7 +545,7 @@
     <item>
       <title>Taxonomy</title>
       <link>/tags/taxonomy/</link>
-      <pubDate>Tue, 24 Sep 2019 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 21 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>/tags/taxonomy/</guid>
       <description></description>
@@ -566,6 +584,15 @@
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/video/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Wikidata</title>
+      <link>/tags/wikidata/</link>
+      <pubDate>Fri, 21 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/wikidata/</guid>
       <description></description>
     </item>
     
