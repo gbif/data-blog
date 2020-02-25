@@ -10,15 +10,15 @@
   </url>
   
   <url>
-    <loc>/post/wikidata/</loc>
-    <lastmod>2020-02-21T13:15:00+01:00</lastmod>
+    <loc>/post/gbif-occurrence-license-processing/</loc>
+    <lastmod>2020-02-21T09:37:10+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/post/gbif-occurrence-license-processing/</loc>
-    <lastmod>2020-02-21T09:37:10+01:00</lastmod>
+    <loc>/post/wikidata/</loc>
+    <lastmod>2020-02-21T13:15:00+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -416,7 +416,7 @@
   
   <url>
     <loc>/categories/gbif/</loc>
-    <lastmod>2020-02-21T13:15:00+01:00</lastmod>
+    <lastmod>2020-02-21T09:37:10+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -605,7 +605,7 @@
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2020-02-21T13:15:00+01:00</lastmod>
+    <lastmod>2020-02-21T09:37:10+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

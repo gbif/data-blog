@@ -1,7 +1,7 @@
 ---
 title: GBIF occurrence license processing
 author: John Waller
-date: '2020-02-21'
+date: '2020-02-25'
 slug: gbif-occurrence-license-processing
 categories:
   - GBIF
@@ -41,7 +41,7 @@ Previously all **occurrence licenses** defaulted to their **dataset license** (p
 
 <!--more-->
 
-> In 2014, following a community-wide consultation, the GBIF Governing Board established a general policy to "ensure that all species occurrence datasets within the network are associated with digital licenses equivalent to one of…three choices supplied by Creative Commons" (...) "As of August 2016, all open-access species occurrence datasets on GBIF.org carry standardized, machine-readable licences. These changes improve transparency and reproducibility and support GBIF's mission to promote free and open access to biodiversity data." -- from [Licensing Milestone For Data Access In GBIF](https://www.gbif.org/news/82812/licensing-milestone-for-data-access-in-gbiforg) See also [legal license consultation in 2017](https://www.gbif.org/document/6Z903VDErucikyqAuQSYwc/summary-of-consultation-responses-licensing-of-data-within-gbif)
+> In 2014, following a community-wide consultation, the GBIF Governing Board established a general policy to "ensure that all species occurrence datasets within the network are associated with digital licenses equivalent to one of…three choices supplied by Creative Commons" (...) "As of August 2016, all open-access species occurrence datasets on GBIF.org carry standardized, machine-readable licences. These changes improve transparency and reproducibility and support GBIF's mission to promote free and open access to biodiversity data." -- from [Licensing Milestone For Data Access In GBIF](https://www.gbif.org/news/82812/licensing-milestone-for-data-access-in-gbiforg) 
 
 The dataset level licenses were introduced because record level licenses were unstandardized, often not interpretable or misapplied, so that handling this at dataset level was the only manageable way forward.
 
