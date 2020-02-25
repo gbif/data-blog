@@ -415,15 +415,15 @@
   </url>
   
   <url>
-    <loc>/categories/gbif/</loc>
-    <lastmod>2020-02-21T09:37:10+01:00</lastmod>
+    <loc>/tags/gbif/</loc>
+    <lastmod>2019-12-04T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/gbif/</loc>
-    <lastmod>2019-12-04T00:00:00+00:00</lastmod>
+    <loc>/categories/gbif/</loc>
+    <lastmod>2020-02-21T09:37:10+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -723,15 +723,15 @@
   </url>
   
   <url>
-    <loc>/categories/taxonomy/</loc>
-    <lastmod>2019-09-24T00:00:00+00:00</lastmod>
+    <loc>/tags/taxonomy/</loc>
+    <lastmod>2020-02-21T13:15:00+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/taxonomy/</loc>
-    <lastmod>2020-02-21T13:15:00+01:00</lastmod>
+    <loc>/categories/taxonomy/</loc>
+    <lastmod>2019-09-24T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
