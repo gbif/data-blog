@@ -74,7 +74,7 @@ As of the writing of this post, only **4 datasets** now have **2 or more occurre
 
 The occurrence-level license field is a text field, meaning the values from records in +19K <br>[occurrence datasets](https://www.gbif.org/dataset/search?type=OCCURRENCE) vary widely. Some variants we could interpret easily, whereas others cannot be. In most cases records will still get their dataset-level license applied to them. In situations where we cannot parse or interpret the character string into one of the **3 creative commons licenses** mentioned above, we will default to the **dataset license**. 
 
-Currently, GBIF uses this [dictionary](https://github.com/gbif/parsers/blob/master/src/main/resources/dictionaries/parse/license.tsv) to parse licenses. So if you are a data publisher and want you want your record-by-record occurrences licenses to parse correctly, you can use a supported string from the dictionary or **preferably** use one of the following character strings in the license field: 
+Currently, GBIF uses these officially supported [licenses](https://github.com/gbif/gbif-api/blob/master/src/main/java/org/gbif/api/vocabulary/License.java#L24) and [dictionary](https://github.com/gbif/parsers/blob/master/src/main/resources/dictionaries/parse/license.tsv) to parse licenses. So if you are a data publisher and want you want your record-by-record occurrences licenses to parse correctly, you can use a supported string from the dictionary or **preferably** use one of the following character strings in the license field: 
 
 1. `https://creativecommons.org/publicdomain/zero/1.0/legalcode`
 2. `https://creativecommons.org/licenses/by/4.0/legalcode`

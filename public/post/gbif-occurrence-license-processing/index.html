@@ -98,7 +98,7 @@ Previously all occurrence licenses defaulted to their dataset license (provided 
 
 <meta itemprop="datePublished" content="2020-02-25T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-02-25T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="665">
+<meta itemprop="wordCount" content="669">
 
 
 
@@ -258,7 +258,7 @@ Previously all occurrence licenses defaulted to their dataset license (provided 
 
 <p>The occurrence-level license field is a text field, meaning the values from records in +19K <br><a href="https://www.gbif.org/dataset/search?type=OCCURRENCE">occurrence datasets</a> vary widely. Some variants we could interpret easily, whereas others cannot be. In most cases records will still get their dataset-level license applied to them. In situations where we cannot parse or interpret the character string into one of the <strong>3 creative commons licenses</strong> mentioned above, we will default to the <strong>dataset license</strong>.</p>
 
-<p>Currently, GBIF uses this <a href="https://github.com/gbif/parsers/blob/master/src/main/resources/dictionaries/parse/license.tsv">dictionary</a> to parse licenses. So if you are a data publisher and want you want your record-by-record occurrences licenses to parse correctly, you can use a supported string from the dictionary or <strong>preferably</strong> use one of the following character strings in the license field:</p>
+<p>Currently, GBIF uses these officially supported <a href="https://github.com/gbif/gbif-api/blob/master/src/main/java/org/gbif/api/vocabulary/License.java#L24">licenses</a> and <a href="https://github.com/gbif/parsers/blob/master/src/main/resources/dictionaries/parse/license.tsv">dictionary</a> to parse licenses. So if you are a data publisher and want you want your record-by-record occurrences licenses to parse correctly, you can use a supported string from the dictionary or <strong>preferably</strong> use one of the following character strings in the license field:</p>
 
 <ol>
 <li><code>https://creativecommons.org/publicdomain/zero/1.0/legalcode</code></li>
