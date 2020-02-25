@@ -37,13 +37,15 @@ sequenceDiagrams:
 
 ![](/post/2020-02-21-gbif-occurrence-license-processing_files/problem-fix.jpg)
 
-Previously all **occurrence licenses** defaulted to their **dataset license** (provided by the publisher). This was in line with what as stated in our terms of use: 
+Previously all **occurrence licenses** defaulted to their **dataset license** (provided by the publisher). 
 
 <!--more-->
 
-> We support publishers’ use of CC BY-NC, and we will make reasonable efforts to honor the intent of such licensing, even where its inheritance extends additional restrictions to other aggregated data that are more freely licensed by themselves. [terms of use](https://www.gbif.org/terms).
+> In 2014, following a community-wide consultation, the GBIF Governing Board established a general policy to "ensure that all species occurrence datasets within the network are associated with digital licenses equivalent to one of…three choices supplied by Creative Commons" (...) "As of August 2016, all open-access species occurrence datasets on GBIF.org carry standardized, machine-readable licences. These changes improve transparency and reproducibility and support GBIF's mission to promote free and open access to biodiversity data." -- from [Licensing Milestone For Data Access In GBIF](https://www.gbif.org/news/82812/licensing-milestone-for-data-access-in-gbiforg) See also [legal license consultation in 2017](https://www.gbif.org/document/6Z903VDErucikyqAuQSYwc/summary-of-consultation-responses-licensing-of-data-within-gbif)
 
-But this did not work well for datasets made up of records contributed by thousands of inidividuals like **iNaturalist**. [discussion here](https://forum.inaturalist.org/t/inaturalist-data-on-gbif-shows-only-cc-by-nc-excluding-cc0-and-cc-by/9952/30)
+The dataset level licenses were introduced because record level licenses were unstandardized, often not interpretable or misapplied, so that handling this at dataset level was the only manageable way forward.
+
+But this did not work well for datasets made up of records contributed by thousands of individuals like **iNaturalist**. [discussion here](https://forum.inaturalist.org/t/inaturalist-data-on-gbif-shows-only-cc-by-nc-excluding-cc0-and-cc-by/9952/30)
 
 ![](/post/2020-02-21-gbif-occurrence-license-processing_files/iNaturalistScreenShot.jpg)
 
@@ -59,7 +61,7 @@ However, the vast majority of occurrences **have no record-level license** attac
 
 ![](/post/2020-02-21-gbif-occurrence-license-processing_files/licenses.svg)
 
-Because of this GBIF ususally defaults to using the licenses supplied by the publisher in the meta-data for the occurrence records within that dataset.  
+Based on the outcome of the consultation, and the agreement reached with data publishers, the decision was taken that to reach the goal of machine-readable license for all occurrence dataset, GBIF would in all cases use the license given by the data owner in their metadata, while the data owner / publisher would ensure that this accurately reflects the content of the dataset - choosing the most restrictive available license for datasets with mixed licensing, and excluding records from the published dataset that cannot be satisfied by the agreed licensing schemes.
 
 As of the writing of this post, only **4 datasets** now have **2 or more occurrence licenses** due to record-by-record parsing by GBIF. 
 
@@ -86,9 +88,9 @@ Less than 30 datasets have more than one license supplied to them, but only 4 da
 
 in which case we have given the occurrences the license supplied by the publisher in the meta-data, **which has to be one of the 3 supported creative commons licenses**.
 
-We are in the process of contacting publishers in which their occurrence licenses disagrees dicerbably from the license on the individual occurrence records.
+We are in the process of contacting publishers where their occurrence licenses disagrees discernibly from the license on the individual occurrence records.
 
 ## Multimedia licenses not changed!
 
-None of the above dicussion will have any change to **images**, **video**, or **audio** licenses given to GBIF. These types of licenses have always been parsed individually. See this [post](https://data-blog.gbif.org/post/gbif-multimedia/) for more information about GBIF multimedia licenses.  
+None of the above discussion will have any change to **images**, **video**, or **audio** licenses given to GBIF. These types of licenses have always been parsed individually. See this [post](https://data-blog.gbif.org/post/gbif-multimedia/) for more information about GBIF multimedia licenses.  
 
