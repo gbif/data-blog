@@ -1,13 +1,13 @@
 ---
 title: GBIF occurrence license processing
 author: John Waller
-date: '2020-02-25'
+date: '2020-02-26'
 slug: gbif-occurrence-license-processing
 categories:
   - GBIF
 tags: []
 lastmod: '2020-02-21T09:37:10+01:00'
-draft: yes
+draft: no
 keywords: []
 description: ''
 authors: ''
@@ -88,7 +88,7 @@ Less than 30 datasets have more than one license supplied to them, but only 4 da
 
 in which case we have given the occurrences the license supplied by the publisher in the meta-data, **which has to be one of the 3 supported creative commons licenses**.
 
-We are in the process of contacting publishers where their occurrence licenses disagrees discernibly from the license on the individual occurrence records.
+We are in the process of contacting publishers where their metadata dataset license disagree discernibly from the license on the individual occurrence records.
 
 ## Multimedia licenses not changed!
 

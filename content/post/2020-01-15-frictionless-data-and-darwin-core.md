@@ -5,6 +5,7 @@ date: '2020-01-15'
 slug: frictionless-data-and-darwin-core
 categories:
   - GBIF
+  - Guest Post
 tags:
   - Frictionless Data
 lastmod: '2020-01-15T09:37:51+01:00'
