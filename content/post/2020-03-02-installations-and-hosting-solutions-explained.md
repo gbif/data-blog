@@ -70,7 +70,7 @@ In that case, we will differentiate **Publishing Organization** and **Hosting or
 
 All of these entities are registered on GBIF. Amongst other things, this structure aims to represent everyone's contribution to the data and allow us to aggregate statistics at different levels.
 
-> What if you are not affiliated to any organization? You can take part in one of the citizen science initiatives which contribute to GBIF such as [iNaturalist](https://www.inaturalist.org).
+> What if you are not affiliated with any organization? You can take part in one of the citizen science initiatives which contribute to GBIF such as [iNaturalist](https://www.inaturalist.org).
 
 # IPT: The Integrated Publishing Toolkit
 
