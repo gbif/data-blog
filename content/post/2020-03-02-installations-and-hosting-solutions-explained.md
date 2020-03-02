@@ -54,6 +54,7 @@ In this blogpost, I will try to give a very brief overview of these tools and ho
 Before I start listing the various types of GBIF-compatible portals and systems, I need to explain some of the GBIF vocabulary.
 
 We have four kind of entities on GBIF (or four kinds of web pages if you prefer):
+
 * **Datasets** (for example: the [Prairie Fen Biodiversity Project](https://www.gbif.org/dataset/72c4d3c6-5b8d-49f5-bfbe-febd53849588)).
 * These datasets are published by an **organization** - also called publisher (for example: the [Central Michigan University Herbarium](https://www.gbif.org/publisher/a353a5fa-6426-4ae2-907d-a9bc1639eec5)).
 * Each organization is endorsed by a **node** (for example: the [U.S. Geological Survey](https://www.gbif.org/country/US/summary)) or a committee (for organizations in non-participating countries). Endorsement not only ensures suitable data is shared, but often helps make connections between people in the network who can assist each other.
