@@ -1,7 +1,7 @@
 ---
 title: Which tools can I use to share my data on GBIF?
 author: Marie Grosjean
-date: '1990-12-05'
+date: '2020-03-02'
 slug: installations-and-hosting-solutions-explained
 categories:
   - GBIF
@@ -17,7 +17,7 @@ tags:
   - earthcape
   - BioCASe
 lastmod: '2020-02-20'
-draft: no
+draft: yes
 keywords: ['installation', 'hosting', 'IPT', 'API', 'BioCASe', 'publishing', 'GBIF']
 description: ''
 comment: no
