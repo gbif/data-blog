@@ -94,9 +94,9 @@ For more information, check out the [IPT documentation](https://github.com/gbif/
 # API-based systems
 
 What I call "API-based systems" are tools/portals that rely on the [GBIF registry API](https://www.gbif.org/developer/registry) to share data on GBIF. Most of these tools are data-management systems. They usually have many features and being GBIF-compatible is only one of them. Here are some of these tools (in no particular order):
-* [Earthcape](https://earthcape.com): Biodiversity database platform.
-* [Symbiota](http://symbiota.org/docs/): Open source content management system for curating specimen- and observation-based biodiversity data.
 * The [Living Atlases](https://living-atlases.gbif.org): Open source IT infrastructure for the aggregation and delivery of biodiversity data.
+* [Symbiota](http://symbiota.org/docs/): Open source content management system for curating specimen- and observation-based biodiversity data.
+* [Earthcape](https://earthcape.com): Biodiversity database platform.
 * Others: some organizations such as the [Naturalis Biodiversity Center](https://www.gbif.org/publisher/396d5f30-dea9-11db-8ab4-b8a03c50a862) also made their own system GBIF-compatible by using our API.
 
 ## Setting up hosting and publishing organizations
