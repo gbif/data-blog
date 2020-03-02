@@ -61,13 +61,13 @@ We have four kind of entities on GBIF (or four kinds of web pages if you prefer)
 * These datasets are also hosted by an **installation** (for example: [IPT - Hosted by iDigBio](https://www.gbif.org/participant/375)). An installation is attached to an organization. The type of an installation will depend on the type of publishing tool/portal/system you choose.
 
 I tried to summarize all of this in the schema below:
-![Schema one organization](https://github.com/gbif/data-blog/blob/master/content/post/2020-02-20-installations-and-hosting-solutions-explained/schema_entities_one_organization.jpeg)
+![Schema one organization](/post/2020-02-20-installations-and-hosting-solutions-explained/schema_entities_one_organization.jpeg)
 
 But of course there are some variants to schema. The organization owning the data doesn't have to be the same as the organization hosting the data. For example, the [Prairie Fen Biodiversity Project](https://www.gbif.org/dataset/72c4d3c6-5b8d-49f5-bfbe-febd53849588) is published by the [Central Michigan University Herbarium](https://www.gbif.org/publisher/a353a5fa-6426-4ae2-907d-a9bc1639eec5) but hosted by [an installation](https://www.gbif.org/installation/ac2ad091-91eb-482d-a73f-061744da5dbf) attached to the [Arizona State University Biodiversity Knowledge Integration Center](https://www.gbif.org/publisher/96710dc8-fecb-440d-ae3e-c34ae8a9616f).
 
 In that case, we will differentiate **Publishing Organization** and **Hosting organization** (see the schema below). Both organizations can also be endorsed by different nodes.
 
-![Schema two organizations](https://github.com/gbif/data-blog/blob/master/content/post/2020-02-20-installations-and-hosting-solutions-explained/schema_entities_two_organizations.jpeg)
+![Schema two organizations](/post/2020-02-20-installations-and-hosting-solutions-explained/schema_entities_two_organizations.jpeg)
 
 All of these entities are registered on GBIF. Amongst other things, this structure aims to represent everyone's contribution to the data and allow us to aggregate statistics at different levels.
 
@@ -111,7 +111,7 @@ The GBIF Secretariat handle these permissions. This means that organizations hav
 
 I tried to summarize all of this below:
 
-![API-based installation](https://github.com/gbif/data-blog/blob/master/content/post/2020-02-20-installations-and-hosting-solutions-explained/schema_API_installation.jpeg)
+![API-based installation](/post/2020-02-20-installations-and-hosting-solutions-explained/schema_API_installation.jpeg)
 
 
 # Other systems
