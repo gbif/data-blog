@@ -17,7 +17,7 @@ tags:
   - earthcape
   - BioCASe
 lastmod: '2020-02-20'
-draft: yes
+draft: no
 keywords: ['installation', 'hosting', 'IPT', 'API', 'BioCASe', 'publishing', 'GBIF']
 description: ''
 comment: no
