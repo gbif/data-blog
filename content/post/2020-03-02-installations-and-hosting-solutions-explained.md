@@ -48,7 +48,6 @@ In this blogpost, I will try to give a very brief overview of these tools and ho
 
 > If you are new to GBIF you might want to read our [Quick guide to publishing data through GBIF.org](https://www.gbif.org/publishing-data) first. In addition to that, I would also suggest that you take a look at our documentation concerning [data hosting](https://www.gbif.org/article/4qfLORxmM8kYOIwSYSMc2M/data-hosting).
 
-
 # Types of entities on GBIF: datasets, organizations, nodes, installations
 
 Before I start listing the various types of GBIF-compatible portals and systems, I need to explain some of the GBIF vocabulary.
@@ -71,6 +70,7 @@ In that case, we will differentiate **Publishing Organization** and **Hosting or
 
 All of these entities are registered on GBIF. Amongst other things, this structure aims to represent everyone's contribution to the data and allow us to aggregate statistics at different levels.
 
+> What if you are not affiliated to any organization? You can take part in one of the citizen science initiatives which contribute to GBIF such as [iNaturalist](https://www.inaturalist.org).
 
 # IPT: The Integrated Publishing Toolkit
 
@@ -147,6 +147,9 @@ Here is a little summary of all the tools I link in this post:
 * [BioCASe](https://www.biocase.org/index.shtml)
 * [DiGIR](http://digir.sourceforge.net)
 * [TAPIR](https://www.tdwg.org/standards/tapir/)
+
+The chart below might give you an idea of how these tools are represented on GBIF. Note that some of them are still registered on GBIF but no longer host any datasets while some other host many datasets.
+![API-based installation](/post/2020-02-20-installations-and-hosting-solutions-explained/number_installations_registered.jpg)
 
 Please let me know if you know if I forgot to include any GBIF-compatible system in this post.
 
