@@ -6,7 +6,7 @@
     <description>Recent content in John Waller on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 25 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 26 Feb 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/author/john-waller/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>GBIF occurrence license processing</title>
       <link>/post/gbif-occurrence-license-processing/</link>
-      <pubDate>Tue, 25 Feb 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 26 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>/post/gbif-occurrence-license-processing/</guid>
       <description>&lt;p&gt;&lt;strong&gt;GBIF&lt;/strong&gt; is now processing occurrence licenses record-by-record.&lt;/p&gt;

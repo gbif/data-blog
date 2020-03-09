@@ -6,7 +6,7 @@
     <description>Recent content in Tags on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 04 Oct 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 02 Mar 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>API</title>
       <link>/tags/api/</link>
-      <pubDate>Fri, 04 Oct 2019 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>/tags/api/</guid>
       <description></description>
@@ -35,6 +35,15 @@
       <pubDate>Tue, 24 Sep 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/backbone/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>BioCASe</title>
+      <link>/tags/biocase/</link>
+      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/biocase/</guid>
       <description></description>
     </item>
     
@@ -219,6 +228,15 @@
     </item>
     
     <item>
+      <title>Earthcape</title>
+      <link>/tags/earthcape/</link>
+      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/earthcape/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Es50</title>
       <link>/tags/es50/</link>
       <pubDate>Wed, 10 Jul 2019 00:00:00 +0000</pubDate>
@@ -239,7 +257,7 @@
     <item>
       <title>GBIF</title>
       <link>/tags/gbif/</link>
-      <pubDate>Wed, 04 Dec 2019 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>/tags/gbif/</guid>
       <description></description>
@@ -273,6 +291,15 @@
     </item>
     
     <item>
+      <title>Hosting</title>
+      <link>/tags/hosting/</link>
+      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/hosting/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Hotspots</title>
       <link>/tags/hotspots/</link>
       <pubDate>Thu, 14 Nov 2019 00:00:00 +0000</pubDate>
@@ -300,11 +327,29 @@
     </item>
     
     <item>
+      <title>IPT</title>
+      <link>/tags/ipt/</link>
+      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/ipt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Image</title>
       <link>/tags/image/</link>
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/image/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Installation</title>
+      <link>/tags/installation/</link>
+      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/installation/</guid>
       <description></description>
     </item>
     
@@ -428,7 +473,7 @@
     <item>
       <title>Publish</title>
       <link>/tags/publish/</link>
-      <pubDate>Wed, 04 Dec 2019 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>/tags/publish/</guid>
       <description></description>
@@ -512,6 +557,15 @@
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/sound/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Symbiota</title>
+      <link>/tags/symbiota/</link>
+      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/symbiota/</guid>
       <description></description>
     </item>
     

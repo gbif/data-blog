@@ -520,7 +520,7 @@ h6 {
     bottom: 0;
     left: 51%;
     right: 51%;
-    background: #c05b4d;
+    background: #509E2F;
     -webkit-transition-duration: .2s;
     transition-duration: .2s;
     -webkit-transition-property: right, left;
@@ -599,7 +599,7 @@ h6 {
     bottom: 0;
     left: 51%;
     right: 51%;
-    background: #c05b4d;
+    background: #509E2F;
     -webkit-transition-duration: .2s;
     transition-duration: .2s;
     -webkit-transition-property: right, left;
@@ -718,12 +718,13 @@ h6 {
 }
 
 .post .post-content a {
-    color: #c05b4d;
-    word-break: break-all
+    color: #40BFFF;
+    /* color: #c05b4d; */
+    word-break: break-word
 }
 
 .post .post-content a:hover {
-    border-bottom: 1px solid #c05b4d
+    border-bottom: 1px solid #40BFFF
 }
 
 .post .post-content a.fancybox {
@@ -735,8 +736,10 @@ h6 {
     padding: 10px 20px;
     position: relative;
     color: rgba(52, 73, 94, .8);
-    background-color: rgba(192, 91, 77, .05);
-    border-left: 3px solid rgba(192, 91, 77, .3);
+    background-color: #F9F9F9;
+    /* background-color: rgba(192, 91, 77, .05); */
+    border-left: 3px solid #EAE7E8;
+    /* border-left: 3px solid rgba(192, 91, 77, .3); */
     -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
     box-shadow: 1px 1px 2px rgba(0, 0, 0, .125)
 }
@@ -783,7 +786,7 @@ h6 {
 .post .post-content code {
     padding: 3px 5px;
     border-radius: 4px;
-    color: #c7254e
+    color: #333333
 }
 
 .post .post-content figure.highlight {
@@ -1459,7 +1462,7 @@ h6 {
 }
 
 .archive .archive-post .archive-post-title .archive-post-link {
-    color: #c05b4d
+    color: #333333
 }
 
 .archive .archive-post::first-child {
@@ -1467,7 +1470,7 @@ h6 {
 }
 
 .archive .archive-post:hover {
-    border-left: 3px solid #c05b4d;
+    border-left: 3px solid #509E2F;
     -webkit-transition: .2s ease-out;
     transition: .2s ease-out;
     -webkit-transform: translateX(4px);
@@ -1480,7 +1483,7 @@ h6 {
 }
 
 .archive .archive-post:hover .archive-post-title .archive-post-link {
-    color: #a14639
+    color: #40BFFF
 }
 
 @media screen and (max-width:800px) {

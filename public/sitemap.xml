@@ -10,6 +10,13 @@
   </url>
   
   <url>
+    <loc>/post/installations-and-hosting-solutions-explained/</loc>
+    <lastmod>2020-02-20T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>/post/gbif-occurrence-license-processing/</loc>
     <lastmod>2020-02-21T09:37:10+01:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -214,7 +221,7 @@
   
   <url>
     <loc>/tags/api/</loc>
-    <lastmod>2018-09-24T12:15:04+02:00</lastmod>
+    <lastmod>2020-02-20T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -243,6 +250,13 @@
   <url>
     <loc>/tags/backbone/</loc>
     <lastmod>2019-09-24T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/biocase/</loc>
+    <lastmod>2020-02-20T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -401,6 +415,13 @@
   </url>
   
   <url>
+    <loc>/tags/earthcape/</loc>
+    <lastmod>2020-02-20T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/tags/es50/</loc>
     <lastmod>2019-06-25T14:39:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -416,14 +437,14 @@
   
   <url>
     <loc>/categories/gbif/</loc>
-    <lastmod>2020-02-21T09:37:10+01:00</lastmod>
+    <lastmod>2020-02-20T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/gbif/</loc>
-    <lastmod>2019-12-04T00:00:00+00:00</lastmod>
+    <lastmod>2020-02-20T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -457,6 +478,20 @@
   </url>
   
   <url>
+    <loc>/categories/guest-post/</loc>
+    <lastmod>2020-02-21T13:15:00+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/hosting/</loc>
+    <lastmod>2020-02-20T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/tags/hotspots/</loc>
     <lastmod>2019-09-10T13:55:38+02:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -478,8 +513,22 @@
   </url>
   
   <url>
+    <loc>/tags/ipt/</loc>
+    <lastmod>2020-02-20T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/tags/image/</loc>
     <lastmod>2018-11-15T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/installation/</loc>
+    <lastmod>2020-02-20T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -542,7 +591,7 @@
   
   <url>
     <loc>/author/marie-grosjean/</loc>
-    <lastmod>2019-12-04T00:00:00+00:00</lastmod>
+    <lastmod>2020-02-20T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -605,21 +654,21 @@
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2020-02-21T09:37:10+01:00</lastmod>
+    <lastmod>2020-02-20T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/publish/</loc>
-    <lastmod>2019-12-04T00:00:00+00:00</lastmod>
+    <lastmod>2020-02-20T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/publishing/</loc>
-    <lastmod>2019-12-04T00:00:00+00:00</lastmod>
+    <lastmod>2020-02-20T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -695,8 +744,15 @@
   </url>
   
   <url>
+    <loc>/tags/symbiota/</loc>
+    <lastmod>2020-02-20T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/tags/</loc>
-    <lastmod>2018-09-24T12:15:04+02:00</lastmod>
+    <lastmod>2020-02-20T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
