@@ -72,6 +72,7 @@ All of these entities are registered on GBIF. Amongst other things, this structu
 
 > What if you are not affiliated with any organization? You can take part in one of the citizen science initiatives which contribute to GBIF such as [iNaturalist](https://www.inaturalist.org).
 
+
 # IPT: The Integrated Publishing Toolkit
 
 The [IPT](https://www.gbif.org/ipt) is the tool developed and maintained by the GBIF secretariat. It is the most common type of installation connected to GBIF and provides the repository network for the marine community [OBIS](https://obis.org/).
