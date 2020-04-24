@@ -99,6 +99,7 @@ What I call "API-based systems" are tools/portals that rely on the [GBIF registr
 
 * The [Living Atlases](https://living-atlases.gbif.org): Open source IT infrastructure for the aggregation and delivery of biodiversity data.
 * [Symbiota](http://symbiota.org/docs/): Open source content management system for curating specimen- and observation-based biodiversity data.
+* [PlutoF](https://plutof.ut.ee/#/): Data management and Publishing Platform
 * [Earthcape](https://earthcape.com): Biodiversity database platform.
 * Others: some organizations such as the [Naturalis Biodiversity Center](https://www.gbif.org/publisher/396d5f30-dea9-11db-8ab4-b8a03c50a862) also made their own system GBIF-compatible by using our API.
 
@@ -142,9 +143,10 @@ Here is a little summary of all the tools I link in this post:
 
 * [IPT](https://www.gbif.org/ipt)
 * [Specify](https://www.sustain.specifysoftware.org)
-* [Earthcape](https://earthcape.com)
-* [Symbiota](http://symbiota.org/docs/)
 * [Living Atlases](https://living-atlases.gbif.org)
+* [Symbiota](http://symbiota.org/docs/)
+* [PlutoF](https://plutof.ut.ee/#/)
+* [Earthcape](https://earthcape.com)
 * [BioCASe](https://www.biocase.org/index.shtml)
 * [DiGIR](http://digir.sourceforge.net)
 * [TAPIR](https://www.tdwg.org/standards/tapir/)
