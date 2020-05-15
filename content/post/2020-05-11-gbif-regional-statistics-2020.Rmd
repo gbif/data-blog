@@ -179,5 +179,5 @@ plot_folder = "time series"
 [code](https://github.com/jhnwllr/gbif_regional_statistics)
 </div>
 
-GBIF regions gain around **25-50K new species every two years**. In 2022-2024 **Africa** will have the same number of species on as **North America** had on GBIF in 2016-2018. 
+GBIF regions gain around **25-50K new species every two years**. In 2022-2024 **Africa** will have the same number of species as **North America** had on GBIF in 2016-2018. 
 
