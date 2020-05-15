@@ -6,10 +6,21 @@
     <description>Recent content in John Waller on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 26 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 11 May 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/author/john-waller/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>GBIF Regional Statistics - 2020</title>
+      <link>/post/gbif-regional-statistics-2020/</link>
+      <pubDate>Mon, 11 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/gbif-regional-statistics-2020/</guid>
+      <description>jpg |pdf |svg |code
+Iceland Index. A plot of raw species counts from equal-area hexagons approximately the size of Iceland. This plot excludes international waters, but includes countries EEZ areas. We see here that while Iceland has &amp;gt;5K species other areas within Amazonia, Eastern Europe, and Africa have suspiciously fewer, indicating a likely data gap.
+What are the GBIF regions?jpg |pdf |svg |code</description>
+    </item>
     
     <item>
       <title>GBIF occurrence license processing</title>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Statistics on GBIF Data Blog</title>
+    <link>/tags/statistics/</link>
+    <description>Recent content in Statistics on GBIF Data Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 11 May 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/statistics/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>GBIF Regional Statistics - 2020</title>
+      <link>/post/gbif-regional-statistics-2020/</link>
+      <pubDate>Mon, 11 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/gbif-regional-statistics-2020/</guid>
+      <description>jpg |pdf |svg |code
+Iceland Index. A plot of raw species counts from equal-area hexagons approximately the size of Iceland. This plot excludes international waters, but includes countries EEZ areas. We see here that while Iceland has &amp;gt;5K species other areas within Amazonia, Eastern Europe, and Africa have suspiciously fewer, indicating a likely data gap.
+What are the GBIF regions?jpg |pdf |svg |code</description>
+    </item>
+    
+  </channel>
+</rss>

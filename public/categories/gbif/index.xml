@@ -6,10 +6,21 @@
     <description>Recent content in GBIF on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 02 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 11 May 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/gbif/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>GBIF Regional Statistics - 2020</title>
+      <link>/post/gbif-regional-statistics-2020/</link>
+      <pubDate>Mon, 11 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/gbif-regional-statistics-2020/</guid>
+      <description>jpg |pdf |svg |code
+Iceland Index. A plot of raw species counts from equal-area hexagons approximately the size of Iceland. This plot excludes international waters, but includes countries EEZ areas. We see here that while Iceland has &amp;gt;5K species other areas within Amazonia, Eastern Europe, and Africa have suspiciously fewer, indicating a likely data gap.
+What are the GBIF regions?jpg |pdf |svg |code</description>
+    </item>
     
     <item>
       <title>Which tools can I use to share my data on GBIF?</title>
@@ -44,7 +55,7 @@ The good news is that there are several GBIF-compatible systems. They will expor
       <pubDate>Fri, 21 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>/post/wikidata/</guid>
-      <description>&lt;p&gt;#Open online APIs are fantastic! ou can use someone else&amp;rsquo;s infrastructure to create workflows, do research and create products without giving anything in return, except acknowledgement. But wait a minute! Why is everyone not using them? Why do we create our own data sources and suck up the costs in time and money? Not to mention the duplication of effort.&lt;/p&gt;
+      <description>&lt;p&gt;Open online APIs are fantastic! You can use someone else&amp;rsquo;s infrastructure to create workflows, do research and create products without giving anything in return, except acknowledgement. But wait a minute! Why is everyone not using them? Why do we create our own data sources and suck up the costs in time and money? Not to mention the duplication of effort.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -315,16 +326,6 @@ https://api.gbif.org/v2/map/occurrence/density/0/0/0@1x.png?style=purpleYellow.p
       <guid>/post/gbif-download-trends/</guid>
       <description>Link To App
 Explanation of toolThis tool plots the downloads through time for species or other taxonomic groups with more than 25 downloads at GBIF. Downloads at GBIF most often occur through the web interface. In a previous post, we saw that most users are downloading data from GBIF via filtering by scientific name (aka Taxon Key). Since the GBIF index currently sits at over 1 billion records (a 400+GB csv), most users will simplying filter by their taxonomic group of interest and then generate a download.</description>
-    </item>
-    
-    <item>
-      <title>GBIF data quality issues and flags what do they mean?</title>
-      <link>/post/issues-and-flags/</link>
-      <pubDate>Tue, 26 Sep 2000 00:00:00 +0000</pubDate>
-      
-      <guid>/post/issues-and-flags/</guid>
-      <description>GBIF gets records from around 1600 (and counting) occurrence datasets.Not all of the data-providers have the time or resources to make sure their datasets are free from errors.
-As a service to the biodiversity user community, GBIF flags records that might contain an obvious issue. Some flags are not easy to understand, and most users are probably not aware that they exist or filter them all out by default by leaving the “include records where coordinates are flagged as suspcious” unchecked.</description>
     </item>
     
   </channel>

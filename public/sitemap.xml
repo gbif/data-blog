@@ -10,6 +10,13 @@
   </url>
   
   <url>
+    <loc>/post/gbif-regional-statistics-2020/</loc>
+    <lastmod>2020-05-11T09:04:43+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>/post/installations-and-hosting-solutions-explained/</loc>
     <lastmod>2020-02-20T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -208,13 +215,6 @@
   <url>
     <loc>/post/gbif-download-trends/</loc>
     <lastmod>2018-08-14T15:35:14+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>/post/issues-and-flags/</loc>
-    <lastmod>2018-09-26T13:03:53+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -437,7 +437,7 @@
   
   <url>
     <loc>/categories/gbif/</loc>
-    <lastmod>2020-02-20T00:00:00+00:00</lastmod>
+    <lastmod>2020-05-11T09:04:43+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -466,6 +466,13 @@
   <url>
     <loc>/tags/gbif/</loc>
     <lastmod>2020-02-21T13:15:00+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/gbif-regions/</loc>
+    <lastmod>2020-05-11T09:04:43+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -534,13 +541,6 @@
   </url>
   
   <url>
-    <loc>/tags/issues/</loc>
-    <lastmod>2018-09-26T13:03:53+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/author/jan-kristoffer-legind/</loc>
     <lastmod>2018-11-21T15:24:11+02:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -549,7 +549,7 @@
   
   <url>
     <loc>/author/john-waller/</loc>
-    <lastmod>2020-02-21T09:37:10+01:00</lastmod>
+    <lastmod>2020-05-11T09:04:43+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -578,13 +578,6 @@
   <url>
     <loc>/tags/maps/</loc>
     <lastmod>2019-06-25T14:39:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/maps-api/</loc>
-    <lastmod>2018-09-26T13:03:53+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -654,7 +647,7 @@
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2020-02-20T00:00:00+00:00</lastmod>
+    <lastmod>2020-05-11T09:04:43+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -739,6 +732,13 @@
   <url>
     <loc>/tags/sound/</loc>
     <lastmod>2018-11-15T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/statistics/</loc>
+    <lastmod>2020-05-11T09:04:43+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
