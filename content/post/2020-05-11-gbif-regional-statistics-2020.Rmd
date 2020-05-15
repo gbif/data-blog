@@ -73,7 +73,7 @@ plot_folder = "gbif region map"
 [code](https://github.com/jhnwllr/gbif_regional_statistics)
 </div>
 
-The [GBIF Network](https://www.gbif.org/the-gbif-network) is divided into regions. These regions are derived from the [IPBES](https://ipbes.net/) regional assessments, shown on this [map](https://www.nature.com/articles/sdata20167/figures/1). This post will cover countries/areas with some political status and not on other [GBIF Affiliates]( https://www.gbif.org/the-gbif-network/gbif-affiliates) and Antarctica. 
+The [GBIF Network](https://www.gbif.org/the-gbif-network) is divided into regions. These regions are derived from the [IPBES](https://ipbes.net/) regional assessments, shown on this [map](https://www.nature.com/articles/sdata20167/figures/1). This post will cover countries/areas with some political status and not other [GBIF Affiliates]( https://www.gbif.org/the-gbif-network/gbif-affiliates) and Antarctica. 
 
 
 ## <span style="color:#509E2F"><b>Occurrence</b></span> and <span style="color:#F1AD16"><b>Species</b></span> counts
