@@ -1,7 +1,7 @@
 ---
 title: GBIF Regional Statistics - 2020
 author: John Waller
-date: '2020-05-11'
+date: '2020-05-19'
 slug: gbif-regional-statistics-2020
 categories:
   - GBIF
@@ -32,6 +32,12 @@ sequenceDiagrams:
   options: ''
 ---
 
+I was asked to prepare some statistics for the **GBIF regional regional meetings** being held virtually this year. This blog post is a companion for those meetings.  
+
+You can watch a **video presentation** of the preparation of these meetings [here](https://vimeo.com/413657346). The presentation of this blog post starts [here](https://vimeo.com/413657346#t=23m39s).
+
+* The [Latin America and Caribbean virtual nodes meeting 2020](https://www.gbif.org/event/3CRkTIGOTe3qfVr3FUvjJF/latin-america-and-caribbean-virtual-nodes-meeting-2020) will be on **18 - 20 May 2020**
+* The [Africa virtual nodes meeting 2020](https://www.gbif.org/event/2YqTOjAAVFLwlnGZLrujYW/africa-virtual-nodes-meeting-2020) will be on **10 - 12 June 2020**
 
 ```{R,echo=FALSE, message=FALSE, warning=FALSE,echo=FALSE, results="hide"}
 # global variables 
@@ -39,25 +45,11 @@ path_to_plots = "/post/2020-05-11-gbif-regional-statistics-2020_files/"
 github_path = "https://raw.githubusercontent.com/jhnwllr/gbif_regional_statistics/master/plots/"
 ```
 
-```{R,echo=FALSE, message=FALSE, warning=FALSE,echo=FALSE, results="hide"}
-plot_name = "global_num_species"
-plot_folder = "hexagon plots"
-```
+GBIF introduced a regional framework across the [GBIF Network](https://www.gbif.org/the-gbif-network) a little more than a decade ago, with groups based on clusters of national participants. Soon after the publication of [Brooks et al. (2016)](https://www.nature.com/articles/sdata20167), GBIF adopted their structure to provide a consistent approach to regional reporting and assessment processes [map](https://www.nature.com/articles/sdata20167/figures/1).
 
-![](`r path_to_plots`/`r plot_name`.svg)
-
-<div style="text-align:right;"><sub>
-[jpg](`r github_path`/`r plot_folder`/jpg/`r plot_name`.jpg) | 
-[pdf](`r github_path`/`r plot_folder`/pdf/`r plot_name`.pdf) | 
-[svg](`r github_path`/`r plot_folder`/svg/`r plot_name`.svg) | 
-[code](https://github.com/jhnwllr/gbif_regional_statistics)
-</div>
-
-**Iceland Index**. A plot of raw species counts from equal-area hexagons approximately the size of Iceland. This plot excludes international waters, but includes countries EEZ areas. We see here that while **Iceland** has <span style="color:#749DC7"><b>>5K species</b></span> other areas within Amazonia, Eastern Europe, and Africa have suspiciously fewer, **indicating a likely data gap**. 
+This post will cover countries/areas with some political status and not other [GBIF Affiliates]( https://www.gbif.org/the-gbif-network/gbif-affiliates) and Antarctica.
 
 <!--more-->
-
-## What are the GBIF regions? 
 
 ```{R,echo=FALSE, message=FALSE, warning=FALSE,echo=FALSE, results="hide"}
 plot_name = "gbif_region_map"
@@ -73,10 +65,13 @@ plot_folder = "gbif region map"
 [code](https://github.com/jhnwllr/gbif_regional_statistics)
 </div>
 
-The [GBIF Network](https://www.gbif.org/the-gbif-network) is divided into regions. These regions are derived from the [IPBES](https://ipbes.net/) regional assessments, shown on this [map](https://www.nature.com/articles/sdata20167/figures/1). This post will cover countries/areas with some political status and not other [GBIF Affiliates]( https://www.gbif.org/the-gbif-network/gbif-affiliates) and Antarctica. 
-
+ 
 
 ## <span style="color:#509E2F"><b>Occurrence</b></span> and <span style="color:#F1AD16"><b>Species</b></span> counts
+
+> * **published records** - do not necessarily occur within the region, but are published by  countries/areas within the region. 
+* **about records** - must occur within the region but are not necessarily published by countries/areas within the region.  
+
 
 ```{R,echo=FALSE, message=FALSE, warning=FALSE,echo=FALSE, results="hide"}
 plot_name = "gbif_regions_occ_count"
@@ -127,7 +122,7 @@ plot_folder = "country stacked barplots facet"
 [code](https://github.com/jhnwllr/gbif_regional_statistics)
 </div>
 
-<span style="color:#FF9326"><b>Birds</b></span>, of course, dominate occurrence records in almost all countries and regions, particularly in **North America**. I plot the same graph below excluding birds and countries with less than 1 million total occurrences. 
+Since the <span style="color:#FF9326"><b>bird</b></span> data makes it hard to see other groups, I plot the same graph below excluding birds and countries with less than 1 million total occurrences. 
 
 ```{R,echo=FALSE, message=FALSE, warning=FALSE,echo=FALSE, results="hide"}
 plot_name = "facet_stacked_num_of_occ_Global_nobirds_TRUE"
@@ -143,9 +138,9 @@ plot_folder = "country stacked barplots facet"
 [code](https://github.com/jhnwllr/gbif_regional_statistics)
 </div>
 
-<span style="color:#FF0040"><b>A large red bar</b></span> indicates that the country has many occurrences about the country that are not in the top most popular groups (<span style="color:#FF9326"><b>Birds</b></span>, <span style="color:#509E2F"><b>Plants</b></span>, <span style="color:#40BFFF"><b>Insects</b></span>, <span style="color:#175CA1"><b>Mammals</b></span>, <span style="color:#FFCCCC"><b>Molluscs</b></span>, <span style="color:#FDAF02"><b>Fungi</b></span>). <span style="color:#FF0040"><b>Other</b></span> records are usually fish, amphibians, or reptiles. These graphs largely show a publishing bias towards the familar, which is not surprising. One can search for a country (e.g. [The United States](https://www.gbif.org/occurrence/taxonomy?country=US)) on the GBIF web interface and get a more detailed view of that country's taxanomic breakdown.   
+A large <span style="color:#FF0040"><b>red bar</b></span> indicates that the country has many occurrences **about** the country that are not in the top most popular groups (<span style="color:#FF9326"><b>birds</b></span>, <span style="color:#509E2F"><b>plants</b></span>, <span style="color:#40BFFF"><b>insects</b></span>, <span style="color:#175CA1"><b>mammals</b></span>, <span style="color:#FFCCCC"><b>molluscs</b></span>, <span style="color:#FDAF02"><b>fungi</b></span>). <span style="color:#FF0040"><b>Other</b></span> records are usually fish, amphibians, or reptiles. One can search for a country (e.g. [The United States](https://www.gbif.org/occurrence/taxonomy?country=US)) on the GBIF web interface and get a more detailed view of that country's taxanomic breakdown.   
 
-## Citations generated from publishing
+## Publishing from Latin America, Oceania, Asia, Africa generate a disproportionate number of citations
 
 ```{R,echo=FALSE, message=FALSE, warning=FALSE,echo=FALSE, results="hide"}
 plot_name = "data_use"
@@ -163,7 +158,7 @@ plot_folder = "data use"
 
 Occurrences published from **Latin America & The Caribbean**, **Oceania**, **Asia**, and **Africa** generate a disproportionate number of citations.    
 
-## Species gains over time
+## GBIF regions gain 25-50K new species every two years
 
 ```{R,echo=FALSE, message=FALSE, warning=FALSE,echo=FALSE, results="hide"}
 plot_name = "timeseries_num_species"
@@ -179,5 +174,22 @@ plot_folder = "time series"
 [code](https://github.com/jhnwllr/gbif_regional_statistics)
 </div>
 
-GBIF regions gain around **25-50K new species every two years**. In 2022-2024 **Africa** will have the same number of species as **North America** had on GBIF in 2016-2018. 
+GBIF regions gain around **25-50K new species every two years**. In 2022-2024 **Africa** will have the same number of species (with occurrences) as **North America** had on GBIF in 2016-2018. 
 
+## There are still many data gaps!
+
+```{R,echo=FALSE, message=FALSE, warning=FALSE,echo=FALSE, results="hide"}
+plot_name = "global_num_species"
+plot_folder = "hexagon plots"
+```
+
+![](`r path_to_plots`/`r plot_name`.svg)
+
+<div style="text-align:right;"><sub>
+[jpg](`r github_path`/`r plot_folder`/jpg/`r plot_name`.jpg) | 
+[pdf](`r github_path`/`r plot_folder`/pdf/`r plot_name`.pdf) | 
+[svg](`r github_path`/`r plot_folder`/svg/`r plot_name`.svg) | 
+[code](https://github.com/jhnwllr/gbif_regional_statistics)
+</div>
+
+I created here what I call the **Iceland Index** (since Iceland is not known to be exceptionally species rich). A plot of raw species counts from equal-area hexagons approximately the size of Iceland. This plot excludes international waters, but includes countries EEZ areas. We see here that while **Iceland** has <span style="color:#749DC7"><b>>5K species</b></span> other areas within Amazonia, Eastern Europe, and Africa have suspiciously fewer, **indicating likely data gaps**.

@@ -6,7 +6,7 @@
     <description>Recent content in Statistics on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 11 May 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 19 May 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/statistics/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,12 +14,12 @@
     <item>
       <title>GBIF Regional Statistics - 2020</title>
       <link>/post/gbif-regional-statistics-2020/</link>
-      <pubDate>Mon, 11 May 2020 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 19 May 2020 00:00:00 +0000</pubDate>
       
       <guid>/post/gbif-regional-statistics-2020/</guid>
-      <description>jpg |pdf |svg |code
-Iceland Index. A plot of raw species counts from equal-area hexagons approximately the size of Iceland. This plot excludes international waters, but includes countries EEZ areas. We see here that while Iceland has &amp;gt;5K species other areas within Amazonia, Eastern Europe, and Africa have suspiciously fewer, indicating a likely data gap.
-What are the GBIF regions?jpg |pdf |svg |code</description>
+      <description>I was asked to prepare some statistics for the GBIF regional regional meetings being held virtually this year. This blog post is a companion for those meetings.
+You can watch a video presentation of the preparation of these meetings here. The presentation of this blog post starts here.
+The Latin America and Caribbean virtual nodes meeting 2020 will be on 18 - 20 May 2020The Africa virtual nodes meeting 2020 will be on 10 - 12 June 2020GBIF introduced a regional framework across the GBIF Network a little more than a decade ago, with groups based on clusters of national participants.</description>
     </item>
     
   </channel>
