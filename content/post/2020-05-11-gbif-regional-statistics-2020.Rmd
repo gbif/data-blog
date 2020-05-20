@@ -36,6 +36,9 @@ I was asked to prepare some statistics for the **GBIF regional regional meetings
 
 You can watch a **video presentation** of the preparation of these meetings [here](https://vimeo.com/413657346). The presentation of this blog post starts [here](https://vimeo.com/413657346#t=23m39s).
 
+* The [North American virtual nodes meeting 2020](
+https://www.gbif.org/event/5iluOArQeYT29U402zDrwi/north-american-virtual-nodes-meeting-2020) was on **5 - 6 May 2020**
+* The [Europe and Central Asia-virtual nodes meeting 2020](https://www.gbif.org/event/513CFo2fc5hhww0ci9NF5z/europe-and-central-asia-virtual-nodes-meeting-2020) was on **11 - 12 May 2020**
 * The [Latin America and Caribbean virtual nodes meeting 2020](https://www.gbif.org/event/3CRkTIGOTe3qfVr3FUvjJF/latin-america-and-caribbean-virtual-nodes-meeting-2020) will be on **18 - 20 May 2020**
 * The [Africa virtual nodes meeting 2020](https://www.gbif.org/event/2YqTOjAAVFLwlnGZLrujYW/africa-virtual-nodes-meeting-2020) will be on **10 - 12 June 2020**
 
@@ -138,7 +141,7 @@ plot_folder = "country stacked barplots facet"
 [code](https://github.com/jhnwllr/gbif_regional_statistics)
 </div>
 
-A large <span style="color:#FF0040"><b>red bar</b></span> indicates that the country has many occurrences **about** the country that are not in the top most popular groups (<span style="color:#FF9326"><b>birds</b></span>, <span style="color:#509E2F"><b>plants</b></span>, <span style="color:#40BFFF"><b>insects</b></span>, <span style="color:#175CA1"><b>mammals</b></span>, <span style="color:#FFCCCC"><b>molluscs</b></span>, <span style="color:#FDAF02"><b>fungi</b></span>). <span style="color:#FF0040"><b>Other</b></span> records are usually fish, amphibians, or reptiles. One can search for a country (e.g. [The United States](https://www.gbif.org/occurrence/taxonomy?country=US)) on the GBIF web interface and get a more detailed view of that country's taxanomic breakdown.   
+A large <span style="color:#FF0040"><b>red bar</b></span> indicates that the country has many occurrences **about** the country that are not in the top most popular groups (<span style="color:#FF9326"><b>birds</b></span>, <span style="color:#509E2F"><b>plants</b></span>, <span style="color:#40BFFF"><b>insects</b></span>, <span style="color:#175CA1"><b>mammals</b></span>, <span style="color:#FFCCCC"><b>molluscs</b></span>, <span style="color:#FDAF02"><b>fungi</b></span>). <span style="color:#FF0040"><b>Other</b></span> records are usually fish, amphibians, or reptiles. One can search for a country (e.g. [The United States](https://www.gbif.org/occurrence/taxonomy?country=US)) on the GBIF web interface and get a more detailed view of that country's taxonomic breakdown.   
 
 ## Publishing from Latin America, Oceania, Asia, Africa generate a disproportionate number of citations
 
@@ -157,6 +160,9 @@ plot_folder = "data use"
 </div>
 
 This plot shows the number of citations generated from data published from countries within a region. This type of graph is only possible when an author [cites a doi](https://www.gbif.org/literature-tracking) associated with a GBIF download.  
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Here’s my presentation on the importance of DOIs and data citations when using <a href="https://twitter.com/GBIF?ref_src=twsrc%5Etfw">@GBIF</a> mediated occurrence data in ecological niche modeling. Made for the ENM2020 course by <a href="https://twitter.com/ATP_biodiv?ref_src=twsrc%5Etfw">@ATP_biodiv</a> et al. <a href="https://t.co/QK1Q5lg4FE">https://t.co/QK1Q5lg4FE</a> <a href="https://twitter.com/hashtag/CiteTheDOI?src=hash&amp;ref_src=twsrc%5Etfw">#CiteTheDOI</a></p>&mdash; Daniel N 🏳️
+🌈🇪🇺🇩🇰 (@dnnyboy) <a href="https://twitter.com/dnnyboy/status/1263002092425314305?ref_src=twsrc%5Etfw">May 20, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 Here we see that **Europe & Central Asia** and **North America** have the most total citations. However, occurrences published from **Latin America & The Caribbean**, **Oceania**, **Asia**, and **Africa** generate a disproportionate number of journal citations for every 10M records they publish. 
 
