@@ -156,7 +156,9 @@ plot_folder = "data use"
 [code](https://github.com/jhnwllr/gbif_regional_statistics)
 </div>
 
-Occurrences published from **Latin America & The Caribbean**, **Oceania**, **Asia**, and **Africa** generate a disproportionate number of citations.    
+This plot shows the number of citations generated from data published from countries within a region. This type of graph is only possible when an author [cites a doi](https://www.gbif.org/literature-tracking) associated with a GBIF download.  
+
+Here we see that **Europe & Central Asia** and **North America** have the most total citations. However, occurrences published from **Latin America & The Caribbean**, **Oceania**, **Asia**, and **Africa** generate a disproportionate number of journal citations for every 10M records they publish. 
 
 ## GBIF regions gain 25-50K new species every two years
 
@@ -192,4 +194,4 @@ plot_folder = "hexagon plots"
 [code](https://github.com/jhnwllr/gbif_regional_statistics)
 </div>
 
-I created here what I call the **Iceland Index** (since Iceland is not known to be exceptionally species rich). A plot of raw species counts from equal-area hexagons approximately the size of Iceland. This plot excludes international waters, but includes countries EEZ areas. We see here that while **Iceland** has <span style="color:#749DC7"><b>>5K species</b></span> other areas within Amazonia, Eastern Europe, and Africa have suspiciously fewer, **indicating likely data gaps**.
+A plot of raw species counts from equal-area hexagons approximately the size of Iceland. This plot excludes international waters, but includes countries EEZ areas. We see here that while **Iceland** has <span style="color:#749DC7"><b>>5K species</b></span> other areas within Amazonia, Eastern Europe, and Africa have suspiciously fewer, **indicating likely data gaps**.
