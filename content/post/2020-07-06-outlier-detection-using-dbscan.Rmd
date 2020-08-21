@@ -1,0 +1,159 @@
+---
+title: Outlier Detection Using DBSCAN
+author: John Waller
+date: '2020-07-06'
+slug: outlier-detection-using-dbscan
+categories:
+  - GBIF
+tags:
+  - outliers
+  - dbscan
+lastmod: '2020-07-06T09:51:49+02:00'
+draft: yes
+keywords: []
+description: ''
+authors: ''
+comment: no
+toc: ''
+autoCollapseToc: no
+postMetaInFooter: no
+hiddenFromHomePage: yes
+contentCopyright: no
+reward: no
+mathjax: no
+mathjaxEnableSingleDollar: no
+mathjaxEnableAutoNumber: no
+hideHeaderAndFooter: no
+flowchartDiagrams:
+  enable: no
+  options: ''
+sequenceDiagrams:
+  enable: no
+  options: ''
+---
+
+Geographic outliers at **GBIF** are a known problem. 
+
+> **Outliers** can be errors, coordinates with high uncertainty, or simply occurrences from an undersampled region. 
+
+Often in data cleaning pipelines outliers are removed (even if they are legitimate points) because the researcher does not have time to verfity each record one-by-one. In almost all cases, outlier points are occurrences that **need attention**. Currently, there is no outlier detection implemented at **GBIF** and it is up to the user to remove outliers themselves (e.g. using CoordinateCleaner, DIVA-GIS)
+
+<!--more-->
+
+```{R,echo=FALSE, message=FALSE, warning=FALSE,echo=FALSE, results="hide"}
+# global variables 
+path_to_plots = "/post/2020-07-06-outlier-detection-using-dbscan_files/"
+github_path = "https://raw.githubusercontent.com/jhnwllr/gbif_regional_statistics/master/plots/"
+```
+
+**DBSCAN** is a simple and popular clustering algorithm. Here is a nice [introduction](https://ltjds.github.io/post/20200611/). It uses distance and a minimum number of points per cluster to decide if something is an outlier. 
+
+> "A density-based algorithm for discovering clusters in large spatial databases with noise"
+
+```{R,echo=FALSE, message=FALSE, warning=FALSE,echo=FALSE, results="hide"}
+plot_name = "output"
+```
+
+![](`r path_to_plots`/`r plot_name`.gif)
+
+Since occurrence data can be very patchy, simple distance based outlier detection methods will tend to not do very well, but since DBSCAN does not need to know the expected number of clusters in advance, it does very well considering it uses only distance and **not** some additional environmental variables like [Bioclim](https://www.worldclim.org/data/bioclim.html).   
+
+## Plotted Examples 
+
+Here I plot some examples of how **DBSCAN** (with haversine distance) does at flagging points that are not too close (**<1500**km) to other points (**minimum 3**) of the same species. I consider points here to be unique points by (specieskey, lat-lon). This eliminates some computational load and heavy sampling biases in some cases. 
+
+Also for computational reasons, I only ran this on species with **>30** and **<30,000** unique points. I plot a little gray circle around each point (radius=~1500km). I was able to run this on all Plants, Animals and Fungi in under an hour with GBIF's current cluster setup. No point was classified in these examples as an outlier if the publisher filled in the **establishmentMeans** column or it was labeled a **Living Specimen** or **Fossil**.  
+
+```{R,echo=FALSE, message=FALSE, warning=FALSE,echo=FALSE, results="hide"}
+plot_name = "Thermopsis lupinoides"
+```
+
+![](`r path_to_plots`/`r plot_name`.svg)
+
+The two outlier points ( [1](https://www.gbif.org/occurrence/2273331417), [2](https://www.gbif.org/occurrence/1702253738) )  in this example: 1. **Botanical Garden in Denver** 2. **Herbarium in Norway**. These are two points that most users would probably want to exclude. If you had 1000s of species, you would not want to do this manually.  
+
+```{R,echo=FALSE, message=FALSE, warning=FALSE,echo=FALSE, results="hide"}
+plot_name = "Lycoris aurea"
+```
+
+![](`r path_to_plots`/`r plot_name`.svg)
+
+I think most agree that these two points ( [1](https://www.gbif.org/occurrence/2423015120), [2](https://www.gbif.org/occurrence/2429371864) ) in North America are the most **needing of attention/verification**. These points are probably within private gardens. 
+
+```{R,echo=FALSE, message=FALSE, warning=FALSE,echo=FALSE, results="hide"}
+plot_name = "Cricotopus festivellus"
+```
+
+![](`r path_to_plots`/`r plot_name`.svg)
+
+Sometimes lacking **environmental information** produces results ( [1](https://www.gbif.org/occurrence/2565934285) ) that a human being might think is probably not an outlier. In any case the result is reasonable, and out of all the points, the outlier point is probably the one that **needs the most attention**.  
+
+```{R,echo=FALSE, message=FALSE, warning=FALSE,echo=FALSE, results="hide"}
+plot_name = "Tradescantia occidentalis"
+```
+
+![](`r path_to_plots`/`r plot_name`.svg)
+
+This outlier ( [1](https://www.gbif.org/occurrence/1928465280) ) is near a **botanical garden**. 
+ 
+```{R,echo=FALSE, message=FALSE, warning=FALSE,echo=FALSE, results="hide"}
+plot_name = "Taphrina farlowii"
+```
+
+![](`r path_to_plots`/`r plot_name`.svg)
+
+This ( [1](https://www.gbif.org/occurrence/1829967830) ) example shows that DBSCAN is able to **cluster effectively** while flagging points with low additional support in Japan.
+
+```{R,echo=FALSE, message=FALSE, warning=FALSE,echo=FALSE, results="hide"}
+plot_name = "Manducus maderensis"
+```
+
+![](`r path_to_plots`/`r plot_name`.svg)
+
+This example shows that DBSCAN does not do well when the species is poorly sampled in some regions, like the ocean. Also DBSCAN tends to often flag occurrences on **islands** and other remote places. 
+
+## Outlier detection vs error detection
+
+**Outlier** detection and **error** detection are different. If your goal is to produce a system with no false positives, **it will fail**. Probably combining this distance method with other environmentally informed methods would be very powerful way to flag outliers. 
+
+**Advanatages** of DBSCAN :
+
+* Simple
+* Easy to Understand
+* Only two parameters to set 
+* Scales well
+
+**Drawbacks** : 
+
+* Only uses distance
+* Must choose parameter settings
+* Sensitive to sparse global sampling  
+* Does not include any other relevant information
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">If you are interested in using biodiversity data you need to understand what it means. An example using <a href="https://twitter.com/atlaslivingaust?ref_src=twsrc%5Etfw">@atlaslivingaust</a> data for Onychophora: the records far from the wetter margins of the continent are all either geocodes for states (WHY WOULD ANYONE DO THIS?) or bad geocodes. <a href="https://t.co/IZgZ9PgSIx">pic.twitter.com/IZgZ9PgSIx</a></p>&mdash; Nick Porch (@InvertoPhiles) <a href="https://twitter.com/InvertoPhiles/status/1290864975574114305?ref_src=twsrc%5Etfw">August 5, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+DBSCAN **would not** flag any of the outlier's in this example from twitter. Environmentally-informed [reverse jackknifing](http://www.gbif.jp/v2/pdf/Principles_and_Methods_of_Data_Cleaning_-_ENGLISH.pdf) would probably do better in these examples. 
+
+## Percentage of taxa-group outliers
+
+```{R,echo=FALSE, message=FALSE, warning=FALSE,echo=FALSE, results="hide"}
+plot_name = "percent_class_outliers"
+```
+
+![](`r path_to_plots`/`r plot_name`.svg)
+
+Well sampled groups like Birds, Mammals, and flowering plants do not have many outliers. Less well-sampled groups like Dothideomycetes, Holothuroidea, Gymnolaemata . Will have more outliers, which might not be "errors" but false positives caused by sparse sampling. Fortunately, if the class is somewhat well sampled >50K records, the outlier flagging rate is less than 1% points.   
+
+```{R,echo=FALSE, message=FALSE, warning=FALSE,echo=FALSE, results="hide"}
+plot_name = "percent_dataset_outliers"
+```
+
+![](`r path_to_plots`/`r plot_name`.svg)
+
+It is difficult to judge whether a dataset with a high percentage of outliers contains more "errors" or whether it has occurrences from under sampled regions (like the ocean or Siberia).
+
+## Current implementation details 
+
+Currently this is mostly an **internal tool**. I am using it to find errors and assess dataset quality. It is a Spark job written in scala ( [github](https://github.com/jhnwllr/gbif-dbscan-outliers) ). It does not run on species with very many (>30K) unique lat-lon points, since the current implementation relies on an in memory distance matrix. However, around 99% of species (Plants,Animals,Fungi) on GBIF have less than >30K unique lat-lon points (2 283 specieskeys / 222 993 specieskeys). There are other implementations that would scale to many more points. 
+
+There are no immediate plans to include this type of flag as a **data quality flag** on GBIF, but it could be done somewhat easily. 

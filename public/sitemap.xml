@@ -10,6 +10,13 @@
   </url>
   
   <url>
+    <loc>/post/outlier-detection-using-dbscan/</loc>
+    <lastmod>2020-07-06T09:51:49+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>/post/gbif-regional-statistics-2020/</loc>
     <lastmod>2020-05-11T09:04:43+02:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -387,6 +394,13 @@
   </url>
   
   <url>
+    <loc>/tags/dbscan/</loc>
+    <lastmod>2020-07-06T09:51:49+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/tags/downloads/</loc>
     <lastmod>2019-08-28T16:26:18+02:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -437,7 +451,7 @@
   
   <url>
     <loc>/categories/gbif/</loc>
-    <lastmod>2020-05-11T09:04:43+02:00</lastmod>
+    <lastmod>2020-07-06T09:51:49+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -549,7 +563,7 @@
   
   <url>
     <loc>/author/john-waller/</loc>
-    <lastmod>2020-05-11T09:04:43+02:00</lastmod>
+    <lastmod>2020-07-06T09:51:49+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -646,8 +660,15 @@
   </url>
   
   <url>
+    <loc>/tags/outliers/</loc>
+    <lastmod>2020-07-06T09:51:49+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/post/</loc>
-    <lastmod>2020-05-11T09:04:43+02:00</lastmod>
+    <lastmod>2020-07-06T09:51:49+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
