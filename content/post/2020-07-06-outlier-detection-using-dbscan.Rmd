@@ -62,7 +62,10 @@ Since occurrence data can be very patchy, simple distance based outlier detectio
 
 Here I plot some examples of how **DBSCAN** (with haversine distance) does at flagging points that are not too close (**<1500**km) to other points (**minimum 3**) of the same species. I consider points here to be unique points by (specieskey, lat-lon). This eliminates some computational load and heavy sampling biases in some cases. 
 
-Also for computational reasons, I only ran this on species with **>30** and **<30,000** unique points. I plot a little gray circle around each point (radius=~1500km). I was able to run this on all Plants, Animals and Fungi in under an hour with GBIF's current cluster setup. No point was classified in these examples as an outlier if the publisher filled in the **establishmentMeans** column or it was labeled a **Living Specimen** or **Fossil**.  
+Also for computational reasons, I only ran this on species with **>30** and **<30,000** unique points. I plot a little gray circle around each point (radius=~1500km). I was able to run this on all Plants, Animals and Fungi in under an hour with GBIF's current cluster setup. No point was classified in these examples as an outlier if the publisher filled in the **establishmentMeans** column or it was labeled a **Living Specimen** or **Fossil**. 
+
+<div style="background-color: #f2f2f2">
+<b>Example 1</b>
 
 ```{R,echo=FALSE, message=FALSE, warning=FALSE,echo=FALSE, results="hide"}
 plot_name = "Thermopsis lupinoides"
@@ -70,7 +73,12 @@ plot_name = "Thermopsis lupinoides"
 
 ![](`r path_to_plots`/`r plot_name`.svg)
 
-The two outlier points ( [1](https://www.gbif.org/occurrence/2273331417), [2](https://www.gbif.org/occurrence/1702253738) )  in this example: 1. **Botanical Garden in Denver** 2. **Herbarium in Norway**. These are two points that most users would probably want to exclude. If you had 1000s of species, you would not want to do this manually.  
+The two <span style="color:#FCB008"><b>outlier points</b></span> ( [1](https://www.gbif.org/occurrence/2273331417), [2](https://www.gbif.org/occurrence/1702253738) )  in this example: 1. **Botanical Garden in Denver** 2. **Herbarium in Norway**. These are two points that most users would probably want to exclude. If you had 1000s of species, you would not want to do this manually.  
+
+</div>
+
+<div style="background-color: #f2f2f2">
+<b>Example 2</b>
 
 ```{R,echo=FALSE, message=FALSE, warning=FALSE,echo=FALSE, results="hide"}
 plot_name = "Lycoris aurea"
@@ -80,6 +88,11 @@ plot_name = "Lycoris aurea"
 
 I think most agree that these two points ( [1](https://www.gbif.org/occurrence/2423015120), [2](https://www.gbif.org/occurrence/2429371864) ) in North America are the most **needing of attention/verification**. These points are probably within private gardens. 
 
+</div>
+
+<div style="background-color: #f2f2f2">
+<b>Example 3</b>
+
 ```{R,echo=FALSE, message=FALSE, warning=FALSE,echo=FALSE, results="hide"}
 plot_name = "Cricotopus festivellus"
 ```
@@ -88,6 +101,11 @@ plot_name = "Cricotopus festivellus"
 
 Sometimes lacking **environmental information** produces results ( [1](https://www.gbif.org/occurrence/2565934285) ) that a human being might think is probably not an outlier. In any case the result is reasonable, and out of all the points, the outlier point is probably the one that **needs the most attention**.  
 
+</div>
+
+<div style="background-color: #f2f2f2">
+<b>Example 4</b>
+
 ```{R,echo=FALSE, message=FALSE, warning=FALSE,echo=FALSE, results="hide"}
 plot_name = "Tradescantia occidentalis"
 ```
@@ -95,7 +113,12 @@ plot_name = "Tradescantia occidentalis"
 ![](`r path_to_plots`/`r plot_name`.svg)
 
 This outlier ( [1](https://www.gbif.org/occurrence/1928465280) ) is near a **botanical garden**. 
- 
+
+</div>
+
+<div style="background-color: #f2f2f2">
+<b>Example 5</b>
+
 ```{R,echo=FALSE, message=FALSE, warning=FALSE,echo=FALSE, results="hide"}
 plot_name = "Taphrina farlowii"
 ```
@@ -104,6 +127,11 @@ plot_name = "Taphrina farlowii"
 
 This ( [1](https://www.gbif.org/occurrence/1829967830) ) example shows that DBSCAN is able to **cluster effectively** while flagging points with low additional support in Japan.
 
+</div>
+
+<div style="background-color: #f2f2f2">
+<b>Example 6</b>
+
 ```{R,echo=FALSE, message=FALSE, warning=FALSE,echo=FALSE, results="hide"}
 plot_name = "Manducus maderensis"
 ```
@@ -111,6 +139,8 @@ plot_name = "Manducus maderensis"
 ![](`r path_to_plots`/`r plot_name`.svg)
 
 This example shows that DBSCAN does not do well when the species is poorly sampled in some regions, like the ocean. Also DBSCAN tends to often flag occurrences on **islands** and other remote places. 
+
+</div>
 
 ## Outlier detection vs error detection
 

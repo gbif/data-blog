@@ -84,7 +84,7 @@
 
 <meta itemprop="datePublished" content="2020-07-06T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-07-06T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="857">
+<meta itemprop="wordCount" content="869">
 
 
 
@@ -205,18 +205,36 @@
 <h2>Plotted Examples</h2>
 <p>Here I plot some examples of how <strong>DBSCAN</strong> (with haversine distance) does at flagging points that are not too close (<strong>&lt;1500</strong>km) to other points (<strong>minimum 3</strong>) of the same species. I consider points here to be unique points by (specieskey, lat-lon). This eliminates some computational load and heavy sampling biases in some cases.</p>
 <p>Also for computational reasons, I only ran this on species with <strong>&gt;30</strong> and <strong>&lt;30,000</strong> unique points. I plot a little gray circle around each point (radius=~1500km). I was able to run this on all Plants, Animals and Fungi in under an hour with GBIF’s current cluster setup. No point was classified in these examples as an outlier if the publisher filled in the <strong>establishmentMeans</strong> column or it was labeled a <strong>Living Specimen</strong> or <strong>Fossil</strong>.</p>
+<div style="background-color: #f2f2f2">
+<p><b>Example 1</b></p>
 <p><img src="/post/2020-07-06-outlier-detection-using-dbscan_files//Thermopsis%20lupinoides.svg" /></p>
-<p>The two outlier points ( <a href="https://www.gbif.org/occurrence/2273331417">1</a>, <a href="https://www.gbif.org/occurrence/1702253738">2</a> ) in this example: 1. <strong>Botanical Garden in Denver</strong> 2. <strong>Herbarium in Norway</strong>. These are two points that most users would probably want to exclude. If you had 1000s of species, you would not want to do this manually.</p>
+<p>The two <span style="color:#FCB008"><b>outlier points</b></span> ( <a href="https://www.gbif.org/occurrence/2273331417">1</a>, <a href="https://www.gbif.org/occurrence/1702253738">2</a> ) in this example: 1. <strong>Botanical Garden in Denver</strong> 2. <strong>Herbarium in Norway</strong>. These are two points that most users would probably want to exclude. If you had 1000s of species, you would not want to do this manually.</p>
+</div>
+<div style="background-color: #f2f2f2">
+<p><b>Example 2</b></p>
 <p><img src="/post/2020-07-06-outlier-detection-using-dbscan_files//Lycoris%20aurea.svg" /></p>
 <p>I think most agree that these two points ( <a href="https://www.gbif.org/occurrence/2423015120">1</a>, <a href="https://www.gbif.org/occurrence/2429371864">2</a> ) in North America are the most <strong>needing of attention/verification</strong>. These points are probably within private gardens.</p>
+</div>
+<div style="background-color: #f2f2f2">
+<p><b>Example 3</b></p>
 <p><img src="/post/2020-07-06-outlier-detection-using-dbscan_files//Cricotopus%20festivellus.svg" /></p>
 <p>Sometimes lacking <strong>environmental information</strong> produces results ( <a href="https://www.gbif.org/occurrence/2565934285">1</a> ) that a human being might think is probably not an outlier. In any case the result is reasonable, and out of all the points, the outlier point is probably the one that <strong>needs the most attention</strong>.</p>
+</div>
+<div style="background-color: #f2f2f2">
+<p><b>Example 4</b></p>
 <p><img src="/post/2020-07-06-outlier-detection-using-dbscan_files//Tradescantia%20occidentalis.svg" /></p>
 <p>This outlier ( <a href="https://www.gbif.org/occurrence/1928465280">1</a> ) is near a <strong>botanical garden</strong>.</p>
+</div>
+<div style="background-color: #f2f2f2">
+<p><b>Example 5</b></p>
 <p><img src="/post/2020-07-06-outlier-detection-using-dbscan_files//Taphrina%20farlowii.svg" /></p>
 <p>This ( <a href="https://www.gbif.org/occurrence/1829967830">1</a> ) example shows that DBSCAN is able to <strong>cluster effectively</strong> while flagging points with low additional support in Japan.</p>
+</div>
+<div style="background-color: #f2f2f2">
+<p><b>Example 6</b></p>
 <p><img src="/post/2020-07-06-outlier-detection-using-dbscan_files//Manducus%20maderensis.svg" /></p>
 <p>This example shows that DBSCAN does not do well when the species is poorly sampled in some regions, like the ocean. Also DBSCAN tends to often flag occurrences on <strong>islands</strong> and other remote places.</p>
+</div>
 </div>
 <div id="outlier-detection-vs-error-detection" class="section level2">
 <h2>Outlier detection vs error detection</h2>
