@@ -6,7 +6,7 @@
     <description>Recent content in John Waller on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 06 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 01 Sep 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/author/john-waller/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,12 +14,12 @@
     <item>
       <title>Outlier Detection Using DBSCAN</title>
       <link>/post/outlier-detection-using-dbscan/</link>
-      <pubDate>Mon, 06 Jul 2020 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>/post/outlier-detection-using-dbscan/</guid>
       <description>Geographic outliers at GBIF are a known problem.
-Outliers can be errors, coordinates with high uncertainty, or simply occurrences from an undersampled region.
-Often in data cleaning pipelines outliers are removed (even if they are legitimate points) because the researcher does not have time to verfity each record one-by-one. In almost all cases, outlier points are occurrences that need attention. Currently, there is no outlier detection implemented at GBIF and it is up to the user to remove outliers themselves (e.</description>
+Outliers can be errors, coordinates with high uncertainty, or simply occurrences from an under-sampled region.
+In data cleaning pipelines outliers are often removed (even if they are legitimate points) because the researcher does not have time to verify each record one-by-one. In almost all cases, outlier points are occurrences that need attention. Currently, there is no outlier detection implemented at GBIF and it is up to the user to remove outliers themselves (e.</description>
     </item>
     
     <item>
