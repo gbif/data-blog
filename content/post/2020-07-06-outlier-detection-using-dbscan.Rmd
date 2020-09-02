@@ -102,7 +102,7 @@ plot_name = "Cricotopus festivellus"
 
 ![](`r path_to_plots`/`r plot_name`.svg)
 
-Sometimes lacking **environmental information** produces results ( [1](https://www.gbif.org/occurrence/2565934285) ) that a human being might think is probably not an outlier. In any case the result is reasonable, and out of all the points, the <span style="color:#FCB008"><b>outlier point</b></span> is probably the one that **needs the most attention**.  
+Sometimes lacking **environmental information** produces results that a human being might think is probably not an outlier. In any case the result is reasonable, and out of all the points, the <span style="color:#FCB008"><b>outlier point</b></span> ( [1](https://www.gbif.org/occurrence/2565934285) ) is probably the one that **needs the most attention**.  
 
 </div>
 
@@ -128,7 +128,7 @@ plot_name = "Taphrina farlowii"
 
 ![](`r path_to_plots`/`r plot_name`.svg)
 
-This ( [1](https://www.gbif.org/occurrence/1829967830) ) example shows that **DBSCAN** is able to **cluster effectively** while flagging an <span style="color:#FCB008"><b>outlier point</b></span> with low additional support in Japan.
+This  example shows that **DBSCAN** is able to **cluster effectively** while flagging an <span style="color:#FCB008"><b>outlier point</b></span>( [1](https://www.gbif.org/occurrence/1829967830) ) with low additional support in Japan.
 
 </div>
 
