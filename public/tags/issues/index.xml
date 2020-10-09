@@ -6,19 +6,19 @@
     <description>Recent content in Issues on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 26 Sep 2000 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 08 Oct 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/issues/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>GBIF data quality issues and flags what do they mean?</title>
+      <title>GBIF Issues &amp; Flags</title>
       <link>/post/issues-and-flags/</link>
-      <pubDate>Tue, 26 Sep 2000 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 08 Oct 2020 00:00:00 +0000</pubDate>
       
       <guid>/post/issues-and-flags/</guid>
-      <description>GBIF gets records from around 1600 (and counting) occurrence datasets.Not all of the data-providers have the time or resources to make sure their datasets are free from errors.
-As a service to the biodiversity user community, GBIF flags records that might contain an obvious issue. Some flags are not easy to understand, and most users are probably not aware that they exist or filter them all out by default by leaving the “include records where coordinates are flagged as suspcious” unchecked.</description>
+      <description>&amp;ldquo;With great power comes great responsibility&amp;rdquo;, is a proverb that emerged during French Revolution but popularized by the Spider-Man comic books written by Stan Lee.
+ This slogan can be applied also when we share and use biodiversity data, especially through a worldwide platform as GBIF.org. Publishers play an essential role not simply in sharing datasets, but also in managing their quality, completeness and usefulness and ensuring their integration and value within GBIF’s global knowledge base (GBIF.</description>
     </item>
     
   </channel>

@@ -1,0 +1,64 @@
+---
+title: Outlier Detection Using Reverse Jackknife
+author: John Waller
+date: '2020-10-07'
+slug: outlier-detection-using-reverse-jackknife
+categories: []
+tags:
+  - outliers
+  - reverse jackknife
+lastmod: '2020-10-07T14:47:17+02:00'
+draft: yes
+keywords: []
+description: ''
+authors: ''
+comment: no
+toc: ''
+autoCollapseToc: no
+postMetaInFooter: no
+hiddenFromHomePage: yes
+contentCopyright: no
+reward: no
+mathjax: no
+mathjaxEnableSingleDollar: no
+mathjaxEnableAutoNumber: no
+hideHeaderAndFooter: no
+flowchartDiagrams:
+  enable: no
+  options: ''
+sequenceDiagrams:
+  enable: no
+  options: ''
+---
+
+
+
+<p><strong>Environmental outliers</strong> are a common problem for ecological modelers using <strong>GBIF</strong> occurrence data. Currently, however, there is no outlier detection implemented at GBIF.</p>
+<p><img src="/post/2020-07-10-outlier-detection-using-reverse-jackknife_files//surface_plot.jpg" /></p>
+<p>One common way to remove these outliers is by using <strong>reverse jackknifing</strong> on <a href="https://www.worldclim.org/data/bioclim.html">environmental surfaces</a>. This type of outlier detection takes the environmental values from point occurrences and sees whether the occurrence is an uncommon value in climate space ( <a href="https://www.gbif.org/document/80528/principles-and-methods-of-data-cleaning-primary-species-and-species-occurrence-data">reference pg 51</a> ).</p>
+<!--more-->
+<blockquote>
+<p>The jackknife method works by first calculating the sample mean, standard deviation and range; and then steps through the sorted values comparing the distance to the mean of it and the next value. Where the distance to mean between values is above a threshold level then that sample value and those further away from the mean are flagged as outliers. An outlierness metric is also calculated for the sample value. - <a href="https://code.google.com/archive/p/ala-dataquality/wikis/DETECTED_OUTLIER_JACKKNIFE.wiki">source link</a></p>
+</blockquote>
+<p><strong>Environmental outliers</strong> can arise for a few reasons:</p>
+<ol style="list-style-type: decimal">
+<li>A point that is a mistake (mirrored lat-lon, some other mistake)</li>
+<li>A point that is a centroid (of a cournty or region) <a href="https://data-blog.gbif.org/post/country-centroids/">previous blog post</a></li>
+<li>A point located at a zoo, herbarium, or other institution</li>
+<li>A point sampled from a gridded dataset</li>
+<li>A point occurs in a micro-climate that is below the resolution of the climate surface</li>
+<li>Or naturally because of chance</li>
+</ol>
+<p><strong>1-4</strong> are usually seen as undesirable for most modelers.</p>
+<p>Here is a typical result from a reverse-jackknifing run. The <strong>outlier</strong> occurs at the <a href="https://www.ohsu.edu/onprc">Oregon Regional Primate Research Center</a>.</p>
+<p><img src="/post/2020-07-10-outlier-detection-using-reverse-jackknife_files//8978926.jpg" /></p>
+<p>Cumulative frequency plots are to the right. Bioclimatic surface values are on the x-axis and frequency on the y-axis. <strong>Black-colored points</strong> very much to the right or left or right are outliers. I also write the number (7) of other surfaces that flagged this point as an outlier as a little number next to the point. Because of multiple-comparisons, a point should probably not be considered a “true outlier” unless it an outlier in &gt; 5 surfaces.</p>
+<p><a href="https://data-blog.gbif.org/post/outlier-detection-using-dbscan/">Previously</a>, I discussed a techinque for discovering outliers that uses <strong>distance</strong> from other points. In this example, a distance based-method would also spot this outlier. <strong>Environmental surfaces</strong>, however, give us the power to spot outliers that occur within the main-blob of other occurrence points.</p>
+<p><img src="/post/2020-07-10-outlier-detection-using-reverse-jackknife_files//8493215.jpg" /></p>
+<p><a href="https://www.gbif.org/occurrence/1920812594" class="uri">https://www.gbif.org/occurrence/1920812594</a>
+<a href="https://www.gbif.org/occurrence/2576278969" class="uri">https://www.gbif.org/occurrence/2576278969</a>
+<a href="https://www.gbif.org/occurrence/2244307771" class="uri">https://www.gbif.org/occurrence/2244307771</a></p>
+<p><a href="https://www.inaturalist.org/observations/13070" class="uri">https://www.inaturalist.org/observations/13070</a></p>
+<p>Currently it uses bioclim data from 19 bioclimatic surfaces at a 0.1 degree resolution. Bioclim is only available for land, so no aquatic species could be run.</p>
+<p>These</p>
+<p><a href="http://www.marspec.org/" class="uri">http://www.marspec.org/</a> ocean layers</p>

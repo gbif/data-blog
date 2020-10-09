@@ -158,7 +158,7 @@
     <item>
       <title>Data quality</title>
       <link>/tags/data-quality/</link>
-      <pubDate>Mon, 07 Oct 2019 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 08 Oct 2020 00:00:00 +0000</pubDate>
       
       <guid>/tags/data-quality/</guid>
       <description></description>
@@ -255,6 +255,15 @@
     </item>
     
     <item>
+      <title>Flags</title>
+      <link>/tags/flags/</link>
+      <pubDate>Thu, 08 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/flags/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Frictionless Data</title>
       <link>/tags/frictionless-data/</link>
       <pubDate>Wed, 15 Jan 2020 00:00:00 +0000</pubDate>
@@ -266,7 +275,7 @@
     <item>
       <title>GBIF</title>
       <link>/tags/gbif/</link>
-      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 08 Oct 2020 00:00:00 +0000</pubDate>
       
       <guid>/tags/gbif/</guid>
       <description></description>
@@ -372,6 +381,15 @@
     </item>
     
     <item>
+      <title>Issues</title>
+      <link>/tags/issues/</link>
+      <pubDate>Thu, 08 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/issues/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Leaflet</title>
       <link>/tags/leaflet/</link>
       <pubDate>Wed, 19 Sep 2018 00:00:00 +0000</pubDate>
@@ -473,7 +491,7 @@
     <item>
       <title>Outliers</title>
       <link>/tags/outliers/</link>
-      <pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 07 Oct 2020 00:00:00 +0000</pubDate>
       
       <guid>/tags/outliers/</guid>
       <description></description>
@@ -503,6 +521,15 @@
       <pubDate>Thu, 22 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/r/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Reverse jackknife</title>
+      <link>/tags/reverse-jackknife/</link>
+      <pubDate>Wed, 07 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/reverse-jackknife/</guid>
       <description></description>
     </item>
     

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Reverse jackknife on GBIF Data Blog</title>
+    <link>/tags/reverse-jackknife/</link>
+    <description>Recent content in Reverse jackknife on GBIF Data Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 07 Oct 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/reverse-jackknife/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Outlier Detection Using Reverse Jackknife</title>
+      <link>/post/outlier-detection-using-reverse-jackknife/</link>
+      <pubDate>Wed, 07 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/outlier-detection-using-reverse-jackknife/</guid>
+      <description>Environmental outliers are a common problem for ecological modelers using GBIF occurrence data. Currently, however, there is no outlier detection implemented at GBIF.
+One common way to remove these outliers is by using reverse jackknifing on environmental surfaces. This type of outlier detection takes the environmental values from point occurrences and sees whether the occurrence is an uncommon value in climate space ( reference pg 51 ).
+The jackknife method works by first calculating the sample mean, standard deviation and range; and then steps through the sorted values comparing the distance to the mean of it and the next value.</description>
+    </item>
+    
+  </channel>
+</rss>
