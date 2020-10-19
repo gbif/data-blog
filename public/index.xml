@@ -29,8 +29,8 @@ What about the developer blog? Currently the developer blog no longer being upda
       <pubDate>Thu, 08 Oct 2020 00:00:00 +0000</pubDate>
       
       <guid>/post/issues-and-flags/</guid>
-      <description>&amp;ldquo;With great power comes great responsibility&amp;rdquo;, is a proverb that emerged during French Revolution but popularized by the Spider-Man comic books written by Stan Lee.
- This slogan can be applied also when we share and use biodiversity data, especially through a worldwide platform as GBIF.org. Publishers play an essential role not simply in sharing datasets, but also in managing their quality, completeness and usefulness and ensuring their integration and value within GBIF’s global knowledge base (GBIF.</description>
+      <description>Publishers share datasets, but also manage data quality. GBIF provides access to the use of biodiversity data, but also flags suspicious or missing content. Users use data, but also clean and remove records. Each play an important role in managing and improving data quality..
+What are GBIF issues and flags? The GBIF network publishes datasets, integrating them into a common access system. Here users can retrieve data through common search and download services.</description>
     </item>
     
     <item>
@@ -39,8 +39,8 @@ What about the developer blog? Currently the developer blog no longer being upda
       <pubDate>Wed, 07 Oct 2020 00:00:00 +0000</pubDate>
       
       <guid>/post/outlier-detection-using-reverse-jackknife/</guid>
-      <description>Environmental outliers are a common problem for ecological modelers using GBIF occurrence data. Currently, however, there is no outlier detection implemented at GBIF.
-One common way to remove these outliers is by using reverse jackknifing on environmental surfaces. This type of outlier detection takes the environmental values from point occurrences and sees whether the occurrence is an uncommon value in climate space ( reference pg 51 ).
+      <description>Environmental outliers are a common problem for ecological modelers using GBIF occurrence data.
+One common way to remove these outliers is by using reverse jackknifing on environmental surfaces. This type of outlier detection takes the environmental values from point occurrences and checks whether the occurrence is an uncommon value in climate space ( reference pg 51 ).
 The jackknife method works by first calculating the sample mean, standard deviation and range; and then steps through the sorted values comparing the distance to the mean of it and the next value.</description>
     </item>
     

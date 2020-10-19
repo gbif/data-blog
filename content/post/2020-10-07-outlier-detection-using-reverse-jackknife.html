@@ -33,32 +33,85 @@ sequenceDiagrams:
 
 
 
-<p><strong>Environmental outliers</strong> are a common problem for ecological modelers using <strong>GBIF</strong> occurrence data. Currently, however, there is no outlier detection implemented at GBIF.</p>
+<p><strong>Environmental outliers</strong> are a common problem for ecological modelers using <strong>GBIF</strong> occurrence data.</p>
 <p><img src="/post/2020-07-10-outlier-detection-using-reverse-jackknife_files//surface_plot.jpg" /></p>
-<p>One common way to remove these outliers is by using <strong>reverse jackknifing</strong> on <a href="https://www.worldclim.org/data/bioclim.html">environmental surfaces</a>. This type of outlier detection takes the environmental values from point occurrences and sees whether the occurrence is an uncommon value in climate space ( <a href="https://www.gbif.org/document/80528/principles-and-methods-of-data-cleaning-primary-species-and-species-occurrence-data">reference pg 51</a> ).</p>
+<p>One common way to remove these outliers is by using <strong>reverse jackknifing</strong> on <a href="https://www.worldclim.org/data/bioclim.html">environmental surfaces</a>. This type of outlier detection takes the environmental values from point occurrences and checks whether the occurrence is an uncommon value in climate space ( <a href="https://www.gbif.org/document/80528/principles-and-methods-of-data-cleaning-primary-species-and-species-occurrence-data">reference pg 51</a> ).</p>
 <!--more-->
 <blockquote>
-<p>The jackknife method works by first calculating the sample mean, standard deviation and range; and then steps through the sorted values comparing the distance to the mean of it and the next value. Where the distance to mean between values is above a threshold level then that sample value and those further away from the mean are flagged as outliers. An outlierness metric is also calculated for the sample value. - <a href="https://code.google.com/archive/p/ala-dataquality/wikis/DETECTED_OUTLIER_JACKKNIFE.wiki">source link</a></p>
+<p>The <strong>jackknife method</strong> works by first calculating the sample mean, standard deviation and range; and then steps through the sorted values comparing the distance to the mean of it and the next value. Where the distance to mean between values is above a threshold level then that sample value and those further away from the mean are flagged as outliers. An outlierness metric is also calculated for the sample value. - <a href="https://code.google.com/archive/p/ala-dataquality/wikis/DETECTED_OUTLIER_JACKKNIFE.wiki">source link</a></p>
 </blockquote>
 <p><strong>Environmental outliers</strong> can arise for a few reasons:</p>
 <ol style="list-style-type: decimal">
-<li>A point that is a mistake (mirrored lat-lon, some other mistake)</li>
+<li>A point that is a mistake (mirrored lat-lon, some other data-entry mistake)</li>
 <li>A point that is a centroid (of a cournty or region) <a href="https://data-blog.gbif.org/post/country-centroids/">previous blog post</a></li>
 <li>A point located at a zoo, herbarium, or other institution</li>
-<li>A point sampled from a gridded dataset</li>
+<li>A point sampled from a <a href="https://data-blog.gbif.org/post/finding-gridded-datasets/">gridded dataset</a></li>
 <li>A point occurs in a micro-climate that is below the resolution of the climate surface</li>
 <li>Or naturally because of chance</li>
 </ol>
-<p><strong>1-4</strong> are usually seen as undesirable for most modelers.</p>
-<p>Here is a typical result from a reverse-jackknifing run. The <strong>outlier</strong> occurs at the <a href="https://www.ohsu.edu/onprc">Oregon Regional Primate Research Center</a>.</p>
+<p><strong>1-4</strong> are usually seen as undesirable for most users.</p>
+<p>Here is a typical result from a reverse-jackknifing run. The <strong>outlier</strong> occurs at the <a href="https://www.ohsu.edu/onprc">Oregon Regional Primate Research Center</a>. Previously, I discussed a <a href="https://data-blog.gbif.org/post/outlier-detection-using-dbscan/">techinque</a> for discovering outliers that uses <strong>distance</strong> from other points. In this example, a distance based-method would also spot this environmental outlier.</p>
 <p><img src="/post/2020-07-10-outlier-detection-using-reverse-jackknife_files//8978926.jpg" /></p>
-<p>Cumulative frequency plots are to the right. Bioclimatic surface values are on the x-axis and frequency on the y-axis. <strong>Black-colored points</strong> very much to the right or left or right are outliers. I also write the number (7) of other surfaces that flagged this point as an outlier as a little number next to the point. Because of multiple-comparisons, a point should probably not be considered a “true outlier” unless it an outlier in &gt; 5 surfaces.</p>
-<p><a href="https://data-blog.gbif.org/post/outlier-detection-using-dbscan/">Previously</a>, I discussed a techinque for discovering outliers that uses <strong>distance</strong> from other points. In this example, a distance based-method would also spot this outlier. <strong>Environmental surfaces</strong>, however, give us the power to spot outliers that occur within the main-blob of other occurrence points.</p>
+<p><strong>Cumulative frequency plots</strong> are to the right. Bioclimatic surface values are on the x-axis and frequency on the y-axis. <strong>Black-colored points</strong> very much to the right or left are outliers. I also write the number (<strong>7</strong>) of other surfaces that flagged this point as an outlier as a little number next to the point. Because of multiple-comparisons, a point should probably not be considered a “true outlier” unless it an outlier in &gt; 5 surfaces (depending on the number of surfaces used).</p>
+<p><strong>Environmental surfaces</strong>, however, give us the power to spot outliers that occur within the main-blob of other occurrence points.</p>
 <p><img src="/post/2020-07-10-outlier-detection-using-reverse-jackknife_files//8493215.jpg" /></p>
-<p><a href="https://www.gbif.org/occurrence/1920812594" class="uri">https://www.gbif.org/occurrence/1920812594</a>
-<a href="https://www.gbif.org/occurrence/2576278969" class="uri">https://www.gbif.org/occurrence/2576278969</a>
-<a href="https://www.gbif.org/occurrence/2244307771" class="uri">https://www.gbif.org/occurrence/2244307771</a></p>
-<p><a href="https://www.inaturalist.org/observations/13070" class="uri">https://www.inaturalist.org/observations/13070</a></p>
-<p>Currently it uses bioclim data from 19 bioclimatic surfaces at a 0.1 degree resolution. Bioclim is only available for land, so no aquatic species could be run.</p>
-<p>These</p>
-<p><a href="http://www.marspec.org/" class="uri">http://www.marspec.org/</a> ocean layers</p>
+<p>In this example the <strong>outliers</strong> happen to all come from <strong>iNaturalist</strong> ( <a href="https://www.gbif.org/occurrence/1920812594">1</a>, <a href="https://www.gbif.org/occurrence/2576278969">2</a> ). At least one of the <a href="https://www.inaturalist.org/observations/17283719">outliers</a> appears to be close to a <a href="http://www.yacumama.com.pe/es/">private wildlife park</a>. Within-range outlier flagging <strong>would not</strong> be possible with only IUCN or <a href="https://www.inaturalist.org/taxa/43389-Saguinus-fuscicollis">iNaturalist range maps</a>.</p>
+<div id="reverse-jackknifing-all-of-gbif" class="section level2">
+<h2>Reverse jackknifing all of GBIF</h2>
+<p>I was able to run reverse jackknifing on all GBIF Animal, Plant, and Fungi records. I ported the <code>biogeo::rjack</code> <a href="https://github.com/cran/biogeo/blob/master/R/rjack.R">implementation</a> into scala-spark in order to run on the cluster ( <a href="https://github.com/jhnwllr/gbif_reverse_jackknife">GitHub</a> ). This takes around 25 minutes on the current GBIF cluster set up. I used the 19 <a href="https://www.inaturalist.org/observations/17283719">bioclim variables</a> at a 0.1 degree resolution. These variables are only available <strong>on land</strong>, so nothing aquatic was run.There are environmental layers for the <a href="http://www.marspec.org/">oceans</a> that can also be used for outlier detection. I ran on all land species with more than 20 unique bioclim values.</p>
+</div>
+<div id="gbif-outlier-statistics" class="section level2">
+<h2>GBIF Outlier Statistics</h2>
+<p>Around 2M occurrences get flagged with at least 1 surface (of 19) as an outlier. But most of these are probably false positives because of multiple comparisons. Around 150K occurrences are flagged with &gt;=5 surfaces.</p>
+<p><strong>Preserved specimens</strong> have more than two times the number of outliers as <strong>human observations</strong>, even though there are six times fewer preserved specimen records.</p>
+<p><img src="/post/2020-07-10-outlier-detection-using-reverse-jackknife_files//basisofrecord_barplot.svg" /></p>
+<p><strong>Preserved specimens</strong> are often geocoded from locality and have a high uncertainty. Most datasets had less than 1% of their occurrences flagged.</p>
+</div>
+<div id="additional-outlier-examples" class="section level2">
+<h2>Additional outlier examples</h2>
+<p>Here I plot some additional outlier examples from my full GBIF run (all turned out to be centroid related).</p>
+<div style="outline: 5px solid #F9F9F9;">
+<p><strong>Example 1</strong></p>
+<p><img src="/post/2020-07-10-outlier-detection-using-reverse-jackknife_files//5219573.jpg" /></p>
+<p>The <a href="https://www.gbif.org/occurrence/476819916">outlier</a> is a <strong>preserved specimen</strong> and location is known only from a locality description. Additionally, the point has a <a href="https://github.com/gbif/portal-feedback/issues/2428">known</a> default (and wrong) coordinate uncertainty (<strong>301m</strong>) from GeoLocate.</p>
+</div>
+<div style="outline: 5px solid #F9F9F9;">
+<p><strong>Example 2</strong></p>
+<p><img src="/post/2020-07-10-outlier-detection-using-reverse-jackknife_files//2685400.jpg" /></p>
+<p>The <a href="https://www.gbif.org/occurrence/1828885044">outlier</a> is a <strong>preserved specimen</strong> and occurs at the centroid of the city of <strong>Tateyama</strong>.</p>
+</div>
+<div style="outline: 5px solid #F9F9F9;">
+<p><strong>Example 3</strong></p>
+<p><img src="/post/2020-07-10-outlier-detection-using-reverse-jackknife_files//5284989.jpg" /></p>
+<p>The <a href="https://www.gbif.org/occurrence/1701728186">outlier</a> is a <strong>preserved specimen</strong> and occurs at the centroid of the <strong>United States</strong>.</p>
+</div>
+<div style="outline: 5px solid #F9F9F9;">
+<p><strong>Example 4</strong></p>
+<p><img src="/post/2020-07-10-outlier-detection-using-reverse-jackknife_files//5285635.jpg" /></p>
+<p>The <a href="https://www.gbif.org/occurrence/1228589777">outlier</a> is a <strong>preserved specimen</strong> and occurs at the centroid of the <strong>Quebec</strong>.</p>
+</div>
+<div style="outline: 5px solid #F9F9F9;">
+<p><strong>Example 5</strong></p>
+<p><img src="/post/2020-07-10-outlier-detection-using-reverse-jackknife_files//2436544.jpg" /></p>
+<p>The <a href="https://www.gbif.org/occurrence/865719213">outlier</a> is a <strong>preserved specimen</strong> and occurs close to the centroid of the <strong>Senegal</strong>. The other gray points near the black outlier point are outliers only on this surface. While the outlier in Senegal is an outlier on 7 other surfaces.</p>
+</div>
+<div style="outline: 5px solid #F9F9F9;">
+<p><strong>Example 6</strong></p>
+<p><img src="/post/2020-07-10-outlier-detection-using-reverse-jackknife_files//5219566.jpg" /></p>
+<p>The <a href="https://www.gbif.org/occurrence/865719199">outlier</a> is a <strong>preserved specimen</strong> and is likely a centroid of <strong>Africa</strong>. It also is an outlier in <strong>5</strong> other bioclim surfaces.</p>
+</div>
+</div>
+<div id="cleaning-gbif-downloads-using-reverse-jackknifing" class="section level2">
+<h2>Cleaning GBIF downloads using reverse jackknifing</h2>
+<p>Currently, there is no outlier detection implemented on GBIF.org. You can view the results of my full GBIF run <a href="">here</a>.</p>
+<p>It is possible to do this in R.</p>
+<pre class="r"><code>
+library(biogeo)
+
+# getData(&#39;worldclim&#39;, var=&#39;bio&#39;, res=10,path=path)
+
+
+rjack()
+
+</code></pre>
+</div>
