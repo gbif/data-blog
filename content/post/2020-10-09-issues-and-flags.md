@@ -172,12 +172,13 @@ The following table highlights some common geospatial issues and instructs how t
 </table>
 
 
+<br>
+<br>
 ## Definitions
 
+More than **50 issues and flags** have been created to deal with common data quality problems. The following **long** section compiles all of them and offers a more clear description of each one. This section is intended to serve as a placeholder until more formal documentation can be written.  
 
-More than **50 issues and flags** have been created to deal with common data quality problems. The following section compiles all of them and offers a more clear description of each one. 
-
-
+<br>
 <big>**Geospatial Issues**</big>
 
 - - -
@@ -256,6 +257,7 @@ Only these three issues are removed by default when **not** clicking the check b
 
 <!-- **Coordinate precision uncertainty mismatch** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=COORDINATE_PRECISION_UNCERTAINTY_MISMATCH)</small><br>Deprecated.<br><small>**Terms**: NA</small><br> -->
 
+<br>
 <big>**Taxonomic Issues**</big>
 
 - - -
@@ -267,6 +269,7 @@ Reasons include:<br/>- The name is new, and not available in the taxonomic datas
 
 **Taxon match fuzzy** <small>(taxonomic)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_FUZZY)</small><br>Matching to the taxonomic backbone can only be done using a fuzzy, non exact match.<br><small>**Terms**: dwc:scientificName,dwc:kingdom,dwc:phylum, dwc:class, dwc:order, dwc:family, dwc:genus, dwc:subgenus, dwc:specificEpithet, dwc:infraspecificEpithet, dwc:taxonRank</small><br>
 
+<br>
 <big>**Date Issues**</big>
 
 - - -
@@ -297,6 +300,7 @@ Reasons include:<br>
 
 **Georeferenced date unlikely** <small>(date)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=GEOREFERENCED_DATE_UNLIKELY)</small><br>The georeference date given is in the future or before Linnean times (1700).<br><small>**Terms**: dwc:georeferencedDate</small><br>
 
+<br>
 <big>**Vocabulary Issues**</big>
 
 - - -
@@ -307,6 +311,7 @@ Reasons include:<br>
 
 **Occurrence status unparsable** <small>(vocabulary)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=OCCURRENCE_STATUS_UNPARSABLE)</small><br>The given occurenceStatus value cannot be interpreted; it does not match any of the known (vocabulary) values that indicate the presence or absence of a species at collection or observation event.<br><small>**Terms**: dwc:occurrenceStatus</small><br>
 
+<br>
 <big>**Other Issues**</big>
 
 - - -
