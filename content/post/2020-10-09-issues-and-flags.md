@@ -178,7 +178,6 @@ The following table highlights some common geospatial issues and instructs how t
 
 More than **50 issues and flags** have been created to deal with common data quality problems. The following **long** section compiles all of them and offers a more clear description of each one. This section is intended to serve as a placeholder until more formal documentation can be written.  
 
-<br>
 <big>**Geospatial Issues**</big>
 
 - - -
