@@ -189,14 +189,19 @@ More than **50 issues and flags** have been created to deal with common data qua
 
 **Coordinate invalid** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=COORDINATE_INVALID)</small><br>A coordinate value is given in some form, but GBIF is unable to interpret it. Possible reasons include, i.a., coordinates that fall out of range (larger/lower than 90/-90 or 180/-180, depending) or text values that cannot be interpreted.<br><small>**Terms**: dwc:decimalLatitude, dwc:decimalLongitude, dwc:verbatimCoordinates, dwc:verbatimLatitude, dwc:verbatimLongitude</small><br>
 
-Only these three issues are removed by default when **not** clicking the check box: 
+**Coordinate out of range** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=COORDINATE_OUT_OF_RANGE)</small><br>The supplied coordinates lie outside of the range for decimal lat/lon values (-90/90, -180/180).<br><small>**Terms**: dwc:decimalLatitude, dwc:decimalLongitude, dwc:verbatimCoordinates, dwc:verbatimLatitude, dwc:verbatimLongitude</small><br>
+
+These 4 issues are removed by default when **including coordinates** and **not** clicking the check box: 
 
 <img src="/post/2020-10-09-issues-and-flags_files/suspicious.png" alt="HTML tutorial" style="width:50%;">
 
- 
 - - -
 
 **Geodetic datum assumed WGS84** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=GEODETIC_DATUM_ASSUMED_WGS84)</small><br>If the datum is null, data interpretation assumes the record coordinates are in WGS84.<br><small>**Terms**: dwc:geodeticDatum</small><br>
+
+**Geodetic datum invalid** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=GEODETIC_DATUM_INVALID)</small><br>The geodetic datum could not be interpreted, because the supplied term cannot be matched against the vocabulary of known values.<br><small>**Terms**: dwc:geodeticDatum</small><br>
+
+**Country mismatch** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=COUNTRY_MISMATCH)</small><br>Interpreted Country and Country code contradict each other.<br><small>**Terms**: dwc:countryCode, dwc:country</small><br>
 
 **Country derived from coordinates** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=COUNTRY_DERIVED_FROM_COORDINATES)</small><br>If the country and country code are not supplied or cannot be matched to known values, data interpretation derives their content from the decimal coordinates through a [lookup service](https://github.com/gbif/geocode).<br><small>**Terms**: dwc:countryCode, dwc:country, dwc:decimalLatitude, dwc:decimalLongitude</small><br>
 
@@ -204,43 +209,37 @@ Only these three issues are removed by default when **not** clicking the check b
 
 **Continent invalid** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=CONTINENT_INVALID)</small><br>The continent given cannot be matched to the vocabulary for continent names<br><small>**Terms**: dwc:continent</small><br>
 
-**Geodetic datum invalid** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=GEODETIC_DATUM_INVALID)</small><br>The geodetic datum could not be interpreted, because the supplied term cannot be matched against the vocabulary of known values.<br><small>**Terms**: dwc:geodeticDatum</small><br>
-
-**Coordinate precision invalid** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=COORDINATE_PRECISION_INVALID)</small><br>Indicates an invalid or very unlikely coordinates precision. The value is not a decimal number as expected, or it has an unusually low or high for a margin of uncertainty.<br><small>**Terms**: dwc:coordinatePrecision</small><br>
+**Coordinate rounded** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=COORDINATE_ROUNDED)</small><br>In the data interpretation the original coordinates are round to 5 decimals. This is equivalent to 1.11m; any further digits would give a false sense of precision, considering the error range of measuring devices.<br><small>**Terms**: dwc:decimalLatitude, dwc:decimalLongitude</small><br>
 
 **Coordinate reprojected** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=COORDINATE_REPROJECTED)</small><br>The original coordinates were successfully reprojected from a different geodetic datum to WGS84.<br><small>**Terms**: dwc:geodeticDatum</small><br>
 
-**Elevation min max swapped** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=ELEVATION_MIN_MAX_SWAPPED)</small><br>The values for minimum and maximum elevation appear to the swapped.<br><small>**Terms**: dwc:minimumElevationInMeters, dwc:maximumElevationInMeters</small><br>
+**Coordinate reprojection suspicious** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=COORDINATE_REPROJECTION_SUSPICIOUS)</small><br>Indicates successful coordinate reprojection according to provided datum, but which results in a datum shift larger than 0.1 decimal degrees.<br><small>**Terms**: dwc:geodeticDatum, dwc:decimalLatitude, dwc:decimalLongitude</small><br>
+
+**Coordinate reprojection failed** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=COORDINATE_REPROJECTION_FAILED)</small><br>The given decimal latitude and longitude could not be reprojected to WGS84 based on the provided datum.<br><small>**Terms**: dwc:geodeticDatum, dwc:decimalLatitude, dwc:decimalLongitude</small><br>
 
 **Coordinate uncertainty meters invalid** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=COORDINATE_UNCERTAINTY_METERS_INVALID)</small><br>The value given for Coordinate uncertainty in meters, indicating the radius of uncertainty around the given decimal coordinates, is not a valid number, or lies outside a plausible range.<br><small>**Terms**: dwc:coordinateUncertaintyInMeters</small><br>
 
-**Country mismatch** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=COUNTRY_MISMATCH)</small><br>Interpreted Country and Country code contradict each other.<br><small>**Terms**: dwc:countryCode, dwc:country</small><br>
-
-**Depth min max swapped** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=DEPTH_MIN_MAX_SWAPPED)</small><br>The values for minimum and maximum depth appear to the swapped.<br><small>**Terms**: dwc:minimumDepthInMeters, dwc:maximumDepthInMeters</small><br>
+**Coordinate precision invalid** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=COORDINATE_PRECISION_INVALID)</small><br>Indicates an invalid or very unlikely coordinates precision. The value is not a decimal number as expected, or it has an unusually low or high for a margin of uncertainty.<br><small>**Terms**: dwc:coordinatePrecision</small><br>
 
 **Presumed negated longitude** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=PRESUMED_NEGATED_LONGITUDE)</small><br>The supplied longitude value places the coordinates outside of the indicated country. Negating the longitude value would result in a country match.<br><small>**Terms**: dwc:decimalLongitude</small><br>
 
+**Presumed negated latitude** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=PRESUMED_NEGATED_LATITUDE)</small><br>The supplied latitude value places the coordinates outside of the indicated country. Negating the latitude value would result in a country match.<br><small>**Terms**: dwc:decimalLatitude</small><br>
+
 **Presumed swapped coordinate** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=PRESUMED_SWAPPED_COORDINATE)</small><br>Coordinates seem to be swapped when testing against the interpreted country.<br><small>**Terms**: dwc:decimalLatitude, dwc:decimalLongitude, dwc:country</small><br>
+
+**Depth min max swapped** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=DEPTH_MIN_MAX_SWAPPED)</small><br>The values for minimum and maximum depth appear to the swapped.<br><small>**Terms**: dwc:minimumDepthInMeters, dwc:maximumDepthInMeters</small><br>
 
 **Depth non numeric** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=DEPTH_NON_NUMERIC)</small><br>The values for minimum and maximum depth are non-numeric values and cannot be interpreted.<br><small>**Terms**: dwc:minimumDepthInMeters, dwc:maximumDepthInMeters</small><br>
 
 **Depth unlikely** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=DEPTH_UNLIKELY)</small><br>The values for minimum and maximum depth are negative or higher than 11000 (Mariana Trench depth in meters).<br><small>**Terms**: dwc:minimumDepthInMeters, dwc:maximumDepthInMeters</small><br>
 
-**Presumed negated latitude** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=PRESUMED_NEGATED_LATITUDE)</small><br>The supplied latitude value places the coordinates outside of the indicated country. Negating the latitude value would result in a country match.<br><small>**Terms**: dwc:decimalLatitude</small><br>
-
-**Coordinate out of range** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=COORDINATE_OUT_OF_RANGE)</small><br>The supplied coordinates lie outside of the range for decimal lat/lon values (-90/90, -180/180).<br><small>**Terms**: dwc:decimalLatitude, dwc:decimalLongitude, dwc:verbatimCoordinates, dwc:verbatimLatitude, dwc:verbatimLongitude</small><br>
+**Depth not metric** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=DEPTH_NOT_METRIC)</small><br>Set if supplied depth is not given in the metric system, for example using feet instead of meters.<br><small>**Terms**: dwc:minimumDepthInMeters, dwc:maximumDepthInMeters</small><br>
 
 **Elevation non numeric** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=ELEVATION_NON_NUMERIC)</small><br>The values for minimum and maximum elevation are non-numeric values and cannot be interpreted.<br><small>**Terms**: dwc:minimumElevationInMeters, dwc:maximumElevationMeters</small><br>
 
-**Coordinate reprojection suspicious** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=COORDINATE_REPROJECTION_SUSPICIOUS)</small><br>Indicates successful coordinate reprojection according to provided datum, but which results in a datum shift larger than 0.1 decimal degrees.<br><small>**Terms**: dwc:geodeticDatum, dwc:decimalLatitude, dwc:decimalLongitude</small><br>
-
-**Depth not metric** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=DEPTH_NOT_METRIC)</small><br>Set if supplied depth is not given in the metric system, for example using feet instead of meters.<br><small>**Terms**: dwc:minimumDepthInMeters, dwc:maximumDepthInMeters</small><br>
+**Elevation min max swapped** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=ELEVATION_MIN_MAX_SWAPPED)</small><br>The values for minimum and maximum elevation appear to the swapped.<br><small>**Terms**: dwc:minimumElevationInMeters, dwc:maximumElevationInMeters</small><br>
 
 **Elevation not metric** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=ELEVATION_NOT_METRIC)</small><br>Set if supplied elevation is not given in the metric system, for example using feet instead of meters.<br><small>**Terms**: dwc:minimumElevationInMeters, dwc:maximumElevationInMeters</small><br>
-
-**Coordinate reprojection failed** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=COORDINATE_REPROJECTION_FAILED)</small><br>The given decimal latitude and longitude could not be reprojected to WGS84 based on the provided datum.<br><small>**Terms**: dwc:geodeticDatum, dwc:decimalLatitude, dwc:decimalLongitude</small><br>
-
-**Coordinate rounded** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=COORDINATE_ROUNDED)</small><br>In the data interpretation the original coordinates are round to 5 decimals. This is equivalent to 1.11m; any further digits would give a false sense of precision, considering the error range of measuring devices.<br><small>**Terms**: dwc:decimalLatitude, dwc:decimalLongitude</small><br>
 
 - - -
 
