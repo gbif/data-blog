@@ -186,7 +186,9 @@ More than **50 issues and flags** have been created to deal with common data qua
 
 **Country coordinate mismatch** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=COUNTRY_COORDINATE_MISMATCH)</small><br>The interpreted occurrence coordinates fall outside of the indicated country.<br><small>**Terms**: dwc:countryCode, dwc:country, dwc:decimalLatitude, dwc:decimalLongitude</small><br>
 
-Only these two issues are removed by default when **not** clicking the check box: 
+**Coordinate invalid** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=COORDINATE_INVALID)</small><br>A coordinate value is given in some form, but GBIF is unable to interpret it. Possible reasons include, i.a., coordinates that fall out of range (larger/lower than 90/-90 or 180/-180, depending) or text values that cannot be interpreted.<br><small>**Terms**: dwc:decimalLatitude, dwc:decimalLongitude, dwc:verbatimCoordinates, dwc:verbatimLatitude, dwc:verbatimLongitude</small><br>
+
+Only these three issues are removed by default when **not** clicking the check box: 
 
 <img src="/post/2020-10-09-issues-and-flags_files/suspicious.png" alt="HTML tutorial" style="width:50%;">
 
@@ -196,7 +198,6 @@ Only these two issues are removed by default when **not** clicking the check box
 **Geodetic datum assumed WGS84** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=GEODETIC_DATUM_ASSUMED_WGS84)</small><br>If the datum is null, data interpretation assumes the record coordinates are in WGS84.<br><small>**Terms**: dwc:geodeticDatum</small><br>
 
 **Country derived from coordinates** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=COUNTRY_DERIVED_FROM_COORDINATES)</small><br>If the country and country code are not supplied or cannot be matched to known values, data interpretation derives their content from the decimal coordinates through a [lookup service](https://github.com/gbif/geocode).<br><small>**Terms**: dwc:countryCode, dwc:country, dwc:decimalLatitude, dwc:decimalLongitude</small><br>
-
 
 **Country invalid** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=COUNTRY_INVALID)</small><br>The country given cannot be matched to the vocabulary for country names.<br><small>**Terms**: dwc:country</small><br>
 
@@ -211,8 +212,6 @@ Only these two issues are removed by default when **not** clicking the check box
 **Elevation min max swapped** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=ELEVATION_MIN_MAX_SWAPPED)</small><br>The values for minimum and maximum elevation appear to the swapped.<br><small>**Terms**: dwc:minimumElevationInMeters, dwc:maximumElevationInMeters</small><br>
 
 **Coordinate uncertainty meters invalid** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=COORDINATE_UNCERTAINTY_METERS_INVALID)</small><br>The value given for Coordinate uncertainty in meters, indicating the radius of uncertainty around the given decimal coordinates, is not a valid number, or lies outside a plausible range.<br><small>**Terms**: dwc:coordinateUncertaintyInMeters</small><br>
-
-**Coordinate invalid** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=COORDINATE_INVALID)</small><br>A coordinate value is given in some form, but GBIF is unable to interpret it. Possible reasons include, i.a., coordinates that fall out of range (larger/lower than 90/-90 or 180/-180, depending) or text values that cannot be interpreted.<br><small>**Terms**: dwc:decimalLatitude, dwc:decimalLongitude, dwc:verbatimCoordinates, dwc:verbatimLatitude, dwc:verbatimLongitude</small><br>
 
 **Country mismatch** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=COUNTRY_MISMATCH)</small><br>Interpreted Country and Country code contradict each other.<br><small>**Terms**: dwc:countryCode, dwc:country</small><br>
 
