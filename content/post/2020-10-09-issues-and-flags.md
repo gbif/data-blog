@@ -224,7 +224,7 @@ Only these two issues are removed by default when **not** clicking the check box
 
 **Depth non numeric** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=DEPTH_NON_NUMERIC)</small><br>The values for minimum and maximum depth are non-numeric values and cannot be interpreted.<br><small>**Terms**: dwc:minimumDepthInMeters, dwc:maximumDepthInMeters</small><br>
 
-**Depth unlikely** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=DEPTH_UNLIKELY)</small><br>The values for minimum and maximum depth are negative or higher than 11000 (Mariana Trench depth in meters)<br><small>**Terms**: dwc:minimumDepthInMeters, dwc:maximumDepthInMeters</small><br>
+**Depth unlikely** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=DEPTH_UNLIKELY)</small><br>The values for minimum and maximum depth are negative or higher than 11000 (Mariana Trench depth in meters).<br><small>**Terms**: dwc:minimumDepthInMeters, dwc:maximumDepthInMeters</small><br>
 
 **Presumed negated latitude** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=PRESUMED_NEGATED_LATITUDE)</small><br>The supplied latitude value places the coordinates outside of the indicated country. Negating the latitude value would result in a country match.<br><small>**Terms**: dwc:decimalLatitude</small><br>
 
@@ -234,28 +234,28 @@ Only these two issues are removed by default when **not** clicking the check box
 
 **Coordinate reprojection suspicious** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=COORDINATE_REPROJECTION_SUSPICIOUS)</small><br>Indicates successful coordinate reprojection according to provided datum, but which results in a datum shift larger than 0.1 decimal degrees.<br><small>**Terms**: dwc:geodeticDatum, dwc:decimalLatitude, dwc:decimalLongitude</small><br>
 
-**Depth not metric** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=DEPTH_NOT_METRIC)</small><br>Set if supplied depth is not given in the metric system, for example using feet instead of meters<br><small>**Terms**: dwc:minimumDepthInMeters, dwc:maximumDepthInMeters</small><br>
+**Depth not metric** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=DEPTH_NOT_METRIC)</small><br>Set if supplied depth is not given in the metric system, for example using feet instead of meters.<br><small>**Terms**: dwc:minimumDepthInMeters, dwc:maximumDepthInMeters</small><br>
 
-**Elevation not metric** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=ELEVATION_NOT_METRIC)</small><br>Set if supplied elevation is not given in the metric system, for example using feet instead of meters<br><small>**Terms**: dwc:minimumElevationInMeters, dwc:maximumElevationInMeters</small><br>
+**Elevation not metric** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=ELEVATION_NOT_METRIC)</small><br>Set if supplied elevation is not given in the metric system, for example using feet instead of meters.<br><small>**Terms**: dwc:minimumElevationInMeters, dwc:maximumElevationInMeters</small><br>
 
 **Coordinate reprojection failed** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=COORDINATE_REPROJECTION_FAILED)</small><br>The given decimal latitude and longitude could not be reprojected to WGS84 based on the provided datum.<br><small>**Terms**: dwc:geodeticDatum, dwc:decimalLatitude, dwc:decimalLongitude</small><br>
+
+**Coordinate rounded** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=COORDINATE_ROUNDED)</small><br>In the data interpretation the original coordinates are round to 5 decimals. This is equivalent to 1.11m; any further digits would give a false sense of precision, considering the error range of measuring devices.<br><small>**Terms**: dwc:decimalLatitude, dwc:decimalLongitude</small><br>
 
 - - -
 
 **Zero** occurrence records are flagged with the following **geospatial issues** on GBIF as of the writing of this post. 
 
-**Elevation unlikely** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=ELEVATION_UNLIKELY)</small><br>The values for minimum and maximum elevation are above the troposphere (17000 m) or below Mariana Trench (11000 m)<br><small>**Terms**: dwc:minimumElevationInMeters, dwc:maximumElevationInMeters</small><br>
-
-**Coordinate rounded** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=COORDINATE_ROUNDED)</small><br>In the data interpretation the original coordinates are round to 5 decimals. This is equivalent to 1.11m; any further digits would give a false sense of precision, considering the error range of measuring devices.<br><small>**Terms**: dwc:decimalLatitude, dwc:decimalLongitude</small><br>
+**Elevation unlikely** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=ELEVATION_UNLIKELY)</small><br>The values for minimum and maximum elevation are above the troposphere (17000 m) or below Mariana Trench (11000 m).<br><small>**Terms**: dwc:minimumElevationInMeters, dwc:maximumElevationInMeters</small><br>
 
 **Continent country mismatch** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=CONTINENT_COUNTRY_MISMATCH)</small><br>The interpreted continent and country do not match up.<br><small>**Terms**: dwc:continent, dwc:countryCode, dwc:country</small><br>
 
 **Continent derived from coordinates** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=CONTINENT_DERIVED_FROM_COORDINATES)</small><br>If no value is supplied for the continent or if the values cannot be matched against a known vocabulary, data interpretation derives the continent from the decimal coordinates.<br><small>**Terms**: dwc:continent, dwc:decimalLatitude, dwc:decimal Longitude</small><br>
 
 <!-- maybe do not we need deprecated issues -->
-**Coordinate accuracy invalid** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=COORDINATE_ACCURACY_INVALID)</small><br>Deprecated.<br><small>**Terms**: NA</small><br>
+<!-- **Coordinate accuracy invalid** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=COORDINATE_ACCURACY_INVALID)</small><br>Deprecated.<br><small>**Terms**: NA</small><br> -->
 
-**Coordinate precision uncertainty mismatch** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=COORDINATE_PRECISION_UNCERTAINTY_MISMATCH)</small><br>Deprecated.<br><small>**Terms**: NA</small><br>
+<!-- **Coordinate precision uncertainty mismatch** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=COORDINATE_PRECISION_UNCERTAINTY_MISMATCH)</small><br>Deprecated.<br><small>**Terms**: NA</small><br> -->
 
 <big>**Taxonomic Issues**</big>
 
@@ -286,6 +286,8 @@ Reasons include:<br/>- The name is new, and not available in the taxonomic datas
 
 **Modified date invalid** <small>(date)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=MODIFIED_DATE_INVALID)</small><br>A (partial) invalid modified date is given.<br><small>**Terms**: dc:modified</small><br><br>Reasons include:<br/>- A non-existing date (e.g "1995-04-34")<br/>- Missing date parts (e.g. without year).<br/>- The date format does not follow the ISO 8601 standard (YYYY-MM-DD)
 
+**Modified date unlikely** <small>(date)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=MODIFIED_DATE_UNLIKELY)</small><br>The modified date given is in the future or predates unix time (1970).<br><small>**Terms**: dc:modified</small><br>
+
 **Georeferenced date invalid** <small>(date)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=GEOREFERENCED_DATE_INVALID)</small><br>The georeference date given cannot be intrepreted because it is invalid.<br> 
 <small>**Terms**: dwc:georeferencedDate</small><br>
 
@@ -296,19 +298,13 @@ Reasons include:<br>
 
 **Georeferenced date unlikely** <small>(date)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=GEOREFERENCED_DATE_UNLIKELY)</small><br>The georeference date given is in the future or before Linnean times (1700).<br><small>**Terms**: dwc:georeferencedDate</small><br>
 
-- - -
-
-**Zero** occurrence records are flagged with the following **date issues** on GBIF as of the writing of this post. 
-
-**Modified date unlikely** <small>(date)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=MODIFIED_DATE_UNLIKELY)</small><br>The modified date given is in the future or predates unix time (1970).<br><small>**Terms**: dc:modified</small><br>
-
 <big>**Vocabulary Issues**</big>
 
 - - -
 
-**Basis of record invalid** <small>(vocabulary)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=BASIS_OF_RECORD_INVALID)</small><br>The given basis of record is impossible to interpret or seriously different from the recommended vocabulary: http://rs.gbif.org/vocabulary/dwc/basis_of_record.xml<br><small>**Terms**: dwc:basisOfRecord</small><br>
+**Basis of record invalid** <small>(vocabulary)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=BASIS_OF_RECORD_INVALID)</small><br>The given basis of record is impossible to interpret or very different from the recommended vocabulary: http://rs.gbif.org/vocabulary/dwc/basis_of_record.xml<br><small>**Terms**: dwc:basisOfRecord</small><br>
 
-**Type status invalid** <small>(vocabulary)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=TYPE_STATUS_INVALID)</small><br>The given type status is impossible to interpret or seriously different from the recommended vocabulary: https://rs.gbif.org/vocabulary/gbif/type_status.xml<br><small>**Terms**: dwc:typeStatus</small><br>
+**Type status invalid** <small>(vocabulary)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=TYPE_STATUS_INVALID)</small><br>The given type status is impossible to interpret or very different from the recommended vocabulary: https://rs.gbif.org/vocabulary/gbif/type_status.xml<br><small>**Terms**: dwc:typeStatus</small><br>
 
 **Occurrence status unparsable** <small>(vocabulary)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=OCCURRENCE_STATUS_UNPARSABLE)</small><br>The given occurenceStatus value cannot be interpreted; it does not match any of the known (vocabulary) values that indicate the presence or absence of a species at collection or observation event.<br><small>**Terms**: dwc:occurrenceStatus</small><br>
 
@@ -318,13 +314,13 @@ Reasons include:<br>
 
 **Individual count invalid** <small>(individual count)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=INDIVIDUAL_COUNT_INVALID)</small><br>Individual count value not parsable into an integer.<br><small>**Terms**: dwc:individualCount</small><br>
 
-**Individual count conflicts with occurrence status** <small>(individual count)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=INDIVIDUAL_COUNT_CONFLICTS_WITH_OCCURRENCE_STATUS)</small><br>The values given for the individual count and for the status of the occurrence (present/absent) contradict each other (e.g. the count is 0 but the status says "present")<br><small>**Terms**: dwc:individualCount, dwc:occurrenceStatus</small><br>
+**Individual count conflicts with occurrence status** <small>(individual count)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=INDIVIDUAL_COUNT_CONFLICTS_WITH_OCCURRENCE_STATUS)</small><br>The values given for the individual count and for the status of the occurrence (present/absent) contradict each other (e.g. the count is 0 but the status says "present").<br><small>**Terms**: dwc:individualCount, dwc:occurrenceStatus</small><br>
 
 **Occurrence status inferred from individual count** <small>(occurrence status)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=OCCURRENCE_STATUS_INFERRED_FROM_INDIVIDUAL_COUNT)</small><br>The present/absent status of the occurrence was inferred from the individual count value because no status value was supplied explicitly. An individual count of 0 is interpreted as status="absent", a value > 0 as "present"<br><small>**Terms**: dwc:individualCount, dwc:occurrenceStatus</small><br>
 
-**References URI invalid** <small>(uri)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=REFERENCES_URI_INVALID)</small><br>The references URL cannot be resolved, and may be malformed or contain invalid characters. If there is more than one URL, the values have to be comma-separated.<br><small>**Terms**: dc:references</small><br>
+**References URI invalid** <small>(uri)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=REFERENCES_URI_INVALID)</small><br>The references URL cannot be resolved, and may be malformed or contain invalid characters. If there is more than one URL, the values have to be separated by a pipe symbol "|".<br><small>**Terms**: dc:references</small><br>
 
-**Multimedia URI invalid** <small>(uri)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=MULTIMEDIA_URI_INVALID)</small><br>The multimedia URL cannot be resolved, and may be malformed or contain invalid characters. If there is more than one URL, the values have to be comma-separated.<br><small>**Terms**: dwc:associatedMedia</small><br>
+**Multimedia URI invalid** <small>(uri)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=MULTIMEDIA_URI_INVALID)</small><br>The multimedia URL cannot be resolved, and may be malformed or contain invalid characters. If there is more than one URL, the values have to be separated by a pipe symbol "|".<br><small>**Terms**: dwc:associatedMedia</small><br>
 
 **Interpretation error** <small>(interpretation)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=INTERPRETATION_ERROR)</small><br>An error occurred during interpretation, leaving the record interpretation incomplete.<br><small>**Terms**: GBIF interpretation</small><br>
 
