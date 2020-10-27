@@ -69,7 +69,7 @@ copyright = ""            # default: author.name ↓        #
   gbifLogoSrc= "/GBIF-2015.png" # ignore unless you want to add gbif logo somewhere
   logoTitle = "GBIF Data Blog"        # default: the title value    # 
   keywords = ["Hugo", "theme","even"]
-  description = "Hugo theme even example site."
+  description = "A blog about GBIF data"
 
   # paginate of archives, tags and categories             # 
   archivePaginate = 50
