@@ -14,7 +14,7 @@ tags:
   - data quality
 
 lastmod: '2020-10-08'
-draft: yes
+draft: no
 keywords: ['issues', 'flags', 'quality', 'interpretation', 'users', 'publishers', 'GBIF']
 description: ''
 comment: no
