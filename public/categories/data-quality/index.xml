@@ -6,7 +6,7 @@
     <description>Recent content in Data Quality on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 08 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 27 Oct 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/data-quality/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>GBIF Issues &amp; Flags</title>
       <link>/post/issues-and-flags/</link>
-      <pubDate>Thu, 08 Oct 2020 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 27 Oct 2020 00:00:00 +0000</pubDate>
       
       <guid>/post/issues-and-flags/</guid>
       <description>Publishers share datasets, but also manage data quality. GBIF provides access to the use of biodiversity data, but also flags suspicious or missing content. Users use data, but also clean and remove records. Each play an important role in managing and improving data quality..

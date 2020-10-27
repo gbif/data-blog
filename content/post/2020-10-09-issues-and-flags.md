@@ -1,7 +1,7 @@
 ---
 title: GBIF Issues & Flags
 author: Leonardo Buitrago
-date: '2020-10-08'
+date: '2020-10-27'
 slug: issues-and-flags
 categories:
   - GBIF
@@ -21,7 +21,7 @@ comment: no
 toc: ''
 autoCollapseToc: no
 postMetaInFooter: no
-hiddenFromHomePage: yes
+hiddenFromHomePage: no
 contentCopyright: no
 reward: no
 mathjax: no
@@ -204,11 +204,11 @@ These 4 issues are removed by default when **including coordinates** and **not**
 
 **Country derived from coordinates** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=COUNTRY_DERIVED_FROM_COORDINATES)</small><br>If the country and country code are not supplied or cannot be matched to known values, data interpretation derives their content from the decimal coordinates through a [lookup service](https://github.com/gbif/geocode).<br><small>**Terms**: dwc:countryCode, dwc:country, dwc:decimalLatitude, dwc:decimalLongitude</small><br>
 
-**Country invalid** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=COUNTRY_INVALID)</small><br>The country given cannot be matched to the vocabulary for country names.<br><small>**Terms**: dwc:country</small><br>
+**Country invalid** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=COUNTRY_INVALID)</small><br>The country or countryCode given cannot be matched to the vocabulary for country names.<br><small>**Terms**: dwc:country</small><br>
 
 **Continent invalid** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=CONTINENT_INVALID)</small><br>The continent given cannot be matched to the vocabulary for continent names<br><small>**Terms**: dwc:continent</small><br>
 
-**Coordinate rounded** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=COORDINATE_ROUNDED)</small><br>In the data interpretation the original coordinates are round to 5 decimals. This is equivalent to 1.11m; any further digits would give a false sense of precision, considering the error range of measuring devices.<br><small>**Terms**: dwc:decimalLatitude, dwc:decimalLongitude</small><br>
+**Coordinate rounded** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=COORDINATE_ROUNDED)</small><br>In the data interpretation the original coordinates are rounded to 6 decimals (~1m precision).<br><small>**Terms**: dwc:decimalLatitude, dwc:decimalLongitude</small><br>
 
 **Coordinate reprojected** <small>(geospatial)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=COORDINATE_REPROJECTED)</small><br>The original coordinates were successfully reprojected from a different geodetic datum to WGS84.<br><small>**Terms**: dwc:geodeticDatum</small><br>
 
@@ -314,7 +314,7 @@ Reasons include:<br>
 
 - - -
 
-**Individual count invalid** <small>(individual count)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=INDIVIDUAL_COUNT_INVALID)</small><br>Individual count value not parsable into an integer.<br><small>**Terms**: dwc:individualCount</small><br>
+**Individual count invalid** <small>(individual count)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=INDIVIDUAL_COUNT_INVALID)</small><br>Individual count value not parsable into a positive integer.<br><small>**Terms**: dwc:individualCount</small><br>
 
 **Individual count conflicts with occurrence status** <small>(individual count)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=INDIVIDUAL_COUNT_CONFLICTS_WITH_OCCURRENCE_STATUS)</small><br>The values given for the individual count and for the status of the occurrence (present/absent) contradict each other (e.g. the count is 0 but the status says "present").<br><small>**Terms**: dwc:individualCount, dwc:occurrenceStatus</small><br>
 
@@ -325,4 +325,5 @@ Reasons include:<br>
 **Multimedia URI invalid** <small>(uri)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=MULTIMEDIA_URI_INVALID)</small><br>The multimedia URL cannot be resolved, and may be malformed or contain invalid characters. If there is more than one URL, the values have to be separated by a pipe symbol "|".<br><small>**Terms**: dwc:associatedMedia</small><br>
 
 **Interpretation error** <small>(interpretation)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=INTERPRETATION_ERROR)</small><br>An error occurred during interpretation, leaving the record interpretation incomplete.<br><small>**Terms**: GBIF interpretation</small><br>
+
 
