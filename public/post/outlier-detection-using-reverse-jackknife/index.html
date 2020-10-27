@@ -84,7 +84,7 @@ One common way to remove these outliers is by using reverse jackknifing on envir
 
 <meta itemprop="datePublished" content="2020-10-07T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-10-07T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="796">
+<meta itemprop="wordCount" content="984">
 
 
 
@@ -245,7 +245,7 @@ One common way to remove these outliers is by using reverse jackknifing on envir
 <div style="outline: 5px solid #F9F9F9;">
 <p><strong>Example 5</strong></p>
 <p><img src="/post/2020-07-10-outlier-detection-using-reverse-jackknife_files//2436544.jpg" /></p>
-<p>The <a href="https://www.gbif.org/occurrence/865719213">outlier</a> is a <strong>preserved specimen</strong> and occurs close to the centroid of the <strong>Senegal</strong>. The other gray points near the black outlier point are outliers only on this surface. While the outlier in Senegal is an outlier on 7 other surfaces.</p>
+<p>The <a href="https://www.gbif.org/occurrence/865719213">outlier</a> is a <strong>preserved specimen</strong> and occurs close to the centroid of <strong>Senegal</strong>. The other gray points near the black outlier point are outliers only on this surface. While the outlier in Senegal is an outlier on 7 other surfaces.</p>
 </div>
 <div style="outline: 5px solid #F9F9F9;">
 <p><strong>Example 6</strong></p>
@@ -255,16 +255,61 @@ One common way to remove these outliers is by using reverse jackknifing on envir
 </div>
 <div id="cleaning-gbif-downloads-using-reverse-jackknifing" class="section level2">
 <h2>Cleaning GBIF downloads using reverse jackknifing</h2>
-<p>Currently, there is no outlier detection implemented on GBIF.org. You can view the results of my full GBIF run <a href="">here</a>.</p>
-<p>It is possible to do this in R.</p>
+<p>Currently, there is no outlier detection implemented on GBIF.org. You can view the results of my full GBIF run <a href="">here</a>. It also is possible to do reverse jackknife outlier detection in R on your own download.</p>
 <pre class="r"><code>
+library(tibble)
+library(raster)
+library(dplyr) # load dplyr after raster to avoid select conflict
+library(sp)
+library(rgbif)
 library(biogeo)
 
-# getData(&#39;worldclim&#39;, var=&#39;bio&#39;, res=10,path=path)
+# get data from worldclim
+path = &quot;C:/Users/ftw712/Desktop/&quot; # set a path to somewhere to save the data
+r = getData(&#39;worldclim&#39;, var=&#39;bio&#39;, res=10,path=path) 
 
+# get data from GBIF
+occ_data = occ_search(
+taxonKey = 5284989, # a pine tree species 
+limit = 2000,
+hasCoordinate = TRUE,
+hasGeospatialIssue = FALSE,
+country = &quot;US&quot;,
+)$data %&gt;%
+filter(
+coordinateUncertaintyInMeters &lt; 1000 | # filter with high uncertainty
+is.na(coordinateUncertaintyInMeters)) %&gt;%  
+filter(basisOfRecord == &quot;PRESERVED_SPECIMEN&quot;) %&gt;% # Let&#39;s only consider other specimens
+mutate(row_number = row_number()) %&gt;%
+select(row_number,key,scientificName,decimalLatitude,decimalLongitude) %&gt;%
+glimpse() 
 
-rjack()
+coords = occ_data %&gt;%
+select(decimalLongitude,decimalLatitude) 
 
+points = SpatialPointsDataFrame(coords,data=occ_data,proj4string=r@crs)
+
+values = extract(r,points) %&gt;%
+as.data.frame() %&gt;%
+`/`(10) %&gt;% # divide by 10 to get temp in C
+mutate(row_number = occ_data$row_number) %&gt;%
+na.omit() 
+
+# reverse jackknife from biogeo 
+# this function returns the row_number of the outlier 
+outlier_index = rjack(values$bio4) # bio4 is seasonality  
+
+# merge back with original occ_data
+outliers = values %&gt;%
+select(bio4,row_number) %&gt;%
+mutate(rjack_outlier = row_number %in% outlier_index) %&gt;%
+filter(rjack_outlier) %&gt;%
+merge(occ_data,id=&quot;row_number&quot;) 
+
+outliers # which points were flagged as outliers 
+
+# this outlier is centroid of the USA
+# https://www.gbif.org/occurrence/1701728186
 </code></pre>
 </div>
 

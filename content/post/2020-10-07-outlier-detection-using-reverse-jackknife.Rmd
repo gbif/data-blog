@@ -16,7 +16,7 @@ comment: no
 toc: ''
 autoCollapseToc: no
 postMetaInFooter: no
-hiddenFromHomePage: yes
+hiddenFromHomePage: no
 contentCopyright: no
 reward: no
 mathjax: no
@@ -171,7 +171,7 @@ plot_name = "2436544"
 
 ![](`r path_to_plots`/`r plot_name`.jpg)
 
-The [outlier](https://www.gbif.org/occurrence/865719213) is a **preserved specimen** and occurs close to the centroid of the **Senegal**. The other gray points near the black outlier point are outliers only on this surface. While the outlier in Senegal is an outlier on 7 other surfaces.
+The [outlier](https://www.gbif.org/occurrence/865719213) is a **preserved specimen** and occurs close to the centroid of **Senegal**. The other gray points near the black outlier point are outliers only on this surface. While the outlier in Senegal is an outlier on 7 other surfaces.
 
 </div>
 
@@ -191,19 +191,63 @@ The [outlier](https://www.gbif.org/occurrence/865719199) is a **preserved specim
 
 ## Cleaning GBIF downloads using reverse jackknifing
 
-Currently, there is no outlier detection implemented on GBIF.org. You can view the results of my full GBIF run [here](). 
-
-It is possible to do this in R. 
+Currently, there is no outlier detection implemented on GBIF.org. You can view the results of my full GBIF run [here](). It also is possible to do reverse jackknife outlier detection in R on your own download.  
 
 ```R  
 
+library(tibble)
+library(raster)
+library(dplyr) # load dplyr after raster to avoid select conflict
+library(sp)
+library(rgbif)
 library(biogeo)
 
-# getData('worldclim', var='bio', res=10,path=path)
+# get data from worldclim
+path = "C:/Users/ftw712/Desktop/" # set a path to somewhere to save the data
+r = getData('worldclim', var='bio', res=10,path=path) 
 
+# get data from GBIF
+occ_data = occ_search(
+taxonKey = 5284989, # a pine tree species 
+limit = 2000,
+hasCoordinate = TRUE,
+hasGeospatialIssue = FALSE,
+country = "US",
+)$data %>%
+filter(
+coordinateUncertaintyInMeters < 1000 | # filter with high uncertainty
+is.na(coordinateUncertaintyInMeters)) %>%  
+filter(basisOfRecord == "PRESERVED_SPECIMEN") %>% # Let's only consider other specimens
+mutate(row_number = row_number()) %>%
+select(row_number,key,scientificName,decimalLatitude,decimalLongitude) %>%
+glimpse() 
 
-rjack()
+coords = occ_data %>%
+select(decimalLongitude,decimalLatitude) 
 
+points = SpatialPointsDataFrame(coords,data=occ_data,proj4string=r@crs)
+
+values = extract(r,points) %>%
+as.data.frame() %>%
+`/`(10) %>% # divide by 10 to get temp in C
+mutate(row_number = occ_data$row_number) %>%
+na.omit() 
+
+# reverse jackknife from biogeo 
+# this function returns the row_number of the outlier 
+outlier_index = rjack(values$bio4) # bio4 is seasonality  
+
+# merge back with original occ_data
+outliers = values %>%
+select(bio4,row_number) %>%
+mutate(rjack_outlier = row_number %in% outlier_index) %>%
+filter(rjack_outlier) %>%
+merge(occ_data,id="row_number") 
+
+outliers # which points were flagged as outliers 
+
+# this outlier is centroid of the USA
+# https://www.gbif.org/occurrence/1701728186
 
 ```
 
