@@ -13,14 +13,14 @@ tags:
   - data quality
 
 lastmod: '2020-10-08'
-draft: no
+draft: yes
 keywords: ['issues', 'flags', 'quality', 'interpretation', 'users', 'publishers', 'GBIF']
 description: ''
 comment: no
 toc: ''
 autoCollapseToc: no
 postMetaInFooter: no
-hiddenFromHomePage: no
+hiddenFromHomePage: yes
 contentCopyright: no
 reward: no
 mathjax: no
