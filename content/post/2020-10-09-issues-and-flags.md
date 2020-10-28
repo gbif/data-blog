@@ -74,11 +74,11 @@ Thinking on how publishers and users can deal with the issues/flags identified b
 - Inappropriate use of zero (0) to document empty or missing values (e.g. decimal Lat/Long = 0)
 - Using correct characters to build lists (e.g. references, url)
 
-**Filtering records** with issues is partially possible by selecting the unwanted issue and hitting the **reverse button**. This will still only give you flagged occurrences, however. Currently there is no way to exclude individual data quality issues and get everything else from a search because of computational limitations. (at [occurrence search](https://www.gbif.org/occurrence/search))
+-->
+
+**Excluding all records** with a particular issue is **not** currently possible with the search interface. It is possible to filter all records you are not interested in **with issues** by selecting the particular issue and hitting the **reverse button**. However, reversing will still only give you all other flagged occurrences and **not** issue-free records. This is something that GBIF is working to improve. (at [occurrence search](https://www.gbif.org/occurrence/search))
 
 ![](/post/2020-10-09-issues-and-flags_files/filtering.png)
-
--->
 
 **Remarks** are shown on the individual occurrence pages to explain the process done after interpretation:
 
