@@ -5,7 +5,6 @@ date: '2020-10-27'
 slug: issues-and-flags
 categories:
   - GBIF
-  - Data Quality
 tags:
 
   - GBIF
