@@ -75,7 +75,7 @@ The code corresponding to the Search function can be found [here](https://github
 
 ---
 
-**The match** function uses the fuzzy matching only on canonical names. The scientific authorships are excluded for the first step of the matching because they vary so much. The resulting matches are then scored according to their taxonomy, authorship, status and rank (the scores are available in the `note` field of the API response by setting the parameter `verbose=true`). 
+**The match** function uses the fuzzy matching on canonical names to generate candidate matches. The scientific authorships are excluded for the first step of the matching because they vary so much. The resulting matches are then scored according to their taxonomy, authorship, status and rank (the scores are available in the `note` field of the API response by setting the parameter `verbose=true`). 
 For a summary of the match function, see the figure below:
 
 
