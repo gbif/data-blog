@@ -85,7 +85,7 @@ The example used in the figure is the following: https://api.gbif.org/v1/species
 
 The matching algorithm generates a number of flags. The main one being "Taxon Match Fuzzy", which means that the match found doesn't exactly match the query (different spelling). More information about GBIF flags and issues in [this blogpost](https://data-blog.gbif.org/post/issues-and-flags/).
 
-If two matches score the same, nothing is return as main match but they can be found as alternative matches (which are available in the response when setting the parameter `verbose=true`). This is why providing a higher taxonomy along with your scientific name can really improve the matching: it will weighs on the taxonomic score and help find a "main match".
+If two matches score the same, nothing is return as main match but they can be found as alternative matches (which are available in the response when setting the parameter `verbose=true`). This is why providing a higher taxonomy along with your scientific name can really improve the matching: it will weigh on the taxonomic score and help find a "main match".
 
 Note that not all taxonomic ranks are created equal in our scoring system. Because there can be so much variation in the taxonomies available, a difference at the order level doesn't weigh as much a as a difference at the kingdom level. In addition to that, our algorithm is more stringent when it comes to differentiate Animalia from Plantae than other kingdoms (Protista vs Animalia or Chromista vs Plantae, etc.)
 
