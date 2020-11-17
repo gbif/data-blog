@@ -63,7 +63,7 @@ If you head over to the [API documentation page](https://www.gbif.org/developer/
 
 # Search and Match, how do these work?
 
-Both the search and matched functions are based on the [Lucene](https://lucene.apache.org) search technology. We use [a analyzer](gbif/checklistbank/utils/SciNameNormalizer.java#L36) which takes into account specificities of text matching for scientific names. However, there are a few key differences between the two functions.
+Both the search and match functions are based on the [Lucene](https://lucene.apache.org) search technology. We use [a analyzer](gbif/checklistbank/utils/SciNameNormalizer.java#L36) which takes into account specificities of text matching for scientific names. However, there are a few key differences between the two functions.
 
 **The search** function queries everything (name, description, etc.) and the result is ranked according to where the match was found. See the figure below:
 
