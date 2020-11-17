@@ -46,6 +46,10 @@ Today, we are talking about the [GBIF Species API](https://www.gbif.org/develope
 
 This API is what allow us to navigate through the names available on GBIF. I will try to avoid repeating what you can already find in [its documentation](https://www.gbif.org/developer/species). Instead, I will attempt to give an overview and answer some questions that we received in the past.
 
+<!--more-->
+
+<!-- <img src="/post/2020-11-16-species-api/search.png" alt="Example" width="80%">-->
+
 ![Search screen shot](/post/2020-11-16-species-api/search.png)
 
 # What can the species API do and where is it used?
