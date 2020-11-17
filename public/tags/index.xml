@@ -32,7 +32,7 @@
     <item>
       <title>Backbone</title>
       <link>/tags/backbone/</link>
-      <pubDate>Tue, 24 Sep 2019 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate>
       
       <guid>/tags/backbone/</guid>
       <description></description>
@@ -68,7 +68,7 @@
     <item>
       <title>Checklist</title>
       <link>/tags/checklist/</link>
-      <pubDate>Wed, 04 Dec 2019 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate>
       
       <guid>/tags/checklist/</guid>
       <description></description>
@@ -275,7 +275,7 @@
     <item>
       <title>GBIF</title>
       <link>/tags/gbif/</link>
-      <pubDate>Tue, 27 Oct 2020 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate>
       
       <guid>/tags/gbif/</guid>
       <description></description>
@@ -597,6 +597,24 @@
     </item>
     
     <item>
+      <title>Species api</title>
+      <link>/tags/species-api/</link>
+      <pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/species-api/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Species matching tool</title>
+      <link>/tags/species-matching-tool/</link>
+      <pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/species-matching-tool/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Statistics</title>
       <link>/tags/statistics/</link>
       <pubDate>Tue, 19 May 2020 00:00:00 +0000</pubDate>
@@ -617,7 +635,7 @@
     <item>
       <title>Taxon match fuzzy</title>
       <link>/tags/taxon-match-fuzzy/</link>
-      <pubDate>Tue, 24 Sep 2019 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate>
       
       <guid>/tags/taxon-match-fuzzy/</guid>
       <description></description>
@@ -626,7 +644,7 @@
     <item>
       <title>Taxon match higherrank</title>
       <link>/tags/taxon-match-higherrank/</link>
-      <pubDate>Tue, 24 Sep 2019 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate>
       
       <guid>/tags/taxon-match-higherrank/</guid>
       <description></description>
@@ -635,7 +653,7 @@
     <item>
       <title>Taxon match none</title>
       <link>/tags/taxon-match-none/</link>
-      <pubDate>Tue, 24 Sep 2019 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate>
       
       <guid>/tags/taxon-match-none/</guid>
       <description></description>

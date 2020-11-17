@@ -1,7 +1,7 @@
 ---
 title: (Almost) everything you want to know about the GBIF Species API
 author: Marie Grosjean
-date: '1020-11-16'
+date: '2020-11-17'
 slug: gbif-species-api
 categories:
   - GBIF
@@ -38,17 +38,18 @@ sequenceDiagrams:
   options: ''
 ---
 
-Today, we are talking about the [GBIF Species API](https://www.gbif.org/developer/species). Although you might not use it directly, you probably encountered it while using the [GBIF web portal](https://www.gbif.org/).
+Today, we are talking about the [GBIF Species API](https://www.gbif.org/developer/species). Although you might not use it directly, you probably encountered it while using the [GBIF web portal](https://www.gbif.org/):
 
-* Typing a scientific name in the [GBIF Occurrence search](https://www.gbif.org/occurrence/search?occurrence_status=present&q=)? You used the Species API.
-* Wondering what these "Taxon Match Fuzzy" flags are about? They are generated as a result of the Species API.
-* Using the [Species Name matching tool](https://www.gbif.org/tools/species-lookup)? Definitely using the Species API.
+* Typing a scientific name in the [GBIF Occurrence search](https://www.gbif.org/occurrence/search?occurrence_status=present&q=). 
+* Seeing a "Taxon Match Fuzzy" flag. 
+* Using the [Species Name matching tool](https://www.gbif.org/tools/species-lookup).
 
 This API is what allow us to navigate through the names available on GBIF. I will try to avoid repeating what you can already find in [its documentation](https://www.gbif.org/developer/species). Instead, I will attempt to give an overview and answer some questions that we received in the past.
 
 # What can the species API do and where is it used?
 
 If you head over to the [API documentation page](https://www.gbif.org/developer/species), you will see that it divides the functions in three categories:
+
 * **Working with Name Usages**: these are all the calls use to navigate the [GBIF backbone taxonomy](https://www.gbif.org/dataset/d7dddbf4-2cf0-4f39-9b2a-bb099caae36c) or any other checklist available on GBIF. They are used by the [species web interface](https://www.gbif.org/species/search).
 * **Searching Names**: these are four functions to search for names.
   * The `/species/search` function is used to query the taxon names on the [species web interface](https://www.gbif.org/species/search).
@@ -63,11 +64,13 @@ If you head over to the [API documentation page](https://www.gbif.org/developer/
 
 # Search and Match, how do these work?
 
-Both the search and match functions are based on the [Lucene](https://lucene.apache.org) search technology. We use [a analyzer](gbif/checklistbank/utils/SciNameNormalizer.java#L36) which takes into account specificities of text matching for scientific names. However, there are a few key differences between the two functions.
+Both the search and match functions are based on the [Lucene](https://lucene.apache.org) search technology. We use an [analyzer](gbif/checklistbank/utils/SciNameNormalizer.java#L36) which takes into account specificities of text matching for scientific names. However, there are a few key differences between the two functions.
 
 **The search** function queries everything (name, description, etc.) and the result is ranked according to where the match was found. See the figure below:
 
-![Search API](https://github.com/gbif/data-blog/blob/master/content/post/2020-11-16-species-api/search_api.001.png)
+<!-- ![Search API](https://github.com/gbif/data-blog/blob/master/content/post/2020-11-16-species-api/search_api.001.png) -->
+
+![Search API](/post/2020-11-16-species-api/search_api.001.png)
 
 Note that it is possible to specify the field searched thanks to the `qField` parameter. For example, if you would like the algorithm to check vernacular names specifically, you can write `qField=VERNACULAR`.
 
@@ -78,10 +81,13 @@ The code corresponding to the Search function can be found [here](https://github
 **The match** function uses the fuzzy matching on canonical names to generate candidate matches. The scientific authorships are excluded for the first step of the matching because they vary so much. The resulting matches are then scored according to their taxonomy, authorship, status and rank (the scores are available in the `note` field of the API response by setting the parameter `verbose=true`). 
 For a summary of the match function, see the figure below:
 
+<!-- ![Match API](https://github.com/gbif/data-blog/blob/master/content/post/2020-11-16-species-api/match_API.001.png) -->
 
-![Match API](https://github.com/gbif/data-blog/blob/master/content/post/2020-11-16-species-api/match_API.001.png)
+![Match API](/post/2020-11-16-species-api/match_API.001.png)
 
-The example used in the figure is the following: https://api.gbif.org/v1/species/match?verbose=true&kingdom=Plantae&name=Agathis%20montana
+The example used in the figure is the following:
+
+https://api.gbif.org/v1/species/match?verbose=true&kingdom=Plantae&name=Agathis%20montana
 
 The matching algorithm generates a number of flags. The main one being "Taxon Match Fuzzy", which means that the match found doesn't exactly match the query (different spelling). More information about GBIF flags and issues in [this blogpost](https://data-blog.gbif.org/post/issues-and-flags/).
 

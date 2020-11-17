@@ -6,14 +6,24 @@
     <description>Recent content in Categories on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
+    <lastBuildDate>Tue, 17 Nov 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Api</title>
+      <link>/categories/api/</link>
+      <pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/api/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>GBIF</title>
       <link>/categories/gbif/</link>
-      <pubDate>Tue, 27 Oct 2020 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate>
       
       <guid>/categories/gbif/</guid>
       <description></description>

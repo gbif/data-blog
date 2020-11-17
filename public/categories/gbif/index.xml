@@ -6,10 +6,20 @@
     <description>Recent content in GBIF on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 27 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 17 Nov 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/gbif/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>(Almost) everything you want to know about the GBIF Species API</title>
+      <link>/post/gbif-species-api/</link>
+      <pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/gbif-species-api/</guid>
+      <description>Today, we are talking about the GBIF Species API. Although you might not use it directly, you probably encountered it while using the GBIF web portal:
+ Typing a scientific name in the GBIF Occurrence search. Seeing a &amp;ldquo;Taxon Match Fuzzy&amp;rdquo; flag. Using the Species Name matching tool.  This API is what allow us to navigate through the names available on GBIF. I will try to avoid repeating what you can already find in its documentation.</description>
+    </item>
     
     <item>
       <title>GBIF Issues &amp; Flags</title>
