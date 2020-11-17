@@ -81,7 +81,7 @@
 
 <meta itemprop="datePublished" content="2020-11-17T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-11-17T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="864">
+<meta itemprop="wordCount" content="860">
 
 
 
@@ -222,9 +222,9 @@
 <p>This means that we don&rsquo;t have the value for that particular taxon and field.</p>
 </blockquote>
 
-<h1 id="search-and-match-how-do-these-work">Search and Match, how do these work?</h1>
+<h1 id="search-and-match">Search and Match</h1>
 
-<p>Both the search and match functions are based on the <a href="https://lucene.apache.org">Lucene</a> search technology. We use an <a href="gbif/checklistbank/utils/SciNameNormalizer.java#L36">analyzer</a> which takes into account specificities of text matching for scientific names. However, there are a few key differences between the two functions.</p>
+<p>Both the <strong>search</strong> and <strong>match</strong> functions are based on the <a href="https://lucene.apache.org">Lucene</a> search technology. We use an <a href="gbif/checklistbank/utils/SciNameNormalizer.java#L36">analyzer</a> which takes into account specificities of text matching for scientific names. However, there are a few key differences between the two functions.</p>
 
 <p><strong>The search</strong> function queries everything (name, description, etc.) and the result is ranked according to where the match was found. See the figure below:</p>
 
