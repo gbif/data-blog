@@ -56,7 +56,7 @@ This API is what allow us to navigate through the names available on GBIF. I wil
 
 If you head over to the [API documentation page](https://www.gbif.org/developer/species), you will see that it divides the functions in three categories:
 
-* **Working with Name Usages**: these are all the calls use to navigate the [GBIF backbone taxonomy](https://www.gbif.org/dataset/d7dddbf4-2cf0-4f39-9b2a-bb099caae36c) or any other checklists available on GBIF. They are used by the [species web interface](https://www.gbif.org/species/search).
+* **Working with Name Usages**: these are all the calls use to navigate the [GBIF backbone taxonomy](https://www.gbif.org/dataset/d7dddbf4-2cf0-4f39-9b2a-bb099caae36c) or any other checklists available on GBIF. They are used by the [species web interface](https://www.gbif.org/species/search). More information [here](https://www.gbif.org/developer/species).
 * **Searching Names**: these are four functions to search for names.
   * The `/species/search` function is used to query the taxon names on the [species web interface](https://www.gbif.org/species/search).
   * The `/species/suggest` function is used by the drop down menu that appear when searching names in the `Scientific name` field in the [occurrence search interface](https://www.gbif.org/occurrence/search?occurrence_status=present&q=).
