@@ -16,7 +16,7 @@ tags:
   - Taxon match higherrank
   - Taxon match fuzzy
 lastmod: '2020-11-16'
-draft: yes
+draft: no
 keywords: ['taxonomy', 'api', 'species matching']
 description: ''
 comment: no
@@ -56,11 +56,11 @@ This API is what allow us to navigate through the names available on GBIF. I wil
 
 If you head over to the [API documentation page](https://www.gbif.org/developer/species), you will see that it divides the functions in three categories:
 
-* **Working with Name Usages**: these are all the calls use to navigate the [GBIF backbone taxonomy](https://www.gbif.org/dataset/d7dddbf4-2cf0-4f39-9b2a-bb099caae36c) or any other checklist available on GBIF. They are used by the [species web interface](https://www.gbif.org/species/search).
+* **Working with Name Usages**: these are all the calls use to navigate the [GBIF backbone taxonomy](https://www.gbif.org/dataset/d7dddbf4-2cf0-4f39-9b2a-bb099caae36c) or any other checklists available on GBIF. They are used by the [species web interface](https://www.gbif.org/species/search).
 * **Searching Names**: these are four functions to search for names.
   * The `/species/search` function is used to query the taxon names on the [species web interface](https://www.gbif.org/species/search).
   * The `/species/suggest` function is used by the drop down menu that appear when searching names in the `Scientific name` field in the [occurrence search interface](https://www.gbif.org/occurrence/search?occurrence_status=present&q=).
-  * The `/species/match` function is used to match names to the GBIF backbone taxonomy. When occurrences are shared on GBIF, all the scientific names are matched to the backbone taxonomy using this function. The [Species Name matching tool](https://www.gbif.org/tools/species-lookup) also uses this function. Note that for names included in checklist, an other function, more stringent, is used. We assume that names included in checklist are carefully curated and don't need fuzzy matching (as this is the goal of a checklist).
+  * The `/species/match` function is used to match names to the GBIF backbone taxonomy. When occurrences are shared on GBIF, all the scientific names are matched to the backbone taxonomy using this function. The [Species Name matching tool](https://www.gbif.org/tools/species-lookup) also uses this function. Note that for names included in checklists, an other function, more stringent, is used. We assume that names included in checklists are carefully curated and don't need fuzzy matching (as this is the goal of a checklist).
   * The `/species` function is not used in the GBIF Portal but it allows to search for exact matches in any checklist you would like.
 * **Name Parser**: these are the calls used by the `Searching Names` functions as well as GBIF [Name Parser tool](https://www.gbif.org/tools/name-parser).
 
@@ -70,7 +70,7 @@ If you head over to the [API documentation page](https://www.gbif.org/developer/
 
 # Search and Match
 
-Both the **search** and **match** functions are based on the [Lucene](https://lucene.apache.org) search technology. We use an [analyzer](gbif/checklistbank/utils/SciNameNormalizer.java#L36) which takes into account specificities of text matching for scientific names. However, there are a few key differences between the two functions.
+Both the **search** and **match** functions are based on the [Lucene](https://lucene.apache.org) search technology. We use an [analyzer](https://github.com/gbif/checklistbank/blob/master/checklistbank-common/src/main/java/org/gbif/checklistbank/utils/SciNameNormalizer.java#L36) which takes into account specificities of text matching for scientific names. However, there are a few key differences between the two functions.
 
 **The search** function queries everything (name, description, etc.) and the result is ranked according to where the match was found. See the figure below:
 
@@ -95,9 +95,9 @@ The example used in the figure is the following:
 
 https://api.gbif.org/v1/species/match?verbose=true&kingdom=Plantae&name=Agathis%20montana
 
-The matching algorithm generates a number of flags. The main one being "Taxon Match Fuzzy", which means that the match found doesn't exactly match the query (different spelling). More information about GBIF flags and issues in [this blogpost](https://data-blog.gbif.org/post/issues-and-flags/).
+> The matching algorithm generates a number of flags. The main one being "Taxon Match Fuzzy", which means that the match found doesn't exactly match the query (different spelling). More information about GBIF flags and issues in [this blogpost](https://data-blog.gbif.org/post/issues-and-flags/).
 
-If two matches score the same, nothing is return as main match but they can be found as alternative matches (which are available in the response when setting the parameter `verbose=true`). This is why providing a higher taxonomy along with your scientific name can really improve the matching: it will weigh on the taxonomic score and help find a "main match".
+If two matches score the same, nothing is returned as main match but they can be found as alternative matches (which are available in the response when setting the parameter `verbose=true`). This is why providing a higher taxonomy along with your scientific name can really improve the matching: it will weigh on the taxonomic score and help find a "main match".
 
 Note that not all taxonomic ranks are created equal in our scoring system. Because there can be so much variation in the taxonomies available, a difference at the order level doesn't weigh as much a as a difference at the kingdom level. In addition to that, our algorithm is more stringent when it comes to differentiate Animalia from Plantae than other kingdoms (Protista vs Animalia or Chromista vs Plantae, etc.)
 
