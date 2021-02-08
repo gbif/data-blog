@@ -68,11 +68,11 @@ I will detail some of the GRSciColl history below. But first, I thought it would
 
 GrSciColl is still a work in progress, and many challenges remain. I won't go into too many details (this is still a blogpost), but some of the areas we would like to address next include:
 
-* Clean duplicates. 
-* Make it easier for institutions to improve and maintain their content (e.g. reusing dataset metadata).
-* Integrate the TDWG collection descriptors.
-* Explore synchronisation with the [NCBI BioCollections](https://ftp.ncbi.nih.gov/pub/taxonomy/biocollections/)
-* Integrate external identifiers such as [GRID](https://grid.ac) and [ROR](https://ror.org).
+* Cleaning duplicates. 
+* Making it easier for institutions to improve and maintain their content (e.g. reusing dataset metadata).
+* Integrating the TDWG collection descriptors.
+* Exploring synchronisation with the [NCBI BioCollections](https://ftp.ncbi.nih.gov/pub/taxonomy/biocollections/)
+* Integrating external identifiers such as [GRID](https://grid.ac) and [ROR](https://ror.org).
 
 To address these issues, we will need help. We can't do it alone.
 This is why we would like to establish a Global editorial team for GRSciColl. The role of this team will be to:
