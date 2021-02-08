@@ -50,7 +50,7 @@ First of all, here are a few facts about GrSCiColl today:
 * In addition to that, over 1,500 collections were created or updated by [iDigBio](https://www.idigbio.org/portal/collections).
 * Whenever possible, institutions and collections are linked to GBIF occurrences. See for example, [the National Fish Collection of South African Institute for Aquatic Biodiversity](https://www.gbif.org/grscicoll/collection/a7d9ed64-4668-41b3-a862-27d87c50bfed/metrics).
 
-But GrSciColl was quite different when we inherited. Some of these features are the result of our work for the past two years.
+But GrSciColl was quite different when we inherited it. Some of these features are the result of our work for the past two years.
 I will detail some of the GrSciColl history below. But first, I thought it would be nice to have a little visual so I summoned my doodling skills and made this:
 
 ![GrSciColl doodles](https://github.com/gbif/data-blog/blob/master/content/post/2021-02-08-grscicoll/GrSciColl.PNG)
