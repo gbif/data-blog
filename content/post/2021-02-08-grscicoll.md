@@ -55,7 +55,7 @@ First of all, here are a few facts about GrSCiColl today:
 But GRSciColl was quite different when we inherited it. Some of these features are the result of our work for the past two years.
 I will detail some of the GRSciColl history below. But first, I thought it would be nice to have a little visual so I summoned my doodling skills and made this:
 
-![GRSciColl doodles](https://github.com/gbif/data-blog/blob/master/content/post/2021-02-08-grscicoll/GRSciColl.PNG)
+![GRSciColl doodles](https://github.com/gbif/data-blog/blob/master/content/post/2021-02-08-grscicoll/GrSciColl.PNG)
 
 1. In 2018 GBIF inherited GRSciColl from the [Smithsonian Institution](https://www.si.edu). It took some adjustment and work with the Smithsonian but we integrated into our registry and eventually made it available on GBIF.org (in 2019). Our first milestone!
 2. In 2019, we reached out to the community: we welcomed volunteer editors and started working with Index Herbariorum (IH) and iDigBio on connecting them to GRSciColl.
