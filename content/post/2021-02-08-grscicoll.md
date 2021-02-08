@@ -68,7 +68,7 @@ I will detail some of the GrSciColl history below. But first, I thought it would
 
 GrSciColl is still a work in progress and many challenges remain. I won't be going into too much details (this is still a blogpost), but here are what we would like to address next:
 
-* Cleaning duplicates. 
+* Clean duplicates. 
 * Make it easier for institutions to improve and maintain their content (e.g. reusing dataset metadata).
 * Integrate the TDWG collection descriptors.
 * Explore synchronisation with the [NCBI BioCollections](https://ftp.ncbi.nih.gov/pub/taxonomy/biocollections/)
