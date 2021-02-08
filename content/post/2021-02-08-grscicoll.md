@@ -45,10 +45,12 @@ Now is the perfect time to share a bit of GrSciColl history and what we plan for
 First of all, here are a few facts about GrSCiColl today:
 
 * > This registry of scientific collections builds on GRSciColl, a comprehensive, community-curated clearinghouse of collections information originally developed by Consortium of the Barcode of Life (CBOL). See: https://www.gbif.org/grscicoll
+* GRSciColl is embedded in the GBIF registry, available in the API and on the web, and can be edited by trusted data managers.
 * It currently hosts [8,251 institution entries](https://www.gbif.org/grscicoll/institution/search) as well as [6,306 collection](https://www.gbif.org/grscicoll/collection/search) and [16,514 staff member](https://www.gbif.org/grscicoll/person/search) entries.
 * About half of the institutions, 67% of the collections and 77% of the staff entries are synchronized with [Index Hebrariorum](http://sweetgum.nybg.org/science/ih/).
 * In addition to that, over 1,500 collections were created or updated by [iDigBio](https://www.idigbio.org/portal/collections).
 * Whenever possible, institutions and collections are linked to GBIF occurrences. See for example, [the National Fish Collection of South African Institute for Aquatic Biodiversity](https://www.gbif.org/grscicoll/collection/a7d9ed64-4668-41b3-a862-27d87c50bfed/metrics).
+* Currently, around 141 million (72%) specimen-related occurrence records link to a GRSciColl entity.
 
 But GrSciColl was quite different when we inherited it. Some of these features are the result of our work for the past two years.
 I will detail some of the GrSciColl history below. But first, I thought it would be nice to have a little visual so I summoned my doodling skills and made this:
@@ -67,15 +69,16 @@ I will detail some of the GrSciColl history below. But first, I thought it would
 GrSciColl is still a work in progress and many challenges remain. I won't be going into too much details (this is still a blogpost), but here are what we would like to address next:
 
 * Cleaning duplicates. 
-* Make it easier for institutions to improve and maintain their content.
+* Make it easier for institutions to improve and maintain their content (e.g. reusing dataset metadata).
 * Integrate the TDWG collection descriptors.
+* Explore synchronisation with the [NCBI BioCollections](https://ftp.ncbi.nih.gov/pub/taxonomy/biocollections/)
 * Integrate external identifiers such as [GRID](https://grid.ac) and [ROR](https://ror.org).
 
 To address these issues, we will need help. We can't do it alone.
 This is why we would like to establish a Global editorial team for GrSciColl. The role of this team will be to:
 * establish editorial guidelines,
 * give feedback on the development of new features aiming to improve GrSciColl,
-* advise on the planing and strategy to develop GrSCiColl, for example the integration of TDWG collection descriptor and identifiers.
+* advise on the planing and strategy to develop GrSCiColl, for example the integration of TDWG collection descriptors.
 
 We will be contacting members of the Natural History Collections and GBIF community in the next few weeks. But don't wait for us to contact you!
 If you would like to contribute to this editorial team, don't hesitate to contact us at scientific-collections@gbif.org.
