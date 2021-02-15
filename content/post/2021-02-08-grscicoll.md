@@ -66,19 +66,14 @@ I will detail some of the GRSciColl history below. But first, I thought it would
 
 # Remaining challenges and future plans
 
-GrSciColl is still a work in progress, and many challenges remain. I won't go into too many details (this is still a blogpost), but some of the areas we would like to address next include:
+GRSciColl is still a work in progress, and many challenges remain. I won't go into too many details (this is still a blogpost), but some of the areas we would like to address next include:
+1. Cleaning the data content: GRSciColl contains many duplicate entries that need cleaning. We are working on implementing tools and function to help data content manager identify and clean those dupicates more efficiently.
+2. Making it easier for institutions to improve and maintain their content: at the moment most updates are done thanks to IH synchronozation or email requests. We would like to:
+    * explore synchronisation with the [NCBI BioCollections](https://ftp.ncbi.nih.gov/pub/taxonomy/biocollections/),
+    * enable the possibility to choose EML files as master records,
+    * set up an interface for more detailed update requests.
+3. Redesign the current GRSciColl interface.
 
-* Cleaning duplicates. 
-* Making it easier for institutions to improve and maintain their content (e.g. reusing dataset metadata).
-* Integrating the TDWG collection descriptors.
-* Exploring synchronisation with the [NCBI BioCollections](https://ftp.ncbi.nih.gov/pub/taxonomy/biocollections/)
-* Integrating external identifiers such as [GRID](https://grid.ac) and [ROR](https://ror.org).
+We also plan to later broaden the group of editors to establish the Editorial board.
 
-To address these issues, we will need help. We can't do it alone.
-This is why we would like to establish a Global editorial team for GRSciColl. The role of this team will be to:
-* establish editorial guidelines,
-* give feedback on the development of new features aiming to improve GRSciColl,
-* advise on the planing and strategy to develop GRSciColl, for example the integration of TDWG collection descriptors.
-
-We will be contacting members of the Natural History Collections and GBIF community in the next few weeks. But don't wait for us to contact you!
-If you would like to contribute to this editorial team, don't hesitate to contact us at scientific-collections@gbif.org.
+If you would like to contribute to improving the GRSciColl, don't hesitate to contact us at scientific-collections@gbif.org.
