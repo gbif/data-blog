@@ -67,7 +67,7 @@ I will detail some of the GRSciColl history below. But first, I thought it would
 # Remaining challenges and future plans
 
 GRSciColl is still a work in progress, and many challenges remain. I won't go into too many details (this is still a blogpost), but some of the areas we would like to address next include:
-1. Cleaning the data content: GRSciColl contains many duplicate entries that need cleaning. We are working on implementing tools and function to help data content manager identify and clean those dupicates more efficiently.
+1. Cleaning the data content: GRSciColl contains many duplicate entries that need cleaning. We are working on implementing tools and functions to help data content managers identify and clean those dupicates more efficiently.
 2. Making it easier for institutions to improve and maintain their content: at the moment most updates are done thanks to IH synchronozation or email requests. We would like to:
     * explore synchronisation with the [NCBI BioCollections](https://ftp.ncbi.nih.gov/pub/taxonomy/biocollections/),
     * enable the possibility to choose EML files as master records,
