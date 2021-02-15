@@ -76,4 +76,4 @@ GRSciColl is still a work in progress, and many challenges remain. I won't go in
 
 We also plan to later broaden the group of editors to establish the Editorial board.
 
-If you would like to contribute to improving the GRSciColl, don't hesitate to contact us at scientific-collections@gbif.org.
+If you would like to contribute to improving the GRSciColl content, don't hesitate to contact us at scientific-collections@gbif.org.
