@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Common things to look out for when post-processing GBIF downloads - GBIF Data Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="John Waller" />
+  <meta name="description" content="Here I present a checklist for filtering GBIF downloads.
+In this guide, I will assume you are familar with R. This guide is also somewhat general, so your solution might differ.This guide is intended to give you a checklist of common things to look out for when post-processing GBIF downloads.
+Here is an example a filtering checklist script that would work for most users. Indvidual users might want to add/remove some steps." />
+
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.42" />
+
+
+<link rel="canonical" href="/post/gbif-filtering-guide/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.2.0" rel="stylesheet">
+
+
+
+
+<link rel="stylesheet" href="/css//custom.css">
+
+
+<meta property="og:title" content="Common things to look out for when post-processing GBIF downloads" />
+<meta property="og:description" content="Here I present a checklist for filtering GBIF downloads.
+In this guide, I will assume you are familar with R. This guide is also somewhat general, so your solution might differ.This guide is intended to give you a checklist of common things to look out for when post-processing GBIF downloads.
+Here is an example a filtering checklist script that would work for most users. Indvidual users might want to add/remove some steps." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/gbif-filtering-guide/" />
+
+
+
+<meta property="article:published_time" content="2021-02-17T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2020-12-08T09:51:20&#43;01:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Common things to look out for when post-processing GBIF downloads">
+<meta itemprop="description" content="Here I present a checklist for filtering GBIF downloads.
+In this guide, I will assume you are familar with R. This guide is also somewhat general, so your solution might differ.This guide is intended to give you a checklist of common things to look out for when post-processing GBIF downloads.
+Here is an example a filtering checklist script that would work for most users. Indvidual users might want to add/remove some steps.">
+
+
+<meta itemprop="datePublished" content="2021-02-17T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2021-02-17T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1152">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Common things to look out for when post-processing GBIF downloads"/>
+<meta name="twitter:description" content="Here I present a checklist for filtering GBIF downloads.
+In this guide, I will assume you are familar with R. This guide is also somewhat general, so your solution might differ.This guide is intended to give you a checklist of common things to look out for when post-processing GBIF downloads.
+Here is an example a filtering checklist script that would work for most users. Indvidual users might want to add/remove some steps."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">GBIF Data Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/categories/gbif/">
+        <li class="mobile-menu-item">posts</li>
+      </a><a href="https://discourse.gbif.org/c/data-blog">
+        <li class="mobile-menu-item">community-forum</li>
+      </a><a href="https://www.gbif.org/">
+        <li class="mobile-menu-item">gbif.org</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">about</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">
+	<img src= "/logo.png" alt="GBIF-analytics-blog" style ="width:20%;">
+  </a>
+  
+	
+  
+  
+</div>
+
+<nav class="site-navbar">
+
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/categories/gbif/">posts</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://discourse.gbif.org/c/data-blog">community-forum</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://www.gbif.org/">gbif.org</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">about</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+	
+    <header class="post-header">
+      <h1 class="post-title">Common things to look out for when post-processing GBIF downloads</h1>
+	  
+	  
+      <div class="post-author">John Waller</div>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-02-17 </span>
+        <div class="post-category">
+            
+              <a href="/categories/gbif/"> GBIF </a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    
+    
+
+    
+    <div class="post-content">
+      <p>Here I present a <strong>checklist</strong> for filtering <strong>GBIF downloads</strong>.</p>
+<p>In this guide, I will assume you are <strong>familar with R</strong>. This guide is also somewhat general, <strong>so your solution might differ</strong>.
+This guide is intended to give you a checklist of <strong>common things to look out for</strong> when post-processing GBIF downloads.</p>
+<!--more-->
+<!-- ## The checklist :  -->
+<!-- - check **default geospatial issues** -->
+<!-- - check **occurrenceStatus** -->
+<!-- - check **basisOfRecord** ("FOSSIL_SPECIMEN" "LIVING_SPECIMEN")  -->
+<!-- - check **establishmentMeans** ("MANAGED", "INTRODUCED", "INVASIVE", "NATURALISED") -->
+<!-- - check **event date** or year -->
+<!-- - check **uncertainty** (coordinatePrecision, coordinateUncertaintyInMeters) -->
+<!-- - check if **zero coordinates** (decimalLatitude=0 or decimallongitude= 0) -->
+<!-- - check if **country centroid** or other centroid -->
+<!-- - check if in **ocean** -->
+<!-- - check for **location duplicates**  -->
+<p>Here is an example a <strong>filtering checklist script</strong> that would work for most users. Indvidual users might want to <strong>add/remove</strong> some steps.</p>
+<p>After the script, I discuss each of these steps in <strong>more detail below</strong>.
+You can get the <code>Calopteryx xanthostoma.csv</code> csv file here: <a href="/post/2020-12-08-typical-user-gbif-data-cleaning_files/Calopteryx%20xanthostoma.csv">gbif_download</a>.</p>
+<pre class="r"><code>library(dplyr)
+library(CoordinateCleaner)
+
+gbif_download = readr::read_tsv(&quot;Calopteryx xanthostoma.csv&quot;)
+
+gbif_download %&gt;%
+setNames(tolower(names(.))) %&gt;% # set lowercase column names to work with CoordinateCleaner
+filter(occurrencestatus  == &quot;PRESENT&quot;) %&gt;%
+filter(!is.na(decimallongitude)) %&gt;% 
+filter(!is.na(decimallatitude)) %&gt;% 
+filter(!basisofrecord %in% c(&quot;FOSSIL_SPECIMEN&quot;,&quot;LIVING_SPECIMEN&quot;)) %&gt;%
+filter(!establishmentmeans %in% c(&quot;MANAGED&quot;, &quot;INTRODUCED&quot;, &quot;INVASIVE&quot;, &quot;NATURALISED&quot;)) %&gt;%
+filter(year &gt;= 1900) %&gt;% 
+filter(coordinateprecision &gt; 0.01 | is.na(coordinateprecision)) %&gt;% 
+filter(coordinateuncertaintyinmeters &lt; 10000 | is.na(coordinateuncertaintyinmeters)) %&gt;%
+filter(!coordinateuncertaintyinmeters %in% c(301,3036,999,9999)) %&gt;% 
+filter(!decimallatitude == 0 | !decimallongitude == 0) %&gt;%
+cc_cen(buffer = 2000) %&gt;% # remove country centroids within 2km 
+cc_cap(buffer = 2000) %&gt;% # remove capitals centroids within 2km
+cc_inst(buffer = 2000) %&gt;% # remove zoo and herbaria within 2km 
+cc_sea() %&gt;% # remove from ocean 
+distinct(decimallongitude,decimallatitude,specieskey,datasetkey, .keep_all = TRUE) %&gt;%
+glimpse() # look at results of pipeline</code></pre>
+<p>It is usually a good idea to move as much of your data filtering into the <strong>download stage</strong> as possible. Some filters I list above are <strong>not available</strong> at the download stage.</p>
+<p>Here a script that moves <strong>most</strong> filters from above into the <strong>downloads api</strong>.</p>
+<pre class="r"><code>library(rgbif)
+
+user=&quot;&quot; # GBIF user name
+pwd=&quot;&quot; # GBIF password
+email=&quot;&quot; # your email
+
+gbif_download = occ_download(
+type=&quot;and&quot;,
+pred(&quot;taxonKey&quot;, 5052020), # Calopteryx xanthostoma 
+pred(&quot;hasGeospatialIssue&quot;, FALSE),
+pred(&quot;hasCoordinate&quot;, TRUE),
+pred_gte(&quot;year&quot;, 1900),
+pred_not(pred(&quot;basisOfRecord&quot;, &quot;FOSSIL_SPECIMEN&quot;)),
+pred_not(pred(&quot;basisOfRecord&quot;, &quot;LIVING_SPECIMEN&quot;)),
+pred_not(pred(&quot;establishmentMeans&quot;,&quot;MANAGED&quot;)),
+pred_not(pred(&quot;establishmentMeans&quot;,&quot;INTRODUCED&quot;)),
+pred_not(pred(&quot;establishmentMeans&quot;,&quot;INVASIVE&quot;)),
+pred_not(pred(&quot;establishmentMeans&quot;,&quot;NATURALISED&quot;)),
+pred_or(
+pred_lt(&quot;coordinateUncertaintyInMeters&quot;,10000),
+pred_not(pred_notnull(&quot;coordinateUncertaintyInMeters&quot;)) # keep null values
+),
+format = &quot;SIMPLE_CSV&quot;,
+user=user,pwd=pwd,email=email
+)
+
+# rest of the pipeline after download
+# not yet possible to use these filters in the download stage 
+
+gbif_download %&gt;%
+filter(coordinateprecision &gt; 0.01 | is.na(coordinateprecision)) %&gt;% 
+filter(!coordinateuncertaintyinmeters %in% c(301,3036,999,9999)) %&gt;% 
+filter(!decimallatitude == 0 | !decimallongitude == 0) %&gt;%
+cc_cen(buffer = 2000) %&gt;% # remove country centroids within 2km 
+cc_cap(buffer = 2000) %&gt;% # remove capitals centroids within 2km
+cc_inst(buffer = 2000) %&gt;% # remove zoo and herbaria within 2km 
+cc_sea() %&gt;% # remove from ocean 
+distinct(decimallongitude,decimallatitude,specieskey,datasetkey, .keep_all = TRUE) %&gt;%
+glimpse() # look at results of pipeline
+</code></pre>
+<div id="gbif-default-geospatial-issues" class="section level2">
+<h2>GBIF default geospatial issues</h2>
+<p>GBIF removes <strong>common geospatial issues</strong> by default if you choose to have data with a location.</p>
+<p>The following things will be removed:</p>
+<ol style="list-style-type: decimal">
+<li><strong>Zero coordinate</strong> : Coordinates are exactly (0,0). <a href="https://en.wikipedia.org/wiki/Null_Island">null island</a></li>
+<li><strong>Country coordinate mismatch</strong> : The coordinates fall outside of the given country’s polygon.</li>
+<li><strong>Coordinate invalid</strong> : GBIF is unable to interpret the coordiantes.</li>
+<li><strong>Coordinate out of range</strong> : The coordinates are outside of the range for decimal lat/lon values ((-90,90), (-180,180)).</li>
+</ol>
+<p>You can do this on the <a href="https://www.gbif.org/occurrence/search?has_coordinate=true&amp;has_geospatial_issue=false&amp;occurrence_status=present">web portal</a> before downloading or in <code>rgbif</code>.</p>
+<pre class="r"><code>library(rgbif)
+
+# Calopteryx xanthostoma Charpentier, 1825
+gbif_download = occ_download(
+pred_in(&quot;taxonKey&quot;, 1427020), 
+format = &quot;SIMPLE_CSV&quot;,
+hasGeospatialIssue = FALSE,
+hasCoordinate = TRUE,
+user=&quot;&quot;,pwd=&quot;&quot;,email=&quot;&quot;
+)
+</code></pre>
+</div>
+<div id="absence-data" class="section level2">
+<h2>Absence data</h2>
+<p>GBIF now has a field called <strong>occurrence status</strong>, which will tell you whether an occurrence is a presence or absence.</p>
+<pre class="r"><code>gbif_download %&gt;%
+filter(occurrenceStatus  == “PRESENT”)</code></pre>
+<p>You can also do this on the <a href="https://www.gbif.org/occurrence/search?occurrence_status=present&amp;q=">web portal</a> before downloading.</p>
+</div>
+<div id="fossils-living-specimens-and-established-by-humans" class="section level2">
+<h2>Fossils, living specimens, and established by humans</h2>
+<p>You might want to remove <strong>fossils</strong> and <strong>living specimens</strong>, and <strong>non-naturally established species</strong>.</p>
+<pre class="r"><code>gbif_download %&gt;% 
+filter(!basisOfRecord %in% c(&quot;FOSSIL_SPECIMEN&quot;,&quot;LIVING_SPECIMEN&quot;)) %&gt;%
+filter(!establishmentMeans %in% c(&quot;MANAGED&quot;, &quot;INTRODUCED&quot;, &quot;INVASIVE&quot;, &quot;NATURALISED&quot;))</code></pre>
+<p>Often zoos and botanical gardens will fill in the <strong>establishmentMeans</strong> column with managed.</p>
+</div>
+<div id="old-records" class="section level2">
+<h2>Old records</h2>
+<p>You might also want to remove old records.</p>
+<pre class="r"><code>gbif_download %&gt;% 
+filter(year &gt;= 1900)</code></pre>
+<p>You can also do this on the <a href="https://www.gbif.org/occurrence/search?year=1900,2020&amp;occurrence_status=present">web portal</a> before downloading.</p>
+</div>
+<div id="high-uncertainty" class="section level2">
+<h2>High uncertainty</h2>
+<p>There are two fields that come with <strong>simple csv downloads</strong> that give uncertainty.</p>
+<ol style="list-style-type: decimal">
+<li><strong>coordinatePrecision</strong> : A decimal representation of the precision of the coordinates.</li>
+<li><strong>coordinateUncertaintyInMeters</strong> : the uncertainty of the coordinates in meters.</li>
+</ol>
+<p>These fields are not frequently used by publishers (around 600M occurrences do not fill in either), <strong>so filter with caution</strong>. I have kept missing values in my example.</p>
+<p>If you want to be sure that a point has the acceptable level of uncertainty or precision for your study, you can remove those with missing values, but this will be removing a lot “ok” records.</p>
+<pre class="r"><code># I keep missing values here
+gbif_download %&gt;% 
+filter(
+coordinatePrecision &gt; 0.01 | is.na(coordinatePrecision)
+) %&gt;% 
+filter(
+coordinateUncertaintyInMeters &lt; 1000 | is.na(coordinateUncertaintyInMeters)
+) 
+</code></pre>
+<p>You also want to remove records with <a href="https://github.com/ropensci/CoordinateCleaner/issues/55">known default values</a> for <strong>coordinateUncertaintyInMeters</strong>. These can be <strong>GeoLocate centroids</strong> or some other default. It is good to remove them because usually the uncertainy is larger than what is stated by the value.</p>
+<pre class="r"><code>gbif_download %&gt;% 
+filter(!coordinateUncertaintyInMeters %in% c(301,3036,999,9999)) 
+# known inaccurate default values
+</code></pre>
+</div>
+<div id="points-along-equator-or-prime-merdidian" class="section level2">
+<h2>Points along equator or prime merdidian</h2>
+<p>Point plotted along the <strong>prime meridian</strong> or <strong>equator</strong>.</p>
+<p>As of the writing of this guide there are 37K occurrences along the <strong>equator</strong> and 28K along the <strong>Prime meridian</strong>.</p>
+<pre class="r"><code>gbif_download %&gt;% 
+filter(decimalLatitude == 0 | decimalLongitude == 0)
+
+# see also CoordinateCleaner::cc_zero()</code></pre>
+</div>
+<div id="country-centroids" class="section level2">
+<h2>Country centroids</h2>
+<p>You can remove country centroids and province centroids using <strong>CoordinateCleaner</strong>.</p>
+<pre class="r"><code>library(CoordinateCleaner)
+
+gbif_download %&gt;% 
+cc_cen(
+lon = &quot;decimalLongitude&quot;, 
+lat = &quot;decimalLatitude&quot;, 
+buffer = 2000, # radius of circle around centroid to look for centroids
+value = &quot;clean&quot;,
+test=&quot;both&quot;)  </code></pre>
+<p>Centroids tend to be more common for geocoded museum collections (PRESERVED_SPECIMEN), so you might want to only filter centroids for preserved specimens, since other occurrences might be false positives.</p>
+<p>You might also want to filter <strong>country capitals</strong>.</p>
+<pre class="r"><code>gbif_download %&gt;% 
+cc_cap(
+lon = &quot;decimalLongitude&quot;, 
+lat = &quot;decimalLatitude&quot;, 
+buffer = 2000, # radius of circle around centroid to look for centroids
+value = &quot;clean&quot;)
+</code></pre>
+</div>
+<div id="zoo-and-herbaria-locations" class="section level2">
+<h2>Zoo and herbaria locations</h2>
+<p>Publishers do not always fill in the establishmentMeans=“MANAGED” or basisOfRecord=“LIVING_SPECIMEN”, so it is usually good to filter known <strong>zoo</strong> and <strong>herbaria</strong> locations.</p>
+<pre class="r"><code>library(CoordinateCleaner)
+
+gbif_download %&gt;% 
+cc_inst(
+lon = &quot;decimalLongitude&quot;,
+lat = &quot;decimalLatitude&quot;,
+buffer = 2000,
+value = &quot;clean&quot;,
+verbose = TRUE
+)
+</code></pre>
+</div>
+<div id="in-the-ocean" class="section level2">
+<h2>In the ocean</h2>
+<p>Obviously not to be used with marine species. If marine, you might want to do the opposite.</p>
+<pre class="r"><code>library(CoordinateCleaner)
+
+gbif_download %&gt;% 
+cc_sea(
+lon = &quot;decimalLongitude&quot;,
+lat = &quot;decimalLatitude&quot;
+)
+</code></pre>
+</div>
+<div id="location-duplicates" class="section level2">
+<h2>Location duplicates</h2>
+<p>Some of you will want to remove potential <strong>location duplicates</strong>.</p>
+<pre class="r"><code>gbif_download %&gt;% 
+distinct(decimalLongitude,decimalLatitude,speciesKey,datasetKey, .keep_all = TRUE) </code></pre>
+<p>It is probably a good idea to keep the <strong>datasetKey</strong> for citing the download later, if you post a derived dataset on Zenodo or something similar.</p>
+<p>In general removing duplicates is not difficult based on location. GBIF also has a experimental feature for indentifying <a href="https://www.gbif.org/news/4U1dz8LygQvqIywiRIRpAU/new-data-clustering-feature-aims-to-improve-data-quality-and-reveal-cross-dataset-connections">related records</a>. It is, however, not optimized for data filtering yet.</p>
+</div>
+<div id="r-packages-for-filtering-data" class="section level2">
+<h2>R packages for filtering data</h2>
+<p>There are currently 3 <strong>R packages</strong> for filtering GBIF occurrences:</p>
+<ol style="list-style-type: decimal">
+<li><a href="https://github.com/ropensci/CoordinateCleaner">CoordinateCleaner</a></li>
+<li><a href="https://cran.r-project.org/web/packages/biogeo/index.html">biogeo</a></li>
+<li><a href="https://github.com/ropensci/scrubr">scrubr</a></li>
+</ol>
+<p><strong>CoordinateCleaner</strong> is probably the most <a href="https://cran.r-project.org/web/packages/CoordinateCleaner/vignettes/Comparison_other_software.html">most complete</a>.</p>
+</div>
+<div id="additional-filters" class="section level2">
+<h2>Additional filters</h2>
+<p>There are some <strong>additional</strong> things you might want to check for which invovle more judgement calls:</p>
+<ul>
+<li>outliers<br />
+</li>
+<li>metagenomics</li>
+<li>outside native ranges</li>
+<li>gridded datasets</li>
+<li>automate identifications</li>
+</ul>
+<p>I have written some companion R scripts for handling these issues as well <a href="https://github.com/jhnwllr/GBIF_additional_filters/blob/main/README.md">link to scripts</a>.</p>
+</div>
+
+    </div>
+
+    
+    
+
+    
+    
+
+    <footer class="post-footer">
+      
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/grscicoll-2021/">
+            <span class="next-text nav-default">The GBIF Registry of Scientific Collections (GRSciColl) in 2021</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      
+
+
+ 
+<div>
+<h3>This post represents the ideas of the author.</h3>
+</div>
+<div id='discourse-comments'></div>
+<script type="text/javascript">
+  DiscourseEmbed = { discourseUrl: 'https://discourse.gbif.org/',
+                     discourseEmbedUrl: 'https://data-blog.gbif.org\/post\/gbif-filtering-guide\/' };
+
+  (function() {
+    var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+    d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+  })();
+</script>  
+
+
+<div class = "copyright">
+	<a class="theme-link" href="https://www.gbif.org/what-is-gbif">What is GBIF?</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://www.gbif.org/developer/summary">API</a> 
+	<span class="division">|</span>
+	<a class="theme-link" href="https://www.gbif.org/faq">FAQ</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://discourse.gbif.org/">Community-Forum</a>
+</div>
+
+<div class = "copyright"> 
+	<span class="theme-info">GBIF Secretariat</span> 
+	<span class="theme-info">Universitetsparken 15</span> 
+	<span class="theme-info">DK-2100 Copenhagen Ø</span> 
+	<span class="theme-info" >Denmark</span>
+</div>
+
+<div class="copyright">
+	<span class="power-by">
+	Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+	</span>
+	<span class="division">|</span>
+	<span class="theme-info">
+	Theme - 
+	<a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+	</span>
+
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+<script type="text/javascript" src="/dist/even.min.js?v=3.2.0"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

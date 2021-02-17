@@ -23,9 +23,18 @@
     <item>
       <title>GBIF</title>
       <link>/categories/gbif/</link>
-      <pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>/categories/gbif/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GRSciColl</title>
+      <link>/categories/grscicoll/</link>
+      <pubDate>Mon, 08 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/grscicoll/</guid>
       <description></description>
     </item>
     
@@ -44,6 +53,15 @@
       <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>/categories/publishing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Registry</title>
+      <link>/categories/registry/</link>
+      <pubDate>Mon, 08 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/registry/</guid>
       <description></description>
     </item>
     

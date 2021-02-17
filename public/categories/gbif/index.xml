@@ -6,10 +6,48 @@
     <description>Recent content in GBIF on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 17 Nov 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 17 Feb 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/gbif/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Common things to look out for when post-processing GBIF downloads</title>
+      <link>/post/gbif-filtering-guide/</link>
+      <pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/gbif-filtering-guide/</guid>
+      <description>Here I present a checklist for filtering GBIF downloads.
+In this guide, I will assume you are familar with R. This guide is also somewhat general, so your solution might differ.This guide is intended to give you a checklist of common things to look out for when post-processing GBIF downloads.
+Here is an example a filtering checklist script that would work for most users. Indvidual users might want to add/remove some steps.</description>
+    </item>
+    
+    <item>
+      <title>The GBIF Registry of Scientific Collections (GRSciColl) in 2021</title>
+      <link>/post/grscicoll-2021/</link>
+      <pubDate>Mon, 08 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/grscicoll-2021/</guid>
+      <description>The GBIF Registry of Scientific Collections, also known as GRSciColl, has been available on GBIF.org since 2019 but it recently got some more attention when we connected it to GBIF occurrences. Now is the perfect time to share a bit of GRSciColl history and what we plan for its future.
+A brief history of GRSciColl First of all, here are a few facts about GrSciColl today, at the start of 2021:</description>
+    </item>
+    
+    <item>
+      <title>Downloads API Guide</title>
+      <link>/post/downloads-api-guide/</link>
+      <pubDate>Tue, 05 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/downloads-api-guide/</guid>
+      <description>&lt;p&gt;Most users will want to make downloads using the &lt;a href=&#34;https://www.gbif.org/occurrence/search?occurrence_status=present&amp;amp;q=&#34;&gt;search interface&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;For more complex downloads, it is helpful to use the &lt;a href=&#34;https://www.gbif.org/developer/occurrence#download&#34;&gt;GBIF downloads API&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;One good reason for using the downloads API would be to download a &lt;a href=&#34;https://data-blog.gbif.org/post/downloading-long-species-lists-on-gbif/&#34;&gt;long species list&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;With this guide, I will be showing you how to take advantage of the &lt;strong&gt;downloads API&lt;/strong&gt;, with some features that are not currently avaiable in the search interface.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>(Almost) everything you want to know about the GBIF Species API</title>

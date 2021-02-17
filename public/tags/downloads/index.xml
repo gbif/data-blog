@@ -6,10 +6,27 @@
     <description>Recent content in Downloads on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 04 Sep 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 05 Jan 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/downloads/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Downloads API Guide</title>
+      <link>/post/downloads-api-guide/</link>
+      <pubDate>Tue, 05 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/downloads-api-guide/</guid>
+      <description>&lt;p&gt;Most users will want to make downloads using the &lt;a href=&#34;https://www.gbif.org/occurrence/search?occurrence_status=present&amp;amp;q=&#34;&gt;search interface&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;For more complex downloads, it is helpful to use the &lt;a href=&#34;https://www.gbif.org/developer/occurrence#download&#34;&gt;GBIF downloads API&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;One good reason for using the downloads API would be to download a &lt;a href=&#34;https://data-blog.gbif.org/post/downloading-long-species-lists-on-gbif/&#34;&gt;long species list&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;With this guide, I will be showing you how to take advantage of the &lt;strong&gt;downloads API&lt;/strong&gt;, with some features that are not currently avaiable in the search interface.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Downloading occurrences from a long list of species in R and Python</title>

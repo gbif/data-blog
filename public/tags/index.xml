@@ -129,6 +129,15 @@
     </item>
     
     <item>
+      <title>Collection</title>
+      <link>/tags/collection/</link>
+      <pubDate>Mon, 08 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/collection/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>DNA</title>
       <link>/tags/dna/</link>
       <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
@@ -203,7 +212,7 @@
     <item>
       <title>Downloads</title>
       <link>/tags/downloads/</link>
-      <pubDate>Wed, 04 Sep 2019 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 05 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>/tags/downloads/</guid>
       <description></description>
@@ -275,7 +284,7 @@
     <item>
       <title>GBIF</title>
       <link>/tags/gbif/</link>
-      <pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 08 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>/tags/gbif/</guid>
       <description></description>
@@ -287,6 +296,15 @@
       <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/ggbn/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GRSciColl</title>
+      <link>/tags/grscicoll/</link>
+      <pubDate>Mon, 08 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/grscicoll/</guid>
       <description></description>
     </item>
     
@@ -354,6 +372,24 @@
     </item>
     
     <item>
+      <title>IDigBio</title>
+      <link>/tags/idigbio/</link>
+      <pubDate>Mon, 08 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/idigbio/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>IH</title>
+      <link>/tags/ih/</link>
+      <pubDate>Mon, 08 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/ih/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>IPT</title>
       <link>/tags/ipt/</link>
       <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
@@ -377,6 +413,15 @@
       <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>/tags/installation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Institution</title>
+      <link>/tags/institution/</link>
+      <pubDate>Mon, 08 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/institution/</guid>
       <description></description>
     </item>
     

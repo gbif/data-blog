@@ -101,7 +101,7 @@ This API is what allow us to navigate through the names available on GBIF. I wil
 
 <meta itemprop="datePublished" content="2020-11-17T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-11-17T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="861">
+<meta itemprop="wordCount" content="864">
 
 
 
@@ -237,13 +237,13 @@ This API is what allow us to navigate through the names available on GBIF. I wil
 <p>If you head over to the <a href="https://www.gbif.org/developer/species">API documentation page</a>, you will see that it divides the functions in three categories:</p>
 
 <ul>
-<li><strong>Working with Name Usages</strong>: these are all the calls use to navigate the <a href="https://www.gbif.org/dataset/d7dddbf4-2cf0-4f39-9b2a-bb099caae36c">GBIF backbone taxonomy</a> or any other checklist available on GBIF. They are used by the <a href="https://www.gbif.org/species/search">species web interface</a>.</li>
+<li><strong>Working with Name Usages</strong>: these are all the calls use to navigate the <a href="https://www.gbif.org/dataset/d7dddbf4-2cf0-4f39-9b2a-bb099caae36c">GBIF backbone taxonomy</a> or any other checklists available on GBIF. They are used by the <a href="https://www.gbif.org/species/search">species web interface</a>. More information <a href="https://www.gbif.org/developer/species#nameUsages">here</a>.</li>
 <li><strong>Searching Names</strong>: these are four functions to search for names.
 
 <ul>
 <li>The <code>/species/search</code> function is used to query the taxon names on the <a href="https://www.gbif.org/species/search">species web interface</a>.</li>
 <li>The <code>/species/suggest</code> function is used by the drop down menu that appear when searching names in the <code>Scientific name</code> field in the <a href="https://www.gbif.org/occurrence/search?occurrence_status=present&amp;q=">occurrence search interface</a>.</li>
-<li>The <code>/species/match</code> function is used to match names to the GBIF backbone taxonomy. When occurrences are shared on GBIF, all the scientific names are matched to the backbone taxonomy using this function. The <a href="https://www.gbif.org/tools/species-lookup">Species Name matching tool</a> also uses this function. Note that for names included in checklist, an other function, more stringent, is used. We assume that names included in checklist are carefully curated and don&rsquo;t need fuzzy matching (as this is the goal of a checklist).</li>
+<li>The <code>/species/match</code> function is used to match names to the GBIF backbone taxonomy. When occurrences are shared on GBIF, all the scientific names are matched to the backbone taxonomy using this function. The <a href="https://www.gbif.org/tools/species-lookup">Species Name matching tool</a> also uses this function. Note that for names included in checklists, an other function, more stringent, is used. We assume that names included in checklists are carefully curated and don&rsquo;t need fuzzy matching (as this is the goal of a checklist).</li>
 <li>The <code>/species</code> function is not used in the GBIF Portal but it allows to search for exact matches in any checklist you would like.</li>
 </ul></li>
 <li><strong>Name Parser</strong>: these are the calls used by the <code>Searching Names</code> functions as well as GBIF <a href="https://www.gbif.org/tools/name-parser">Name Parser tool</a>.</li>
@@ -257,7 +257,7 @@ This API is what allow us to navigate through the names available on GBIF. I wil
 
 <h1 id="search-and-match">Search and Match</h1>
 
-<p>Both the <strong>search</strong> and <strong>match</strong> functions are based on the <a href="https://lucene.apache.org">Lucene</a> search technology. We use an <a href="gbif/checklistbank/utils/SciNameNormalizer.java#L36">analyzer</a> which takes into account specificities of text matching for scientific names. However, there are a few key differences between the two functions.</p>
+<p>Both the <strong>search</strong> and <strong>match</strong> functions are based on the <a href="https://lucene.apache.org">Lucene</a> search technology. We use an <a href="https://github.com/gbif/checklistbank/blob/master/checklistbank-common/src/main/java/org/gbif/checklistbank/utils/SciNameNormalizer.java#L36">analyzer</a> which takes into account specificities of text matching for scientific names. However, there are a few key differences between the two functions.</p>
 
 <p><strong>The search</strong> function queries everything (name, description, etc.) and the result is ranked according to where the match was found. See the figure below:</p>
 
@@ -282,9 +282,11 @@ For a summary of the match function, see the figure below:</p>
 
 <p><a href="https://api.gbif.org/v1/species/match?verbose=true&amp;kingdom=Plantae&amp;name=Agathis%20montana">https://api.gbif.org/v1/species/match?verbose=true&amp;kingdom=Plantae&amp;name=Agathis%20montana</a></p>
 
+<blockquote>
 <p>The matching algorithm generates a number of flags. The main one being &ldquo;Taxon Match Fuzzy&rdquo;, which means that the match found doesn&rsquo;t exactly match the query (different spelling). More information about GBIF flags and issues in <a href="https://data-blog.gbif.org/post/issues-and-flags/">this blogpost</a>.</p>
+</blockquote>
 
-<p>If two matches score the same, nothing is return as main match but they can be found as alternative matches (which are available in the response when setting the parameter <code>verbose=true</code>). This is why providing a higher taxonomy along with your scientific name can really improve the matching: it will weigh on the taxonomic score and help find a &ldquo;main match&rdquo;.</p>
+<p>If two matches score the same, nothing is returned as main match but they can be found as alternative matches (which are available in the response when setting the parameter <code>verbose=true</code>). This is why providing a higher taxonomy along with your scientific name can really improve the matching: it will weigh on the taxonomic score and help find a &ldquo;main match&rdquo;.</p>
 
 <p>Note that not all taxonomic ranks are created equal in our scoring system. Because there can be so much variation in the taxonomies available, a difference at the order level doesn&rsquo;t weigh as much a as a difference at the kingdom level. In addition to that, our algorithm is more stringent when it comes to differentiate Animalia from Plantae than other kingdoms (Protista vs Animalia or Chromista vs Plantae, etc.)</p>
 
@@ -334,6 +336,11 @@ You are also very welcome to send your questions and report any issue via our fe
       
       <nav class="post-nav">
         
+          <a class="prev" href="/post/downloads-api-guide/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Downloads API Guide</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
         
           <a class="next" href="/post/issues-and-flags/">
             <span class="next-text nav-default">GBIF Issues &amp; Flags</span>

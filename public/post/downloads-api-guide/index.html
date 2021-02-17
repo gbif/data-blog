@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Downloads API Guide - GBIF Data Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="John Waller" />
+  <meta name="description" content="Most users will want to make downloads using the search interface.
+For more complex downloads, it is helpful to use the GBIF downloads API.
+One good reason for using the downloads API would be to download a long species list.
+With this guide, I will be showing you how to take advantage of the downloads API, with some features that are not currently avaiable in the search interface.
+
+" />
+
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.42" />
+
+
+<link rel="canonical" href="/post/downloads-api-guide/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.2.0" rel="stylesheet">
+
+
+
+
+<link rel="stylesheet" href="/css//custom.css">
+
+
+<meta property="og:title" content="Downloads API Guide" />
+<meta property="og:description" content="Most users will want to make downloads using the search interface.
+
+For more complex downloads, it is helpful to use the GBIF downloads API.
+
+One good reason for using the downloads API would be to download a long species list.
+
+With this guide, I will be showing you how to take advantage of the downloads API, with some features that are not currently avaiable in the search interface.
+
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/downloads-api-guide/" />
+
+
+
+<meta property="article:published_time" content="2021-01-05T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2021-01-05T13:07:01&#43;01:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Downloads API Guide">
+<meta itemprop="description" content="Most users will want to make downloads using the search interface.
+
+For more complex downloads, it is helpful to use the GBIF downloads API.
+
+One good reason for using the downloads API would be to download a long species list.
+
+With this guide, I will be showing you how to take advantage of the downloads API, with some features that are not currently avaiable in the search interface.
+
+">
+
+
+<meta itemprop="datePublished" content="2021-01-05T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2021-01-05T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="354">
+
+
+
+<meta itemprop="keywords" content="downloads," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Downloads API Guide"/>
+<meta name="twitter:description" content="Most users will want to make downloads using the search interface.
+
+For more complex downloads, it is helpful to use the GBIF downloads API.
+
+One good reason for using the downloads API would be to download a long species list.
+
+With this guide, I will be showing you how to take advantage of the downloads API, with some features that are not currently avaiable in the search interface.
+
+"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">GBIF Data Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/categories/gbif/">
+        <li class="mobile-menu-item">posts</li>
+      </a><a href="https://discourse.gbif.org/c/data-blog">
+        <li class="mobile-menu-item">community-forum</li>
+      </a><a href="https://www.gbif.org/">
+        <li class="mobile-menu-item">gbif.org</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">about</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">
+	<img src= "/logo.png" alt="GBIF-analytics-blog" style ="width:20%;">
+  </a>
+  
+	
+  
+  
+</div>
+
+<nav class="site-navbar">
+
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/categories/gbif/">posts</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://discourse.gbif.org/c/data-blog">community-forum</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://www.gbif.org/">gbif.org</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">about</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+	
+    <header class="post-header">
+      <h1 class="post-title">Downloads API Guide</h1>
+	  
+	  
+      <div class="post-author">John Waller</div>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-01-05 </span>
+        <div class="post-category">
+            
+              <a href="/categories/gbif/"> GBIF </a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    
+    
+
+    
+    <div class="post-content">
+      <p>Most users will want to make downloads using the <a href="https://www.gbif.org/occurrence/search?occurrence_status=present&amp;q=">search interface</a>.</p>
+
+<p>For more complex downloads, it is helpful to use the <a href="https://www.gbif.org/developer/occurrence#download">GBIF downloads API</a>.</p>
+
+<p>One good reason for using the downloads API would be to download a <a href="https://data-blog.gbif.org/post/downloading-long-species-lists-on-gbif/">long species list</a>.</p>
+
+<p>With this guide, I will be showing you how to take advantage of the <strong>downloads API</strong>, with some features that are not currently avaiable in the search interface.</p>
+
+<p></p>
+
+<p>This guide will use <strong>rgbif</strong> (<code>occ_download</code>) and <strong>curl</strong> for the examples.</p>
+
+<p>Here is a <strong>simple example</strong> using curl:</p>
+
+<p>Create a file named <strong>query.json</strong> and save it somewhere on your computer. This example downloads all the the records with basis of record equal to &ldquo;PRESERVED_SPECIMEN&rdquo; and in the countries Kuwait, Iraq, and Iran (&ldquo;KW&rdquo;,&ldquo;IQ&rdquo;,&ldquo;IR&rdquo;). You will need to change the <strong>userName</strong> to your GBIF username. And you will need to change the <strong>userEmail@example.org</strong> to your email.</p>
+
+<pre><code class="language-json">{
+  &quot;creator&quot;: &quot;userName&quot;,
+  &quot;notificationAddresses&quot;: [
+    &quot;userEmail@example.org&quot;
+  ],
+  &quot;sendNotification&quot;: true,
+  &quot;format&quot;: &quot;SIMPLE_CSV&quot;,
+  &quot;predicate&quot;: {
+    &quot;type&quot;: &quot;and&quot;,
+    &quot;predicates&quot;: [
+      {
+        &quot;type&quot;: &quot;equals&quot;,
+        &quot;key&quot;: &quot;BASIS_OF_RECORD&quot;,
+        &quot;value&quot;: &quot;PRESERVED_SPECIMEN&quot;
+      },
+      {
+        &quot;type&quot;: &quot;in&quot;,
+        &quot;key&quot;: &quot;COUNTRY&quot;,
+        &quot;values&quot;: [
+          &quot;KW&quot;,
+          &quot;IQ&quot;,
+          &quot;IR&quot;
+        ]
+      }
+    ]
+  }
+}
+
+</code></pre>
+
+<p>Next we will use <a href="https://curl.se/download.html">curl</a> to submit the request. You will need to change <strong>userName:PASSWORD</strong> to your <strong>GBIF username</strong> and <strong>GBIF password</strong>. Run this in the same folder where you saved <strong>query.json</strong>.</p>
+
+<pre><code class="language-shell">curl --include --user userName:PASSWORD --header &quot;Content-Type: application/json&quot; --data @query.json https://api.gbif.org/v1/occurrence/download/request
+</code></pre>
+
+<p>This simple example could easily be done using the <a href="https://www.gbif.org/occurrence/search?basis_of_record=PRESERVED_SPECIMEN&amp;country=KW&amp;country=IR&amp;country=IQ">search interface</a>.</p>
+
+<p>It could also be run using <strong>rgbif</strong>.</p>
+
+<pre><code class="language-R">library(rgbif)
+
+# fill in your GBIF user info
+user=&quot;&quot;
+pwd=&quot;&quot;
+email=&quot;&quot;
+
+occ_download(
+pred(&quot;basisOfRecord&quot;, &quot;PRESERVED_SPECIMEN&quot;),
+pred_in(&quot;country&quot;, c(&quot;KW&quot;,&quot;IQ&quot;,&quot;IR&quot;),
+format = &quot;SIMPLE_CSV&quot;,
+user=user,pwd=pwd,email=email
+)
+</code></pre>
+
+<h2 id="exclusion-queries">Exclusion queries</h2>
+
+<p>For a long time it was impossible to do &ldquo;not&rdquo; queries on GBIF. Recent changes, however, have made it possible to use exclusion filters in downloads.</p>
+
+<p>For example, if you wanted all of the GBIF bird records <strong>except for</strong> eBird (now with &gt;500M records).</p>
+
+<p>In <strong>curl</strong>:</p>
+
+<pre><code class="language-json">{
+  &quot;creator&quot;:&quot;userName&quot;,
+  &quot;notificationAddresses&quot;: [&quot;userName@example.org&quot;],
+  &quot;predicate&quot;:
+  {
+    &quot;type&quot;:&quot;not&quot;,
+    &quot;predicate&quot;:
+    {
+      &quot;type&quot;:&quot;equals&quot;,
+      &quot;key&quot;:&quot;DATASET_KEY&quot;,
+      &quot;value&quot;:&quot;4fa7b334-ce0d-4e88-aaae-2e0c138d049e&quot;
+    }
+  }
+}
+</code></pre>
+
+<p>In <strong>rgbif</strong>:</p>
+
+<pre><code class="language-R">library(rgbif)
+
+# fill in your GBIF user info
+user=&quot;&quot;
+pwd=&quot;&quot;
+email=&quot;&quot;
+
+occ_download(
+pred(&quot;basisOfRecord&quot;, &quot;PRESERVED_SPECIMEN&quot;),
+pred_not(&quot;datasetKey&quot;,&quot;4fa7b334-ce0d-4e88-aaae-2e0c138d049e&quot;),
+format = &quot;SIMPLE_CSV&quot;,
+user=user,pwd=pwd,email=email
+)
+</code></pre>
+
+<p>non dwc terms in downloads</p>
+    </div>
+
+    
+    
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/downloads/">downloads</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/grscicoll-2021/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">The GBIF Registry of Scientific Collections (GRSciColl) in 2021</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/gbif-species-api/">
+            <span class="next-text nav-default">(Almost) everything you want to know about the GBIF Species API</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      
+
+
+ 
+<div>
+<h3>This post represents the ideas of the author.</h3>
+</div>
+<div id='discourse-comments'></div>
+<script type="text/javascript">
+  DiscourseEmbed = { discourseUrl: 'https://discourse.gbif.org/',
+                     discourseEmbedUrl: 'https://data-blog.gbif.org\/post\/downloads-api-guide\/' };
+
+  (function() {
+    var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+    d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+  })();
+</script>  
+
+
+<div class = "copyright">
+	<a class="theme-link" href="https://www.gbif.org/what-is-gbif">What is GBIF?</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://www.gbif.org/developer/summary">API</a> 
+	<span class="division">|</span>
+	<a class="theme-link" href="https://www.gbif.org/faq">FAQ</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://discourse.gbif.org/">Community-Forum</a>
+</div>
+
+<div class = "copyright"> 
+	<span class="theme-info">GBIF Secretariat</span> 
+	<span class="theme-info">Universitetsparken 15</span> 
+	<span class="theme-info">DK-2100 Copenhagen Ø</span> 
+	<span class="theme-info" >Denmark</span>
+</div>
+
+<div class="copyright">
+	<span class="power-by">
+	Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+	</span>
+	<span class="division">|</span>
+	<span class="theme-info">
+	Theme - 
+	<a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+	</span>
+
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+<script type="text/javascript" src="/dist/even.min.js?v=3.2.0"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

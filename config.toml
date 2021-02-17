@@ -21,37 +21,24 @@ copyright = ""            # default: author.name ↓        #
   priority = 0.5
   filename = "sitemap.xml"
 
+
 [[menu.main]]             # config your menu              # 
   name = "posts"
   weight = 1
   identifier = "home"
   url = "/categories/gbif/"
+
 [[menu.main]]             # config your menu              # 
   name = "community-forum"
   weight = 2
   identifier = "community-forum"
   url = "https://discourse.gbif.org/c/data-blog"  
   
-# [[menu.main]]             # config your menu              # 
-  # name = "authors"
-  # weight = 2
-  # identifier = "author"
-  # url = "/authors/"
-# [[menu.main]]
-  # name = "tags"
-  # weight = 3
-  # identifier = "tags"
-  # url = "/tags/"
 [[menu.main]]
   name = "gbif.org"
   weight = 3
   identifier = "gbif"
   url = "https://www.gbif.org/"
-# [[menu.main]]
-  # name = "global-trends"
-  # weight = 5
-  # identifier = "analytics"
-  # url = "https://www.gbif.org/analytics/global"
 
 [taxonomies]
   category = "categories"
