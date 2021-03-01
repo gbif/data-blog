@@ -67,13 +67,13 @@ I will detail some of the GRSciColl history below. But first, I thought it would
 # Remaining challenges and future plans
 
 GRSciColl is still a work in progress, and many challenges remain. I won't go into too many details (this is still a blogpost), but some of the areas we would like to address next include:
-1. Cleaning the data content: GRSciColl contains many duplicate entries that need cleaning. We are working on implementing tools and functions to help data content managers identify and clean those dupicates more efficiently.
-2. Making it easier for institutions to improve and maintain their content: at the moment most updates are done thanks to IH synchronozation or email requests. We would like to:
-    * explore synchronisation with the [NCBI BioCollections](https://ftp.ncbi.nih.gov/pub/taxonomy/biocollections/),
-    * enable the possibility to choose EML files as master records,
-    * set up an interface for more detailed update requests.
-3. Redesign the current GRSciColl interface.
+1. **Reduce the amount of duplicate records**: The connection with Index Herbariorum and import of iDigBio enriched the catalogue, but also increased the number of duplicate entities that can’t be automatically handled. We are working on implementing tools and functions to help data content managers identify and clean those dupicates more efficiently.
+2. **Allow anyone to propose changes**: Currently, most of the update requests are handled by email. We aim to develop an interface allowing anyone to propose a change to any field and state whether they have authority to approve it. Changes are then to be reviewed and applied by the editorial team.
+3. **Improve documentation.**
+4. **Grow the pool of editors.**
+5. **Define and implement the master data management solution**.
+6. **Develop a richer user interface**.
 
-We also plan to later broaden the group of editors to establish the Editorial board.
+For more information, you can consult our roadmap [here]().
 
 If you would like to contribute to improving the GRSciColl content, don't hesitate to contact us at scientific-collections@gbif.org.
