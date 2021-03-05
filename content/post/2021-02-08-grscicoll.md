@@ -74,6 +74,6 @@ GRSciColl is still a work in progress, and many challenges remain. I won't go in
 5. **Define and implement the master data management solution**.
 6. **Develop a richer user interface**.
 
-For more information, you can consult our roadmap [here]().
+For more information, you can consult our roadmap [here](https://github.com/gbif/registry/blob/master/roadmap-grscicoll.md).
 
 If you would like to contribute to improving the GRSciColl content, don't hesitate to contact us at scientific-collections@gbif.org.
