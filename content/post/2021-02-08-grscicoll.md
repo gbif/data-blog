@@ -1,7 +1,7 @@
 ---
 title: The GBIF Registry of Scientific Collections (GRSciColl) in 2021
 author: Marie Grosjean
-date: '2021-02-08'
+date: '2021-03-12'
 slug: grscicoll-2021
 categories:
   - GBIF
@@ -14,15 +14,15 @@ tags:
   - Institution
   - iDigBio
   - IH
-lastmod: '2021-02-08'
-draft: yes
+lastmod: '2021-03-12'
+draft: no
 keywords: ['GRSciColl', 'institution', 'collection']
 description: ''
 comment: no
 toc: ''
 autoCollapseToc: no
 postMetaInFooter: no
-hiddenFromHomePage: yes
+hiddenFromHomePage: no
 contentCopyright: no
 reward: no
 mathjax: no
@@ -46,11 +46,12 @@ First of all, here are a few facts about GrSciColl today, at the start of 2021:
 
 * > This registry of scientific collections builds on GRSciColl, a comprehensive, community-curated clearinghouse of collections information originally developed by Consortium of the Barcode of Life (CBOL). See: https://www.gbif.org/grscicoll
 * GRSciColl is embedded in the GBIF registry, available in the API and on the web, and can be edited by trusted data managers.
-* It currently hosts [8,251 institution entries](https://www.gbif.org/grscicoll/institution/search) as well as [6,306 collection](https://www.gbif.org/grscicoll/collection/search) and [16,514 staff member](https://www.gbif.org/grscicoll/person/search) entries.
+* It currently hosts [8,140 institution entries](https://www.gbif.org/grscicoll/institution/search) as well as [6,313 collection](https://www.gbif.org/grscicoll/collection/search) and [16,543 staff member](https://www.gbif.org/grscicoll/person/search) entries.
 * About half of the institutions, 67% of the collections and 77% of the staff entries are synchronized with [Index Herbariorum](http://sweetgum.nybg.org/science/ih/).
 * In addition to that, over 1,500 collections were created or updated by [iDigBio](https://www.idigbio.org/portal/collections).
 * Whenever possible, institutions and collections are linked to GBIF occurrences. See for example, [the National Fish Collection of South African Institute for Aquatic Biodiversity](https://www.gbif.org/grscicoll/collection/a7d9ed64-4668-41b3-a862-27d87c50bfed/metrics).
 * Currently, around 141 million (72%) [specimen-related occurrence records](https://www.gbif.org/occurrence/search?basis_of_record=PRESERVED_SPECIMEN&basis_of_record=FOSSIL_SPECIMEN&basis_of_record=LIVING_SPECIMEN&occurrence_status=present) link to a GRSciColl entity.
+* Institutions can request access to our registry to update and maintain their own institution and collection entries.
 
 But GRSciColl was quite different when we inherited it. Some of these features are the result of our work for the past two years.
 I will detail some of the GRSciColl history below. But first, I thought it would be nice to have a little visual so I summoned my doodling skills and made this:
@@ -67,13 +68,13 @@ I will detail some of the GRSciColl history below. But first, I thought it would
 # Remaining challenges and future plans
 
 GRSciColl is still a work in progress, and many challenges remain. I won't go into too many details (this is still a blogpost), but some of the areas we would like to address next include:
-1. **Reduce the amount of duplicate records**: The connection with Index Herbariorum and import of iDigBio enriched the catalogue, but also increased the number of duplicate entities that can’t be automatically handled. We are working on implementing tools and functions to help data content managers identify and clean those dupicates more efficiently.
-2. **Allow anyone to propose changes**: Currently, most of the update requests are handled by email. We aim to develop an interface allowing anyone to propose a change to any field and state whether they have authority to approve it. Changes are then to be reviewed and applied by the editorial team.
+1. **Reduce the amount of duplicate records**: The connection with Index Herbariorum and import of iDigBio enriched the catalogue, but also increased the number of duplicate entities that can’t be automatically handled. We have been working on implementing tools and functions to help data content managers identify and clean those dupicates more efficiently. We would like to ask the community for help to assess and clean these duplicates. One way to pariticpate, is to review the potiential duplicates listed in [this GitHub repository](https://github.com/gbif/collections-duplicates).
+2. **Allow anyone to propose changes**: Most of the update requests are handled by email. We aim to develop an interface allowing anyone to propose a change to any field and state whether they have authority to approve it. Changes are then to be reviewed and applied by the editorial team.
 3. **Improve documentation.**
 4. **Grow the pool of editors.**
 5. **Define and implement the master data management solution**.
 6. **Develop a richer user interface**.
 
-For more information, you can consult our roadmap [here](https://github.com/gbif/registry/blob/master/roadmap-grscicoll.md).
+For more information, you can consult our [2021 Roadmap](https://github.com/gbif/registry/blob/master/roadmap-grscicoll.md).
 
 If you would like to contribute to improving the GRSciColl content, don't hesitate to contact us at scientific-collections@gbif.org.
