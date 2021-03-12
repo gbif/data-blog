@@ -44,7 +44,7 @@ Now is the perfect time to share a bit of GRSciColl history and what we plan for
 
 First of all, here are a few facts about GrSciColl today, at the start of 2021:
 
-* > This registry of scientific collections builds on GRSciColl, a comprehensive, community-curated clearinghouse of collections information originally developed by Consortium of the Barcode of Life (CBOL). See: https://www.gbif.org/grscicoll
+> This registry of scientific collections builds on GRSciColl, a comprehensive, community-curated clearinghouse of collections information originally developed by Consortium of the Barcode of Life (CBOL). See: https://www.gbif.org/grscicoll
 
 
 * GRSciColl is embedded in the GBIF registry, available in the API and on the web, and can be edited by trusted data managers.
