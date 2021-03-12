@@ -68,6 +68,7 @@ I will detail some of the GRSciColl history below. But first, I thought it would
 # Remaining challenges and future plans
 
 GRSciColl is still a work in progress, and many challenges remain. I won't go into too many details (this is still a blogpost), but some of the areas we would like to address next include:
+
 1. **Reduce the amount of duplicate records**: The connection with Index Herbariorum and import of iDigBio enriched the catalogue, but also increased the number of duplicate entities that can’t be automatically handled. We have been working on implementing tools and functions to help data content managers identify and clean those dupicates more efficiently. We would like to ask the community for help to assess and clean these duplicates. One way to pariticpate, is to review the potiential duplicates listed in [this GitHub repository](https://github.com/gbif/collections-duplicates).
 2. **Allow anyone to propose changes**: Most of the update requests are handled by email. We aim to develop an interface allowing anyone to propose a change to any field and state whether they have authority to approve it. Changes are then to be reviewed and applied by the editorial team.
 3. **Improve documentation.**
