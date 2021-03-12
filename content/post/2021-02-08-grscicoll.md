@@ -45,6 +45,8 @@ Now is the perfect time to share a bit of GRSciColl history and what we plan for
 First of all, here are a few facts about GrSciColl today, at the start of 2021:
 
 * > This registry of scientific collections builds on GRSciColl, a comprehensive, community-curated clearinghouse of collections information originally developed by Consortium of the Barcode of Life (CBOL). See: https://www.gbif.org/grscicoll
+
+
 * GRSciColl is embedded in the GBIF registry, available in the API and on the web, and can be edited by trusted data managers.
 * It currently hosts [8,140 institution entries](https://www.gbif.org/grscicoll/institution/search) as well as [6,313 collection](https://www.gbif.org/grscicoll/collection/search) and [16,543 staff member](https://www.gbif.org/grscicoll/person/search) entries.
 * About half of the institutions, 67% of the collections and 77% of the staff entries are synchronized with [Index Herbariorum](http://sweetgum.nybg.org/science/ih/).
