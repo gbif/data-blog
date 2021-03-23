@@ -308,7 +308,7 @@ Reasons include:<br>
 **Occurrence status unparsable** <small>(vocabulary)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=OCCURRENCE_STATUS_UNPARSABLE)</small><br>The given occurenceStatus value cannot be interpreted; it does not match any of the known (vocabulary) values that indicate the presence or absence of a species at collection or observation event.<br><small>**Terms**: dwc:occurrenceStatus</small><br>
 
 <br>
-<big>**GRSciColl Issues**</big>
+<big>**GRSciColl-related Issues**</big>
 
 - - -
 
@@ -324,7 +324,7 @@ Reasons include:<br>
 
 **Institution match fuzzy** <small>(GRSciColl)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=INSTITUTION_MATCH_FUZZY)</small><br>A match was found in [GRSciColl](https://www.gbif.org/grscicoll) but it was matched fuzzily. To know more about why this has happened you can use the [lookup API](https://www.gbif.org/developer/registry#lookup) to see see the "reasons" returned in the response. A common case is when the name is used instead of the code or the identifier. To avoid fuzzy matches, publishers should use identifiers in additon to codes. More details available in [this FAQ](https://www.gbif.org/faq?question=how-can-i-improve-the-matching-of-occurrence-records-with-grscicoll)<br><small>**Terms**: dwc:institutionCode, dwc:institutionID</small><br>
 
-**Collection match fuzzy** <small>(GRSciColl)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=COLLECTION_MATCH_FUZZY)</small<br>A match was found in [GRSciColl](https://www.gbif.org/grscicoll) but it was matched fuzzily. To know more about why this has happened you can use the [lookup API](https://www.gbif.org/developer/registry#lookup) to see see the "reasons" returned in the response. A common case is when the name is used instead of the code or the identifier. To avoid fuzzy matches, publishers should use identifiers in additon to codes. More details available in [this FAQ](https://www.gbif.org/faq?question=how-can-i-improve-the-matching-of-occurrence-records-with-grscicoll)<br><small>**Terms**: dwc:collectionCode, dwc:collectionID</small><br>
+**Collection match fuzzy** <small>(GRSciColl)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=COLLECTION_MATCH_FUZZY)</small><br>A match was found in [GRSciColl](https://www.gbif.org/grscicoll) but it was matched fuzzily. To know more about why this has happened you can use the [lookup API](https://www.gbif.org/developer/registry#lookup) to see see the "reasons" returned in the response. A common case is when the name is used instead of the code or the identifier. To avoid fuzzy matches, publishers should use identifiers in additon to codes. More details available in [this FAQ](https://www.gbif.org/faq?question=how-can-i-improve-the-matching-of-occurrence-records-with-grscicoll)<br><small>**Terms**: dwc:collectionCode, dwc:collectionID</small><br>
 
 **Institution collection mismatch** <small>(GRSciColl)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=INSTITUTION_COLLECTION_MISMATCH)</small><br>At least one possible collection match was found in [GRSciColl](https://www.gbif.org/grscicoll) but none of them belong to the institution matched<br><small>**Terms**: dwc:collectionCode, dwc:collectionID, dwc:institutionCode, dwc:institutionID</small><br>
 
