@@ -308,6 +308,30 @@ Reasons include:<br>
 **Occurrence status unparsable** <small>(vocabulary)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=OCCURRENCE_STATUS_UNPARSABLE)</small><br>The given occurenceStatus value cannot be interpreted; it does not match any of the known (vocabulary) values that indicate the presence or absence of a species at collection or observation event.<br><small>**Terms**: dwc:occurrenceStatus</small><br>
 
 <br>
+<big>**GRSciColl Issues**</big>
+
+- - -
+
+**Ambiguous institution** <small>(GRSciColl)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=AMBIGUOUS_INSTITUTION)</small><br>Multiple institutions were found in [GRSciColl](https://www.gbif.org/grscicoll) with the same level of confidence and it can't be determined which one should be accepted. For example, there are several institutions with the same code and country. See [this FAQ](https://www.gbif.org/faq?question=how-can-i-improve-the-matching-of-occurrence-records-with-grscicoll) on how to avoid ambiguous matches<br><small>**Terms**: dwc:institutionCode</small><br>
+
+
+**Ambiguous collection** <small>(GRSciColl)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=AMBIGUOUS_COLLECTION)</small><br>Multiple collections were found in [GRSciColl](https://www.gbif.org/grscicoll) with the same level of confidence and it can't be determined which one should be accepted. For example, there are several collections belonging to the same institution with the same code. See [this FAQ](https://www.gbif.org/faq?question=how-can-i-improve-the-matching-of-occurrence-records-with-grscicoll) on how to avoid ambiguous matches<br><small>**Terms**: dwc:collectionCode</small><br>
+
+
+**Institution match none** <small>(GRSciColl)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=INSTITUTION_MATCH_NONE)</small><br>No macth was  found in [GRSciColl](https://www.gbif.org/grscicoll). Either the entry doesn't exists in GRSciColl or it has a different code. Check [GRSciColl](https://www.gbif.org/grscicoll) and request update if needed.<br><small>**Terms**: dwc:institutionCode, dwc:institutionID</small><br>
+
+**Collection match none** <small>(GRSciColl)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=COLLECTION_MATCH_NONE)</small><br>No macth was  found in [GRSciColl](https://www.gbif.org/grscicoll). Either the entry doesn't exists in GRSciColl or it has a different code. Check [GRSciColl](https://www.gbif.org/grscicoll) and request update if needed.<br><small>**Terms**: dwc:collectionCode, dwc:collectionID</small><br>
+
+**Institution match fuzzy** <small>(GRSciColl)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=INSTITUTION_MATCH_FUZZY)</small><br>A match was found in [GRSciColl](https://www.gbif.org/grscicoll) but it was matched fuzzily. To know more about why this has happened you can use the [lookup API](https://www.gbif.org/developer/registry#lookup) to see see the "reasons" returned in the response. A common case is when the name is used instead of the code or the identifier. To avoid fuzzy matches, publishers should use identifiers in additon to codes. More details available in [this FAQ](https://www.gbif.org/faq?question=how-can-i-improve-the-matching-of-occurrence-records-with-grscicoll)<br><small>**Terms**: dwc:institutionCode, dwc:institutionID</small><br>
+
+**Collection match fuzzy** <small>(GRSciColl)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=COLLECTION_MATCH_FUZZY)</small<br>A match was found in [GRSciColl](https://www.gbif.org/grscicoll) but it was matched fuzzily. To know more about why this has happened you can use the [lookup API](https://www.gbif.org/developer/registry#lookup) to see see the "reasons" returned in the response. A common case is when the name is used instead of the code or the identifier. To avoid fuzzy matches, publishers should use identifiers in additon to codes. More details available in [this FAQ](https://www.gbif.org/faq?question=how-can-i-improve-the-matching-of-occurrence-records-with-grscicoll)<br><small>**Terms**: dwc:collectionCode, dwc:collectionID</small><br>
+
+**Institution collection mismatch** <small>(GRSciColl)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=INSTITUTION_COLLECTION_MISMATCH)</small><br>At least one possible collection match was found in [GRSciColl](https://www.gbif.org/grscicoll) but none of them belong to the institution matched<br><small>**Terms**: dwc:collectionCode, dwc:collectionID, dwc:institutionCode, dwc:institutionID</small><br>
+
+**Different owner institution** <small>(GRSciColl)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=DIFFERENT_OWNER_INSTITUTION)</small><br>The institution doesn't match the owner institution.<br><small>**Terms**: dwc:ownerInstitutionCode, dwc:institutionCode, dwc:institutionID</small><br>
+
+
+<br>
 <big>**Other Issues**</big>
 
 - - -
