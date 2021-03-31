@@ -84,7 +84,7 @@ In this guide, I will assume you are familar with R. This guide is also somewhat
 
 <meta itemprop="datePublished" content="2021-02-17T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2021-02-17T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1152">
+<meta itemprop="wordCount" content="1155">
 
 
 
@@ -189,7 +189,10 @@ In this guide, I will assume you are familar with R. This guide is also somewhat
 
     
     <div class="post-content">
-      <p>Here I present a <strong>checklist</strong> for filtering <strong>GBIF downloads</strong>.</p>
+      <script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<p>Here I present a <strong>checklist</strong> for filtering <strong>GBIF downloads</strong>.</p>
 <p>In this guide, I will assume you are <strong>familar with R</strong>. This guide is also somewhat general, <strong>so your solution might differ</strong>.
 This guide is intended to give you a checklist of <strong>common things to look out for</strong> when post-processing GBIF downloads.</p>
 <!--more-->
@@ -240,19 +243,30 @@ email=&quot;&quot; # your email
 
 gbif_download = occ_download(
 type=&quot;and&quot;,
-pred(&quot;taxonKey&quot;, 5052020), # Calopteryx xanthostoma 
+pred(&quot;taxonKey&quot;, 5052020),
 pred(&quot;hasGeospatialIssue&quot;, FALSE),
 pred(&quot;hasCoordinate&quot;, TRUE),
 pred_gte(&quot;year&quot;, 1900),
 pred_not(pred(&quot;basisOfRecord&quot;, &quot;FOSSIL_SPECIMEN&quot;)),
-pred_not(pred(&quot;basisOfRecord&quot;, &quot;LIVING_SPECIMEN&quot;)),
+pred_or(
 pred_not(pred(&quot;establishmentMeans&quot;,&quot;MANAGED&quot;)),
+pred_not(pred_notnull(&quot;establishmentMeans&quot;))
+),
+pred_or(
 pred_not(pred(&quot;establishmentMeans&quot;,&quot;INTRODUCED&quot;)),
+pred_not(pred_notnull(&quot;establishmentMeans&quot;))
+),
+pred_or(
 pred_not(pred(&quot;establishmentMeans&quot;,&quot;INVASIVE&quot;)),
+pred_not(pred_notnull(&quot;establishmentMeans&quot;))
+),
+pred_or(
 pred_not(pred(&quot;establishmentMeans&quot;,&quot;NATURALISED&quot;)),
+pred_not(pred_notnull(&quot;establishmentMeans&quot;))
+),
 pred_or(
 pred_lt(&quot;coordinateUncertaintyInMeters&quot;,10000),
-pred_not(pred_notnull(&quot;coordinateUncertaintyInMeters&quot;)) # keep null values
+pred_not(pred_notnull(&quot;coordinateUncertaintyInMeters&quot;))
 ),
 format = &quot;SIMPLE_CSV&quot;,
 user=user,pwd=pwd,email=email
@@ -445,9 +459,14 @@ distinct(decimalLongitude,decimalLatitude,speciesKey,datasetKey, .keep_all = TRU
       
       <nav class="post-nav">
         
+          <a class="prev" href="/post/grscicoll-2021/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">The GBIF Registry of Scientific Collections (GRSciColl) in 2021</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
         
-          <a class="next" href="/post/grscicoll-2021/">
-            <span class="next-text nav-default">The GBIF Registry of Scientific Collections (GRSciColl) in 2021</span>
+          <a class="next" href="/post/downloads-api-guide/">
+            <span class="next-text nav-default">Downloads API Guide</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>

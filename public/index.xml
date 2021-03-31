@@ -24,6 +24,16 @@ What about the developer blog? Currently the developer blog no longer being upda
     </item>
     
     <item>
+      <title>The GBIF Registry of Scientific Collections (GRSciColl) in 2021</title>
+      <link>/post/grscicoll-2021/</link>
+      <pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/grscicoll-2021/</guid>
+      <description>The GBIF Registry of Scientific Collections, also known as GRSciColl, has been available on GBIF.org since 2019 but it recently got some more attention when we connected it to GBIF occurrences. Now is the perfect time to share a bit of GRSciColl history and what we plan for its future.
+A brief history of GRSciColl First of all, here are a few facts about GrSciColl today, at the start of 2021:</description>
+    </item>
+    
+    <item>
       <title>Common things to look out for when post-processing GBIF downloads</title>
       <link>/post/gbif-filtering-guide/</link>
       <pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate>
@@ -32,16 +42,6 @@ What about the developer blog? Currently the developer blog no longer being upda
       <description>Here I present a checklist for filtering GBIF downloads.
 In this guide, I will assume you are familar with R. This guide is also somewhat general, so your solution might differ.This guide is intended to give you a checklist of common things to look out for when post-processing GBIF downloads.
 Here is an example a filtering checklist script that would work for most users. Indvidual users might want to add/remove some steps.</description>
-    </item>
-    
-    <item>
-      <title>The GBIF Registry of Scientific Collections (GRSciColl) in 2021</title>
-      <link>/post/grscicoll-2021/</link>
-      <pubDate>Mon, 08 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/post/grscicoll-2021/</guid>
-      <description>The GBIF Registry of Scientific Collections, also known as GRSciColl, has been available on GBIF.org since 2019 but it recently got some more attention when we connected it to GBIF occurrences. Now is the perfect time to share a bit of GRSciColl history and what we plan for its future.
-A brief history of GRSciColl First of all, here are a few facts about GrSciColl today, at the start of 2021:</description>
     </item>
     
     <item>

@@ -60,9 +60,9 @@ A brief history of GRSciColl First of all, here are a few facts about GrSciColl 
 
 
 
-<meta property="article:published_time" content="2021-02-08T00:00:00&#43;00:00"/>
+<meta property="article:published_time" content="2021-03-12T00:00:00&#43;00:00"/>
 
-<meta property="article:modified_time" content="2021-02-08T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2021-03-12T00:00:00&#43;00:00"/>
 
 
 
@@ -79,9 +79,9 @@ A brief history of GRSciColl First of all, here are a few facts about GrSciColl 
 A brief history of GRSciColl First of all, here are a few facts about GrSciColl today, at the start of 2021:">
 
 
-<meta itemprop="datePublished" content="2021-02-08T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2021-02-08T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="582">
+<meta itemprop="datePublished" content="2021-03-12T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2021-03-12T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="647">
 
 
 
@@ -166,7 +166,7 @@ A brief history of GRSciColl First of all, here are a few facts about GrSciColl 
       <div class="post-author">Marie Grosjean</div>
 
       <div class="post-meta">
-        <span class="post-time"> 2021-02-08 </span>
+        <span class="post-time"> 2021-03-12 </span>
         <div class="post-category">
             
               <a href="/categories/gbif/"> GBIF </a>
@@ -198,20 +198,24 @@ Now is the perfect time to share a bit of GRSciColl history and what we plan for
 
 <p>First of all, here are a few facts about GrSciColl today, at the start of 2021:</p>
 
+<blockquote>
+<p>This registry of scientific collections builds on GRSciColl, a comprehensive, community-curated clearinghouse of collections information originally developed by Consortium of the Barcode of Life (CBOL). See: <a href="https://www.gbif.org/grscicoll">https://www.gbif.org/grscicoll</a></p>
+</blockquote>
+
 <ul>
-<li>&gt; This registry of scientific collections builds on GRSciColl, a comprehensive, community-curated clearinghouse of collections information originally developed by Consortium of the Barcode of Life (CBOL). See: <a href="https://www.gbif.org/grscicoll">https://www.gbif.org/grscicoll</a></li>
 <li>GRSciColl is embedded in the GBIF registry, available in the API and on the web, and can be edited by trusted data managers.</li>
-<li>It currently hosts <a href="https://www.gbif.org/grscicoll/institution/search">8,251 institution entries</a> as well as <a href="https://www.gbif.org/grscicoll/collection/search">6,306 collection</a> and <a href="https://www.gbif.org/grscicoll/person/search">16,514 staff member</a> entries.</li>
+<li>It currently hosts <a href="https://www.gbif.org/grscicoll/institution/search">8,140 institution entries</a> as well as <a href="https://www.gbif.org/grscicoll/collection/search">6,313 collection</a> and <a href="https://www.gbif.org/grscicoll/person/search">16,543 staff member</a> entries.</li>
 <li>About half of the institutions, 67% of the collections and 77% of the staff entries are synchronized with <a href="http://sweetgum.nybg.org/science/ih/">Index Herbariorum</a>.</li>
 <li>In addition to that, over 1,500 collections were created or updated by <a href="https://www.idigbio.org/portal/collections">iDigBio</a>.</li>
 <li>Whenever possible, institutions and collections are linked to GBIF occurrences. See for example, <a href="https://www.gbif.org/grscicoll/collection/a7d9ed64-4668-41b3-a862-27d87c50bfed/metrics">the National Fish Collection of South African Institute for Aquatic Biodiversity</a>.</li>
 <li>Currently, around 141 million (72%) <a href="https://www.gbif.org/occurrence/search?basis_of_record=PRESERVED_SPECIMEN&amp;basis_of_record=FOSSIL_SPECIMEN&amp;basis_of_record=LIVING_SPECIMEN&amp;occurrence_status=present">specimen-related occurrence records</a> link to a GRSciColl entity.</li>
+<li>Institutions can request access to our registry to update and maintain their own institution and collection entries.</li>
 </ul>
 
 <p>But GRSciColl was quite different when we inherited it. Some of these features are the result of our work for the past two years.
 I will detail some of the GRSciColl history below. But first, I thought it would be nice to have a little visual so I summoned my doodling skills and made this:</p>
 
-<p><img src="https://github.com/gbif/data-blog/blob/master/content/post/2021-02-08-grscicoll/GRSciColl.PNG" alt="GRSciColl doodles" /></p>
+<p><img src="/post/2021-02-08-grscicoll/GRSciColl.PNG" alt="GRSciColl doodles" /></p>
 
 <ol>
 <li>In 2018 GBIF inherited GRSciColl from the <a href="https://www.si.edu">Smithsonian Institution</a>. It took some adjustment and work with the Smithsonian but we integrated into our registry and eventually made it available on GBIF.org (in 2019). Our first milestone!</li>
@@ -224,15 +228,18 @@ I will detail some of the GRSciColl history below. But first, I thought it would
 
 <h1 id="remaining-challenges-and-future-plans">Remaining challenges and future plans</h1>
 
-<p>GRSciColl is still a work in progress, and many challenges remain. I won&rsquo;t go into too many details (this is still a blogpost), but some of the areas we would like to address next include:
-1. Cleaning the data content: GRSciColl contains many duplicate entries that need cleaning. We are working on implementing tools and functions to help data content managers identify and clean those dupicates more efficiently.
-2. Making it easier for institutions to improve and maintain their content: at the moment most updates are done thanks to IH synchronozation or email requests. We would like to:
-    * explore synchronisation with the <a href="https://ftp.ncbi.nih.gov/pub/taxonomy/biocollections/">NCBI BioCollections</a>,
-    * enable the possibility to choose EML files as master records,
-    * set up an interface for more detailed update requests.
-3. Redesign the current GRSciColl interface.</p>
+<p>GRSciColl is still a work in progress, and many challenges remain. I won&rsquo;t go into too many details (this is still a blogpost), but some of the areas we would like to address next include:</p>
 
-<p>We also plan to later broaden the group of editors to establish the Editorial board.</p>
+<ol>
+<li><strong>Reduce the amount of duplicate records</strong>: The connection with Index Herbariorum and import of iDigBio enriched the catalogue, but also increased the number of duplicate entities that can’t be automatically handled. We have been working on implementing tools and functions to help data content managers identify and clean those dupicates more efficiently. We would like to ask the community for help to assess and clean these duplicates. One way to pariticpate, is to review the potiential duplicates listed in <a href="https://github.com/gbif/collections-duplicates">this GitHub repository</a>.</li>
+<li><strong>Allow anyone to propose changes</strong>: Most of the update requests are handled by email. We aim to develop an interface allowing anyone to propose a change to any field and state whether they have authority to approve it. Changes are then to be reviewed and applied by the editorial team.</li>
+<li><strong>Improve documentation.</strong></li>
+<li><strong>Grow the pool of editors.</strong></li>
+<li><strong>Define and implement the master data management solution</strong>.</li>
+<li><strong>Develop a richer user interface</strong>.</li>
+</ol>
+
+<p>For more information, you can consult our <a href="https://github.com/gbif/registry/blob/master/roadmap-grscicoll.md">2021 Roadmap</a>.</p>
 
 <p>If you would like to contribute to improving the GRSciColl content, don&rsquo;t hesitate to contact us at scientific-collections@gbif.org.</p>
 
@@ -264,14 +271,9 @@ I will detail some of the GRSciColl history below. But first, I thought it would
       
       <nav class="post-nav">
         
-          <a class="prev" href="/post/gbif-filtering-guide/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Common things to look out for when post-processing GBIF downloads</span>
-            <span class="prev-text nav-mobile">Prev</span>
-          </a>
         
-          <a class="next" href="/post/downloads-api-guide/">
-            <span class="next-text nav-default">Downloads API Guide</span>
+          <a class="next" href="/post/gbif-filtering-guide/">
+            <span class="next-text nav-default">Common things to look out for when post-processing GBIF downloads</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>

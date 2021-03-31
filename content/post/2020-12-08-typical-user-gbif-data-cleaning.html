@@ -30,6 +30,7 @@ sequenceDiagrams:
   options: ''
 ---
 
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
 
 
 <p>Here I present a <strong>checklist</strong> for filtering <strong>GBIF downloads</strong>.</p>
@@ -83,19 +84,30 @@ email=&quot;&quot; # your email
 
 gbif_download = occ_download(
 type=&quot;and&quot;,
-pred(&quot;taxonKey&quot;, 5052020), # Calopteryx xanthostoma 
+pred(&quot;taxonKey&quot;, 5052020),
 pred(&quot;hasGeospatialIssue&quot;, FALSE),
 pred(&quot;hasCoordinate&quot;, TRUE),
 pred_gte(&quot;year&quot;, 1900),
 pred_not(pred(&quot;basisOfRecord&quot;, &quot;FOSSIL_SPECIMEN&quot;)),
-pred_not(pred(&quot;basisOfRecord&quot;, &quot;LIVING_SPECIMEN&quot;)),
+pred_or(
 pred_not(pred(&quot;establishmentMeans&quot;,&quot;MANAGED&quot;)),
+pred_not(pred_notnull(&quot;establishmentMeans&quot;))
+),
+pred_or(
 pred_not(pred(&quot;establishmentMeans&quot;,&quot;INTRODUCED&quot;)),
+pred_not(pred_notnull(&quot;establishmentMeans&quot;))
+),
+pred_or(
 pred_not(pred(&quot;establishmentMeans&quot;,&quot;INVASIVE&quot;)),
+pred_not(pred_notnull(&quot;establishmentMeans&quot;))
+),
+pred_or(
 pred_not(pred(&quot;establishmentMeans&quot;,&quot;NATURALISED&quot;)),
+pred_not(pred_notnull(&quot;establishmentMeans&quot;))
+),
 pred_or(
 pred_lt(&quot;coordinateUncertaintyInMeters&quot;,10000),
-pred_not(pred_notnull(&quot;coordinateUncertaintyInMeters&quot;)) # keep null values
+pred_not(pred_notnull(&quot;coordinateUncertaintyInMeters&quot;))
 ),
 format = &quot;SIMPLE_CSV&quot;,
 user=user,pwd=pwd,email=email
