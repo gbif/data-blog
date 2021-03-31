@@ -94,19 +94,30 @@ email="" # your email
 
 gbif_download = occ_download(
 type="and",
-pred("taxonKey", 5052020), # Calopteryx xanthostoma 
+pred("taxonKey", 5052020),
 pred("hasGeospatialIssue", FALSE),
 pred("hasCoordinate", TRUE),
 pred_gte("year", 1900),
 pred_not(pred("basisOfRecord", "FOSSIL_SPECIMEN")),
-pred_not(pred("basisOfRecord", "LIVING_SPECIMEN")),
+pred_or(
 pred_not(pred("establishmentMeans","MANAGED")),
+pred_not(pred_notnull("establishmentMeans"))
+),
+pred_or(
 pred_not(pred("establishmentMeans","INTRODUCED")),
+pred_not(pred_notnull("establishmentMeans"))
+),
+pred_or(
 pred_not(pred("establishmentMeans","INVASIVE")),
+pred_not(pred_notnull("establishmentMeans"))
+),
+pred_or(
 pred_not(pred("establishmentMeans","NATURALISED")),
+pred_not(pred_notnull("establishmentMeans"))
+),
 pred_or(
 pred_lt("coordinateUncertaintyInMeters",10000),
-pred_not(pred_notnull("coordinateUncertaintyInMeters")) # keep null values
+pred_not(pred_notnull("coordinateUncertaintyInMeters"))
 ),
 format = "SIMPLE_CSV",
 user=user,pwd=pwd,email=email
