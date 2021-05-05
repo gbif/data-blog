@@ -198,7 +198,7 @@ Replace `jwaller@gbif.org` with your Microsoft-Azure account name.
 
 ```shell
 az login
-az storage account create -n gbifblogstorage -g databrick-quickstart -l westeurope --sku Standard_LRS
+az storage account create -n gbifblobstorage -g databrick-quickstart -l westeurope --sku Standard_LRS
 
 az role assignment create --role "Owner" --assignee "jwaller@gbif.org"
 az role assignment create --role "Storage Blob Data Contributor" --assignee "jwaller@gbif.org"

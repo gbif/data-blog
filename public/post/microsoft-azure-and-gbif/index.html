@@ -364,7 +364,7 @@ export_df.show()
 <p>Replace <code>jwaller@gbif.org</code> with your Microsoft-Azure account name.</p>
 
 <pre><code class="language-shell">az login
-az storage account create -n gbifblogstorage -g databrick-quickstart -l westeurope --sku Standard_LRS
+az storage account create -n gbifblobstorage -g databrick-quickstart -l westeurope --sku Standard_LRS
 
 az role assignment create --role &quot;Owner&quot; --assignee &quot;jwaller@gbif.org&quot;
 az role assignment create --role &quot;Storage Blob Data Contributor&quot; --assignee &quot;jwaller@gbif.org&quot;
