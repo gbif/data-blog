@@ -34,9 +34,9 @@ sequenceDiagrams:
 
 **GBIF** now has a [snapshot](https://github.com/microsoft/AIforEarthDataSets/blob/main/data/gbif.md) of 1.2 billion occurrences<sub>✝</sub> records on [Microsoft Azure](https://www.microsoft.com/en-us/ai/ai-for-earth). 
 
-It is hosted by the **Microsoft AI for Earth program**, which hosts geospatial datasets that are important to environmental sustainability and Earth science. Hosting is convenient because you could now use occurrences in combination with other environmental layers, and not need to upload any of it to the Azure. 
+It is hosted by the **Microsoft AI for Earth program**, which hosts geospatial datasets that are important to environmental sustainability and Earth science. Hosting is convenient because you could now use occurrences in combination with other environmental layers and not need to upload any of it to the Azure. 
 
-The main reason you would want to use cloud computing over your own computer is because you can run **big data queries** that are slow or impractical on a local machine. 
+The main reason you would want to use cloud computing is because you can run **big data queries** that are slow or impractical on a local machine. 
 
 <!--more-->
 
