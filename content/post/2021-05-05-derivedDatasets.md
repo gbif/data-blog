@@ -9,7 +9,7 @@ tags:
   - DOI
   - CiteTheDOI
   - Derived datasets
-lastmod: '2021-05-05T14:24:11+02:00'
+lastmod: '2021-05-05T16:24:11+02:00'
 draft: no
 keywords: []
 description: ''
@@ -49,7 +49,7 @@ As a minimum you'll need two things: 1) a GBIF.org account and 2) a list of cont
 ```
 etc.
 
-Secondly, in the interest of reproducibility, do yourself and the world a favour and deposit your dataset somewhere publically accessible (e.g. Zenodo). Then when you're ready, go to the [derived dataset form](https://www.gbif.org/derived-dataset/register) and fill it out:
+Secondly, in the interest of reproducibility, make sure to deposit your dataset somewhere publicly accessible (e.g. Zenodo). When you're ready, go to the [derived dataset form](https://www.gbif.org/derived-dataset/register) and fill it out as shown here:
 
 ![](/post/2021-05-05-derivedDatasets_files/dd_form.png)
 
