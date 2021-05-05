@@ -1,5 +1,5 @@
 ---
-title: Derived datasets are here
+title: Derived datasets: To DOI or not to DOI
 author: Daniel Noesgaard
 date: '2021-05-05'
 slug: derived-datasets
@@ -32,8 +32,6 @@ sequenceDiagrams:
   options: ''
 ---
 
-## To DOI or not to DOI
-
 You've finished an analysis using GBIF-mediated data, you're writing up your manuscript and checking all the references, but you're unsure of how to cite GBIF. If you [Google it](https://www.google.com/search?q=how+to+cite+GBIF), you'll probably end up reading our [citation guideslines](https://www.gbif.org/citation-guidelines) and quickly realize that GBIF is all about DOIs. Datasets have their own DOIs and downloads of aggregated data also have their own DOIs. 
 
 But maybe you didn't download data through the GBIF.org portal. Maybe you relied on an R package like rgbif or dismo that retrived data synchronously from the GBIF API? Maybe a grad student downloaded if for you? Maybe you accessed the data through the Microsoft AI for Earth program and ran the analysis on Azure? In any case, which DOI do you cite _if you don't have one_?
@@ -55,7 +53,10 @@ Secondly, in the interest of reproducibility, do yourself and the world a favour
 
 ![](/post/2021-05-05-derivedDatasets_files/dd_form.png)
 
-All it takes is a **title**, the **URL of where your dataset is deposited**, a **list of datasets** (by datasetKey or DOI) with record counts either as a CSV file or filled in manually, and a **description of what the dataset** is and how it came together. That's it! The form has two additional optional fields, one for specifying an original download DOI if the derived dataset represents a filtered version of that download, and a registration date, if, for someone reason you wish the derived dataset to be registered in the future rather than immediately (e.g. embargoed materials).
+All it takes is a **title**, the **URL of where your dataset is deposited**, a **list of datasets** (by datasetKey or DOI) with record counts either as a CSV file or filled in manually, and a **description of what the dataset** is and how it came together. That's it! The form has two additional optional fields, one for specifying an original download DOI if the derived dataset represents a filtered version of that download, and a registration date, if, for someone reason you wish the derived dataset to be registered in the future rather than immediately (e.g. embargoed materials). And that's it! 
 
-And that's it! Once the registration is complete, you can click the **GO TO DATASET** button to see the result and get the DOI.
+![](/post/2021-05-05-derivedDatasets_files/dd_done.png)
 
+Once the registration is complete, you can click the **GO TO DATASET** button to see the result and get the DOI.
+
+![](/post/2021-05-05-derivedDatasets_files/dd_done.png)
