@@ -55,13 +55,13 @@ Secondly, in the interest of reproducibility, make sure to deposit your dataset 
 
 All it takes is a **title**, the **URL of where your dataset is deposited**, a **list of datasets** (by datasetKey or DOI) with record counts either as a CSV file or filled in on-screen, and a **description of what the dataset** is and how it came together. That's it! The form has two additional optional fields, one for specifying an original download DOI if the derived dataset represents a filtered version of that download, and a registration date, if, for someone reason you wish the derived dataset to be registered in the future rather than immediately (e.g. embargoed materials).
 
-Once the registration is complete, you can click the **GO TO DATASET** button to see the result and get the DOI.
+Hit **SUBMIT** and once the registration is complete, you can click the **GO TO DATASET** button to see the result and get the DOI.
 
 ![](/post/2021-05-05-derivedDatasets_files/dd_done.png)
 
 You'll notice that there's a suggested citation string there as well. You're welcome to change this to your liking as long as you keep the DOI. 
 
-![](/post/2021-05-05-derivedDatasets_files/dd_landingpage.png)
+![](/post/2021-05-05-derivedDatasets_files/dd_landing_page.png)
 
 ## My data doesn't have the datasetKey field
 
