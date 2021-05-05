@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>GBIF and Apache-Spark on Microsoft Azure tutorial - GBIF Data Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="John Waller" />
+  <meta name="description" content="GBIF now has a snapshot of 1.2 billion occurrences✝ records on Microsoft Azure.
+It is hosted by the Microsoft AI for Earth program, which hosts geospatial datasets that are important to environmental sustainability and Earth science. Hosting is convenient because you could now use occurrences in combination with other environmental layers, and not need to upload any of it to the Azure.
+The main reason you would want to use cloud computing over your own computer is because you can run big data queries that are slow or impractical on a local machine.
+
+" />
+
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.42" />
+
+
+<link rel="canonical" href="/post/microsoft-azure-and-gbif/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.2.0" rel="stylesheet">
+
+
+
+
+<link rel="stylesheet" href="/css//custom.css">
+
+
+<meta property="og:title" content="GBIF and Apache-Spark on Microsoft Azure tutorial" />
+<meta property="og:description" content="GBIF now has a snapshot of 1.2 billion occurrences✝ records on Microsoft Azure.
+
+It is hosted by the Microsoft AI for Earth program, which hosts geospatial datasets that are important to environmental sustainability and Earth science. Hosting is convenient because you could now use occurrences in combination with other environmental layers, and not need to upload any of it to the Azure.
+
+The main reason you would want to use cloud computing over your own computer is because you can run big data queries that are slow or impractical on a local machine.
+
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/microsoft-azure-and-gbif/" />
+
+
+
+<meta property="article:published_time" content="2021-04-22T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2021-04-22T16:00:05&#43;02:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="GBIF and Apache-Spark on Microsoft Azure tutorial">
+<meta itemprop="description" content="GBIF now has a snapshot of 1.2 billion occurrences✝ records on Microsoft Azure.
+
+It is hosted by the Microsoft AI for Earth program, which hosts geospatial datasets that are important to environmental sustainability and Earth science. Hosting is convenient because you could now use occurrences in combination with other environmental layers, and not need to upload any of it to the Azure.
+
+The main reason you would want to use cloud computing over your own computer is because you can run big data queries that are slow or impractical on a local machine.
+
+">
+
+
+<meta itemprop="datePublished" content="2021-04-22T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2021-04-22T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1047">
+
+
+
+<meta itemprop="keywords" content="cloud computing,azure," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="GBIF and Apache-Spark on Microsoft Azure tutorial"/>
+<meta name="twitter:description" content="GBIF now has a snapshot of 1.2 billion occurrences✝ records on Microsoft Azure.
+
+It is hosted by the Microsoft AI for Earth program, which hosts geospatial datasets that are important to environmental sustainability and Earth science. Hosting is convenient because you could now use occurrences in combination with other environmental layers, and not need to upload any of it to the Azure.
+
+The main reason you would want to use cloud computing over your own computer is because you can run big data queries that are slow or impractical on a local machine.
+
+"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">GBIF Data Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/categories/gbif/">
+        <li class="mobile-menu-item">posts</li>
+      </a><a href="https://discourse.gbif.org/c/data-blog">
+        <li class="mobile-menu-item">community-forum</li>
+      </a><a href="https://www.gbif.org/">
+        <li class="mobile-menu-item">gbif.org</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">about</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">
+	<img src= "/logo.png" alt="GBIF-analytics-blog" style ="width:20%;">
+  </a>
+  
+	
+  
+  
+</div>
+
+<nav class="site-navbar">
+
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/categories/gbif/">posts</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://discourse.gbif.org/c/data-blog">community-forum</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://www.gbif.org/">gbif.org</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">about</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+	
+    <header class="post-header">
+      <h1 class="post-title">GBIF and Apache-Spark on Microsoft Azure tutorial</h1>
+	  
+	  
+      <div class="post-author">John Waller</div>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-04-22 </span>
+        <div class="post-category">
+            
+              <a href="/categories/gbif/"> GBIF </a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    
+    
+
+    
+    <div class="post-content">
+      <p><strong>GBIF</strong> now has a <a href="https://github.com/microsoft/AIforEarthDataSets/blob/main/data/gbif.md">snapshot</a> of 1.2 billion occurrences<sub>✝</sub> records on <a href="https://www.microsoft.com/en-us/ai/ai-for-earth">Microsoft Azure</a>.</p>
+
+<p>It is hosted by the <strong>Microsoft AI for Earth program</strong>, which hosts geospatial datasets that are important to environmental sustainability and Earth science. Hosting is convenient because you could now use occurrences in combination with other environmental layers, and not need to upload any of it to the Azure.</p>
+
+<p>The main reason you would want to use cloud computing over your own computer is because you can run <strong>big data queries</strong> that are slow or impractical on a local machine.</p>
+
+<p></p>
+
+<p>In this tutorial, I will be running a simple query on 1.2 billion occurrences records. I will be using <a href="https://spark.apache.org/">apache-spark</a>. Spark has APIs in <strong>R</strong>, <strong>scala</strong>, and <strong>python</strong>.</p>
+
+<p><sub>✝</sub>The snapshots include all <strong>CC-BY licensed data</strong> published through GBIF that have coordinates which passed automated quality checks.</p>
+
+<p>The GBIF mediated occurrence data are stored in Parquet files in Azure Blob Storage in the West Europe Azure region. The periodic occurrence snapshots are stored in occurrence/YYYY-MM-DD, where YYYY-MM-DD corresponds to the date of the snapshot.</p>
+
+<h2 id="setup-for-running-a-databricks-spark-notebook-on-azure">Setup for running a databricks spark notebook on Azure</h2>
+
+<blockquote>
+<p>You will be able to run free queries for a time, but eventually you will have to pay for your compute time.</p>
+</blockquote>
+
+<p><strong>Create a Microsoft Azure account</strong> <a href="https://azure.microsoft.com/en-us/free/">here</a></p>
+
+<p>I find it easiest to use the <a href="https://docs.microsoft.com/en-us/cli/azure/">az command line interface</a>. You can also set up using the Azure web interface. This tutorial is based off of the Databricks <a href="https://docs.microsoft.com/en-us/azure/databricks/scenarios/quickstart-create-databricks-workspace-portal?tabs=azure-portal">quickstart guide</a>.</p>
+
+<p><strong>Download az</strong> <a href="https://docs.microsoft.com/en-us/cli/azure/">here</a>.</p>
+
+<p><strong>Log into your account</strong> and <strong>install databricks</strong>.</p>
+
+<pre><code class="language-shell">az login
+az extension add --name databricks
+</code></pre>
+
+<p>Create a <strong>resource group</strong> <code>databricks-quickstart</code>. The GBIF snapshot is located in <code>westeurope</code>.</p>
+
+<pre><code class="language-shell">az group create --name databricks-quickstart --location westeurope
+az account list-locations -o table
+</code></pre>
+
+<p>Create a <strong>workspace</strong>:</p>
+
+<pre><code class="language-shell">az databricks workspace create 
+    --resource-group databricks-quickstart \
+    --name mydatabrickws  \
+    --location westeurope  \
+    --sku standard
+</code></pre>
+
+<p>From this page <a href="https://portal.azure.com/#blade/HubsExtension/BrowseResourceGroups">Azure web portal</a>, click on <strong>databricks-quickstart</strong>.</p>
+
+<p><img src="/post/2021-04-22-microsoft-azure-and-gbif_files/resource_groups_screenshot.png" alt="launch workspace" /></p>
+
+<p>Click on <strong>launch workspace</strong>.</p>
+
+<p><img src="/post/2021-04-22-microsoft-azure-and-gbif_files/launch_workspace.png" alt="launch workspace" /></p>
+
+<p>Click on <strong>new cluster</strong>.</p>
+
+<p><img src="https://docs.microsoft.com/en-us/azure/databricks/scenarios/media/quickstart-create-databricks-workspace-portal/databricks-on-azure.png" alt="screenshot" /></p>
+
+<p>Create a <strong>new cluster</strong>.</p>
+
+<p><img src="https://docs.microsoft.com/en-us/azure/databricks/scenarios/media/quickstart-create-databricks-workspace-portal/create-databricks-spark-cluster.png" alt="screenshot" /></p>
+
+<p>Click <strong>create blank notebook</strong>. Select the <strong>default language you want to use</strong> (R, scala, python).</p>
+
+<p><img src="/post/2021-04-22-microsoft-azure-and-gbif_files/blank_notebook.png" alt="launch workspace" /></p>
+
+<p>You should now be able to run the code below in <strong>your new notebook</strong>.</p>
+
+<p><img src="/post/2021-04-22-microsoft-azure-and-gbif_files/scala_notebook.png" alt="launch workspace" /></p>
+
+<p>In this code chunk, I will <strong>count the number of species (specieskeys) in each country</strong>.</p>
+
+<pre><code class="language-scala">import org.apache.spark.sql.functions._
+
+val gbif_snapshot_path = &quot;wasbs://gbif@ai4edataeuwest.blob.core.windows.net/occurrence/2021-04-13/occurrence.parquet/*&quot;
+
+val df = spark.read.parquet(gbif_snapshot_path)
+df.printSchema // show columns
+df.count() // count the number of occurrences. 1.2B
+
+// find the country with the most species
+val export_df = df.
+select(&quot;countrycode&quot;,&quot;specieskey&quot;).
+distinct().
+groupBy(&quot;countrycode&quot;).
+count().
+orderBy(desc(&quot;count&quot;))
+
+export_df.show()
+</code></pre>
+
+<p>The resulting <code>export_df</code> should look like this.</p>
+
+<pre><code>+-----------+------+
+|countrycode| count|
++-----------+------+
+|         US|187515|
+|         AU|122746|
+|         MX| 86399|
+|         BR| 69167|
+|         CA| 64422|
+|         ZA| 60682|
+</code></pre>
+
+<p>Here is how you would count species by country using <strong>SparkR</strong>.</p>
+
+<pre><code class="language-r">library(magrittr) # for %&gt;% 
+install.packages(&quot;/databricks/spark/R/pkg&quot;, repos = NULL)
+library(SparkR)
+
+sc = sparkR.init()
+sqlContext = sparkRSQL.init(sc)
+
+gbif_snapshot_path = &quot;wasbs://gbif@ai4edataeuwest.blob.core.windows.net/occurrence/2021-04-13/occurrence.parquet/*&quot;
+
+df = read.parquet(sqlContext,path=gbif_snapshot_path)
+printSchema(df)
+
+export_df = df %&gt;% 
+select(&quot;countrycode&quot;,&quot;specieskey&quot;) %&gt;% 
+distinct() %&gt;%
+groupBy(&quot;countrycode&quot;) %&gt;% 
+count() %&gt;%
+arrange(&quot;count&quot;,decreasing = TRUE) 
+
+export_df %&gt;% showDF()
+</code></pre>
+
+<p>How you would count species by country in <strong>pyspark</strong>.</p>
+
+<pre><code class="language-python">from pyspark.sql import SQLContext
+from pyspark.sql.functions import *
+sqlContext = SQLContext(sc)
+
+gbif_snapshot_path = &quot;wasbs://gbif@ai4edataeuwest.blob.core.windows.net/occurrence/2021-04-13/occurrence.parquet/*&quot;
+
+# to read parquet file
+df = sqlContext.read.parquet(gbif_snapshot_path)
+df.printSchema # show columns
+
+# find the country with the most species
+export_df = df\
+.select(&quot;countrycode&quot;,&quot;specieskey&quot;)\
+.distinct()\
+.groupBy(&quot;countrycode&quot;)\
+.count()\
+.orderBy(col(&quot;count&quot;).desc())
+
+export_df.show()
+</code></pre>
+
+<h2 id="exporting-a-csv-table">Exporting a csv table</h2>
+
+<p>We would now like to export <code>export_df</code> from the previous section into a csv file, so we can analyze in on our own computer. <strong>There is also a bit of setup involved here</strong>.</p>
+
+<p>It is easiest to use the command line tool <code>az</code> ( <a href="https://docs.microsoft.com/en-us/cli/azure/">download here</a> ) to set up <strong>storage accounts</strong> and <strong>containers</strong> for storing your exported csv.</p>
+
+<p>Replace <code>jwaller@gbif.org</code> with your Microsoft-Azure account name.</p>
+
+<pre><code class="language-shell">az login
+az storage account create -n gbifblogstorage -g databrick-quickstart -l westeurope --sku Standard_LRS
+
+az role assignment create --role &quot;Owner&quot; --assignee &quot;jwaller@gbif.org&quot;
+az role assignment create --role &quot;Storage Blob Data Contributor&quot; --assignee &quot;jwaller@gbif.org&quot;
+az role assignment create --role &quot;Storage Queue Data Contributor&quot; --assignee &quot;jwaller@gbif.org&quot;
+
+az storage container create -n container1 --account-name gbifblobstorage --auth-mode login
+</code></pre>
+
+<p>Run this command to get the <strong>secret key</strong> (<code>sas_key</code>) you will need in the next section.</p>
+
+<pre><code class="language-shell">az storage account keys list -g databrick-quickstart -n gbifblobstorage
+</code></pre>
+
+<p>The <strong>secret key</strong> (<code>sas_key</code> in next section) you want is under <code>value</code>.</p>
+
+<pre><code>{
+&quot;keyName&quot;: &quot;key1&quot;,
+&quot;permissions&quot;: &quot;FULL&quot;,
+&quot;value&quot;: &quot;copy_me_big_long_secret_key_kfaldkfalskdfj203932049230492f_fakekey_j030303fjdasfndsafldkj==&quot;
+}
+</code></pre>
+
+<p>Now that the set up is over, you can <strong>export a dataframe</strong> as a csv file. The <strong>save path</strong> has the following form:</p>
+
+<pre><code>wasbs://container_name@storage_name.blob.core.windows.net/file_name.csv
+</code></pre>
+
+<p>We will use <strong>container1</strong> and <strong>gbifblobstorage</strong> created earlier. Copy your <code>sas_key</code> to replace my fake one. Run this in one of the notebooks you set up earlier.</p>
+
+<pre><code class="language-scala">val sas_key = &quot;copy_me_big_long_secret_key_kfaldkfalskdfj203932049230492f_fakekey_j030303fjdasfndsafldkj==&quot; // fill the secret key from the previous section 
+spark.conf.set(&quot;fs.azure.account.key.gbifblobstorage.blob.core.windows.net&quot;,sas_key)
+
+// or you could export a parquet file
+// export_df.write.parquet(&quot;wasbs://container1@gbifblobstorage.blob.core.windows.net/export_df.parquet&quot;)
+
+export_df.
+coalesce(1).
+write.
+mode(&quot;overwrite&quot;).
+option(&quot;header&quot;, &quot;true&quot;).
+option(&quot;sep&quot;, &quot;\t&quot;).
+format(&quot;csv&quot;).
+save(&quot;wasbs://container1@gbifblobstorage.blob.core.windows.net/export_df.csv&quot;)
+
+</code></pre>
+
+<pre><code class="language-r">library(SparkR)
+sparkR.session()
+
+sas_key = &quot;copy_me_big_long_secret_key_kfaldkfalskdfj203932049230492f_fakekey_j030303fjdasfndsafldkj==&quot;
+sparkR.session(sparkConfig = list(fs.azure.account.key.gbifblobstorage.blob.core.windows.net = sas_key))
+
+export_df %&gt;%
+repartition(1) %&gt;%
+write.df(&quot;wasbs://container1@gbifblobstorage.blob.core.windows.net/export_df.csv&quot;, &quot;csv&quot;, &quot;overwrite&quot;)
+</code></pre>
+
+<pre><code class="language-python">val sas_key = &quot;copy_me_big_long_secret_key_kfaldkfalskdfj203932049230492f_fakekey_j030303fjdasfndsafldkj==&quot; // fill the secret key from the previous section 
+spark.conf.set(&quot;fs.azure.account.key.gbifblobstorage.blob.core.windows.net&quot;,sas_key)
+
+export_df\
+.coalesce(1)\
+.write\
+.mode(&quot;overwrite&quot;)\
+.option(&quot;header&quot;, &quot;true&quot;)\
+.option(&quot;sep&quot;, &quot;\t&quot;)\
+.format(&quot;csv&quot;)\
+.save(&quot;wasbs://container1@gbifblobstorage.blob.core.windows.net/export_df.csv&quot;)
+</code></pre>
+
+<p>You can now download the <code>export_df.csv</code> from the azure <strong>web interface</strong>. The file will not be a single csv file but a directory named <strong>export_df</strong>. Within this directory you will find several files. The one you are interested in will be something looking like this:</p>
+
+<pre><code>export_df.csv/part-00000-tid-54059299456474431-7c74a0a3-2332-423c-89ed-2d1a98427a01-449-1-c000.csv
+</code></pre>
+
+<h2 id="downloading-the-csv">Downloading the csv</h2>
+
+<p>Go to your <a href="https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.Storage%2FStorageAccounts">storage account</a>.</p>
+
+<p>Click on <strong>gbifblobstorage</strong>.</p>
+
+<p><img src="/post/2021-04-22-microsoft-azure-and-gbif_files/gbifblobstorage.png" alt="gbifblobstorage" /></p>
+
+<p>Click on <strong>containters</strong>.</p>
+
+<p><img src="/post/2021-04-22-microsoft-azure-and-gbif_files/containers.png" alt="gbifblobstorage" /></p>
+
+<p>Download the <strong>csv</strong>.</p>
+
+<p><code>export_df.csv/part-00000-tid-54059299456474431-7c74a0a3-2332-423c-89ed-2d1a98427a01-449-1-c000.csv</code>.</p>
+
+<p><img src="/post/2021-04-22-microsoft-azure-and-gbif_files/part.png" alt="gbifblobstorage" /></p>
+
+<h2 id="citing-custom-filtered-processed-data">Citing custom filtered/processed data</h2>
+
+<p>If you end up using your <strong>exported csv</strong> file in a research paper, you will want a <strong>doi</strong>. GBIF now has a <a href="https://www.gbif.org/citation-guidelines">service</a> for generating a <strong>citable doi</strong> from <strong>a list of involved datasetkeys with occurrences counts</strong>. See the <a href="https://www.gbif.org/citation-guidelines">GBIF citation guidelines</a>.</p>
+
+<p>You can generate a <strong>citation file</strong> for our request above using the following code chunk. Since our <code>export_df.csv</code> used all of the occurrences, we can simply group by datasetkey and count all of the occurrences to generate our citation.csv file.</p>
+
+<pre><code class="language-scala">val sas_key = &quot;copy_me_big_long_secret_key_kfaldkfalskdfj203932049230492f_fakekey_j030303fjdasfndsafldkj==&quot; // fill the secret key from the previous section 
+spark.conf.set(&quot;fs.azure.account.key.gbifblobstorage.blob.core.windows.net&quot;,sas_key)
+
+import org.apache.spark.sql.functions._
+
+val gbif_snapshot_path = &quot;wasbs://gbif@ai4edataeuwest.blob.core.windows.net/occurrence/2021-04-13/occurrence.parquet/*&quot;
+
+val citation_df = spark.read.parquet(wasbs_path).
+groupBy(&quot;datasetkey&quot;)
+count()
+
+citation_df.
+coalesce(1).
+write.
+mode(&quot;overwrite&quot;).
+option(&quot;header&quot;, &quot;true&quot;).
+option(&quot;sep&quot;, &quot;\t&quot;).
+format(&quot;csv&quot;).
+save(&quot;wasbs://container1@gbifblobstorage.blob.core.windows.net/citation_df.csv&quot;)
+</code></pre>
+
+<p>Hopefully you have everything that you need to start using GBIF mediated occurrence data on Microsoft Azure. Please leave a comment if something does not work for you.</p>
+    </div>
+
+    
+    
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/cloud-computing/">cloud computing</a>
+          
+          <a href="/tags/azure/">azure</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/grscicoll-2021/">
+            <span class="next-text nav-default">The GBIF Registry of Scientific Collections (GRSciColl) in 2021</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      
+
+
+ 
+<div>
+<h3>This post represents the ideas of the author.</h3>
+</div>
+<div id='discourse-comments'></div>
+<script type="text/javascript">
+  DiscourseEmbed = { discourseUrl: 'https://discourse.gbif.org/',
+                     discourseEmbedUrl: 'https://data-blog.gbif.org\/post\/microsoft-azure-and-gbif\/' };
+
+  (function() {
+    var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+    d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+  })();
+</script>  
+
+
+<div class = "copyright">
+	<a class="theme-link" href="https://www.gbif.org/what-is-gbif">What is GBIF?</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://www.gbif.org/developer/summary">API</a> 
+	<span class="division">|</span>
+	<a class="theme-link" href="https://www.gbif.org/faq">FAQ</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://discourse.gbif.org/">Community-Forum</a>
+</div>
+
+<div class = "copyright"> 
+	<span class="theme-info">GBIF Secretariat</span> 
+	<span class="theme-info">Universitetsparken 15</span> 
+	<span class="theme-info">DK-2100 Copenhagen Ø</span> 
+	<span class="theme-info" >Denmark</span>
+</div>
+
+<div class="copyright">
+	<span class="power-by">
+	Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+	</span>
+	<span class="division">|</span>
+	<span class="theme-info">
+	Theme - 
+	<a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+	</span>
+
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+<script type="text/javascript" src="/dist/even.min.js?v=3.2.0"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

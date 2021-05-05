@@ -10,6 +10,13 @@
   </url>
   
   <url>
+    <loc>/post/microsoft-azure-and-gbif/</loc>
+    <lastmod>2021-04-22T16:00:05+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>/post/grscicoll-2021/</loc>
     <lastmod>2021-03-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -304,6 +311,13 @@
   </url>
   
   <url>
+    <loc>/tags/azure/</loc>
+    <lastmod>2021-04-22T16:00:05+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/tags/backbone/</loc>
     <lastmod>2020-11-16T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -369,6 +383,13 @@
   <url>
     <loc>/tags/citizen-science/</loc>
     <lastmod>2019-08-02T08:39:12+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/cloud-computing/</loc>
+    <lastmod>2021-04-22T16:00:05+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -514,15 +535,15 @@
   </url>
   
   <url>
-    <loc>/categories/gbif/</loc>
+    <loc>/tags/gbif/</loc>
     <lastmod>2021-03-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/gbif/</loc>
-    <lastmod>2021-03-12T00:00:00+00:00</lastmod>
+    <loc>/categories/gbif/</loc>
+    <lastmod>2021-04-22T16:00:05+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -542,14 +563,14 @@
   </url>
   
   <url>
-    <loc>/categories/grscicoll/</loc>
+    <loc>/tags/grscicoll/</loc>
     <lastmod>2021-03-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/grscicoll/</loc>
+    <loc>/categories/grscicoll/</loc>
     <lastmod>2021-03-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
@@ -669,7 +690,7 @@
   
   <url>
     <loc>/author/john-waller/</loc>
-    <lastmod>2020-12-08T09:51:20+01:00</lastmod>
+    <lastmod>2021-04-22T16:00:05+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -781,7 +802,7 @@
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2021-03-12T00:00:00+00:00</lastmod>
+    <lastmod>2021-04-22T16:00:05+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -941,15 +962,15 @@
   </url>
   
   <url>
-    <loc>/categories/taxonomy/</loc>
-    <lastmod>2019-09-24T00:00:00+00:00</lastmod>
+    <loc>/tags/taxonomy/</loc>
+    <lastmod>2020-02-21T13:15:00+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/taxonomy/</loc>
-    <lastmod>2020-02-21T13:15:00+01:00</lastmod>
+    <loc>/categories/taxonomy/</loc>
+    <lastmod>2019-09-24T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
