@@ -46,7 +46,9 @@ As a minimum you'll need two things: 1) a GBIF.org account and 2) a list of cont
 ```
 etc.
 
-Secondly, in the interest of reproducibility, do yourself and the world a favour and deposit your dataset somewhere publically accessible (e.g. Zenodo). Then when you're ready, go to the [derived dataset form](https://www.gbif.org/derived-dataset/register) and fill it out.
+Secondly, in the interest of reproducibility, do yourself and the world a favour and deposit your dataset somewhere publically accessible (e.g. Zenodo). Then when you're ready, go to the [derived dataset form](https://www.gbif.org/derived-dataset/register) and fill it out:
+
+![](/post/2021-05-05-derivedDatasets_files/dd_form.png)
 
 All it takes is a **title**, the **URL of where your dataset is deposited**, a **list of datasets** (by datasetKey or DOI) with record counts either as a CSV file or filled in manually, and a **description of what the dataset** is and how it came together. That's it! The form has two additional optional fields, one for specifying an original download DOI if the derived dataset represents a filtered version of that download, and a registration date, if, for someone reason you wish the derived dataset to be registered in the future rather than immediately (e.g. embargoed materials).
 
