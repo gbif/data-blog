@@ -94,7 +94,7 @@ The main reason you would want to use cloud computing is because you can run big
 
 <meta itemprop="datePublished" content="2021-04-22T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2021-04-22T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1043">
+<meta itemprop="wordCount" content="1044">
 
 
 
@@ -274,7 +274,7 @@ az account list-locations -o table
 
 <p><img src="/post/2021-04-22-microsoft-azure-and-gbif_files/scala_notebook.png" alt="launch workspace" /></p>
 
-<p>In this code chunk, I will <strong>count the number of species (specieskeys) in each country</strong>.</p>
+<p>This code chunk will <strong>count the number of species (specieskeys) with occurrences in each country</strong>.</p>
 
 <pre><code class="language-scala">import org.apache.spark.sql.functions._
 
@@ -462,7 +462,7 @@ export_df\
 
 <p>If you end up using your <strong>exported csv</strong> file in a research paper, you will want a <strong>doi</strong>. GBIF now has a <a href="https://www.gbif.org/citation-guidelines">service</a> for generating a <strong>citable doi</strong> from <strong>a list of involved datasetkeys with occurrences counts</strong>. See the <a href="https://www.gbif.org/citation-guidelines">GBIF citation guidelines</a>.</p>
 
-<p>You can generate a <strong>citation file</strong> for our request above using the following code chunk. Since our <code>export_df.csv</code> used all of the occurrences, we can simply group by datasetkey and count all of the occurrences to generate our citation.csv file.</p>
+<p>You can generate a <strong>citation file</strong> for your custom dataset above using the following code chunk. Since our <code>export_df.csv</code> used all of the occurrences, we can simply group by datasetkey and count all of the occurrences to generate our <code>citation.csv</code> file.</p>
 
 <pre><code class="language-scala">val sas_key = &quot;copy_me_big_long_secret_key_kfaldkfalskdfj203932049230492f_fakekey_j030303fjdasfndsafldkj==&quot; // fill the secret key from the previous section 
 spark.conf.set(&quot;fs.azure.account.key.gbifblobstorage.blob.core.windows.net&quot;,sas_key)

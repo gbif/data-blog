@@ -103,7 +103,7 @@ You should now be able to run the code below in **your new notebook**.
 
 ![launch workspace](/post/2021-04-22-microsoft-azure-and-gbif_files/scala_notebook.png)
 
-In this code chunk, I will **count the number of species (specieskeys) in each country**.
+This code chunk will **count the number of species (specieskeys) with occurrences in each country**.
 
 ```scala
 import org.apache.spark.sql.functions._
@@ -303,7 +303,7 @@ Download the **csv**.
 
 If you end up using your **exported csv** file in a research paper, you will want a **doi**. GBIF now has a [service](https://www.gbif.org/citation-guidelines) for generating a **citable doi** from **a list of involved datasetkeys with occurrences counts**. See the [GBIF citation guidelines](https://www.gbif.org/citation-guidelines). 
 
-You can generate a **citation file** for our request above using the following code chunk. Since our `export_df.csv` used all of the occurrences, we can simply group by datasetkey and count all of the occurrences to generate our citation.csv file. 
+You can generate a **citation file** for your custom dataset above using the following code chunk. Since our `export_df.csv` used all of the occurrences, we can simply group by datasetkey and count all of the occurrences to generate our `citation.csv` file. 
 
 ```scala
 val sas_key = "copy_me_big_long_secret_key_kfaldkfalskdfj203932049230492f_fakekey_j030303fjdasfndsafldkj==" // fill the secret key from the previous section 
