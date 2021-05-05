@@ -314,7 +314,7 @@ import org.apache.spark.sql.functions._
 val gbif_snapshot_path = "wasbs://gbif@ai4edataeuwest.blob.core.windows.net/occurrence/2021-04-13/occurrence.parquet/*"
 
 val citation_df = spark.read.parquet(wasbs_path).
-groupBy("datasetkey")
+groupBy("datasetkey").
 count()
 
 citation_df.
