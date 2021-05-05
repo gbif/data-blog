@@ -10,7 +10,7 @@ tags:
   - CiteTheDOI
   - Derived datasets
 lastmod: '2021-05-05T14:24:11+02:00'
-draft: yes
+draft: no
 keywords: []
 description: ''
 comment: no
@@ -32,9 +32,13 @@ sequenceDiagrams:
   options: ''
 ---
 
-You've finished an analysis using GBIF-mediated data, you're writing up your manuscript and checking all the references, but you're unsure of how to cite GBIF. If you [Google it](https://www.google.com/search?q=how+to+cite+GBIF), you'll probably end up reading our citation guideslines page and quickly realize that GBIF is all about DOIs. Datasets have their own DOIs and downloads of aggregated data also have their own DOIs. 
+## To DOI or not to DOI
 
-But maybe you didn't download data through the GBIF.org portal. Maybe you relied on an R package that retrived data synchronously and directly from the GBIF API? Maybe a grad student downloaded if for you? Maybe you accessed the data through the Microsoft AI for Earth program and ran the analysis on Azure? In any case, what DOI do you cite if you don't have one?
+You've finished an analysis using GBIF-mediated data, you're writing up your manuscript and checking all the references, but you're unsure of how to cite GBIF. If you [Google it](https://www.google.com/search?q=how+to+cite+GBIF), you'll probably end up reading our [citation guideslines](https://www.gbif.org/citation-guidelines) and quickly realize that GBIF is all about DOIs. Datasets have their own DOIs and downloads of aggregated data also have their own DOIs. 
+
+But maybe you didn't download data through the GBIF.org portal. Maybe you relied on an R package like rgbif or dismo that retrived data synchronously from the GBIF API? Maybe a grad student downloaded if for you? Maybe you accessed the data through the Microsoft AI for Earth program and ran the analysis on Azure? In any case, which DOI do you cite _if you don't have one_?
+
+## Introducing Derived Datasets
 
 To overcome this problem and any other situation in which a user wishes to assign a DOI to a subset of GBIF-mediated data, for which a DOI doesn't exist or isn't representative, we introduce the **Derived Dataset**. Simply put, a derived dataset is a citable record (with a unique DOI) representing a dataset that doesn't exist as a conventional, unfiltered GBIF.org download. So what does it take to create one and how do you do it?
 
