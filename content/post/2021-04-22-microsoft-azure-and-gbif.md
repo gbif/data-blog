@@ -69,7 +69,7 @@ az group create --name databricks-quickstart --location westeurope
 az account list-locations -o table
 ```
 
-Create a **workspace**: 
+Create a **workspace**.
 
 ```shell
 az databricks workspace create 
