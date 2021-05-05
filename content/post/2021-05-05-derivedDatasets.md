@@ -37,14 +37,18 @@ But maybe you didn't download data through the GBIF.org portal. Maybe you relied
 
 To overcome this problem and any other situation in which a user wishes to assign a DOI to a subset of GBIF-mediated data, for which a DOI doesn't exist or isn't representative, we introduce the **Derived Dataset**. Simply put, a derived dataset is a citable record (with a unique DOI) representing a dataset that doesn't exist as a conventional, unfiltered GBIF.org download. So what does it take to create one and how do you do it?
 
-As a minimum you'll need two things: 1) a GBIF.org account and 2) a list of contributing (parent) datasets with record counts—i.e. how many records did each dataset contribute. If your data contains all available fields, you'll need to summarize it based on the `datasetKey` field. There are numerous of doing this in R, using Excel, datamash, and other similar tools. But in the end you'll want to have a list like this:
+As a minimum you'll need two things: 1) a GBIF.org account and 2) a list of contributing (parent) datasets with record counts—i.e. how many records did each dataset contribute. If your data contains all available fields, you'll need to summarize it based on the `datasetKey` field. There are numerous ways of doing this in R, using Excel, datamash, and other similar tools. But in the end you'll want to have a list like this:
 
-`<datasetKey 1>		<# records>`
-`<datasetKey 2>		<# records>`
-`<datasetKey 3>		<# records>`
+```
+<datasetKey 1>		<# records>
+<datasetKey 2>		<# records>
+<datasetKey 3>		<# records>
+```
 etc.
 
-Secondly, in the interest of reproducibility, do the world a favour and deposit your dataset somewhere publically accessible (e.g. Zenodo). Then when you're ready, fill out the form for your derived dataset.
+Secondly, in the interest of reproducibility, do yourself and the world a favour and deposit your dataset somewhere publically accessible (e.g. Zenodo). Then when you're ready, go to the [derived dataset form](https://www.gbif.org/derived-dataset/register) and fill it out.
 
-All it takes is a title, the URL of where your dataset is deposited, a list of datasets (by datasetKey or DOI) with record counts either as a CSV file or filled in manually, and a description of what the dataset is and how it came together. That's it! The form has two additional optional fields, one for specifying an original download DOI if the derived dataset represents a filtered version of that download, and a registration date, if for someone reason you wish the derived dataset to be registered in the future rather than immediately (e.g. embargoed materials).
+All it takes is a **title**, the **URL of where your dataset is deposited**, a **list of datasets** (by datasetKey or DOI) with record counts either as a CSV file or filled in manually, and a **description of what the dataset** is and how it came together. That's it! The form has two additional optional fields, one for specifying an original download DOI if the derived dataset represents a filtered version of that download, and a registration date, if, for someone reason you wish the derived dataset to be registered in the future rather than immediately (e.g. embargoed materials).
+
+And that's it! Once the registration is complete, you can click the **GO TO DATASET** button to see the result and get the DOI.
 
