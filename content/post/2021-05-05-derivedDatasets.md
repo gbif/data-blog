@@ -9,7 +9,7 @@ tags:
   - DOI
   - CiteTheDOI
   - Derived datasets
-lastmod: '2021-05-05T16:24:11+02:00'
+lastmod: '2021-05-05T17:10:11+02:00'
 draft: no
 keywords: []
 description: ''
@@ -40,12 +40,12 @@ But maybe you didn't download data through the GBIF.org portal. Maybe you relied
 
 To overcome this problem and any other situation in which a user wishes to assign a DOI to a subset of GBIF-mediated data, for which a DOI doesn't exist or isn't representative, we introduce the **Derived Dataset**. Simply put, a derived dataset is a citable record (with a unique DOI) representing a dataset that doesn't exist as a conventional, unfiltered GBIF.org download. So what does it take to create one and how do you do it?
 
-As a minimum you'll need two things: 1) a GBIF.org account and 2) a list of contributing (parent) datasets with record counts—i.e. how many records did each dataset contribute. If your data contains all available fields, you'll need to summarize it based on the `datasetKey` field. There are numerous ways of doing this in R, using Excel, datamash, and other similar tools. But in the end you'll want to have a list like this:
+As a minimum you'll need two things: 1) a GBIF.org account and 2) a list of contributing (parent) datasets with record counts—i.e. how many records did each dataset contribute. If your data contains all available fields from GBIF, you'll need to summarize it based on the `datasetKey` field. There are numerous ways of doing this in R, using Excel, datamash, and other similar tools. But in the end you'll want to have a list like this:
 
 ```
-<datasetKey 1>		<# records>
-<datasetKey 2>		<# records>
-<datasetKey 3>		<# records>
+<datasetKey 1>	<# records>
+<datasetKey 2>	<# records>
+<datasetKey 3>	<# records>
 ```
 etc.
 
@@ -53,10 +53,25 @@ Secondly, in the interest of reproducibility, make sure to deposit your dataset 
 
 ![](/post/2021-05-05-derivedDatasets_files/dd_form.png)
 
-All it takes is a **title**, the **URL of where your dataset is deposited**, a **list of datasets** (by datasetKey or DOI) with record counts either as a CSV file or filled in manually, and a **description of what the dataset** is and how it came together. That's it! The form has two additional optional fields, one for specifying an original download DOI if the derived dataset represents a filtered version of that download, and a registration date, if, for someone reason you wish the derived dataset to be registered in the future rather than immediately (e.g. embargoed materials). And that's it! 
+All it takes is a **title**, the **URL of where your dataset is deposited**, a **list of datasets** (by datasetKey or DOI) with record counts either as a CSV file or filled in on-screen, and a **description of what the dataset** is and how it came together. That's it! The form has two additional optional fields, one for specifying an original download DOI if the derived dataset represents a filtered version of that download, and a registration date, if, for someone reason you wish the derived dataset to be registered in the future rather than immediately (e.g. embargoed materials).
 
 ![](/post/2021-05-05-derivedDatasets_files/dd_done.png)
 
 Once the registration is complete, you can click the **GO TO DATASET** button to see the result and get the DOI.
 
 ![](/post/2021-05-05-derivedDatasets_files/dd_done.png)
+
+You'll notice that there's a suggested citation string there as well. You're welcome to change this to your liking as long as you keep the DOI. 
+
+## My data doesn't have the datasetKey field
+
+If your data does **not** have this field, you may be able to use the occurrence `key` instead and look up the parent dataset, i.e. from
+
+`https://api.gbif.org/v1/occurrence/<occurrence key>`
+
+get
+
+```
+{
+"datasetKey": "cd6e21c8-9e8a-493a-8a76-fbf7862069e5"
+``` 
