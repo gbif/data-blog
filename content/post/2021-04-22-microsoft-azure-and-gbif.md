@@ -1,7 +1,7 @@
 ---
 title: GBIF and Apache-Spark on Microsoft Azure tutorial 
 author: John Waller
-date: '2021-04-22'
+date: '2021-05-05'
 slug: microsoft-azure-and-gbif
 categories:
   - GBIF

@@ -6,7 +6,7 @@
     <description>Recent content in Posts on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 22 Apr 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 05 May 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>GBIF and Apache-Spark on Microsoft Azure tutorial</title>
       <link>/post/microsoft-azure-and-gbif/</link>
-      <pubDate>Thu, 22 Apr 2021 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 05 May 2021 00:00:00 +0000</pubDate>
       
       <guid>/post/microsoft-azure-and-gbif/</guid>
       <description>&lt;p&gt;&lt;strong&gt;GBIF&lt;/strong&gt; now has a &lt;a href=&#34;https://github.com/microsoft/AIforEarthDataSets/blob/main/data/gbif.md&#34;&gt;snapshot&lt;/a&gt; of 1.2 billion occurrences&lt;sub&gt;✝&lt;/sub&gt; records on &lt;a href=&#34;https://www.microsoft.com/en-us/ai/ai-for-earth&#34;&gt;Microsoft Azure&lt;/a&gt;.&lt;/p&gt;
