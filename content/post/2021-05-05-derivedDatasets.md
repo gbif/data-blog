@@ -1,5 +1,5 @@
 ---
-title: Derived datasets: To DOI or not to DOI
+title: Derived datasets
 author: Daniel Noesgaard
 date: '2021-05-05'
 slug: derived-datasets
