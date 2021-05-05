@@ -190,7 +190,7 @@ export_df.show()
 
 ## Exporting a csv table
 
-We would now like to export `export_df` from the previous section into a csv file, so we can analyze in on our own computer. **There is also a bit of setup involved here**. 
+We would now like to export `export_df` from the previous section into a csv file, so we can analyze it on our own computer. **There is also a bit of setup involved here**. 
 
 It is easiest to use the command line tool `az` ( [download here](https://docs.microsoft.com/en-us/cli/azure/) ) to set up **storage accounts** and **containers** for storing your exported csv. 
 
