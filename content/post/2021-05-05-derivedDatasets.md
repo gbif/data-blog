@@ -34,7 +34,7 @@ sequenceDiagrams:
 
 You've finished an analysis using GBIF-mediated data, you're writing up your manuscript and checking all the references, but you're unsure of how to cite GBIF. If you [Google it](https://www.google.com/search?q=how+to+cite+GBIF), you'll probably end up reading our [citation guideslines](https://www.gbif.org/citation-guidelines) and quickly realize that GBIF is all about DOIs. Datasets have their own DOIs and downloads of aggregated data also have their own DOIs. 
 
-But maybe you didn't download data through the GBIF.org portal. Maybe you relied on an R package like rgbif or dismo that retrived data synchronously from the GBIF API? Maybe a grad student downloaded if for you? Maybe you accessed the data through the Microsoft AI for Earth program and ran the analysis on Azure? In any case, which DOI do you cite _if you don't have one_?
+But maybe you didn't download data through the GBIF.org portal. Maybe you relied on an R package like rgbif or dismo that retrived data synchronously from the GBIF API? Maybe a grad student downloaded if for you? Maybe you accessed and analyzed the data using a cloud computing service, like Microsoft Azure or Amazon Web Services? In any case, which DOI do you cite _if you don't have one_?
 
 ## Introducing Derived Datasets
 
@@ -53,13 +53,24 @@ Secondly, in the interest of reproducibility, make sure to deposit your dataset 
 
 ![](/post/2021-05-05-derivedDatasets_files/dd_form.png)
 
-All it takes is a **title**, the **URL of where your dataset is deposited**, a **list of datasets** (by datasetKey or DOI) with record counts either as a CSV file or filled in on-screen, and a **description of what the dataset** is and how it came together. That's it! The form has two additional optional fields, one for specifying an original download DOI if the derived dataset represents a filtered version of that download, and a registration date, if, for someone reason you wish the derived dataset to be registered in the future rather than immediately (e.g. embargoed materials).
+All it takes is 
+
+- a **title**, 
+- the **URL of where your dataset is deposited**, 
+- a **list of datasets** (by datasetKey or DOI) with record counts either as a CSV file or filled in on-screen, and 
+- a **description of what the dataset** is and how it came together. 
+
+That's it! 
+
+The form also has two __optional__ fields: one for specifying an original download DOI if the derived dataset represents a filtered version of that download, and a registration date, if, for someone reason you wish the derived dataset to be registered in the future rather than immediately (e.g. embargoed materials).
 
 Hit **SUBMIT** and once the registration is complete, you can click the **GO TO DATASET** button to see the result and get the DOI.
 
 You'll notice that there's a suggested citation string there as well. You're welcome to change this to your liking as long as you keep the DOI. 
 
 ![](/post/2021-05-05-derivedDatasets_files/dd_landing_page.png)
+
+---
 
 ## My data doesn't have the datasetKey field
 
