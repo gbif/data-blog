@@ -49,7 +49,7 @@ As a minimum you'll need two things: 1) a GBIF.org account and 2) a list of cont
 ```
 etc.
 
-Secondly, in the interest of reproducibility, make sure to deposit your dataset somewhere publicly accessible (e.g. Zenodo). When you're ready, go to the [derived dataset form](https://www.gbif.org/derived-dataset/register) and fill it out as shown here:
+Secondly, in the interest of reproducibility, make sure to deposit your dataset somewhere publicly accessible (e.g. Zenodo). When you're ready, go to the [derived dataset tool](https://www.gbif.org/derived-dataset/register) and fill it out as shown below.
 
 ![](/post/2021-05-05-derivedDatasets_files/dd_form.png)
 
