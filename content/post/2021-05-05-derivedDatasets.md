@@ -78,9 +78,10 @@ If your data does **not** have this field, you may be able to use the occurrence
 
 `https://api.gbif.org/v1/occurrence/<occurrence key>`
 
-get
+get value of the field `datasetKey`, e.g.,
 
 ```
-{
 "datasetKey": "cd6e21c8-9e8a-493a-8a76-fbf7862069e5"
 ``` 
+
+Note, that this method requires that the occurrence records are still available in GBIF. If you are able to successfully identify the parent datasets of the majority of the occurrences in your dataset, you're still good to go. It's better to accurately cite and credit some of the data publishers whose data you used than none at all!
