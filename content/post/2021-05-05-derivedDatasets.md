@@ -40,7 +40,7 @@ But maybe you didn't download data through the GBIF.org portal. Maybe you relied
 
 To overcome this problem and any other situation in which a user wishes to assign a DOI to a subset of GBIF-mediated data, for which a DOI doesn't exist or isn't representative, we introduce the **Derived Dataset**. Simply put, a derived dataset is a citable record (with a unique DOI) representing a dataset that doesn't exist as a conventional, unfiltered GBIF.org download. So what does it take to create one and how do you do it?
 
-As a minimum you'll need two things: 1) a GBIF.org account and 2) a list of contributing (parent) datasets with record counts—i.e. how many records did each dataset contribute. If your data contains all available fields from GBIF, you'll need to summarize it based on the `datasetKey` field. There are numerous ways of doing this in R, using Excel, datamash, and other similar tools. But in the end you'll want to have a list like this:
+As a minimum you'll need two things: 1) a GBIF.org account and 2) a list of contributing (parent) datasets with record counts—i.e. how many records did each dataset contribute. If your data contains all available fields from GBIF, you'll need to summarize it based on the `datasetKey` field ([What if you don't have this field?](#noDatasetKey)). There are numerous ways of doing this in R, using Excel, datamash, and other similar tools. But in the end you'll want to have a list like this:
 
 ```
 <datasetKey 1>	<# records>
@@ -72,7 +72,7 @@ You'll notice that there's a suggested citation string there as well. You're wel
 
 ---
 
-## My data doesn't have the datasetKey field
+<h2 id="noDatasetKey">My data doesn't have the datasetKey field</h2>
 
 If your data does **not** have this field, you may be able to use the occurrence `key` instead and look up the parent dataset, i.e. from
 
