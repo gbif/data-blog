@@ -301,7 +301,7 @@ Download the **csv**.
 
 ## Citing custom filtered/processed data
 
-If you end up using your **exported csv** file in a research paper, you will want a **doi**. GBIF now has a [service](https://www.gbif.org/derived-dataset) for generating a **citable doi** from **a list of involved datasetkeys with occurrences counts**. See the [GBIF citation guidelines](https://www.gbif.org/citation-guidelines). 
+If you end up using your **exported csv** file in a research paper, you will want a **doi**. GBIF now has a [service](https://www.gbif.org/derived-dataset/register) for generating a **citable doi** from **a list of involved datasetkeys with occurrences counts**. See the [GBIF citation guidelines](https://www.gbif.org/citation-guidelines). 
 
 You can generate a **citation file** for your custom dataset above using the following code chunk. Since our `export_df.csv` used all of the occurrences, we can simply group by datasetkey and count all of the occurrences to generate our `citation.csv` file. 
 
@@ -313,7 +313,7 @@ import org.apache.spark.sql.functions._
 
 val gbif_snapshot_path = "wasbs://gbif@ai4edataeuwest.blob.core.windows.net/occurrence/2021-04-13/occurrence.parquet/*"
 
-val citation_df = spark.read.parquet(wasbs_path).
+val citation_df = spark.read.parquet(gbif_snapshot_path).
 groupBy("datasetkey").
 count()
 

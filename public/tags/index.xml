@@ -102,6 +102,15 @@
     </item>
     
     <item>
+      <title>CiteTheDOI</title>
+      <link>/tags/citethedoi/</link>
+      <pubDate>Wed, 05 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/citethedoi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Citizen</title>
       <link>/tags/citizen/</link>
       <pubDate>Fri, 09 Nov 2018 00:00:00 +0000</pubDate>
@@ -165,6 +174,15 @@
     </item>
     
     <item>
+      <title>DOI</title>
+      <link>/tags/doi/</link>
+      <pubDate>Wed, 05 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/doi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Darwin Core</title>
       <link>/tags/darwin-core/</link>
       <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
@@ -224,6 +242,15 @@
       <pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>/tags/dbscan/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Derived datasets</title>
+      <link>/tags/derived-datasets/</link>
+      <pubDate>Wed, 05 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/derived-datasets/</guid>
       <description></description>
     </item>
     
