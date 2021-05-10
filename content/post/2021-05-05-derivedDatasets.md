@@ -1,7 +1,7 @@
 ---
 title: Derived datasets
 author: Daniel Noesgaard
-date: '2021-05-05'
+date: '2021-05-10'
 slug: derived-datasets
 categories:
   - GBIF
@@ -10,7 +10,7 @@ tags:
   - DOI
   - CiteTheDOI
   - Derived datasets
-lastmod: '2021-05-05T17:10:11+02:00'
+lastmod: '2021-05-10T09:50:11+02:00'
 draft: no
 keywords: []
 description: ''
