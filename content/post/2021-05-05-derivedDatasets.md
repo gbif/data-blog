@@ -5,6 +5,7 @@ date: '2021-05-05'
 slug: derived-datasets
 categories:
   - GBIF
+  - Citation
 tags:
   - DOI
   - CiteTheDOI
@@ -17,7 +18,7 @@ comment: no
 toc: ''
 autoCollapseToc: no
 postMetaInFooter: no
-hiddenFromHomePage: yes
+hiddenFromHomePage: no
 contentCopyright: no
 reward: no
 mathjax: no
