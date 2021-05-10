@@ -18,7 +18,7 @@ comment: no
 toc: ''
 autoCollapseToc: no
 postMetaInFooter: no
-hiddenFromHomePage: no
+hiddenFromHomePage: yes
 contentCopyright: no
 reward: no
 mathjax: no
