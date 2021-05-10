@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>CiteTheDOI on GBIF Data Blog</title>
-    <link>/tags/citethedoi/</link>
-    <description>Recent content in CiteTheDOI on GBIF Data Blog</description>
+    <title>Citation on GBIF Data Blog</title>
+    <link>/categories/citation/</link>
+    <description>Recent content in Citation on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Mon, 10 May 2021 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/citethedoi/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/citation/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
