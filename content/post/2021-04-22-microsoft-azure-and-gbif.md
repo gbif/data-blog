@@ -34,17 +34,13 @@ sequenceDiagrams:
 
 **GBIF** now has a [snapshot](https://github.com/microsoft/AIforEarthDataSets/blob/main/data/gbif.md) of 1.2 billion occurrences<sub>✝</sub> records on [Microsoft Azure](https://www.microsoft.com/en-us/ai/ai-for-earth). 
 
-It is hosted by the **Microsoft AI for Earth program**, which hosts geospatial datasets that are important to environmental sustainability and Earth science. Hosting is convenient because you could now use occurrences in combination with other environmental layers and not need to upload any of it to the Azure. 
-
-The main reason you would want to use cloud computing is because you can run **big data queries** that are slow or impractical on a local machine. 
+It is hosted by the **Microsoft AI for Earth program**, which hosts geospatial datasets that are important to environmental sustainability and Earth science. Hosting is convenient because you could now use occurrences in combination with other environmental layers and not need to upload any of it to the Azure. You can **read previous discussions about GBIF and cloud computing** [here](https://discourse.gbif.org/t/gbif-exports-as-public-datasets-in-cloud-environments/1835). The main reason you would want to use cloud computing is to run **big data queries** that are slow or impractical on a local machine. 
 
 <!--more-->
 
 In this tutorial, I will be running a simple query on 1.2 billion occurrences records. I will be using [apache-spark](https://spark.apache.org/). Spark has APIs in **R**, **scala**, and **python**.  
 
-<sub>✝</sub>The snapshots include all **CC-BY licensed data** published through GBIF that have coordinates which passed automated quality checks.
-
-The GBIF mediated occurrence data are stored in Parquet files in Azure Blob Storage in the West Europe Azure region. The periodic occurrence snapshots are stored in occurrence/YYYY-MM-DD, where YYYY-MM-DD corresponds to the date of the snapshot. 
+<sub>✝</sub>The snapshots include all **CC-BY licensed data** published through GBIF that have coordinates which passed automated quality checks. The GBIF mediated occurrence data are stored in Parquet files in Azure Blob Storage in the West Europe Azure region. The periodic occurrence snapshots are stored in occurrence/YYYY-MM-DD, where YYYY-MM-DD corresponds to the date of the snapshot. 
 
 ## Setup for running a databricks spark notebook on Azure
 
@@ -62,24 +58,20 @@ I find it easiest to use the [az command line interface](https://docs.microsoft.
 az login
 az extension add --name databricks
 ```
-Create a **resource group** `databricks-quickstart`. The GBIF snapshot is located in `westeurope`. 
+Create a **resource group** `gbif-resource-group`. The GBIF snapshot is located in `westeurope`. 
 
 ```shell
-az group create --name databricks-quickstart --location westeurope
+az group create --name gbif-resource-group --location westeurope
 az account list-locations -o table
 ```
 
-Create a **workspace**.
+Create a **workspace**`gbif-ws`.
 
 ```shell
-az databricks workspace create 
-    --resource-group databricks-quickstart \
-    --name mydatabrickws  \
-    --location westeurope  \
-    --sku standard
+az databricks workspace create --resource-group gbif-resource-group --name gbif-ws --location westeurope --sku standard
 ```
 
-From this page [Azure web portal](https://portal.azure.com/#blade/HubsExtension/BrowseResourceGroups), click on **databricks-quickstart**. 
+From this page [Azure web portal](https://portal.azure.com/#blade/HubsExtension/BrowseResourceGroups), click on **gbif-resource-group**. 
 
 ![launch workspace](/post/2021-04-22-microsoft-azure-and-gbif_files/resource_groups_screenshot.png)
 
@@ -91,13 +83,17 @@ Click on **new cluster**.
 
 ![screenshot](https://docs.microsoft.com/en-us/azure/databricks/scenarios/media/quickstart-create-databricks-workspace-portal/databricks-on-azure.png)
 
-Create a **new cluster**.
+Create a **new cluster** named `mysparkcluster`. You can keep all of the default settings. 
 
 ![screenshot](https://docs.microsoft.com/en-us/azure/databricks/scenarios/media/quickstart-create-databricks-workspace-portal/create-databricks-spark-cluster.png)
 
-Click **create blank notebook**. Select the **default language you want to use** (R, scala, python).
+Click **create blank notebook**. 
 
 ![launch workspace](/post/2021-04-22-microsoft-azure-and-gbif_files/blank_notebook.png)
+
+Select the **default language you want to use** (R, scala, python).
+
+![launch workspace](/post/2021-04-22-microsoft-azure-and-gbif_files/create_notebook.png)
 
 You should now be able to run the code below in **your new notebook**. 
 
@@ -198,7 +194,7 @@ Replace `jwaller@gbif.org` with your Microsoft-Azure account name.
 
 ```shell
 az login
-az storage account create -n gbifblobstorage -g databrick-quickstart -l westeurope --sku Standard_LRS
+az storage account create -n gbifblobstorage -g gbif-resource-group -l westeurope --sku Standard_LRS
 
 az role assignment create --role "Owner" --assignee "jwaller@gbif.org"
 az role assignment create --role "Storage Blob Data Contributor" --assignee "jwaller@gbif.org"
@@ -210,7 +206,7 @@ az storage container create -n container1 --account-name gbifblobstorage --auth-
 Run this command to get the **secret key** (`sas_key`) you will need in the next section. 
 
 ```shell
-az storage account keys list -g databrick-quickstart -n gbifblobstorage
+az storage account keys list -g gbif-resource-group -n gbifblobstorage
 ```
 
 The **secret key** (`sas_key` in next section) you want is under `value`. 
@@ -229,7 +225,7 @@ Now that the set up is over, you can **export a dataframe** as a csv file. The *
 wasbs://container_name@storage_name.blob.core.windows.net/file_name.csv
 ```
 
-We will use **container1** and **gbifblobstorage** created earlier. Copy your `sas_key` to replace my fake one. Run this in one of the notebooks you set up earlier. 
+We will use **container1** and **gbifblobstorage** created earlier. Copy your `sas_key` to replace my **fake one**. Run this in one of the notebooks you set up earlier. 
 
 ```scala
 val sas_key = "copy_me_big_long_secret_key_kfaldkfalskdfj203932049230492f_fakekey_j030303fjdasfndsafldkj==" // fill the secret key from the previous section 
@@ -262,7 +258,7 @@ write.df("wasbs://container1@gbifblobstorage.blob.core.windows.net/export_df.csv
 ```
 
 ```python
-val sas_key = "copy_me_big_long_secret_key_kfaldkfalskdfj203932049230492f_fakekey_j030303fjdasfndsafldkj==" // fill the secret key from the previous section 
+sas_key = "copy_me_big_long_secret_key_kfaldkfalskdfj203932049230492f_fakekey_j030303fjdasfndsafldkj==" # fill the secret key from the previous section 
 spark.conf.set("fs.azure.account.key.gbifblobstorage.blob.core.windows.net",sas_key)
 
 export_df\
@@ -301,7 +297,7 @@ Download the **csv**.
 
 ## Citing custom filtered/processed data
 
-If you end up using your **exported csv** file in a research paper, you will want a **doi**. GBIF now has a [service](https://www.gbif.org/derived-dataset/register) for generating a **citable doi** from **a list of involved datasetkeys with occurrences counts**. See the [GBIF citation guidelines](https://www.gbif.org/citation-guidelines). 
+If you end up using your **exported csv** file in a research paper, you will want a **doi**. GBIF now has a [service](https://www.gbif.org/derived-dataset/register) for generating a **citable doi** from **a list of involved datasetkeys with occurrences counts**. See the [GBIF citation guidelines](https://www.gbif.org/citation-guidelines) and [previous blog post](https://data-blog.gbif.org/post/derived-datasets/). 
 
 You can generate a **citation file** for your custom dataset above using the following code chunk. Since our `export_df.csv` used all of the occurrences, we can simply group by datasetkey and count all of the occurrences to generate our `citation.csv` file. 
 

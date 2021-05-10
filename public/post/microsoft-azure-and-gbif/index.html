@@ -18,8 +18,7 @@
 
 <meta name="author" content="John Waller" />
   <meta name="description" content="GBIF now has a snapshot of 1.2 billion occurrences✝ records on Microsoft Azure.
-It is hosted by the Microsoft AI for Earth program, which hosts geospatial datasets that are important to environmental sustainability and Earth science. Hosting is convenient because you could now use occurrences in combination with other environmental layers and not need to upload any of it to the Azure.
-The main reason you would want to use cloud computing is because you can run big data queries that are slow or impractical on a local machine.
+It is hosted by the Microsoft AI for Earth program, which hosts geospatial datasets that are important to environmental sustainability and Earth science. Hosting is convenient because you could now use occurrences in combination with other environmental layers and not need to upload any of it to the Azure. You can read previous discussions about GBIF and cloud computing here. The main reason you would want to use cloud computing is to run big data queries that are slow or impractical on a local machine.
 
 " />
 
@@ -58,9 +57,7 @@ The main reason you would want to use cloud computing is because you can run big
 <meta property="og:title" content="GBIF and Apache-Spark on Microsoft Azure tutorial" />
 <meta property="og:description" content="GBIF now has a snapshot of 1.2 billion occurrences✝ records on Microsoft Azure.
 
-It is hosted by the Microsoft AI for Earth program, which hosts geospatial datasets that are important to environmental sustainability and Earth science. Hosting is convenient because you could now use occurrences in combination with other environmental layers and not need to upload any of it to the Azure.
-
-The main reason you would want to use cloud computing is because you can run big data queries that are slow or impractical on a local machine.
+It is hosted by the Microsoft AI for Earth program, which hosts geospatial datasets that are important to environmental sustainability and Earth science. Hosting is convenient because you could now use occurrences in combination with other environmental layers and not need to upload any of it to the Azure. You can read previous discussions about GBIF and cloud computing here. The main reason you would want to use cloud computing is to run big data queries that are slow or impractical on a local machine.
 
 " />
 <meta property="og:type" content="article" />
@@ -85,16 +82,14 @@ The main reason you would want to use cloud computing is because you can run big
 <meta itemprop="name" content="GBIF and Apache-Spark on Microsoft Azure tutorial">
 <meta itemprop="description" content="GBIF now has a snapshot of 1.2 billion occurrences✝ records on Microsoft Azure.
 
-It is hosted by the Microsoft AI for Earth program, which hosts geospatial datasets that are important to environmental sustainability and Earth science. Hosting is convenient because you could now use occurrences in combination with other environmental layers and not need to upload any of it to the Azure.
-
-The main reason you would want to use cloud computing is because you can run big data queries that are slow or impractical on a local machine.
+It is hosted by the Microsoft AI for Earth program, which hosts geospatial datasets that are important to environmental sustainability and Earth science. Hosting is convenient because you could now use occurrences in combination with other environmental layers and not need to upload any of it to the Azure. You can read previous discussions about GBIF and cloud computing here. The main reason you would want to use cloud computing is to run big data queries that are slow or impractical on a local machine.
 
 ">
 
 
 <meta itemprop="datePublished" content="2021-05-05T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2021-05-05T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1044">
+<meta itemprop="wordCount" content="1063">
 
 
 
@@ -103,9 +98,7 @@ The main reason you would want to use cloud computing is because you can run big
 <meta name="twitter:title" content="GBIF and Apache-Spark on Microsoft Azure tutorial"/>
 <meta name="twitter:description" content="GBIF now has a snapshot of 1.2 billion occurrences✝ records on Microsoft Azure.
 
-It is hosted by the Microsoft AI for Earth program, which hosts geospatial datasets that are important to environmental sustainability and Earth science. Hosting is convenient because you could now use occurrences in combination with other environmental layers and not need to upload any of it to the Azure.
-
-The main reason you would want to use cloud computing is because you can run big data queries that are slow or impractical on a local machine.
+It is hosted by the Microsoft AI for Earth program, which hosts geospatial datasets that are important to environmental sustainability and Earth science. Hosting is convenient because you could now use occurrences in combination with other environmental layers and not need to upload any of it to the Azure. You can read previous discussions about GBIF and cloud computing here. The main reason you would want to use cloud computing is to run big data queries that are slow or impractical on a local machine.
 
 "/>
 
@@ -205,17 +198,13 @@ The main reason you would want to use cloud computing is because you can run big
     <div class="post-content">
       <p><strong>GBIF</strong> now has a <a href="https://github.com/microsoft/AIforEarthDataSets/blob/main/data/gbif.md">snapshot</a> of 1.2 billion occurrences<sub>✝</sub> records on <a href="https://www.microsoft.com/en-us/ai/ai-for-earth">Microsoft Azure</a>.</p>
 
-<p>It is hosted by the <strong>Microsoft AI for Earth program</strong>, which hosts geospatial datasets that are important to environmental sustainability and Earth science. Hosting is convenient because you could now use occurrences in combination with other environmental layers and not need to upload any of it to the Azure.</p>
-
-<p>The main reason you would want to use cloud computing is because you can run <strong>big data queries</strong> that are slow or impractical on a local machine.</p>
+<p>It is hosted by the <strong>Microsoft AI for Earth program</strong>, which hosts geospatial datasets that are important to environmental sustainability and Earth science. Hosting is convenient because you could now use occurrences in combination with other environmental layers and not need to upload any of it to the Azure. You can <strong>read previous discussions about GBIF and cloud computing</strong> <a href="https://discourse.gbif.org/t/gbif-exports-as-public-datasets-in-cloud-environments/1835">here</a>. The main reason you would want to use cloud computing is to run <strong>big data queries</strong> that are slow or impractical on a local machine.</p>
 
 <p></p>
 
 <p>In this tutorial, I will be running a simple query on 1.2 billion occurrences records. I will be using <a href="https://spark.apache.org/">apache-spark</a>. Spark has APIs in <strong>R</strong>, <strong>scala</strong>, and <strong>python</strong>.</p>
 
-<p><sub>✝</sub>The snapshots include all <strong>CC-BY licensed data</strong> published through GBIF that have coordinates which passed automated quality checks.</p>
-
-<p>The GBIF mediated occurrence data are stored in Parquet files in Azure Blob Storage in the West Europe Azure region. The periodic occurrence snapshots are stored in occurrence/YYYY-MM-DD, where YYYY-MM-DD corresponds to the date of the snapshot.</p>
+<p><sub>✝</sub>The snapshots include all <strong>CC-BY licensed data</strong> published through GBIF that have coordinates which passed automated quality checks. The GBIF mediated occurrence data are stored in Parquet files in Azure Blob Storage in the West Europe Azure region. The periodic occurrence snapshots are stored in occurrence/YYYY-MM-DD, where YYYY-MM-DD corresponds to the date of the snapshot.</p>
 
 <h2 id="setup-for-running-a-databricks-spark-notebook-on-azure">Setup for running a databricks spark notebook on Azure</h2>
 
@@ -235,22 +224,18 @@ The main reason you would want to use cloud computing is because you can run big
 az extension add --name databricks
 </code></pre>
 
-<p>Create a <strong>resource group</strong> <code>databricks-quickstart</code>. The GBIF snapshot is located in <code>westeurope</code>.</p>
+<p>Create a <strong>resource group</strong> <code>gbif-resource-group</code>. The GBIF snapshot is located in <code>westeurope</code>.</p>
 
-<pre><code class="language-shell">az group create --name databricks-quickstart --location westeurope
+<pre><code class="language-shell">az group create --name gbif-resource-group --location westeurope
 az account list-locations -o table
 </code></pre>
 
-<p>Create a <strong>workspace</strong>.</p>
+<p>Create a <strong>workspace</strong><code>gbif-ws</code>.</p>
 
-<pre><code class="language-shell">az databricks workspace create 
-    --resource-group databricks-quickstart \
-    --name mydatabrickws  \
-    --location westeurope  \
-    --sku standard
+<pre><code class="language-shell">az databricks workspace create --resource-group gbif-resource-group --name gbif-ws --location westeurope --sku standard
 </code></pre>
 
-<p>From this page <a href="https://portal.azure.com/#blade/HubsExtension/BrowseResourceGroups">Azure web portal</a>, click on <strong>databricks-quickstart</strong>.</p>
+<p>From this page <a href="https://portal.azure.com/#blade/HubsExtension/BrowseResourceGroups">Azure web portal</a>, click on <strong>gbif-resource-group</strong>.</p>
 
 <p><img src="/post/2021-04-22-microsoft-azure-and-gbif_files/resource_groups_screenshot.png" alt="launch workspace" /></p>
 
@@ -262,13 +247,17 @@ az account list-locations -o table
 
 <p><img src="https://docs.microsoft.com/en-us/azure/databricks/scenarios/media/quickstart-create-databricks-workspace-portal/databricks-on-azure.png" alt="screenshot" /></p>
 
-<p>Create a <strong>new cluster</strong>.</p>
+<p>Create a <strong>new cluster</strong> named <code>mysparkcluster</code>. You can keep all of the default settings.</p>
 
 <p><img src="https://docs.microsoft.com/en-us/azure/databricks/scenarios/media/quickstart-create-databricks-workspace-portal/create-databricks-spark-cluster.png" alt="screenshot" /></p>
 
-<p>Click <strong>create blank notebook</strong>. Select the <strong>default language you want to use</strong> (R, scala, python).</p>
+<p>Click <strong>create blank notebook</strong>.</p>
 
 <p><img src="/post/2021-04-22-microsoft-azure-and-gbif_files/blank_notebook.png" alt="launch workspace" /></p>
+
+<p>Select the <strong>default language you want to use</strong> (R, scala, python).</p>
+
+<p><img src="/post/2021-04-22-microsoft-azure-and-gbif_files/create_notebook.png" alt="launch workspace" /></p>
 
 <p>You should now be able to run the code below in <strong>your new notebook</strong>.</p>
 
@@ -364,7 +353,7 @@ export_df.show()
 <p>Replace <code>jwaller@gbif.org</code> with your Microsoft-Azure account name.</p>
 
 <pre><code class="language-shell">az login
-az storage account create -n gbifblobstorage -g databrick-quickstart -l westeurope --sku Standard_LRS
+az storage account create -n gbifblobstorage -g gbif-resource-group -l westeurope --sku Standard_LRS
 
 az role assignment create --role &quot;Owner&quot; --assignee &quot;jwaller@gbif.org&quot;
 az role assignment create --role &quot;Storage Blob Data Contributor&quot; --assignee &quot;jwaller@gbif.org&quot;
@@ -375,7 +364,7 @@ az storage container create -n container1 --account-name gbifblobstorage --auth-
 
 <p>Run this command to get the <strong>secret key</strong> (<code>sas_key</code>) you will need in the next section.</p>
 
-<pre><code class="language-shell">az storage account keys list -g databrick-quickstart -n gbifblobstorage
+<pre><code class="language-shell">az storage account keys list -g gbif-resource-group -n gbifblobstorage
 </code></pre>
 
 <p>The <strong>secret key</strong> (<code>sas_key</code> in next section) you want is under <code>value</code>.</p>
@@ -392,7 +381,7 @@ az storage container create -n container1 --account-name gbifblobstorage --auth-
 <pre><code>wasbs://container_name@storage_name.blob.core.windows.net/file_name.csv
 </code></pre>
 
-<p>We will use <strong>container1</strong> and <strong>gbifblobstorage</strong> created earlier. Copy your <code>sas_key</code> to replace my fake one. Run this in one of the notebooks you set up earlier.</p>
+<p>We will use <strong>container1</strong> and <strong>gbifblobstorage</strong> created earlier. Copy your <code>sas_key</code> to replace my <strong>fake one</strong>. Run this in one of the notebooks you set up earlier.</p>
 
 <pre><code class="language-scala">val sas_key = &quot;copy_me_big_long_secret_key_kfaldkfalskdfj203932049230492f_fakekey_j030303fjdasfndsafldkj==&quot; // fill the secret key from the previous section 
 spark.conf.set(&quot;fs.azure.account.key.gbifblobstorage.blob.core.windows.net&quot;,sas_key)
@@ -422,7 +411,7 @@ repartition(1) %&gt;%
 write.df(&quot;wasbs://container1@gbifblobstorage.blob.core.windows.net/export_df.csv&quot;, &quot;csv&quot;, &quot;overwrite&quot;)
 </code></pre>
 
-<pre><code class="language-python">val sas_key = &quot;copy_me_big_long_secret_key_kfaldkfalskdfj203932049230492f_fakekey_j030303fjdasfndsafldkj==&quot; // fill the secret key from the previous section 
+<pre><code class="language-python">sas_key = &quot;copy_me_big_long_secret_key_kfaldkfalskdfj203932049230492f_fakekey_j030303fjdasfndsafldkj==&quot; # fill the secret key from the previous section 
 spark.conf.set(&quot;fs.azure.account.key.gbifblobstorage.blob.core.windows.net&quot;,sas_key)
 
 export_df\
@@ -460,7 +449,7 @@ export_df\
 
 <h2 id="citing-custom-filtered-processed-data">Citing custom filtered/processed data</h2>
 
-<p>If you end up using your <strong>exported csv</strong> file in a research paper, you will want a <strong>doi</strong>. GBIF now has a <a href="https://www.gbif.org/derived-dataset/register">service</a> for generating a <strong>citable doi</strong> from <strong>a list of involved datasetkeys with occurrences counts</strong>. See the <a href="https://www.gbif.org/citation-guidelines">GBIF citation guidelines</a>.</p>
+<p>If you end up using your <strong>exported csv</strong> file in a research paper, you will want a <strong>doi</strong>. GBIF now has a <a href="https://www.gbif.org/derived-dataset/register">service</a> for generating a <strong>citable doi</strong> from <strong>a list of involved datasetkeys with occurrences counts</strong>. See the <a href="https://www.gbif.org/citation-guidelines">GBIF citation guidelines</a> and <a href="https://data-blog.gbif.org/post/derived-datasets/">previous blog post</a>.</p>
 
 <p>You can generate a <strong>citation file</strong> for your custom dataset above using the following code chunk. Since our <code>export_df.csv</code> used all of the occurrences, we can simply group by datasetkey and count all of the occurrences to generate our <code>citation.csv</code> file.</p>
 
@@ -508,7 +497,7 @@ save(&quot;wasbs://container1@gbifblobstorage.blob.core.windows.net/citation_df.
         
           <a class="prev" href="/post/derived-datasets/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Derived datasets are here</span>
+            <span class="prev-text nav-default">Derived datasets</span>
             <span class="prev-text nav-mobile">Prev</span>
           </a>
         
