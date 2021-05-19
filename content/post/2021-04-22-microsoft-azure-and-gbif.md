@@ -1,7 +1,7 @@
 ---
 title: GBIF and Apache-Spark on Microsoft Azure tutorial 
 author: John Waller
-date: '2021-05-05'
+date: '2021-05-19'
 slug: microsoft-azure-and-gbif
 categories:
   - GBIF
@@ -9,7 +9,7 @@ tags:
   - cloud computing
   - azure
 lastmod: '2021-04-22T16:00:05+02:00'
-draft: yes
+draft: no
 keywords: []
 description: ''
 authors: ''
@@ -17,7 +17,7 @@ comment: no
 toc: ''
 autoCollapseToc: no
 postMetaInFooter: no
-hiddenFromHomePage: yes
+hiddenFromHomePage: no
 contentCopyright: no
 reward: no
 mathjax: no
@@ -32,15 +32,15 @@ sequenceDiagrams:
   options: ''
 ---
 
-**GBIF** now has a [snapshot](https://github.com/microsoft/AIforEarthDataSets/blob/main/data/gbif.md) of 1.2 billion occurrences<sub>✝</sub> records on [Microsoft Azure](https://www.microsoft.com/en-us/ai/ai-for-earth). 
+**GBIF** now has a [snapshot](https://github.com/microsoft/AIforEarthDataSets/blob/main/data/gbif.md) of 1.3 billion occurrences<sub>✝</sub> records on [Microsoft Azure](https://www.microsoft.com/en-us/ai/ai-for-earth). 
 
 It is hosted by the **Microsoft AI for Earth program**, which hosts geospatial datasets that are important to environmental sustainability and Earth science. Hosting is convenient because you could now use occurrences in combination with other environmental layers and not need to upload any of it to the Azure. You can **read previous discussions about GBIF and cloud computing** [here](https://discourse.gbif.org/t/gbif-exports-as-public-datasets-in-cloud-environments/1835). The main reason you would want to use cloud computing is to run **big data queries** that are slow or impractical on a local machine. 
 
 <!--more-->
 
-In this tutorial, I will be running a simple query on 1.2 billion occurrences records. I will be using [apache-spark](https://spark.apache.org/). Spark has APIs in **R**, **scala**, and **python**.  
+In this tutorial, I will be running a simple query on 1.3 billion occurrences records. I will be using [apache-spark](https://spark.apache.org/). Spark has APIs in **R**, **scala**, and **python**.  
 
-<sub>✝</sub>The snapshots include all **CC-BY licensed data** published through GBIF that have coordinates which passed automated quality checks. The GBIF mediated occurrence data are stored in Parquet files in Azure Blob Storage in the West Europe Azure region. The periodic occurrence snapshots are stored in occurrence/YYYY-MM-DD, where YYYY-MM-DD corresponds to the date of the snapshot. 
+<sub>✝</sub>The snapshot includes all records shared under CC0 and CC BY designations published through GBIF that have coordinates which have passed automated quality checks. The GBIF mediated occurrence data are stored in Parquet files in Azure Blob Storage in the West Europe Azure region. The periodic occurrence snapshots are stored in occurrence/YYYY-MM-DD, where YYYY-MM-DD corresponds to the date of the snapshot. 
 
 ## Setup for running a databricks spark notebook on Azure
 

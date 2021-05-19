@@ -17,7 +17,7 @@
 
 
 <meta name="author" content="John Waller" />
-  <meta name="description" content="GBIF now has a snapshot of 1.2 billion occurrences✝ records on Microsoft Azure.
+  <meta name="description" content="GBIF now has a snapshot of 1.3 billion occurrences✝ records on Microsoft Azure.
 It is hosted by the Microsoft AI for Earth program, which hosts geospatial datasets that are important to environmental sustainability and Earth science. Hosting is convenient because you could now use occurrences in combination with other environmental layers and not need to upload any of it to the Azure. You can read previous discussions about GBIF and cloud computing here. The main reason you would want to use cloud computing is to run big data queries that are slow or impractical on a local machine.
 
 " />
@@ -55,7 +55,7 @@ It is hosted by the Microsoft AI for Earth program, which hosts geospatial datas
 
 
 <meta property="og:title" content="GBIF and Apache-Spark on Microsoft Azure tutorial" />
-<meta property="og:description" content="GBIF now has a snapshot of 1.2 billion occurrences✝ records on Microsoft Azure.
+<meta property="og:description" content="GBIF now has a snapshot of 1.3 billion occurrences✝ records on Microsoft Azure.
 
 It is hosted by the Microsoft AI for Earth program, which hosts geospatial datasets that are important to environmental sustainability and Earth science. Hosting is convenient because you could now use occurrences in combination with other environmental layers and not need to upload any of it to the Azure. You can read previous discussions about GBIF and cloud computing here. The main reason you would want to use cloud computing is to run big data queries that are slow or impractical on a local machine.
 
@@ -65,7 +65,7 @@ It is hosted by the Microsoft AI for Earth program, which hosts geospatial datas
 
 
 
-<meta property="article:published_time" content="2021-05-05T00:00:00&#43;00:00"/>
+<meta property="article:published_time" content="2021-05-19T00:00:00&#43;00:00"/>
 
 <meta property="article:modified_time" content="2021-04-22T16:00:05&#43;02:00"/>
 
@@ -80,23 +80,23 @@ It is hosted by the Microsoft AI for Earth program, which hosts geospatial datas
 
 
 <meta itemprop="name" content="GBIF and Apache-Spark on Microsoft Azure tutorial">
-<meta itemprop="description" content="GBIF now has a snapshot of 1.2 billion occurrences✝ records on Microsoft Azure.
+<meta itemprop="description" content="GBIF now has a snapshot of 1.3 billion occurrences✝ records on Microsoft Azure.
 
 It is hosted by the Microsoft AI for Earth program, which hosts geospatial datasets that are important to environmental sustainability and Earth science. Hosting is convenient because you could now use occurrences in combination with other environmental layers and not need to upload any of it to the Azure. You can read previous discussions about GBIF and cloud computing here. The main reason you would want to use cloud computing is to run big data queries that are slow or impractical on a local machine.
 
 ">
 
 
-<meta itemprop="datePublished" content="2021-05-05T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2021-05-05T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1063">
+<meta itemprop="datePublished" content="2021-05-19T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2021-05-19T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1069">
 
 
 
 <meta itemprop="keywords" content="cloud computing,azure," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="GBIF and Apache-Spark on Microsoft Azure tutorial"/>
-<meta name="twitter:description" content="GBIF now has a snapshot of 1.2 billion occurrences✝ records on Microsoft Azure.
+<meta name="twitter:description" content="GBIF now has a snapshot of 1.3 billion occurrences✝ records on Microsoft Azure.
 
 It is hosted by the Microsoft AI for Earth program, which hosts geospatial datasets that are important to environmental sustainability and Earth science. Hosting is convenient because you could now use occurrences in combination with other environmental layers and not need to upload any of it to the Azure. You can read previous discussions about GBIF and cloud computing here. The main reason you would want to use cloud computing is to run big data queries that are slow or impractical on a local machine.
 
@@ -177,7 +177,7 @@ It is hosted by the Microsoft AI for Earth program, which hosts geospatial datas
       <div class="post-author">John Waller</div>
 
       <div class="post-meta">
-        <span class="post-time"> 2021-05-05 </span>
+        <span class="post-time"> 2021-05-19 </span>
         <div class="post-category">
             
               <a href="/categories/gbif/"> GBIF </a>
@@ -196,15 +196,15 @@ It is hosted by the Microsoft AI for Earth program, which hosts geospatial datas
 
     
     <div class="post-content">
-      <p><strong>GBIF</strong> now has a <a href="https://github.com/microsoft/AIforEarthDataSets/blob/main/data/gbif.md">snapshot</a> of 1.2 billion occurrences<sub>✝</sub> records on <a href="https://www.microsoft.com/en-us/ai/ai-for-earth">Microsoft Azure</a>.</p>
+      <p><strong>GBIF</strong> now has a <a href="https://github.com/microsoft/AIforEarthDataSets/blob/main/data/gbif.md">snapshot</a> of 1.3 billion occurrences<sub>✝</sub> records on <a href="https://www.microsoft.com/en-us/ai/ai-for-earth">Microsoft Azure</a>.</p>
 
 <p>It is hosted by the <strong>Microsoft AI for Earth program</strong>, which hosts geospatial datasets that are important to environmental sustainability and Earth science. Hosting is convenient because you could now use occurrences in combination with other environmental layers and not need to upload any of it to the Azure. You can <strong>read previous discussions about GBIF and cloud computing</strong> <a href="https://discourse.gbif.org/t/gbif-exports-as-public-datasets-in-cloud-environments/1835">here</a>. The main reason you would want to use cloud computing is to run <strong>big data queries</strong> that are slow or impractical on a local machine.</p>
 
 <p></p>
 
-<p>In this tutorial, I will be running a simple query on 1.2 billion occurrences records. I will be using <a href="https://spark.apache.org/">apache-spark</a>. Spark has APIs in <strong>R</strong>, <strong>scala</strong>, and <strong>python</strong>.</p>
+<p>In this tutorial, I will be running a simple query on 1.3 billion occurrences records. I will be using <a href="https://spark.apache.org/">apache-spark</a>. Spark has APIs in <strong>R</strong>, <strong>scala</strong>, and <strong>python</strong>.</p>
 
-<p><sub>✝</sub>The snapshots include all <strong>CC-BY licensed data</strong> published through GBIF that have coordinates which passed automated quality checks. The GBIF mediated occurrence data are stored in Parquet files in Azure Blob Storage in the West Europe Azure region. The periodic occurrence snapshots are stored in occurrence/YYYY-MM-DD, where YYYY-MM-DD corresponds to the date of the snapshot.</p>
+<p><sub>✝</sub>The snapshot includes all records shared under CC0 and CC BY designations published through GBIF that have coordinates which have passed automated quality checks. The GBIF mediated occurrence data are stored in Parquet files in Azure Blob Storage in the West Europe Azure region. The periodic occurrence snapshots are stored in occurrence/YYYY-MM-DD, where YYYY-MM-DD corresponds to the date of the snapshot.</p>
 
 <h2 id="setup-for-running-a-databricks-spark-notebook-on-azure">Setup for running a databricks spark notebook on Azure</h2>
 
@@ -495,14 +495,9 @@ save(&quot;wasbs://container1@gbifblobstorage.blob.core.windows.net/citation_df.
       
       <nav class="post-nav">
         
-          <a class="prev" href="/post/derived-datasets/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Derived datasets</span>
-            <span class="prev-text nav-mobile">Prev</span>
-          </a>
         
-          <a class="next" href="/post/grscicoll-2021/">
-            <span class="next-text nav-default">The GBIF Registry of Scientific Collections (GRSciColl) in 2021</span>
+          <a class="next" href="/post/derived-datasets/">
+            <span class="next-text nav-default">Derived datasets</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>

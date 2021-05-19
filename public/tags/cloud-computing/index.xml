@@ -6,7 +6,7 @@
     <description>Recent content in Cloud computing on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 05 May 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 19 May 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/cloud-computing/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,10 +14,10 @@
     <item>
       <title>GBIF and Apache-Spark on Microsoft Azure tutorial</title>
       <link>/post/microsoft-azure-and-gbif/</link>
-      <pubDate>Wed, 05 May 2021 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 19 May 2021 00:00:00 +0000</pubDate>
       
       <guid>/post/microsoft-azure-and-gbif/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;GBIF&lt;/strong&gt; now has a &lt;a href=&#34;https://github.com/microsoft/AIforEarthDataSets/blob/main/data/gbif.md&#34;&gt;snapshot&lt;/a&gt; of 1.2 billion occurrences&lt;sub&gt;✝&lt;/sub&gt; records on &lt;a href=&#34;https://www.microsoft.com/en-us/ai/ai-for-earth&#34;&gt;Microsoft Azure&lt;/a&gt;.&lt;/p&gt;
+      <description>&lt;p&gt;&lt;strong&gt;GBIF&lt;/strong&gt; now has a &lt;a href=&#34;https://github.com/microsoft/AIforEarthDataSets/blob/main/data/gbif.md&#34;&gt;snapshot&lt;/a&gt; of 1.3 billion occurrences&lt;sub&gt;✝&lt;/sub&gt; records on &lt;a href=&#34;https://www.microsoft.com/en-us/ai/ai-for-earth&#34;&gt;Microsoft Azure&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;It is hosted by the &lt;strong&gt;Microsoft AI for Earth program&lt;/strong&gt;, which hosts geospatial datasets that are important to environmental sustainability and Earth science. Hosting is convenient because you could now use occurrences in combination with other environmental layers and not need to upload any of it to the Azure. You can &lt;strong&gt;read previous discussions about GBIF and cloud computing&lt;/strong&gt; &lt;a href=&#34;https://discourse.gbif.org/t/gbif-exports-as-public-datasets-in-cloud-environments/1835&#34;&gt;here&lt;/a&gt;. The main reason you would want to use cloud computing is to run &lt;strong&gt;big data queries&lt;/strong&gt; that are slow or impractical on a local machine.&lt;/p&gt;
 
