@@ -10,7 +10,7 @@ tags:
   - DOI
   - CiteTheDOI
   - Derived datasets
-lastmod: '2021-05-10T09:50:11+02:00'
+lastmod: '2021-05-20T09:50:11+02:00'
 draft: no
 keywords: []
 description: ''
@@ -18,7 +18,7 @@ comment: no
 toc: ''
 autoCollapseToc: no
 postMetaInFooter: no
-hiddenFromHomePage: yes
+hiddenFromHomePage: no
 contentCopyright: no
 reward: no
 mathjax: no
