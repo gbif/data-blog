@@ -160,7 +160,7 @@ arrange("count",decreasing = TRUE)
 export_df %>% showDF()
 ```
 
-How you would count species by country in **pyspark**.
+How you would count species by country in **PySpark**.
 
 ```python
 from pyspark.sql import SQLContext

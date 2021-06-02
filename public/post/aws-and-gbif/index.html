@@ -17,7 +17,7 @@
 
 
 <meta name="author" content="John Waller" />
-  <meta name="description" content="GBIF now has a snapshot of 1.3 billion occurrences✝ records on Amazon Web Services (AWS). This guide will take you through running Spark notebooks on AWS. This guide is similar to the one written previously about Microsoft Azure. The GBIF snapshot is documented here
+  <meta name="description" content="GBIF now has a snapshot of 1.3 billion occurrence✝ records on Amazon Web Services (AWS). This guide will take you through running Spark notebooks on AWS. This guide is similar to the one written previously about Microsoft Azure. The GBIF snapshot is documented here
 You can read previous discussions about GBIF and cloud computing here. The main reason you would want to use cloud computing is to run big data queries that are slow or impractical on a local machine. You can also work with the snapshots using SQL example here.
 
 " />
@@ -55,7 +55,7 @@ You can read previous discussions about GBIF and cloud computing here. The main 
 
 
 <meta property="og:title" content="GBIF and Apache-Spark on AWS tutorial" />
-<meta property="og:description" content="GBIF now has a snapshot of 1.3 billion occurrences✝ records on Amazon Web Services (AWS). This guide will take you through running Spark notebooks on AWS. This guide is similar to the one written previously about Microsoft Azure. The GBIF snapshot is documented here
+<meta property="og:description" content="GBIF now has a snapshot of 1.3 billion occurrence✝ records on Amazon Web Services (AWS). This guide will take you through running Spark notebooks on AWS. This guide is similar to the one written previously about Microsoft Azure. The GBIF snapshot is documented here
 
 You can read previous discussions about GBIF and cloud computing here. The main reason you would want to use cloud computing is to run big data queries that are slow or impractical on a local machine. You can also work with the snapshots using SQL example here.
 
@@ -80,7 +80,7 @@ You can read previous discussions about GBIF and cloud computing here. The main 
 
 
 <meta itemprop="name" content="GBIF and Apache-Spark on AWS tutorial">
-<meta itemprop="description" content="GBIF now has a snapshot of 1.3 billion occurrences✝ records on Amazon Web Services (AWS). This guide will take you through running Spark notebooks on AWS. This guide is similar to the one written previously about Microsoft Azure. The GBIF snapshot is documented here
+<meta itemprop="description" content="GBIF now has a snapshot of 1.3 billion occurrence✝ records on Amazon Web Services (AWS). This guide will take you through running Spark notebooks on AWS. This guide is similar to the one written previously about Microsoft Azure. The GBIF snapshot is documented here
 
 You can read previous discussions about GBIF and cloud computing here. The main reason you would want to use cloud computing is to run big data queries that are slow or impractical on a local machine. You can also work with the snapshots using SQL example here.
 
@@ -89,14 +89,14 @@ You can read previous discussions about GBIF and cloud computing here. The main 
 
 <meta itemprop="datePublished" content="2021-05-28T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2021-05-28T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="638">
+<meta itemprop="wordCount" content="639">
 
 
 
 <meta itemprop="keywords" content="cloud computing,aws," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="GBIF and Apache-Spark on AWS tutorial"/>
-<meta name="twitter:description" content="GBIF now has a snapshot of 1.3 billion occurrences✝ records on Amazon Web Services (AWS). This guide will take you through running Spark notebooks on AWS. This guide is similar to the one written previously about Microsoft Azure. The GBIF snapshot is documented here
+<meta name="twitter:description" content="GBIF now has a snapshot of 1.3 billion occurrence✝ records on Amazon Web Services (AWS). This guide will take you through running Spark notebooks on AWS. This guide is similar to the one written previously about Microsoft Azure. The GBIF snapshot is documented here
 
 You can read previous discussions about GBIF and cloud computing here. The main reason you would want to use cloud computing is to run big data queries that are slow or impractical on a local machine. You can also work with the snapshots using SQL example here.
 
@@ -196,7 +196,7 @@ You can read previous discussions about GBIF and cloud computing here. The main 
 
     
     <div class="post-content">
-      <p><strong>GBIF</strong> now has a <a href="https://registry.opendata.aws/gbif/">snapshot</a> of 1.3 billion occurrences<sub>✝</sub> records on <strong>Amazon Web Services</strong> (AWS). This guide will take you through running <strong>Spark notebooks</strong> on AWS. This guide is similar to the one written previously about <a href="https://data-blog.gbif.org/post/microsoft-azure-and-gbif/">Microsoft Azure</a>. The GBIF snapshot is documented <a href="https://github.com/gbif/occurrence/blob/master/aws-public-data.md">here</a></p>
+      <p><strong>GBIF</strong> now has a <a href="https://registry.opendata.aws/gbif/">snapshot</a> of 1.3 billion occurrence<sub>✝</sub> records on <strong>Amazon Web Services</strong> (AWS). This guide will take you through running <strong>Spark notebooks</strong> on AWS. This guide is similar to the one written previously about <a href="https://data-blog.gbif.org/post/microsoft-azure-and-gbif/">Microsoft Azure</a>. The GBIF snapshot is documented <a href="https://github.com/gbif/occurrence/blob/master/aws-public-data.md">here</a></p>
 
 <p>You can <strong>read previous discussions about GBIF and cloud computing</strong> <a href="https://discourse.gbif.org/t/gbif-exports-as-public-datasets-in-cloud-environments/1835">here</a>. The main reason you would want to use cloud computing is to run <strong>big data queries</strong> that are slow or impractical on a local machine. You can also work with the snapshots using <strong>SQL</strong> <a href="https://github.com/gbif/occurrence/blob/master/aws-public-data.md#getting-started-with-athena">example here</a>.</p>
 
@@ -347,7 +347,7 @@ save(&quot;s3a://gbifbucket/df_export.csv&quot;)
 .save(&quot;s3a://gbifbucket/df_export.csv&quot;)
 </code></pre>
 
-<p>To download. Go to your <a href="https://s3.console.aws.amazon.com/s3/home?">S3 bucket</a>. Your file will a directory named &ldquo;df_export&rdquo;. The file you want will look something like this:</p>
+<p>To download. Go to your <a href="https://s3.console.aws.amazon.com/s3/home?">S3 bucket</a>. Your file will be a directory named &ldquo;df_export&rdquo;. The file you want will look something like this:</p>
 
 <p><code>part-00000-4c2e7420-b122-404b-b8c6-62adb07173e0-c000.csv</code></p>
 

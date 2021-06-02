@@ -32,7 +32,7 @@ sequenceDiagrams:
   options: ''
 ---
 
-**GBIF** now has a [snapshot](https://registry.opendata.aws/gbif/) of 1.3 billion occurrences<sub>✝</sub> records on **Amazon Web Services** (AWS). This guide will take you through running **Spark notebooks** on AWS. This guide is similar to the one written previously about [Microsoft Azure](https://data-blog.gbif.org/post/microsoft-azure-and-gbif/). The GBIF snapshot is documented [here](https://github.com/gbif/occurrence/blob/master/aws-public-data.md)
+**GBIF** now has a [snapshot](https://registry.opendata.aws/gbif/) of 1.3 billion occurrence<sub>✝</sub> records on **Amazon Web Services** (AWS). This guide will take you through running **Spark notebooks** on AWS. This guide is similar to the one written previously about [Microsoft Azure](https://data-blog.gbif.org/post/microsoft-azure-and-gbif/). The GBIF snapshot is documented [here](https://github.com/gbif/occurrence/blob/master/aws-public-data.md)
 
 You can **read previous discussions about GBIF and cloud computing** [here](https://discourse.gbif.org/t/gbif-exports-as-public-datasets-in-cloud-environments/1835). The main reason you would want to use cloud computing is to run **big data queries** that are slow or impractical on a local machine. You can also work with the snapshots using **SQL** [example here](https://github.com/gbif/occurrence/blob/master/aws-public-data.md#getting-started-with-athena).
 
@@ -183,13 +183,9 @@ export_df\
 .save("s3a://gbifbucket/df_export.csv")
 ```
 
-To download. Go to your [S3 bucket](https://s3.console.aws.amazon.com/s3/home?). Your file will a directory named "df_export". The file you want will look something like this: 
+To download. Go to your [S3 bucket](https://s3.console.aws.amazon.com/s3/home?). Your file will be a directory named "df_export". The file you want will look something like this: 
 
 `part-00000-4c2e7420-b122-404b-b8c6-62adb07173e0-c000.csv`
 
 Hopefully you have everything that you need to start using GBIF mediated occurrence data on AWS. Please leave a comment if something does not work for you. 
-
-
-
-
 
