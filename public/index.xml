@@ -24,6 +24,29 @@ What about the developer blog? Currently the developer blog no longer being upda
     </item>
     
     <item>
+      <title>GBIF and Apache-Spark on AWS tutorial</title>
+      <link>/post/aws-and-gbif/</link>
+      <pubDate>Fri, 28 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/aws-and-gbif/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;GBIF&lt;/strong&gt; now has a &lt;a href=&#34;https://registry.opendata.aws/gbif/&#34;&gt;snapshot&lt;/a&gt; of 1.3 billion occurrences&lt;sub&gt;✝&lt;/sub&gt; records on &lt;strong&gt;Amazon Web Services&lt;/strong&gt; (AWS). This guide will take you through running &lt;strong&gt;Spark notebooks&lt;/strong&gt; on AWS. This guide is similar to the one written previously about &lt;a href=&#34;https://data-blog.gbif.org/post/microsoft-azure-and-gbif/&#34;&gt;Microsoft Azure&lt;/a&gt;. The GBIF snapshot is documented &lt;a href=&#34;https://github.com/gbif/occurrence/blob/master/aws-public-data.md&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;You can &lt;strong&gt;read previous discussions about GBIF and cloud computing&lt;/strong&gt; &lt;a href=&#34;https://discourse.gbif.org/t/gbif-exports-as-public-datasets-in-cloud-environments/1835&#34;&gt;here&lt;/a&gt;. The main reason you would want to use cloud computing is to run &lt;strong&gt;big data queries&lt;/strong&gt; that are slow or impractical on a local machine. You can also work with the snapshots using &lt;strong&gt;SQL&lt;/strong&gt; &lt;a href=&#34;https://github.com/gbif/occurrence/blob/master/aws-public-data.md#getting-started-with-athena&#34;&gt;example here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Derived datasets</title>
+      <link>/post/derived-datasets/</link>
+      <pubDate>Thu, 20 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/derived-datasets/</guid>
+      <description>You&amp;rsquo;ve finished an analysis using GBIF-mediated data, you&amp;rsquo;re writing up your manuscript and checking all the references, but you&amp;rsquo;re unsure of how to cite GBIF. If you Google it, you&amp;rsquo;ll probably end up reading our citation guideslines and quickly realize that GBIF is all about DOIs. Datasets have their own DOIs and downloads of aggregated data also have their own DOIs.
+But maybe you didn&amp;rsquo;t download data through the GBIF.</description>
+    </item>
+    
+    <item>
       <title>GBIF and Apache-Spark on Microsoft Azure tutorial</title>
       <link>/post/microsoft-azure-and-gbif/</link>
       <pubDate>Wed, 19 May 2021 00:00:00 +0000</pubDate>
@@ -34,16 +57,6 @@ What about the developer blog? Currently the developer blog no longer being upda
 &lt;p&gt;It is hosted by the &lt;strong&gt;Microsoft AI for Earth program&lt;/strong&gt;, which hosts geospatial datasets that are important to environmental sustainability and Earth science. Hosting is convenient because you could now use occurrences in combination with other environmental layers and not need to upload any of it to the Azure. You can &lt;strong&gt;read previous discussions about GBIF and cloud computing&lt;/strong&gt; &lt;a href=&#34;https://discourse.gbif.org/t/gbif-exports-as-public-datasets-in-cloud-environments/1835&#34;&gt;here&lt;/a&gt;. The main reason you would want to use cloud computing is to run &lt;strong&gt;big data queries&lt;/strong&gt; that are slow or impractical on a local machine.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Derived datasets</title>
-      <link>/post/derived-datasets/</link>
-      <pubDate>Mon, 10 May 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/post/derived-datasets/</guid>
-      <description>You&amp;rsquo;ve finished an analysis using GBIF-mediated data, you&amp;rsquo;re writing up your manuscript and checking all the references, but you&amp;rsquo;re unsure of how to cite GBIF. If you Google it, you&amp;rsquo;ll probably end up reading our citation guideslines and quickly realize that GBIF is all about DOIs. Datasets have their own DOIs and downloads of aggregated data also have their own DOIs.
-But maybe you didn&amp;rsquo;t download data through the GBIF.</description>
     </item>
     
     <item>

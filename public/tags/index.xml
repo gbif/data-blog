@@ -30,6 +30,15 @@
     </item>
     
     <item>
+      <title>Aws</title>
+      <link>/tags/aws/</link>
+      <pubDate>Fri, 28 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/aws/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Azure</title>
       <link>/tags/azure/</link>
       <pubDate>Wed, 19 May 2021 00:00:00 +0000</pubDate>
@@ -104,7 +113,7 @@
     <item>
       <title>CiteTheDOI</title>
       <link>/tags/citethedoi/</link>
-      <pubDate>Mon, 10 May 2021 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 20 May 2021 00:00:00 +0000</pubDate>
       
       <guid>/tags/citethedoi/</guid>
       <description></description>
@@ -131,7 +140,7 @@
     <item>
       <title>Cloud computing</title>
       <link>/tags/cloud-computing/</link>
-      <pubDate>Wed, 19 May 2021 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 28 May 2021 00:00:00 +0000</pubDate>
       
       <guid>/tags/cloud-computing/</guid>
       <description></description>
@@ -176,7 +185,7 @@
     <item>
       <title>DOI</title>
       <link>/tags/doi/</link>
-      <pubDate>Mon, 10 May 2021 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 20 May 2021 00:00:00 +0000</pubDate>
       
       <guid>/tags/doi/</guid>
       <description></description>
@@ -248,7 +257,7 @@
     <item>
       <title>Derived datasets</title>
       <link>/tags/derived-datasets/</link>
-      <pubDate>Mon, 10 May 2021 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 20 May 2021 00:00:00 +0000</pubDate>
       
       <guid>/tags/derived-datasets/</guid>
       <description></description>
