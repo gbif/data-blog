@@ -32,7 +32,7 @@ sequenceDiagrams:
   options: ''
 ---
 
-**GBIF** now has a [snapshot](https://registry.opendata.aws/gbif/) of 1.3 billion occurrence<sub>✝</sub> records on **Amazon Web Services** (AWS). This guide will take you through running **Spark notebooks** on AWS. The GBIF snapshot is documented [here](https://github.com/gbif/occurrence/blob/master/aws-public-data.md)
+**GBIF** now has a [snapshot](https://registry.opendata.aws/gbif/) of 1.3 billion occurrence<sub>✝</sub> records on **Amazon Web Services** (AWS). This guide will take you through running **Spark notebooks** on AWS. The GBIF snapshot is documented : [here](https://github.com/gbif/occurrence/blob/master/aws-public-data.md).
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">June snapshot of <a href="https://t.co/CJaPsifdp0">https://t.co/CJaPsifdp0</a> occurrence data now available on the Amazon and Microsoft clouds, based on <a href="https://t.co/aGbvTisapJ">https://t.co/aGbvTisapJ</a>. See <a href="https://t.co/lRXM2uqFh0">https://t.co/lRXM2uqFh0</a> for more details.</p>&mdash; GBIF (@GBIF) <a href="https://twitter.com/GBIF/status/1400009135362646021?ref_src=twsrc%5Etfw">June 2, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
@@ -40,7 +40,7 @@ You can **read previous discussions about GBIF and cloud computing** [here](http
 
 <!--more-->
 
-In this tutorial, I will be running a simple query on 1.3 billion occurrences records. I will be using [apache-spark](https://spark.apache.org/). I will be using the **Scala** and **Python** Spark APIs. This guide is similar to the one written previously about [Microsoft Azure](https://data-blog.gbif.org/post/microsoft-azure-and-gbif/). You can also work with the snapshots using **SQL** [example here](https://github.com/gbif/occurrence/blob/master/aws-public-data.md#getting-started-with-athena).  
+In this tutorial, I will be running a simple query on 1.3 billion occurrences records. I will be using [apache-spark](https://spark.apache.org/) with the **Scala** and **Python** APIs. This guide is similar to the one written previously about [Microsoft Azure](https://data-blog.gbif.org/post/microsoft-azure-and-gbif/). You can also work with the snapshots using **SQL** [example here](https://github.com/gbif/occurrence/blob/master/aws-public-data.md#getting-started-with-athena).  
 
 <sub>✝</sub>The snapshot includes all records shared under CC0 and CC BY designations published through GBIF that have coordinates which have passed automated quality checks. The GBIF mediated occurrence data are stored in Parquet files in AWS s3 storage in [several regions](https://github.com/gbif/occurrence/blob/master/aws-public-data.md).
 
@@ -50,7 +50,7 @@ In this tutorial, I will be running a simple query on 1.3 billion occurrences re
 
 > You will be able to run free queries for a time, but eventually you will have to pay for your compute time. 
 
-**Sign into the console account**. I logged in as the root user.  
+**Sign into the console account**. I logged in as the root user.
 
 ![root user](/post/2021-05-31-aws-and-gbif_files/root_user.png)
 
@@ -62,7 +62,7 @@ Next click **create a cluster**.
 
 ![create cluster](/post/2021-05-31-aws-and-gbif_files/create_cluster.png)
 
-**Click on advanced options** and **configure your cluster**
+**Click on advanced options** and **configure your cluster**.
 
 ![advanced options](/post/2021-05-31-aws-and-gbif_files/cluster_settings.png)
 
@@ -74,7 +74,7 @@ Make sure to select:
 
 You can keep also these selected: Hadoop, Hive, Pig, Hue.
 
-I used **emr-6.1.0**. I found **some other emr versions didn't work**. You might want to use the latest emr version. Give your cluster a name. I called mine `gbif_cluster`. **I kept all of the other default settings**. The cluster will take a gew minutes to start up. Make sure to terminate your cluster when you are finished with this tutorial because Amazon will charge you even if your cluster is in the "Waiting" state. 
+I used **emr-6.1.0**. I found **some other emr versions didn't work**. You might want to use the latest emr version. Give your cluster a name. I called mine `gbif_cluster`. **I kept all of the other default settings**. The cluster will take a few minutes to start up. Make sure to terminate your cluster when you are finished with this tutorial because Amazon will charge you even if your cluster is in the "Waiting" state. 
 
 Next **Create a notebook**. 
 
@@ -164,13 +164,19 @@ The result should be a table like this:
 
 ## Export a csv table
 
-We would now like to export `export_df` from the previous section into a csv file for download, so we can analyze it on our own computer. **Go to s3**. In the services drop down (there are a lot of services), find and **click on S3**
+If you would like to export `export_df` from the previous section into a csv file for download, you need to set up a **s3 bucket**. 
 
-**Create a s3 bucket**. You wil  put your csv table here. 
+**Go to s3**. In the services drop down (there are a lot of services), find and **click on S3**.
+
+![find s3](/post/2021-05-31-aws-and-gbif_files/find_s3.png)
+
+**Create a s3 bucket**. You will  put your csv table here. 
 
 ![gbif bucket](/post/2021-05-31-aws-and-gbif_files/gbif_bucket.png)
 
-Name your s3 bucket "**gbifbucket**" and keep all of the default settings. Now you can **run the following in one of your notebooks** to export a csv file to your **s3 bucket**. 
+**Give your s3 bucket a globally unique name**. I have used "**gbifbucket**", so you will have to pick another one. Keep all of the default settings. Now you can **run the following code in one of your notebooks** to export a csv file to your s3 bucket. 
+
+Change `gbifbucket` to your bucket name. 
 
 ```scala
 import spark.implicits._
