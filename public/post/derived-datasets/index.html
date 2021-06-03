@@ -18,7 +18,9 @@
 
 <meta name="author" content="Daniel Noesgaard" />
   <meta name="description" content="You&amp;rsquo;ve finished an analysis using GBIF-mediated data, you&amp;rsquo;re writing up your manuscript and checking all the references, but you&amp;rsquo;re unsure of how to cite GBIF. If you Google it, you&amp;rsquo;ll probably end up reading our citation guideslines and quickly realize that GBIF is all about DOIs. Datasets have their own DOIs and downloads of aggregated data also have their own DOIs.
-But maybe you didn&amp;rsquo;t download data through the GBIF." />
+But maybe you didn&amp;rsquo;t download data through the GBIF.org portal. Maybe you relied on an R package like rgbif or dismo that retrived data synchronously from the GBIF API? Maybe a grad student downloaded if for you? Maybe you accessed and analyzed the data using a cloud computing service, like Microsoft Azure or Amazon Web Services? In any case, which DOI do you cite if you don&amp;rsquo;t have one?
+
+" />
 
   <meta name="keywords" content="Hugo, theme, even" />
 
@@ -54,7 +56,10 @@ But maybe you didn&amp;rsquo;t download data through the GBIF." />
 
 <meta property="og:title" content="Derived datasets" />
 <meta property="og:description" content="You&rsquo;ve finished an analysis using GBIF-mediated data, you&rsquo;re writing up your manuscript and checking all the references, but you&rsquo;re unsure of how to cite GBIF. If you Google it, you&rsquo;ll probably end up reading our citation guideslines and quickly realize that GBIF is all about DOIs. Datasets have their own DOIs and downloads of aggregated data also have their own DOIs.
-But maybe you didn&rsquo;t download data through the GBIF." />
+
+But maybe you didn&rsquo;t download data through the GBIF.org portal. Maybe you relied on an R package like rgbif or dismo that retrived data synchronously from the GBIF API? Maybe a grad student downloaded if for you? Maybe you accessed and analyzed the data using a cloud computing service, like Microsoft Azure or Amazon Web Services? In any case, which DOI do you cite if you don&rsquo;t have one?
+
+" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/post/derived-datasets/" />
 
@@ -76,7 +81,10 @@ But maybe you didn&rsquo;t download data through the GBIF." />
 
 <meta itemprop="name" content="Derived datasets">
 <meta itemprop="description" content="You&rsquo;ve finished an analysis using GBIF-mediated data, you&rsquo;re writing up your manuscript and checking all the references, but you&rsquo;re unsure of how to cite GBIF. If you Google it, you&rsquo;ll probably end up reading our citation guideslines and quickly realize that GBIF is all about DOIs. Datasets have their own DOIs and downloads of aggregated data also have their own DOIs.
-But maybe you didn&rsquo;t download data through the GBIF.">
+
+But maybe you didn&rsquo;t download data through the GBIF.org portal. Maybe you relied on an R package like rgbif or dismo that retrived data synchronously from the GBIF API? Maybe a grad student downloaded if for you? Maybe you accessed and analyzed the data using a cloud computing service, like Microsoft Azure or Amazon Web Services? In any case, which DOI do you cite if you don&rsquo;t have one?
+
+">
 
 
 <meta itemprop="datePublished" content="2021-05-20T00:00:00&#43;00:00" />
@@ -89,7 +97,10 @@ But maybe you didn&rsquo;t download data through the GBIF.">
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Derived datasets"/>
 <meta name="twitter:description" content="You&rsquo;ve finished an analysis using GBIF-mediated data, you&rsquo;re writing up your manuscript and checking all the references, but you&rsquo;re unsure of how to cite GBIF. If you Google it, you&rsquo;ll probably end up reading our citation guideslines and quickly realize that GBIF is all about DOIs. Datasets have their own DOIs and downloads of aggregated data also have their own DOIs.
-But maybe you didn&rsquo;t download data through the GBIF."/>
+
+But maybe you didn&rsquo;t download data through the GBIF.org portal. Maybe you relied on an R package like rgbif or dismo that retrived data synchronously from the GBIF API? Maybe a grad student downloaded if for you? Maybe you accessed and analyzed the data using a cloud computing service, like Microsoft Azure or Amazon Web Services? In any case, which DOI do you cite if you don&rsquo;t have one?
+
+"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -187,11 +198,11 @@ But maybe you didn&rsquo;t download data through the GBIF."/>
 
     
     <div class="post-content">
-      
-
-<p>You&rsquo;ve finished an analysis using GBIF-mediated data, you&rsquo;re writing up your manuscript and checking all the references, but you&rsquo;re unsure of how to cite GBIF. If you <a href="https://www.google.com/search?q=how+to+cite+GBIF">Google it</a>, you&rsquo;ll probably end up reading our <a href="https://www.gbif.org/citation-guidelines">citation guideslines</a> and quickly realize that GBIF is all about DOIs. Datasets have their own DOIs and downloads of aggregated data also have their own DOIs.</p>
+      <p>You&rsquo;ve finished an analysis using GBIF-mediated data, you&rsquo;re writing up your manuscript and checking all the references, but you&rsquo;re unsure of how to cite GBIF. If you <a href="https://www.google.com/search?q=how+to+cite+GBIF">Google it</a>, you&rsquo;ll probably end up reading our <a href="https://www.gbif.org/citation-guidelines">citation guideslines</a> and quickly realize that GBIF is all about DOIs. Datasets have their own DOIs and downloads of aggregated data also have their own DOIs.</p>
 
 <p>But maybe you didn&rsquo;t download data through the GBIF.org portal. Maybe you relied on an R package like rgbif or dismo that retrived data synchronously from the GBIF API? Maybe a grad student downloaded if for you? Maybe you accessed and analyzed the data using a cloud computing service, like Microsoft Azure or Amazon Web Services? In any case, which DOI do you cite <em>if you don&rsquo;t have one</em>?</p>
+
+<p></p>
 
 <h2 id="introducing-derived-datasets">Introducing Derived Datasets</h2>
 
@@ -243,7 +254,6 @@ But maybe you didn&rsquo;t download data through the GBIF."/>
 </code></pre>
 
 <p>Note, that this method requires that the occurrence records are still available in GBIF. If a few are missing, that&rsquo;s ok. If you are able to successfully identify the parent datasets of most of the occurrences in your dataset, you&rsquo;re still good to go. It&rsquo;s better to accurately cite and credit <em>some</em> of the data publishers whose data you used than <em>none at all</em>!</p>
-
     </div>
 
     
