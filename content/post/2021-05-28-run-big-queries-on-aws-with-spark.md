@@ -1,7 +1,7 @@
 ---
 title: GBIF and Apache-Spark on AWS tutorial
 author: John Waller
-date: '2021-05-28'
+date: '2021-06-03'
 slug: aws-and-gbif
 categories:
   - GBIF
