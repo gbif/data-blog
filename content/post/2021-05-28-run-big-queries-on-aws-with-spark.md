@@ -9,7 +9,7 @@ tags:
   - cloud computing
   - aws
 lastmod: '2021-04-22T16:00:05+02:00'
-draft: yes
+draft: no
 keywords: []
 description: ''
 authors: ''
@@ -17,7 +17,7 @@ comment: no
 toc: ''
 autoCollapseToc: no
 postMetaInFooter: no
-hiddenFromHomePage: yes
+hiddenFromHomePage: no
 contentCopyright: no
 reward: no
 mathjax: no
