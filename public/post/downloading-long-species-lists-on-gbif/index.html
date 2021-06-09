@@ -84,7 +84,7 @@ For those multiple taxa downloaders out there, GBIF now supports download reques
 
 <meta itemprop="datePublished" content="2019-09-04T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-09-04T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1159">
+<meta itemprop="wordCount" content="1206">
 
 
 
@@ -189,7 +189,10 @@ For those multiple taxa downloaders out there, GBIF now supports download reques
 
     
     <div class="post-content">
-      <blockquote>
+      <script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<blockquote>
 <p>It is now possible to download up to <strong>100,000</strong> names on <strong>GBIF!</strong></p>
 </blockquote>
 <p>Until recently it was not possible to download occurrences for more than a few hundred species at the same time, but it is now possible to request more species names (<strong>up to 100,000 taxonkeys</strong>).</p>
@@ -253,13 +256,13 @@ user=user,pwd=pwd,email=email
 <p><strong>More complex downloads</strong> are also possible with the new <code>rgbif</code> <code>occ_download</code> interface:</p>
 <p>In the example below, I download all <strong>tree species</strong> which are</p>
 <ul>
-<li>Matched tree species from above <code>pred_in(&quot;taxonKey&quot;, gbif_taxon_keys)</code></li>
-<li>With these basis of record <code>pred_in(&quot;basisOfRecord&quot;, c('PRESERVED_SPECIMEN','HUMAN_OBSERVATION','OBSERVATION','MACHINE_OBSERVATION'))</code></li>
-<li>Greater than 5000 meters elevation <code>pred_gt(&quot;elevation&quot;, 5000)</code></li>
-<li>Is found in the United States <code>pred(&quot;country&quot;, &quot;US&quot;)</code></li>
-<li>Has coordinates <code>pred(&quot;hasCoordinate&quot;, TRUE)</code></li>
-<li>Has no gbif geospatial issues <code>pred(&quot;hasGeospatialIssue&quot;, FALSE)</code></li>
-<li>Is greater than or equal to the year 1990 <code>pred_gte(&quot;year&quot;, 1990)</code></li>
+<li>Matched tree species from above <code>pred_in("taxonKey", gbif_taxon_keys)</code></li>
+<li>With these basis of record <code>pred_in("basisOfRecord", c('PRESERVED_SPECIMEN','HUMAN_OBSERVATION','OBSERVATION','MACHINE_OBSERVATION'))</code></li>
+<li>Greater than 5000 meters elevation <code>pred_gt("elevation", 5000)</code></li>
+<li>Is found in the United States <code>pred("country", "US")</code></li>
+<li>Has coordinates <code>pred("hasCoordinate", TRUE)</code></li>
+<li>Has no gbif geospatial issues <code>pred("hasGeospatialIssue", FALSE)</code></li>
+<li>Is greater than or equal to the year 1990 <code>pred_gte("year", 1990)</code></li>
 </ul>
 <pre><code># use matched gbif_taxon_keys from above 
 occ_download(
@@ -400,6 +403,10 @@ download_query[&quot;predicate&quot;] = {
 # Generate download
 create_download_given_query(login, password, download_query)</code></pre>
 </div>
+<div id="citing-your-download" class="section level1">
+<h1>Citing your download</h1>
+<p>If you end up using your <strong>download in a research paper</strong>, you will want a <strong>doi</strong>. Please see these <a href="https://www.gbif.org/citation-guidelines">citation guidelines</a> for properly citing your download. Good citation practices ensure scientific transparency and reproducibility by guiding other researchers to the original sources of information.</p>
+</div>
 <div id="acknowledgements" class="section level1">
 <h1>Acknowledgements</h1>
 <p>GBIF thanks the project <a href="https://www.gbif.org/network/b153643d-735a-440f-a0e9-428b4f9d1cd2">Tracking Invasive Alien Species (TrIAS)</a> for funding the work required to provide these enhancements to all users of GBIF. TrIAS is a Belgian open science project that makes extensive use of GBIF services, see e.g. the <a href="https://www.gbif.org/dataset/6d9e952f-948c-4483-9807-575348147c7e#methodology">methodology for their national checklist of alien species</a>.</p>
@@ -430,7 +437,7 @@ create_download_given_query(login, password, download_query)</code></pre>
         
           <a class="prev" href="/post/gbif-backbone-taxonomy/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Six questions answered about the GBIF Backbone Taxomomy</span>
+            <span class="prev-text nav-default">Six questions answered about the GBIF Backbone Taxonomy</span>
             <span class="prev-text nav-mobile">Prev</span>
           </a>
         
