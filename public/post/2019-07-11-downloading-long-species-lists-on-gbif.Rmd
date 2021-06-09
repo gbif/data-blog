@@ -276,7 +276,7 @@ create_download_given_query(login, password, download_query)
 
 # Citing your download
 
-If you end up using your **download in a research paper**, you will want a **doi**. Please see these [citation guidelines](https://www.gbif.org/citation-guidelines) for properly citing your download. Good citation practices ensure scientific transparency and reproducibility by guiding other researchers to the original sources of information. 
+If you end up using your **download in a research paper**, you will want to cite the download's **DOI**. Please see these [citation guidelines](https://www.gbif.org/citation-guidelines) for properly citing your download. Good citation practices ensure scientific transparency and reproducibility by guiding other researchers to the original sources of information. 
 
 # Acknowledgements 
 

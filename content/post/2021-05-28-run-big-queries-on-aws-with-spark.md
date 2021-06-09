@@ -1,7 +1,7 @@
 ---
 title: GBIF and Apache-Spark on AWS tutorial
 author: John Waller
-date: '2021-06-03'
+date: '2021-06-04'
 slug: aws-and-gbif
 categories:
   - GBIF
@@ -209,7 +209,7 @@ To download. Go to your [S3 bucket](https://s3.console.aws.amazon.com/s3/home?).
 
 ## Citing custom filtered/processed data
 
-If you end up using your **exported csv** file in a research paper, you will want a **doi**. GBIF now has a [service](https://www.gbif.org/derived-dataset/register) for generating a **citable doi** from **a list of involved datasetkeys with occurrences counts**. See the [GBIF citation guidelines](https://www.gbif.org/citation-guidelines) and [previous blog post](https://data-blog.gbif.org/post/derived-datasets/). 
+If you end up using your **exported csv** file in a research paper, you will want a **DOI**. GBIF now has a [service](https://www.gbif.org/derived-dataset/register) for generating a **citable doi** from **a list of involved datasetkeys with occurrences counts**. See the [GBIF citation guidelines](https://www.gbif.org/citation-guidelines) and [previous blog post](https://data-blog.gbif.org/post/derived-datasets/). 
 
 You can generate a **citation file** for your custom dataset above using the following code chunk. Since our `export_df.csv` used all of the occurrences, we can simply group by datasetkey and count all of the occurrences to generate our `citation.csv` file. 
 
