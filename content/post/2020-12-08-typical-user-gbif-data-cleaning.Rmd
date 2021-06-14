@@ -69,7 +69,7 @@ filter(!is.na(decimallatitude)) %>%
 filter(!basisofrecord %in% c("FOSSIL_SPECIMEN","LIVING_SPECIMEN")) %>%
 filter(!establishmentmeans %in% c("MANAGED", "INTRODUCED", "INVASIVE", "NATURALISED")) %>%
 filter(year >= 1900) %>% 
-filter(coordinateprecision > 0.01 | is.na(coordinateprecision)) %>% 
+filter(coordinateprecision < 0.01 | is.na(coordinateprecision)) %>% 
 filter(coordinateuncertaintyinmeters < 10000 | is.na(coordinateuncertaintyinmeters)) %>%
 filter(!coordinateuncertaintyinmeters %in% c(301,3036,999,9999)) %>% 
 filter(!decimallatitude == 0 | !decimallongitude == 0) %>%
@@ -127,7 +127,7 @@ user=user,pwd=pwd,email=email
 # not yet possible to use these filters in the download stage 
 
 gbif_download %>%
-filter(coordinateprecision > 0.01 | is.na(coordinateprecision)) %>% 
+filter(coordinateprecision < 0.01 | is.na(coordinateprecision)) %>% 
 filter(!coordinateuncertaintyinmeters %in% c(301,3036,999,9999)) %>% 
 filter(!decimallatitude == 0 | !decimallongitude == 0) %>%
 cc_cen(buffer = 2000) %>% # remove country centroids within 2km 
@@ -215,7 +215,7 @@ If you want to be sure that a point has the acceptable level of uncertainty or p
 # I keep missing values here
 gbif_download %>% 
 filter(
-coordinatePrecision > 0.01 | is.na(coordinatePrecision)
+coordinatePrecision < 0.01 | is.na(coordinatePrecision)
 ) %>% 
 filter(
 coordinateUncertaintyInMeters < 1000 | is.na(coordinateUncertaintyInMeters)

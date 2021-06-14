@@ -64,7 +64,7 @@ filter(!is.na(decimallatitude)) %&gt;%
 filter(!basisofrecord %in% c(&quot;FOSSIL_SPECIMEN&quot;,&quot;LIVING_SPECIMEN&quot;)) %&gt;%
 filter(!establishmentmeans %in% c(&quot;MANAGED&quot;, &quot;INTRODUCED&quot;, &quot;INVASIVE&quot;, &quot;NATURALISED&quot;)) %&gt;%
 filter(year &gt;= 1900) %&gt;% 
-filter(coordinateprecision &gt; 0.01 | is.na(coordinateprecision)) %&gt;% 
+filter(coordinateprecision &lt; 0.01 | is.na(coordinateprecision)) %&gt;% 
 filter(coordinateuncertaintyinmeters &lt; 10000 | is.na(coordinateuncertaintyinmeters)) %&gt;%
 filter(!coordinateuncertaintyinmeters %in% c(301,3036,999,9999)) %&gt;% 
 filter(!decimallatitude == 0 | !decimallongitude == 0) %&gt;%
@@ -117,7 +117,7 @@ user=user,pwd=pwd,email=email
 # not yet possible to use these filters in the download stage 
 
 gbif_download %&gt;%
-filter(coordinateprecision &gt; 0.01 | is.na(coordinateprecision)) %&gt;% 
+filter(coordinateprecision &lt; 0.01 | is.na(coordinateprecision)) %&gt;% 
 filter(!coordinateuncertaintyinmeters %in% c(301,3036,999,9999)) %&gt;% 
 filter(!decimallatitude == 0 | !decimallongitude == 0) %&gt;%
 cc_cen(buffer = 2000) %&gt;% # remove country centroids within 2km 
@@ -184,7 +184,7 @@ filter(year &gt;= 1900)</code></pre>
 <pre class="r"><code># I keep missing values here
 gbif_download %&gt;% 
 filter(
-coordinatePrecision &gt; 0.01 | is.na(coordinatePrecision)
+coordinatePrecision &lt; 0.01 | is.na(coordinatePrecision)
 ) %&gt;% 
 filter(
 coordinateUncertaintyInMeters &lt; 1000 | is.na(coordinateUncertaintyInMeters)
