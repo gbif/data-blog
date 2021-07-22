@@ -1,5 +1,5 @@
 ---
-title: "Did you know that...?" - catch up on some of the lesser known functionalities around GBIF.org
+title: "Did you know that...?"
 author: Andrea Hahn
 date: '2021-08-01'
 slug: did-you-know
@@ -46,7 +46,7 @@ sequenceDiagrams:
   options: ''
 ---
 
-# Did you know that...? (mid-2021 edition)
+# "Did you know that...?" - some of the lesser known functionalities around GBIF.org
 
 During the first-ever virtual GBIF 2021 Global Nodes Meeting, GBIFS hosted a "game show": a one-hour "[battle of Nodes vs. helpdesk](https://gnm2021.gbif.org/sessions/friday-nodes-vs-helpdesk)". The not-so-hidden goal was to demonstrate some of the lesser known functionalities of GBIF.org through a fun, interactive session.
 
@@ -81,11 +81,11 @@ and
 
 ##### Notes:
 
-- You find the release notes in the main menu of GBIF.org, under About >> Release notes. The free text search is another option if you know what to search for.
+- You find the release notes in the main menu of GBIF.org, under About >> Release notes. The free text search that you find in the header of all GBIF.org pages is another option if you know what you are looking for
 
 ---
 ### Question 2: Custom metrics
-###### [session recording: from 12:05]
+###### [[session recording](https://gnm2021.gbif.org/sessions/friday-nodes-vs-helpdesk): from 12:05]
 
 **Did you know that you can generate some custom data metrics yourself?**  --- Get an overview of the occurrence "issues & flags" for publishers in your country or area, per publisher
 
@@ -107,14 +107,14 @@ and
 
 ##### Notes:
 
-- In the session recording ([video](https://gnm2021.gbif.org/sessions/friday-nodes-vs-helpdesk)), Marie demonstrates the solution using custom metrics generation from [18:40].
+- In the session recording ([video](https://gnm2021.gbif.org/sessions/friday-nodes-vs-helpdesk)), Marie demonstrates the solution using custom metrics generation from around [18:40].
 - Alternative possibility suggested by Nodes [17:25]: Prepare the filter as for a download, and check the download feedback on issue labels.
 
-> ###### Similar to using the API to aggregate the same kind of information, the proposed alternative option is a bit more labor intensive for getting an overview. It is also specific to Issues and Flags, rather than other custom dimensions --- but useful to be aware of for this particular case.
+> ###### Similar to using the API to aggregate the same kind of information, the proposed alternative option is a bit more labor intensive for getting an overview. More to the point here though, it is specific to Issues and Flags, rather than other custom dimensions --- but useful to be aware of for this particular case.
 
 ---
 ### Question 3: Spatial filtering
-###### [session recording: from 21:24]
+###### [[session recording](https://gnm2021.gbif.org/sessions/friday-nodes-vs-helpdesk): from 21:24]
 
 **Did you know that you can download a species list for an area?** --- How would you generate a species list for the "Azores" island group?
 
@@ -140,12 +140,12 @@ _In this particular example, the gadm.org administrative areas filter is possibl
 - outside of the concrete example (Azores), all options in the poll are equally possible and "correct", but fit some queries better than others
 ---
 ### Question 4: User feedback
-###### [session recording: from 28:35]
+###### [[session recording](https://gnm2021.gbif.org/sessions/friday-nodes-vs-helpdesk): from 28:35]
 
 **Did you know that you can find GBIF user feedback that relates to a country or organization?** --- Find all feedback that is reported against a country of your choice!
 
 ##### Suggested answer:
-> Start from the entry point to the "issues" in the GBIF/portal-feedback GitHub repository: [https://github.com/gbif/portal-feedback/issues](https://github.com/gbif/portal-feedback/issues). The filter is pre-set to only show open issues.
+> The GitHub repository that stores user feedback is called [/gbif/portal-feedback](https://github.com/gbif/portal-feedback). This is also where you can find the entry point to the "issues"(Start from the entry point to the reported "[issues](https://github.com/gbif/portal-feedback/issues)". The filter is pre-set to only show open issues.
 > 
 > Countries are defined as labels of the ISO country codes – to search for all issues relating to Canada, for example, add an additional filter as "[label:CA](https://github.com/gbif/portal-feedback/issues?q=is%3Aissue+is%3Aopen+label%3ACA)".
 
@@ -160,19 +160,19 @@ _In this particular example, the gadm.org administrative areas filter is possibl
 ##### Notes
 - **ToDo:** Marie around 35:00: see third part of second session demo (?) for more information
 - the GitHub repository does not document everything that gets reported: some people prefer the non-public helpdesk email address for communication over the publicly indexed GitHub repository; some issues are automatically redirected to other platforms' feedback systems, provided a technical connection has been established; and if the feedback is on an individual record, the commenter can choose whether to log the issue with GBIF, or rather send an email directly to the dataset contacts
-- **Bonus tidbit**: For issues that relate to occurrence records, the dataset and publisher UUIDs are stored within the issue as well - see this [example](https://github.com/gbif/portal-feedback/issues/2415). To find all issues _for a given publisher_ (or dataset), add the publisher (or dataset) UUID as a free text search value, like this (omit the quotation marks): "is:issue is:open ff7bd5db-b724-4932-b496-10ea298851f9". This will find all [open issues](https://github.com/gbif/portal-feedback/issues) reported for [this publisher](https://www.gbif.org/publisher/ff7bd5db-b724-4932-b496-10ea298851f9)
+- **Bonus tidbit**: For issues that relate to occurrence records, the dataset and publisher UUIDs are stored within the issue as well - see this [example](https://github.com/gbif/portal-feedback/issues/2415). To find all issues _for a given publisher_ (or dataset), add the publisher (or dataset) UUID as a free text search value, like this (omit the quotation marks): "[is:issue is:open ff7bd5db-b724-4932-b496-10ea298851f9](https://github.com/gbif/portal-feedback/issues?q=is%3Aissue+is%3Aopen+ff7bd5db-b724-4932-b496-10ea298851f9)". This will find all open issues reported for this publisher or dataset
 **ToDo: consider whether the publisher/country might be offended by giving the example**
 
 ---
 ### Question 5: Scientific name validation
-###### [session recording: from 35:15]
+###### [[session recording](https://gnm2021.gbif.org/sessions/friday-nodes-vs-helpdesk): from 35:15]
 
 **Did you know that you can check a list of scientific names against the GBIF Taxonomic Backbone?** --- Demonstrate how to do this!
 
 ##### Suggested answer:
 
 > Use the ["Species Matching" tool](https://www.gbif.org/tools/species-lookup). You find this from the main menu of GBIF.org, in the "Tools" menu section, under "GBIF Labs". 
-
+>
 > ###### If you want to try the examples that are available on the tool's web page, be aware that dragging the example directly into the drop-circle of the user interface may not work – rather, store the file locally first. 
 
 
@@ -188,15 +188,15 @@ _In this particular example, the gadm.org administrative areas filter is possibl
 		that could explain e.g. slow data updates (++)
 
 ##### Notes
-- to use the the Species Matching tool for checking a list of taxon names, create a file following the guidelines at the top of the search page; consult or adapt the example files if you are not sure what the guidelines mean
+- to use the the Species Matching tool for checking a list of taxon names, create a file following the guidelines at the top of the [tool page](https://www.gbif.org/tools/species-lookup); consult or adapt the example files if you are not sure what the guidelines mean
 - for a sequence blast (poll option a): try the [Sequence ID tool](https://www.gbif.org/tools/sequence-id). This feature is only available for selected taxon groups
 - to find clusters of occurrence records (poll option b), use the advanced occurrence search facet "[Is in cluster](https://www.gbif.org/occurrence/search?advanced=1&is_in_cluster=true)". This is an experimental feature at this point, which groups occurrence records that appear to be somehow related. Examples are: siblings of herbarium specimens deposited in other collections; derived units like eDNA data sampled from a specimen; related multimedia collections; duplicates of records published by different institutions; etc. For occurrence records that were tagged as belonging to a cluster, the record page has a second tab labeled "Cluster", like in [this example](https://www.gbif.org/occurrence/1897646885/cluster)
-- the GBIF.org "[system health](https://www.gbif.org/health)" indicator page is accessible from the main menu bar of all pages via the little "pulse" symbol. You find this next to the language setting, free text search and feedback symbols. If the site is not working as expected, or your newly published dataset does not become available as fast as you would expect it to, it is worth checking here whether there are any known issues (poll option d)
+- the GBIF.org "[system health](https://www.gbif.org/health)" indicator page (poll option d) is accessible from the main menu bar of all pages via the little "pulse" symbol. You find this next to the language setting, free text search and feedback symbols. If the site is not working as expected, or your newly published dataset does not become available as fast as you would expect it to, it is worth checking here whether there are any known issues
 - nope - a detailed, downloadable report with data validation results (poll option c) is not available - yet -, sorry! You can validate your data using the [data validator](https://www.gbif.org/tools/data-validator) tool, but the report is only available online. That said, though: the data validator tool is currently under revision, and downloadable reports are one of the features being considered for a future version
 
 ---
 ### Question 6: The API
-###### [session recording: from 44:00]
+###### [[session recording](https://gnm2021.gbif.org/sessions/friday-nodes-vs-helpdesk): from 44:00]
 
 **Did you know that GBIF.org builds on an API, and that you can use that API as well?** --- With your web browser as a client, use the GBIF registry API to find all technical installations of type BIOCASE_INSTALLATION. How many are there?
 
@@ -208,26 +208,31 @@ _In this particular example, the gadm.org administrative areas filter is possibl
 
 #### Poll: What does "API" stand for?
 
-	a) Advanced Programming Interface (-)
-	b) Academic Performance Index (+)
-	c) Adobe Acrobat Plug-In (+)
+	a) Advanced Programming Interface (~)
+	b) Academic Performance Index (~)
+	c) Adobe Acrobat Plug-In (~)
 	d) Application Programming Interface (++)
 
 ##### Notes:
-- the documentation of the GBIF API is here: https://www.gbif.org/developer/summary. You can find the link to this entry page in the green footer bar on all pages within GBIF.org
+- the documentation of the GBIF API is here: https://www.gbif.org/developer/summary. You can find the link to this entry page under "API" in the green footer bar on all pages within GBIF.org
 - to find out more about the answer to this specific quiz question, check the "[Registry](https://www.gbif.org/developer/registry)" section of the documentation, sub-section "Installations"
-- all functionality of the user interface is based on the API - but: the API also allows for some options that the user interface, for some reason, does not support. You can, for example, compose search filters that _exclude_ certain values by using the "not" predicate for an occurrence download. If you want to learn more about options around occurrence data, maybe start by browsing the [Occurrence section](https://www.gbif.org/developer/occurrence) of the API documentation for inspiration
+- all functionality of the user interface is based on the API - but: the API also allows for some options that the user interface cannot support. You can, for example, compose search filters that _exclude_ certain values by using the "not" predicate for an occurrence download. If you want to learn more about options around occurrence data, maybe start by browsing the [Occurrence section](https://www.gbif.org/developer/occurrence) of the API documentation for inspiration
 - and the acronym from the poll? In this context: "Application Programming Interface" – sometimes also referred to as "Advanced" Programming Interface, though this seems to be a misnomer. Both "Adobe Acrobat Plug-In" (option c) and "Academic Performance Index" (option b) do turn up in abbreviation resolvers under "API", but are not meant here
 
 ---
 ### Question 7: Ingestion history
-###### [session recording: from 53:20]
+###### [[session recording](https://gnm2021.gbif.org/sessions/friday-nodes-vs-helpdesk): from 53:20]
 
 **Did you know that you can check up on the indexing process of a dataset yourself?** --- Since deploying our current generation of data "ingestion" infrastructure, iNaturalist has been crawled over 250 times. How do you find the logs that the infrastructure produced for crawl number 265, if you were asked to diagnose issues in that?
 
 ##### Suggested answer:
 
-> Find the dataset in the [dataset search](https://registry.gbif.org/dataset/search?q=iNaturalist) of the [GBIF registry](http://registry.gbif.org). Go to the [dataset's registry page](https://registry.gbif.org/dataset/50c9509d-22c7-4a22-a47d-8c48425ef4a7), and check the "Ingestion history" from the sub-menu. Find "Attempt" number 265, and click on "Log". This will bring you to the Elastic Search ingestion logs for this particular ingestion process run on that dataset
+> _Step-by-step_: 
+> 1. find the dataset in the [dataset search](https://registry.gbif.org/dataset/search?q=iNaturalist) of the [GBIF registry](http://registry.gbif.org)
+> 2. go to the [dataset's registry page](https://registry.gbif.org/dataset/50c9509d-22c7-4a22-a47d-8c48425ef4a7), and 
+> 3. check the "Ingestion history" from the sub-menu
+> 4. find "Attempt" number 265, and click on "Log"
+> This will bring you to the Elastic Search ingestion logs for this particular ingestion process run on that dataset
 > 
 > ###### If this particular example does no longer show the Elastic Search log entries, try a more recent one to get an idea of the options provided by the logs in general 
 
@@ -242,7 +247,7 @@ _In this particular example, the gadm.org administrative areas filter is possibl
 ##### Notes:
 - working with ingestion logs is an option that publishing software administrators and Nodes technical staff may be interested in exploring: it can provide more autonomy in diagnosing ingestion issues. If you are rather a data content curator or a data user, this option is not really relevant for you
 - an alternative option for the main question: if you are a registered dataset contact for the dataset in question, and you are logged in to GBIF.org with a user account using the same email address as for the dataset, then you also have access to the logs from the [dataset page](https://www.gbif.org/dataset/50c9509d-22c7-4a22-a47d-8c48425ef4a7), in a special section only made available if the contact criteria are met, titled "Because you are a trusted contact". The logs here will be pre-filtered for the most recent ingestion run, though. If you choose the "history" option instead, you will enter the same registry page as through the pathway sketched out in the suggested answer
-- poll: the [Data Quality](https://www.gbif.org/data-quality-requirements) page (option c) is authored content and knows nothing about specific datasets, so this will not help to diagnose issues as such (though the page does contain some pointers to other components)
+- poll: the [Data Quality](https://www.gbif.org/data-quality-requirements) page (option c) is static, authored content and knows nothing about specific datasets, so this will not help to diagnose issues as such (though the page does contain some pointers to other components)
 - All other poll options, though, can provide help in some way or other:
 	- the **[IPT](https://www.gbif.org/ipt)** (option b) does provide some feedback on formal structure (table relationships) and data content – a good first checkpoint for a new or substantially reworked dataset configuration! Keep in mind though: the IPT is a stand-alone tool, independent from the GBIF ingestion process, and would not "know" why a specific ingestion run failed in a given situation
 	- the **registry** (option d), as demonstrated in the response to the main question, gives access to the timeline and the logs of all past crawls and ingestions. A good place to be aware of if you want to know what is going on with a given dataset!
@@ -264,9 +269,12 @@ _In this particular example, the gadm.org administrative areas filter is possibl
 >
 > How to get there, step-by-step:
 > 1) from the main menu at GBIF.org, go to Tools >> Scientific Collections. You now entered the Registry of Scientific Collections, [GRSciColl](https://www.gbif.org/grscicoll)
-> 2) go to the tab "Institutions", search for the institution name, and open that page by clicking on the name in the results list: [Royal Belgian Institute of Natural Sciences](https://www.gbif.org/grscicoll/institution/c2bfdeef-9c03-435e-8465-c483dadd6995)
-> 3) open the [metrics tab](https://www.gbif.org/grscicoll/institution/c2bfdeef-9c03-435e-8465-c483dadd6995/metrics), and scroll down to "occurrences per collection code" to pick the entry with the most occurrence records
-> 4) bonus: clicking on the name or count here will lead you to the occurrence records filtered for this entry
+> 2) go to the tab "Institutions"
+> 3) search for the institution name, and 
+> 4) open that page by clicking on the name in the results list: [Royal Belgian Institute of Natural Sciences](https://www.gbif.org/grscicoll/institution/c2bfdeef-9c03-435e-8465-c483dadd6995)
+> 5) open the [metrics tab](https://www.gbif.org/grscicoll/institution/c2bfdeef-9c03-435e-8465-c483dadd6995/metrics), and 
+> 6) scroll down to "occurrences per collection code" to pick the entry with the most occurrence records
+> bonus: clicking on the name or count here will lead you to the occurrence records filtered for this entry
 
 #### Poll: Imagine you are checking this institution entry in GRSciColl, and you find that you know of more collections that are not listed here. What can you do?
 
@@ -279,10 +287,10 @@ _In this particular example, the gadm.org administrative areas filter is possibl
 
 ##### Notes:
 - "[metadata-only datasets](https://www.gbif.org/dataset/search?type=METADATA)" (poll option a) describe datasets (as opposed to physical collections) in GBIF.org, typically without adding any occurrence records - hence the name. Reasons vary why a dataset may be registered with just a description,  at least initially. Regardless, as datasets and physical collections do not necessarily match each other in scope, such dataset registrations will never be automatically translated into collection entries in GRSciColl
-> ###### In addition, independent from the above: unless you already have been authorized by the institution in question, you would not be able to register a dataset to GBIF.org under their name anyway
+> ###### In addition, independent from the above: unless you already have been authorized by the institution in question, you would not be able to register a dataset to GBIF.org under their name
 
 - the other three poll options all apply, though to varying degree:
-	- **editing rights** (option b): we do not grant these to everybody, but if you are an institution contact, or for example a node manager, that is indeed an option. Requesting editing rights makes best sense if you have many and frequent changes to make, or if you would like to take general curational responsibility within a certain domain of GRSciColl (e.g. institution, country). Before you can get going, we will need to give you an introduction. Check with us via [scientific-collections@gbif.org](mailto:scientific-collections@gbif.org) if this has your interest
+	- **editing rights** (option b): we do not grant these to everybody, but if you are an institution contact, or for example a node manager, that is indeed an option. Requesting editing rights makes best sense if you have many and frequent changes to make, or if you would like to take general curational responsibility within a certain domain of GRSciColl (e.g. for an institution or country). Before you can get going, we will need to give you an introduction. Check with us via [scientific-collections@gbif.org](mailto:scientific-collections@gbif.org) if this has your interest
 	- **user interface** (option c): yes! That is an option for any user now, and we would recommend this as the preferred way to log change requests or additions for more casual users. Your suggestion will not be immediately visible, as it will go through a moderation process to ensure proper procedures and discourage spam - but we will keep you updated. **ToDo: check this is true!** Check out the green "[Suggest a Change](https://www.gbif.org/grscicoll/institution/c2bfdeef-9c03-435e-8465-c483dadd6995)" button on Institution, Collection and Contact pages within [GRSciColl](https://www.gbif.org/grscicoll)! 
 	To suggest a new collection under an institution, start from any existing collection, "Suggest a Change", and then use the "More" button on the registry "Collection details" page to "Create new collection"
 	- GitHub issue (option d): well, yes.... technically, you could. The same applies to sending an email. We would rather you didn't though. There are easier and more integrated ways to send your feedback through the user interface option, above. 
@@ -303,7 +311,7 @@ And if you are considering to work offline with a larger section of the catalogu
 > - a list (csv file) of the source datasets (GBIF dataset keys) and respective record counts from your otherwise-produced data download
 > - public deposition of the dataset you that wish to cite (e.g. in [Zenodo](https://zenodo.org/))
 > -  a GBIF registration (DOI) for your derived dataset - you can generate this [here](https://www.gbif.org/derived-dataset/register)
-
+>
 > To learn more, check the "[Derived datasets](https://data-blog.gbif.org/post/derived-datasets/)" post in the GBIF data blog
 
 #### Poll: Which types of GBIF data downloads _do_ get a DOI generated automatically?
@@ -332,7 +340,7 @@ And if you are considering to work offline with a larger section of the catalogu
 >
 >How to get there, step-by-step:
 > 1) from the main menu at GBIF.org, go to Get Data >> Trends
-> 2) the filter is set in the header section of the page - in this case, for "[Africa](https://www.gbif.org/analytics/region/AFRICA)"
+> 2) the filter is set in the header section of the page - in this case, select "[Africa](https://www.gbif.org/analytics/region/AFRICA)"
 > 3) scroll down the page to find the panel "Records by year of occurrence" (orange color, under "Time and seasonality"). To view the [graphic](https://analytics-files.gbif.org/gbifRegion/AFRICA/about/figure/occ_yearCollected.svg) in more detail, click on the image
 > 4) this graphic shows counts of available occurrence records within GBIF.org by year of collection/observation since 1950. There are four different snapshots of the data availability status within the GBIF index combined here. The most recent one is found at the bottom; the ones above show the status of data mobilization (not: species occurrence) in a time sequence
 > 5) to answer the question, you want to refer to the bottom graph, representing the most recent snapshot - presently, this shows the status of data mobilization at July 1, 2021
@@ -340,9 +348,9 @@ And if you are considering to work offline with a larger section of the catalogu
 
 #### Poll: What other metrics can you find on GBIF.org?
 
-	a) metrics on downloads made by users from a country (+)
+	a) metrics on downloads made by users from a country (++)
 	b) the number of registered GBIF users per country (-)
-	c) an activity report for a country, territory or area (+)
+	c) an activity report for a country, territory or area (++)
 	d) changes in popularity of data publishing tools 
 		and protocols over time (-)
 
@@ -356,7 +364,8 @@ And if you are considering to work offline with a larger section of the catalogu
 - option d): while this may have some historic interest, we do not maintain metrics on publishing tools and protocols that were used for data publication over time. Old data snapshots representing past stages do exist; they are not readily available for access though
 
 ---
-Congratulations! You reached the end of the extended Quiz! How did it go - did you learn anything new? In our live event at the 2021 Global Nodes Meeting, GBIF Nodes representatives did very well indeed, and won the race!
+### Congratulations! 
+You reached the end of the extended Quiz! How did it go - did you learn anything new? In our live event at the 2021 Global Nodes Meeting, GBIF Nodes representatives did very well indeed, and won the race!
 
 Whether you found something that you did not know before, or could confirm that you are fully up-to-date with GBIF systems: I hope that you had some fun, and that we could pique your curiosity to keep exploring GBIF.org and beyond!
 
