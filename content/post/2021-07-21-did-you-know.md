@@ -143,7 +143,7 @@ _In this particular example, the gadm.org administrative areas filter is possibl
 ##### Suggested answer:
 > The GitHub repository that stores user feedback is called [/gbif/portal-feedback](https://github.com/gbif/portal-feedback). This is also where you can find the entry point to the "issues"(Start from the entry point to the reported "[issues](https://github.com/gbif/portal-feedback/issues)". The filter is pre-set to only show open issues.
 > 
-> Countries are defined as labels of the ISO country codes – to search for all issues relating to Canada, for example, add an additional filter as "[label:CA](https://github.com/gbif/portal-feedback/issues?q=is%3Aissue+is%3Aopen+label%3ACA)".
+> Countries are defined as labels of the ISO country codes – to search for all issues relating to Belgium, for example, add an additional filter as "[label:BE](https://github.com/gbif/portal-feedback/issues?q=is%3Aissue+is%3Aopen+label%3ABE)".
 
 #### Poll: Is all user feedback stored in GitHub?
 
@@ -153,7 +153,7 @@ _In this particular example, the gadm.org administrative areas filter is possibl
 	d) No. Some users prefer to write to helpdesk@gbif.org (++)
 	
 ##### Notes
-- **ToDo:** Marie around 35:00: see third part of second session demo (?) for more information
+- for a brief demo of the GitHub GBIF feedback repository, also see the recording of "[Live demos: Group 2](https://gnm2021.gbif.org/sessions/tuesday-tools-to-support-nodes) - Tools to support nodes with data mobilization strategies" (from about [1:06:00])
 - the GitHub repository does not document everything that gets reported: some people prefer the non-public helpdesk email address (option d) for communication over the publicly indexed GitHub repository; some issues are automatically redirected to other platforms' feedback systems (option c), provided a technical connection has been established; and if the feedback is on an individual record, the commenter can choose whether to log the issue with GBIF, or rather send an email directly to the dataset contacts (option b)
 - **bonus tidbit**: For issues that relate to occurrence records, the dataset and publisher UUIDs are stored within the issue as well. To find all issues for a given publisher or dataset, add the publisher or dataset UUID as a free text search value, like this (omit the quotation marks): "[is:issue is:open 50c9509d-22c7-4a22-a47d-8c48425ef4a7](https://github.com/gbif/portal-feedback/issues?q=is%3Aissue+is%3Aopen+50c9509d-22c7-4a22-a47d-8c48425ef4a7)". This will find all open issues reported that relate to this publisher or dataset
 
@@ -180,7 +180,7 @@ _In this particular example, the gadm.org administrative areas filter is possibl
 
 ##### Notes
 - to use the the Species Matching tool for checking a list of taxon names, create a file following the guidelines at the top of the [tool page](https://www.gbif.org/tools/species-lookup); consult or adapt the example files if you are not sure what the guidelines mean
-- for a **sequence blast** (poll option a): try the [Sequence ID tool](https://www.gbif.org/tools/sequence-id). This feature is only available for selected taxon groups
+- for a **sequence blast** (poll option a): try the [Sequence ID tool](https://www.gbif.org/tools/sequence-id), or [this example](https://www.gbif.org/search?q=TAATCTCTCAACTTTGGCCTTTGGTTTTTTTCTTAACCCAAGGCCTGTAGTTTGGATGGTGGAGGTGTGCTGGCTTGCTCTCCTGTCGGTCAGCTCCTCTGAAAAGAATCAGCAAAGGGAAACGCACCTGTTCCTGCATCTTGTGCTTCTGGCATTGATAACTGTCCATGCCTGTTATGGCTCAGATGCCTTTTGGATCGGTTGAGCGTCTTTGCTTACAGTTGTCCTTTGGACATTTTTGAC). This feature is only available for selected taxon groups
 - to find **clusters** of occurrence records (poll option b), use the advanced occurrence search facet "[Is in cluster](https://www.gbif.org/occurrence/search?advanced=1&is_in_cluster=true)". This is an early feature at this point, still under ongoing development - you can read more [here](https://www.gbif.org/news/4U1dz8LygQvqIywiRIRpAU/new-data-clustering-feature-aims-to-improve-data-quality-and-reveal-cross-dataset-connections). A cluster groups occurrence records that appear to be somehow related. Examples are: siblings of herbarium specimens deposited in other collections; derived units like eDNA data sampled from a specimen; related multimedia collections; duplicates of records published by different institutions; etc. For occurrence records that were tagged as belonging to a cluster, the record page has a second tab labeled "Cluster", like in [this example](https://www.gbif.org/occurrence/865079977/cluster)
 - the GBIF.org "**[system health](https://www.gbif.org/health)**" indicator page (poll option d) is accessible from the main menu bar of all pages via the little "pulse" symbol. You find this next to the language setting, free text search and feedback symbols. If the site is not working as expected, or your newly published dataset does not become available as fast as you would expect it to, it is worth checking here whether there are any known issues
 - sorry - a detailed, _downloadable_ report with data validation results (poll option c) is not available - yet. You can validate your data using the [data validator](https://www.gbif.org/tools/data-validator) tool, but the report is so far only available online. That said, though: the data validator tool is currently under revision, and downloadable reports are one of the features being considered for a future version
@@ -195,6 +195,8 @@ _In this particular example, the gadm.org administrative areas filter is possibl
 
 > [https://api.gbif.org/v1/installation/?type=BIOCASE_INSTALLATION](https://api.gbif.org/v1/installation/?type=BIOCASE_INSTALLATION).
 > At the time of the event, the "count" value near the top of the response reported that there were 81 data publishing software installation endpoints of this type registered to GBIF
+> 
+> ###### A proposed alternative solution, [https://registry.gbif.org/installation/search?q=BioCASE](https://registry.gbif.org/installation/search?q=BioCASE), is the answer to a different question: it returns free text search results, i.e. entries that contain the text somewhere within the record like [here](https://registry.gbif.org/installation/cc9f1c90-72a5-4384-a689-cfb82a71f773), _not_ installations of that type
 
 #### Poll: What does "API" stand for?
 
@@ -355,7 +357,7 @@ Whether you found something that you did not know before, or could confirm that 
 And, before closing:
 Special thanks for their contributions to the live event go to:
 
-- Marie Grosjean, who defended the GBIFS helpdesk valiantly in the "battle",
+- Marie Grosjean, who defended the GBIFS helpdesk valiantly in the "battle" in spite of here game-rules inflicted handicap,
 - Andrew Rodrigues, guiding the session with aplomb in his role as Official Battle Adjudicator and game show host,
 
 and, last not least:
