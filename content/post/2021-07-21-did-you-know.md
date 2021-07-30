@@ -24,7 +24,7 @@ tags:
   - rollup metrics
   - Global Nodes Meeting 2021
 lastmod: '2021-07-21T14:30:00+02:00'
-draft: yes
+draft: no
 keywords: []
 description: ''
 comment: no
