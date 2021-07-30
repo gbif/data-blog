@@ -23,7 +23,7 @@ tags:
   - CiteTheDOI
   - rollup metrics
   - Global Nodes Meeting 2021
-lastmod: '2021-07-21T14:30:00+02:00'
+lastmod: '2021-07-30T14:30:00+02:00'
 draft: no
 keywords: []
 description: ''
