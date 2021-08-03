@@ -46,8 +46,6 @@ sequenceDiagrams:
   options: ''
 ---
 
-This a **GBIF API** beginners guide. 
-
 During the first-ever virtual GBIF 2021 Global Nodes Meeting, GBIFS hosted a "game show": a one-hour "[battle of Nodes vs. helpdesk](https://gnm2021.gbif.org/sessions/friday-nodes-vs-helpdesk)". The not-so-hidden goal was to demonstrate some of the lesser known functionalities of GBIF.org through a fun, interactive session.
 
 <iframe title="vimeo-player" src="https://player.vimeo.com/video/571521342" width=100% height="300" frameborder="0" allowfullscreen></iframe>
