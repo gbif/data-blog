@@ -6,10 +6,25 @@
     <description>Recent content in John Waller on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 04 Jun 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 16 Jun 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/author/john-waller/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>GBIF API beginners guide</title>
+      <link>/post/gbif-api-beginners-guide/</link>
+      <pubDate>Wed, 16 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/gbif-api-beginners-guide/</guid>
+      <description>&lt;p&gt;This a &lt;strong&gt;GBIF API&lt;/strong&gt; beginners guide.&lt;/p&gt;
+
+&lt;p&gt;The GBIF API technical documentation can be found &lt;a href=&#34;https://www.gbif.org/developer/summary&#34;&gt;here&lt;/a&gt;. This documentation is nice, but you might be a bit confusing if you have never used an API before. This guide is will walk you through how to begin using the GBIF API from a non-technical perspective.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;The goal of the GBIF API is to give access to GBIF databases is a safe way&lt;/strong&gt;, so that a user does not accidentally delete something or run a request that will crash GBIF servers or add some data they were not supposed to. The GBIF API also allows the web interface &lt;a href=&#34;https://www.gbif.org/&#34;&gt;GBIF.org&lt;/a&gt; to function. Almost all GBIF.org web pages are created using the API.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>GBIF and Apache-Spark on AWS tutorial</title>

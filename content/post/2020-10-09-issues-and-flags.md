@@ -349,7 +349,7 @@ Reasons include:<br>
 **Interpretation error** <small>(interpretation)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=INTERPRETATION_ERROR)</small><br>An error occurred during interpretation, leaving the record interpretation incomplete.<br><small>**Terms**: GBIF interpretation</small><br>
 
 **Occurrence status inferred from Basis Of Record**  <small>(interpretation)</small> <small>[example](https://www.gbif.org/occurrence/search?issue=OCCURRENCE_STATUS_INFERRED_FROM_BASIS_OF_RECORD)</small>
-<br>The occurrence status of preserved specimens (museum specimens) is assumed to be "present" (not absent). With other records occurrence status is usually inferred from from dwc:individualCount.<br><small>**Terms**: GBIF interpretation, dwc:individualCount</small><br>
+<br>The occurrence status of preserved specimens (museum specimens) is assumed to be "present" (not absent). With other records occurrence status is usually inferred from from dwc:individualCount.<br><small>**Terms**: GBIF interpretation,  dwc:individualCount</small><br>
 
 
 

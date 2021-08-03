@@ -6,15 +6,24 @@
     <description>Recent content in Tags on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 02 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 13 Jul 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title># data quality</title>
+      <link>/tags/#-data-quality/</link>
+      <pubDate>Tue, 13 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/#-data-quality/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>API</title>
       <link>/tags/api/</link>
-      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 01 Aug 2021 00:00:00 +0000</pubDate>
       
       <guid>/tags/api/</guid>
       <description></description>
@@ -104,7 +113,7 @@
     <item>
       <title>Citation</title>
       <link>/tags/citation/</link>
-      <pubDate>Fri, 04 Oct 2019 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 01 Aug 2021 00:00:00 +0000</pubDate>
       
       <guid>/tags/citation/</guid>
       <description></description>
@@ -113,7 +122,7 @@
     <item>
       <title>CiteTheDOI</title>
       <link>/tags/citethedoi/</link>
-      <pubDate>Thu, 20 May 2021 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 01 Aug 2021 00:00:00 +0000</pubDate>
       
       <guid>/tags/citethedoi/</guid>
       <description></description>
@@ -174,6 +183,15 @@
     </item>
     
     <item>
+      <title>Custom metrics</title>
+      <link>/tags/custom-metrics/</link>
+      <pubDate>Sun, 01 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/custom-metrics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>DNA</title>
       <link>/tags/dna/</link>
       <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
@@ -185,7 +203,7 @@
     <item>
       <title>DOI</title>
       <link>/tags/doi/</link>
-      <pubDate>Thu, 20 May 2021 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 01 Aug 2021 00:00:00 +0000</pubDate>
       
       <guid>/tags/doi/</guid>
       <description></description>
@@ -356,7 +374,7 @@
     <item>
       <title>GRSciColl</title>
       <link>/tags/grscicoll/</link>
-      <pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 01 Aug 2021 00:00:00 +0000</pubDate>
       
       <guid>/tags/grscicoll/</guid>
       <description></description>
@@ -365,7 +383,7 @@
     <item>
       <title>Gbif</title>
       <link>/tags/gbif/</link>
-      <pubDate>Fri, 21 Feb 2020 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 01 Aug 2021 00:00:00 +0000</pubDate>
       
       <guid>/tags/gbif/</guid>
       <description></description>
@@ -377,6 +395,24 @@
       <pubDate>Tue, 19 May 2020 00:00:00 +0000</pubDate>
       
       <guid>/tags/gbif-regions/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GitHub</title>
+      <link>/tags/github/</link>
+      <pubDate>Sun, 01 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/github/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Global Nodes Meeting 2021</title>
+      <link>/tags/global-nodes-meeting-2021/</link>
+      <pubDate>Sun, 01 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/global-nodes-meeting-2021/</guid>
       <description></description>
     </item>
     
@@ -458,6 +494,15 @@
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/image/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ingestion history</title>
+      <link>/tags/ingestion-history/</link>
+      <pubDate>Sun, 01 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/ingestion-history/</guid>
       <description></description>
     </item>
     
@@ -624,6 +669,24 @@
     </item>
     
     <item>
+      <title>Registry</title>
+      <link>/tags/registry/</link>
+      <pubDate>Sun, 01 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/registry/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Release notes</title>
+      <link>/tags/release-notes/</link>
+      <pubDate>Sun, 01 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/release-notes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Reverse jackknife</title>
       <link>/tags/reverse-jackknife/</link>
       <pubDate>Wed, 07 Oct 2020 00:00:00 +0000</pubDate>
@@ -638,6 +701,15 @@
       <pubDate>Fri, 04 Oct 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/rgbif/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rollup metrics</title>
+      <link>/tags/rollup-metrics/</link>
+      <pubDate>Sun, 01 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/rollup-metrics/</guid>
       <description></description>
     </item>
     
@@ -696,6 +768,15 @@
     </item>
     
     <item>
+      <title>Spatial filtering</title>
+      <link>/tags/spatial-filtering/</link>
+      <pubDate>Sun, 01 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/spatial-filtering/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Species api</title>
       <link>/tags/species-api/</link>
       <pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate>
@@ -707,7 +788,7 @@
     <item>
       <title>Species matching tool</title>
       <link>/tags/species-matching-tool/</link>
-      <pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 01 Aug 2021 00:00:00 +0000</pubDate>
       
       <guid>/tags/species-matching-tool/</guid>
       <description></description>
@@ -768,6 +849,15 @@
     </item>
     
     <item>
+      <title>Tools</title>
+      <link>/tags/tools/</link>
+      <pubDate>Sun, 01 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/tools/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Tree list</title>
       <link>/tags/tree-list/</link>
       <pubDate>Wed, 04 Sep 2019 00:00:00 +0000</pubDate>
@@ -782,6 +872,15 @@
       <pubDate>Fri, 04 Oct 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/use/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>User feedback</title>
+      <link>/tags/user-feedback/</link>
+      <pubDate>Sun, 01 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/user-feedback/</guid>
       <description></description>
     </item>
     

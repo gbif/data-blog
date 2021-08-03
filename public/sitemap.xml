@@ -10,6 +10,27 @@
   </url>
   
   <url>
+    <loc>/post/did-you-know/</loc>
+    <lastmod>2021-07-30T14:30:00+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/post/100-gbif-datasets-improved/</loc>
+    <lastmod>2021-07-13T14:50:25+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/post/gbif-api-beginners-guide/</loc>
+    <lastmod>2021-06-16T15:04:13+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>/post/aws-and-gbif/</loc>
     <lastmod>2021-04-22T16:00:05+02:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -290,8 +311,22 @@
   </url>
   
   <url>
+    <loc>/tags/#-data-quality/</loc>
+    <lastmod>2021-07-13T14:50:25+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/tags/api/</loc>
-    <lastmod>2020-02-20T00:00:00+00:00</lastmod>
+    <lastmod>2021-07-30T14:30:00+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/author/andrea-hahn/</loc>
+    <lastmod>2021-07-30T14:30:00+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -319,7 +354,7 @@
   
   <url>
     <loc>/author/</loc>
-    <lastmod>2020-01-15T09:37:51+01:00</lastmod>
+    <lastmod>2021-07-30T14:30:00+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -388,6 +423,13 @@
   </url>
   
   <url>
+    <loc>/tags/citation/</loc>
+    <lastmod>2021-07-30T14:30:00+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/categories/citation/</loc>
     <lastmod>2021-05-20T11:11:11+02:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -395,15 +437,8 @@
   </url>
   
   <url>
-    <loc>/tags/citation/</loc>
-    <lastmod>2018-09-24T12:15:04+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/tags/citethedoi/</loc>
-    <lastmod>2021-05-20T11:11:11+02:00</lastmod>
+    <lastmod>2021-07-30T14:30:00+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -451,6 +486,13 @@
   </url>
   
   <url>
+    <loc>/tags/custom-metrics/</loc>
+    <lastmod>2021-07-30T14:30:00+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/tags/dna/</loc>
     <lastmod>2019-04-23T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -459,7 +501,7 @@
   
   <url>
     <loc>/tags/doi/</loc>
-    <lastmod>2021-05-20T11:11:11+02:00</lastmod>
+    <lastmod>2021-07-30T14:30:00+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -584,15 +626,15 @@
   </url>
   
   <url>
-    <loc>/categories/gbif/</loc>
-    <lastmod>2021-04-22T16:00:05+02:00</lastmod>
+    <loc>/tags/gbif/</loc>
+    <lastmod>2021-03-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/gbif/</loc>
-    <lastmod>2021-03-12T00:00:00+00:00</lastmod>
+    <loc>/categories/gbif/</loc>
+    <lastmod>2021-07-30T14:30:00+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -612,6 +654,13 @@
   </url>
   
   <url>
+    <loc>/tags/grscicoll/</loc>
+    <lastmod>2021-07-30T14:30:00+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/categories/grscicoll/</loc>
     <lastmod>2021-03-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -619,15 +668,8 @@
   </url>
   
   <url>
-    <loc>/tags/grscicoll/</loc>
-    <lastmod>2021-03-12T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/tags/gbif/</loc>
-    <lastmod>2020-02-21T13:15:00+01:00</lastmod>
+    <lastmod>2021-07-30T14:30:00+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -635,6 +677,20 @@
   <url>
     <loc>/tags/gbif-regions/</loc>
     <lastmod>2020-05-11T09:04:43+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/github/</loc>
+    <lastmod>2021-07-30T14:30:00+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/global-nodes-meeting-2021/</loc>
+    <lastmod>2021-07-30T14:30:00+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -648,7 +704,7 @@
   
   <url>
     <loc>/categories/guest-post/</loc>
-    <lastmod>2020-02-21T13:15:00+01:00</lastmod>
+    <lastmod>2021-07-13T14:50:25+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -710,6 +766,13 @@
   </url>
   
   <url>
+    <loc>/tags/ingestion-history/</loc>
+    <lastmod>2021-07-30T14:30:00+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/tags/installation/</loc>
     <lastmod>2020-02-20T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -739,7 +802,7 @@
   
   <url>
     <loc>/author/john-waller/</loc>
-    <lastmod>2021-04-22T16:00:05+02:00</lastmod>
+    <lastmod>2021-06-16T15:04:13+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -851,7 +914,7 @@
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2021-04-22T16:00:05+02:00</lastmod>
+    <lastmod>2021-07-30T14:30:00+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -892,8 +955,22 @@
   </url>
   
   <url>
+    <loc>/tags/registry/</loc>
+    <lastmod>2021-07-30T14:30:00+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/categories/registry/</loc>
     <lastmod>2021-03-12T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/release-notes/</loc>
+    <lastmod>2021-07-30T14:30:00+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -908,6 +985,20 @@
   <url>
     <loc>/tags/rgbif/</loc>
     <lastmod>2018-09-24T12:15:04+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/author/robert-mesibov/</loc>
+    <lastmod>2021-07-13T14:50:25+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/rollup-metrics/</loc>
+    <lastmod>2021-07-30T14:30:00+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -955,6 +1046,13 @@
   </url>
   
   <url>
+    <loc>/tags/spatial-filtering/</loc>
+    <lastmod>2021-07-30T14:30:00+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/tags/species-api/</loc>
     <lastmod>2020-11-16T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -963,7 +1061,7 @@
   
   <url>
     <loc>/tags/species-matching-tool/</loc>
-    <lastmod>2020-11-16T00:00:00+00:00</lastmod>
+    <lastmod>2021-07-30T14:30:00+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -984,7 +1082,7 @@
   
   <url>
     <loc>/tags/</loc>
-    <lastmod>2020-02-20T00:00:00+00:00</lastmod>
+    <lastmod>2021-07-13T14:50:25+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -1011,6 +1109,13 @@
   </url>
   
   <url>
+    <loc>/tags/taxonomy/</loc>
+    <lastmod>2020-02-21T13:15:00+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/categories/taxonomy/</loc>
     <lastmod>2019-09-24T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -1018,8 +1123,8 @@
   </url>
   
   <url>
-    <loc>/tags/taxonomy/</loc>
-    <lastmod>2020-02-21T13:15:00+01:00</lastmod>
+    <loc>/tags/tools/</loc>
+    <lastmod>2021-07-30T14:30:00+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -1034,6 +1139,13 @@
   <url>
     <loc>/tags/use/</loc>
     <lastmod>2018-09-24T12:15:04+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/user-feedback/</loc>
+    <lastmod>2021-07-30T14:30:00+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

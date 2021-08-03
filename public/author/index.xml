@@ -6,10 +6,19 @@
     <description>Recent content in Author on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 15 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 01 Aug 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/author/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Andrea Hahn</title>
+      <link>/author/andrea-hahn/</link>
+      <pubDate>Sun, 01 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/author/andrea-hahn/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>André Heughebaert</title>
@@ -41,7 +50,7 @@
     <item>
       <title>John Waller</title>
       <link>/author/john-waller/</link>
-      <pubDate>Fri, 04 Jun 2021 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 16 Jun 2021 00:00:00 +0000</pubDate>
       
       <guid>/author/john-waller/</guid>
       <description></description>
@@ -80,6 +89,15 @@
       <pubDate>Fri, 21 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>/author/quentin-groom--deborah-paul/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Robert Mesibov</title>
+      <link>/author/robert-mesibov/</link>
+      <pubDate>Tue, 13 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/author/robert-mesibov/</guid>
       <description></description>
     </item>
     

@@ -6,10 +6,53 @@
     <description>Recent content in GBIF on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 04 Jun 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 01 Aug 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/gbif/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Did you know that...?</title>
+      <link>/post/did-you-know/</link>
+      <pubDate>Sun, 01 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/did-you-know/</guid>
+      <description>This a GBIF API beginners guide.
+During the first-ever virtual GBIF 2021 Global Nodes Meeting, GBIFS hosted a &amp;ldquo;game show&amp;rdquo;: a one-hour &amp;ldquo;battle of Nodes vs. helpdesk&amp;rdquo;. The not-so-hidden goal was to demonstrate some of the lesser known functionalities of GBIF.org through a fun, interactive session.
+ The following is a summary of the questions and answers from this session, plus some extras that did not manage to make it into the time frame of the event.</description>
+    </item>
+    
+    <item>
+      <title>100 GBIF datasets, improved</title>
+      <link>/post/100-gbif-datasets-improved/</link>
+      <pubDate>Tue, 13 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/100-gbif-datasets-improved/</guid>
+      <description>&lt;p&gt;Biodiversity data papers are a special kind of scientific publication. As explained by &lt;a href=&#34;https://doi.org/10.1186/1471-2105-12-S15-S2&#34;&gt;Chavan and Penev (2011)&lt;/a&gt;:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;A data paper is a journal publication whose primary purpose is to describe data, rather than to report a research investigation. As such, it contains facts about data, not hypotheses and arguments in support of those hypotheses based on data, as found in a conventional research article. Its purposes are threefold: to provide a citable journal publication that brings scholarly credit to data publishers; to describe the data in a structured human-readable form; and to bring the existence of the data to the attention of the scholarly community.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;In recent years many publishers of GBIF data have also published data papers describing their GBIF datasets. If the data paper manuscript was submitted to a Pensoft journal, the dataset was carefully audited (&lt;a href=&#34;https://doi.org/10.3897/biss.3.35019&#34;&gt;Penev et al. 2019&lt;/a&gt;). Manuscripts were not passed to reviewers until dataset errors in structure, format or compliance with Darwin Core recommendations were corrected.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>GBIF API beginners guide</title>
+      <link>/post/gbif-api-beginners-guide/</link>
+      <pubDate>Wed, 16 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/gbif-api-beginners-guide/</guid>
+      <description>&lt;p&gt;This a &lt;strong&gt;GBIF API&lt;/strong&gt; beginners guide.&lt;/p&gt;
+
+&lt;p&gt;The GBIF API technical documentation can be found &lt;a href=&#34;https://www.gbif.org/developer/summary&#34;&gt;here&lt;/a&gt;. This documentation is nice, but you might be a bit confusing if you have never used an API before. This guide is will walk you through how to begin using the GBIF API from a non-technical perspective.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;The goal of the GBIF API is to give access to GBIF databases is a safe way&lt;/strong&gt;, so that a user does not accidentally delete something or run a request that will crash GBIF servers or add some data they were not supposed to. The GBIF API also allows the web interface &lt;a href=&#34;https://www.gbif.org/&#34;&gt;GBIF.org&lt;/a&gt; to function. Almost all GBIF.org web pages are created using the API.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>GBIF and Apache-Spark on AWS tutorial</title>
