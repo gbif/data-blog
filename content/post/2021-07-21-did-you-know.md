@@ -291,6 +291,7 @@ Notes:<br>
 > "arachnofauna" with 291,402 records (status: end of June, 2021)<br>
 > <br>
 > How to get there, _step-by-step_:<br>
+>
 > 1. from the main menu at GBIF.org, go to Tools -> Scientific Collections. You now entered the Registry of Scientific Collections, [GRSciColl](https://www.gbif.org/grscicoll)<br>
 > 2. go to the tab "Institutions"<br>
 > 3. search for the institution name, and <br>
@@ -309,6 +310,7 @@ Notes:<br>
 > d) I can log a GitHub issue with suggestions (~)
 
 Notes:<br>
+
 * "[Metadata-only datasets](https://www.gbif.org/dataset/search?type=METADATA)" (poll option a) describe datasets (as opposed to physical collections) in GBIF.org, typically without adding any occurrence records - hence the name. Reasons vary why a dataset may be registered with just a description,  at least initially. Regardless, as datasets and physical collections do not necessarily match each other in scope, such dataset registrations will never be automatically translated into collection entries in GRSciColl. <br>
 In addition, independent from the above: unless you already have been authorized by the institution in question, you would not be able to register a dataset to GBIF.org under their name.<br>
 <br>
@@ -329,11 +331,13 @@ And if you are considering to work offline with a larger section of the catalogu
 > Generate a ["derived dataset" DOI](https://www.gbif.org/derived-dataset/register)<br>
 ><br>
 > requirements:<br>
+>
 > * a user account at GBIF.org<br>
 > * a list (csv file) of the source datasets (GBIF dataset keys) and respective record counts from your otherwise-produced data download<br>
 > * public deposition of the dataset you that wish to cite (e.g. in [Zenodo](https://zenodo.org/))<br>
 > *  a GBIF registration (DOI) for your derived dataset - you can generate this<br> [here](https://www.gbif.org/derived-dataset/register)<br>
 ><br>
+>
 > To learn more, check the "[Derived datasets](https://data-blog.gbif.org/post/derived-datasets/)" post in the GBIF data blog<br>
 
 <div></div>
@@ -362,12 +366,14 @@ Notes:<br>
 > Check the "[Global data trends](https://www.gbif.org/analytics/global)" page, and filter for "Africa". The panel "Records by year of occurrence" suggests that, for the African region, most records available through GBIF.org so far are on occurrences collected or observed in more recent years (from around 2007 onwards), but there is also stronger evidence from about 1986-92.<br>
 ><br>
 >How to get there, _step-by-step_:<br>
+>
 > 1. from the main menu at GBIF.org, go to Get Data >> Trends<br>
 > 2. the filter is set in the header section of the page - in this case, select "[Africa](https://www.gbif.org/analytics/region/AFRICA)"<br>
 > 3. scroll down the page to find the panel "Records by year of occurrence" (orange color, under "Time and seasonality"). To view the [graphic](https://analytics-files.gbif.org/gbifRegion/AFRICA/about/figure/occ_yearCollected.svg) in more detail, click on the image<br>
 > 4. this graphic shows counts of available occurrence records within GBIF.org by year of collection/observation since 1950. Four different snapshots of the data availability status within the GBIF index are combined here. The most recent one is found at the bottom; the ones above show the status of data mobilization (not: species occurrence) in a time sequence<br>
 > 5. to answer the question, you want to refer to the bottom graph, representing the most recent snapshot - presently, this shows the status of data mobilization at July 1, 2021<br>
 > 
+
 <div> </div>
 
 >**Poll:** What other metrics can you find on GBIF.org?<br>
@@ -397,10 +403,10 @@ Whether you found something that you did not know before, or could confirm that 
 <br>
 And, before closing:<br>
 Special thanks for their contributions to the live event go to:<br>
-<br>
+
 * Marie Grosjean, who defended the GBIFS helpdesk valiantly in the "battle" in spite of here game-rules inflicted handicap,<br>
 * Andrew Rodrigues, guiding the session with aplomb in his role as Official Battle Adjudicator and game show host,<br>
-<br>
+
 and, last not least:<b>
-<br>
+
 * the opposing team of combatants from our wonderful, engaged, and skillful community of GBIF Nodes! Thank you all for playing!
