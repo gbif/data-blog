@@ -1,7 +1,7 @@
 ---
 title: Did you know that...? - some of the lesser known functionalities around GBIF.org
 author: Andrea Hahn
-date: '2021-08-01'
+date: '2021-08-05'
 slug: did-you-know
 categories: 
   - GBIF
@@ -24,14 +24,14 @@ tags:
   - rollup metrics
   - Global Nodes Meeting 2021
 lastmod: '2021-07-30T14:30:00+02:00'
-draft: yes
+draft: no
 keywords: []
 description: ''
 comment: no
 toc: ''
 autoCollapseToc: no
 postMetaInFooter: no
-hiddenFromHomePage: yes
+hiddenFromHomePage: no
 contentCopyright: no
 reward: no
 mathjax: no
@@ -52,6 +52,8 @@ During the first-ever virtual GBIF 2021 Global Nodes Meeting, GBIFS hosted a "ga
 
 The following is a summary of the questions and answers from this session, plus some extras that did not manage to make it into the time frame of the event. The summary is following the layout and sequence of the interactive hour:
 
+<!--more-->
+
 - **Did you know...**: a main question or task to be solved by a sub-group of participants, retreating to a breakout room for a few minutes before presenting the solution to the plenary - or, by presenting an incorrect or no answer, giving Marie as "GBIF helpdesk" the chance to win the point 
 
 and
@@ -59,7 +61,6 @@ and
 - **Poll**: a loosely related multiple-choice poll for the remaining participants in the main session room.
 
 > In this summary, the poll questions are marked with (++)<br> for the most typical solution, (+)<br> for possible alternatives, (~) for technically correct, but non-recommended options, and (-)<br> for incorrect responses.
-
 
 ---
 
