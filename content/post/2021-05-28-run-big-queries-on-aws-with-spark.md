@@ -250,7 +250,6 @@ source_url = "https://zenodo.org/fake_upload",
 user="your_gbif_user_name",
 pwd="your_gbif_password"
 )
-
 ```
 
 The derived dataset with a **citable DOI** will appear on your [gbif user page](https://www.gbif.org/derived-dataset). 

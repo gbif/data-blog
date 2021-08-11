@@ -6,19 +6,10 @@
     <description>Recent content in Tags on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 13 Jul 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 05 Aug 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title># data quality</title>
-      <link>/tags/#-data-quality/</link>
-      <pubDate>Tue, 13 Jul 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/#-data-quality/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>API</title>
@@ -230,7 +221,7 @@
     <item>
       <title>Data quality</title>
       <link>/tags/data-quality/</link>
-      <pubDate>Tue, 27 Oct 2020 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 13 Jul 2021 00:00:00 +0000</pubDate>
       
       <guid>/tags/data-quality/</guid>
       <description></description>

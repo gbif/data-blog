@@ -7,7 +7,7 @@ categories:
   - GBIF
   - Guest Post
 tags:
-  - '# data quality'
+  - data quality
 lastmod: '2021-07-13T14:50:25+02:00'
 draft: yes
 keywords: []
