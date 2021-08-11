@@ -231,7 +231,7 @@ format("csv").
 save("s3a://gbifbucket/citation.csv")
 ```
 
-You can also now use your **citation file** with the **development version** of `rgbif`. to create a derived dataset and a citable DOI, **although you would need to upload your exported dataset to Zenodo (or something similar) first**. 
+You can also now use your **citation file** with the **development version** of `rgbif` to create a derived dataset and a citable DOI, **although you would need to upload your exported dataset to Zenodo (or something similar) first**. 
 
 
 ```r

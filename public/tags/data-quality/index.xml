@@ -6,27 +6,10 @@
     <description>Recent content in Data quality on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 13 Jul 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 27 Oct 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/data-quality/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>100 GBIF datasets, improved</title>
-      <link>/post/100-gbif-datasets-improved/</link>
-      <pubDate>Tue, 13 Jul 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/post/100-gbif-datasets-improved/</guid>
-      <description>&lt;p&gt;Biodiversity data papers are a special kind of scientific publication. As explained by &lt;a href=&#34;https://doi.org/10.1186/1471-2105-12-S15-S2&#34;&gt;Chavan and Penev (2011)&lt;/a&gt;:&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;A data paper is a journal publication whose primary purpose is to describe data, rather than to report a research investigation. As such, it contains facts about data, not hypotheses and arguments in support of those hypotheses based on data, as found in a conventional research article. Its purposes are threefold: to provide a citable journal publication that brings scholarly credit to data publishers; to describe the data in a structured human-readable form; and to bring the existence of the data to the attention of the scholarly community.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;In recent years many publishers of GBIF data have also published data papers describing their GBIF datasets. If the data paper manuscript was submitted to a Pensoft journal, the dataset was carefully audited (&lt;a href=&#34;https://doi.org/10.3897/biss.3.35019&#34;&gt;Penev et al. 2019&lt;/a&gt;). Manuscripts were not passed to reviewers until dataset errors in structure, format or compliance with Darwin Core recommendations were corrected.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
     
     <item>
       <title>GBIF Issues &amp; Flags</title>

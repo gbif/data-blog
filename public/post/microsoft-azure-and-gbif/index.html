@@ -89,7 +89,7 @@ It is hosted by the Microsoft AI for Earth program, which hosts geospatial datas
 
 <meta itemprop="datePublished" content="2021-05-19T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2021-05-19T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1069">
+<meta itemprop="wordCount" content="1174">
 
 
 
@@ -471,8 +471,29 @@ mode(&quot;overwrite&quot;).
 option(&quot;header&quot;, &quot;true&quot;).
 option(&quot;sep&quot;, &quot;\t&quot;).
 format(&quot;csv&quot;).
-save(&quot;wasbs://container1@gbifblobstorage.blob.core.windows.net/citation_df.csv&quot;)
+save(&quot;wasbs://container1@gbifblobstorage.blob.core.windows.net/citation.csv&quot;)
 </code></pre>
+
+<p>You can also now use your <strong>citation file</strong> with the <strong>development version</strong> of <code>rgbif</code> to create a derived dataset and a citable DOI, <strong>although you would need to upload your exported dataset to Zenodo (or something similar) first</strong>.</p>
+
+<pre><code class="language-r"># pak::pkg_install(&quot;ropensci/rgbif&quot;) # requires development version of rgbif
+
+library(rgbif)
+
+citation_data = readr::read_tsv(&quot;citation.csv&quot;)
+
+# use derived_dataset_prep() if you just want to test
+derived_dataset(
+citation_data = citation_data,
+title = &quot;Research dataset derived from GBIF snapshot on AWS&quot;,
+description = &quot;I used AWS and apache-spark to filter GBIF snapshot 2021-06-01.&quot;,
+source_url = &quot;https://zenodo.org/fake_upload&quot;,
+user=&quot;your_gbif_user_name&quot;,
+pwd=&quot;your_gbif_password&quot;
+)
+</code></pre>
+
+<p>The derived dataset with a <strong>citable DOI</strong> will appear on your <a href="https://www.gbif.org/derived-dataset">gbif user page</a>.</p>
 
 <p>Hopefully you have everything that you need to start using GBIF mediated occurrence data on Microsoft Azure. Please leave a comment if something does not work for you.</p>
     </div>
