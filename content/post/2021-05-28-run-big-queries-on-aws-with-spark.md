@@ -228,8 +228,32 @@ mode("overwrite").
 option("header", "true").
 option("sep", "\t").
 format("csv").
-save("s3a://gbifbucket/citation_df.csv")
+save("s3a://gbifbucket/citation.csv")
 ```
+
+You can also now use your **citation file** with the **development version** of `rgbif`. to create a derived dataset and a citable DOI, **although you would need to upload your exported dataset to Zenodo (or something similar) first**. 
+
+
+```r
+# pak::pkg_install("ropensci/rgbif") # requires development version of rgbif
+
+library(rgbif)
+
+citation_data = readr::read_tsv("citation.csv")
+
+# use derived_dataset_prep() if you just want to test
+derived_dataset(
+citation_data = citation_data,
+title = "Research dataset derived from GBIF snapshot on AWS",
+description = "I used AWS and apache-spark to filter GBIF snapshot 2021-06-01.",
+source_url = "https://zenodo.org/fake_upload",
+user="your_gbif_user_name",
+pwd="your_gbif_password"
+)
+
+```
+
+The derived dataset with a **citable DOI** will appear on your [gbif user page](https://www.gbif.org/derived-dataset). 
 
 Hopefully you have everything that you need to start using GBIF mediated occurrence data on AWS. Please leave a comment if something does not work for you. 
 
