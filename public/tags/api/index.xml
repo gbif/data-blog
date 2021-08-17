@@ -34,9 +34,7 @@
       <guid>/post/gbif-api-beginners-guide/</guid>
       <description>&lt;p&gt;This a &lt;strong&gt;GBIF API&lt;/strong&gt; beginners guide.&lt;/p&gt;
 
-&lt;p&gt;The GBIF API technical documentation can be found &lt;a href=&#34;https://www.gbif.org/developer/summary&#34;&gt;here&lt;/a&gt;. This documentation is nice, but you might be a bit confusing if you have never used an API before. This guide is will walk you through how to begin using the GBIF API from a non-technical perspective.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;The goal of the GBIF API is to give access to GBIF databases is a safe way&lt;/strong&gt;, so that a user does not accidentally delete something or run a request that will crash GBIF servers or add some data they were not supposed to. The GBIF API also allows the web interface &lt;a href=&#34;https://www.gbif.org/&#34;&gt;GBIF.org&lt;/a&gt; to function. Almost all GBIF.org web pages are created using the API.&lt;/p&gt;
+&lt;p&gt;The &lt;a href=&#34;https://www.gbif.org/developer/summary&#34;&gt;GBIF API technical documentation&lt;/a&gt; is nice, but it might be a bit confusing if you have never used an API before. The goal of the GBIF API is to give users access to GBIF databases in a &lt;strong&gt;safe way&lt;/strong&gt;, so that someone does not accidentally delete something or run a request that will crash GBIF servers. The GBIF API also allows &lt;a href=&#34;https://www.gbif.org/&#34;&gt;GBIF.org&lt;/a&gt; and &lt;a href=&#34;https://github.com/ropensci/rgbif&#34;&gt;rgbif&lt;/a&gt; to function.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

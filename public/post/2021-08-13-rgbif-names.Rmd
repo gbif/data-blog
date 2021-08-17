@@ -1,0 +1,206 @@
+---
+title: Working with names in rgbif
+author: John Waller
+date: '2021-08-13'
+slug: rgbif-names
+categories:
+  - GBIF
+tags:
+  - rgbif
+lastmod: '2021-08-13T15:26:29+02:00'
+draft: yes
+keywords: []
+description: ''
+authors: ''
+comment: no
+toc: ''
+autoCollapseToc: no
+postMetaInFooter: no
+hiddenFromHomePage: yes
+contentCopyright: no
+reward: no
+mathjax: no
+mathjaxEnableSingleDollar: no
+mathjaxEnableAutoNumber: no
+hideHeaderAndFooter: no
+flowchartDiagrams:
+  enable: no
+  options: ''
+sequenceDiagrams:
+  enable: no
+  options: ''
+---
+
+Matching names to the GBIF backbone is one of the most important steps in any GBIF workflow. 
+
+There are several functions within rgbif that deal with scientific names, so it can be difficult to know what function to use when trying to match names to the GBIF backbone. 
+
+There are several names 
+
+* `name_backbone()`
+* `name_usage()`
+* `name_suggest()`
+* `name_lookup()`
+
+**If you just want to match your names to the  GBIF backbone** (get taxonkeys), I would use `rgbif::name_backbone()`.
+
+```
+library(rgbif)
+
+name_backbone(name="Puma concolor (Linnaeus, 1771)")
+
+```
+
+Usually you are not trying to match just one name, so here is a more realistic example of a `data.frame` of names and some post-processing filtering. 
+
+```r
+library(rgbif)
+library(purrr)
+
+names = c(
+"Cirsium arvense (L.) Scop.", # a plant
+"Calopteryx splendens (Harris, 1780)", # an insect
+"Puma concolor (Linnaeus, 1771)", # a big cat
+"Ceylonosticta alwisi (Priyadarshana & Wijewardhane, 2016)", # newly discovered insect 
+"Puma concuolor (Linnaeus, 1771)", # a mis-spelled big cat
+"Fake species (John Waller 2021)" # a fake species  
+)
+
+names %>%
+map(~ name_backbone(name=.x)) %>% 
+bind_rows()
+
+```
+
+Name matching is going to always work better if you have an author string. Since scientific names are not great identifiers, having an author string greatly increases the chances of getting an unambiguous match. 
+
+You might have noticed some funny names in the previous example, so you will probably want to do some filtering 
+
+<!-- name_usage(name='Calopteryx splendens')$data %>% -->
+<!-- glimpse() -->
+
+
+When starting to work with rgbif and GBIF it is sometimes hard to know where to start. 
+
+In this guide I will be going through. 
+
+In my opinion there are around 5 steps to any GBIF-realted research project. 
+
+1. match your names to the GBIF backbone
+2. download your GBIF subset
+3. clean your download
+4. run your model 
+5. cite your download 
+
+All of these steps can be done in rgbif. 
+
+<!--more-->
+
+### Match names to the GBIF backbone
+
+This is often the most difficult task when starting to work in GBIF. 
+
+If you are working with one well-known group, this task can be easier. By just looking up the species in the web portal. 
+
+If you have a longer list of names, then it usually makes sense to automate the name matching. 
+
+Name matching means that you will get back a GBIF taxonkey (an integer), which represents the taxon (species,genus,family ... ) of the text you are looking for. If you are curious how the GBIF backbone is working, check this article.  
+
+
+
+```r
+library(rgbif)
+
+
+```
+
+Setting up your r environment for working with GBIF. 
+
+```r
+library(dplyr)
+library(readr)
+library(rgbif)
+library(taxize)
+library(CoordinateCleaner)
+
+# 4 Odonata scientific names
+name_list = 
+c(
+"Cordulegaster charpentieri Kolenati, 1846",
+"Cordulegaster talaria Tennessen, 2004",
+"Calopteryx splendens Harris, 1780",
+"Epiophlebia laidlawi Tillyard, 1921"
+)
+
+# match names to GBIF taxonkeys
+gbif_taxon_keys = name_list %>% 
+taxize::get_gbifid_(method="backbone") %>% # get the gbif taxonkey
+bind_rows() %>%
+filter(matchtype == "EXACT" & status == "ACCEPTED") %>%
+filter(order == "Odonata") %>% # remove anything that might have matched to a non-dragonfly
+pull(usagekey) # get the GBIF taxonkeys
+
+user="jwaller" # your GBIF user name
+pwd="" # your GBIF password 
+email="jwaller@gbif.org" # your email
+
+gbif_download_key = occ_download(
+type="and",
+pred_in("taxonKey", gbif_taxon_keys),
+pred("hasGeospatialIssue", FALSE),
+pred("hasCoordinate", TRUE),
+format = "SIMPLE_CSV",
+user=user,pwd=pwd,email=email
+)
+
+# <<gbif download>>
+  # Username: jwaller
+  # E-mail: jwaller@gbif.org
+  # Format: SIMPLE_CSV
+  # Download key: 0253330-200613084148143
+
+
+## Wait 10-15 min
+## Need to wait for download to finish to run next part
+
+gbif_download_key = "0253330-200613084148143"
+path_to_download = "C:/Users/ftw712/Desktop/"
+
+# download the file to your machine
+rgbif::occ_download_get(gbif_download_key, path = path_to_download, overwrite = FALSE)
+# Sometimes easier to just get download from GBIF user profile
+# https://www.gbif.org/user/download
+
+# can do this "manually" just want script to run without stopping
+zip_file = paste0(path_to_download,gbif_download_key,".zip")
+extract_dir = paste0(path_to_download,gbif_download_key)
+unzip(zip_file,exdir=extract_dir)
+
+# read in download. Recommend data.table::fread() to avoid parsing errors sometimes that happen sometimes with other csv readers
+gbif_download = data.table::fread(paste0(path_to_download,gbif_download_key,"/",gbif_download_key,".csv")) %>%
+glimpse()
+
+# Post processing GBIF download 
+gbif_clean_data = gbif_download %>%
+setNames(tolower(names(.))) %>% # set lowercase column names to work with CoordinateCleaner
+filter(occurrencestatus  == "PRESENT") %>%
+filter(!is.na(decimallongitude)) %>% 
+filter(!is.na(decimallatitude)) %>% 
+filter(!basisofrecord %in% c("FOSSIL_SPECIMEN","LIVING_SPECIMEN")) %>%
+filter(!establishmentmeans %in% c("MANAGED", "INTRODUCED", "INVASIVE", "NATURALISED")) %>%
+filter(year >= 1900) %>% 
+filter(coordinateprecision > 0.01 | is.na(coordinateprecision)) %>% 
+filter(coordinateuncertaintyinmeters < 10000 | is.na(coordinateuncertaintyinmeters)) %>%
+filter(!coordinateuncertaintyinmeters %in% c(301,3036,999,9999)) %>% 
+filter(!decimallatitude == 0 | !decimallongitude == 0) %>%
+cc_cen(buffer = 2000) %>% # remove country centroids within 2km 
+cc_cap(buffer = 2000) %>% # remove capitals centroids within 2km
+cc_inst(buffer = 2000) %>% # remove zoo and herbaria within 2km 
+cc_sea() %>% # remove from ocean 
+distinct(decimallongitude,decimallatitude,specieskey,datasetkey, .keep_all = TRUE) %>% # this removes a lot of records! 
+glimpse() # look at results of pipeline
+
+# 168,593 # before cleaning
+#  54,938 # after
+```
+

@@ -335,7 +335,7 @@ citation_data = readr::read_tsv("citation.csv")
 # use derived_dataset_prep() if you just want to test
 derived_dataset(
 citation_data = citation_data,
-title = "Research dataset derived from GBIF snapshot on MS Azure",
+title = "Research dataset derived from GBIF snapshot on MS Azure.",
 description = "I used Azure and apache-spark to filter GBIF snapshot 2021-04-13.",
 source_url = "https://zenodo.org/fake_upload",
 user="your_gbif_user_name",

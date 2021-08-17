@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Working with scientific names in rgbif - GBIF Data Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="John Waller" />
+  <meta name="description" content="When starting to work with rgbif and GBIF it is sometimes hard to know where to start.
+In this guide I will be going through.
+In my opinion there are around 5 steps to any GBIF-realted research project.
+match your names to the GBIF backbonedownload your GBIF subsetclean your downloadrun your modelcite your downloadAll of these steps can be done in rgbif.
+Match names to the GBIF backboneThis is often the most difficult task when starting to work in GBIF." />
+
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.42" />
+
+
+<link rel="canonical" href="/post/rgbif-names/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.2.0" rel="stylesheet">
+
+
+
+
+<link rel="stylesheet" href="/css//custom.css">
+
+
+<meta property="og:title" content="Working with scientific names in rgbif" />
+<meta property="og:description" content="When starting to work with rgbif and GBIF it is sometimes hard to know where to start.
+In this guide I will be going through.
+In my opinion there are around 5 steps to any GBIF-realted research project.
+match your names to the GBIF backbonedownload your GBIF subsetclean your downloadrun your modelcite your downloadAll of these steps can be done in rgbif.
+Match names to the GBIF backboneThis is often the most difficult task when starting to work in GBIF." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/rgbif-names/" />
+
+
+
+<meta property="article:published_time" content="2021-08-13T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2021-08-13T15:26:29&#43;02:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Working with scientific names in rgbif">
+<meta itemprop="description" content="When starting to work with rgbif and GBIF it is sometimes hard to know where to start.
+In this guide I will be going through.
+In my opinion there are around 5 steps to any GBIF-realted research project.
+match your names to the GBIF backbonedownload your GBIF subsetclean your downloadrun your modelcite your downloadAll of these steps can be done in rgbif.
+Match names to the GBIF backboneThis is often the most difficult task when starting to work in GBIF.">
+
+
+<meta itemprop="datePublished" content="2021-08-13T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2021-08-13T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="523">
+
+
+
+<meta itemprop="keywords" content="rgbif," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Working with scientific names in rgbif"/>
+<meta name="twitter:description" content="When starting to work with rgbif and GBIF it is sometimes hard to know where to start.
+In this guide I will be going through.
+In my opinion there are around 5 steps to any GBIF-realted research project.
+match your names to the GBIF backbonedownload your GBIF subsetclean your downloadrun your modelcite your downloadAll of these steps can be done in rgbif.
+Match names to the GBIF backboneThis is often the most difficult task when starting to work in GBIF."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">GBIF Data Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/categories/gbif/">
+        <li class="mobile-menu-item">posts</li>
+      </a><a href="https://discourse.gbif.org/c/data-blog">
+        <li class="mobile-menu-item">community-forum</li>
+      </a><a href="https://www.gbif.org/">
+        <li class="mobile-menu-item">gbif.org</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">about</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">
+	<img src= "/logo.png" alt="GBIF-analytics-blog" style ="width:20%;">
+  </a>
+  
+	
+  
+  
+</div>
+
+<nav class="site-navbar">
+
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/categories/gbif/">posts</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://discourse.gbif.org/c/data-blog">community-forum</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://www.gbif.org/">gbif.org</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">about</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+	
+    <header class="post-header">
+      <h1 class="post-title">Working with scientific names in rgbif</h1>
+	  
+	  
+      <div class="post-author">John Waller</div>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-08-13 </span>
+        <div class="post-category">
+            
+              <a href="/categories/gbif/"> GBIF </a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    
+    
+
+    
+    <div class="post-content">
+      <script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<p>When starting to work with rgbif and GBIF it is sometimes hard to know where to start.</p>
+<p>In this guide I will be going through.</p>
+<p>In my opinion there are around 5 steps to any GBIF-realted research project.</p>
+<ol style="list-style-type: decimal">
+<li>match your names to the GBIF backbone</li>
+<li>download your GBIF subset</li>
+<li>clean your download</li>
+<li>run your model</li>
+<li>cite your download</li>
+</ol>
+<p>All of these steps can be done in rgbif.</p>
+<!--more-->
+<div id="match-names-to-the-gbif-backbone" class="section level3">
+<h3>Match names to the GBIF backbone</h3>
+<p>This is often the most difficult task when starting to work in GBIF.</p>
+<p>If you are working with one well-known group, this task can be easier. By just looking up the species in the web portal.</p>
+<p>If you have a longer list of names, then it usually makes sense to automate the name matching.</p>
+<p>Name matching means that you will get back a GBIF taxonkey (an integer), which represents the taxon (species,genus,family … ) of the text you are looking for. If you are curious how the GBIF backbone is working, check this article.</p>
+<pre class="r"><code>library(rgbif)
+
+</code></pre>
+<p>Setting up your r environment for working with GBIF.</p>
+<pre class="r"><code>library(dplyr)
+library(readr)
+library(rgbif)
+library(taxize)
+library(CoordinateCleaner)
+
+# 4 Odonata scientific names
+name_list = 
+c(
+&quot;Cordulegaster charpentieri Kolenati, 1846&quot;,
+&quot;Cordulegaster talaria Tennessen, 2004&quot;,
+&quot;Calopteryx splendens Harris, 1780&quot;,
+&quot;Epiophlebia laidlawi Tillyard, 1921&quot;
+)
+
+# match names to GBIF taxonkeys
+gbif_taxon_keys = name_list %&gt;% 
+taxize::get_gbifid_(method=&quot;backbone&quot;) %&gt;% # get the gbif taxonkey
+bind_rows() %&gt;%
+filter(matchtype == &quot;EXACT&quot; &amp; status == &quot;ACCEPTED&quot;) %&gt;%
+filter(order == &quot;Odonata&quot;) %&gt;% # remove anything that might have matched to a non-dragonfly
+pull(usagekey) # get the GBIF taxonkeys
+
+user=&quot;jwaller&quot; # your GBIF user name
+pwd=&quot;&quot; # your GBIF password 
+email=&quot;jwaller@gbif.org&quot; # your email
+
+gbif_download_key = occ_download(
+type=&quot;and&quot;,
+pred_in(&quot;taxonKey&quot;, gbif_taxon_keys),
+pred(&quot;hasGeospatialIssue&quot;, FALSE),
+pred(&quot;hasCoordinate&quot;, TRUE),
+format = &quot;SIMPLE_CSV&quot;,
+user=user,pwd=pwd,email=email
+)
+
+# &lt;&lt;gbif download&gt;&gt;
+  # Username: jwaller
+  # E-mail: jwaller@gbif.org
+  # Format: SIMPLE_CSV
+  # Download key: 0253330-200613084148143
+
+
+## Wait 10-15 min
+## Need to wait for download to finish to run next part
+
+gbif_download_key = &quot;0253330-200613084148143&quot;
+path_to_download = &quot;C:/Users/ftw712/Desktop/&quot;
+
+# download the file to your machine
+rgbif::occ_download_get(gbif_download_key, path = path_to_download, overwrite = FALSE)
+# Sometimes easier to just get download from GBIF user profile
+# https://www.gbif.org/user/download
+
+# can do this &quot;manually&quot; just want script to run without stopping
+zip_file = paste0(path_to_download,gbif_download_key,&quot;.zip&quot;)
+extract_dir = paste0(path_to_download,gbif_download_key)
+unzip(zip_file,exdir=extract_dir)
+
+# read in download. Recommend data.table::fread() to avoid parsing errors sometimes that happen sometimes with other csv readers
+gbif_download = data.table::fread(paste0(path_to_download,gbif_download_key,&quot;/&quot;,gbif_download_key,&quot;.csv&quot;)) %&gt;%
+glimpse()
+
+# Post processing GBIF download 
+gbif_clean_data = gbif_download %&gt;%
+setNames(tolower(names(.))) %&gt;% # set lowercase column names to work with CoordinateCleaner
+filter(occurrencestatus  == &quot;PRESENT&quot;) %&gt;%
+filter(!is.na(decimallongitude)) %&gt;% 
+filter(!is.na(decimallatitude)) %&gt;% 
+filter(!basisofrecord %in% c(&quot;FOSSIL_SPECIMEN&quot;,&quot;LIVING_SPECIMEN&quot;)) %&gt;%
+filter(!establishmentmeans %in% c(&quot;MANAGED&quot;, &quot;INTRODUCED&quot;, &quot;INVASIVE&quot;, &quot;NATURALISED&quot;)) %&gt;%
+filter(year &gt;= 1900) %&gt;% 
+filter(coordinateprecision &gt; 0.01 | is.na(coordinateprecision)) %&gt;% 
+filter(coordinateuncertaintyinmeters &lt; 10000 | is.na(coordinateuncertaintyinmeters)) %&gt;%
+filter(!coordinateuncertaintyinmeters %in% c(301,3036,999,9999)) %&gt;% 
+filter(!decimallatitude == 0 | !decimallongitude == 0) %&gt;%
+cc_cen(buffer = 2000) %&gt;% # remove country centroids within 2km 
+cc_cap(buffer = 2000) %&gt;% # remove capitals centroids within 2km
+cc_inst(buffer = 2000) %&gt;% # remove zoo and herbaria within 2km 
+cc_sea() %&gt;% # remove from ocean 
+distinct(decimallongitude,decimallatitude,specieskey,datasetkey, .keep_all = TRUE) %&gt;% # this removes a lot of records! 
+glimpse() # look at results of pipeline
+
+# 168,593 # before cleaning
+#  54,938 # after</code></pre>
+</div>
+
+    </div>
+
+    
+    
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/rgbif/">rgbif</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/rgbif-names/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Working with names in rgbif</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/did-you-know/">
+            <span class="next-text nav-default">Did you know that...? - some of the lesser known functionalities around GBIF.org</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      
+
+
+ 
+<div>
+<h3>This post represents the ideas of the author.</h3>
+</div>
+<div id='discourse-comments'></div>
+<script type="text/javascript">
+  DiscourseEmbed = { discourseUrl: 'https://discourse.gbif.org/',
+                     discourseEmbedUrl: 'https://data-blog.gbif.org\/post\/rgbif-names\/' };
+
+  (function() {
+    var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+    d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+  })();
+</script>  
+
+
+<div class = "copyright">
+	<a class="theme-link" href="https://www.gbif.org/what-is-gbif">What is GBIF?</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://www.gbif.org/developer/summary">API</a> 
+	<span class="division">|</span>
+	<a class="theme-link" href="https://www.gbif.org/faq">FAQ</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://discourse.gbif.org/">Community-Forum</a>
+</div>
+
+<div class = "copyright"> 
+	<span class="theme-info">GBIF Secretariat</span> 
+	<span class="theme-info">Universitetsparken 15</span> 
+	<span class="theme-info">DK-2100 Copenhagen Ø</span> 
+	<span class="theme-info" >Denmark</span>
+</div>
+
+<div class="copyright">
+	<span class="power-by">
+	Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+	</span>
+	<span class="division">|</span>
+	<span class="theme-info">
+	Theme - 
+	<a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+	</span>
+
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+<script type="text/javascript" src="/dist/even.min.js?v=3.2.0"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
