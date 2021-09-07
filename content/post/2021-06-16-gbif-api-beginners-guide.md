@@ -1,14 +1,14 @@
 ---
 title: GBIF API beginners guide
 author: John Waller
-date: '2021-06-16'
+date: '2021-09-07'
 slug: gbif-api-beginners-guide
 categories:
   - GBIF
 tags:
   - API
 lastmod: '2021-06-16T15:04:13+02:00'
-draft: yes
+draft: no
 keywords: []
 description: ''
 authors: ''
@@ -16,7 +16,7 @@ comment: no
 toc: ''
 autoCollapseToc: no
 postMetaInFooter: no
-hiddenFromHomePage: yes
+hiddenFromHomePage: no
 contentCopyright: no
 reward: no
 mathjax: no
@@ -33,11 +33,13 @@ sequenceDiagrams:
 
 This a **GBIF API** beginners guide. 
 
-The [GBIF API technical documentation](https://www.gbif.org/developer/summary) is nice, but it might be a bit confusing if you have never used an API before. The goal of the GBIF API is to give users access to GBIF databases in a **safe way**, so that someone does not accidentally delete something or run a request that will crash GBIF servers. The GBIF API also allows [GBIF.org](https://www.gbif.org/) and [rgbif](https://github.com/ropensci/rgbif) to function. 
+The [GBIF API technical documentation](https://www.gbif.org/developer/summary) might be a bit confusing if you have never used an API before. The goal of this guide is to introduce the GBIF API to a semi-technical user who may have never used an API before.  
+
+The purpose of the GBIF API is to give users access to GBIF databases in a **safe way**. The GBIF API also allows [GBIF.org](https://www.gbif.org/) and [rgbif](https://github.com/ropensci/rgbif) to function. 
 
 <!--more-->
 
-You do not need any special software or skills to access the GBIF API. You simply have to visit a URL...
+You do not need any special software or skills to access the GBIF API. You simply have to visit a URL.
 
 <center><big>[https://api.gbif.org/v1/species/match?name=Passer domesticus](https://api.gbif.org/v1/species/match?name=Passer%20domesticus)</big></center>
 
@@ -72,6 +74,8 @@ You should see a **wall of text** known as [JSON](https://www.w3schools.com/js/j
 
 <small>You can use a [chrome extension](https://chrome.google.com/webstore/detail/json-viewer/gbmdgpbipfallnflgajpaliibnhdgobh) to make the JSON look more readable. </small>
 
+This link just performed a **match query** of all species records with "Passer domesticus" (House sparrow) in the GBIF backbone. This is useful for getting GBIF taxonkeys ("usageKey" here). See [this post](https://discourse.gbif.org/t/understanding-gbif-taxonomic-keys-usagekey-taxonkey-specieskey/3045) explaining the difference between different GBIF taxonomic keys.     
+
 JSON can become very complex and nested. You might be thinking that a **table would be more convenient**. I will show you some strategies for converting to a table later on. Highly nested data is a **common headache of working with JSON**.  
 
 ## API Examples
@@ -88,13 +92,14 @@ margin-bottom:2px
 </style>
 
 The **basic pattern** of an API call: <p>
-https:// <span style="color:#73B273"><b>base url</b></span> / <span style="color:#CD915E"><b>api</b></span> / <span style="color:#231F20"><b>parameter</b></span> ? <span style="color:#231F20"><b>parameter</b></span> = <span style="color:#d62d20"><b>query</b></span>
+https:// <span style="color:#73B273"><b>base url</b></span> / <span style="color:#CD915E"><b>api</b></span> / <span style="color:#3498DB"><b>function</b></span> ? <span style="color:#231F20"><b>parameter</b></span> = <span style="color:#d62d20"><b>query</b></span>
 </p>
 
 
 <ul>
   <li><span style="color:#73B273"><b>base url</b></span> : this will always be <b>https://api.gbif.org/v1/</b></li>
     <li><span style="color:#CD915E"><b>api</b></span> : this is the GBIF API group/namespace you want to query. GBIF has a few of these: species, download, occurrence, dataset ...</li>
+  <li><span style="color:#3498DB"><b>function</b></span> : the functionality you want to use.</li>
   <li><span style="color:#231F20"><b>parameter</b></span> : the parameters for your API call. A <b>?</b> is sometimes used.  </li>
   <li><span style="color:#d62d20"><b>query</b></span> : the query you fill in. Sometimes will be free text and sometimes will be a predefined argument.  </li>
 </ul>  
@@ -102,12 +107,12 @@ https:// <span style="color:#73B273"><b>base url</b></span> / <span style="color
 The [GBIF species API](https://www.gbif.org/developer/species) is one of the more useful APIs to know. Often the best way to learn how an API works is by looking at examples. The [name matcher](https://www.gbif.org/tools/species-lookup) is one of the more useful GBIF API endpoints. 
 
 <div class="w3-panel w3-card"><p>
-https://<b><span style="color:#73B273">api.gbif.org/v1</span></b>/<span style="color:#CD915E"><b>species</b></span>/<span style="color:#231F20"><b>match</b></span>?<span style="color:#231F20"><b>name</b></span>=<span style="color:#d62d20"><b>Passer domesticus</b></span><br>
-<small><a href="https://api.gbif.org/v1/species/match?name=Passer domesticus">https://api.gbif.org/v1/species/match?name=Passer domesticus</a></small> <br> If you look at the JSON result, the part that is most interesting is "usageKey": 5231190, which is the GBIF taxonkey for house sparrows.<br>
+https://<b><span style="color:#73B273">api.gbif.org/v1</span></b>/<span style="color:#CD915E"><b>species</b></span>/<span style="color:#3498DB"><b>match</b></span>?<span style="color:#231F20"><b>name</b></span>=<span style="color:#d62d20"><b>Passer domesticus</b></span><br>
+<small><a href="https://api.gbif.org/v1/species/match?name=Passer domesticus">https://api.gbif.org/v1/species/match?name=Passer domesticus</a></small> <br> The most interesting part of the JSON result is the "usageKey": 5231190, which is the GBIF taxonkey for house sparrows. A taxonkey is a GBIF internal id for a species or taxnomic group. These are useful in other parts of the API.<br>
 </p></div>
 
 <div class="w3-panel w3-card"><p>
-https://<b><span style="color:#73B273">api.gbif.org/v1</span></b>/<span style="color:#CD915E"><b>species</b></span>/<span style="color:#231F20"><b>match</b></span>?<span style="color:#231F20"><b>name</b></span>=<span style="color:#d62d20"><b>Tracheophyta</b></span><br>
+https://<b><span style="color:#73B273">api.gbif.org/v1</span></b>/<span style="color:#CD915E"><b>species</b></span>/<span style="color:#3498DB"><b>match</b></span>?<span style="color:#231F20"><b>name</b></span>=<span style="color:#d62d20"><b>Tracheophyta</b></span><br>
 <small><a href="https://api.gbif.org/v1/species/match?name=Tracheophyta">https://api.gbif.org/v1/species/match?name=Tracheophyta</a></small> <br>"usageKey": 7707728 is the GBIF taxonkey for vascular plants.<br>
 </p></div>
 
@@ -117,22 +122,22 @@ You can also get **lists of species** from higher groups using the species API.
 
 
 <div class="w3-panel w3-card"><p>
-https://<b><span style="color:#73B273">api.gbif.org/v1</span></b>/<span style="color:#CD915E"><b>species</b></span>/<span style="color:#231F20"><b>search</b></span>?<span style="color:#231F20"><b>rank</b></span>=<span style="color:#d62d20"><b>SPECIES</b></span>&<span style="color:#231F20"><b>highertaxon_key</b></span>=<span style="color:#d62d20"><b>7707728</b></span><br>
+https://<b><span style="color:#73B273">api.gbif.org/v1</span></b>/<span style="color:#CD915E"><b>species</b></span>/<span style="color:#3498DB"><b>search</b></span>?<span style="color:#231F20"><b>rank</b></span>=<span style="color:#d62d20"><b>SPECIES</b></span>&<span style="color:#231F20"><b>highertaxon_key</b></span>=<span style="color:#d62d20"><b>7707728</b></span><br>
 <small><a href="https://api.gbif.org/v1/species/search?rank=SPECIES&highertaxon_key=7707728">https://api.gbif.org/v1/species/search?rank=SPECIES&highertaxon_key=7707728
-</a></small><br>Will give back a list of vascular plant species information. This will just be the first random 20 records so it is not very useful.<br>
+</a></small><br>Will give back a list of vascular plant species information. This will just be the first 20 records, so it is not very useful.<br>
 </p></div>
 
 You can make use of the **limit** parameter to get back more results, **but only up to 1000 at a time**. This is because these results are usually held in a memory cache on GBIF servers. This design decision helps GBIF.org run more quickly. These [20 results](https://www.gbif.org/occurrence/search?taxon_key=7707728) should load quickly. And these [100 results](https://www.gbif.org/occurrence/search?taxon_key=7707728&limit=100) should load more slowly.
 
 <div class="w3-panel w3-card"><p>
-https://<b><span style="color:#73B273">api.gbif.org/v1</span></b>/<span style="color:#CD915E"><b>species</b></span>/<span style="color:#231F20"><b>search</b><span style="color:#231F20">?<b>rank</b></span>=<span style="color:#d62d20"><b>SPECIES</b></span>&<span style="color:#231F20"><b>highertaxon_key</b></span>=<span style="color:#d62d20"><b>212</b></span>&</span><span style="color:#231F20"><b>limit</b></span>=<span style="color:#d62d20"><b>100</b></span><br>
+https://<b><span style="color:#73B273">api.gbif.org/v1</span></b>/<span style="color:#CD915E"><b>species</b></span>/<span style="color:#3498DB"><b>search</b></span><span style="color:#231F20">?<b>rank</b></span>=<span style="color:#d62d20"><b>SPECIES</b></span>&<span style="color:#231F20"><b>highertaxon_key</b></span>=<span style="color:#d62d20"><b>212</b></span>&</span><span style="color:#231F20"><b>limit</b></span>=<span style="color:#d62d20"><b>100</b></span><br>
 <small><a href="https://api.gbif.org/v1/species/search?rank=SPECIES&highertaxon_key=212&limit=100">https://api.gbif.org/v1/species/search?rank=SPECIES&highertaxon_key=212&limit=100</a></small> <br> Will give back 100 bird species records.<br>
 </p></div>
 
 You can also use the <span style="color:#231F20"><b>offset</b></span> parameter to skip through the first page of results to get to the next 1000 records. 
 
 <div class="w3-panel w3-card"><p>
-https://<b><span style="color:#73B273">api.gbif.org/v1</span></b>/<span style="color:#CD915E"><b>species</b></span>/<span style="color:#231F20"><b>search</b><span style="color:#231F20">?<b>rank</b></span>=<span style="color:#d62d20"><b>SPECIES</b></span>&<span style="color:#231F20"><b>highertaxon_key</b></span>=<span style="color:#d62d20"><b>212</b></span>&</span><span style="color:#231F20"><b>limit</b></span>=<span style="color:#d62d20"><b>1000</b></span>&<span style="color:#231F20"><b>offset</b>=</span><span style="color:#d62d20"><b>1000</b></span><br>
+https://<b><span style="color:#73B273">api.gbif.org/v1</span></b>/<span style="color:#CD915E"><b>species</b></span>/<span style="color:#3498DB"><b>search</b></span><span style="color:#231F20">?<b>rank</b></span>=<span style="color:#d62d20"><b>SPECIES</b></span>&<span style="color:#231F20"><b>highertaxon_key</b></span>=<span style="color:#d62d20"><b>212</b></span>&</span><span style="color:#231F20"><b>limit</b></span>=<span style="color:#d62d20"><b>1000</b></span>&<span style="color:#231F20"><b>offset</b>=</span><span style="color:#d62d20"><b>1000</b></span><br>
 <small><a href="https://api.gbif.org/v1/species/search?rank=SPECIES&highertaxon_key=212&limit=1000&offset=1000">https://api.gbif.org/v1/species/search?rank=SPECIES&highertaxon_key=212&limit=1000&offset=1000</a></small> 
 <br>Get the next 1000 records of birds. Offset will move the window of results up by 1000. You can <b>page through</b> API results if you want more records, but you can only go 100,000 records deep.<br>
 </p></div>
@@ -140,7 +145,7 @@ https://<b><span style="color:#73B273">api.gbif.org/v1</span></b>/<span style="c
 Notice the use of **&** to combine parameters. 
 
 <div class="w3-panel w3-card"><p>
-https://<b><span style="color:#73B273">api.gbif.org/v1</span></b>/<span style="color:#CD915E"><b>species</b></span>/<span style="color:#231F20"><b>search</b><span style="color:#231F20">?<b>rank</b></span>=<span style="color:#d62d20"><b>SPECIES</b></span>&<span style="color:#231F20"><b>highertaxon_key</b></span>=<span style="color:#d62d20"><b>212</b></span>&</span><span style="color:#231F20"><b>limit</b></span>=<span style="color:#d62d20"><b>1000</b></span>&<span style="color:#231F20"><b>offset</b>=</span><span style="color:#d62d20"><b>2000</b></span><br>
+https://<b><span style="color:#73B273">api.gbif.org/v1</span></b>/<span style="color:#CD915E"><b>species</b></span>/<span style="color:#3498DB"><b>search</b></span><span style="color:#231F20">?<b>rank</b></span>=<span style="color:#d62d20"><b>SPECIES</b></span>&<span style="color:#231F20"><b>highertaxon_key</b></span>=<span style="color:#d62d20"><b>212</b></span>&</span><span style="color:#231F20"><b>limit</b></span>=<span style="color:#d62d20"><b>1000</b></span>&<span style="color:#231F20"><b>offset</b>=</span><span style="color:#d62d20"><b>2000</b></span><br>
 <small><a href="https://api.gbif.org/v1/species/search?rank=SPECIES&highertaxon_key=212&limit=1000&offset=2000">https://api.gbif.org/v1/species/search?rank=SPECIES&highertaxon_key=212&limit=1000&offset=2000</a></small> 
 <br>Page through 1000 more records.<br>
 </p></div>
@@ -198,7 +203,7 @@ jsonlite::fromJSON("https://api.gbif.org/v1/species/match?name=Trochilidae")
 
 JSON usually isn't a useful format for most end users, **who would usually rather have a table**. Turning JSON into a table can usually be done with a little bit of effort depending on the degree of JSON nesting. 
 
-Lets get all of the vernacular names of Tracheophyta back as a data.frame in R. 
+Below gets all of the vernacular names of Tracheophyta back as a data.frame in R. 
 
 ```r
 library(jsonlite)
@@ -271,7 +276,7 @@ user=user,pwd=pwd,email=email
 
 ```
 
-You might be thinking that this query is [easier to do in the web portal](https://www.gbif.org/occurrence/search?country=CL). This is true. The motivation to do it this way would be if you need to do it repeatedly. If each month you wanted all of the occurrences from Chile, the GBIF API would allow you to do this **consistently and automatically with software**. 
+You might be thinking that this query is [easier to do in the web portal](https://www.gbif.org/occurrence/search?country=CL). This is true. The motivation to do it this way would be if you need to do it repeatedly. Also certain features (such as [not queries](https://www.gbif.org/developer/occurrence#download)) are only available via the API. 
 
 ### Further reading 
 

@@ -1,103 +1,71 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>GBIF on GBIF Data Blog</title>
+    <title>Gbif on GBIF Data Blog</title>
     <link>/tags/gbif/</link>
-    <description>Recent content in GBIF on GBIF Data Blog</description>
+    <description>Recent content in Gbif on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 12 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 05 Aug 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/gbif/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>The GBIF Registry of Scientific Collections (GRSciColl) in 2021</title>
-      <link>/post/grscicoll-2021/</link>
-      <pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate>
+      <title>Did you know that...? - some of the lesser known functionalities around GBIF.org</title>
+      <link>/post/did-you-know/</link>
+      <pubDate>Thu, 05 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>/post/grscicoll-2021/</guid>
-      <description>The GBIF Registry of Scientific Collections, also known as GRSciColl, has been available on GBIF.org since 2019 but it recently got some more attention when we connected it to GBIF occurrences. Now is the perfect time to share a bit of GRSciColl history and what we plan for its future.
-A brief history of GRSciColl First of all, here are a few facts about GrSciColl today, at the start of 2021:</description>
-    </item>
-    
-    <item>
-      <title>(Almost) everything you want to know about the GBIF Species API</title>
-      <link>/post/gbif-species-api/</link>
-      <pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/post/gbif-species-api/</guid>
-      <description>&lt;p&gt;Today, we are talking about the &lt;a href=&#34;https://www.gbif.org/developer/species&#34;&gt;GBIF Species API&lt;/a&gt;. Although you might not use it directly, you probably encountered it while using the &lt;a href=&#34;https://www.gbif.org/&#34;&gt;GBIF web portal&lt;/a&gt;:&lt;/p&gt;
+      <guid>/post/did-you-know/</guid>
+      <description>&lt;p&gt;During the first-ever virtual GBIF 2021 Global Nodes Meeting, GBIFS hosted a &amp;ldquo;game show&amp;rdquo;: a one-hour &amp;ldquo;&lt;a href=&#34;https://gnm2021.gbif.org/sessions/friday-nodes-vs-helpdesk&#34;&gt;battle of Nodes vs. helpdesk&lt;/a&gt;&amp;rdquo;. The not-so-hidden goal was to demonstrate some of the lesser known functionalities of GBIF.org through a fun, interactive session.&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;Typing a scientific name in the &lt;a href=&#34;https://www.gbif.org/occurrence/search?occurrence_status=present&amp;amp;q=&#34;&gt;GBIF Occurrence search&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;Seeing a &amp;ldquo;Taxon Match Fuzzy&amp;rdquo; flag.&lt;/li&gt;
-&lt;li&gt;Using the &lt;a href=&#34;https://www.gbif.org/tools/species-lookup&#34;&gt;Species Name matching tool&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;
+&lt;iframe title=&#34;vimeo-player&#34; src=&#34;https://player.vimeo.com/video/571521342&#34; width=100% height=&#34;300&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;
 
-&lt;p&gt;This API is what allow us to navigate through the names available on GBIF. I will try to avoid repeating what you can already find in &lt;a href=&#34;https://www.gbif.org/developer/species&#34;&gt;its documentation&lt;/a&gt;. Instead, I will attempt to give an overview and answer some questions that we received in the past.&lt;/p&gt;
+&lt;p&gt;The following is a summary of the questions and answers from this session, plus some extras that did not manage to make it into the time frame of the event. The summary is following the layout and sequence of the interactive hour:&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>GBIF Issues &amp; Flags</title>
-      <link>/post/issues-and-flags/</link>
-      <pubDate>Tue, 27 Oct 2020 00:00:00 +0000</pubDate>
+      <title>Does Biodiversity Informatics 💘 Wikidata?</title>
+      <link>/post/wikidata/</link>
+      <pubDate>Fri, 21 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>/post/issues-and-flags/</guid>
-      <description>Publishers share datasets, but also manage data quality. GBIF provides access to the use of biodiversity data, but also flags suspicious or missing content. Users use data, but also clean and remove records. Each play an important role in managing and improving data quality..
-What are GBIF issues and flags? The GBIF network publishes datasets, integrating them into a common access system. Here users can retrieve data through common search and download services.</description>
+      <guid>/post/wikidata/</guid>
+      <description>&lt;p&gt;Open online APIs are fantastic! You can use someone else&amp;rsquo;s infrastructure to create workflows, do research and create products without giving anything in return, except acknowledgement. But wait a minute! Why is everyone not using them? Why do we create our own data sources and suck up the costs in time and money? Not to mention the duplication of effort.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Which tools can I use to share my data on GBIF?</title>
-      <link>/post/installations-and-hosting-solutions-explained/</link>
-      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
+      <title>Finding citizen science datasets on GBIF</title>
+      <link>/post/gbif-citizen-science/</link>
+      <pubDate>Fri, 09 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/installations-and-hosting-solutions-explained/</guid>
-      <description>As you probably already know, GBIF.org doesn&amp;rsquo;t host any data. The system relies on each data provider making their data available online in a GBIF-supported format. It also relies on organization letting GBIF know where to find these data (in other words registering the data). But how to do just that?
-The good news is that there are several GBIF-compatible systems. They will export or make available the data for you in the correct format and several provide means to register them as datasets on GBIF.</description>
+      <guid>/post/gbif-citizen-science/</guid>
+      <description>Can we automatically label citizen science datasets? The short answer is yes, partially.
+Why label GBIF datasets as &amp;ldquo;citizen science&amp;rdquo;? What is citizen science? Citizen science is scientific research conducted, in whole or in part, by amateur (or non-professional) scientists. Citizen science is sometimes described as &amp;ldquo;public participation in scientific research,&amp;rdquo; participatory monitoring, and participatory action research (wikipedia definition).
+Citizen science on GBIF A 2016 study showed that nearly half of all occurrence records shared through the GBIF network come from datasets with significant volunteer contributions (for more information, see our &amp;ldquo;citizen science&amp;rdquo; page on gbif.</description>
     </item>
     
     <item>
-      <title>How to choose a dataset class on GBIF?</title>
-      <link>/post/choose-dataset-type/</link>
-      <pubDate>Wed, 04 Dec 2019 00:00:00 +0000</pubDate>
+      <title>Plot almost anything using the GBIF maps api</title>
+      <link>/post/gbif-maps-api-using-r-and-leaflet/</link>
+      <pubDate>Wed, 19 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/choose-dataset-type/</guid>
-      <description>If you are a (first time) publisher on GBIF and you are trying to decide which type of dataset would best fit your data, this blogpost is for you.
-All the records shared on GBIF are organized into datasets. Each dataset is associated with some metadata describing its content (the classic &amp;ldquo;what, where, when, why, how&amp;rdquo;). The dataset&amp;rsquo;s content depends strongly on the dataset&amp;rsquo;s class. GBIF currently support four types of dataset:</description>
+      <guid>/post/gbif-maps-api-using-r-and-leaflet/</guid>
+      <description>The GBIF maps api is an under-used but powerful web service provided by GBIF. The maps api is used by the main GBIF portal to create the maps including the big map used on gbif.org. We can make a simple call to the api by pasting the link below into a web browser.
+https://api.gbif.org/v2/map/occurrence/density/0/0/0@1x.png?style=purpleYellow.pointYou should end up with an image like this.This api call is composed essentially of two elements</description>
     </item>
     
     <item>
-      <title>Six questions answered about the GBIF Backbone Taxonomy</title>
-      <link>/post/gbif-backbone-taxonomy/</link>
-      <pubDate>Tue, 24 Sep 2019 00:00:00 +0000</pubDate>
+      <title>GBIF download trends</title>
+      <link>/post/gbif-download-trends/</link>
+      <pubDate>Tue, 14 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/gbif-backbone-taxonomy/</guid>
-      <description>This past week our informatics team has been updating the Backbone taxonomy on GBIF.org. This is a fairly disruptive process which sometimes involves massive taxonomic changes but DON’T PANIC.
-This update is a good thing. It means that some of the taxonomic issues reported have been addressed (see for example this issue concerning the Xylophagidae family) and that new species are now visible on GBIF. Plus, it gives me an excellent opportunity to talk about the GBIF backbone taxonomy and answer some of the questions you might have.</description>
-    </item>
-    
-    <item>
-      <title>Sequenced-based data on GBIF - What you need to know before analyzing data</title>
-      <link>/post/gbif-molecular-data-quality/</link>
-      <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/gbif-molecular-data-quality/</guid>
-      <description>As I mentioned in my previous post, a lot more sequence-based data has been made available on GBIF this past year. MGnify alone, published 295 datasets for a total of 13,285,109 occurrences. Even though most of these occurrences are Bacteria or Chromista, more than a million of them are animals and more than 300,000 are plants. So chances are, that even if you are not interested in bacteria, you might encounter sequence-based data on GBIF.</description>
-    </item>
-    
-    <item>
-      <title>Sequence-based data on GBIF - Sharing your data</title>
-      <link>/post/gbif-molecular-data/</link>
-      <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/gbif-molecular-data/</guid>
-      <description>GBIF is trying to make it easier to share sequence-based data. In fact, this past year alone, we worked with UNITE to integrate species hypothesis for fungi and with EMBL-EBI to publish 295 metagenomics datasets.
-Unfortunately, documentation is not as quick to follow. Although we have now an FAQ on the topic, I thought that anyone could use a blog post with some advice and examples.
-Note that this blog post is not intended to be documentation.</description>
+      <guid>/post/gbif-download-trends/</guid>
+      <description>Link To App
+Explanation of toolThis tool plots the downloads through time for species or other taxonomic groups with more than 25 downloads at GBIF. Downloads at GBIF most often occur through the web interface. In a previous post, we saw that most users are downloading data from GBIF via filtering by scientific name (aka Taxon Key). Since the GBIF index currently sits at over 1 billion records (a 400+GB csv), most users will simplying filter by their taxonomic group of interest and then generate a download.</description>
     </item>
     
   </channel>
