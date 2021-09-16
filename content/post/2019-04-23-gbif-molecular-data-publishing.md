@@ -40,6 +40,10 @@ sequenceDiagrams:
   options: ''
 ---
 
+[Edit 2021-09-16]
+**Important**: To find guidance on how to publish Sequence-based data on GBIF, please consult the following guide:
+> Andersson AF, Bissett A, Finstad AG, Fossøy F, Grosjean M, Hope M, Jeppesen TS, Kõljalg U, Lundin D, Nilsson RN, Prager M, Svenningsen C & Schigel D (2020) Publishing DNA-derived data through biodiversity data platforms. v1.0 Copenhagen: GBIF Secretariat. https://doi.org/10.35035/doc-vf1a-nr22.
+
 GBIF is trying to make it easier to share sequence-based data. In fact, this past year alone, we worked with [UNITE](https://unite.ut.ee) to integrate species hypothesis for fungi and with EMBL-[EBI](https://www.ebi.ac.uk) to publish 295 metagenomics datasets.
 
 Unfortunately, documentation is not as quick to follow. Although we have now an [FAQ](https://www.gbif.org/faq?question=how-can-i-publish-molecular-data-to-gbif) on the topic, I thought that anyone could use a blog post with some advice and examples.
