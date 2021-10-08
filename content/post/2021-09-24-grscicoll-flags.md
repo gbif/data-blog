@@ -49,7 +49,7 @@ We want to be able to groupd specimens and combine metrics at the collection and
 Institutions can use GRSciColl to be more visible and advertise their collections, both digitized and undigitized. GRSciColl offers the possibility to aggregate and organize the spcimen-related occurrences idependently of the way there were published on GBIF. So a large GBIF dataset can be presented as several collections on GRSciColl and the other way around.
 Our editing system (https://registry.gbif.org) was designed to enable anyone to suggest change that will then be reviewed and applied by the relevant people. Institution can also request to be made editor so they can maintain their own entries.
 
-If you would like to know more about GRSciColl and learn about otehr ways it can be used by the community, please check this 5 min video from June 2021.
+If you would like to know more about GRSciColl and learn about other ways it can be used by the community, please check this 5 min video from June 2021.
 <iframe title="vimeo-player" src="https://player.vimeo.com/video/564594528?h=745ac06824" width="640" height="360" frameborder="0" allowfullscreen></iframe>
 
 # How are specimens occurrences linked to GRSciColl?
