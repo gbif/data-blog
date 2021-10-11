@@ -57,6 +57,7 @@ If you would like to know more about GRSciColl and learn about other ways it can
 # How are specimens occurrences linked to GRSciColl?
 
 Our system interprets every new occurrence published on GBIF. If this occurrence has a value for any of the following terms, the interpretation will attempt to link it to a GRSciColl entry by using [the GRSciColl lookup service](https://www.gbif.org/developer/registry#lookup):
+
 * `institutionCode`
 * `collectionCode`
 * `institutionID`
