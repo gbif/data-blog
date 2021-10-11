@@ -85,8 +85,11 @@ In general, the way to removed those flags is to use identifiers in the `institu
 Your GRSciColl pages might have zero or many identifiers. **So which identifier should you choose?** We actually have [an FAQ answering that question](https://www.gbif.org/faq?question=how-can-i-improve-the-matching-of-occurrence-records-with-grscicoll). Here is the relevant part:
 
 > There can be several identifiers to choose from, and GBIF recommends in priority order:
+> 
 > 1. An in-house generated LSID if available (for example: urn:lsid:biocol.org:col:34984),
+> 
 > 2. A GRSciColl ID or GRSciColl URI (for example: http://grscicoll.org/institution/south-african-institute-aquatic-biodiversity)
+> 
 > 3. If no others exist, please use the GBIF UUID from the page URL (for example: a90ba963-9569-4b96-8d56-452aa7b83f75 for the URL https://www.gbif.org/grscicoll/institution/a90ba963-9569-4b96-8d56-452aa7b83f75)
 
 
