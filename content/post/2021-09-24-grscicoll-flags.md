@@ -90,7 +90,7 @@ Your GRSciColl pages might have zero or many identifiers. **So which identifier 
 
 
 I am adding the screenshot below to illustrate where to find them.
-![Where are the GRSciColl identifiers to choose](https://github.com/gbif/data-blog/blob/master/content/post/2021-09-24-grscicoll-flags/SANBI_ID_example.png)
+![Where are the GRSciColl identifiers to choose](/post/2021-09-24-grscicoll-flags/SANBI_ID_example.png)
 
 
 I also made a silent video to illustrate the steps I mentioned above:
