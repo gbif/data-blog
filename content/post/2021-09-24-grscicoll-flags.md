@@ -1,7 +1,7 @@
 ---
 title: What are the flags "Collection match fuzzy", "Collection match none", "Institution match fuzzy", "Institution match none" and how to remove them?
 author: Marie Grosjean
-date: '1990-12-05'
+date: '2021-10-11'
 slug: grscicoll-flags
 categories:
   - GBIF
@@ -16,14 +16,14 @@ tags:
   - GRSciColl
   - flags
 lastmod: '2019-12-05'
-draft: yes
+draft: no
 keywords: ["Collection match fuzzy", "Collection match none", "Institution match fuzzy", "Institution match none", "GRsciColl", "collection", "institution", "GBIF"]
 description: ''
 comment: no
 toc: ''
 autoCollapseToc: no
 postMetaInFooter: no
-hiddenFromHomePage: yes
+hiddenFromHomePage: no
 contentCopyright: no
 reward: no
 mathjax: no
