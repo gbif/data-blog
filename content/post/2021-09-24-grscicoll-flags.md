@@ -51,7 +51,7 @@ GBIF.org, on the other hand, provides access to digitized data of occurrences (s
 Institutions can use GRSciColl to be more visible and advertise their collections, both digitized and undigitized. GRSciColl offers the possibility to aggregate and organize the specimen-related occurrences published through GBIF.org idependently of the way there are showing at GBIF.org. So a large GBIF dataset can be presented as several collections on GRSciColl and the other way around.
 Our editing system (https://registry.gbif.org) was designed to enable anyone to suggest changes that will then be reviewed and applied by the relevant people. Institutions can also request to be made editor so they can maintain their own entries.
 
-If you would like to know more about GRSciColl and learn about other ways it can be used by the community, please check this 5 min video from June 2021.
+If you would like to know more about GRSciColl and learn about other ways it can be used by the community, please check [this 5 min video from June 2021](https://player.vimeo.com/video/564594528?h=745ac06824).
 <iframe title="vimeo-player" src="https://player.vimeo.com/video/564594528?h=745ac06824" width="640" height="360" frameborder="0" allowfullscreen></iframe>
 
 # How are specimens occurrences linked to GRSciColl?
@@ -83,6 +83,7 @@ In general, the way to removed those flags is to use identifiers in the `institu
 4. Don't forget to push the changes to GBIF by publishing the changes you made in your dataset.
 
 Your GRSciColl pages might have zero or many identifiers. **So which identifier should you choose?** We actually have [an FAQ answering that question](https://www.gbif.org/faq?question=how-can-i-improve-the-matching-of-occurrence-records-with-grscicoll). Here is the relevant part:
+
 > There can be several identifiers to choose from, and GBIF recommends in priority order:
 > 1. An in-house generated LSID if available (for example: urn:lsid:biocol.org:col:34984),
 > 2. A GRSciColl ID or GRSciColl URI (for example: http://grscicoll.org/institution/south-african-institute-aquatic-biodiversity)
@@ -93,7 +94,7 @@ I am adding the screenshot below to illustrate where to find them.
 ![Where are the GRSciColl identifiers to choose](/post/2021-09-24-grscicoll-flags/SANBI_ID_example.png)
 
 
-I also made a silent video to illustrate the steps I mentioned above:
+I also made [a silent video](https://player.vimeo.com/video/625476118?h=e794d87abd) to illustrate the steps I mentioned above:
 <iframe src="https://player.vimeo.com/video/625476118?h=e794d87abd" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
 
 **NB**: The version of GRSciColl that we use to interpret the occurrence record is refreshed once a week. This means that if you made any change in GRSciColl, you will have to wait a bit before it translates into a change in the occurrence interpretation.
