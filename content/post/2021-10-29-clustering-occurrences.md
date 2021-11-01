@@ -33,7 +33,7 @@ sequenceDiagrams:
   options: ''
 ---
 
-The data available GBIF includes many so-called "duplicate" records.
+The data available GBIF include many so-called "duplicate" records.
 This is something that users might be familiar with. You download data from GBIF, analyze them and realize that some records have the same date, scientific name, catalogue number and location but come from two different publishers or have slightly different attributes.
 
 Sometimes [an observation was recorded in two different systems](https://discourse.gbif.org/t/duplicate-observations-across-datasets/3069), sometimes a specimen was digitized twice, sometimes a record has been enriched with genetic information and republished via a different platform... There can be many reasons why these duplicates appear on GBIF.
