@@ -35,6 +35,7 @@ sequenceDiagrams:
 
 The data available GBIF includes many so-called "duplicate" records.
 This is something that users might be familiar with. You download data from GBIF, analyze them and realize that some records have the same date, scientific name, catalogue number and location but come from two different publishers or have slightly different attributes.
+
 Sometimes [an observation was recorded in two different systems](https://discourse.gbif.org/t/duplicate-observations-across-datasets/3069), sometimes a specimen was digitized twice, sometimes a record has been enriched with genetic information and republished via a different platform... There can be many reasons why these duplicates appear on GBIF.
 
 This is why last year, we released an experimental data-clustering feature aiming to identifying potentially related records on GBIF.
@@ -44,7 +45,8 @@ Records that have been included in a cluster can be found with the "is in cluste
 
 # How does the GBIF data-clustering feature work?
 
-## 1. Select candidate
+## 1. Select candidates
+
 
 Comparing nearly 2 billions of records with each other is very resource intensive and quite impractical, so the first step of the data-clustering process is to select and group candidate records to compare.
 
@@ -120,3 +122,4 @@ If for one reason or another, you need to publish on GBIF occurrences for observ
 
 1. Make sure that you reuse the same identifiers as much as possible, including the formating. Same catalogue numbers, occurrenceID, etc.
 2. Use the [associatedOccurrences](https://dwc.tdwg.org/terms/#dwc:associatedOccurrences) and [resource relationship extension](https://rs.gbif.org/extension/dwc/resource_relation_2018_01_18.xml). These are not used during the clustering today, but are expected to be in the future, and are the correct way to communicate relationships within Darwin Core.
+
