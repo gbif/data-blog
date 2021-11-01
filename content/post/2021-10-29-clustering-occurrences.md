@@ -79,7 +79,7 @@ In the table below, I summarize how those assertions are made but if you would l
 | Within 2 km | `decimalLatitude`, `decimalLongitude` | distance <= 2.00 |
 | Same country | `countryCode` | same between records |
 | Non conflicting country | `countryCode` | country only on one record |
-| Different country | `countryCode` | differ between records|
+| Different country | `countryCode` | differs between records|
 | Identifiers overlap | `occurrenceID`, `fieldNumber`, `recordNumber`, `otherCatalogueNumber`, grouped(`institutionCode`:`collectionCode`:`catalogueNumber`), grouped(`institutionCode`:`catalogueNumber`) | checks any overlap of identifiers between records|
 
 The table below summarises the combinations of assertions that are sufficient to link the records in a cluster. If a group of occurrences share the combinations of assertions for any given column, they will be clustered together.
