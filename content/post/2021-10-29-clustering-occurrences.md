@@ -46,7 +46,7 @@ Records that have been included in a cluster can be found with the "is in cluste
 
 ## 1. Select candidate
 
-Comparing nearly 2 billions of records with each other is very resourse intensive and quite impractical, so the first step of the data-clustering process is to select and group candidate records to compare.
+Comparing nearly 2 billions of records with each other is very resource intensive and quite impractical, so the first step of the data-clustering process is to select and group candidate records to compare.
 
 The system first creates a series of "hashes" for each record based on specified fields. All records sharing a hash are candidates to compare against each other.
 
