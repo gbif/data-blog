@@ -33,7 +33,7 @@ sequenceDiagrams:
   options: ''
 ---
 
-The data available GBIF includes many duplicate records.
+The data available GBIF include many duplicate records.
 This is something that users might be familiar with. You download data from GBIF, analyze them and realize that some records have the same exact date, scientific name, catalogue number and location but come from two different publishers or have silighly different attributes.
 Sometimes [an observation was recorded in two different systems](https://discourse.gbif.org/t/duplicate-observations-across-datasets/3069), sometimes a specimen was digitized twice, sometimes a record has been enriched with genetic information and republished via a different platform... There can be many reasons why these duplicates appear on GBIF.
 
@@ -44,9 +44,9 @@ Records that have been included in a cluster can be found with the "is in cluste
 
 # How does the GBIF data-clustering feature work?
 
-## 1. Select candidate
+## 1. Select candidates
 
-Comparing nearly billion records with each other is very recourse intensive and quite impractical so the first step of the data-clustering process is to select and group candidate records.
+Comparing nearly billion records with each other is very resource intensive and quite impractical so the first step of the data-clustering process is to select and group candidate records.
 
 The system first creates a series of "hashes" for each record based on specified fields. All records sharing a hash are candidates to compare against each other.
 
