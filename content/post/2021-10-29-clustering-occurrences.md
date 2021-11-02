@@ -33,12 +33,12 @@ sequenceDiagrams:
   options: ''
 ---
 
-The data available GBIF include many so-called "duplicate" records.
+The data available in GBIF include many so-called "duplicate" records.
 This is something that users might be familiar with. You download data from GBIF, analyze them and realize that some records have the same date, scientific name, catalogue number and location but come from two different publishers or have slightly different attributes.
 
 Sometimes [an observation was recorded in two different systems](https://discourse.gbif.org/t/duplicate-observations-across-datasets/3069), sometimes a specimen was digitized twice, sometimes a record has been enriched with genetic information and republished via a different platform... There can be many reasons why these duplicates appear on GBIF.
 
-This is why last year, we released an experimental data-clustering feature aiming to identifying potentially related records on GBIF.
+This is why last year, we released an experimental data-clustering feature aiming to identify potentially related records on GBIF.
 The goal was not only to detect potential duplicates but to also find interesting relationships, such as between typification records or records originating from Natural History collections, DNA-derived sequences and citations of materials examined when publishing taxonomic treatments in journal articles.
 
 Records that have been included in a cluster can be found with the "is in cluster" filter in [the occurrence search](https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present&is_in_cluster=true). Each occurrence page belonging to a cluster will have a "CLUSTER" tab displaying the potentially related records. You can read [this news item](https://www.gbif.org/news/4U1dz8LygQvqIywiRIRpAU/new-data-clustering-feature-aims-to-improve-data-quality-and-reveal-cross-dataset-connections) for more information and some exciting examples.
@@ -48,19 +48,19 @@ Records that have been included in a cluster can be found with the "is in cluste
 ## 1. Select candidates
 
 
-Comparing nearly 2 billions of records with each other is very resource intensive and quite impractical, so the first step of the data-clustering process is to select and group candidate records to compare.
+Comparing nearly 2 billions records with each other is very resource intensive and quite impractical, so the first step of the data-clustering process is to select and group candidate records to compare.
 
 The system first creates a series of "hashes" for each record based on specified fields. All records sharing a hash are candidates to compare against each other.
 
 For example, one of the "hashes" used is based on the species key, rounded coordinates, year, month and day. This means that the records that share the same values for those fields will be grouped together in the candidate table for further inspection.
 
-The fields used to identify and group the candidates are a subset of that is used later on for comparing them (see the table below in the post).
+The fields used to identify and group the candidates are a subset of what is used later on for comparing them (see the table below).
 See [this link](https://github.com/gbif/pipelines/blob/dev/gbif/pipelines/clustering-gbif/src/main/scala/org/gbif/pipelines/clustering/Cluster.scala) to check the details.
 
 
 ## 2. Compare candidates with each other and assess whether they are potentially related
 
-In this second phase, the system will compare all records in the candidate set to each other and generate assertions. The assertions are inspected and a decision is made if there is enough evidence in the assertions to create a relationship between them.
+In this second phase, the system will compare all records in the candidate set to each other and generate assertions. The assertions are inspected and the algorithms decides if there is enough evidence in the assertions to create a relationship between them.
 In the table below, I summarize how those assertions are made but if you would like more details, you can check the code available [here](https://github.com/gbif/pipelines/blob/dev/sdks/core/src/main/java/org/gbif/pipelines/core/parsers/clustering/OccurrenceRelationships.java#L26).
 
 | Assertion | fields checked | condition checked |
@@ -112,7 +112,7 @@ It is possible that some occurrences check one of the combinations of assertions
 
 1. The occurrences are newly published. Right now, the clustering process is quite resource intensive and doesn't run automatically. We need to trigger it manually. This means that it can take a few weeks before newly published occurrences get clustered.
 2. The "duplicates" come from the same dataset. The clustering algorithm only compares occurrences across datasets, not within datasets.
-3. There can be a delays between the moment the occurrences are clustered and the moment they become searchable with the "is in cluster" filter (this is due to some technical reasons a bit too long to explain in this post, but relate to updating the search indexes separately from the clustering table)
+3. There can be a delay between the moment the occurrences are clustered and the moment they become searchable with the "is in cluster" filter (this is due to some technical reasons a bit too long to explain in this post, but relate to updating the search indexes separately from the clustering table)
 
 There could be other unforeseen reasons, and if in doubt, please contact us at helpdesk@gbif.org.
 
