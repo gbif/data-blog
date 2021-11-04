@@ -93,7 +93,7 @@ The table below summarises the combinations of assertions that are sufficient to
 
 > **NB**: Any group of occurrence associated with the assertion `Different date` or `Different country` will not be clustered together.
 
-# Why some occurrences aren't clustered
+# Why some occurrences are not clustered
 
 It is possible that some occurrences check one of the combinations of assertions but aren't shown as clustered yet. This could be the case for several reasons:
 
