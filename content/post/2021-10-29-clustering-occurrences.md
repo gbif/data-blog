@@ -1,7 +1,7 @@
 ---
 title: Identifying potentially related records - How does the GBIF data-clustring feature work?
 author: Tim Robertson and Marie Grosjean
-date: '1990-12-05'
+date: '2021-11-04'
 slug: clustering-occurrences
 categories:
   - GBIF
@@ -10,7 +10,7 @@ tags:
   - GBIF
   - specimen
   - occurrence
-lastmod: '2019-12-05'
+lastmod: '2021-11-04'
 draft: yes
 keywords: ['occurrence', 'specimen', 'clustering', 'duplicate']
 description: ''
@@ -41,7 +41,11 @@ Sometimes [an observation was recorded in two different systems](https://discour
 This is why last year, we released an experimental data-clustering feature aiming to identify potentially related records on GBIF.
 The goal was not only to detect potential duplicates but to also find interesting relationships, such as between typification records or records originating from Natural History collections, DNA-derived sequences and citations of materials examined when publishing taxonomic treatments in journal articles.
 
-Records that have been included in a cluster can be found with the "is in cluster" filter in [the occurrence search](https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present&is_in_cluster=true). Each occurrence page belonging to a cluster will have a "CLUSTER" tab displaying the potentially related records. You can read [this news item](https://www.gbif.org/news/4U1dz8LygQvqIywiRIRpAU/new-data-clustering-feature-aims-to-improve-data-quality-and-reveal-cross-dataset-connections) for more information and some exciting examples.
+Records that have been included in a cluster can be found with the "is in cluster" filter in [the occurrence search](https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present&is_in_cluster=true). Each occurrence page belonging to a cluster will have a "CLUSTER" tab displaying the potentially related records. 
+
+![Example of cluster](post/2021-10-29-clustering-occurrences/example_cluster.png)
+
+You can read [this news item](https://www.gbif.org/news/4U1dz8LygQvqIywiRIRpAU/new-data-clustering-feature-aims-to-improve-data-quality-and-reveal-cross-dataset-connections) for more information and some exciting examples.
 
 # How does the GBIF data-clustering feature work?
 
@@ -85,25 +89,7 @@ In the table below, I summarize how those assertions are made but if you would l
 
 The table below summarises the combinations of assertions that are sufficient to link the records in a cluster. If a group of occurrences share the combinations of assertions for any given column, they will be clustered together.
 
-| Assertion | | | | | | | | | | | | | |
-|:----|----|----|----|----|----|----|----|----|----|----|----|----|----|
-| Same specimen | | | | | | | | | | | x | |
-| Typification relation | | | | | | | | | | | | x |
-| Same accepted species | x | x | x | x | x | x | x | x | x | x | | |
-| Same date | x | x | | | x | | x | | | | | |
-| Approximate date | | | | | | | | | x | x | | |
-| Different date | | | | | | | | | | | | |
-| Non conflicting date | | | x | x | | x | | x | | | | |
-| Same recorder name | | | | | | | | | x | x | | |
-| Same coordinates | x | | x | | | | | | x | | | |
-| Non conflicting Coordinates | | | | | | | x | x | | | | |
-| Within 200 m | | x | | x | | | | | | | | |
-| Within 2 km | | | | | x | x | | | | x | | |
-| Same country | | | | | | | | | | | | |
-| Non conflicting country | | | | | | | | | | | | |
-| Different country | | | | | | | | | | | | |
-| Identifiers overlap | | | x | x | x | x | x | x | | | | |
-
+![Combination of assersiton conditions to create cluster](post/2021-10-29-clustering-occurrences/table_2.png)
 
 > **NB**: Any group of occurrence associated with the assertion `Different date` or `Different country` will not be clustered together.
 
@@ -124,3 +110,9 @@ If for one reason or another, you need to publish on GBIF occurrences for observ
 1. Make sure that you reuse the same identifiers as much as possible, including the formating. Same catalogue numbers, occurrenceID, etc.
 2. Use the [associatedOccurrences](https://dwc.tdwg.org/terms/#dwc:associatedOccurrences) and [resource relationship extension](https://rs.gbif.org/extension/dwc/resource_relation_2018_01_18.xml). These are not used during the clustering today, but are expected to be in the future, and are the correct way to communicate relationships within Darwin Core.
 
+# Where to send suggestions and ask questions
+
+If you have suggestions to improve the clustering feature or questions on how it works, you are very welcome to:
+- leave a comment under this post 
+- or log an issue in our [GitHub repository](https://github.com/gbif/portal-feedback/issues) or via the GBIF feedback system
+- or contact us at helpdesk@gbif.org.
