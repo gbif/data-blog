@@ -11,7 +11,7 @@ tags:
   - specimen
   - occurrence
 lastmod: '2021-11-04'
-draft: yes
+draft: no
 keywords: ['occurrence', 'specimen', 'clustering', 'duplicate']
 description: ''
 comment: no
@@ -41,7 +41,7 @@ Sometimes [an observation was recorded in two different systems](https://discour
 This is why last year, we released an experimental data-clustering feature aiming to identify potentially related records on GBIF.
 The goal was not only to detect potential duplicates but to also find interesting relationships, such as between typification records or records originating from Natural History collections, DNA-derived sequences and citations of materials examined when publishing taxonomic treatments in journal articles.
 
-Records that have been included in a cluster can be found with the "is in cluster" filter in [the occurrence search](https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present&is_in_cluster=true). Each occurrence page belonging to a cluster will have a "CLUSTER" tab displaying the potentially related records. 
+Records that have been included in a cluster can be found with the "is in cluster" filter in [the occurrence search](https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present&is_in_cluster=true). Each occurrence page belonging to a cluster will have a "CLUSTER" tab displaying the potentially related records (see a screenshot of [this example](https://www.gbif.org/occurrence/2871636339/cluster) below).
 
 ![Example of cluster](/post/2021-10-29-clustering-occurrences/example_cluster.png)
 
@@ -113,6 +113,7 @@ If for one reason or another, you need to publish on GBIF occurrences for observ
 # Where to send suggestions and ask questions
 
 If you have suggestions to improve the clustering feature or questions on how it works, you are very welcome to:
+
 - leave a comment under this post 
 - or log an issue in our [GitHub repository](https://github.com/gbif/portal-feedback/issues) or via the GBIF feedback system
 - or contact us at helpdesk@gbif.org.
