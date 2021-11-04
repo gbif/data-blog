@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Identifying potentially related records - How does the GBIF data-clustring feature work? - GBIF Data Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Tim Robertson and Marie Grosjean" />
+  <meta name="description" content="The data available in GBIF include many so-called &amp;ldquo;duplicate&amp;rdquo; records. This is something that users might be familiar with. You download data from GBIF, analyze them and realize that some records have the same date, scientific name, catalogue number and location but come from two different publishers or have slightly different attributes.
+Sometimes an observation was recorded in two different systems, sometimes a specimen was digitized twice, sometimes a record has been enriched with genetic information and republished via a different platform&amp;hellip; There can be many reasons why these duplicates appear on GBIF." />
+<meta name="keywords" content="occurrence, specimen, clustering, duplicate" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.42" />
+
+
+<link rel="canonical" href="/post/clustering-occurrences/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.2.0" rel="stylesheet">
+
+
+
+
+<link rel="stylesheet" href="/css//custom.css">
+
+
+<meta property="og:title" content="Identifying potentially related records - How does the GBIF data-clustring feature work?" />
+<meta property="og:description" content="The data available in GBIF include many so-called &ldquo;duplicate&rdquo; records. This is something that users might be familiar with. You download data from GBIF, analyze them and realize that some records have the same date, scientific name, catalogue number and location but come from two different publishers or have slightly different attributes.
+Sometimes an observation was recorded in two different systems, sometimes a specimen was digitized twice, sometimes a record has been enriched with genetic information and republished via a different platform&hellip; There can be many reasons why these duplicates appear on GBIF." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/clustering-occurrences/" />
+
+
+
+<meta property="article:published_time" content="1990-12-05T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2019-12-05T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Identifying potentially related records - How does the GBIF data-clustring feature work?">
+<meta itemprop="description" content="The data available in GBIF include many so-called &ldquo;duplicate&rdquo; records. This is something that users might be familiar with. You download data from GBIF, analyze them and realize that some records have the same date, scientific name, catalogue number and location but come from two different publishers or have slightly different attributes.
+Sometimes an observation was recorded in two different systems, sometimes a specimen was digitized twice, sometimes a record has been enriched with genetic information and republished via a different platform&hellip; There can be many reasons why these duplicates appear on GBIF.">
+
+
+<meta itemprop="datePublished" content="1990-12-05T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="1990-12-05T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="963">
+
+
+
+<meta itemprop="keywords" content="GBIF,specimen,occurrence," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Identifying potentially related records - How does the GBIF data-clustring feature work?"/>
+<meta name="twitter:description" content="The data available in GBIF include many so-called &ldquo;duplicate&rdquo; records. This is something that users might be familiar with. You download data from GBIF, analyze them and realize that some records have the same date, scientific name, catalogue number and location but come from two different publishers or have slightly different attributes.
+Sometimes an observation was recorded in two different systems, sometimes a specimen was digitized twice, sometimes a record has been enriched with genetic information and republished via a different platform&hellip; There can be many reasons why these duplicates appear on GBIF."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">GBIF Data Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/categories/gbif/">
+        <li class="mobile-menu-item">posts</li>
+      </a><a href="https://discourse.gbif.org/c/data-blog">
+        <li class="mobile-menu-item">community-forum</li>
+      </a><a href="https://www.gbif.org/">
+        <li class="mobile-menu-item">gbif.org</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">about</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">
+	<img src= "/logo.png" alt="GBIF-analytics-blog" style ="width:20%;">
+  </a>
+  
+	
+  
+  
+</div>
+
+<nav class="site-navbar">
+
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/categories/gbif/">posts</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://discourse.gbif.org/c/data-blog">community-forum</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://www.gbif.org/">gbif.org</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">about</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+	
+    <header class="post-header">
+      <h1 class="post-title">Identifying potentially related records - How does the GBIF data-clustring feature work?</h1>
+	  
+	  
+      <div class="post-author">Tim Robertson and Marie Grosjean</div>
+
+      <div class="post-meta">
+        <span class="post-time"> 1990-12-05 </span>
+        <div class="post-category">
+            
+              <a href="/categories/gbif/"> GBIF </a>
+            
+              <a href="/categories/data-use/"> data use </a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    
+    
+
+    
+    <div class="post-content">
+      
+
+<p>The data available in GBIF include many so-called &ldquo;duplicate&rdquo; records.
+This is something that users might be familiar with. You download data from GBIF, analyze them and realize that some records have the same date, scientific name, catalogue number and location but come from two different publishers or have slightly different attributes.</p>
+
+<p>Sometimes <a href="https://discourse.gbif.org/t/duplicate-observations-across-datasets/3069">an observation was recorded in two different systems</a>, sometimes a specimen was digitized twice, sometimes a record has been enriched with genetic information and republished via a different platform&hellip; There can be many reasons why these duplicates appear on GBIF.</p>
+
+<p>This is why last year, we released an experimental data-clustering feature aiming to identify potentially related records on GBIF.
+The goal was not only to detect potential duplicates but to also find interesting relationships, such as between typification records or records originating from Natural History collections, DNA-derived sequences and citations of materials examined when publishing taxonomic treatments in journal articles.</p>
+
+<p>Records that have been included in a cluster can be found with the &ldquo;is in cluster&rdquo; filter in <a href="https://www.gbif.org/occurrence/search?advanced=1&amp;occurrence_status=present&amp;is_in_cluster=true">the occurrence search</a>. Each occurrence page belonging to a cluster will have a &ldquo;CLUSTER&rdquo; tab displaying the potentially related records. You can read <a href="https://www.gbif.org/news/4U1dz8LygQvqIywiRIRpAU/new-data-clustering-feature-aims-to-improve-data-quality-and-reveal-cross-dataset-connections">this news item</a> for more information and some exciting examples.</p>
+
+<h1 id="how-does-the-gbif-data-clustering-feature-work">How does the GBIF data-clustering feature work?</h1>
+
+<h2 id="1-select-candidates">1. Select candidates</h2>
+
+<p>Comparing nearly 2 billions records with each other is very resource intensive and quite impractical, so the first step of the data-clustering process is to select and group candidate records to compare.</p>
+
+<p>The system first creates a series of &ldquo;hashes&rdquo; for each record based on specified fields. All records sharing a hash are candidates to compare against each other.</p>
+
+<p>For example, one of the &ldquo;hashes&rdquo; used is based on the species key, rounded coordinates, year, month and day. This means that the records that share the same values for those fields will be grouped together in the candidate table for further inspection.</p>
+
+<p>The fields used to identify and group the candidates are a subset of what is used later on for comparing them (see the table below).
+See <a href="https://github.com/gbif/pipelines/blob/dev/gbif/pipelines/clustering-gbif/src/main/scala/org/gbif/pipelines/clustering/Cluster.scala">this link</a> to check the details.</p>
+
+<h2 id="2-compare-candidates-with-each-other-and-assess-whether-they-are-potentially-related">2. Compare candidates with each other and assess whether they are potentially related</h2>
+
+<p>In this second phase, the system will compare all records in the candidate set to each other and generate assertions. The assertions are inspected and the algorithms decides if there is enough evidence in the assertions to create a relationship between them.
+In the table below, I summarize how those assertions are made but if you would like more details, you can check the code available <a href="https://github.com/gbif/pipelines/blob/dev/sdks/core/src/main/java/org/gbif/pipelines/core/parsers/clustering/OccurrenceRelationships.java#L26">here</a>.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Assertion</th>
+<th align="left">fields checked</th>
+<th align="left">condition checked</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">Same specimen</td>
+<td align="left"><code>taxonKey</code>, <code>typeSatus</code></td>
+<td align="left">same taxonKey between records and type status = Holotype for both records</td>
+</tr>
+
+<tr>
+<td align="left">Typification relation</td>
+<td align="left"><code>scientificName</code>, <code>typeStatus</code></td>
+<td align="left">same between records</td>
+</tr>
+
+<tr>
+<td align="left">Same accepted species</td>
+<td align="left"><code>speciesKey</code></td>
+<td align="left">same between records</td>
+</tr>
+
+<tr>
+<td align="left">Same date</td>
+<td align="left"><code>eventDate</code> or <code>day</code>, <code>month</code>, <code>year</code></td>
+<td align="left">same between records</td>
+</tr>
+
+<tr>
+<td align="left">Approximate date</td>
+<td align="left"><code>day</code>, <code>month</code>, <code>year</code></td>
+<td align="left">dates one day apart</td>
+</tr>
+
+<tr>
+<td align="left">Different date</td>
+<td align="left"><code>eventDate</code></td>
+<td align="left">differs between records</td>
+</tr>
+
+<tr>
+<td align="left">Non conflicting date</td>
+<td align="left"><code>eventDate</code>, <code>day</code>, <code>month</code>, <code>year</code></td>
+<td align="left">no date on either record</td>
+</tr>
+
+<tr>
+<td align="left">Same recorder name</td>
+<td align="left"><code>recordedBy</code></td>
+<td align="left">same between records</td>
+</tr>
+
+<tr>
+<td align="left">Same coordinates</td>
+<td align="left"><code>decimalLatitude</code>, <code>decimalLongitude</code></td>
+<td align="left">same between records</td>
+</tr>
+
+<tr>
+<td align="left">Non conflicting Coordinates</td>
+<td align="left"><code>decimalLatitude</code>, <code>decimalLongitude</code></td>
+<td align="left">no coordinate on one or both sides</td>
+</tr>
+
+<tr>
+<td align="left">Within 200 m</td>
+<td align="left"><code>decimalLatitude</code>, <code>decimalLongitude</code></td>
+<td align="left">distance &lt;= 0.200</td>
+</tr>
+
+<tr>
+<td align="left">Within 2 km</td>
+<td align="left"><code>decimalLatitude</code>, <code>decimalLongitude</code></td>
+<td align="left">distance &lt;= 2.00</td>
+</tr>
+
+<tr>
+<td align="left">Same country</td>
+<td align="left"><code>countryCode</code></td>
+<td align="left">same between records</td>
+</tr>
+
+<tr>
+<td align="left">Non conflicting country</td>
+<td align="left"><code>countryCode</code></td>
+<td align="left">country only on one record</td>
+</tr>
+
+<tr>
+<td align="left">Different country</td>
+<td align="left"><code>countryCode</code></td>
+<td align="left">differs between records</td>
+</tr>
+
+<tr>
+<td align="left">Identifiers overlap</td>
+<td align="left"><code>occurrenceID</code>, <code>fieldNumber</code>, <code>recordNumber</code>, <code>otherCatalogueNumber</code>, grouped(<code>institutionCode</code>:<code>collectionCode</code>:<code>catalogueNumber</code>),<br> grouped(<code>institutionCode</code>:<code>catalogueNumber</code>)</td>
+<td align="left">checks any overlap of identifiers between records</td>
+</tr>
+</tbody>
+</table>
+
+<p>The table below summarises the combinations of assertions that are sufficient to link the records in a cluster. If a group of occurrences share the combinations of assertions for any given column, they will be clustered together.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Assertion</th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">Same specimen</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td align="left">Typification relation</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>x</td>
+<td></td>
+</tr>
+
+<tr>
+<td align="left">Same accepted species</td>
+<td>x</td>
+<td>x</td>
+<td>x</td>
+<td>x</td>
+<td>x</td>
+<td>x</td>
+<td>x</td>
+<td>x</td>
+<td>x</td>
+<td>x</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td align="left">Same date</td>
+<td>x</td>
+<td>x</td>
+<td></td>
+<td></td>
+<td>x</td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td align="left">Approximate date</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>x</td>
+<td>x</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td align="left">Different date</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td align="left">Non conflicting date</td>
+<td></td>
+<td></td>
+<td>x</td>
+<td>x</td>
+<td></td>
+<td>x</td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td align="left">Same recorder name</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>x</td>
+<td>x</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td align="left">Same coordinates</td>
+<td>x</td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td align="left">Non conflicting Coordinates</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>x</td>
+<td>x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td align="left">Within 200 m</td>
+<td></td>
+<td>x</td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td align="left">Within 2 km</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>x</td>
+<td>x</td>
+<td></td>
+<td></td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td align="left">Same country</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td align="left">Non conflicting country</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td align="left">Different country</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td align="left">Identifiers overlap</td>
+<td></td>
+<td></td>
+<td>x</td>
+<td>x</td>
+<td>x</td>
+<td>x</td>
+<td>x</td>
+<td>x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<blockquote>
+<p><strong>NB</strong>: Any group of occurrence associated with the assertion <code>Different date</code> or <code>Different country</code> will not be clustered together.</p>
+</blockquote>
+
+<h1 id="why-some-occurrences-aren-t-clustered">Why some occurrences aren&rsquo;t clustered</h1>
+
+<p>It is possible that some occurrences check one of the combinations of assertions but aren&rsquo;t shown as clustered yet. This could be the case for several reasons:</p>
+
+<ol>
+<li>The occurrences are newly published. Right now, the clustering process is quite resource intensive and doesn&rsquo;t run automatically. We need to trigger it manually. This means that it can take a few weeks before newly published occurrences get clustered.</li>
+<li>The &ldquo;duplicates&rdquo; come from the same dataset. The clustering algorithm only compares occurrences across datasets, not within datasets.</li>
+<li>There can be a delay between the moment the occurrences are clustered and the moment they become searchable with the &ldquo;is in cluster&rdquo; filter (this is due to some technical reasons a bit too long to explain in this post, but relate to updating the search indexes separately from the clustering table)</li>
+</ol>
+
+<p>There could be other unforeseen reasons, and if in doubt, please contact us at helpdesk@gbif.org.</p>
+
+<h1 id="what-can-you-do-to-improve-linkage-with-other-occurrences">What can you do to improve linkage with other occurrences?</h1>
+
+<p>If for one reason or another, you need to publish on GBIF occurrences for observations or specimens that you know are already on GBIF, how best to do it?</p>
+
+<ol>
+<li>Make sure that you reuse the same identifiers as much as possible, including the formating. Same catalogue numbers, occurrenceID, etc.</li>
+<li>Use the <a href="https://dwc.tdwg.org/terms/#dwc:associatedOccurrences">associatedOccurrences</a> and <a href="https://rs.gbif.org/extension/dwc/resource_relation_2018_01_18.xml">resource relationship extension</a>. These are not used during the clustering today, but are expected to be in the future, and are the correct way to communicate relationships within Darwin Core.</li>
+</ol>
+
+    </div>
+
+    
+    
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/gbif/">GBIF</a>
+          
+          <a href="/tags/specimen/">specimen</a>
+          
+          <a href="/tags/occurrence/">occurrence</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/gbif-download-trends/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">GBIF download trends</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      
+
+
+ 
+<div>
+<h3>This post represents the ideas of the author.</h3>
+</div>
+<div id='discourse-comments'></div>
+<script type="text/javascript">
+  DiscourseEmbed = { discourseUrl: 'https://discourse.gbif.org/',
+                     discourseEmbedUrl: 'https://data-blog.gbif.org\/post\/clustering-occurrences\/' };
+
+  (function() {
+    var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+    d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+  })();
+</script>  
+
+
+<div class = "copyright">
+	<a class="theme-link" href="https://www.gbif.org/what-is-gbif">What is GBIF?</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://www.gbif.org/developer/summary">API</a> 
+	<span class="division">|</span>
+	<a class="theme-link" href="https://www.gbif.org/faq">FAQ</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://discourse.gbif.org/">Community-Forum</a>
+</div>
+
+<div class = "copyright"> 
+	<span class="theme-info">GBIF Secretariat</span> 
+	<span class="theme-info">Universitetsparken 15</span> 
+	<span class="theme-info">DK-2100 Copenhagen Ø</span> 
+	<span class="theme-info" >Denmark</span>
+</div>
+
+<div class="copyright">
+	<span class="power-by">
+	Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+	</span>
+	<span class="division">|</span>
+	<span class="theme-info">
+	Theme - 
+	<a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+	</span>
+
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+<script type="text/javascript" src="/dist/even.min.js?v=3.2.0"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -6,10 +6,20 @@
     <description>Recent content in GBIF on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 07 Sep 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 11 Oct 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/gbif/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>What are the flags &#34;Collection match fuzzy&#34;, &#34;Collection match none&#34;, &#34;Institution match fuzzy&#34;, &#34;Institution match none&#34; and how to remove them?</title>
+      <link>/post/grscicoll-flags/</link>
+      <pubDate>Mon, 11 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/grscicoll-flags/</guid>
+      <description>You are a data publisher of occurrence data through GBIF.org, care about your data quality, and wonder what to do about the issue flags that show up on your occurrences. You might have noticed a new type flag this year relating to collection and institution codes and identifiers. They are the result of our attempt at linking specimens records to our Registry of Scientific Collections (GRSciColl).
+We want to be able to group specimens and combine metrics at the collection and institution levels (which can be independant from the way there were published on GBIF).</description>
+    </item>
     
     <item>
       <title>GBIF API beginners guide</title>
@@ -24,31 +34,6 @@
 &lt;p&gt;The purpose of the GBIF API is to give users access to GBIF databases in a &lt;strong&gt;safe way&lt;/strong&gt;. The GBIF API also allows &lt;a href=&#34;https://www.gbif.org/&#34;&gt;GBIF.org&lt;/a&gt; and &lt;a href=&#34;https://github.com/ropensci/rgbif&#34;&gt;rgbif&lt;/a&gt; to function.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Working with names in rgbif</title>
-      <link>/post/rgbif-names/</link>
-      <pubDate>Fri, 13 Aug 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/post/rgbif-names/</guid>
-      <description>Matching names to the GBIF backbone is one of the most important steps in any GBIF workflow.
-There are several functions within rgbif that deal with scientific names, so it can be difficult to know what function to use when trying to match names to the GBIF backbone.
-There are several names
-name_backbone()name_usage()name_suggest()name_lookup()If you just want to match your names to the GBIF backbone (get taxonkeys), I would use rgbif::name_backbone().</description>
-    </item>
-    
-    <item>
-      <title>Working with scientific names in rgbif</title>
-      <link>/post/rgbif-names/</link>
-      <pubDate>Fri, 13 Aug 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/post/rgbif-names/</guid>
-      <description>When starting to work with rgbif and GBIF it is sometimes hard to know where to start.
-In this guide I will be going through.
-In my opinion there are around 5 steps to any GBIF-realted research project.
-match your names to the GBIF backbonedownload your GBIF subsetclean your downloadrun your modelcite your downloadAll of these steps can be done in rgbif.
-Match names to the GBIF backboneThis is often the most difficult task when starting to work in GBIF.</description>
     </item>
     
     <item>
@@ -395,9 +380,11 @@ National (or regional) lists of species exampleTaxonomic list of species exampl
       <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>/post/gbif-molecular-data/</guid>
-      <description>GBIF is trying to make it easier to share sequence-based data. In fact, this past year alone, we worked with UNITE to integrate species hypothesis for fungi and with EMBL-EBI to publish 295 metagenomics datasets.
-Unfortunately, documentation is not as quick to follow. Although we have now an FAQ on the topic, I thought that anyone could use a blog post with some advice and examples.
-Note that this blog post is not intended to be documentation.</description>
+      <description>[Edit 2021-09-16]
+Important: To find guidance on how to publish Sequence-based data on GBIF, please consult the following guide:
+ Andersson AF, Bissett A, Finstad AG, Fossøy F, Grosjean M, Hope M, Jeppesen TS, Kõljalg U, Lundin D, Nilsson RN, Prager M, Svenningsen C &amp;amp; Schigel D (2020) Publishing DNA-derived data through biodiversity data platforms. v1.0 Copenhagen: GBIF Secretariat. https://doi.org/10.35035/doc-vf1a-nr22.
+ [End edit 2021-09-16]
+GBIF is trying to make it easier to share sequence-based data.</description>
     </item>
     
     <item>
@@ -500,6 +487,16 @@ https://api.gbif.org/v2/map/occurrence/density/0/0/0@1x.png?style=purpleYellow.p
       <guid>/post/gbif-download-trends/</guid>
       <description>Link To App
 Explanation of toolThis tool plots the downloads through time for species or other taxonomic groups with more than 25 downloads at GBIF. Downloads at GBIF most often occur through the web interface. In a previous post, we saw that most users are downloading data from GBIF via filtering by scientific name (aka Taxon Key). Since the GBIF index currently sits at over 1 billion records (a 400+GB csv), most users will simplying filter by their taxonomic group of interest and then generate a download.</description>
+    </item>
+    
+    <item>
+      <title>Identifying potentially related records - How does the GBIF data-clustring feature work?</title>
+      <link>/post/clustering-occurrences/</link>
+      <pubDate>Wed, 05 Dec 1990 00:00:00 +0000</pubDate>
+      
+      <guid>/post/clustering-occurrences/</guid>
+      <description>The data available in GBIF include many so-called &amp;ldquo;duplicate&amp;rdquo; records. This is something that users might be familiar with. You download data from GBIF, analyze them and realize that some records have the same date, scientific name, catalogue number and location but come from two different publishers or have slightly different attributes.
+Sometimes an observation was recorded in two different systems, sometimes a specimen was digitized twice, sometimes a record has been enriched with genetic information and republished via a different platform&amp;hellip; There can be many reasons why these duplicates appear on GBIF.</description>
     </item>
     
   </channel>

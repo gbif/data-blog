@@ -174,6 +174,15 @@
     </item>
     
     <item>
+      <title>Collections</title>
+      <link>/tags/collections/</link>
+      <pubDate>Mon, 11 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/collections/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Custom metrics</title>
       <link>/tags/custom-metrics/</link>
       <pubDate>Thu, 05 Aug 2021 00:00:00 +0000</pubDate>
@@ -329,7 +338,7 @@
     <item>
       <title>Flags</title>
       <link>/tags/flags/</link>
-      <pubDate>Tue, 27 Oct 2020 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 11 Oct 2021 00:00:00 +0000</pubDate>
       
       <guid>/tags/flags/</guid>
       <description></description>
@@ -347,7 +356,7 @@
     <item>
       <title>GBIF</title>
       <link>/tags/gbif/</link>
-      <pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 11 Oct 2021 00:00:00 +0000</pubDate>
       
       <guid>/tags/gbif/</guid>
       <description></description>
@@ -365,7 +374,7 @@
     <item>
       <title>GRSciColl</title>
       <link>/tags/grscicoll/</link>
-      <pubDate>Thu, 05 Aug 2021 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 11 Oct 2021 00:00:00 +0000</pubDate>
       
       <guid>/tags/grscicoll/</guid>
       <description></description>
@@ -374,7 +383,7 @@
     <item>
       <title>Gbif</title>
       <link>/tags/gbif/</link>
-      <pubDate>Thu, 05 Aug 2021 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 11 Oct 2021 00:00:00 +0000</pubDate>
       
       <guid>/tags/gbif/</guid>
       <description></description>
@@ -516,6 +525,15 @@
     </item>
     
     <item>
+      <title>Institution</title>
+      <link>/tags/institution/</link>
+      <pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/institution/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Issues</title>
       <link>/tags/issues/</link>
       <pubDate>Tue, 27 Oct 2020 00:00:00 +0000</pubDate>
@@ -617,7 +635,7 @@
     <item>
       <title>Occurrence</title>
       <link>/tags/occurrence/</link>
-      <pubDate>Wed, 04 Dec 2019 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 11 Oct 2021 00:00:00 +0000</pubDate>
       
       <guid>/tags/occurrence/</guid>
       <description></description>
@@ -635,7 +653,7 @@
     <item>
       <title>Publish</title>
       <link>/tags/publish/</link>
-      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 11 Oct 2021 00:00:00 +0000</pubDate>
       
       <guid>/tags/publish/</guid>
       <description></description>
@@ -689,7 +707,7 @@
     <item>
       <title>Rgbif</title>
       <link>/tags/rgbif/</link>
-      <pubDate>Fri, 13 Aug 2021 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 04 Oct 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/rgbif/</guid>
       <description></description>
@@ -716,7 +734,7 @@
     <item>
       <title>Sampling-event</title>
       <link>/tags/sampling-event/</link>
-      <pubDate>Wed, 04 Dec 2019 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 11 Oct 2021 00:00:00 +0000</pubDate>
       
       <guid>/tags/sampling-event/</guid>
       <description></description>
@@ -782,6 +800,15 @@
       <pubDate>Thu, 05 Aug 2021 00:00:00 +0000</pubDate>
       
       <guid>/tags/species-matching-tool/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Specimen</title>
+      <link>/tags/specimen/</link>
+      <pubDate>Wed, 05 Dec 1990 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/specimen/</guid>
       <description></description>
     </item>
     

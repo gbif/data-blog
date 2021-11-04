@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data use on GBIF Data Blog</title>
+    <link>/categories/data-use/</link>
+    <description>Recent content in Data use on GBIF Data Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 05 Dec 1990 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/data-use/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Identifying potentially related records - How does the GBIF data-clustring feature work?</title>
+      <link>/post/clustering-occurrences/</link>
+      <pubDate>Wed, 05 Dec 1990 00:00:00 +0000</pubDate>
+      
+      <guid>/post/clustering-occurrences/</guid>
+      <description>The data available in GBIF include many so-called &amp;ldquo;duplicate&amp;rdquo; records. This is something that users might be familiar with. You download data from GBIF, analyze them and realize that some records have the same date, scientific name, catalogue number and location but come from two different publishers or have slightly different attributes.
+Sometimes an observation was recorded in two different systems, sometimes a specimen was digitized twice, sometimes a record has been enriched with genetic information and republished via a different platform&amp;hellip; There can be many reasons why these duplicates appear on GBIF.</description>
+    </item>
+    
+  </channel>
+</rss>

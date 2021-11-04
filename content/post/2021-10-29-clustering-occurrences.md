@@ -63,8 +63,9 @@ See [this link](https://github.com/gbif/pipelines/blob/dev/gbif/pipelines/cluste
 In this second phase, the system will compare all records in the candidate set to each other and generate assertions. The assertions are inspected and the algorithms decides if there is enough evidence in the assertions to create a relationship between them.
 In the table below, I summarize how those assertions are made but if you would like more details, you can check the code available [here](https://github.com/gbif/pipelines/blob/dev/sdks/core/src/main/java/org/gbif/pipelines/core/parsers/clustering/OccurrenceRelationships.java#L26).
 
+
 | Assertion | fields checked | condition checked |
-|-----|----|----|
+|:-----|:----|:----|
 | Same specimen | `taxonKey`, `typeSatus` | same taxonKey between records and type status = Holotype for both records |
 | Typification relation | `scientificName`, `typeStatus` | same between records|
 | Same accepted species | `speciesKey` | same between records |
@@ -80,12 +81,12 @@ In the table below, I summarize how those assertions are made but if you would l
 | Same country | `countryCode` | same between records |
 | Non conflicting country | `countryCode` | country only on one record |
 | Different country | `countryCode` | differs between records|
-| Identifiers overlap | `occurrenceID`, `fieldNumber`, `recordNumber`, `otherCatalogueNumber`, grouped(`institutionCode`:`collectionCode`:`catalogueNumber`), grouped(`institutionCode`:`catalogueNumber`) | checks any overlap of identifiers between records|
+| Identifiers overlap | `occurrenceID`, `fieldNumber`, `recordNumber`, `otherCatalogueNumber`, grouped(`institutionCode`:`collectionCode`:`catalogueNumber`),<br> grouped(`institutionCode`:`catalogueNumber`) | checks any overlap of identifiers between records|
 
 The table below summarises the combinations of assertions that are sufficient to link the records in a cluster. If a group of occurrences share the combinations of assertions for any given column, they will be clustered together.
 
 | Assertion | | | | | | | | | | | | | |
-|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+|:----|----|----|----|----|----|----|----|----|----|----|----|----|----|
 | Same specimen | | | | | | | | | | | x | |
 | Typification relation | | | | | | | | | | | | x |
 | Same accepted species | x | x | x | x | x | x | x | x | x | x | | |

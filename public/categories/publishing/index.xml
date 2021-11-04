@@ -6,10 +6,20 @@
     <description>Recent content in Publishing on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 02 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 11 Oct 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/publishing/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>What are the flags &#34;Collection match fuzzy&#34;, &#34;Collection match none&#34;, &#34;Institution match fuzzy&#34;, &#34;Institution match none&#34; and how to remove them?</title>
+      <link>/post/grscicoll-flags/</link>
+      <pubDate>Mon, 11 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/grscicoll-flags/</guid>
+      <description>You are a data publisher of occurrence data through GBIF.org, care about your data quality, and wonder what to do about the issue flags that show up on your occurrences. You might have noticed a new type flag this year relating to collection and institution codes and identifiers. They are the result of our attempt at linking specimens records to our Registry of Scientific Collections (GRSciColl).
+We want to be able to group specimens and combine metrics at the collection and institution levels (which can be independant from the way there were published on GBIF).</description>
+    </item>
     
     <item>
       <title>Which tools can I use to share my data on GBIF?</title>

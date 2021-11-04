@@ -30,9 +30,18 @@
     </item>
     
     <item>
+      <title>Data use</title>
+      <link>/categories/data-use/</link>
+      <pubDate>Wed, 05 Dec 1990 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/data-use/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>GBIF</title>
       <link>/categories/gbif/</link>
-      <pubDate>Tue, 07 Sep 2021 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 11 Oct 2021 00:00:00 +0000</pubDate>
       
       <guid>/categories/gbif/</guid>
       <description></description>
@@ -59,7 +68,7 @@
     <item>
       <title>Publishing</title>
       <link>/categories/publishing/</link>
-      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 11 Oct 2021 00:00:00 +0000</pubDate>
       
       <guid>/categories/publishing/</guid>
       <description></description>

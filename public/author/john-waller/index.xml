@@ -27,31 +27,6 @@
     </item>
     
     <item>
-      <title>Working with names in rgbif</title>
-      <link>/post/rgbif-names/</link>
-      <pubDate>Fri, 13 Aug 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/post/rgbif-names/</guid>
-      <description>Matching names to the GBIF backbone is one of the most important steps in any GBIF workflow.
-There are several functions within rgbif that deal with scientific names, so it can be difficult to know what function to use when trying to match names to the GBIF backbone.
-There are several names
-name_backbone()name_usage()name_suggest()name_lookup()If you just want to match your names to the GBIF backbone (get taxonkeys), I would use rgbif::name_backbone().</description>
-    </item>
-    
-    <item>
-      <title>Working with scientific names in rgbif</title>
-      <link>/post/rgbif-names/</link>
-      <pubDate>Fri, 13 Aug 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/post/rgbif-names/</guid>
-      <description>When starting to work with rgbif and GBIF it is sometimes hard to know where to start.
-In this guide I will be going through.
-In my opinion there are around 5 steps to any GBIF-realted research project.
-match your names to the GBIF backbonedownload your GBIF subsetclean your downloadrun your modelcite your downloadAll of these steps can be done in rgbif.
-Match names to the GBIF backboneThis is often the most difficult task when starting to work in GBIF.</description>
-    </item>
-    
-    <item>
       <title>GBIF and Apache-Spark on AWS tutorial</title>
       <link>/post/aws-and-gbif/</link>
       <pubDate>Fri, 04 Jun 2021 00:00:00 +0000</pubDate>

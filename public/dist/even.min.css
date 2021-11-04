@@ -225,6 +225,7 @@ table {
 td,
 th {
     padding: 0
+
 }
 
 html {
@@ -753,38 +754,38 @@ h6 {
     max-width: 100%
 }
 
-/* .post .post-content>table { */
-    /* max-width: 100%; */
-    /* margin: 10px 0; */
-    /* border-spacing: 0; */
-    /* -webkit-box-shadow: 2px 2px 3px rgba(0, 0, 0, .125); */
-    /* box-shadow: 2px 2px 3px rgba(0, 0, 0, .125) */
-/* } */
+.post .post-content>table { 
+     width: 100%; 
+     margin: 10px 0; 
+     border-spacing: 0; 
+     -webkit-box-shadow: 0px 0px 0px rgba(0, 0, 0, .125); 
+     box-shadow: 0px 0px 0px rgba(0, 0, 0, .125) 
+ } 
 
-/* .post .post-content>table thead { */
-    /* background: #f8f5ec */
-/* } */
+.post .post-content>table thead { 
+     background: #FFFFFF
+ } 
 
-/* .post .post-content>table td, */
-/* .post .post-content>table th { */
-    /* padding: 5px 15px; */
-    /* border: 1px double #f4efe1 */
-/* } */
+.post .post-content> table tr:nth-child(even){background-color: #F6F8FA;}
 
-/* .post .post-content>table tr:hover { */
-    /* background-color: #f8f5ec */
-/* } */
+
+.post .post-content>table td, 
+.post .post-content>table th { 
+    padding: 5px 5px; 
+    border: 1px double #F1F1F1 
+}
+
 
 .post .post-content code,
 .post .post-content pre {
-    padding: 7px;
+    padding: 5px;
     font-size: 13px;
     font-family: Consolas, Monaco, Menlo, monospace;
     background: #F9F9F9
 }
 
 .post .post-content code {
-    padding: 3px 5px;
+    padding: 3px 3px;
     border-radius: 4px;
     color: #333333
 }
