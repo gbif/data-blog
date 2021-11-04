@@ -60,9 +60,9 @@ Sometimes an observation was recorded in two different systems, sometimes a spec
 
 
 
-<meta property="article:published_time" content="1990-12-05T00:00:00&#43;00:00"/>
+<meta property="article:published_time" content="2021-11-04T00:00:00&#43;00:00"/>
 
-<meta property="article:modified_time" content="2019-12-05T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2021-11-04T00:00:00&#43;00:00"/>
 
 
 
@@ -79,9 +79,9 @@ Sometimes an observation was recorded in two different systems, sometimes a spec
 Sometimes an observation was recorded in two different systems, sometimes a specimen was digitized twice, sometimes a record has been enriched with genetic information and republished via a different platform&hellip; There can be many reasons why these duplicates appear on GBIF.">
 
 
-<meta itemprop="datePublished" content="1990-12-05T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="1990-12-05T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="963">
+<meta itemprop="datePublished" content="2021-11-04T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2021-11-04T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="938">
 
 
 
@@ -166,7 +166,7 @@ Sometimes an observation was recorded in two different systems, sometimes a spec
       <div class="post-author">Tim Robertson and Marie Grosjean</div>
 
       <div class="post-meta">
-        <span class="post-time"> 1990-12-05 </span>
+        <span class="post-time"> 2021-11-04 </span>
         <div class="post-category">
             
               <a href="/categories/gbif/"> GBIF </a>
@@ -197,7 +197,11 @@ This is something that users might be familiar with. You download data from GBIF
 <p>This is why last year, we released an experimental data-clustering feature aiming to identify potentially related records on GBIF.
 The goal was not only to detect potential duplicates but to also find interesting relationships, such as between typification records or records originating from Natural History collections, DNA-derived sequences and citations of materials examined when publishing taxonomic treatments in journal articles.</p>
 
-<p>Records that have been included in a cluster can be found with the &ldquo;is in cluster&rdquo; filter in <a href="https://www.gbif.org/occurrence/search?advanced=1&amp;occurrence_status=present&amp;is_in_cluster=true">the occurrence search</a>. Each occurrence page belonging to a cluster will have a &ldquo;CLUSTER&rdquo; tab displaying the potentially related records. You can read <a href="https://www.gbif.org/news/4U1dz8LygQvqIywiRIRpAU/new-data-clustering-feature-aims-to-improve-data-quality-and-reveal-cross-dataset-connections">this news item</a> for more information and some exciting examples.</p>
+<p>Records that have been included in a cluster can be found with the &ldquo;is in cluster&rdquo; filter in <a href="https://www.gbif.org/occurrence/search?advanced=1&amp;occurrence_status=present&amp;is_in_cluster=true">the occurrence search</a>. Each occurrence page belonging to a cluster will have a &ldquo;CLUSTER&rdquo; tab displaying the potentially related records.</p>
+
+<p><img src="post/2021-10-29-clustering-occurrences/example_cluster.png" alt="Example of cluster" /></p>
+
+<p>You can read <a href="https://www.gbif.org/news/4U1dz8LygQvqIywiRIRpAU/new-data-clustering-feature-aims-to-improve-data-quality-and-reveal-cross-dataset-connections">this news item</a> for more information and some exciting examples.</p>
 
 <h1 id="how-does-the-gbif-data-clustering-feature-work">How does the GBIF data-clustering feature work?</h1>
 
@@ -327,300 +331,7 @@ In the table below, I summarize how those assertions are made but if you would l
 
 <p>The table below summarises the combinations of assertions that are sufficient to link the records in a cluster. If a group of occurrences share the combinations of assertions for any given column, they will be clustered together.</p>
 
-<table>
-<thead>
-<tr>
-<th align="left">Assertion</th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td align="left">Same specimen</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>x</td>
-<td></td>
-<td></td>
-</tr>
-
-<tr>
-<td align="left">Typification relation</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>x</td>
-<td></td>
-</tr>
-
-<tr>
-<td align="left">Same accepted species</td>
-<td>x</td>
-<td>x</td>
-<td>x</td>
-<td>x</td>
-<td>x</td>
-<td>x</td>
-<td>x</td>
-<td>x</td>
-<td>x</td>
-<td>x</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-
-<tr>
-<td align="left">Same date</td>
-<td>x</td>
-<td>x</td>
-<td></td>
-<td></td>
-<td>x</td>
-<td></td>
-<td>x</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-
-<tr>
-<td align="left">Approximate date</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>x</td>
-<td>x</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-
-<tr>
-<td align="left">Different date</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-
-<tr>
-<td align="left">Non conflicting date</td>
-<td></td>
-<td></td>
-<td>x</td>
-<td>x</td>
-<td></td>
-<td>x</td>
-<td></td>
-<td>x</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-
-<tr>
-<td align="left">Same recorder name</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>x</td>
-<td>x</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-
-<tr>
-<td align="left">Same coordinates</td>
-<td>x</td>
-<td></td>
-<td>x</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>x</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-
-<tr>
-<td align="left">Non conflicting Coordinates</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>x</td>
-<td>x</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-
-<tr>
-<td align="left">Within 200 m</td>
-<td></td>
-<td>x</td>
-<td></td>
-<td>x</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-
-<tr>
-<td align="left">Within 2 km</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>x</td>
-<td>x</td>
-<td></td>
-<td></td>
-<td></td>
-<td>x</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-
-<tr>
-<td align="left">Same country</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-
-<tr>
-<td align="left">Non conflicting country</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-
-<tr>
-<td align="left">Different country</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-
-<tr>
-<td align="left">Identifiers overlap</td>
-<td></td>
-<td></td>
-<td>x</td>
-<td>x</td>
-<td>x</td>
-<td>x</td>
-<td>x</td>
-<td>x</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<p><img src="post/2021-10-29-clustering-occurrences/table_2.png" alt="Combination of assersiton conditions to create cluster" /></p>
 
 <blockquote>
 <p><strong>NB</strong>: Any group of occurrence associated with the assertion <code>Different date</code> or <code>Different country</code> will not be clustered together.</p>
@@ -647,6 +358,13 @@ In the table below, I summarize how those assertions are made but if you would l
 <li>Use the <a href="https://dwc.tdwg.org/terms/#dwc:associatedOccurrences">associatedOccurrences</a> and <a href="https://rs.gbif.org/extension/dwc/resource_relation_2018_01_18.xml">resource relationship extension</a>. These are not used during the clustering today, but are expected to be in the future, and are the correct way to communicate relationships within Darwin Core.</li>
 </ol>
 
+<h1 id="where-to-send-suggestions-and-ask-questions">Where to send suggestions and ask questions</h1>
+
+<p>If you have suggestions to improve the clustering feature or questions on how it works, you are very welcome to:
+- leave a comment under this post
+- or log an issue in our <a href="https://github.com/gbif/portal-feedback/issues">GitHub repository</a> or via the GBIF feedback system
+- or contact us at helpdesk@gbif.org.</p>
+
     </div>
 
     
@@ -669,12 +387,12 @@ In the table below, I summarize how those assertions are made but if you would l
       
       <nav class="post-nav">
         
-          <a class="prev" href="/post/gbif-download-trends/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">GBIF download trends</span>
-            <span class="prev-text nav-mobile">Prev</span>
-          </a>
         
+          <a class="next" href="/post/grscicoll-flags/">
+            <span class="next-text nav-default">What are the flags &#34;Collection match fuzzy&#34;, &#34;Collection match none&#34;, &#34;Institution match fuzzy&#34;, &#34;Institution match none&#34; and how to remove them?</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
       </nav>
     </footer>
   </article>

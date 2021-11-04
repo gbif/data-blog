@@ -6,10 +6,20 @@
     <description>Recent content in Occurrence on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 11 Oct 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 04 Nov 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/occurrence/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Identifying potentially related records - How does the GBIF data-clustring feature work?</title>
+      <link>/post/clustering-occurrences/</link>
+      <pubDate>Thu, 04 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/clustering-occurrences/</guid>
+      <description>The data available in GBIF include many so-called &amp;ldquo;duplicate&amp;rdquo; records. This is something that users might be familiar with. You download data from GBIF, analyze them and realize that some records have the same date, scientific name, catalogue number and location but come from two different publishers or have slightly different attributes.
+Sometimes an observation was recorded in two different systems, sometimes a specimen was digitized twice, sometimes a record has been enriched with genetic information and republished via a different platform&amp;hellip; There can be many reasons why these duplicates appear on GBIF.</description>
+    </item>
     
     <item>
       <title>What are the flags &#34;Collection match fuzzy&#34;, &#34;Collection match none&#34;, &#34;Institution match fuzzy&#34;, &#34;Institution match none&#34; and how to remove them?</title>
@@ -29,16 +39,6 @@ We want to be able to group specimens and combine metrics at the collection and 
       <guid>/post/choose-dataset-type/</guid>
       <description>If you are a (first time) publisher on GBIF and you are trying to decide which type of dataset would best fit your data, this blogpost is for you.
 All the records shared on GBIF are organized into datasets. Each dataset is associated with some metadata describing its content (the classic &amp;ldquo;what, where, when, why, how&amp;rdquo;). The dataset&amp;rsquo;s content depends strongly on the dataset&amp;rsquo;s class. GBIF currently support four types of dataset:</description>
-    </item>
-    
-    <item>
-      <title>Identifying potentially related records - How does the GBIF data-clustring feature work?</title>
-      <link>/post/clustering-occurrences/</link>
-      <pubDate>Wed, 05 Dec 1990 00:00:00 +0000</pubDate>
-      
-      <guid>/post/clustering-occurrences/</guid>
-      <description>The data available in GBIF include many so-called &amp;ldquo;duplicate&amp;rdquo; records. This is something that users might be familiar with. You download data from GBIF, analyze them and realize that some records have the same date, scientific name, catalogue number and location but come from two different publishers or have slightly different attributes.
-Sometimes an observation was recorded in two different systems, sometimes a specimen was digitized twice, sometimes a record has been enriched with genetic information and republished via a different platform&amp;hellip; There can be many reasons why these duplicates appear on GBIF.</description>
     </item>
     
   </channel>

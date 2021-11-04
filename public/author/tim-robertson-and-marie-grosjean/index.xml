@@ -6,7 +6,7 @@
     <description>Recent content in Tim Robertson and Marie Grosjean on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 05 Dec 1990 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 04 Nov 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/author/tim-robertson-and-marie-grosjean/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Identifying potentially related records - How does the GBIF data-clustring feature work?</title>
       <link>/post/clustering-occurrences/</link>
-      <pubDate>Wed, 05 Dec 1990 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 04 Nov 2021 00:00:00 +0000</pubDate>
       
       <guid>/post/clustering-occurrences/</guid>
       <description>The data available in GBIF include many so-called &amp;ldquo;duplicate&amp;rdquo; records. This is something that users might be familiar with. You download data from GBIF, analyze them and realize that some records have the same date, scientific name, catalogue number and location but come from two different publishers or have slightly different attributes.
