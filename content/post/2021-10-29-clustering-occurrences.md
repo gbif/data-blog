@@ -43,7 +43,7 @@ The goal was not only to detect potential duplicates but to also find interestin
 
 Records that have been included in a cluster can be found with the "is in cluster" filter in [the occurrence search](https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present&is_in_cluster=true). Each occurrence page belonging to a cluster will have a "CLUSTER" tab displaying the potentially related records. 
 
-![Example of cluster](post/2021-10-29-clustering-occurrences/example_cluster.png)
+![Example of cluster](/post/2021-10-29-clustering-occurrences/example_cluster.png)
 
 You can read [this news item](https://www.gbif.org/news/4U1dz8LygQvqIywiRIRpAU/new-data-clustering-feature-aims-to-improve-data-quality-and-reveal-cross-dataset-connections) for more information and some exciting examples.
 
@@ -89,7 +89,7 @@ In the table below, I summarize how those assertions are made but if you would l
 
 The table below summarises the combinations of assertions that are sufficient to link the records in a cluster. If a group of occurrences share the combinations of assertions for any given column, they will be clustered together.
 
-![Combination of assersiton conditions to create cluster](post/2021-10-29-clustering-occurrences/table_2.png)
+![Combination of assersiton conditions to create cluster](/post/2021-10-29-clustering-occurrences/table_2.png)
 
 > **NB**: Any group of occurrence associated with the assertion `Different date` or `Different country` will not be clustered together.
 
