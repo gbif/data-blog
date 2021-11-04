@@ -1,6 +1,6 @@
 ---
-title: Identifying potentially related records - How does the GBIF data-clustring feature work?
-author: Tim Robertson and Marie Grosjean
+title: Identifying potentially related records - How does the GBIF data-clustering feature work?
+author: Marie Grosjean and Tim Robertson 
 date: '2021-11-04'
 slug: clustering-occurrences
 categories:
