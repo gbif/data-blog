@@ -33,10 +33,9 @@ sequenceDiagrams:
   options: ''
 ---
 
-The data available in GBIF include many so-called "duplicate" records.
-This is something that users might be familiar with. You download data from GBIF, analyze them and realize that some records have the same date, scientific name, catalogue number and location but come from two different publishers or have slightly different attributes.
+Many data users may suspect they’ve discovered duplicated records in the GBIF index. You download data from GBIF, analyze them and realize that some records have the same date, scientific name, catalogue number and location but come from two different publishers or have slightly different attributes.
 
-Sometimes [an observation was recorded in two different systems](https://discourse.gbif.org/t/duplicate-observations-across-datasets/3069), sometimes a specimen was digitized twice, sometimes a record has been enriched with genetic information and republished via a different platform... There can be many reasons why these duplicates appear on GBIF.
+There are many valid reasons why these duplicates appear on GBIF. Sometimes [an observation was recorded in two different systems](https://discourse.gbif.org/t/duplicate-observations-across-datasets/3069), sometimes several records correspond to herbaria duplicates (you can check [the work of Nicky Nicolson on the topic](https://www.gbif.org/news/4n8ZCfuK3zxseKAHRMcfA8/award-winner-uses-data-mining-and-machine-learning-to-identify-collectors-and-duplicated-herbarium-specimens)), sometimes a specimen was digitized twice, sometimes a record has been enriched with genetic information and republished via a different platform...
 
 This is why last year, we released an experimental data-clustering feature aiming to identify potentially related records on GBIF.
 The goal was not only to detect potential duplicates but to also find interesting relationships, such as between typification records or records originating from Natural History collections, DNA-derived sequences and citations of materials examined when publishing taxonomic treatments in journal articles.
@@ -116,4 +115,4 @@ If you have suggestions to improve the clustering feature or questions on how it
 
 - leave a comment under this post 
 - or log an issue in our [GitHub repository](https://github.com/gbif/portal-feedback/issues) or via the GBIF feedback system
-- or contact us at helpdesk@gbif.org.
+- or contact us at <helpdesk@gbif.org>.
