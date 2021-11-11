@@ -62,7 +62,7 @@ See [this link](https://github.com/gbif/pipelines/blob/dev/gbif/pipelines/cluste
 
 
 
-## 2. Compare candidates with each other and assess whether they are potentially related
+##  2. Compare candidates with each other and assess whether they are potentially related
 
 
 In this second phase, the system will compare all records in the candidate set to each other and generate assertions. The assertions are inspected and the algorithms decides if there is enough evidence in the assertions to create a relationship between them.
