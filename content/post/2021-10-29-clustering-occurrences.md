@@ -48,7 +48,7 @@ You can read [this news item](https://www.gbif.org/news/4U1dz8LygQvqIywiRIRpAU/n
 
 # How does the GBIF data-clustering feature work?
 
-## 1. Select candidates
+## Step 1: Select candidates
 
 
 Comparing nearly 2 billions records with each other is very resource intensive and quite impractical, so the first step of the data-clustering process is to select and group candidate records to compare.
@@ -62,7 +62,7 @@ See [this link](https://github.com/gbif/pipelines/blob/dev/gbif/pipelines/cluste
 
 
 
-##  2. Compare candidates with each other and assess whether they are potentially related
+## Step 2: Compare candidates with each other and assess whether they are potentially related
 
 
 In this second phase, the system will compare all records in the candidate set to each other and generate assertions. The assertions are inspected and the algorithms decides if there is enough evidence in the assertions to create a relationship between them.
