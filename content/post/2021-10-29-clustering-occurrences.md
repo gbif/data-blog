@@ -1,6 +1,6 @@
 ---
-title: Identifying potentially related records - How does the GBIF data-clustring feature work?
-author: Tim Robertson and Marie Grosjean
+title: Identifying potentially related records - How does the GBIF data-clustering feature work?
+author: Marie Grosjean and Tim Robertson 
 date: '2021-11-04'
 slug: clustering-occurrences
 categories:
@@ -11,7 +11,7 @@ tags:
   - specimen
   - occurrence
 lastmod: '2021-11-04'
-draft: yes
+draft: no
 keywords: ['occurrence', 'specimen', 'clustering', 'duplicate']
 description: ''
 comment: no
@@ -33,15 +33,14 @@ sequenceDiagrams:
   options: ''
 ---
 
-The data available in GBIF include many so-called "duplicate" records.
-This is something that users might be familiar with. You download data from GBIF, analyze them and realize that some records have the same date, scientific name, catalogue number and location but come from two different publishers or have slightly different attributes.
+Many data users may suspect they’ve discovered duplicated records in the GBIF index. You download data from GBIF, analyze them and realize that some records have the same date, scientific name, catalogue number and location but come from two different publishers or have slightly different attributes.
 
-Sometimes [an observation was recorded in two different systems](https://discourse.gbif.org/t/duplicate-observations-across-datasets/3069), sometimes a specimen was digitized twice, sometimes a record has been enriched with genetic information and republished via a different platform... There can be many reasons why these duplicates appear on GBIF.
+There are many valid reasons why these duplicates appear on GBIF. Sometimes [an observation was recorded in two different systems](https://discourse.gbif.org/t/duplicate-observations-across-datasets/3069), sometimes several records correspond to herbaria duplicates (you can check [the work of Nicky Nicolson on the topic](https://www.gbif.org/news/4n8ZCfuK3zxseKAHRMcfA8/award-winner-uses-data-mining-and-machine-learning-to-identify-collectors-and-duplicated-herbarium-specimens)), sometimes a specimen was digitized twice, sometimes a record has been enriched with genetic information and republished via a different platform...
 
 This is why last year, we released an experimental data-clustering feature aiming to identify potentially related records on GBIF.
 The goal was not only to detect potential duplicates but to also find interesting relationships, such as between typification records or records originating from Natural History collections, DNA-derived sequences and citations of materials examined when publishing taxonomic treatments in journal articles.
 
-Records that have been included in a cluster can be found with the "is in cluster" filter in [the occurrence search](https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present&is_in_cluster=true). Each occurrence page belonging to a cluster will have a "CLUSTER" tab displaying the potentially related records. 
+Records that have been included in a cluster can be found with the "is in cluster" filter in [the occurrence search](https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present&is_in_cluster=true). Each occurrence page belonging to a cluster will have a "CLUSTER" tab displaying the potentially related records (see a screenshot of [this example](https://www.gbif.org/occurrence/2871636339/cluster) below).
 
 ![Example of cluster](/post/2021-10-29-clustering-occurrences/example_cluster.png)
 
@@ -49,8 +48,9 @@ You can read [this news item](https://www.gbif.org/news/4U1dz8LygQvqIywiRIRpAU/n
 
 # How does the GBIF data-clustering feature work?
 
-## 1. Select candidates
+## Step 1: Select candidates
 
+Step 1: Select candidates
 
 Comparing nearly 2 billions records with each other is very resource intensive and quite impractical, so the first step of the data-clustering process is to select and group candidate records to compare.
 
@@ -62,7 +62,10 @@ The fields used to identify and group the candidates are a subset of what is use
 See [this link](https://github.com/gbif/pipelines/blob/dev/gbif/pipelines/clustering-gbif/src/main/scala/org/gbif/pipelines/clustering/Cluster.scala) to check the details.
 
 
-## 2. Compare candidates with each other and assess whether they are potentially related
+
+## Step 2: Compare candidates with each other and assess whether they are potentially related
+
+Step 2: Compare candidates with each other and assess whether they are potentially related
 
 In this second phase, the system will compare all records in the candidate set to each other and generate assertions. The assertions are inspected and the algorithms decides if there is enough evidence in the assertions to create a relationship between them.
 In the table below, I summarize how those assertions are made but if you would like more details, you can check the code available [here](https://github.com/gbif/pipelines/blob/dev/sdks/core/src/main/java/org/gbif/pipelines/core/parsers/clustering/OccurrenceRelationships.java#L26).
@@ -93,7 +96,7 @@ The table below summarises the combinations of assertions that are sufficient to
 
 > **NB**: Any group of occurrence associated with the assertion `Different date` or `Different country` will not be clustered together.
 
-# Why some occurrences aren't clustered
+# Why some occurrences are not clustered
 
 It is possible that some occurrences check one of the combinations of assertions but aren't shown as clustered yet. This could be the case for several reasons:
 
@@ -113,6 +116,7 @@ If for one reason or another, you need to publish on GBIF occurrences for observ
 # Where to send suggestions and ask questions
 
 If you have suggestions to improve the clustering feature or questions on how it works, you are very welcome to:
+
 - leave a comment under this post 
 - or log an issue in our [GitHub repository](https://github.com/gbif/portal-feedback/issues) or via the GBIF feedback system
-- or contact us at helpdesk@gbif.org.
+- or contact us at <helpdesk@gbif.org>.
