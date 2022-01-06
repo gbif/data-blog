@@ -141,6 +141,22 @@ copyright = ""            # default: author.name ↓        #
     b-twitter = "https://twitter.com/GBIF?lang=en"
     c-instagram = "https://www.instagram.com/gbifs/?hl=en"
     d-vimeo = "https://github.com/gbif"
+ 
+ [markup.highlight]
+    codeFences = true
+    hl_Lines = ""
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = true
+    style = "solarized-dark"
+    tabWidth = 4
+
+  [markup]
+    [markup.goldmark]
+      [markup.goldmark.renderer]
+        unsafe = true
+
 # 
 # Uncomment these options to make hugo output .md files.
 #[mediaTypes]

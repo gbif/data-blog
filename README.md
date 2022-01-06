@@ -7,114 +7,31 @@ How to write a blog post
 ------
 ### TLDR recommended blog-writing workflow 
 
-1. Write a post in markdown named like `YYYY-MM-DD-your-post.md` [blog post template here](https://raw.githubusercontent.com/gbif/data-blog/master/templates/2025-09-24-template.md)
-2. Preview with a simple online [markdown editor](https://stackedit.io/app#)
-3. Save plots or images into an image folder named like `./content/post/YYYY-MM-DD-your-post_files`
+1. Write a post in markdown named `YYYY-MM-DD-your-post.md` 
+2. Save plots or images into folder named `./content/post/YYYY-MM-DD-your-post_files`
 
 ```
-# embed with this template
+# embed images with this template
 ![example](/post/YYYY-MM-DD-your-post_files/plot1.jpg)
 ```
 
-4. Copy/paste [header text](https://github.com/gbif/data-blog/blob/master/templates/header.txt) into your `.md` file 
+3. Copy/paste [header text](https://github.com/gbif/data-blog/blob/master/templates/header.txt) into your `.md` file 
 ```
 ---
-title: Your post
+title: Your Title
 author: Your Name
-date: '2018-09-21'
-slug: test-post
-categories:
-  - GBIF
-tags:
-  - test tag
-  - test
-lastmod: '2018-09-21T15:24:11+02:00'
-draft: yes
-keywords: []
-description: ''
-comment: no
-toc: ''
-autoCollapseToc: no
-postMetaInFooter: no
-hiddenFromHomePage: yes
-contentCopyright: no
-reward: no
-mathjax: no
-mathjaxEnableSingleDollar: no
-mathjaxEnableAutoNumber: no
-hideHeaderAndFooter: no
-flowchartDiagrams:
-  enable: no
-  options: ''
-sequenceDiagrams:
-  enable: no
-  options: ''
----
-
-```
-5. Edit important fields in header text: 
- 
- - `title: Your post` <- your title 
- - `authors: Your Name` <- your author name
- - `date: '2018-09-21'` <- the order the post will appear on blog. Does not necessarily have to be the same as the date in  `YYYY-MM-DD-your-post.md`. 
- - `slug: your-post` <- name that will appear in the url https://data-blog.gbif.org/post/your-post/ 
- - `tags:` <- category tags for post
- - `hiddenFromHomePage: yes` <- keeps people from seeing your post as you work on it
- - `draft: yes` <- keeps the post off of navigation as you work on it 
-6. Clone the repository locally `git clone https://github.com/gbif/data-blog.git`
-7. Copy `YYYY-MM-DD-your-post.md` and `YYYY-MM-DD-your-post_files` into `./content/post/`
-```
-.
-├───content
-    ├───post
-        ├───YYYY-MM-DD-your-post.md
-        └───YYYY-MM-DD-your-post_files <- put images here
-            └───plot1.jpg
-```
-8. Get [someone](https://github.com/jhnwllr) with admin access to **gbif/data-blog** to invite you as a collaborator (**Settings** > **Collaborators & teams**).
-9. Push your changes to **gbif/data-blog** (or create pull request or edit with github ui). 
-10. Check your post at https://data-blog.gbif.org/post/your-post/ (Netlify will build your post automatically)
-11. **Find mistakes** 
-12. Fix mistakes and push changes to **gbif/data-blog** until satisfied. 
-13. Switch to `hiddenFromHomePage: no` and `draft: no`
-14. Ask [someone](https://github.com/jhnwllr) with admin access to [https://discourse.gbif.org/](https://discourse.gbif.org/) to turn on comments for you.  
-
-
-
-More details on how to write a post
-------
-### Writing a post in markdown
-
-Posts should be written in markdown. If you are unfamiliar, you can use some of the links below. 
-
-* [cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
-* [online editor](https://stackedit.io/app#)
-
-Markdown files are just simple text files with an `.md` extension. 
-
-You can download a simple `.md` [blog post template here](https://raw.githubusercontent.com/gbif/data-blog/master/templates/2025-09-24-template.md) 
-
-### Post Template
-
-Posts should have a specific header text. [blog post template here](https://raw.githubusercontent.com/gbif/data-blog/master/templates/2025-09-24-template.md) 
- 
-
-```
----
-title: Your post
-authors: Your Name
-date: '2018-09-21'
+date: '2022-01-04'
 slug: your-post
 categories:
   - GBIF
-tags:
-  - test tag
-  - test
-lastmod: '2018-09-21T15:24:11+02:00'
+tags: []
+lastmod: '2022-01-04T10:19:14+01:00'
+draft: yes
 keywords: []
 description: ''
+authors: ''
 comment: no
-toc: ''
+toc: no
 autoCollapseToc: no
 postMetaInFooter: no
 hiddenFromHomePage: no
@@ -132,34 +49,42 @@ sequenceDiagrams:
   options: ''
 ---
 
-# Some markdown header text  
-I am some text. 
-
 ```
-
-Important fields to **fill in** are below: 
-
+4. Edit important fields in header text: 
+ 
+ - `title: Your post` <- your title 
+ - `authors: Your Name` <- your author name
+ - `date: '2018-09-21'` <- the order the post will appear on blog. Does not necessarily have to be the same as the date in  `YYYY-MM-DD-your-post.md`. 
+ - `slug: your-post` <- name that will appear in the url https://data-blog.gbif.org/post/your-post/ 
+ - `tags:` <- category tags for post
+ - `hiddenFromHomePage: yes` <- keeps people from seeing your post as you work on it
+ - `draft: yes` <- keeps the post off of navigation as you work on it 
+5. Copy `YYYY-MM-DD-your-post.md` and `YYYY-MM-DD-your-post_files` into `./content/post/`
 ```
-title: Your post
-author: Your Name
-date: '2018-09-21'
-slug: your-post
-categories:
-  - GBIF
-tags:
-  - test tag
-  - test
-
-(The rest of the header text)
-
+.
+├───content
+    ├───post
+        ├───YYYY-MM-DD-your-post.md
+        └───YYYY-MM-DD-your-post_files <- put images here
+            └───plot1.jpg
 ```
-And the rest of the fields can be left the same. I am not really sure if they are all needed, but just to not break the theme, I would **leave them in**. You can probably **ignore** the `lastmod field:`. 
+6. Check your post at https://data-blog.gbif.org/post/your-post/ (Netlify will build your post automatically)
+7. **Find mistakes** 
+8. Fix mistakes and push changes to **gbif/data-blog** until satisfied. 
+9. Switch to `hiddenFromHomePage: no` and `draft: no`
+10. Ask [someone](https://github.com/jhnwllr) with admin access to [https://discourse.gbif.org/](https://discourse.gbif.org/) to turn on comments for you.  
 
-You can download a simple `.md` blog post template `./content/post/2025-09-24-template.md` [link here](https://github.com/gbif/data-blog/blob/master/templates/2025-09-24-template.md). 
 
-### How hugo works
+More details on how to write a post
+------
+### Writing a post in markdown
 
-[Hugo](https://gohugo.io/) is a simple static site generator that will turn `.md` files into nicely styled html files. 
+Posts should be written in markdown. If you are unfamiliar, you can use some of the links below. 
+
+* [cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+* [online editor](https://stackedit.io/app#)
+
+Markdown files are just simple text files with an `.md` extension. 
 
 ### Getting your post on the blog 
 
@@ -170,16 +95,6 @@ A post can be done by simply copying an `.md` into the **gbif/data-blog** `./con
 ├───content
     └───post <- put YYYY-MM-DD-your-post.md here
 ```
-
-I am still working out the best way to do this in practice, but see the **TLDR recommended blog-writing workflow**. 
-
-Some options: 
-
-* Send me the `YYYY-MM-DD-your-post.md` file **jwaller@gbif.org**
-* Fork the repository and add the `YYYY-MM-DD-your-post.md`, then do a pull request. 
-* If you have access to **github.com/gbif/data-blog**, just update the repository yourself. 
-
-After `YYYY-MM-DD-your-post.md` is in the `./content/post/` directory, [Netlify](https://www.netlify.com/) will build the blog automatically, the theme will be applied, and **your post will be online** at  https://data-blog.gbif.org/post/your-post/. Where **/your-post/** is the **slug** you gave your post in the header text.  
 
 ### Insert an image or other static content 
 
@@ -202,94 +117,6 @@ Then to link an [image in markdown](https://github.com/adam-p/markdown-here/wiki
 ![example](/post/YYYY-MM-DD-your-post_files/plot1.jpg)
 ```
 Note the lack of **/content/** in the path. This is because the image is being linked from the `./public/post/YYYY-MM-DD-your-post_files/`. The `./public/` folder becomes the `.` root directory when the site is built by hugo.  
-
-### Previewing a post
-
-You can preview the post using any markdown [online editor](https://stackedit.io/app#). 
-
-If you want to see the post with the blog theme applied, **but don't want to post to appear yet on the home page**, you can set `hiddenFromHomePage` to **yes** in the header text. 
-
-```
-hiddenFromHomePage: yes
-```
-You will have to set this to **no** for the blog to appear on the home page. You can visit your blog post by going to `https://data-blog.gbif.org/post/your-post-slug-name/`. This way you can share the post internally without the post being very public. There is a very small chance that someone could guess your blog post's name but since the repository is open, we shouldn't be too concerned about that anyway. Just be happy somebody is reading it. I am still working on how to solve this issue in a more elegant way. 
-
-### Locally serving the site using hugo
-
-You can download and serve the blog locally using [hugo server](https://gohugo.io/commands/hugo_server/). **This is probably not necessary.** I would just ask to become a collaborator before trying to do this as netlify will build the post automatically. 
-
-### Writing a post in Rmarkdown
-
-It is also possible to write a post in [Rmarkdown](https://rmarkdown.rstudio.com/lesson-1.html), and since this is a data blog some might want to contribute using **Rmarkdown**. 
-
-Writing a post in `.Rmd` is more complicated than writing a vanilla `.md` post. 
-
-In order to write a blog post with embedded R code (including [html widgets](https://www.htmlwidgets.org/)), you will need to set up an environment to work in (I assume you have **Rstudio** installed). 
-
-1. Install [blogdown](https://bookdown.org/yihui/blogdown/installation.html) `install.packages("blogdown")`
-2. Install hugo in R `blogdown::install_hugo()` 
-3. Download the blog repository from GitHub
-4. Open the `gbifAnalyticsBlog.Rproj` file using Rstudio
-5. Click the `Addins` menu (you might need to restart Rstudio for the menu to appear)
-6. Click **New Post** and fill in the form
-7. Serve site locally using **Serve Site** in `Addins` menu
-7. Write post
-8. Create a pull request to the main blog GitHub
-9. Blog should should rebuild automatically
-
-Unless you edit a previously built `.Rmd`, you should not need to install any additional R packages (except the ones you use in your post). 
-
-### Inserting images into an Rmarkdown post
-
-If you want to insert an image into an Rmarkdown post, but this image **is not** generated by a plot and **not from** an external source, you should put files into a folder like  `./static/post/2025-09-24-template_files/` rather than `./content/post/2025-09-24-template_files/`. This seems to be blogdown specific. Probably if you named your folder something other than `YYYY-MM-DD-title_files`, you could put it in the **content** folder, but it is probably better to keep all the R associated static files together. 
-
-### Hightlight js
-
-The blog comes with syntax highlighting from the `highlight.js` library. 
-
-Currently it supports the following languages:
-
-* Apache  
-* Bash  
-* C#  
-* C++  
-* CSS  
-* CoffeeScript  
-* Diff  
-* HTML
-* XML
-* HTTP
-* Ini
-* TOML
-* JSON
-* Java
-* JavaScript
-* Makefile
-* Markdown
-* Nginx
-* Objective-C
-* PHP
-* Perl
-* Properties
-* Python
-* Ruby
-* R
-* SQL  
-* Shell 
-* Session
-
-You can add support for a language **not in the list above** by downloading a custom package from https://highlightjs.org/download/. Then replace the existing `highlight.pack.js` file with the downloaded one in `./static/lib/highlight/`. 
-
-Additionally, to make the language **name** appear at the top of the code block, instead of "code" add something like the following to `/static/dist/even.min.css`. 
-
-```
-.post .post-content figure.highlight.language-r>table:after {
-    content: "R"
-}
-
-```
-
-See and example post using highlight.js [here](https://github.com/gbif/data-blog/blob/master/templates/highlight-js.md). 
 
 
 Making changes to the blog appearance 
@@ -432,6 +259,6 @@ Branch deploys: Deploy only the production branch and its deploy previews
 Public deploy logs: Logs are public
 
 Build environment variables
-HUGO_VERSION: 0.42
+HUGO_VERSION: 0.91.2
 ```
 

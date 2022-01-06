@@ -40,6 +40,8 @@ sequenceDiagrams:
 
 You are a data publisher of occurrence data through GBIF.org, care about your data quality, and wonder what to do about the issue flags that show up on your occurrences. You might have noticed a new type flag this year relating to collection and institution codes and identifiers. They are the result of our attempt at linking specimens records to [our Registry of Scientific Collections (GRSciColl)](https://www.gbif.org/grscicoll).
 
+<!--more-->
+
 We want to be able to group specimens and combine metrics at the collection and institution levels (which can be independant from the way there were published on GBIF).
 
 # What is GRSciColl?

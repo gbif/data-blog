@@ -41,7 +41,7 @@ The purpose of the GBIF API is to give users access to GBIF databases in a **saf
 
 You do not need any special software or skills to access the GBIF API. You simply have to visit a URL.
 
-<center><big>[https://api.gbif.org/v1/species/match?name=Passer domesticus](https://api.gbif.org/v1/species/match?name=Passer%20domesticus)</big></center>
+<center><big><a href="https://api.gbif.org/v1/species/match?name=Passer%20domesticus">https://api.gbif.org/v1/species/match?name=Passer%20domesticus</a></big></center>
 
 You should see a **wall of text** known as [JSON](https://www.w3schools.com/js/js_json_intro.asp). 
 

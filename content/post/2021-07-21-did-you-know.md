@@ -48,11 +48,12 @@ sequenceDiagrams:
 
 During the first-ever virtual GBIF 2021 Global Nodes Meeting, GBIFS hosted a "game show": a one-hour "[battle of Nodes vs. helpdesk](https://gnm2021.gbif.org/sessions/friday-nodes-vs-helpdesk)". The not-so-hidden goal was to demonstrate some of the lesser known functionalities of GBIF.org through a fun, interactive session.
 
+<!--more-->
+
 <iframe title="vimeo-player" src="https://player.vimeo.com/video/571521342" width=100% height="300" frameborder="0" allowfullscreen></iframe>
 
 The following is a summary of the questions and answers from this session, plus some extras that did not manage to make it into the time frame of the event. The summary is following the layout and sequence of the interactive hour:
 
-<!--more-->
 
 - **Did you know...**: a main question or task to be solved by a sub-group of participants, retreating to a breakout room for a few minutes before presenting the solution to the plenary - or, by presenting an incorrect or no answer, giving Marie as "GBIF helpdesk" the chance to win the point 
 

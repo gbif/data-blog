@@ -38,6 +38,8 @@ sequenceDiagrams:
 
 **Publishers** share datasets, but also manage data quality.  **GBIF** provides **access** to the use of biodiversity data, but also **flags** suspicious or missing content. **Users** use data, but also clean and remove records. Each play an important role in managing and improving data quality..
 
+<!--more-->
+
 ![](/post/2020-10-09-issues-and-flags_files/workflow1.png)
 
 ## What are GBIF issues and flags?

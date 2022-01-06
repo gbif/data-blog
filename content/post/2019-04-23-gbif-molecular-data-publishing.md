@@ -54,6 +54,8 @@ Unfortunately, documentation is not as quick to follow. Although we have now an 
 
 Note that this blog post is not intended to be documentation. The information written is subject to change, feel free to leave comments if you have any question or suggestion.
 
+<!--more-->
+
 <img src="https://www.publicdomainpictures.net/pictures/40000/velka/--1359709322C31.jpg#.XLcmtPqn2pQ.link" alt="Structure Of DNA - Public Domain" width="600"/>
 
 # Type of sequence-based data on GBIF
@@ -96,7 +98,7 @@ Hopefully, the rest of this blog post might give you a better idea of what is po
 
 As mentioned in our [FAQ](https://www.gbif.org/faq?question=how-can-i-publish-molecular-data-to-gbif):
 
-> A basic requirement [on GBIF] is that organisms are identified–either using Linnean classification or another accepted taxonomy (e.g. DNA-based Species Hypotheses (SH) for fungi). If a specific taxonomy is not available, organisms may be identified to the nearest possible taxon (e.g. Bacteria).
+A basic requirement [on GBIF] is that organisms are identified–either using Linnean classification or another accepted taxonomy (e.g. DNA-based Species Hypotheses (SH) for fungi). If a specific taxonomy is not available, organisms may be identified to the nearest possible taxon (e.g. Bacteria).
 
 In other words, checklists, occurrence and sampling-event datasets must contain scientific names (our system doesn't handle OTUs). If you would like to check what can be matched to the GBIF taxonomy, please try out our name matching tool: https://www.gbif.org/tools/species-lookup.
 

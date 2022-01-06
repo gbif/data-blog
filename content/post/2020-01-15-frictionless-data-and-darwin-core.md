@@ -104,7 +104,7 @@ See Goodtables GitHub repo - [Data Quality Errors](https://github.com/frictionle
 Fortunately, our researcher can fine tune these quality checks by modifying the constraints SHE WANTS in datapackage.json (unzip the data package first).
 
 Here she wants to validate that year, month and day fields are present and have a reasonable value. Here is how it looks like in the datapackage.json.
-```JSON
+```json
 {
   "name": "year",
   "type": "integer",
