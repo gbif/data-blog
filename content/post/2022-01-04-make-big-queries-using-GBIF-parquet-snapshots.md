@@ -42,9 +42,13 @@ With **parquet**, the values in each column are physically stored in contiguous 
 
 When querying, columnar storage can skip over the non-relevant data quickly. As a result, aggregation queries are less time consuming compared to row-oriented databases. This [article](https://blog.cloudera.com/speeding-up-select-queries-with-parquet-page-indexes/) gives a good introduction to the format.
 
-## Run a big query on your laptop
+## Run a big query on your laptop with R
+
+> Interfaces to the arrow package are also available in [other languages]()
 
 The R package [arrow](https://arrow.apache.org/docs/r/) allows some queries to run somewhat quickly **without downloading a large dataset** to your local computer. This code will query the GBIF [AWS snapshot](https://registry.opendata.aws/gbif/) in the `gbif-open-data-eu-central-1` region from `2021-11-01`. Look [here](https://gbif-open-data-af-south-1.s3.af-south-1.amazonaws.com/index.html#occurrence/) to find the latest snapshot. 
+
+ 
 
 ```r 
 # get occurrence counts from all species in Sweden since 1990
@@ -69,9 +73,15 @@ df %>%
 Only certain [dplyr verbs](https://arrow.apache.org/docs/r/articles/dataset.html)
  will work on a arrow dataset objects.  
 
-## Queries that do not work well
+## Query performance
 
-It is often hard to predict what type of queries will run quickly and which will run **slowly** if at all. I have found that anything that does not aggregate to a count, will run **slowly** or **not at all**. 
+It is often hard to predict what type of queries will run quickly. 
+
+There are a few things that can be done to make queries run faster: 
+* 
+
+
+and which will run **slowly** if at all. I have found that anything that does not aggregate to a count, will run **slowly** or **not at all**. 
 
 The query below takes around **>30 min** to run. It returns around [23 records](https://www.gbif.org/occurrence/search?country=BW&has_coordinate=true&has_geospatial_issue=false&taxon_key=5&license=CC0_1_0&license=CC_BY_4_0). 
 
@@ -99,6 +109,10 @@ df %>%
   count() %>% 
   collect()
 ```
+
+## Downloading a parquet from GBIF
+
+Parquet downloads are currently an [undocumented feature]().
 
 
 ## gbifdb package
