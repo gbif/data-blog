@@ -46,7 +46,7 @@ Downloads through the [web interface](https://www.gbif.org/occurrence/search) ar
 
 # Downloading occurrences for 60,000 tree species using rgbif and taxize
 
-> **NOTE:** This post has been updated on January 27, 2020 to reflect the new occ_download interface. See discussions [here](https://github.com/ropensci/rgbif/issues/362).
+> **NOTE:** This post has been updated on Feb 9 2022. Please use the lastest version of rgbif.
 
 One good reason to download data using a long list of names, would be if your group of interest is non-monophyletic. **Trees** are a non-monophyletic group that include a variety of plant species that have independently evolved a trunk and branches. The 
 [Botanic Gardens Conservation <br> International](https://www.bgci.org/) maintains a [long list](https://tools.bgci.org/global_tree_search.php) of **>60,000** tree species. You can download a csv [here](https://tools.bgci.org/global_tree_search_trees_1_3.csv) or the one I used for the example below [here](/post/2019-07-11-downloading-long-species-lists-on-gbif_files/global_tree_search_trees_1_3.csv). 
@@ -57,7 +57,8 @@ Matching and downloading takes around **30 minutes**, so run with fewer names if
 install.packages("rgbif")
 ```
 
-The important part here is to use `rgbif::occ_download` with `pred_in` and to **fill in your gbif credentials**. 
+The important part here is to use `rgbif::occ_download` with `pred_in` and to **fill in your gbif credentials**. Or follow instructions [here](https://docs.ropensci.org/rgbif/articles/gbif_credentials.html).
+
 
 ```R
 # fill in your gbif.org credentials 
@@ -81,10 +82,7 @@ file_url <- "https://data-blog.gbif.org/post/2019-07-11-downloading-long-species
 gbif_taxon_keys <- 
 readr::read_csv(file_url) %>% 
 pull("Taxon name") %>% # use fewer names if you want to just test 
-taxize::get_gbifid_(method="backbone") %>% # match names to the GBIF backbone to get taxonkeys
-imap(~ .x %>% mutate(original_sciname = .y)) %>% # add original name back into data.frame
-bind_rows() %T>% # combine all data.frames into one
-readr::write_tsv(path = "all_matches.tsv") %>% # save as side effect for you to inspect if you want
+name_backbone_checklist() %>% # match to backbone
 filter(matchtype == "EXACT" & status == "ACCEPTED") %>% # get only accepted and matched names
 filter(kingdom == "Plantae") %>% # remove anything that might have matched to a non-plant
 pull(usagekey) # get the gbif taxonkeys
