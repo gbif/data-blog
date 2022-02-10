@@ -81,6 +81,7 @@ readr::read_csv(file_url) %>%
 head(1000) %>% # use only first 1000 names for testing
 pull("Taxon name") %>% # use fewer names if you want to just test 
 name_backbone_checklist()  %>% # match to backbone
+filter(!matchType == "NONE") %>% # get matched names
 pull(usagekey) # get the gbif taxonkeys
 
 # gbif_taxon_keys should be a long vector like this c(2977832,2977901,2977966,2977835,2977863)
