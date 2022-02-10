@@ -69,22 +69,18 @@ email <- "" # your email
 
 ```R
 library(dplyr)
-library(purrr)
 library(readr)  
-library(magrittr) # for %T>% pipe
 library(rgbif) # for occ_download
-library(taxize) # for get_gbifid_
 
 # The 60,000 tree names file I downloaded from BGCI
 file_url <- "https://data-blog.gbif.org/post/2019-07-11-downloading-long-species-lists-on-gbif_files/global_tree_search_trees_1_3.csv"
 
 # match the names 
 gbif_taxon_keys <- 
-readr::read_csv(file_url) %>% 
+readr::read_csv(file_url) %>%
+head(1000) %>% # use only first 1000 names for testing
 pull("Taxon name") %>% # use fewer names if you want to just test 
-name_backbone_checklist() %>% # match to backbone
-filter(matchtype == "EXACT" & status == "ACCEPTED") %>% # get only accepted and matched names
-filter(kingdom == "Plantae") %>% # remove anything that might have matched to a non-plant
+name_backbone_checklist()  %>% # match to backbone
 pull(usagekey) # get the gbif taxonkeys
 
 # gbif_taxon_keys should be a long vector like this c(2977832,2977901,2977966,2977835,2977863)
@@ -95,7 +91,6 @@ pred_in("taxonKey", gbif_taxon_keys),
 format = "SIMPLE_CSV",
 user=user,pwd=pwd,email=email
 )
-
 ```
 The results should now be on your downloads user page https://www.gbif.org/user/download.
 

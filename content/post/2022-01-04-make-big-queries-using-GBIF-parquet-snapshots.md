@@ -78,15 +78,15 @@ Only certain [dplyr verbs](https://arrow.apache.org/docs/r/articles/dataset.html
 It is often hard to predict what type of queries will run quickly. 
 
 There are a few things that can be done to make queries run faster: 
-* 
+* Have a fast internet connection
 
 
-and which will run **slowly** if at all. I have found that anything that does not aggregate to a count, will run **slowly** or **not at all**. 
+and which will run **slowly** if at all. I have found that anything that does not aggregate to a count, will run **slowly**. 
 
-The query below takes around **>30 min** to run. It returns around [23 records](https://www.gbif.org/occurrence/search?country=BW&has_coordinate=true&has_geospatial_issue=false&taxon_key=5&license=CC0_1_0&license=CC_BY_4_0). 
+The query below takes longer to run depending on your setup. It returns around [23 records](https://www.gbif.org/occurrence/search?country=BW&has_coordinate=true&has_geospatial_issue=false&taxon_key=5&license=CC0_1_0&license=CC_BY_4_0). 
 
 ```r
-# runs slowly
+# runs relatively slowly
 df %>% 
   filter(
   countrycode == "BW",
@@ -96,7 +96,7 @@ df %>%
   collect()
 ```
 
-This aggregation query takes around 10 min to finish. 
+This aggregation query is must faster to finish. 
 
 ```r
 # runs faster
