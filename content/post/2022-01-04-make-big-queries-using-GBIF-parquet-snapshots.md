@@ -55,7 +55,6 @@ gbif_snapshot <- "s3://gbif-open-data-eu-central-1/occurrence/2021-11-01/occurre
 df <- open_dataset(gbif_snapshot)
 
 df %>% 
-  select(-mediatype,-issue) %>% # for query speed
   filter(
   countrycode == "SE",
   class == "Mammalia", 
@@ -77,7 +76,6 @@ The query below takes longer to run. It returns around [23 records](https://www.
 ```r
 # runs relatively slowly
 df %>% 
-  select(-mediatype,-issue) %>% # for query speed
   filter(
   countrycode == "BW",
   kingdom == "Fungi"
@@ -91,7 +89,6 @@ This aggregation query is must faster to finish.
 ```r
 # runs faster
 df %>% 
-  select(-mediatype,-issue) %>% # for query speed
   filter(
   countrycode == "BW",
   kingdom == "Fungi"
@@ -104,7 +101,7 @@ df %>%
 There are a few things that can be done to make arrow queries **run faster**: 
 
 - Having a fast internet connection (>=100 mb/s).
-- Removing **array type** columns first `select(-mediatype,-issue)`.
+- Try removing **array type** columns first `select(-mediatype,-issue)`.
 - Picking an [ASW region](https://registry.opendata.aws/gbif/) near you.
 - Downloading a **local copy**.
 
@@ -147,7 +144,6 @@ local_df %>%
   countrycode == "BW",
   kingdom == "Fungi"
   ) %>%
-  select(species) %>%
   collect()
 ```
 
@@ -169,7 +165,6 @@ library(dplyr)
 gbif <- gbif_remote()
 
 gbif %>%
-  select(-mediatype,-issue) %>% # for query speed
   filter(phylum == "Chordata", year > 1990) %>%
   count(class, year)
 ```
@@ -184,7 +179,6 @@ You can generate a **citation file** from the query above using the following co
 # generate a citation file 
 
 citation <- df %>% 
-  select(-mediatype,-issue) %>% # for query speed
   filter(
   countrycode == "BW",
   kingdom == "Fungi"
