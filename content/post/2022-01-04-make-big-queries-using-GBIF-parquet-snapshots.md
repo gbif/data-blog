@@ -84,7 +84,7 @@ df %>%
   collect()
 ```
 
-This aggregation query is must faster to finish. 
+This aggregation query is much faster. 
 
 ```r
 # runs faster
@@ -100,10 +100,10 @@ df %>%
 
 There are a few things that can be done to make arrow queries **run faster**: 
 
-- Having a fast internet connection (>=100 mb/s).
+- Have a fast internet connection (>=100 mb/s).
 - Try removing **array type** columns first `select(-mediatype,-issue)`.
-- Picking an [ASW region](https://registry.opendata.aws/gbif/) near you.
-- Downloading a **local copy**.
+- Pick an [ASW region](https://registry.opendata.aws/gbif/) near you.
+- Download a **local copy**.
 
 It also possible to download a **smaller local subset of data**, which I discuss below. **A local copy will always run faster than a copy on AWS**. 
 
@@ -129,7 +129,7 @@ zip::unzip(paste0(download_key,'.zip')) # creates a folder "occurrence.parquet"
 
 Wait a few minutes for the download to finish. **Simple parquet** downloads tend to take up less disk space than the equivalent **simple csv** download. This parquet download of [Botswana](https://www.gbif.org/occurrence/search?country=BW) is unzipped **67MB**, while a [simple-csv](https://www.gbif.org/occurrence/download/0138730-210914110416597) download of Botswana is unzipped **350MB**. 
 
-Apache arrow parquet datasets also allow for **lazy loading**, so only the data after `collect()` is loaded into your R-env memory. 
+Apache arrow parquet datasets also allow for **lazy loading**, so only the data after `collect()` is loaded into your r-env memory. 
 
 ```r
 # This 'slow' query will run very quickly locally
@@ -146,7 +146,6 @@ local_df %>%
   ) %>%
   collect()
 ```
-
 
 ## gbifdb package
 
