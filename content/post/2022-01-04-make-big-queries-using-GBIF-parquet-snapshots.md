@@ -44,7 +44,9 @@ With parquet, the values in each column are physically stored in contiguous memo
 
 > Interfaces to the arrow package are also available in [other languages](https://arrow.apache.org/)
 
-The R package [arrow](https://arrow.apache.org/docs/r/) allows queries to run **without downloading a large dataset** to your local computer. This code will query the GBIF [AWS snapshot](https://registry.opendata.aws/gbif/) in the `gbif-open-data-eu-central-1` region from `2021-11-01`. Look [here](https://gbif-open-data-af-south-1.s3.af-south-1.amazonaws.com/index.html#occurrence/) to find the latest snapshot. 
+The R package [arrow](https://arrow.apache.org/docs/r/) allows large queries to run on your locally by only downloading the parts of the dataset necessary to perform the query.
+
+This code will query the GBIF [AWS snapshot](https://registry.opendata.aws/gbif/) in the `gbif-open-data-eu-central-1` region from `2021-11-01`. Look [here](https://gbif-open-data-af-south-1.s3.af-south-1.amazonaws.com/index.html#occurrence/) to find the latest snapshot. 
 
 ```r 
 # get occurrence counts from all species in Sweden since 1990
@@ -111,7 +113,7 @@ It also possible to download a **smaller local subset of data**, which I discuss
 
 **Simple parquet** downloads are currently an [undocumented feature](https://github.com/gbif/gbif-api/blob/dev/src/main/java/org/gbif/api/model/occurrence/DownloadFormat.java). 
 
-> There is **no promise** that this feature will remain stable or function well.  
+> There is **no promise** that this feature will remain stable or function well.   
 
 Below you can make a simple parquet download using **rgbif**. Set up your GBIF credentials first by following this [short tutorial](https://docs.ropensci.org/rgbif/articles/gbif_credentials.html).
 
