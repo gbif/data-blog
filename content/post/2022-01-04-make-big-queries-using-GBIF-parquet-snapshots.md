@@ -30,7 +30,7 @@ sequenceDiagrams:
   options: ''
 ---
 
-As written about in a previous [blog post](https://data-blog.gbif.org/post/aws-and-gbif/), GBIF now has snapshots of occurrence records on [AWS](https://registry.opendata.aws/gbif/). This allows users to access large tables of GBIF mediated occurrence records from Amazon **s3** remote storage. 
+As written about in a previous [blog post](https://data-blog.gbif.org/post/aws-and-gbif/), GBIF now has database snapshots of occurrence records on [AWS](https://registry.opendata.aws/gbif/). This allows users to access large tables of GBIF mediated occurrence records from Amazon **s3** remote storage. 
 
 <!--more-->
 
@@ -44,7 +44,7 @@ With parquet, the values in each column are physically stored in contiguous memo
 
 > Interfaces to the arrow package are also available in [other languages](https://arrow.apache.org/)
 
-The R package [arrow](https://arrow.apache.org/docs/r/) allows large queries to run on your locally by only downloading the parts of the dataset necessary to perform the query.
+The R package [arrow](https://arrow.apache.org/docs/r/) allows large queries to run locally by only downloading the parts of the dataset necessary to perform the query.
 
 This code will query the GBIF [AWS snapshot](https://registry.opendata.aws/gbif/) in the `gbif-open-data-eu-central-1` region from `2021-11-01`. Look [here](https://gbif-open-data-af-south-1.s3.af-south-1.amazonaws.com/index.html#occurrence/) to find the latest snapshot. 
 
@@ -111,9 +111,7 @@ It also possible to download a **smaller local subset of data**, which I discuss
 
 ## Downloading a simple parquet from GBIF
 
-**Simple parquet** downloads are currently an [undocumented feature](https://github.com/gbif/gbif-api/blob/dev/src/main/java/org/gbif/api/model/occurrence/DownloadFormat.java). 
-
-> There is **no promise** that this feature will remain stable or function well.   
+**Simple parquet** downloads are currently an [undocumented feature](https://github.com/gbif/gbif-api/blob/dev/src/main/java/org/gbif/api/model/occurrence/DownloadFormat.java). There is **no promise** that this feature will remain stable or function well.   
 
 Below you can make a simple parquet download using **rgbif**. Set up your GBIF credentials first by following this [short tutorial](https://docs.ropensci.org/rgbif/articles/gbif_credentials.html).
 
@@ -172,7 +170,11 @@ gbif %>%
 
 ## Citation
 
-If you end up using your query in a research paper, you will want a **DOI**. GBIF now has a [derived dataset service](https://www.gbif.org/derived-dataset/register) for generating a **citable doi** from **a list of involved datasetkeys with occurrences counts**. See the [GBIF citation guidelines](https://www.gbif.org/citation-guidelines) and [previous blog post](https://data-blog.gbif.org/post/derived-datasets/).
+If you end up using your query from AWS in a research paper, you will want a **DOI**. 
+
+> If you made a **simple parquet** download from GBIF, then you can just **use the DOI associated with that download**. 
+
+GBIF now has a [derived dataset service](https://www.gbif.org/derived-dataset/register) for generating a **citable doi** from **a list of involved datasetkeys with occurrences counts**. See the [GBIF citation guidelines](https://www.gbif.org/citation-guidelines) and [previous blog post](https://data-blog.gbif.org/post/derived-datasets/).
 
 You can generate a **citation file** from the query above using the following code. 
 
