@@ -1,13 +1,13 @@
 ---
-title: Using apache-arrow with GBIF parquet snapshots
+title: Using apache-arrow and parquet with GBIF mediated occurrences
 author: John Waller and Carl Boettiger
-date: '2022-01-04'
-slug: []
+date: '2022-02-18'
+slug: apache-arrow-and-parquet
 categories:
   - GBIF
 tags: []
 lastmod: '2022-01-04T10:19:14+01:00'
-draft: yes
+draft: no
 keywords: []
 description: ''
 authors: ''
@@ -15,7 +15,7 @@ comment: no
 toc: no
 autoCollapseToc: no
 postMetaInFooter: no
-hiddenFromHomePage: yes
+hiddenFromHomePage: no
 contentCopyright: no
 reward: no
 mathjax: no
@@ -30,7 +30,7 @@ sequenceDiagrams:
   options: ''
 ---
 
-As written about in a previous [blog post](https://data-blog.gbif.org/post/aws-and-gbif/), GBIF now has database snapshots of occurrence records on [AWS](https://registry.opendata.aws/gbif/). This allows users to access large tables of GBIF mediated occurrence records from Amazon **s3** remote storage. 
+As written about in a previous [blog post](https://data-blog.gbif.org/post/aws-and-gbif/), GBIF now has database snapshots of occurrence records on [AWS](https://registry.opendata.aws/gbif/). This allows users to access large tables of GBIF mediated occurrence records from Amazon **s3** remote storage. This access is **free of charge**.
 
 <!--more-->
 
