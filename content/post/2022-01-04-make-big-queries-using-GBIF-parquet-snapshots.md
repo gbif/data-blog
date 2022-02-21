@@ -1,5 +1,5 @@
 ---
-title: Using Apache-Arrow and Parquet with GBIF-mediated occurrences
+title: Using Apache Arrow and Parquet with GBIF-mediated occurrences
 author: John Waller and Carl Boettiger
 date: '2022-02-18'
 slug: apache-arrow-and-parquet
