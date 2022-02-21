@@ -67,7 +67,7 @@ df %>%
   collect()
 ```
 
-Only certain [dplyr verbs](https://arrow.apache.org/docs/r/articles/dataset.html) will work on a arrow dataset objects.  
+Only certain [dplyr verbs](https://arrow.apache.org/docs/r/articles/dataset.html) will work on arrow dataset objects.  
 
 ## Query performance
 
