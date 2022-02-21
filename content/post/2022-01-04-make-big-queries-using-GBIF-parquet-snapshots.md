@@ -1,5 +1,5 @@
 ---
-title: Using Apache-Arrow and parquet with GBIF-mediated occurrences
+title: Using Apache-Arrow and Parquet with GBIF-mediated occurrences
 author: John Waller and Carl Boettiger
 date: '2022-02-18'
 slug: apache-arrow-and-parquet
@@ -36,9 +36,9 @@ As written about in a previous [blog post](https://data-blog.gbif.org/post/aws-a
 
 ## Parquet advantages
 
-GBIF saves the snapshots it exports in a [columnar data format](https://en.wikipedia.org/wiki/Column-oriented_DBMS) known as [parquet](https://parquet.apache.org/). This format allows for **certain types** of queries to run **very quickly**. 
+GBIF saves the snapshots it exports in a [columnar data format](https://en.wikipedia.org/wiki/Column-oriented_DBMS) known as [Parquet](https://parquet.apache.org/). This format allows for **certain types** of queries to run **very quickly**. 
 
-With parquet, the values in each column are physically stored in contiguous memory locations. Parquet contains row **group level statistics** that contain the minimum and maximum values for each column chunk. Queries that fetch specific column values need not read the entire row data thus improving performance. Additionally, file sizes for parquet tables are **typically smaller** than the equivalent csv file.
+With Parquet, the values in each column are physically stored in contiguous memory locations. Parquet contains row **group level statistics** that contain the minimum and maximum values for each column chunk. Queries that fetch specific column values need not read the entire row data thus improving performance. Additionally, file sizes for Parquet tables are **typically smaller** than the equivalent csv file.
 
 ## Run a big query on your laptop with R
 
@@ -111,9 +111,9 @@ It also possible to download a **smaller local subset of data**, which I discuss
 
 ## Downloading a simple parquet from GBIF
 
-**Simple parquet** downloads are currently an [undocumented feature](https://github.com/gbif/gbif-api/blob/dev/src/main/java/org/gbif/api/model/occurrence/DownloadFormat.java). There is **no promise** that this feature will remain stable or function well.   
+**Simple Parquet** downloads are currently an [undocumented feature](https://github.com/gbif/gbif-api/blob/dev/src/main/java/org/gbif/api/model/occurrence/DownloadFormat.java). There is **no promise** that this feature will remain stable or function well.   
 
-Below you can make a simple parquet download using **rgbif**. Set up your GBIF credentials first by following this [short tutorial](https://docs.ropensci.org/rgbif/articles/gbif_credentials.html).
+Below you can make a simple Parquet download using **rgbif**. Set up your GBIF credentials first by following this [short tutorial](https://docs.ropensci.org/rgbif/articles/gbif_credentials.html).
 
 ```r
 # install.packages("rgbif") # download latest version
@@ -127,7 +127,7 @@ zip::unzip(paste0(download_key,'.zip')) # creates a folder "occurrence.parquet"
 # rgbif::occ_download_import() # does not yet work for parquet downloads.
 ```
 
-Wait a few minutes for the download to finish. **Simple parquet** downloads tend to take up less disk space than the equivalent **simple csv** download. This parquet download of [Botswana](https://www.gbif.org/occurrence/search?country=BW) is unzipped **67MB**, while a [simple-csv](https://www.gbif.org/occurrence/download/0138730-210914110416597) download of Botswana is unzipped **350MB**. 
+Wait a few minutes for the download to finish. **Simple Parquet** downloads tend to take up less disk space than the equivalent **simple csv** download. This Parquet download of [Botswana](https://www.gbif.org/occurrence/search?country=BW) is unzipped **67MB**, while a [simple-csv](https://www.gbif.org/occurrence/download/0138730-210914110416597) download of Botswana is unzipped **350MB**. 
 
 Apache arrow parquet datasets also allow for **lazy loading**, so only the data after `collect()` is loaded into your r-env memory. 
 
