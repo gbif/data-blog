@@ -1,5 +1,5 @@
 ---
-title: Using apache-arrow and parquet with GBIF mediated occurrences
+title: Using Apache-Arrow and parquet with GBIF-mediated occurrences
 author: John Waller and Carl Boettiger
 date: '2022-02-18'
 slug: apache-arrow-and-parquet
@@ -30,7 +30,7 @@ sequenceDiagrams:
   options: ''
 ---
 
-As written about in a previous [blog post](https://data-blog.gbif.org/post/aws-and-gbif/), GBIF now has database snapshots of occurrence records on [AWS](https://registry.opendata.aws/gbif/). This allows users to access large tables of GBIF mediated occurrence records from Amazon **s3** remote storage. This access is **free of charge**.
+As written about in a previous [blog post](https://data-blog.gbif.org/post/aws-and-gbif/), GBIF now has database snapshots of occurrence records on [AWS](https://registry.opendata.aws/gbif/). This allows users to access large tables of GBIF-mediated occurrence records from Amazon **s3** remote storage. This access is **free of charge**.
 
 <!--more-->
 
@@ -149,7 +149,7 @@ local_df %>%
 
 ## gbifdb package
 
-You can also use the new R package [gbifdb](https://github.com/cboettig/gbifdb). The goal of **gbifdb** is to provide a relational database interface to GBIF mediated data. The project is under active development.
+You can also use the new R package [gbifdb](https://github.com/cboettig/gbifdb). The goal of **gbifdb** is to provide a relational database interface to GBIF-mediated data. The project is under active development.
 
 ```r 
 # duckdb installation 
