@@ -90,7 +90,7 @@ In the table below, I summarize how those assertions are made but if you would l
 | Different country | `countryCode` | differs between records|
 | Identifiers overlap | `occurrenceID`, `fieldNumber`, `recordNumber`, `otherCatalogueNumber`, grouped(`institutionCode`:`collectionCode`:`catalogueNumber`),<br> grouped(`institutionCode`:`catalogueNumber`) | checks any overlap of identifiers between records|
 
-The table below summarises the combinations of assertions that are sufficient to link the records in a cluster. If a group of occurrences share the combinations of assertions for any given column, they will be clustered together. [Edit 2022-03-11: The table below has been updated to reflect some changes in the clustering function following this issue https://github.com/gbif/portal-feedback/issues/3973
+The table below summarises the combinations of assertions that are sufficient to link the records in a cluster. If a group of occurrences share the combinations of assertions for any given column, they will be clustered together. [Edit 2022-03-11: The table below has been updated to reflect some changes in the clustering function: https://www.gbif.org/release-notes#11mar22]
 
 ![Combination of assersiton conditions to create cluster](/post/2021-10-29-clustering-occurrences/table_2.png)
 
