@@ -6,7 +6,7 @@ slug: []
 categories:
 tags: []
 lastmod: '2022-02-01T11:19:49+01:00'
-draft: yes
+draft: no
 keywords: []
 description: ''
 authors: ''
