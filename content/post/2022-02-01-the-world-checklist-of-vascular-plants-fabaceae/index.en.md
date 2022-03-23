@@ -1,13 +1,13 @@
 ---
 title: The World Checklist of Vascular Plants (Fabaceae) 
 author: John Waller
-date: '2022-02-01'
+date: '2022-03-23'
 slug: []
 categories:
   - GBIF
 tags: []
 lastmod: '2022-02-01T11:19:49+01:00'
-draft: yes
+draft: no
 keywords: []
 description: ''
 authors: ''
@@ -34,7 +34,7 @@ sequenceDiagrams:
 
 <!--more-->
 
-![](images/https___inaturalist-open-data.s3.amazonaws.com_photos_66470341_original.jpg)
+![](images/https___inaturalist-open-data.s3.amazonaws.com_photos_66470341_original.jpg)<p>
 <small><i>Acacia leiophylla Benth.</i> is one of the names added to the GBIF Backbone. [dudz](https://www.inaturalist.org/photos/66470341) 
 <img src="images/39px-Cc.logo.circle.svg.png" alt="drawing" width="15"/>[*](https://www.gbif.org/occurrence/2603289072)</small>
 
@@ -57,12 +57,12 @@ There are still around [200K Legume occurrences](https://www.gbif.org/occurrence
 
 Decreasing the number of [higher-rank matches](https://data-blog.gbif.org/post/issues-and-flags/) is a way for GBIF to measure if the taxonomic backbone is improving. There are cases, however, when adding more names to a group can actually **increase** the number higher-rank matches in GBIF. 
 
-This happens, for example, when GBIF only had one low-rank name but an update adds more names. Within Legumes, publishers who previously published occurrences with a [dwc:scientificName](https://dwc.tdwg.org/terms/#dwc:scientificName) set to  **Acacia auriculiformis** would get matched to the only available name at that time _Acacia auriculaeformis Benth._[*](https://www.gbif.org/species/2981002) but now there are [two names](https://api.gbif.org/v1/species/match?name=Acacia%20auriculiformis&verbose=TRUE) for GBIF interpretation to choose from : 
+This can happen when GBIF only had one low-rank name but an update adds more names. Within Legumes, publishers who previously published occurrences with a [dwc:scientificName](https://dwc.tdwg.org/terms/#dwc:scientificName) set to  **Acacia auriculiformis** would get matched to the only available name at that time _Acacia auriculaeformis Benth._[*](https://www.gbif.org/species/2981002) but now there are [two names](https://api.gbif.org/v1/species/match?name=Acacia%20auriculiformis&verbose=TRUE) for GBIF interpretation to choose from : 
 
 1) _Acacia auriculiformis A.Cunn._[*](https://www.gbif.org/species/8587163)  
 2) _Acacia auriculaeformis Benth._[*](https://www.gbif.org/species/2981002)
 
-_Acacia auriculiformis A.Cunn._ is a synonym of _Acacia auriculaeformis Benth._ but GBIF interpretation has no way to tell if a publisher means the synonym or the accepted species. 
+_Acacia auriculiformis A.Cunn._ is a synonym of _Acacia auriculaeformis Benth._ but **GBIF interpretation has no way to tell if a publisher means the synonym or the accepted species**. 
 
 ## Legume Phylogeny Working Group (LPWG) 
 
