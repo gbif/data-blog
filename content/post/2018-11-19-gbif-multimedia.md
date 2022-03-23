@@ -154,7 +154,7 @@ Here are a few datasets using different methods to share their media. Don't hesi
 
 * [This macroinvertebrate deep-sea dataset](https://www.gbif.org/dataset/4a53a180-f0c8-4dd8-a1fb-18768668edc9) uses the dwc:associatedMedia field (get Darwin Core Archive [here](http://ipt.iobis.org/obis-deepsea/archive.do?r=pri_invert_art)).
 * [The cnidarians collection (IK) of the Muséum national d'Histoire naturelle](https://www.gbif.org/dataset/b5cdf587-3342-48ec-9130-ba1281d7166f) uses the Simple Multimedia extension (get Darwin Core Archive [here](http://collections.mnhn.fr/ipt/archive.do?r=mnhn-ik)).
-* A great example of the use of the Audubon Media Description is this [Xeno-canto dataset](https://www.gbif.org/dataset/b1047888-ae52-4179-9dd5-5448ea342a24) (get Darwin Core Archive [here](https://drive.google.com/uc?export=download&id=1BaOpaKxXaCyg77TohaX3UWyUHaLEZCVt)).
+* A great example of the use of the Audubon Media Description is this [Xeno-canto dataset](https://www.gbif.org/dataset/b1047888-ae52-4179-9dd5-5448ea342a24) (get Darwin Core Archive [here](https://api.biodiversitydata.nl/v2/specimen/dwca/getDataSet/birdsounds)).
 
 **Edit:** Checklists can also include multimedia extensions, see for example: [Radiolaria taxa in the Norwegian Sea and Arctic Ocean](https://www.gbif.org/dataset/38f91564-30ff-47b0-aa6b-cf3b59f0fca7) (get Darwin Core Archive [here](https://data.gbif.no/ipt/archive.do?r=radiolaria_taxa)).
 
