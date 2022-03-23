@@ -4,7 +4,6 @@ author: John Waller
 date: '2022-03-23'
 slug: []
 categories:
-  - GBIF
 tags: []
 lastmod: '2022-02-01T11:19:49+01:00'
 draft: yes
