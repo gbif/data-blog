@@ -1,12 +1,13 @@
 ---
 title: The World Checklist of Vascular Plants (Fabaceae) 
 author: John Waller
-date: '2022-03-23'
+date: '2022-03-28'
 slug: []
 categories:
+- GBIF
 tags: []
 lastmod: '2022-02-01T11:19:49+01:00'
-draft: no
+draft: yes
 keywords: []
 description: ''
 authors: ''
@@ -14,7 +15,7 @@ comment: no
 toc: no
 autoCollapseToc: no
 postMetaInFooter: no
-hiddenFromHomePage: yes
+hiddenFromHomePage: no
 contentCopyright: no
 reward: no
 mathjax: no
@@ -29,7 +30,7 @@ sequenceDiagrams:
   options: ''
 ---
 
-**The World Checklist of Vascular Plants (WCVP): Fabaceae** is a new GBIF mediated [checklist](https://www.gbif.org/fr/dataset/f7053f73-74fb-4c9f-ab63-de28c61140c2) that drastically increases the coverage of the family Fabacea in the **GBIF backbone**. 
+**The World Checklist of Vascular Plants (WCVP): Fabaceae** is a new GBIF mediated [checklist](https://www.gbif.org/fr/dataset/f7053f73-74fb-4c9f-ab63-de28c61140c2) that drastically increases the coverage of the family Fabaceae in the **GBIF backbone**. 
 
 <!--more-->
 
@@ -37,7 +38,7 @@ sequenceDiagrams:
 <small><i>Acacia leiophylla Benth.</i> is one of the names added to the GBIF Backbone. [dudz](https://www.inaturalist.org/photos/66470341) 
 <img src="images/39px-Cc.logo.circle.svg.png" alt="drawing" width="15"/>[*](https://www.gbif.org/occurrence/2603289072)</small>
 
-The [checklist](https://www.gbif.org/fr/dataset/f7053f73-74fb-4c9f-ab63-de28c61140c2) has more than **87K** names. Over <span style="color:#FDAF02"><b>30K</b></span> of these names are new to the GBIF backbone. Around <span style="color:#509E2F"><b>44K</b></span> of these names were already in the GBIF backbone prior to publication of the **WCVP:(Fabacea)** checklist, but are now sourced from this checklist.  
+The [checklist](https://www.gbif.org/fr/dataset/f7053f73-74fb-4c9f-ab63-de28c61140c2) has more than **87K** names. Over <span style="color:#FDAF02"><b>30K</b></span> of these names are new to the GBIF backbone. Around <span style="color:#509E2F"><b>44K</b></span> of these names were already in the GBIF backbone prior to publication of the **WCVP:(Fabaceae)** checklist, but are now sourced from this checklist.  
 
 ![](images/legume_name_source.svg)
 
@@ -47,7 +48,7 @@ Many thousands of names were added across many genera in the family. From the gr
 
 ## Higher-rank matches
 
-After incorporating WCVP:(Fabacea) into the GBIF taxonomic backbone, around **50K** occurrences which previously only matched to the GBIF backbone taxonomy at a [higher rank](https://data-blog.gbif.org/post/issues-and-flags/), now get matched to the backbone with no higher-rank flag. As can be seen in the graph, most of these newly matched occurrences are coming from the genus Ulex. 
+After incorporating WCVP:(Fabaceae) into the GBIF taxonomic backbone, around **50K** occurrences which previously only matched to the GBIF backbone taxonomy at a [higher rank](https://data-blog.gbif.org/post/issues-and-flags/), now get matched to the backbone with no higher-rank flag. As can be seen in the graph, most of these newly matched occurrences are coming from the genus Ulex. Most of these due to the inclusion of _Ulex baeticus_ to the backbone, this improved 33,000 occurrences from one citizen science dataset alone.
 
 ![](images/legume_occ.svg)
 
@@ -56,12 +57,12 @@ There are still around [200K Legume occurrences](https://www.gbif.org/occurrence
 
 Decreasing the number of [higher-rank matches](https://data-blog.gbif.org/post/issues-and-flags/) is a way for GBIF to measure if the taxonomic backbone is improving. There are cases, however, when adding more names to a group can actually **increase** the number higher-rank matches in GBIF. 
 
-This can happen when GBIF only had one low-rank name but an update adds more names. Within Legumes, publishers who previously published occurrences with a [dwc:scientificName](https://dwc.tdwg.org/terms/#dwc:scientificName) set to  **Acacia auriculiformis** would get matched to the only available name at that time _Acacia auriculaeformis Benth._[*](https://www.gbif.org/species/2981002) but now there are [two names](https://api.gbif.org/v1/species/match?name=Acacia%20auriculiformis&verbose=TRUE) for GBIF interpretation to choose from : 
+This can happen when GBIF only had one low-rank name but an update adds more names. Within Legumes, publishers who publish occurrences with a [dwc:scientificName](https://dwc.tdwg.org/terms/#dwc:scientificName) set to  **Vicia gigantea** get matched to the genus [Vicia](https://www.gbif.org/occurrence/3456281750) because there are two names : 
 
-1) _Acacia auriculiformis A.Cunn._[*](https://www.gbif.org/species/8587163)  
-2) _Acacia auriculaeformis Benth._[*](https://www.gbif.org/species/2981002)
+1) _Vicia gigantea Bunge_[*](https://www.gbif.org/species/2946898)  
+2) _Vicia gigantea Hook._[*](https://www.gbif.org/species/7402443)
 
-_Acacia auriculiformis A.Cunn._ is a synonym of _Acacia auriculaeformis Benth._ but **GBIF interpretation has no way to tell if a publisher means the synonym or the accepted species**. 
+GBIF interpretation has no way to tell which name the publisher means. There are too many choices. All **Vicia gigantea** [records](https://www.gbif.org/occurrence/search?advanced=1&verbatim_scientific_name=Vicia%20gigantea) without authorship get matched to the genus **Vicia**.
 
 ## Legume Phylogeny Working Group (LPWG) 
 
