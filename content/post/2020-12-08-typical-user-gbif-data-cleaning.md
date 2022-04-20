@@ -30,6 +30,8 @@ sequenceDiagrams:
   options: ''
 ---
 
+> Post was updated on April 20 2022 to accomodate changes to establishmentMeans vocabulary. 
+
 Here I present a **checklist** for filtering **GBIF downloads**. 
 
 In this guide, I will assume you are **familar with R**. This guide is also somewhat general, **so your solution might differ**. 
@@ -50,37 +52,50 @@ This guide is intended to give you a checklist of **common things to look out fo
 <!-- - check if in **ocean** -->
 <!-- - check for **location duplicates**  -->
 
-Here is an example a **filtering checklist script** that would work for most users. Indvidual users might want to **add/remove** some steps. 
+Below is an example a **filtering checklist script** that would work for most users. Indvidual users might want to **add/remove** some steps. After the script, I discuss each of these steps in **more detail below**. I would recommend looking at these two articles before continuing:
 
-After the script, I discuss each of these steps in **more detail below**. 
-You can get the `Calopteryx xanthostoma.csv` csv file here: [gbif_download](/post/2020-12-08-typical-user-gbif-data-cleaning_files/Calopteryx xanthostoma.csv).
+1. [Getting GBIF mediated occurrence data with rgbif](https://docs.ropensci.org/rgbif/articles/getting_occurrence_data.html)
+2. [Setting up GBIF credentials](https://docs.ropensci.org/rgbif/articles/gbif_credentials.html)
 
 ```R 
+library(rgbif)
 library(dplyr)
 library(CoordinateCleaner)
 
-gbif_download = readr::read_tsv("Calopteryx xanthostoma.csv")
+taxonkey <- name_backbone("Calopteryx xanthostoma")$usageKey
 
+# set up gbif credentials first
+# https://docs.ropensci.org/rgbif/articles/gbif_credentials.html
+
+gbif_download <- occ_download(
+  pred("taxonKey", taxonkey),
+  pred("hasCoordinate", TRUE), 
+  pred("hasGeospatialIssue", FALSE), # remove GBIF default geospatial issues
+  format = "SIMPLE_CSV") 
+
+occ_download_wait(gbif_download) 
+
+# filtering pipeline  
 gbif_download %>%
-setNames(tolower(names(.))) %>% # set lowercase column names to work with CoordinateCleaner
-filter(occurrencestatus  == "PRESENT") %>%
-filter(!is.na(decimallongitude)) %>% 
-filter(!is.na(decimallatitude)) %>% 
-filter(!basisofrecord %in% c("FOSSIL_SPECIMEN","LIVING_SPECIMEN")) %>%
-filter(!establishmentmeans %in% c("MANAGED", "INTRODUCED", "INVASIVE", "NATURALISED")) %>%
-filter(year >= 1900) %>% 
-filter(coordinateprecision < 0.01 | is.na(coordinateprecision)) %>% 
-filter(coordinateuncertaintyinmeters < 10000 | is.na(coordinateuncertaintyinmeters)) %>%
-filter(!coordinateuncertaintyinmeters %in% c(301,3036,999,9999)) %>% 
-filter(!decimallatitude == 0 | !decimallongitude == 0) %>%
-cc_cen(buffer = 2000) %>% # remove country centroids within 2km 
-cc_cap(buffer = 2000) %>% # remove capitals centroids within 2km
-cc_inst(buffer = 2000) %>% # remove zoo and herbaria within 2km 
-cc_sea() %>% # remove from ocean 
-distinct(decimallongitude,decimallatitude,specieskey,datasetkey, .keep_all = TRUE) %>%
-glimpse() # look at results of pipeline
+  occ_download_get() %>%
+  occ_download_import() %>%
+  setNames(tolower(names(.))) %>% # set lowercase column names to work with CoordinateCleaner
+  filter(occurrencestatus  == "PRESENT") %>%
+  filter(!basisofrecord %in% c("FOSSIL_SPECIMEN","LIVING_SPECIMEN")) %>%
+  filter(year >= 1900) %>% 
+  filter(coordinateprecision < 0.01 | is.na(coordinateprecision)) %>% 
+  filter(coordinateuncertaintyinmeters < 10000 | is.na(coordinateuncertaintyinmeters)) %>%
+  filter(!coordinateuncertaintyinmeters %in% c(301,3036,999,9999)) %>% 
+  filter(!decimallatitude == 0 | !decimallongitude == 0) %>%
+  cc_cen(buffer = 2000) %>% # remove country centroids within 2km 
+  cc_cap(buffer = 2000) %>% # remove capitals centroids within 2km
+  cc_inst(buffer = 2000) %>% # remove zoo and herbaria within 2km 
+  cc_sea() %>% # remove from ocean 
+  distinct(decimallongitude,decimallatitude,specieskey,datasetkey, .keep_all = TRUE) %>%
+  glimpse() # look at results of pipeline
 ```
 
+<!--
 It is usually a good idea to move as much of your data filtering into the **download stage** as possible. Some filters I list above are **not available** at the download stage.
 
 Here a script that moves **most** filters from above into the **downloads api**. 
@@ -138,7 +153,7 @@ distinct(decimallongitude,decimallatitude,specieskey,datasetkey, .keep_all = TRU
 glimpse() # look at results of pipeline
 
 ```
-
+-->
 
 ## GBIF default geospatial issues 
 
@@ -151,21 +166,7 @@ The following things will be removed:
 2. **Coordinate invalid** : GBIF is unable to interpret the coordiantes. 
 2. **Coordinate out of range** : The coordinates are outside of the range for decimal lat/lon values ((-90,90), (-180,180)).
 
-You can do this on the [web portal](https://www.gbif.org/occurrence/search?has_coordinate=true&has_geospatial_issue=false&occurrence_status=present) before downloading or in `rgbif`. 
-
-```R 
-library(rgbif)
-
-# Calopteryx xanthostoma Charpentier, 1825
-gbif_download = occ_download(
-pred_in("taxonKey", 1427020), 
-format = "SIMPLE_CSV",
-hasGeospatialIssue = FALSE,
-hasCoordinate = TRUE,
-user="",pwd="",email=""
-)
-
-```
+You can do this on the [web portal](https://www.gbif.org/occurrence/search?has_coordinate=true&has_geospatial_issue=false&occurrence_status=present). 
 
 ## Absence data
 
@@ -178,16 +179,14 @@ filter(occurrenceStatus  == “PRESENT”)
 You can also do this on the [web portal](https://www.gbif.org/occurrence/search?occurrence_status=present&q=) before downloading. 
 
 
-## Fossils, living specimens, and established by humans
+## Fossils and living specimens
 
 You might want to remove **fossils** and **living specimens**, and **non-naturally established species**.
 
 ```R
 gbif_download %>% 
 filter(!basisOfRecord %in% c("FOSSIL_SPECIMEN","LIVING_SPECIMEN")) %>%
-filter(!establishmentMeans %in% c("MANAGED", "INTRODUCED", "INVASIVE", "NATURALISED"))
 ```
-Often zoos and botanical gardens will fill in the **establishmentMeans** column with managed. 
 
 ## Old records
 
