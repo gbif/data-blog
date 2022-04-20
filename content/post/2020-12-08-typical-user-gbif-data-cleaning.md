@@ -174,7 +174,7 @@ GBIF now has a field called **occurrence status**, which will tell you whether a
 
 ```R
 gbif_download %>%
-filter(occurrenceStatus  == “PRESENT”)
+filter(occurrenceStatus  == "PRESENT")
 ```
 You can also do this on the [web portal](https://www.gbif.org/occurrence/search?occurrence_status=present&q=) before downloading. 
 
