@@ -30,7 +30,7 @@ sequenceDiagrams:
   options: ''
 ---
 
-> Post was updated on April 20 2022 to accomodate changes to establishmentMeans vocabulary. 
+> Post was updated on April 20 2022 to accommodate changes to establishmentMeans vocabulary. 
 
 Here I present a **checklist** for filtering **GBIF downloads**. 
 
@@ -52,7 +52,7 @@ This guide is intended to give you a checklist of **common things to look out fo
 <!-- - check if in **ocean** -->
 <!-- - check for **location duplicates**  -->
 
-Below is an example a **filtering checklist script** that would work for most users. Indvidual users might want to **add/remove** some steps. After the script, I discuss each of these steps in **more detail below**. I would recommend looking at these two articles before continuing:
+Below is an example a **filtering checklist script** that would work for most users. Individual users might want to **add/remove** some steps. After the script, I discuss each of these steps in **more detail below**. I would recommend looking at these two articles before continuing:
 
 1. [Getting GBIF mediated occurrence data with rgbif](https://docs.ropensci.org/rgbif/articles/getting_occurrence_data.html)
 2. [Setting up GBIF credentials](https://docs.ropensci.org/rgbif/articles/gbif_credentials.html)
