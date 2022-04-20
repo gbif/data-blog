@@ -30,7 +30,7 @@ sequenceDiagrams:
   options: ''
 ---
 
-> Post was updated on April 20 2022 to accommodate changes to establishmentMeans vocabulary. 
+> Post was updated on April 20 2022 to accommodate changes to dwc:establishmentMeans vocabulary handling. 
 
 Here I present a **checklist** for filtering **GBIF downloads**. 
 
