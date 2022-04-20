@@ -35,7 +35,7 @@ sequenceDiagrams:
 Here I present a **checklist** for filtering **GBIF downloads**. 
 
 In this guide, I will assume you are **familar with R**. This guide is also somewhat general, **so your solution might differ**. 
-This guide is intended to give you a checklist of **common things to look out for** when post-processing GBIF downloads. 
+This guide is intended to give you a checklist of **common things** to look out for when post-processing GBIF downloads. 
 
 <!--more-->
 
