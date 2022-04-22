@@ -126,7 +126,7 @@ Around **50%** (44 of 86) of the **possibly missing** names appear to be **genui
 
 <small> *Based on conservative judgment that 25% of potentially missing names are genuinely missing from GBIF backbone. Download a full table of possibly missing names from the groups above [here](data/possibly_missing_table.zip). </small>
 
-This table of course gives us no indication about **how well described** a certain group is, just the completeness of the GBIF backbone. 
+This table of course gives us no indication about **how well described** a certain group is, just the completeness of the GBIF backbone. This table also includes fossils, which might inflate some groups (Primates). Also these counts do not necessarily represent unique **species concepts** but just unique **name strings** that GBIF receives.    
 
 ## GBIF data publisher advice 
 
@@ -134,9 +134,10 @@ As a data publisher, there are few things that can be done to improve name match
 
 1. Run your dataset through the [data validator](https://www.gbif.org/tools/data-validator) and examine any names that get the data quality flag **taxon match higher rank**.  
 2. Attempt to match your names to the GBIF backbone before publishing using the [name matcher](https://www.gbif.org/tools/species-lookup) or [rgbif](https://docs.ropensci.org/rgbif/reference/name_backbone_checklist.htm). 
-3. Check if your names all have **authorship**.  
-4. Try to **avoid nonsense placeholders** for the dwc:scientificName, but rather fill in the lowest known rank. 
-5. Do **not** use **ALL CAPS** for names. 
-6. Do not put **identification qualifiers** in the dwc:scientificName field but rather use the [dwc:identificationQualifier](http://rs.tdwg.org/dwc/terms/identificationQualifier) field. 
+3. Check if your names all have **authorship** (if possible).
+4. Fill known **higher-taxonomy**. 
+5. Try to avoid working name **placeholders** for the dwc:scientificName, but rather fill in the lowest known rank. 
+6. Do **not** use **ALL CAPS** for names. 
+7. Do not put **identification qualifiers** in the dwc:scientificName field but rather use the [dwc:identificationQualifier](http://rs.tdwg.org/dwc/terms/identificationQualifier) field. 
 
 
