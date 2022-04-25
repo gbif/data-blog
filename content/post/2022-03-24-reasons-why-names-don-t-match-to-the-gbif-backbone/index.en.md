@@ -50,7 +50,7 @@ At GBIF, we would always like match the name supplied by the publisher to the lo
 In the graph below I divide **names** (not occurrences) supplied to GBIF from publishers that have received the [taxon match higher rank flag](https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_HIGHERRANK&advanced=1).
 
 * <span style="color:#e32636"><b>other</b></span> : means that I could not find a good reason for why this name did not match to the backbone. This could be a misspelling or the name could be **missing from the GBIF backbone**. These are names which might reflect **data gaps**. 
-* <span style="color:#ff7373"><b>unmatchable name</b></span> : is a catch-all group for poorly formatted or unmatchable names ([see below](#unmatchable-names)). 
+* <span style="color:#ff7373"><b>unmatchable name</b></span> : is a catch-all group for poorly formatted or unmatchable names (see below). 
 * <span style="color:#9999CC"><b>hybrid</b></span> (hybrid formula) : means the name is referring to hybrid. We expect poor checklist coverage for hybrid names. 
 * <span style="color:#40BFFF"><b>below species</b></span> : means a name at a taxonomic rank below the species level could not be matched at that level. Usually we expect less checklist coverage for **subspecies** and **varieties**. 
 * <span style="color:#26e3d3"><b>too many choices</b></span> : GBIF has two or more names with different authorship (homonyms), but the publishers does not provide authorship and/or higher taxonomy, so the name cannot be matched unambiguously.  
@@ -74,7 +74,7 @@ Sometimes publishers do not provide enough information for GBIF to choose betwee
 **Providing authorship** would allow GBIF to correctly match these occurrences to backbone. 
 
 
-## [Unmatchable names](#unmatchable-names)
+## Unmatchable names
 
 Publishers supply GBIF with a variety of what I call **unmatchable names**, which are names that are impossible to match to the GBIF backbone. Sometimes these names are ok names but still missing from the backbone, like **missing hybrids** or **OTUs**. Other names are simply bad names that we can't expect to fix. Some examples below:
 
