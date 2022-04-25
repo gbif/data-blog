@@ -34,11 +34,11 @@ When publishers supply GBIF with a **scientific name**, this name is sometimes n
 
 <!--more-->
 
-At GBIF, we would like it if the name supplied by the publisher always matched to the lowest rank possible, so when a user comes to GBIF, looking for a certain name, they will have access to the largest amount of occurrence data possible. 
+At GBIF, we would always like match the name supplied by the publisher to the lowest rank possible, so that when a user comes to GBIF looking for a certain name, they will have access to the largest amount of occurrence data.
 
 
 <!--
-## Common reasons for higher rank matches 
+## Common reasons for higher rank matches: 
 
 1) Name is **poorly formatted**.
 2) Name is **misspelled**. 
@@ -49,11 +49,11 @@ At GBIF, we would like it if the name supplied by the publisher always matched t
 
 In the graph below I divide **names** (not occurrences) supplied to GBIF from publishers that have received the [taxon match higher rank flag](https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_HIGHERRANK&advanced=1).
 
-* <span style="color:#e32636"><b>other</b></span> : means that I could not find a good reason for why this name did not match to the backbone. This could be a misspelling or the name could be **missing from the GBIF backbone**. These are names which might represent **data gaps**. 
-* <span style="color:#ff7373"><b>unmatchable name</b></span> : is a catch all group for poorly formatted or un-matchable names. See table below. 
+* <span style="color:#e32636"><b>other</b></span> : means that I could not find a good reason for why this name did not match to the backbone. This could be a misspelling or the name could be **missing from the GBIF backbone**. These are names which might reflect **data gaps**. 
+* <span style="color:#ff7373"><b>unmatchable name</b></span> : is a catch-all group for poorly formatted or unmatchable names ([see below](#unmatchable-names)). 
 * <span style="color:#9999CC"><b>hybrid</b></span> (hybrid formula) : means the name is referring to hybrid. We expect poor checklist coverage for hybrid names. 
-* <span style="color:#26e3d3"><b>too many choices</b></span> : GBIF has two or more names with different authorship (homonyms), but the publishers does not provide authorship and/or higher taxonomy, so the name cannot be matched unambiguously.
-* <span style="color:#40BFFF"><b>below species</b></span> : means a name at a taxonomic rank below the species level could not be matched at that level. Usually we expect less checklist coverage for **subspecies** and **varieties**.   
+* <span style="color:#40BFFF"><b>below species</b></span> : means a name at a taxonomic rank below the species level could not be matched at that level. Usually we expect less checklist coverage for **subspecies** and **varieties**. 
+* <span style="color:#26e3d3"><b>too many choices</b></span> : GBIF has two or more names with different authorship (homonyms), but the publishers does not provide authorship and/or higher taxonomy, so the name cannot be matched unambiguously.  
 
 I have processed some names from select groups to see if there are <span style="color:#e32636"><b>gaps</b></span> for GBIF to fill. 
 
@@ -73,25 +73,26 @@ Sometimes publishers do not provide enough information for GBIF to choose betwee
 
 **Providing authorship** would allow GBIF to correctly match these occurrences to backbone. 
 
-## Unmatchable names
+
+## [Unmatchable names](#unmatchable-names)
 
 Publishers supply GBIF with a variety of what I call **unmatchable names**, which are names that are impossible to match to the GBIF backbone. Sometimes these names are ok names but still missing from the backbone, like **missing hybrids** or **OTUs**. Other names are simply bad names that we can't expect to fix. Some examples below:
 
 | name not matched | reason  | link | 
 |-------|-------|----- |
-| **Mystery mystery** | bad name | [records](https://www.gbif.org/occurrence/search?advanced=1&verbatim_scientific_name=Mystery%20mystery)
-| **Sonus naturalis** | bad name |[records](https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_HIGHERRANK&advanced=1&verbatim_scientific_name=Sonus%20naturalis)
+| ***Mystery mystery*** | bad name | [records](https://www.gbif.org/occurrence/search?advanced=1&verbatim_scientific_name=Mystery%20mystery)
+| ***Sonus naturalis*** | bad name |[records](https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_HIGHERRANK&advanced=1&verbatim_scientific_name=Sonus%20naturalis)
 | **Bambusoideae spec.** | subfamily name | [records](https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_HIGHERRANK&advanced=1&verbatim_scientific_name=Bambusoideae%20spec.)
 | **Coleoptera indet.** | order name |[records](https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_HIGHERRANK&advanced=1&verbatim_scientific_name=Coleoptera%20indet.)
 | **Astarte juv.** | genus name with life stage | [records](https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_HIGHERRANK&advanced=1&verbatim_scientific_name=Astarte%20juv.)
-| **Gen. sp.**| bad name | [records](https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_HIGHERRANK&advanced=1&verbatim_scientific_name=Gen.%20sp.)
+| ***Gen. sp.***| bad name | [records](https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_HIGHERRANK&advanced=1&verbatim_scientific_name=Gen.%20sp.)
 | **Astarte sp. BIOUG14667-B01** | family with id | [records](https://www.gbif.org/occurrence/search?offset=0&issue=TAXON_MATCH_HIGHERRANK&advanced=1&verbatim_scientific_name=Astarte%20sp.%20BIOUG14667-B01)
-| **Phoneutria depilata (Strand 1909) sp. reval.** | species name with remark |[records](https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_HIGHERRANK&advanced=1&verbatim_scientific_name=Phoneutria%20depilata%20(Strand%201909)%20sp.%20reval.)
+| ***Phoneutria depilata* (Strand 1909) sp. reval.** | species name with remark |[records](https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_HIGHERRANK&advanced=1&verbatim_scientific_name=Phoneutria%20depilata%20(Strand%201909)%20sp.%20reval.)
 | **Anisoptera Unknown Dragonfly Species** | infra-order name with remarks |[records](https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_HIGHERRANK&advanced=1&verbatim_scientific_name=Anisoptera%20Unknown%20Dragonfly%20Species)
 | **Zygoptera** | suborder name | [records](https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_HIGHERRANK&advanced=1&verbatim_scientific_name=Zygoptera)
-| **Philodromus Philodromus albidus / rufus** | doubtful identification (alternative) | [records](https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_HIGHERRANK&advanced=1&verbatim_scientific_name=Philodromus%20albidus%20~2F%20rufus)
-| **Certhia brachydactyla/Certhia familiaris** | doubtful identification (alternative) |[records](https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_HIGHERRANK&advanced=1&verbatim_scientific_name=Certhia%20brachydactyla~2FCerthia%20familiaris)
-| **Corvus corone x C. cornix** | missing hybrid | [records](https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_HIGHERRANK&advanced=1&verbatim_scientific_name=Corvus%20corone%20x%20C.%20cornix)
+| ***Philodromus Philodromus albidus / rufus*** | doubtful identification (alternative) | [records](https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_HIGHERRANK&advanced=1&verbatim_scientific_name=Philodromus%20albidus%20~2F%20rufus)
+| ***Certhia brachydactyla***/***Certhia familiaris*** | doubtful identification (alternative) |[records](https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_HIGHERRANK&advanced=1&verbatim_scientific_name=Certhia%20brachydactyla~2FCerthia%20familiaris)
+| ***Corvus corone* x *C. cornix*** | missing hybrid | [records](https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_HIGHERRANK&advanced=1&verbatim_scientific_name=Corvus%20corone%20x%20C.%20cornix)
 | **BOLD:ADV7315** | OTU | [records](https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_HIGHERRANK&advanced=1&verbatim_scientific_name=BOLD:ADV7315) |
 | **BOLD:ADX5419** | OTU | [records](https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_HIGHERRANK&advanced=1&verbatim_scientific_name=BOLD:ADX5419) |
 
@@ -99,9 +100,9 @@ If a name is truly missing from the GBIF backbone, GBIF would like to **fill tha
 
 ## Other (possibly missing)
 
-As a non-expert it is hard to tell if a name is a **data gap**, just a **misspelling**, or something else. So how many possibly missing names are actual **data gaps**? To check, I randomly sampled five possibly missing names from each group from the graph above to [manually check](https://docs.google.com/spreadsheets/d/1WprHkAa6bez58T3YQrmXD4AknEwLGtscsNL92L-g-0I/edit?usp=sharing) if I could locate a source outside GBIF with the name. 
+As a non-expert it is hard to tell if a name is a **data gap**, just a **misspelling** or something else. So how many possibly missing names are actual **data gaps**? To check, I randomly sampled [five possibly missing names from each group](https://docs.google.com/spreadsheets/d/1WprHkAa6bez58T3YQrmXD4AknEwLGtscsNL92L-g-0I/edit?usp=sharing) in the graph above to check if I could manually locate a source outside GBIF with the name. 
 
-Around **50%** (44 of 86) of the **possibly missing** names appear to be **genuinely missing** from the GBIF backbone. We can therefore conservatively assume that there are thousands of missing names in the GBIF backbone. Keep in mind, however, that many missing names are **missing synonyms** or not unique taxon concepts. Halving this number (25%) we can make a conservative **minimum missing names table**: 
+Around **50%** (44 of 86) of the **possibly missing** names appear to be **genuinely missing** from the GBIF backbone. We can therefore conservatively assume that there are thousands of missing names in the GBIF backbone. Keep in mind, however, that many missing names are **missing synonyms**—that is, they are not unique taxon concepts. Halving this number (25%) we can make a conservative **minimum missing names table**: 
 
 
 | group          |friendly name	| min estimated missing names* 	|
@@ -126,7 +127,7 @@ Around **50%** (44 of 86) of the **possibly missing** names appear to be **genui
 
 <small> *Based on conservative judgment that 25% of potentially missing names are genuinely missing from GBIF backbone. Download a full table of possibly missing names from the groups above [here](data/possibly_missing_table.zip). </small>
 
-This table of course gives us no indication about **how well described** a certain group is, just the completeness of the GBIF backbone. This table also includes fossils, which might inflate some groups (Primates). Also these counts do not necessarily represent unique **species concepts** but just unique **name strings** that GBIF receives.    
+This table, of course, gives us no indication about **how well described** a certain group is; it just reflects the relative completeness of the GBIF backbone. This table also includes fossils, which might inflate some groups (such as primates). Also, these counts do not necessarily represent unique **species concepts** but just unique **name strings** that GBIF receives.    
 
 ## GBIF data publisher advice 
 
