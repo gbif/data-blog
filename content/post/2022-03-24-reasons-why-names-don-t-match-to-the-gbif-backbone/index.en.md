@@ -34,7 +34,7 @@ When publishers supply GBIF with a **scientific name**, this name is sometimes n
 
 <!--more-->
 
-At GBIF, we would always like match the name supplied by the publisher to the lowest rank possible, so that when a user comes to GBIF looking for a certain name, they will have access to the largest amount of occurrence data.
+At GBIF, we would always like to match the name supplied by the publisher to the lowest rank possible, so that when a user comes to GBIF looking for a certain name, they will have access to the largest amount of occurrence data.
 
 
 <!--
