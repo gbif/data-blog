@@ -51,7 +51,7 @@ In the graph below I divide **names** (not occurrences) supplied to GBIF from pu
 
 * <span style="color:#e32636"><b>other</b></span> : means that I could not find a good reason for why this name did not match to the backbone. This could be a misspelling or the name could be **missing from the GBIF backbone**. These are names which might reflect **data gaps**. 
 * <span style="color:#ff7373"><b>unmatchable name</b></span> : is a catch-all group for poorly formatted or unmatchable names (see below). 
-* <span style="color:#9999CC"><b>hybrid</b></span> (hybrid formula) : means the name is referring to hybrid. We expect poor checklist coverage for hybrid names. 
+* <span style="color:#FCC200"><b>hybrid</b></span> (hybrid formula) : means the name is referring to hybrid. We expect poor checklist coverage for hybrid names. 
 * <span style="color:#40BFFF"><b>below species</b></span> : means a name at a taxonomic rank below the species level could not be matched at that level. Usually we expect less checklist coverage for **subspecies** and **varieties**. 
 * <span style="color:#26e3d3"><b>too many choices</b></span> : GBIF has two or more names with different authorship (homonyms), but the publishers does not provide authorship and/or higher taxonomy, so the name cannot be matched unambiguously.  
 
