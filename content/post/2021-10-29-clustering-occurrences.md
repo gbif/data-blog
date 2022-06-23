@@ -70,7 +70,7 @@ Step 2: Compare candidates with each other and assess whether they are potential
 In this second phase, the system will compare all records in the candidate set to each other and generate assertions. The assertions are inspected and the algorithms decides if there is enough evidence in the assertions to create a relationship between them.
 In the table below, I summarize how those assertions are made but if you would like more details, you can check the code available [here](https://github.com/gbif/pipelines/blob/dev/sdks/core/src/main/java/org/gbif/pipelines/core/parsers/clustering/OccurrenceRelationships.java#L26).
 
-[Edit 2022-06-23 : the table below have updated to reflect some changes in the clustering function https://github.com/gbif/pipelines/issues/733]
+[Edit 2022-06-23 : the table below has updated to reflect some changes in the clustering function https://github.com/gbif/pipelines/issues/733]
 
 | Assertion | fields checked | condition checked |
 |:-----|:----|:----|
@@ -93,6 +93,7 @@ In the table below, I summarize how those assertions are made but if you would l
 | Is from sequence repository | `datasetKey` | checks if one of the datasetKey corresponds to one of the sequence repository datasets: INSDC sequences, INSDC host organisms, INSDC environmental samples, iBOL (see keys `d8cd16ba-bb74-4420-821e-083f2bac17c2`, `393b8c26-e4e0-4dd0-a218-93fc074ebf4e`, `583d91fe-bbc0-4b4a-afe1-801f88263016` and `040c5662-da76-4782-a48e-cdea1892d14c`) |
 
 The table below summarises the combinations of assertions that are sufficient to link the records in a cluster. If a group of occurrences share the combinations of assertions for any given column, they will be clustered together. [Edit 2022-03-11: The table below has been updated to reflect some changes in the clustering function: https://www.gbif.org/release-notes#11mar22]
+[Edit 2022-06-23 : the table below has updated to reflect some changes in the clustering function https://github.com/gbif/pipelines/issues/733]
 
 ![Combination of assersiton conditions to create cluster](/post/2021-10-29-clustering-occurrences/table_2.png)
 
