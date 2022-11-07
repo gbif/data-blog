@@ -37,6 +37,8 @@ This blog post will cover what types of data that fits in GBIF, give examples of
 ## What data can you share on GBIF?
 Let us start with what type of data that actually fits in GBIF. At its core, [GBIF](https://www.gbif.org/what-is-gbif) is a data infrastructure to share, view and retrieve global species occurrence data. All GBIF-mediated data comes from [four](https://www.gbif.org/dataset-classes) different types of [datasets](https://data-blog.gbif.org/post/choose-dataset-type/), published by [endorsed organizastions](https://www.gbif.org/endorsement-guidelines).
 
+![data you can share on GBIF](/post/2022-10-28-which-data-can-be-shared-through-GBIF-and-what-cannot/please-share.png)
+
 ✔️**Examples of data you can share in GBIF** (the list is not exhaustive)
 * the occurrence of a taxa at a given time and place ([example](https://www.gbif.org/occurrence/3085788310), notice each term is a standardised DwC or extension field)
 * DNA-derived occurrences ([example](https://www.gbif.org/occurrence/2238661140), notice that this occurrence is in a [cluster](https://www.gbif.org/occurrence/2238661140/cluster) with other occurrences that  represent the same organism in [this occurrence](https://www.gbif.org/occurrence/3019774852) and the occurrence record for the [preserved specimen](https://www.gbif.org/occurrence/3024253052) from which the DNA was obtained)
@@ -60,6 +62,8 @@ This blog post focus on the data content (reason #2), but if you want to familia
 GBIF has seen some very creative ways to *"make the DwC standard fit to other types of data"*. The creativity tends to arise when researchers have (super cool!) complex, data-rich research projects often involving novel observation methods or scientific collections want to digitize more information from their collections. 
 
 For example, we had to delete the dataset and the occurrences from this [dataset](https://www.gbif.org/dataset/53efcac4-cd08-4b4d-93e6-cb06c1d37de1) since all the occurrences were in the future. The project modelled probable occurrences to help inform policy makers of likely outbreaks of wheat disease, but GBIF does not support potential occurrences that happen in the future, only observed occurrences.
+
+![what not to share on GBIF](/post/2022-10-28-which-data-can-be-shared-through-GBIF-and-what-cannot/dontshare.png)
 
 :x:**Examples of data that does not fit in GBIF** (the list is not exhaustive)
 * observations of humans (although they [occassionally](https://www.gbif.org/occurrence/search?taxon_key=2436436) make their way into citizen science and collections datasets)
