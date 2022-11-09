@@ -69,8 +69,13 @@ For example, we had to delete the dataset and the occurrences from this [dataset
 * observations of humans (although they [occassionally](https://www.gbif.org/occurrence/search?taxon_key=2436436) make their way into citizen science and collections datasets)
 * species occurrences in extraction blanks and PCR negatives from DNA-dreived occurrence datasets
 * future occurrences (like the example above)
-* occurrences of other things than organisms (for example [ecosystems](https://www.gbif.org/dataset/f513fe98-b1c3-45ee-8e14-7f2a5b7890bf), national parks, rocks (although we do support [fossil specimen occurrences](https://www.gbif.org/occurrence/search?basis_of_record=FOSSIL_SPECIMEN)))
+* occurrences of other things than organisms (for example ecosystems, national parks, rocks (although we do support [fossil specimen occurrences](https://www.gbif.org/occurrence/search?basis_of_record=FOSSIL_SPECIMEN)))
 
 ## How to use metadata-only dataset to make your work more visible
+Metadata-only datasets can be used to share information of data not available online and this includes data that does not fit in the other dataset classes and the associated extensions.
+
+For example, collections can use metadata-only datasets to describe undigitized ressources in their collections. Remember, metadata-only datasets also receive a DOI upon publication similarily to the other dataset classes, so information in metadata datsets can be cited, making the information shared in the dataset more discoverable and reusable. 
+
+Complimentary to metadata-only datasets in GBIF, external repositories, e.g. [Zenodo](https://zenodo.org/), can be used to share data, code etc. and will also get a DOI assigned which can be referenced in the metadata-only dataset on GBIF. Sampling- or lab protocols can be share on [protocols.io](https://www.protocols.io)
 
 **NOTE!** if you are in doubt whether your data fits into GBIF, you can always contact helpdesk@gbif.org and ask for guidance.
