@@ -34,7 +34,7 @@ Preparing a dataset to be shared on GBIF.org can be a daunting task and many pub
 
 This blog post will cover what type of data fits in GBIF, give examples of data that does not fit in the current format of GBIF, and provide guidance to how you can share relevant data in a metadata-only dataset or through a third-party.
 
-## What data can you share on GBIF?
+## :thumbsup:What data can you share on GBIF?
 Let us start with what type of data that actually fits in GBIF. At its core, [GBIF](https://www.gbif.org/what-is-gbif) is a data infrastructure to share, view and retrieve global species occurrence data. All GBIF-mediated data comes from [four](https://www.gbif.org/dataset-classes) different types of [datasets](https://data-blog.gbif.org/post/choose-dataset-type/), published by [endorsed organizastions](https://www.gbif.org/endorsement-guidelines). GBIF users expect data to be adhering to the four dataset types and are usually looking for species occurrences at a specific place and time. It is therefore recommended that publishers always keep the end users in mind when preparing their dataset for publication.
 
 ![data you can share on GBIF](/post/2022-10-28-which-data-can-be-shared-through-GBIF-and-what-cannot/please-share.png)
@@ -47,7 +47,7 @@ Let us start with what type of data that actually fits in GBIF. At its core, [GB
 * metadata datasets - a dataset that describes the data without necessarily having any associated occurrences. Metadata dataset will be covered a bit more in detail below, since this is a good way to describe data that might not fit well in GBIF ([example](https://www.gbif.org/dataset/03493d8b-d05e-4f4b-9bd8-8b48abe81924), notice that this dataset actually have associated [events](https://www.gbif.org/dataset/03493d8b-d05e-4f4b-9bd8-8b48abe81924/event/br:sibbr:peld:mlrd:al:2008-5-23-11-int) AND [occurrences](https://www.gbif.org/occurrence/search?dataset_key=03493d8b-d05e-4f4b-9bd8-8b48abe81924))
 * metadata-**only** datasets ([example](https://www.gbif.org/dataset/4c3f6e6a-3432-4dc7-9a89-6ad3eb3d1209), no occurrences or events, just describing the data)
 
-## What you cannot or should not share on GBIF
+## :thumbsdown:What you cannot or should not share on GBIF
 Researchers, collections, monitoring professionals, projects etc. often collect data that extends beyond just species occurrences, which to a large extend can be captured in a [sampling event dataset](https://www.gbif.org/data-quality-requirements-sampling-events) or in [extensions](https://rs.gbif.org/extensions.html). But what should you do if you happen to have data that does not seems to fit in GBIF?
 
 ### Data structure vs. data content
@@ -67,11 +67,26 @@ For example, we had to delete the dataset and the occurrences from this [dataset
 
 :x:**Examples of data that does not fit in GBIF** (the list is not exhaustive)
 * observations of humans (although they [occassionally](https://www.gbif.org/occurrence/search?taxon_key=2436436) make their way into citizen science and collections datasets)
+* [derived datasets](https://www.gbif.org/citation-guidelines#derivedDatasets) - datasets based on data extracted from GBIF and somehow modified or cleaned. Derived datasets should instead be shared slightly different with GBIF, more information can be found in this [blogpost](https://data-blog.gbif.org/post/derived-datasets/).
 * species occurrences in extraction blanks and PCR negatives from DNA-dreived occurrence datasets
 * future occurrences (like the example above)
 * **occurrences** of other things than organisms (for example ecosystems, sampling areas, national parks, rocks (although we do support [fossil specimen occurrences](https://www.gbif.org/occurrence/search?basis_of_record=FOSSIL_SPECIMEN)))
 
-## Example of how to share data from a sampling event - and how not to share the data
+## How to use metadata-only dataset to make your work more visible
+Metadata-only datasets can be used to share information of data not available online and this includes data that does not fit in the other dataset classes and the associated extensions.
+
+For example, collections can use metadata-only datasets to describe undigitized ressources in their collections. Remember, metadata-only datasets also receive a DOI upon publication similarily to the other dataset classes, so information in metadata datsets can be cited, making the information shared in the dataset more discoverable and reusable. 
+
+### Examples of metadata-only datasets in GBIF.org
+One type of metadata-only datasets can contain information of external data ressources not published in GBIF, but findable other places. For example, to share that your organization provided data for the [2nd European Breeding Bird Atlas](https://www.gbif.org/dataset/b47074e3-c116-461a-b2a1-0bf87da80bfb), has a database on the [biodiversity of the Altai-Sayan ecoregion](https://www.gbif.org/dataset/052596c5-d27d-4c4f-a211-64c0f54d58a1).
+
+Another type of metadata-only datasets can be to share that a survey, sampling event or project was carried out, even though the data is not shared with GBIF e.g., a [plankton survey the area of the Northern Antarctic Peninsula](https://www.gbif.org/dataset/d87b829c-43d6-4b21-afb4-37e66915c6d4).
+
+Complimentary to metadata-only datasets in GBIF, external repositories, e.g. [Zenodo](https://zenodo.org/), can be used to share data, code etc. 
+
+Sampling- and lab protocols, and bioinformatics pipelines, can be share on [protocols.io](https://www.protocols.io) which allows for a more stuctured and reusable sharing of protocol steps compared to what can be captured in GBIFs metadata section. Both [Zenodo](https://zenodo.org/) and [protocols.io](https://www.protocols.io) issues DOIs when datasets are published which can be referenced in the GBIF dataset to increase discoverability.
+
+## :bulb:Bonus: Example of how to share data from a sampling event - and how not to share the data
 This section does not strictly cover data that does not fit in a GBIF sampling event, occurrence of checklist dataset. Rather, it covers an example of data from mulitspecies surveys that do fit into GBIFs publishing model but where new publisher may be unsure how best to structure their dataset(s). 
 
 ### Example
@@ -90,19 +105,5 @@ As mentioned in *Examples of data that does not fit in GBIF*, publishers should 
 Technically, the occurrence file could be shared, but if useability is considered, then the example with an event file and an occurrence file yields much richer data and allows users to find specific taxa and discern between the sampling event and the occurrences. 
 
 You can read more on how to choose dataset types in this [blogpost](https://data-blog.gbif.org/post/choose-dataset-type/). 
-
-## How to use metadata-only dataset to make your work more visible
-Metadata-only datasets can be used to share information of data not available online and this includes data that does not fit in the other dataset classes and the associated extensions.
-
-For example, collections can use metadata-only datasets to describe undigitized ressources in their collections. Remember, metadata-only datasets also receive a DOI upon publication similarily to the other dataset classes, so information in metadata datsets can be cited, making the information shared in the dataset more discoverable and reusable. 
-
-### Examples of metadata-only datasets in GBIF.org
-One type of metadata-only datasets can contain information of external data ressources not published in GBIF, but findable other places. For example, to share that your organization provided data for the [2nd European Breeding Bird Atlas](https://www.gbif.org/dataset/b47074e3-c116-461a-b2a1-0bf87da80bfb), has a database on the [biodiversity of the Altai-Sayan ecoregion](https://www.gbif.org/dataset/052596c5-d27d-4c4f-a211-64c0f54d58a1).
-
-Another type of metadata-only datasets can be to share that a survey, sampling event or project was carried out, even though the data is not shared with GBIF e.g., a [plankton survey the area of the Northern Antarctic Peninsula](https://www.gbif.org/dataset/d87b829c-43d6-4b21-afb4-37e66915c6d4).
-
-Complimentary to metadata-only datasets in GBIF, external repositories, e.g. [Zenodo](https://zenodo.org/), can be used to share data, code etc. 
-
-Sampling- and lab protocols, and bioinformatics pipelines, can be share on [protocols.io](https://www.protocols.io) which allows for a more stuctured and reusable sharing of protocol steps compared to what can be captured in GBIFs metadata section. Both [Zenodo](https://zenodo.org/) and [protocols.io](https://www.protocols.io) issues DOIs when datasets are published which can be referenced in the GBIF dataset to increase discoverability.
 
 **NOTE!** if you are in doubt if and how your data fits into GBIF, you can always contact helpdesk@gbif.org and ask for guidance.
