@@ -92,7 +92,7 @@ This section does not strictly cover data that does not fit in a GBIF sampling e
 ### Example
 An entomologist carries out sweep-net sampling of five different areas. Sweep-net sampling is carried out walking a transect, sweeping 10 times along the way, which yields a sample of multiple species each time. 
 
-![sampling events](/post/2022-10-28-which-data-can-be-shared-through-GBIF-and-what-cannot/sampling_events.png)
+![sampling events](/post/2022-10-28-which-data-can-be-shared-through-GBIF-and-what-cannot/sampling_events_nets.png)
 
 This type of data is best captured in an event table and an occurrences table, where the sampling event data goes in the event table and the species occurrences go in occurrence table, similar to the example in *Examples of data you can share i GBIF*:
 
