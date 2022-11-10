@@ -32,7 +32,7 @@ sequenceDiagrams:
 
 Preparing a dataset to be shared on GBIF.org can be a daunting task and many publishers realise that not all their data fit in the [DwC standard](https://www.gbif.org/darwin-core) and [extensions](https://rs.gbif.org/extensions.html) GBIF use to structure, standardise and display biodiversity data. 
 
-This blog post will cover what types of data that fits in GBIF, give examples of data that does not fit in the current format of GBIF, and provide guidance to how you can share data that is relevant for your dataset in a metadata-only dataset or through a third-party.
+This blog post will cover what type of data fits in GBIF, give examples of data that does not fit in the current format of GBIF, and provide guidance to how you can share data that is relevant for your dataset in a metadata-only dataset or through a third-party.
 
 ## What data can you share on GBIF?
 Let us start with what type of data that actually fits in GBIF. At its core, [GBIF](https://www.gbif.org/what-is-gbif) is a data infrastructure to share, view and retrieve global species occurrence data. All GBIF-mediated data comes from [four](https://www.gbif.org/dataset-classes) different types of [datasets](https://data-blog.gbif.org/post/choose-dataset-type/), published by [endorsed organizastions](https://www.gbif.org/endorsement-guidelines). GBIF users expect data to be adhering to the four dataset types and are usually looking for species occurrences at a specific place and time. It is therefore recommended that publishers always keep the end users in mind when preparing their dataset for publication.
