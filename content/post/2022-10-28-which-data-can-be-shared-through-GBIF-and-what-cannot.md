@@ -1,7 +1,7 @@
 ---
 title: Which data can be shared through GBIF and what cannot
 author: Cecilie Svenningsen
-date: '2022-10-28'
+date: '2022-11-17'
 slug: data-shareability
 categories:
   - GBIF
