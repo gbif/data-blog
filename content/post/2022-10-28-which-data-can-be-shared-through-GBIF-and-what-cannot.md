@@ -103,7 +103,7 @@ This type of data is best captured in an event table and an occurrences table, w
 
 As mentioned in previously, publishers should not share occurrences of non-organisms so in this case, the publisher should not share the multi-taxa sampling event as an occurrence.
 
-![wrong occurrence file](/post/2022-10-28-which-data-can-be-shared-through-GBIF-and-what-cannot/wrong_occurrence_file.png)
+![wrong occurrence file](/post/2022-10-28-which-data-can-be-shared-through-GBIF-and-what-cannot/wrong_occurrence_file_edit.png)
 
 Technically, the occurrence file could be shared, but if useability is considered, then the example with an event file and an occurrence file yields much richer data and allows users to find specific taxa and discern between the sampling event and the occurrences. 
 
