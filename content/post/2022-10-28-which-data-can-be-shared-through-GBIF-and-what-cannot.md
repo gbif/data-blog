@@ -7,7 +7,7 @@ categories:
   - GBIF
 tags: []
 lastmod: '2022-01-04T10:19:14+01:00'
-draft: yes
+draft: no
 keywords: []
 description: ''
 authors: ''
@@ -15,7 +15,7 @@ comment: no
 toc: no
 autoCollapseToc: no
 postMetaInFooter: no
-hiddenFromHomePage: yes
+hiddenFromHomePage: no
 contentCopyright: no
 reward: no
 mathjax: no
