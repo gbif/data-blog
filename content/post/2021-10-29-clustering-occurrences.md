@@ -90,7 +90,9 @@ In the table below, I summarize how those assertions are made but if you would l
 | Non conflicting country | `countryCode` | country only on one record |
 | Different country | `countryCode` | differs between records|
 | Identifiers overlap | `occurrenceID`, `fieldNumber`, `recordNumber`, `otherCatalogueNumber`, grouped(`institutionCode`:`collectionCode`:`catalogueNumber`),<br> grouped(`institutionCode`:`catalogueNumber`) | checks any overlap of identifiers between records|
+| Other catalogue number overlap | `otherCatalogueNumber`,grouped(`institutionCode`, `collectionCode`, `catalogueNumber`) with any separator	checks if the other catalogue number correspond to the institution code, collection code and catalogue number from another record |
 | Is from sequence repository | `datasetKey` | checks if one of the datasetKey corresponds to one of the sequence repository datasets: INSDC sequences, INSDC host organisms, INSDC environmental samples, iBOL (see keys `d8cd16ba-bb74-4420-821e-083f2bac17c2`, `393b8c26-e4e0-4dd0-a218-93fc074ebf4e`, `583d91fe-bbc0-4b4a-afe1-801f88263016` and `040c5662-da76-4782-a48e-cdea1892d14c`) |
+Are specimens | `basisOfRecord` | checks if the basis of record for both records are one of the following: `PRESERVED_SPECIMEN`, `LIVING_SPECIMEN`, `FOSSIL_SPECIMEN`, `MATERIAL_CITATION` |
 
 The table below summarises the combinations of assertions that are sufficient to link the records in a cluster. If a group of occurrences share the combinations of assertions for any given column, they will be clustered together. [Edit 2022-03-11: The table below has been updated to reflect some changes in the clustering function: https://www.gbif.org/release-notes#11mar22]
 [Edit 2022-06-23 : the table below has updated to reflect some changes in the clustering function https://github.com/gbif/pipelines/issues/733]
