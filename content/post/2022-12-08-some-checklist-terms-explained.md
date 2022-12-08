@@ -1,5 +1,5 @@
 ---
-title: Checklist publishing on GBIF - some explanations on various fields: taxonID, scientificNameID, taxonConceptID, acceptedNameUsageID, nameAccordingToID
+title: Checklist publishing on GBIF - some explanations on: taxonID, scientificNameID, taxonConceptID, acceptedNameUsageID, nameAccordingToID
 author: Marie Grosjean
 date: '2022-12-08'
 slug: some-checklist-terms-explained
