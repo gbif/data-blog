@@ -11,7 +11,7 @@ tags:
   - checklist
   - publishing
 lastmod: '2022-12-08'
-draft: yes
+draft: no
 keywords: ['checklist', 'identifiers', 'circumscriptions', 'misapplied names']
 description: ''
 comment: no
