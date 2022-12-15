@@ -49,3 +49,4 @@ As a publisher, you would need to standardize your data to fit into one or more 
 ## Publishing tool: IPT
 The Integrated Publishing Toolkit (IPT) is a free, open source software tool used to publish and share biodiversity datasets through the GBIF network.
 
+
