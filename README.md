@@ -88,7 +88,7 @@ The preview site is public, but [not indexed by google](https://data-blog.gbif-u
 
 Sometimes it's desirable to preview a post **locally**. If the site doesn't build on the [preview site](https://data-blog.gbif-uat.org/), then there may have been a build error. This can be de-bugged by building locally. 
 
-This is possible using `hugo`. https://gohugo.io/installation/
+This is possible using `hugo`. https://gohugo.io/installation/ (blog uses v0.91.2)
 
 ```shell
 git clone https://github.com/gbif/data-blog # get the blog files
