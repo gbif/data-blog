@@ -1,42 +1,31 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Cloud computing on GBIF Data Blog</title>
-    <link>/tags/cloud-computing/</link>
-    <description>Recent content in Cloud computing on GBIF Data Blog</description>
+    <title>cloud computing on GBIF Data Blog</title>
+    <link>https://data-blog.gbif.org/tags/cloud-computing/</link>
+    <description>Recent content in cloud computing on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 04 Jun 2021 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/cloud-computing/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 04 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://data-blog.gbif.org/tags/cloud-computing/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GBIF and Apache-Spark on AWS tutorial</title>
-      <link>/post/aws-and-gbif/</link>
+      <link>https://data-blog.gbif.org/post/aws-and-gbif/</link>
       <pubDate>Fri, 04 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>/post/aws-and-gbif/</guid>
+      <guid>https://data-blog.gbif.org/post/aws-and-gbif/</guid>
       <description>&lt;p&gt;&lt;strong&gt;GBIF&lt;/strong&gt; now has a &lt;a href=&#34;https://registry.opendata.aws/gbif/&#34;&gt;snapshot&lt;/a&gt; of 1.3 billion occurrence&lt;sub&gt;✝&lt;/sub&gt; records on &lt;strong&gt;Amazon Web Services&lt;/strong&gt; (AWS). This guide will take you through running &lt;strong&gt;Spark notebooks&lt;/strong&gt; on AWS. The GBIF snapshot is documented : &lt;a href=&#34;https://github.com/gbif/occurrence/blob/master/aws-public-data.md&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;June snapshot of &lt;a href=&#34;https://t.co/CJaPsifdp0&#34;&gt;https://t.co/CJaPsifdp0&lt;/a&gt; occurrence data now available on the Amazon and Microsoft clouds, based on &lt;a href=&#34;https://t.co/aGbvTisapJ&#34;&gt;https://t.co/aGbvTisapJ&lt;/a&gt;. See &lt;a href=&#34;https://t.co/lRXM2uqFh0&#34;&gt;https://t.co/lRXM2uqFh0&lt;/a&gt; for more details.&lt;/p&gt;&amp;mdash; GBIF (@GBIF) &lt;a href=&#34;https://twitter.com/GBIF/status/1400009135362646021?ref_src=twsrc%5Etfw&#34;&gt;June 2, 2021&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;You can &lt;strong&gt;read previous discussions about GBIF and cloud computing&lt;/strong&gt; &lt;a href=&#34;https://discourse.gbif.org/t/gbif-exports-as-public-datasets-in-cloud-environments/1835&#34;&gt;here&lt;/a&gt;. The main reason you would want to use cloud computing is to run &lt;strong&gt;big data queries&lt;/strong&gt; that are slow or impractical on a local machine.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;June snapshot of &lt;a href=&#34;https://t.co/CJaPsifdp0&#34;&gt;https://t.co/CJaPsifdp0&lt;/a&gt; occurrence data now available on the Amazon and Microsoft clouds, based on &lt;a href=&#34;https://t.co/aGbvTisapJ&#34;&gt;https://t.co/aGbvTisapJ&lt;/a&gt;. See &lt;a href=&#34;https://t.co/lRXM2uqFh0&#34;&gt;https://t.co/lRXM2uqFh0&lt;/a&gt; for more details.&lt;/p&gt;&amp;mdash; GBIF (@GBIF) &lt;a href=&#34;https://twitter.com/GBIF/status/1400009135362646021?ref_src=twsrc%5Etfw&#34;&gt;June 2, 2021&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+&lt;p&gt;You can &lt;strong&gt;read previous discussions about GBIF and cloud computing&lt;/strong&gt; &lt;a href=&#34;https://discourse.gbif.org/t/gbif-exports-as-public-datasets-in-cloud-environments/1835&#34;&gt;here&lt;/a&gt;. The main reason you would want to use cloud computing is to run &lt;strong&gt;big data queries&lt;/strong&gt; that are slow or impractical on a local machine.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>GBIF and Apache-Spark on Microsoft Azure tutorial</title>
-      <link>/post/microsoft-azure-and-gbif/</link>
+      <link>https://data-blog.gbif.org/post/microsoft-azure-and-gbif/</link>
       <pubDate>Wed, 19 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>/post/microsoft-azure-and-gbif/</guid>
+      <guid>https://data-blog.gbif.org/post/microsoft-azure-and-gbif/</guid>
       <description>&lt;p&gt;&lt;strong&gt;GBIF&lt;/strong&gt; now has a &lt;a href=&#34;https://github.com/microsoft/AIforEarthDataSets/blob/main/data/gbif.md&#34;&gt;snapshot&lt;/a&gt; of 1.3 billion occurrences&lt;sub&gt;✝&lt;/sub&gt; records on &lt;a href=&#34;https://www.microsoft.com/en-us/ai/ai-for-earth&#34;&gt;Microsoft Azure&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;It is hosted by the &lt;strong&gt;Microsoft AI for Earth program&lt;/strong&gt;, which hosts geospatial datasets that are important to environmental sustainability and Earth science. Hosting is convenient because you could now use occurrences in combination with other environmental layers and not need to upload any of it to the Azure. You can &lt;strong&gt;read previous discussions about GBIF and cloud computing&lt;/strong&gt; &lt;a href=&#34;https://discourse.gbif.org/t/gbif-exports-as-public-datasets-in-cloud-environments/1835&#34;&gt;here&lt;/a&gt;. The main reason you would want to use cloud computing is to run &lt;strong&gt;big data queries&lt;/strong&gt; that are slow or impractical on a local machine.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;It is hosted by the &lt;strong&gt;Microsoft AI for Earth program&lt;/strong&gt;, which hosts geospatial datasets that are important to environmental sustainability and Earth science. Hosting is convenient because you could now use occurrences in combination with other environmental layers and not need to upload any of it to the Azure. You can &lt;strong&gt;read previous discussions about GBIF and cloud computing&lt;/strong&gt; &lt;a href=&#34;https://discourse.gbif.org/t/gbif-exports-as-public-datasets-in-cloud-environments/1835&#34;&gt;here&lt;/a&gt;. The main reason you would want to use cloud computing is to run &lt;strong&gt;big data queries&lt;/strong&gt; that are slow or impractical on a local machine.&lt;/p&gt;</description>
     </item>
     
   </channel>

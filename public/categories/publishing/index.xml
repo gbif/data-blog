@@ -1,42 +1,37 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Publishing on GBIF Data Blog</title>
-    <link>/categories/publishing/</link>
+    <link>https://data-blog.gbif.org/categories/publishing/</link>
     <description>Recent content in Publishing on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 11 Oct 2021 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/categories/publishing/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 11 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://data-blog.gbif.org/categories/publishing/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>What are the flags &#34;Collection match fuzzy&#34;, &#34;Collection match none&#34;, &#34;Institution match fuzzy&#34;, &#34;Institution match none&#34; and how to remove them?</title>
-      <link>/post/grscicoll-flags/</link>
+      <link>https://data-blog.gbif.org/post/grscicoll-flags/</link>
       <pubDate>Mon, 11 Oct 2021 00:00:00 +0000</pubDate>
       
-      <guid>/post/grscicoll-flags/</guid>
-      <description>You are a data publisher of occurrence data through GBIF.org, care about your data quality, and wonder what to do about the issue flags that show up on your occurrences. You might have noticed a new type flag this year relating to collection and institution codes and identifiers. They are the result of our attempt at linking specimens records to our Registry of Scientific Collections (GRSciColl).
-We want to be able to group specimens and combine metrics at the collection and institution levels (which can be independant from the way there were published on GBIF).</description>
+      <guid>https://data-blog.gbif.org/post/grscicoll-flags/</guid>
+      <description>&lt;p&gt;You are a data publisher of occurrence data through GBIF.org, care about your data quality, and wonder what to do about the issue flags that show up on your occurrences. You might have noticed a new type flag this year relating to collection and institution codes and identifiers. They are the result of our attempt at linking specimens records to &lt;a href=&#34;https://www.gbif.org/grscicoll&#34;&gt;our Registry of Scientific Collections (GRSciColl)&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Which tools can I use to share my data on GBIF?</title>
-      <link>/post/installations-and-hosting-solutions-explained/</link>
+      <link>https://data-blog.gbif.org/post/installations-and-hosting-solutions-explained/</link>
       <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>/post/installations-and-hosting-solutions-explained/</guid>
+      <guid>https://data-blog.gbif.org/post/installations-and-hosting-solutions-explained/</guid>
       <description>As you probably already know, GBIF.org doesn&amp;rsquo;t host any data. The system relies on each data provider making their data available online in a GBIF-supported format. It also relies on organization letting GBIF know where to find these data (in other words registering the data). But how to do just that?
 The good news is that there are several GBIF-compatible systems. They will export or make available the data for you in the correct format and several provide means to register them as datasets on GBIF.</description>
     </item>
     
     <item>
       <title>How to choose a dataset class on GBIF?</title>
-      <link>/post/choose-dataset-type/</link>
+      <link>https://data-blog.gbif.org/post/choose-dataset-type/</link>
       <pubDate>Wed, 04 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/choose-dataset-type/</guid>
+      <guid>https://data-blog.gbif.org/post/choose-dataset-type/</guid>
       <description>If you are a (first time) publisher on GBIF and you are trying to decide which type of dataset would best fit your data, this blogpost is for you.
 All the records shared on GBIF are organized into datasets. Each dataset is associated with some metadata describing its content (the classic &amp;ldquo;what, where, when, why, how&amp;rdquo;). The dataset&amp;rsquo;s content depends strongly on the dataset&amp;rsquo;s class. GBIF currently support four types of dataset:</description>
     </item>

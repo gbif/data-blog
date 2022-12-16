@@ -19,7 +19,6 @@
 <meta name="author" content="Marie Grosjean" />
   <meta name="description" content="Today, we are talking about the GBIF Species API. Although you might not use it directly, you probably encountered it while using the GBIF web portal:
  Typing a scientific name in the GBIF Occurrence search. Seeing a &amp;ldquo;Taxon Match Fuzzy&amp;rdquo; flag. Using the Species Name matching tool.  This API is what allow us to navigate through the names available on GBIF. I will try to avoid repeating what you can already find in its documentation. Instead, I will attempt to give an overview and answer some questions that we received in the past.
-
 " />
 <meta name="keywords" content="taxonomy, api, species matching" />
 
@@ -29,10 +28,10 @@
 
 
 
-<meta name="generator" content="Hugo 0.42" />
+<meta name="generator" content="Hugo 0.91.2" />
 
 
-<link rel="canonical" href="/post/gbif-species-api/" />
+<link rel="canonical" href="https://data-blog.gbif.org/post/gbif-species-api/" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -57,68 +56,35 @@
 <meta property="og:title" content="(Almost) everything you want to know about the GBIF Species API" />
 <meta property="og:description" content="Today, we are talking about the GBIF Species API. Although you might not use it directly, you probably encountered it while using the GBIF web portal:
 
-
 Typing a scientific name in the GBIF Occurrence search.
 Seeing a &ldquo;Taxon Match Fuzzy&rdquo; flag.
 Using the Species Name matching tool.
 
-
-This API is what allow us to navigate through the names available on GBIF. I will try to avoid repeating what you can already find in its documentation. Instead, I will attempt to give an overview and answer some questions that we received in the past.
-
-" />
+This API is what allow us to navigate through the names available on GBIF. I will try to avoid repeating what you can already find in its documentation. Instead, I will attempt to give an overview and answer some questions that we received in the past." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/post/gbif-species-api/" />
-
-
-
-<meta property="article:published_time" content="2020-11-17T00:00:00&#43;00:00"/>
-
-<meta property="article:modified_time" content="2020-11-16T00:00:00&#43;00:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="og:url" content="https://data-blog.gbif.org/post/gbif-species-api/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2020-11-17T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-11-16T00:00:00+00:00" />
 
 <meta itemprop="name" content="(Almost) everything you want to know about the GBIF Species API">
 <meta itemprop="description" content="Today, we are talking about the GBIF Species API. Although you might not use it directly, you probably encountered it while using the GBIF web portal:
 
-
 Typing a scientific name in the GBIF Occurrence search.
 Seeing a &ldquo;Taxon Match Fuzzy&rdquo; flag.
 Using the Species Name matching tool.
 
-
-This API is what allow us to navigate through the names available on GBIF. I will try to avoid repeating what you can already find in its documentation. Instead, I will attempt to give an overview and answer some questions that we received in the past.
-
-">
-
-
-<meta itemprop="datePublished" content="2020-11-17T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2020-11-17T00:00:00&#43;00:00" />
+This API is what allow us to navigate through the names available on GBIF. I will try to avoid repeating what you can already find in its documentation. Instead, I will attempt to give an overview and answer some questions that we received in the past."><meta itemprop="datePublished" content="2020-11-17T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2020-11-16T00:00:00+00:00" />
 <meta itemprop="wordCount" content="864">
-
-
-
-<meta itemprop="keywords" content="species matching tool,species api,GBIF,checklist,backbone,Taxon match none,Taxon match higherrank,Taxon match fuzzy," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="species matching tool,species api,GBIF,checklist,backbone,Taxon match none,Taxon match higherrank,Taxon match fuzzy," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="(Almost) everything you want to know about the GBIF Species API"/>
 <meta name="twitter:description" content="Today, we are talking about the GBIF Species API. Although you might not use it directly, you probably encountered it while using the GBIF web portal:
 
-
 Typing a scientific name in the GBIF Occurrence search.
 Seeing a &ldquo;Taxon Match Fuzzy&rdquo; flag.
 Using the Species Name matching tool.
 
-
-This API is what allow us to navigate through the names available on GBIF. I will try to avoid repeating what you can already find in its documentation. Instead, I will attempt to give an overview and answer some questions that we received in the past.
-
-"/>
+This API is what allow us to navigate through the names available on GBIF. I will try to avoid repeating what you can already find in its documentation. Instead, I will attempt to give an overview and answer some questions that we received in the past."/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -217,92 +183,59 @@ This API is what allow us to navigate through the names available on GBIF. I wil
     
     <div class="post-content">
       <p>Today, we are talking about the <a href="https://www.gbif.org/developer/species">GBIF Species API</a>. Although you might not use it directly, you probably encountered it while using the <a href="https://www.gbif.org/">GBIF web portal</a>:</p>
-
 <ul>
 <li>Typing a scientific name in the <a href="https://www.gbif.org/occurrence/search?occurrence_status=present&amp;q=">GBIF Occurrence search</a>.</li>
 <li>Seeing a &ldquo;Taxon Match Fuzzy&rdquo; flag.</li>
 <li>Using the <a href="https://www.gbif.org/tools/species-lookup">Species Name matching tool</a>.</li>
 </ul>
-
 <p>This API is what allow us to navigate through the names available on GBIF. I will try to avoid repeating what you can already find in <a href="https://www.gbif.org/developer/species">its documentation</a>. Instead, I will attempt to give an overview and answer some questions that we received in the past.</p>
-
-<p></p>
-
 <!-- <img src="/post/2020-11-16-species-api/search.png" alt="Example" width="80%">-->
-
-<p><img src="/post/2020-11-16-species-api/search.png" alt="Search screen shot" /></p>
-
+<p><img src="/post/2020-11-16-species-api/search.png" alt="Search screen shot"></p>
 <h1 id="what-can-the-species-api-do-and-where-is-it-used">What can the species API do and where is it used?</h1>
-
 <p>If you head over to the <a href="https://www.gbif.org/developer/species">API documentation page</a>, you will see that it divides the functions in three categories:</p>
-
 <ul>
 <li><strong>Working with Name Usages</strong>: these are all the calls use to navigate the <a href="https://www.gbif.org/dataset/d7dddbf4-2cf0-4f39-9b2a-bb099caae36c">GBIF backbone taxonomy</a> or any other checklists available on GBIF. They are used by the <a href="https://www.gbif.org/species/search">species web interface</a>. More information <a href="https://www.gbif.org/developer/species#nameUsages">here</a>.</li>
 <li><strong>Searching Names</strong>: these are four functions to search for names.
-
 <ul>
 <li>The <code>/species/search</code> function is used to query the taxon names on the <a href="https://www.gbif.org/species/search">species web interface</a>.</li>
 <li>The <code>/species/suggest</code> function is used by the drop down menu that appear when searching names in the <code>Scientific name</code> field in the <a href="https://www.gbif.org/occurrence/search?occurrence_status=present&amp;q=">occurrence search interface</a>.</li>
 <li>The <code>/species/match</code> function is used to match names to the GBIF backbone taxonomy. When occurrences are shared on GBIF, all the scientific names are matched to the backbone taxonomy using this function. The <a href="https://www.gbif.org/tools/species-lookup">Species Name matching tool</a> also uses this function. Note that for names included in checklists, an other function, more stringent, is used. We assume that names included in checklists are carefully curated and don&rsquo;t need fuzzy matching (as this is the goal of a checklist).</li>
 <li>The <code>/species</code> function is not used in the GBIF Portal but it allows to search for exact matches in any checklist you would like.</li>
-</ul></li>
+</ul>
+</li>
 <li><strong>Name Parser</strong>: these are the calls used by the <code>Searching Names</code> functions as well as GBIF <a href="https://www.gbif.org/tools/name-parser">Name Parser tool</a>.</li>
 </ul>
-
 <blockquote>
 <p><strong>What does it mean when some fields are not included in the response?</strong></p>
-
 <p>This means that we don&rsquo;t have the value for that particular taxon and field.</p>
 </blockquote>
-
 <h1 id="search-and-match">Search and Match</h1>
-
 <p>Both the <strong>search</strong> and <strong>match</strong> functions are based on the <a href="https://lucene.apache.org">Lucene</a> search technology. We use an <a href="https://github.com/gbif/checklistbank/blob/master/checklistbank-common/src/main/java/org/gbif/checklistbank/utils/SciNameNormalizer.java#L36">analyzer</a> which takes into account specificities of text matching for scientific names. However, there are a few key differences between the two functions.</p>
-
 <p><strong>The search</strong> function queries everything (name, description, etc.) and the result is ranked according to where the match was found. See the figure below:</p>
-
 <!-- ![Search API](https://github.com/gbif/data-blog/blob/master/content/post/2020-11-16-species-api/search_api.001.png) -->
-
-<p><img src="/post/2020-11-16-species-api/search_api.001.png" alt="Search API" /></p>
-
+<p><img src="/post/2020-11-16-species-api/search_api.001.png" alt="Search API"></p>
 <p>Note that it is possible to specify the field searched thanks to the <code>qField</code> parameter. For example, if you would like the algorithm to check vernacular names specifically, you can write <code>qField=VERNACULAR</code>.</p>
-
 <p>The code corresponding to the Search function can be found <a href="https://github.com/gbif/checklistbank/blob/master/checklistbank-solr/src/main/java/org/gbif/checklistbank/index/service/SolrQueryBuilder.java#L52">here</a>.</p>
-
-<hr />
-
-<p><strong>The match</strong> function uses the fuzzy matching on canonical names to generate candidate matches. The scientific authorships are excluded for the first step of the matching because they vary so much. The resulting matches are then scored according to their taxonomy, authorship, status and rank (the scores are available in the <code>note</code> field of the API response by setting the parameter <code>verbose=true</code>).
+<hr>
+<p><strong>The match</strong> function uses the fuzzy matching on canonical names to generate candidate matches. The scientific authorships are excluded for the first step of the matching because they vary so much. The resulting matches are then scored according to their taxonomy, authorship, status and rank (the scores are available in the <code>note</code> field of the API response by setting the parameter <code>verbose=true</code>). 
 For a summary of the match function, see the figure below:</p>
-
 <!-- ![Match API](https://github.com/gbif/data-blog/blob/master/content/post/2020-11-16-species-api/match_API.001.png) -->
-
-<p><img src="/post/2020-11-16-species-api/match_API.001.png" alt="Match API" /></p>
-
+<p><img src="/post/2020-11-16-species-api/match_API.001.png" alt="Match API"></p>
 <p>The example used in the figure is the following:</p>
-
 <p><a href="https://api.gbif.org/v1/species/match?verbose=true&amp;kingdom=Plantae&amp;name=Agathis%20montana">https://api.gbif.org/v1/species/match?verbose=true&amp;kingdom=Plantae&amp;name=Agathis%20montana</a></p>
-
 <blockquote>
 <p>The matching algorithm generates a number of flags. The main one being &ldquo;Taxon Match Fuzzy&rdquo;, which means that the match found doesn&rsquo;t exactly match the query (different spelling). More information about GBIF flags and issues in <a href="https://data-blog.gbif.org/post/issues-and-flags/">this blogpost</a>.</p>
 </blockquote>
-
 <p>If two matches score the same, nothing is returned as main match but they can be found as alternative matches (which are available in the response when setting the parameter <code>verbose=true</code>). This is why providing a higher taxonomy along with your scientific name can really improve the matching: it will weigh on the taxonomic score and help find a &ldquo;main match&rdquo;.</p>
-
 <p>Note that not all taxonomic ranks are created equal in our scoring system. Because there can be so much variation in the taxonomies available, a difference at the order level doesn&rsquo;t weigh as much a as a difference at the kingdom level. In addition to that, our algorithm is more stringent when it comes to differentiate Animalia from Plantae than other kingdoms (Protista vs Animalia or Chromista vs Plantae, etc.)</p>
-
 <p>The code corresponding to the match function can be found <a href="https://github.com/gbif/checklistbank/blob/master/checklistbank-nub/src/main/java/org/gbif/nub/lookup/fuzzy/NubMatchingServiceImpl.java">here</a>.</p>
-
 <blockquote>
 <p><strong>Is it possible to get the result of a species search as an excel/CSV table?</strong></p>
-
 <p>No, there is no &ldquo;species download&rdquo; like we have for occurrences. You will have to use the API and convert the JSON result into a CSV/excel table. There are a number of online JSON converters you can try if you are not comfortable with writing your own scripts.</p>
 </blockquote>
-
 <h1 id="for-more-information">For more information</h1>
-
 <p>If you would like to know more about the GBIF backbone taxonomy and how it is generated, you can check out <a href="https://data-blog.gbif.org/post/gbif-backbone-taxonomy/">this blogpost</a>.
 You are also very welcome to send your questions and report any issue via our feedback system or on GitHub <a href="https://github.com/gbif/portal-feedback/issues">here</a>.</p>
-
 <p>Let me know if this post is useful and if there is anything I left out that you would like to know more of. Thanks!</p>
     </div>
 
@@ -336,9 +269,9 @@ You are also very welcome to send your questions and report any issue via our fe
       
       <nav class="post-nav">
         
-          <a class="prev" href="/post/downloads-api-guide/">
+          <a class="prev" href="/post/gbif-filtering-guide/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Downloads API Guide</span>
+            <span class="prev-text nav-default">Common things to look out for when post-processing GBIF downloads</span>
             <span class="prev-text nav-mobile">Prev</span>
           </a>
         

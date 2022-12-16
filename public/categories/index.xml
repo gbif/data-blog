@@ -1,94 +1,90 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on GBIF Data Blog</title>
-    <link>/categories/</link>
+    <link>https://data-blog.gbif.org/categories/</link>
     <description>Recent content in Categories on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 17 Nov 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Api</title>
-      <link>/categories/api/</link>
-      <pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/api/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Citation</title>
-      <link>/categories/citation/</link>
-      <pubDate>Thu, 20 May 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/citation/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Data use</title>
-      <link>/categories/data-use/</link>
-      <pubDate>Thu, 04 Nov 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/data-use/</guid>
-      <description></description>
-    </item>
-    
+    <lastBuildDate>Thu, 17 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://data-blog.gbif.org/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GBIF</title>
-      <link>/categories/gbif/</link>
+      <link>https://data-blog.gbif.org/categories/gbif/</link>
+      <pubDate>Thu, 17 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/categories/gbif/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>data use</title>
+      <link>https://data-blog.gbif.org/categories/data-use/</link>
       <pubDate>Thu, 04 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>/categories/gbif/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>GRSciColl</title>
-      <link>/categories/grscicoll/</link>
-      <pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/grscicoll/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Guest Post</title>
-      <link>/categories/guest-post/</link>
-      <pubDate>Fri, 21 Feb 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/guest-post/</guid>
+      <guid>https://data-blog.gbif.org/categories/data-use/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Publishing</title>
-      <link>/categories/publishing/</link>
+      <link>https://data-blog.gbif.org/categories/publishing/</link>
       <pubDate>Mon, 11 Oct 2021 00:00:00 +0000</pubDate>
       
-      <guid>/categories/publishing/</guid>
+      <guid>https://data-blog.gbif.org/categories/publishing/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Registry</title>
-      <link>/categories/registry/</link>
+      <title>Citation</title>
+      <link>https://data-blog.gbif.org/categories/citation/</link>
+      <pubDate>Thu, 20 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/categories/citation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GRSciColl</title>
+      <link>https://data-blog.gbif.org/categories/grscicoll/</link>
       <pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>/categories/registry/</guid>
+      <guid>https://data-blog.gbif.org/categories/grscicoll/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>registry</title>
+      <link>https://data-blog.gbif.org/categories/registry/</link>
+      <pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/categories/registry/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>api</title>
+      <link>https://data-blog.gbif.org/categories/api/</link>
+      <pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/categories/api/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Guest Post</title>
+      <link>https://data-blog.gbif.org/categories/guest-post/</link>
+      <pubDate>Fri, 21 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/categories/guest-post/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Taxonomy</title>
-      <link>/categories/taxonomy/</link>
+      <link>https://data-blog.gbif.org/categories/taxonomy/</link>
       <pubDate>Tue, 24 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>/categories/taxonomy/</guid>
+      <guid>https://data-blog.gbif.org/categories/taxonomy/</guid>
       <description></description>
     </item>
     

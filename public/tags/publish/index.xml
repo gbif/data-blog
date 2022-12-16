@@ -1,65 +1,64 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Publish on GBIF Data Blog</title>
-    <link>/tags/publish/</link>
-    <description>Recent content in Publish on GBIF Data Blog</description>
+    <title>publish on GBIF Data Blog</title>
+    <link>https://data-blog.gbif.org/tags/publish/</link>
+    <description>Recent content in publish on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 11 Oct 2021 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/publish/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 11 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://data-blog.gbif.org/tags/publish/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>What are the flags &#34;Collection match fuzzy&#34;, &#34;Collection match none&#34;, &#34;Institution match fuzzy&#34;, &#34;Institution match none&#34; and how to remove them?</title>
-      <link>/post/grscicoll-flags/</link>
+      <link>https://data-blog.gbif.org/post/grscicoll-flags/</link>
       <pubDate>Mon, 11 Oct 2021 00:00:00 +0000</pubDate>
       
-      <guid>/post/grscicoll-flags/</guid>
-      <description>You are a data publisher of occurrence data through GBIF.org, care about your data quality, and wonder what to do about the issue flags that show up on your occurrences. You might have noticed a new type flag this year relating to collection and institution codes and identifiers. They are the result of our attempt at linking specimens records to our Registry of Scientific Collections (GRSciColl).
-We want to be able to group specimens and combine metrics at the collection and institution levels (which can be independant from the way there were published on GBIF).</description>
+      <guid>https://data-blog.gbif.org/post/grscicoll-flags/</guid>
+      <description>&lt;p&gt;You are a data publisher of occurrence data through GBIF.org, care about your data quality, and wonder what to do about the issue flags that show up on your occurrences. You might have noticed a new type flag this year relating to collection and institution codes and identifiers. They are the result of our attempt at linking specimens records to &lt;a href=&#34;https://www.gbif.org/grscicoll&#34;&gt;our Registry of Scientific Collections (GRSciColl)&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Which tools can I use to share my data on GBIF?</title>
-      <link>/post/installations-and-hosting-solutions-explained/</link>
+      <link>https://data-blog.gbif.org/post/installations-and-hosting-solutions-explained/</link>
       <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>/post/installations-and-hosting-solutions-explained/</guid>
+      <guid>https://data-blog.gbif.org/post/installations-and-hosting-solutions-explained/</guid>
       <description>As you probably already know, GBIF.org doesn&amp;rsquo;t host any data. The system relies on each data provider making their data available online in a GBIF-supported format. It also relies on organization letting GBIF know where to find these data (in other words registering the data). But how to do just that?
 The good news is that there are several GBIF-compatible systems. They will export or make available the data for you in the correct format and several provide means to register them as datasets on GBIF.</description>
     </item>
     
     <item>
       <title>How to choose a dataset class on GBIF?</title>
-      <link>/post/choose-dataset-type/</link>
+      <link>https://data-blog.gbif.org/post/choose-dataset-type/</link>
       <pubDate>Wed, 04 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/choose-dataset-type/</guid>
+      <guid>https://data-blog.gbif.org/post/choose-dataset-type/</guid>
       <description>If you are a (first time) publisher on GBIF and you are trying to decide which type of dataset would best fit your data, this blogpost is for you.
 All the records shared on GBIF are organized into datasets. Each dataset is associated with some metadata describing its content (the classic &amp;ldquo;what, where, when, why, how&amp;rdquo;). The dataset&amp;rsquo;s content depends strongly on the dataset&amp;rsquo;s class. GBIF currently support four types of dataset:</description>
     </item>
     
     <item>
       <title>Sequence-based data on GBIF - Sharing your data</title>
-      <link>/post/gbif-molecular-data/</link>
+      <link>https://data-blog.gbif.org/post/gbif-molecular-data/</link>
       <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/gbif-molecular-data/</guid>
-      <description>[Edit 2021-09-16]
-Important: To find guidance on how to publish Sequence-based data on GBIF, please consult the following guide:
- Andersson AF, Bissett A, Finstad AG, Fossøy F, Grosjean M, Hope M, Jeppesen TS, Kõljalg U, Lundin D, Nilsson RN, Prager M, Svenningsen C &amp;amp; Schigel D (2020) Publishing DNA-derived data through biodiversity data platforms. v1.0 Copenhagen: GBIF Secretariat. https://doi.org/10.35035/doc-vf1a-nr22.
- [End edit 2021-09-16]
-GBIF is trying to make it easier to share sequence-based data.</description>
+      <guid>https://data-blog.gbif.org/post/gbif-molecular-data/</guid>
+      <description>&lt;p&gt;[Edit 2021-09-16]&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Important&lt;/strong&gt;: To find guidance on how to publish Sequence-based data on GBIF, please consult the following guide:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Andersson AF, Bissett A, Finstad AG, Fossøy F, Grosjean M, Hope M, Jeppesen TS, Kõljalg U, Lundin D, Nilsson RN, Prager M, Svenningsen C &amp;amp; Schigel D (2020) Publishing DNA-derived data through biodiversity data platforms. v1.0 Copenhagen: GBIF Secretariat. &lt;a href=&#34;https://doi.org/10.35035/doc-vf1a-nr22&#34;&gt;https://doi.org/10.35035/doc-vf1a-nr22&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;[End edit 2021-09-16]&lt;/p&gt;
+&lt;p&gt;GBIF is trying to make it easier to share sequence-based data. In fact, this past year alone, we worked with &lt;a href=&#34;https://unite.ut.ee&#34;&gt;UNITE&lt;/a&gt; to integrate species hypothesis for fungi and with EMBL-&lt;a href=&#34;https://www.ebi.ac.uk&#34;&gt;EBI&lt;/a&gt; to publish 295 metagenomics datasets.&lt;/p&gt;
+&lt;p&gt;Unfortunately, documentation is not as quick to follow. Although we have now an &lt;a href=&#34;https://www.gbif.org/faq?question=how-can-i-publish-molecular-data-to-gbif&#34;&gt;FAQ&lt;/a&gt; on the topic, I thought that anyone could use a blog post with some advice and examples.&lt;/p&gt;
+&lt;p&gt;Note that this blog post is not intended to be documentation. The information written is subject to change, feel free to leave comments if you have any question or suggestion.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Sharing images, sounds and videos on GBIF</title>
-      <link>/post/gbif-multimedia/</link>
+      <link>https://data-blog.gbif.org/post/gbif-multimedia/</link>
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/gbif-multimedia/</guid>
+      <guid>https://data-blog.gbif.org/post/gbif-multimedia/</guid>
       <description>This blog post covers the publication of multimedia on GBIF. However, it is not intended to be documentation. For more information, please check the references below.
 NB: GBIF does not host original multimedia files and there is no way to upload pictures to the platform. For more information, please read the how to publish paragraphs.
 Media displayed on the GBIF portal Let&amp;rsquo;s say that you are looking for pictures of otters, or perhaps the call of a sea eagle.</description>

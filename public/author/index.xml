@@ -1,103 +1,117 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Author on GBIF Data Blog</title>
-    <link>/author/</link>
+    <link>https://data-blog.gbif.org/author/</link>
     <description>Recent content in Author on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 05 Aug 2021 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/author/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 17 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://data-blog.gbif.org/author/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Andrea Hahn</title>
-      <link>/author/andrea-hahn/</link>
-      <pubDate>Thu, 05 Aug 2021 00:00:00 +0000</pubDate>
+      <title>Cecilie Svenningsen</title>
+      <link>https://data-blog.gbif.org/author/cecilie-svenningsen/</link>
+      <pubDate>Thu, 17 Nov 2022 00:00:00 +0000</pubDate>
       
-      <guid>/author/andrea-hahn/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>André Heughebaert</title>
-      <link>/author/andr%C3%A9-heughebaert/</link>
-      <pubDate>Wed, 15 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/author/andr%C3%A9-heughebaert/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Daniel Noesgaard</title>
-      <link>/author/daniel-noesgaard/</link>
-      <pubDate>Thu, 20 May 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/author/daniel-noesgaard/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Jan Kristoffer Legind</title>
-      <link>/author/jan-kristoffer-legind/</link>
-      <pubDate>Thu, 22 Nov 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/author/jan-kristoffer-legind/</guid>
+      <guid>https://data-blog.gbif.org/author/cecilie-svenningsen/</guid>
       <description></description>
     </item>
     
     <item>
       <title>John Waller</title>
-      <link>/author/john-waller/</link>
-      <pubDate>Tue, 07 Sep 2021 00:00:00 +0000</pubDate>
+      <link>https://data-blog.gbif.org/author/john-waller/</link>
+      <pubDate>Mon, 25 Apr 2022 00:00:00 +0000</pubDate>
       
-      <guid>/author/john-waller/</guid>
+      <guid>https://data-blog.gbif.org/author/john-waller/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>John Waller and Marie Grosjean</title>
-      <link>/author/john-waller-and-marie-grosjean/</link>
-      <pubDate>Wed, 04 Sep 2019 00:00:00 +0000</pubDate>
+      <title>John Waller and Carl Boettiger</title>
+      <link>https://data-blog.gbif.org/author/john-waller-and-carl-boettiger/</link>
+      <pubDate>Fri, 18 Feb 2022 00:00:00 +0000</pubDate>
       
-      <guid>/author/john-waller-and-marie-grosjean/</guid>
+      <guid>https://data-blog.gbif.org/author/john-waller-and-carl-boettiger/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Leonardo Buitrago</title>
-      <link>/author/leonardo-buitrago/</link>
-      <pubDate>Tue, 27 Oct 2020 00:00:00 +0000</pubDate>
+      <title>Marie Grosjean and Tim Robertson</title>
+      <link>https://data-blog.gbif.org/author/marie-grosjean-and-tim-robertson/</link>
+      <pubDate>Thu, 04 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>/author/leonardo-buitrago/</guid>
+      <guid>https://data-blog.gbif.org/author/marie-grosjean-and-tim-robertson/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Marie Grosjean</title>
-      <link>/author/marie-grosjean/</link>
+      <link>https://data-blog.gbif.org/author/marie-grosjean/</link>
       <pubDate>Mon, 11 Oct 2021 00:00:00 +0000</pubDate>
       
-      <guid>/author/marie-grosjean/</guid>
+      <guid>https://data-blog.gbif.org/author/marie-grosjean/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Andrea Hahn</title>
+      <link>https://data-blog.gbif.org/author/andrea-hahn/</link>
+      <pubDate>Thu, 05 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/author/andrea-hahn/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Daniel Noesgaard</title>
+      <link>https://data-blog.gbif.org/author/daniel-noesgaard/</link>
+      <pubDate>Thu, 20 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/author/daniel-noesgaard/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Leonardo Buitrago</title>
+      <link>https://data-blog.gbif.org/author/leonardo-buitrago/</link>
+      <pubDate>Tue, 27 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/author/leonardo-buitrago/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Quentin Groom &amp; Deborah Paul</title>
-      <link>/author/quentin-groom--deborah-paul/</link>
+      <link>https://data-blog.gbif.org/author/quentin-groom-deborah-paul/</link>
       <pubDate>Fri, 21 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>/author/quentin-groom--deborah-paul/</guid>
+      <guid>https://data-blog.gbif.org/author/quentin-groom-deborah-paul/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Tim Robertson and Marie Grosjean</title>
-      <link>/author/tim-robertson-and-marie-grosjean/</link>
-      <pubDate>Thu, 04 Nov 2021 00:00:00 +0000</pubDate>
+      <title>André Heughebaert</title>
+      <link>https://data-blog.gbif.org/author/andr%C3%A9-heughebaert/</link>
+      <pubDate>Wed, 15 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>/author/tim-robertson-and-marie-grosjean/</guid>
+      <guid>https://data-blog.gbif.org/author/andr%C3%A9-heughebaert/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>John Waller and Marie Grosjean</title>
+      <link>https://data-blog.gbif.org/author/john-waller-and-marie-grosjean/</link>
+      <pubDate>Wed, 04 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/author/john-waller-and-marie-grosjean/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jan Kristoffer Legind</title>
+      <link>https://data-blog.gbif.org/author/jan-kristoffer-legind/</link>
+      <pubDate>Thu, 22 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/author/jan-kristoffer-legind/</guid>
       <description></description>
     </item>
     

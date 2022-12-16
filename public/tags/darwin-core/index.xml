@@ -1,35 +1,35 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Darwin Core on GBIF Data Blog</title>
-    <link>/tags/darwin-core/</link>
+    <link>https://data-blog.gbif.org/tags/darwin-core/</link>
     <description>Recent content in Darwin Core on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 24 Apr 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/darwin-core/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 24 Apr 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://data-blog.gbif.org/tags/darwin-core/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Sequence-based data on GBIF - Sharing your data</title>
-      <link>/post/gbif-molecular-data/</link>
+      <link>https://data-blog.gbif.org/post/gbif-molecular-data/</link>
       <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/gbif-molecular-data/</guid>
-      <description>[Edit 2021-09-16]
-Important: To find guidance on how to publish Sequence-based data on GBIF, please consult the following guide:
- Andersson AF, Bissett A, Finstad AG, Fossøy F, Grosjean M, Hope M, Jeppesen TS, Kõljalg U, Lundin D, Nilsson RN, Prager M, Svenningsen C &amp;amp; Schigel D (2020) Publishing DNA-derived data through biodiversity data platforms. v1.0 Copenhagen: GBIF Secretariat. https://doi.org/10.35035/doc-vf1a-nr22.
- [End edit 2021-09-16]
-GBIF is trying to make it easier to share sequence-based data.</description>
+      <guid>https://data-blog.gbif.org/post/gbif-molecular-data/</guid>
+      <description>&lt;p&gt;[Edit 2021-09-16]&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Important&lt;/strong&gt;: To find guidance on how to publish Sequence-based data on GBIF, please consult the following guide:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Andersson AF, Bissett A, Finstad AG, Fossøy F, Grosjean M, Hope M, Jeppesen TS, Kõljalg U, Lundin D, Nilsson RN, Prager M, Svenningsen C &amp;amp; Schigel D (2020) Publishing DNA-derived data through biodiversity data platforms. v1.0 Copenhagen: GBIF Secretariat. &lt;a href=&#34;https://doi.org/10.35035/doc-vf1a-nr22&#34;&gt;https://doi.org/10.35035/doc-vf1a-nr22&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;[End edit 2021-09-16]&lt;/p&gt;
+&lt;p&gt;GBIF is trying to make it easier to share sequence-based data. In fact, this past year alone, we worked with &lt;a href=&#34;https://unite.ut.ee&#34;&gt;UNITE&lt;/a&gt; to integrate species hypothesis for fungi and with EMBL-&lt;a href=&#34;https://www.ebi.ac.uk&#34;&gt;EBI&lt;/a&gt; to publish 295 metagenomics datasets.&lt;/p&gt;
+&lt;p&gt;Unfortunately, documentation is not as quick to follow. Although we have now an &lt;a href=&#34;https://www.gbif.org/faq?question=how-can-i-publish-molecular-data-to-gbif&#34;&gt;FAQ&lt;/a&gt; on the topic, I thought that anyone could use a blog post with some advice and examples.&lt;/p&gt;
+&lt;p&gt;Note that this blog post is not intended to be documentation. The information written is subject to change, feel free to leave comments if you have any question or suggestion.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Sharing images, sounds and videos on GBIF</title>
-      <link>/post/gbif-multimedia/</link>
+      <link>https://data-blog.gbif.org/post/gbif-multimedia/</link>
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/gbif-multimedia/</guid>
+      <guid>https://data-blog.gbif.org/post/gbif-multimedia/</guid>
       <description>This blog post covers the publication of multimedia on GBIF. However, it is not intended to be documentation. For more information, please check the references below.
 NB: GBIF does not host original multimedia files and there is no way to upload pictures to the platform. For more information, please read the how to publish paragraphs.
 Media displayed on the GBIF portal Let&amp;rsquo;s say that you are looking for pictures of otters, or perhaps the call of a sea eagle.</description>

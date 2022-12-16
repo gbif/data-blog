@@ -1,22 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>R on GBIF Data Blog</title>
-    <link>/tags/r/</link>
+    <link>https://data-blog.gbif.org/tags/r/</link>
     <description>Recent content in R on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 22 Nov 2018 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/r/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 22 Nov 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://data-blog.gbif.org/tags/r/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Using shapefiles on GBIF data with R</title>
-      <link>/post/shapefiles/</link>
+      <link>https://data-blog.gbif.org/post/shapefiles/</link>
       <pubDate>Thu, 22 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/shapefiles/</guid>
+      <guid>https://data-blog.gbif.org/post/shapefiles/</guid>
       <description>Not all filters are born equal It happens sometimes that users need GBIF data that fall within specific boundaries. The GBIF Portal provides a location filter where it is possible to draw a rectangle or a polygon on the map and get the occurrence records within this shape. However these tools have a limited precision and occasionally the job calls for more complex shapes than the GBIF Portal currently supports.</description>
     </item>
     

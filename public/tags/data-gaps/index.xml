@@ -1,66 +1,50 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Data gaps on GBIF Data Blog</title>
-    <link>/tags/data-gaps/</link>
-    <description>Recent content in Data gaps on GBIF Data Blog</description>
+    <title>data gaps on GBIF Data Blog</title>
+    <link>https://data-blog.gbif.org/tags/data-gaps/</link>
+    <description>Recent content in data gaps on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 14 Nov 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/data-gaps/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Biodiversity hotspot polygons and GBIF data</title>
-      <link>/post/biodiversity-hotspots-density-table/</link>
-      <pubDate>Thu, 14 Nov 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/biodiversity-hotspots-density-table/</guid>
-      <description>Idea Post
-GBIF organizes and gives statistics for countries and areas, but we do not report on occurrence data for other areas that might be more biologically relevant or important. Should GBIF be doing this? This blog post represents what such reporting might look like if it were done. Currently GBIF has no plans to start doing such reporting.
-Currently the Critical Ecosystem Partnership Fund (CEPF) recognizes these biodiversity hotspots.</description>
-    </item>
-    
+    <lastBuildDate>Wed, 10 Jul 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://data-blog.gbif.org/tags/data-gaps/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Exploring es50 for GBIF</title>
-      <link>/post/exploring-es50-for-gbif/</link>
+      <link>https://data-blog.gbif.org/post/exploring-es50-for-gbif/</link>
       <pubDate>Wed, 10 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/exploring-es50-for-gbif/</guid>
-      <description>jpg | pdf | svg | code
-It has been suggested that GBIF could make es50 maps similar to what organizations like OBIS are already doing. I decided to make one for land animals (graph above). link to code
-es50 (Hulbert index) is the statistically expected number of unique species in a random sample of 50 occurrence records, and is an indicator of biodiversity richness. The score can be computed without random sampling, but the mean of infinite random sampling will produce the same result.</description>
+      <guid>https://data-blog.gbif.org/post/exploring-es50-for-gbif/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://data-blog.gbif.org/post/2019-06-25-exploring-es50-for-gbif_files/map_es50_300_1.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;It has been &lt;a href=&#34;https://discourse.gbif.org/t/hunger-mapping-gbif-data-blog/607/3&#34;&gt;suggested&lt;/a&gt; that GBIF could make &lt;strong&gt;es50&lt;/strong&gt; maps similar to what organizations like &lt;strong&gt;OBIS&lt;/strong&gt; are &lt;br&gt;&lt;a href=&#34;https://www.researchgate.net/figure/Hurlberts-index-ES50-calculated-on-a-grid-of-5x5-degrees-ES50-is-the-expected_fig4_242783847&#34;&gt;already doing&lt;/a&gt;. I decided to make one for &lt;strong&gt;land animals&lt;/strong&gt; (graph above). &lt;a href=&#34;https://github.com/jhnwllr/es50&#34;&gt;link to code&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Big National Checklists</title>
-      <link>/post/big-national-checklists/</link>
+      <link>https://data-blog.gbif.org/post/big-national-checklists/</link>
       <pubDate>Thu, 06 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/big-national-checklists/</guid>
-      <description>link to interactive map
-Big 15-300K total namesMedium 5-15K total namesSmall 0-5K total namesHere I plot the total names in checklists published on GBIF linked to a single country. A checklist dataset is a term for any dataset that contains primarily a list of taxonomic names. National species checklists are lists of species recorded from a country usually through some organized effort. GBIF has published a guide on best practices for making national checklist datasets, which advises making national checklists as big as possible.</description>
+      <guid>https://data-blog.gbif.org/post/big-national-checklists/</guid>
+      <description>&lt;img src=&#34;https://data-blog.gbif.org/post/2019-05-15-big-national-checklists_files/europeMap.gif&#34; alt=&#34;&#34; width=&#34;586px&#34;/&gt;</description>
     </item>
     
     <item>
       <title>GBIF checklist datasets and data gaps</title>
-      <link>/post/gbif-checklist-datasets-and-data-gaps/</link>
+      <link>https://data-blog.gbif.org/post/gbif-checklist-datasets-and-data-gaps/</link>
       <pubDate>Tue, 14 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/gbif-checklist-datasets-and-data-gaps/</guid>
-      <description>A checklist dataset is a catch-all term describing any dataset that contains primarily a list of taxonomic names. The lines between a checklist dataset and an occurrence dataset can be blurry.
-GBIF classifies at least 6 types of datasets as checklists.
-National (or regional) lists of species exampleTaxonomic list of species exampleSpecies description exampleChecklists made up of other checklists GBIF backbone taxonomy &amp;amp; Catalogue of LifeChecklists with occurrences exampleChecklists made from occurrences exampleThe top two are probably what most people imagine when they think of a checklist dataset.</description>
+      <guid>https://data-blog.gbif.org/post/gbif-checklist-datasets-and-data-gaps/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;A &lt;strong&gt;checklist dataset&lt;/strong&gt; is a catch-all term describing any dataset that contains primarily a list of taxonomic names. The lines between a checklist dataset and an occurrence dataset can be blurry.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
       <title>Hunger mapping</title>
-      <link>/post/hunger-mapping/</link>
+      <link>https://data-blog.gbif.org/post/hunger-mapping/</link>
       <pubDate>Fri, 15 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/hunger-mapping/</guid>
-      <description>Where are we missing biodiversity data?A hunger map is a map of missing biodiversity data (a biodiversity data gap). The main challenge with hunger mapping is proving that a species does not exist but should exist in a region. Hunger maps are important because they could be used to prioritize funding and digitization efforts. Currently, GBIF has no way of telling what species are missing from where. In this blog post I review some potential ways GBIF could make global biodiversity hunger maps.</description>
+      <guid>https://data-blog.gbif.org/post/hunger-mapping/</guid>
+      <description>&lt;h1 id=&#34;where-are-we-missing-biodiversity-data&#34;&gt;Where are we missing biodiversity data?&lt;/h1&gt;
+&lt;p&gt;A &lt;strong&gt;hunger map&lt;/strong&gt; is a map of missing biodiversity data (a biodiversity &lt;strong&gt;data gap&lt;/strong&gt;). The main challenge with hunger mapping is proving that a species &lt;a href=&#34;https://en.wikipedia.org/wiki/Evidence_of_absence&#34;&gt;does not exist but should exist&lt;/a&gt;  in a region. Hunger maps are important because they could be used to prioritize funding and digitization efforts. Currently, &lt;a href=&#34;https://www.gbif.org/what-is-gbif&#34;&gt;GBIF&lt;/a&gt; has no way of telling what species are missing from where. In this blog post I review some potential ways GBIF could make global biodiversity hunger maps.&lt;/p&gt;</description>
     </item>
     
   </channel>

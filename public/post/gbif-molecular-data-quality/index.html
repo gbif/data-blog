@@ -26,10 +26,10 @@
 
 
 
-<meta name="generator" content="Hugo 0.42" />
+<meta name="generator" content="Hugo 0.91.2" />
 
 
-<link rel="canonical" href="/post/gbif-molecular-data-quality/" />
+<link rel="canonical" href="https://data-blog.gbif.org/post/gbif-molecular-data-quality/" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -54,36 +54,15 @@
 <meta property="og:title" content="Sequenced-based data on GBIF - What you need to know before analyzing data" />
 <meta property="og:description" content="As I mentioned in my previous post, a lot more sequence-based data has been made available on GBIF this past year. MGnify alone, published 295 datasets for a total of 13,285,109 occurrences. Even though most of these occurrences are Bacteria or Chromista, more than a million of them are animals and more than 300,000 are plants. So chances are, that even if you are not interested in bacteria, you might encounter sequence-based data on GBIF." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/post/gbif-molecular-data-quality/" />
-
-
-
-<meta property="article:published_time" content="2019-04-26T00:00:00&#43;00:00"/>
-
-<meta property="article:modified_time" content="2019-04-23T00:00:00&#43;00:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="og:url" content="https://data-blog.gbif.org/post/gbif-molecular-data-quality/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2019-04-26T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-04-23T00:00:00+00:00" />
 
 <meta itemprop="name" content="Sequenced-based data on GBIF - What you need to know before analyzing data">
-<meta itemprop="description" content="As I mentioned in my previous post, a lot more sequence-based data has been made available on GBIF this past year. MGnify alone, published 295 datasets for a total of 13,285,109 occurrences. Even though most of these occurrences are Bacteria or Chromista, more than a million of them are animals and more than 300,000 are plants. So chances are, that even if you are not interested in bacteria, you might encounter sequence-based data on GBIF.">
-
-
-<meta itemprop="datePublished" content="2019-04-26T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2019-04-26T00:00:00&#43;00:00" />
+<meta itemprop="description" content="As I mentioned in my previous post, a lot more sequence-based data has been made available on GBIF this past year. MGnify alone, published 295 datasets for a total of 13,285,109 occurrences. Even though most of these occurrences are Bacteria or Chromista, more than a million of them are animals and more than 300,000 are plants. So chances are, that even if you are not interested in bacteria, you might encounter sequence-based data on GBIF."><meta itemprop="datePublished" content="2019-04-26T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2019-04-23T00:00:00+00:00" />
 <meta itemprop="wordCount" content="1475">
-
-
-
-<meta itemprop="keywords" content="molecular,DNA,eDNA,GBIF,MixS,GGBN,EBI,sequence,OTU,quality,howto,use,metagenomics," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="molecular,DNA,eDNA,GBIF,MixS,GGBN,EBI,sequence,OTU,quality,howto,use,metagenomics," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Sequenced-based data on GBIF - What you need to know before analyzing data"/>
 <meta name="twitter:description" content="As I mentioned in my previous post, a lot more sequence-based data has been made available on GBIF this past year. MGnify alone, published 295 datasets for a total of 13,285,109 occurrences. Even though most of these occurrences are Bacteria or Chromista, more than a million of them are animals and more than 300,000 are plants. So chances are, that even if you are not interested in bacteria, you might encounter sequence-based data on GBIF."/>
 
@@ -181,104 +160,64 @@
 
     
     <div class="post-content">
-      
-
-<p>As I mentioned in <a href="https://data-blog.gbif.org/post/gbif-molecular-data/">my previous post</a>, a lot more sequence-based data has been made available on GBIF this past year. <a href="https://www.gbif.org/publisher/ab733144-7043-4e88-bd4f-fca7bf858880">MGnify</a> alone, published 295 datasets for a total of 13,285,109 occurrences. Even though most of these occurrences are Bacteria or Chromista, more than a million of them are animals and more than 300,000 are plants. So chances are, that even if you are not interested in bacteria, you might encounter sequence-based data on GBIF.</p>
-
+      <p>As I mentioned in <a href="https://data-blog.gbif.org/post/gbif-molecular-data/">my previous post</a>, a lot more sequence-based data has been made available on GBIF this past year. <a href="https://www.gbif.org/publisher/ab733144-7043-4e88-bd4f-fca7bf858880">MGnify</a> alone, published 295 datasets for a total of 13,285,109 occurrences. Even though most of these occurrences are Bacteria or Chromista, more than a million of them are animals and more than 300,000 are plants. So chances are, that even if you are not interested in bacteria, you might encounter sequence-based data on GBIF.</p>
 <p>So why I am writing about this? The fact is that sequence-based data have different implications in terms of data quality but they are not necessarily obvious.
 In this post, I will try to summarize what you need to know before downloading and analyzing sequence-based data available on GBIF.</p>
-
 <p>Just a disclaimer: I am not a specialist and this blog post is highly simplified. Don&rsquo;t hesitate to complete this post by adding your own comments.</p>
-
 <h1 id="type-of-sequence-based-data-on-gbif">Type of sequence-based data on GBIF</h1>
-
 <p>As mentioned in my previous post, the term <code>molecular-based data</code> refers to any type of data associated to some genetic material (DNA or RNA sequence, genotype, etc.).
 These data can  be sorted in one of the two following categories:</p>
-
 <ul>
 <li>the genetic material comes from an observable specimen (whether it is macro or microscopic),</li>
 <li>the genetic material is the only evidence of a given organism or community, see for example metagenomics samples.</li>
 </ul>
-
 <p>In the first case, we <em>know</em> that the organism was present at a given date and location. Therefore, it would be reasonable to treat these occurrences as any other observation. However, in the second case, you need to take into account a few parameters before deciding whether or not you should include a given occurrence in your analysis. Thankfully, this is what the rest of this post is about ;)</p>
-
 <p>Unfortunately, <strong>there isn&rsquo;t any easy way to filter the GBIF occurrences based on genetic material only</strong>. The <code>Basis of record</code> might be a clue but you cannot always rely on it, as it depends on the type of organism concerned.</p>
-
 <ul>
 <li>If the genetic material was sampled from a macro organism, the <code>Basis of record</code> for such occurrence will most likely be <code>Preserved specimen</code> or <code>Human observation</code>.</li>
 <li>However, if the sample was taken from a colony of bacteria or a fungus (or anything growing in a petri dish really), the <code>Basis of record</code> might be <code>Material sample</code>, which is the same basis of records as the occurrence belonging to the second case I mentioned.</li>
 </ul>
-
 <p>Note that, a macro organism can also be detected in a metagenomics sample so you cannot just exclude all the macro-organisms with a <code>Material sample</code> basis of record.</p>
-
 <p>I tried to illustrate the two types of sequence-based data available on GBIF. See the two figures below.</p>
-
 <p><strong>The genetic material comes from observable (microscopic) organisms</strong>
 <img src="/post/2019-04-23-gbif-molecular-data-for-users-files/observable_specimens.jpeg" alt="Over-simplified schema of micro-organisms overved and sequenced" width="700"/></p>
-
 <p><strong>The genetic material is the only evidence of a given organism or community</strong>
 <img src="/post/2019-04-23-gbif-molecular-data-for-users-files/genetic_material_only.jpeg" alt="Over-simplified schema of metagenomics methods" width="700"/></p>
-
 <h1 id="sequencing-protocols-and-processing-pipelines-affect-significantly-what-is-detected">Sequencing protocols and processing pipelines affect significantly what is detected</h1>
-
 <p>This might not surprise anyone but the <strong>same sample</strong> sequenced with different technologies and processed with different bio-informatics pipelines can give very <strong>different results</strong>.
 Even just changing a parameter in one of the the steps of the quality control can change which organisms you will detect. This is why you must take into account the protocols and pipelines used when analyzing this type of occurrence, <strong>especially</strong> if you are pooling together data from different sources.</p>
-
 <p>Here is another simplified illustration of the problem:
 <img src="/post/2019-04-23-gbif-molecular-data-for-users-files/different_pipeline.jpeg" alt="Over-simplified effect of different piplelines on species detection" width="700"/></p>
-
 <p>I cannot explain the subtleties of sequencing technologies nor can I list all the different program used to process reads, these are entire fields on their own. I trust that the data providers to know what they are doing. And if you download occurrences from the same data source, you will probably have a homogeneous and reliable basis for your analysis. However, I will attempt to give a very high level overview of what is happening before you access these &ldquo;genetic&rdquo; occurrences on GBIF.</p>
-
 <p>In order to explain this, I will use the metaphor of a jigsaw puzzle.
 <img src="/post/2019-04-23-gbif-molecular-data-for-users-files/metagenomics.jpeg" alt="Over-simplified processing of metagenomics samples" width="700"/></p>
-
 <h3 id="sampling-and-sequencing">Sampling and sequencing</h3>
-
 <p>The samples are prepared and sequenced. A growingly popular approach is <a href="https://en.wikipedia.org/wiki/Shotgun_sequencing">shotgun sequencing</a>, you might also encounter the term <a href="https://en.wikipedia.org/wiki/DNA_sequencing#High-throughput_methods">high-throughput technology</a> or NGS technology which is a catch-all term for an array of methods applying to genome sequencing, genome resequencing, transcriptome profiling (RNA-Seq), DNA-protein interactions (ChIP-sequencing), and epigenome characterization.</p>
-
 <p>When comparing data from different sources, it might be a good idea to check which technology was used and was its indented purpose: which organisms are targeted? Prokaryotes, eukaryotes, both? Which genomics regions are targeted? Is everything sequenced or only the 16s? What is the error rate for this technology? What is the length of the sequences generated? etc.</p>
-
 <p>In any case, most of these methods will generate <code>reads</code> that are essentially short DNA sequences (represented in my figure by puzzle pieces). The goal will then be to figure out where these reads come from.</p>
-
 <h3 id="quality-control">Quality control</h3>
-
 <p>The quality control section of a pipeline depends on the sequencing technology used so it is difficult to generalize.
 However, the goal is always the same, to remove the low quality sequences.</p>
-
 <p>Very often, it will include the following steps:</p>
-
 <ul>
 <li>&ldquo;trim&rdquo; the reads (remove artifacts generated by the sequencing technology)</li>
 <li>remove the short reads</li>
 <li>remove the &ldquo;low quality&rdquo; reads</li>
 <li>(assemble the reads in longer sequences)</li>
 </ul>
-
 <p>Keep in mind that all sequencing technologies generate errors (essentially typos in the genetic code) and although the quality control strives to make the data as clean as possible, some of these errors can persist.</p>
-
 <h3 id="classification-and-matching">Classification and Matching</h3>
-
 <p>The reads are often grouped into <a href="https://en.wikipedia.org/wiki/Operational_taxonomic_unit">Operational taxonomic unit</a> (OTU) and/or matched to a reference database.</p>
-
 <p><strong>Depending on the programs and the reference database used, you will get very different results.</strong> This might be obvious but if my reference database contains only prokayotes, I won&rsquo;t be able to identify anything else. Some reads from eukaryotes might even match to some organisms in my database, thereby creating false positives.
 Of course, these programs generate matching scores and setting a stringent threshold can reduce the amount of false positives but some still persist.</p>
-
 <p>Note that the number of reads matched to a given species cannot be directly interpreted as the abundance of that particular species in the sample. Yes if you have more of genetic material available, you will get more reads but this relationship is not linear.</p>
-
 <p>You should also pay attention to the total number of clean reads generated. 10 reads matching bacteria A out of 100 is not the same as 10 out of 10,000 (check the last paragraph to know where to find this information).</p>
-
 <p>It makes sense to have a cut off based on the percentage or number of reads matching a given taxon. Sequencing errors are unlikely to occur systematically on the same sequences, which means that one read can be affected but not many. So if a high percentage of reads matchs the same taxon, this occurrence is more likely a true positive. Or the other way around, if only one read matches a taxon you should be more careful when interpreting the data.</p>
-
 <p>You should also pay attention to read length. Longer reads are &ldquo;larger&rdquo; pieces of the puzzles, programs can assign them to taxa with higher confidence levels.</p>
-
 <p>Essentially, what I am saying is that <strong>the number and length of the reads matter</strong>.</p>
-
 <h1 id="7-points-to-check-in-case-of-doubt">7 points to check in case of doubt</h1>
-
-<p><img align="left" padding = "10 px" src="/post/2019-04-23-gbif-molecular-data-for-users-files/corvid.jpeg" alt="Corvid image" width="80"/></p>
-
+<img align="left" padding = "10 px" src="/post/2019-04-23-gbif-molecular-data-for-users-files/corvid.jpeg" alt="Corvid image" width="80"/>
 <p>If you are not sure whether a given occurrence is a true positive, I suggest that you check the following points. Even if everything seems to check out, you should consider the occurrence like any other (with the appropriate level of skepticism).</p>
-
 <ul>
 <li>Is the <code>Basis of record</code>, <code>Material sample</code>?</li>
 <li>Is the occurrence associated with: an observation, a specimen, an <em>in vitro</em> culture or an environmental sample?</li>
@@ -288,20 +227,13 @@ Of course, these programs generate matching scores and setting a stringent thres
 <li>What was the reference database used?</li>
 <li>How many reads match your taxon of interest and how many reads were in the sample?</li>
 </ul>
-
 <p><strong>Where to find the information necessary to answers these questions?</strong></p>
-
 <p>The location of this type of information might vary depending on the data provider. I suggest that you check the method description in the dataset&rsquo;s metadata and the raw Darwin Core Archives (see the screenshot below).</p>
-
-<p><img src="/post/2019-04-23-gbif-molecular-data-publishing_images/raw_DwcA_download.png" alt="Download Raw DwC-A" width="700"/></p>
-
+<img src="/post/2019-04-23-gbif-molecular-data-publishing_images/raw_DwcA_download.png" alt="Download Raw DwC-A" width="700"/>
 <p>The information might be available in some extensions or mapped to the Darwin Core terms. For example, in <a href="https://www.gbif.org/publisher/ab733144-7043-4e88-bd4f-fca7bf858880">Mgnify</a> datasets, the total number of reads in a sample are given in the event file under <a href="https://dwc.tdwg.org/terms/#dwc:sampleSizeValue">dwc:sampleSizeValue</a> and <a href="https://dwc.tdwg.org/terms/#dwc:sampleSizeUnit">dwc:sampleSizeUnit</a> and the number of reads matched to a specific taxon are given in the occurrence file under <a href="https://dwc.tdwg.org/terms/#dwc:organismQuantity">dwc:organismQuantity</a> and <a href="https://dwc.tdwg.org/terms/#dwc:organismQuantityType">dwc:organismQuantityType</a>.
 See for example, <a href="https://www.gbif.org/occurrence/2027240778">this occurrence</a>:</p>
-
-<p><img src="/post/2019-04-23-gbif-molecular-data-for-users-files/read_number.png" alt="Download Raw DwC-A" width="700"/></p>
-
+<img src="/post/2019-04-23-gbif-molecular-data-for-users-files/read_number.png" alt="Download Raw DwC-A" width="700"/>
 <p>You can check <a href="https://data-blog.gbif.org/post/gbif-molecular-data/">my previous post about sequence-based data publishing</a> for more information.</p>
-
 <p>Please let me know if this post is useful and don&rsquo;t hesitate to add any comment if you notice anything missing.</p>
 
     </div>

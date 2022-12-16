@@ -1,300 +1,201 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>John Waller on GBIF Data Blog</title>
-    <link>/author/john-waller/</link>
+    <link>https://data-blog.gbif.org/author/john-waller/</link>
     <description>Recent content in John Waller on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 07 Sep 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 25 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://data-blog.gbif.org/author/john-waller/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Finding data gaps in the GBIF backbone taxonomy</title>
+      <link>https://data-blog.gbif.org/post/2022-03-24-reasons-why-names-don-t-match-to-the-gbif-backbone/</link>
+      <pubDate>Mon, 25 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/post/2022-03-24-reasons-why-names-don-t-match-to-the-gbif-backbone/</guid>
+      <description>&lt;p&gt;When publishers supply GBIF with a &lt;strong&gt;scientific name&lt;/strong&gt;, this name is sometimes not found in the &lt;a href=&#34;https://www.gbif.org/dataset/d7dddbf4-2cf0-4f39-9b2a-bb099caae36c&#34;&gt;GBIF taxonomic backbone&lt;/a&gt;. In these cases, the occurrence record gets a data quality flag called &lt;strong&gt;taxon match higher rank&lt;/strong&gt;. This means that GBIF was only able to match the name to a &lt;strong&gt;higher rank&lt;/strong&gt; (genus, family, order &amp;hellip;).&lt;/p&gt;</description>
+    </item>
     
-	<atom:link href="/author/john-waller/index.xml" rel="self" type="application/rss+xml" />
-    
+    <item>
+      <title>The World Checklist of Vascular Plants (Fabaceae)</title>
+      <link>https://data-blog.gbif.org/post/2022-02-01-the-world-checklist-of-vascular-plants-fabaceae/</link>
+      <pubDate>Mon, 28 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/post/2022-02-01-the-world-checklist-of-vascular-plants-fabaceae/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;The World Checklist of Vascular Plants (WCVP): Fabaceae&lt;/strong&gt; is a new GBIF mediated &lt;a href=&#34;https://www.gbif.org/fr/dataset/f7053f73-74fb-4c9f-ab63-de28c61140c2&#34;&gt;checklist&lt;/a&gt; that drastically increases the coverage of the family Fabaceae in the &lt;strong&gt;GBIF backbone&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>GBIF API beginners guide</title>
-      <link>/post/gbif-api-beginners-guide/</link>
+      <link>https://data-blog.gbif.org/post/gbif-api-beginners-guide/</link>
       <pubDate>Tue, 07 Sep 2021 00:00:00 +0000</pubDate>
       
-      <guid>/post/gbif-api-beginners-guide/</guid>
+      <guid>https://data-blog.gbif.org/post/gbif-api-beginners-guide/</guid>
       <description>&lt;p&gt;This a &lt;strong&gt;GBIF API&lt;/strong&gt; beginners guide.&lt;/p&gt;
-
 &lt;p&gt;The &lt;a href=&#34;https://www.gbif.org/developer/summary&#34;&gt;GBIF API technical documentation&lt;/a&gt; might be a bit confusing if you have never used an API before. The goal of this guide is to introduce the GBIF API to a semi-technical user who may have never used an API before.&lt;/p&gt;
-
-&lt;p&gt;The purpose of the GBIF API is to give users access to GBIF databases in a &lt;strong&gt;safe way&lt;/strong&gt;. The GBIF API also allows &lt;a href=&#34;https://www.gbif.org/&#34;&gt;GBIF.org&lt;/a&gt; and &lt;a href=&#34;https://github.com/ropensci/rgbif&#34;&gt;rgbif&lt;/a&gt; to function.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;The purpose of the GBIF API is to give users access to GBIF databases in a &lt;strong&gt;safe way&lt;/strong&gt;. The GBIF API also allows &lt;a href=&#34;https://www.gbif.org/&#34;&gt;GBIF.org&lt;/a&gt; and &lt;a href=&#34;https://github.com/ropensci/rgbif&#34;&gt;rgbif&lt;/a&gt; to function.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>GBIF and Apache-Spark on AWS tutorial</title>
-      <link>/post/aws-and-gbif/</link>
+      <link>https://data-blog.gbif.org/post/aws-and-gbif/</link>
       <pubDate>Fri, 04 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>/post/aws-and-gbif/</guid>
+      <guid>https://data-blog.gbif.org/post/aws-and-gbif/</guid>
       <description>&lt;p&gt;&lt;strong&gt;GBIF&lt;/strong&gt; now has a &lt;a href=&#34;https://registry.opendata.aws/gbif/&#34;&gt;snapshot&lt;/a&gt; of 1.3 billion occurrence&lt;sub&gt;✝&lt;/sub&gt; records on &lt;strong&gt;Amazon Web Services&lt;/strong&gt; (AWS). This guide will take you through running &lt;strong&gt;Spark notebooks&lt;/strong&gt; on AWS. The GBIF snapshot is documented : &lt;a href=&#34;https://github.com/gbif/occurrence/blob/master/aws-public-data.md&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;June snapshot of &lt;a href=&#34;https://t.co/CJaPsifdp0&#34;&gt;https://t.co/CJaPsifdp0&lt;/a&gt; occurrence data now available on the Amazon and Microsoft clouds, based on &lt;a href=&#34;https://t.co/aGbvTisapJ&#34;&gt;https://t.co/aGbvTisapJ&lt;/a&gt;. See &lt;a href=&#34;https://t.co/lRXM2uqFh0&#34;&gt;https://t.co/lRXM2uqFh0&lt;/a&gt; for more details.&lt;/p&gt;&amp;mdash; GBIF (@GBIF) &lt;a href=&#34;https://twitter.com/GBIF/status/1400009135362646021?ref_src=twsrc%5Etfw&#34;&gt;June 2, 2021&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;You can &lt;strong&gt;read previous discussions about GBIF and cloud computing&lt;/strong&gt; &lt;a href=&#34;https://discourse.gbif.org/t/gbif-exports-as-public-datasets-in-cloud-environments/1835&#34;&gt;here&lt;/a&gt;. The main reason you would want to use cloud computing is to run &lt;strong&gt;big data queries&lt;/strong&gt; that are slow or impractical on a local machine.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;June snapshot of &lt;a href=&#34;https://t.co/CJaPsifdp0&#34;&gt;https://t.co/CJaPsifdp0&lt;/a&gt; occurrence data now available on the Amazon and Microsoft clouds, based on &lt;a href=&#34;https://t.co/aGbvTisapJ&#34;&gt;https://t.co/aGbvTisapJ&lt;/a&gt;. See &lt;a href=&#34;https://t.co/lRXM2uqFh0&#34;&gt;https://t.co/lRXM2uqFh0&lt;/a&gt; for more details.&lt;/p&gt;&amp;mdash; GBIF (@GBIF) &lt;a href=&#34;https://twitter.com/GBIF/status/1400009135362646021?ref_src=twsrc%5Etfw&#34;&gt;June 2, 2021&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+&lt;p&gt;You can &lt;strong&gt;read previous discussions about GBIF and cloud computing&lt;/strong&gt; &lt;a href=&#34;https://discourse.gbif.org/t/gbif-exports-as-public-datasets-in-cloud-environments/1835&#34;&gt;here&lt;/a&gt;. The main reason you would want to use cloud computing is to run &lt;strong&gt;big data queries&lt;/strong&gt; that are slow or impractical on a local machine.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>GBIF and Apache-Spark on Microsoft Azure tutorial</title>
-      <link>/post/microsoft-azure-and-gbif/</link>
+      <link>https://data-blog.gbif.org/post/microsoft-azure-and-gbif/</link>
       <pubDate>Wed, 19 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>/post/microsoft-azure-and-gbif/</guid>
+      <guid>https://data-blog.gbif.org/post/microsoft-azure-and-gbif/</guid>
       <description>&lt;p&gt;&lt;strong&gt;GBIF&lt;/strong&gt; now has a &lt;a href=&#34;https://github.com/microsoft/AIforEarthDataSets/blob/main/data/gbif.md&#34;&gt;snapshot&lt;/a&gt; of 1.3 billion occurrences&lt;sub&gt;✝&lt;/sub&gt; records on &lt;a href=&#34;https://www.microsoft.com/en-us/ai/ai-for-earth&#34;&gt;Microsoft Azure&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;It is hosted by the &lt;strong&gt;Microsoft AI for Earth program&lt;/strong&gt;, which hosts geospatial datasets that are important to environmental sustainability and Earth science. Hosting is convenient because you could now use occurrences in combination with other environmental layers and not need to upload any of it to the Azure. You can &lt;strong&gt;read previous discussions about GBIF and cloud computing&lt;/strong&gt; &lt;a href=&#34;https://discourse.gbif.org/t/gbif-exports-as-public-datasets-in-cloud-environments/1835&#34;&gt;here&lt;/a&gt;. The main reason you would want to use cloud computing is to run &lt;strong&gt;big data queries&lt;/strong&gt; that are slow or impractical on a local machine.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;It is hosted by the &lt;strong&gt;Microsoft AI for Earth program&lt;/strong&gt;, which hosts geospatial datasets that are important to environmental sustainability and Earth science. Hosting is convenient because you could now use occurrences in combination with other environmental layers and not need to upload any of it to the Azure. You can &lt;strong&gt;read previous discussions about GBIF and cloud computing&lt;/strong&gt; &lt;a href=&#34;https://discourse.gbif.org/t/gbif-exports-as-public-datasets-in-cloud-environments/1835&#34;&gt;here&lt;/a&gt;. The main reason you would want to use cloud computing is to run &lt;strong&gt;big data queries&lt;/strong&gt; that are slow or impractical on a local machine.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Common things to look out for when post-processing GBIF downloads</title>
-      <link>/post/gbif-filtering-guide/</link>
+      <link>https://data-blog.gbif.org/post/gbif-filtering-guide/</link>
       <pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>/post/gbif-filtering-guide/</guid>
-      <description>Here I present a checklist for filtering GBIF downloads.
-In this guide, I will assume you are familar with R. This guide is also somewhat general, so your solution might differ.This guide is intended to give you a checklist of common things to look out for when post-processing GBIF downloads.
-Here is an example a filtering checklist script that would work for most users. Indvidual users might want to add/remove some steps.</description>
-    </item>
-    
-    <item>
-      <title>Downloads API Guide</title>
-      <link>/post/downloads-api-guide/</link>
-      <pubDate>Tue, 05 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/post/downloads-api-guide/</guid>
-      <description>&lt;p&gt;Most users will want to make downloads using the &lt;a href=&#34;https://www.gbif.org/occurrence/search?occurrence_status=present&amp;amp;q=&#34;&gt;search interface&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;For more complex downloads, it is helpful to use the &lt;a href=&#34;https://www.gbif.org/developer/occurrence#download&#34;&gt;GBIF downloads API&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;One good reason for using the downloads API would be to download a &lt;a href=&#34;https://data-blog.gbif.org/post/downloading-long-species-lists-on-gbif/&#34;&gt;long species list&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;With this guide, I will be showing you how to take advantage of the &lt;strong&gt;downloads API&lt;/strong&gt;, with some features that are not currently avaiable in the search interface.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Outlier Detection Using Reverse Jackknife</title>
-      <link>/post/outlier-detection-using-reverse-jackknife/</link>
-      <pubDate>Wed, 07 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/post/outlier-detection-using-reverse-jackknife/</guid>
-      <description>Environmental outliers are a common problem for ecological modelers using GBIF occurrence data.
-One common way to remove these outliers is by using reverse jackknifing on environmental surfaces. This type of outlier detection takes the environmental values from point occurrences and checks whether the occurrence is an uncommon value in climate space ( reference pg 51 ).
-The jackknife method works by first calculating the sample mean, standard deviation and range; and then steps through the sorted values comparing the distance to the mean of it and the next value.</description>
-    </item>
-    
-    <item>
-      <title>Outlier Detection Using DBSCAN</title>
-      <link>/post/outlier-detection-using-dbscan/</link>
-      <pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/post/outlier-detection-using-dbscan/</guid>
-      <description>Geographic outliers at GBIF are a known problem.
-Outliers can be errors, coordinates with high uncertainty, or simply occurrences from an under-sampled region.
-In data cleaning pipelines outliers are often removed (even if they are legitimate points) because the researcher does not have time to verify each record one-by-one. In almost all cases, outlier points are occurrences that need attention. Currently, there is no outlier detection implemented at GBIF and it is up to the user to remove outliers themselves (e.</description>
+      <guid>https://data-blog.gbif.org/post/gbif-filtering-guide/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Post was updated on April 20 2022 to accommodate changes to dwc:establishmentMeans vocabulary handling.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Here I present a &lt;strong&gt;checklist&lt;/strong&gt; for filtering &lt;strong&gt;GBIF downloads&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;In this guide, I will assume you are &lt;strong&gt;familar with R&lt;/strong&gt;. This guide is also somewhat general, &lt;strong&gt;so your solution might differ&lt;/strong&gt;. 
+This guide is intended to give you a checklist of &lt;strong&gt;common things&lt;/strong&gt; to look out for when post-processing GBIF downloads.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>GBIF Regional Statistics - 2020</title>
-      <link>/post/gbif-regional-statistics-2020/</link>
+      <link>https://data-blog.gbif.org/post/gbif-regional-statistics-2020/</link>
       <pubDate>Tue, 19 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>/post/gbif-regional-statistics-2020/</guid>
-      <description>I was asked to prepare some statistics for the GBIF regional regional meetings being held virtually this year. This blog post is a companion for those meetings.
-You can watch a video presentation of the preparation of these meetings here. The presentation of this blog post starts here.
-The North American virtual nodes meeting 2020 was on 5 - 6 May 2020The Europe and Central Asia-virtual nodes meeting 2020 was on 11 - 12 May 2020The Latin America and Caribbean virtual nodes meeting 2020 will be on 18 - 20 May 2020The Africa virtual nodes meeting 2020 will be on 10 - 12 June 2020GBIF introduced a regional framework across the GBIF Network a little more than a decade ago, with groups based on clusters of national participants.</description>
+      <guid>https://data-blog.gbif.org/post/gbif-regional-statistics-2020/</guid>
+      <description>&lt;p&gt;I was asked to prepare some statistics for the &lt;strong&gt;GBIF regional regional meetings&lt;/strong&gt; being held virtually this year. This blog post is a companion for those meetings.&lt;/p&gt;
+&lt;p&gt;You can watch a &lt;strong&gt;video presentation&lt;/strong&gt; of the preparation of these meetings &lt;a href=&#34;https://vimeo.com/413657346&#34;&gt;here&lt;/a&gt;. The presentation of this blog post starts &lt;a href=&#34;https://vimeo.com/413657346#t=23m39s&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The &lt;a href=&#34;https://www.gbif.org/event/5iluOArQeYT29U402zDrwi/north-american-virtual-nodes-meeting-2020&#34;&gt;North American virtual nodes meeting 2020&lt;/a&gt; was on &lt;strong&gt;5 - 6 May 2020&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;The &lt;a href=&#34;https://www.gbif.org/event/513CFo2fc5hhww0ci9NF5z/europe-and-central-asia-virtual-nodes-meeting-2020&#34;&gt;Europe and Central Asia-virtual nodes meeting 2020&lt;/a&gt; was on &lt;strong&gt;11 - 12 May 2020&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;The &lt;a href=&#34;https://www.gbif.org/event/3CRkTIGOTe3qfVr3FUvjJF/latin-america-and-caribbean-virtual-nodes-meeting-2020&#34;&gt;Latin America and Caribbean virtual nodes meeting 2020&lt;/a&gt; will be on &lt;strong&gt;18 - 20 May 2020&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;The &lt;a href=&#34;https://www.gbif.org/event/2YqTOjAAVFLwlnGZLrujYW/africa-virtual-nodes-meeting-2020&#34;&gt;Africa virtual nodes meeting 2020&lt;/a&gt; will be on &lt;strong&gt;10 - 12 June 2020&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;GBIF introduced a regional framework across the &lt;a href=&#34;https://www.gbif.org/the-gbif-network&#34;&gt;GBIF Network&lt;/a&gt; a little more than a decade ago, with groups based on clusters of national participants. Soon after the publication of &lt;a href=&#34;https://www.nature.com/articles/sdata20167&#34;&gt;Brooks et al. (2016)&lt;/a&gt;, GBIF adopted their structure to provide a consistent approach to regional reporting and assessment processes &lt;a href=&#34;https://www.nature.com/articles/sdata20167/figures/1&#34;&gt;map&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This post will cover countries/areas with some political status and not other &lt;a href=&#34;https://www.gbif.org/the-gbif-network/gbif-affiliates&#34;&gt;GBIF Affiliates&lt;/a&gt; and Antarctica.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>GBIF occurrence license processing</title>
-      <link>/post/gbif-occurrence-license-processing/</link>
+      <link>https://data-blog.gbif.org/post/gbif-occurrence-license-processing/</link>
       <pubDate>Wed, 26 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>/post/gbif-occurrence-license-processing/</guid>
+      <guid>https://data-blog.gbif.org/post/gbif-occurrence-license-processing/</guid>
       <description>&lt;p&gt;&lt;strong&gt;GBIF&lt;/strong&gt; is now processing occurrence licenses record-by-record.&lt;/p&gt;
-
-&lt;p&gt;&lt;center&gt;&lt;h3&gt;&lt;strong&gt;iNaturalist research-grade observations&lt;/strong&gt;&lt;/h3&gt; &lt;/center&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;/post/2020-02-21-gbif-occurrence-license-processing_files/problem-fix.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Previously all &lt;strong&gt;occurrence licenses&lt;/strong&gt; defaulted to their &lt;strong&gt;dataset license&lt;/strong&gt; (provided by the publisher).&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Metagenomics Occurrences on GBIF</title>
-      <link>/post/metagenomics-occurrences-on-gbif/</link>
-      <pubDate>Wed, 08 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/post/metagenomics-occurrences-on-gbif/</guid>
-      <description>Most mgnify occurrences are bacteria at the genus levelBut there are other occurrunces of plants and animals matched to the species rank.
-There has been some dicussion that these type of matches might be un-reliable.
-Since it is hard to tell if something simply labeled “Reptile”, “Mammal”, or “Vascular Plant”, but not resolved to a lower level is a legitimate occurrence, I will be focusing mostly on occurrences resovled to the species level.</description>
-    </item>
-    
-    <item>
-      <title>Biodiversity hotspot polygons and GBIF data</title>
-      <link>/post/biodiversity-hotspots-density-table/</link>
-      <pubDate>Thu, 14 Nov 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/biodiversity-hotspots-density-table/</guid>
-      <description>Idea Post
-GBIF organizes and gives statistics for countries and areas, but we do not report on occurrence data for other areas that might be more biologically relevant or important. Should GBIF be doing this? This blog post represents what such reporting might look like if it were done. Currently GBIF has no plans to start doing such reporting.
-Currently the Critical Ecosystem Partnership Fund (CEPF) recognizes these biodiversity hotspots.</description>
+&lt;center&gt;&lt;h3&gt;**iNaturalist research-grade observations**&lt;/h3&gt; &lt;/center&gt; 
+&lt;p&gt;&lt;img src=&#34;https://data-blog.gbif.org/post/2020-02-21-gbif-occurrence-license-processing_files/problem-fix.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Previously all &lt;strong&gt;occurrence licenses&lt;/strong&gt; defaulted to their &lt;strong&gt;dataset license&lt;/strong&gt; (provided by the publisher).&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Understanding basis of record - a living specimen becomes a preserved specimen</title>
-      <link>/post/living-specimen-to-preserved-specimen-understanding-basis-of-record/</link>
+      <link>https://data-blog.gbif.org/post/living-specimen-to-preserved-specimen-understanding-basis-of-record/</link>
       <pubDate>Mon, 07 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/living-specimen-to-preserved-specimen-understanding-basis-of-record/</guid>
-      <description>Recently a user noticed that there were Asian Red Pandas (Ailuridae) occurring in North America, and wondered if someone had made a mistake. When an occurrence observation comes from a zoo or botanical garden, it is usually considered a living specimen, but when it comes from a museum it is usually called a preserved specimen. This label helps users remove records that they might not want, which come from zoos.</description>
-    </item>
-    
-    <item>
-      <title>Occurrence Density by Country - 2019</title>
-      <link>/post/occurrence-density-by-country/</link>
-      <pubDate>Wed, 07 Aug 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/occurrence-density-by-country/</guid>
-      <description>Here I present a table of occurrence density by country.
-Country/Territory can be any region with an iso-2 code. Only countries larger than 10,000 km2 are shown.Density is the total number of occurrence records occurring inside the country (Note this does not mean the record was necessarily published by the country).Change (2017) is the change in density since 2017.Non-bird density is the total density which is not coming from class Aves (i.</description>
+      <guid>https://data-blog.gbif.org/post/living-specimen-to-preserved-specimen-understanding-basis-of-record/</guid>
+      <description>&lt;p&gt;Recently a user noticed that there were &lt;strong&gt;Asian Red Pandas&lt;/strong&gt; (Ailuridae) occurring in &lt;a href=&#34;https://www.gbif.org/occurrence/map?basis_of_record=PRESERVED_SPECIMEN&amp;amp;country=US&amp;amp;taxon_key=9673&#34;&gt;North America&lt;/a&gt;, and wondered if someone had made a mistake. When an occurrence observation comes from a &lt;strong&gt;zoo&lt;/strong&gt; or &lt;strong&gt;botanical garden&lt;/strong&gt;, it is usually considered a &lt;a href=&#34;https://dwc.tdwg.org/terms/#livingspecimen&#34;&gt;living specimen&lt;/a&gt;, but when it comes from a museum it is usually called a &lt;a href=&#34;https://dwc.tdwg.org/terms/#preservedspecimen&#34;&gt;preserved specimen&lt;/a&gt;. This label helps users remove records that they might not want, which come from zoos.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Citizen Science on GBIF - 2019</title>
-      <link>/post/citizen-science-on-gbif-2019/</link>
+      <link>https://data-blog.gbif.org/post/citizen-science-on-gbif-2019/</link>
       <pubDate>Fri, 02 Aug 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/citizen-science-on-gbif-2019/</guid>
-      <description>Citizen Science datasets on GBIF plotted with all other (gray) GBIF datasets (&amp;gt;100K occurrences). There are many citizen science datasets with millions of occurrences (eBird, (Swedish) Artportalen), and the top 3 datasets on GBIF are all citizen science datasets. But in terms of number of unique species, only iNaturalist competes with large museum datasets like Smithsonian NMNH.
-Because of very large datasets like eBird and Artportalen, Citizen Science makes up a large percentage of the total occurrence records on GBIF.</description>
+      <guid>https://data-blog.gbif.org/post/citizen-science-on-gbif-2019/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://data-blog.gbif.org/post/2019-08-02-citizen-science-on-gbif-2019_files/datasetSpace.svg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color:#509E2F&#34;&gt;&lt;b&gt;Citizen Science&lt;/b&gt;&lt;/span&gt; datasets on GBIF plotted with all other (&lt;span style=&#34;color:#E8E8E8&#34;&gt;&lt;b&gt;gray&lt;/b&gt;&lt;/span&gt;) GBIF datasets (&amp;gt;100K occurrences). There are many citizen science datasets with millions of occurrences (&lt;strong&gt;eBird&lt;/strong&gt;, (Swedish) &lt;strong&gt;Artportalen&lt;/strong&gt;), and the top 3 datasets on GBIF are all citizen science datasets. But in terms of number of unique species, only &lt;strong&gt;iNaturalist&lt;/strong&gt; competes with large museum datasets like &lt;strong&gt;Smithsonian NMNH&lt;/strong&gt;.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Exploring es50 for GBIF</title>
-      <link>/post/exploring-es50-for-gbif/</link>
+      <link>https://data-blog.gbif.org/post/exploring-es50-for-gbif/</link>
       <pubDate>Wed, 10 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/exploring-es50-for-gbif/</guid>
-      <description>jpg | pdf | svg | code
-It has been suggested that GBIF could make es50 maps similar to what organizations like OBIS are already doing. I decided to make one for land animals (graph above). link to code
-es50 (Hulbert index) is the statistically expected number of unique species in a random sample of 50 occurrence records, and is an indicator of biodiversity richness. The score can be computed without random sampling, but the mean of infinite random sampling will produce the same result.</description>
-    </item>
-    
-    <item>
-      <title>Not a bird download</title>
-      <link>/post/not-a-bird/</link>
-      <pubDate>Wed, 19 Jun 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/not-a-bird/</guid>
-      <description>Recently we were asked on GitHub whether there was a way to get all animal occurrences that are not a bird. This seems like an easy enough request, but unfortunately, there is currently no way to exclude groups from a download search and get everything but a certain group.
-A user can get all birds, but they can’t get no birds!
-I thought this was an interesting question and probably useful for other people wanting smaller downloads, since there are currenly around half a billion occurrence records for birds.</description>
+      <guid>https://data-blog.gbif.org/post/exploring-es50-for-gbif/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://data-blog.gbif.org/post/2019-06-25-exploring-es50-for-gbif_files/map_es50_300_1.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;It has been &lt;a href=&#34;https://discourse.gbif.org/t/hunger-mapping-gbif-data-blog/607/3&#34;&gt;suggested&lt;/a&gt; that GBIF could make &lt;strong&gt;es50&lt;/strong&gt; maps similar to what organizations like &lt;strong&gt;OBIS&lt;/strong&gt; are &lt;br&gt;&lt;a href=&#34;https://www.researchgate.net/figure/Hurlberts-index-ES50-calculated-on-a-grid-of-5x5-degrees-ES50-is-the-expected_fig4_242783847&#34;&gt;already doing&lt;/a&gt;. I decided to make one for &lt;strong&gt;land animals&lt;/strong&gt; (graph above). &lt;a href=&#34;https://github.com/jhnwllr/es50&#34;&gt;link to code&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Big National Checklists</title>
-      <link>/post/big-national-checklists/</link>
+      <link>https://data-blog.gbif.org/post/big-national-checklists/</link>
       <pubDate>Thu, 06 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/big-national-checklists/</guid>
-      <description>link to interactive map
-Big 15-300K total namesMedium 5-15K total namesSmall 0-5K total namesHere I plot the total names in checklists published on GBIF linked to a single country. A checklist dataset is a term for any dataset that contains primarily a list of taxonomic names. National species checklists are lists of species recorded from a country usually through some organized effort. GBIF has published a guide on best practices for making national checklist datasets, which advises making national checklists as big as possible.</description>
+      <guid>https://data-blog.gbif.org/post/big-national-checklists/</guid>
+      <description>&lt;img src=&#34;https://data-blog.gbif.org/post/2019-05-15-big-national-checklists_files/europeMap.gif&#34; alt=&#34;&#34; width=&#34;586px&#34;/&gt;</description>
     </item>
     
     <item>
       <title>GBIF checklist datasets and data gaps</title>
-      <link>/post/gbif-checklist-datasets-and-data-gaps/</link>
+      <link>https://data-blog.gbif.org/post/gbif-checklist-datasets-and-data-gaps/</link>
       <pubDate>Tue, 14 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/gbif-checklist-datasets-and-data-gaps/</guid>
-      <description>A checklist dataset is a catch-all term describing any dataset that contains primarily a list of taxonomic names. The lines between a checklist dataset and an occurrence dataset can be blurry.
-GBIF classifies at least 6 types of datasets as checklists.
-National (or regional) lists of species exampleTaxonomic list of species exampleSpecies description exampleChecklists made up of other checklists GBIF backbone taxonomy &amp;amp; Catalogue of LifeChecklists with occurrences exampleChecklists made from occurrences exampleThe top two are probably what most people imagine when they think of a checklist dataset.</description>
+      <guid>https://data-blog.gbif.org/post/gbif-checklist-datasets-and-data-gaps/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;A &lt;strong&gt;checklist dataset&lt;/strong&gt; is a catch-all term describing any dataset that contains primarily a list of taxonomic names. The lines between a checklist dataset and an occurrence dataset can be blurry.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
       <title>Gridded Datasets Update</title>
-      <link>/post/gridded-datasets-update/</link>
+      <link>https://data-blog.gbif.org/post/gridded-datasets-update/</link>
       <pubDate>Thu, 21 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/gridded-datasets-update/</guid>
-      <description>Gridded datasets are now flagged on the GBIF registryThis update builds on work from a previous blog post.
-Gridded datasets are broadly datasets that have low coordinate precision due to rasterized sampling or rounding. This can be a data quality issue because a user might assume an occurrence record has more precision than it actually does.
-Current statistics572 datasets are currently flagged as gridded or rasterized on the registry.</description>
-    </item>
-    
-    <item>
-      <title>Country Centroids</title>
-      <link>/post/country-centroids/</link>
-      <pubDate>Tue, 19 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/country-centroids/</guid>
-      <description>Country Centroids are a known data quality issue within the GBIF network.
-Sometimes data publishers will not know the exact lat-lon location of a record and will enter the lat-long center of the country instead. This is a data issue because users might be unaware that an observation is pinned to a country center and assume it is a precise location.
-Below I plot the top country centroids found on GBIF within at least 1km.</description>
+      <guid>https://data-blog.gbif.org/post/gridded-datasets-update/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/jhnwllr/charts/master/gridSnap.gif&#34; width=&#34;60%&#34; height=&#34;60%&#34;
+style=&#34;display: block;margin-left: auto;margin-right: auto;&#34;/&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Hunger mapping</title>
-      <link>/post/hunger-mapping/</link>
+      <link>https://data-blog.gbif.org/post/hunger-mapping/</link>
       <pubDate>Fri, 15 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/hunger-mapping/</guid>
-      <description>Where are we missing biodiversity data?A hunger map is a map of missing biodiversity data (a biodiversity data gap). The main challenge with hunger mapping is proving that a species does not exist but should exist in a region. Hunger maps are important because they could be used to prioritize funding and digitization efforts. Currently, GBIF has no way of telling what species are missing from where. In this blog post I review some potential ways GBIF could make global biodiversity hunger maps.</description>
+      <guid>https://data-blog.gbif.org/post/hunger-mapping/</guid>
+      <description>&lt;h1 id=&#34;where-are-we-missing-biodiversity-data&#34;&gt;Where are we missing biodiversity data?&lt;/h1&gt;
+&lt;p&gt;A &lt;strong&gt;hunger map&lt;/strong&gt; is a map of missing biodiversity data (a biodiversity &lt;strong&gt;data gap&lt;/strong&gt;). The main challenge with hunger mapping is proving that a species &lt;a href=&#34;https://en.wikipedia.org/wiki/Evidence_of_absence&#34;&gt;does not exist but should exist&lt;/a&gt;  in a region. Hunger maps are important because they could be used to prioritize funding and digitization efforts. Currently, &lt;a href=&#34;https://www.gbif.org/what-is-gbif&#34;&gt;GBIF&lt;/a&gt; has no way of telling what species are missing from where. In this blog post I review some potential ways GBIF could make global biodiversity hunger maps.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Will citizen science take over?</title>
-      <link>/post/gbif-citizen-science-data/</link>
+      <link>https://data-blog.gbif.org/post/gbif-citizen-science-data/</link>
       <pubDate>Mon, 21 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/gbif-citizen-science-data/</guid>
-      <description>Citizen scienceCitizen science is scientific research conducted, in whole or in part, by amateur (or non-professional) scientists. Biodiversity observations by citizen scientists have become significant in the last 10 years thanks to projects like:
-eBirdiNaturalistArtportalen SwedenArtsdatabanken NorwaySouthern African Bird AtlasBird Life AustrailiaDansk Ornitologisk ForeningGreat Back Yard Bird CountCitizen science is scientific research conducted, in whole or in part, by amateur (or non-professional) scientists.</description>
-    </item>
-    
-    <item>
-      <title>Plot almost anything using the GBIF maps api</title>
-      <link>/post/gbif-maps-api-using-r-and-leaflet/</link>
-      <pubDate>Wed, 19 Sep 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/post/gbif-maps-api-using-r-and-leaflet/</guid>
-      <description>The GBIF maps api is an under-used but powerful web service provided by GBIF. The maps api is used by the main GBIF portal to create the maps including the big map used on gbif.org. We can make a simple call to the api by pasting the link below into a web browser.
-https://api.gbif.org/v2/map/occurrence/density/0/0/0@1x.png?style=purpleYellow.pointYou should end up with an image like this.This api call is composed essentially of two elements</description>
+      <guid>https://data-blog.gbif.org/post/gbif-citizen-science-data/</guid>
+      <description>&lt;p&gt;Citizen science is scientific research conducted, in whole or in part, by amateur (or non-professional) scientists. Biodiversity observations by citizen scientists have become significant in the last 10 years thanks to projects like:&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Finding gridded datasets</title>
-      <link>/post/finding-gridded-datasets/</link>
+      <link>https://data-blog.gbif.org/post/finding-gridded-datasets/</link>
       <pubDate>Tue, 14 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/finding-gridded-datasets/</guid>
-      <description>EBCC Atlas of European Breeding Birds (gridded)Naturalis Biodiversity Center (NL) - Aves (not gridded)Gridded data in GBIFGridded datasets are a known problem at GBIF. Many datasets have equally-spaced points in a regular pattern. These datasets are usually systematic national surveys or data taken from some atlas (“so-called rasterized collection designs”).
-In this blog post I will describe how I found gridded dataset in GBIF.</description>
+      <guid>https://data-blog.gbif.org/post/finding-gridded-datasets/</guid>
+      <description>&lt;p&gt;Gridded datasets are a known problem at GBIF. Many datasets have equally-spaced points in a regular pattern. These datasets are usually systematic national surveys or data taken from some atlas (&amp;ldquo;so-called rasterized collection designs&amp;rdquo;).&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>GBIF download trends</title>
-      <link>/post/gbif-download-trends/</link>
+      <link>https://data-blog.gbif.org/post/gbif-download-trends/</link>
       <pubDate>Tue, 14 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/gbif-download-trends/</guid>
+      <guid>https://data-blog.gbif.org/post/gbif-download-trends/</guid>
       <description>Link To App
-Explanation of toolThis tool plots the downloads through time for species or other taxonomic groups with more than 25 downloads at GBIF. Downloads at GBIF most often occur through the web interface. In a previous post, we saw that most users are downloading data from GBIF via filtering by scientific name (aka Taxon Key). Since the GBIF index currently sits at over 1 billion records (a 400+GB csv), most users will simplying filter by their taxonomic group of interest and then generate a download.</description>
+Explanation of tool This tool plots the downloads through time for species or other taxonomic groups with more than 25 downloads at GBIF. Downloads at GBIF most often occur through the web interface. In a previous post, we saw that most users are downloading data from GBIF via filtering by scientific name (aka Taxon Key). Since the GBIF index currently sits at over 1 billion records (a 400+GB csv), most users will simplying filter by their taxonomic group of interest and then generate a download.</description>
     </item>
     
   </channel>

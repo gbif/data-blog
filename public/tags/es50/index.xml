@@ -1,25 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Es50 on GBIF Data Blog</title>
-    <link>/tags/es50/</link>
-    <description>Recent content in Es50 on GBIF Data Blog</description>
+    <title>es50 on GBIF Data Blog</title>
+    <link>https://data-blog.gbif.org/tags/es50/</link>
+    <description>Recent content in es50 on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 10 Jul 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/es50/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 10 Jul 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://data-blog.gbif.org/tags/es50/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Exploring es50 for GBIF</title>
-      <link>/post/exploring-es50-for-gbif/</link>
+      <link>https://data-blog.gbif.org/post/exploring-es50-for-gbif/</link>
       <pubDate>Wed, 10 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/exploring-es50-for-gbif/</guid>
-      <description>jpg | pdf | svg | code
-It has been suggested that GBIF could make es50 maps similar to what organizations like OBIS are already doing. I decided to make one for land animals (graph above). link to code
-es50 (Hulbert index) is the statistically expected number of unique species in a random sample of 50 occurrence records, and is an indicator of biodiversity richness. The score can be computed without random sampling, but the mean of infinite random sampling will produce the same result.</description>
+      <guid>https://data-blog.gbif.org/post/exploring-es50-for-gbif/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://data-blog.gbif.org/post/2019-06-25-exploring-es50-for-gbif_files/map_es50_300_1.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;It has been &lt;a href=&#34;https://discourse.gbif.org/t/hunger-mapping-gbif-data-blog/607/3&#34;&gt;suggested&lt;/a&gt; that GBIF could make &lt;strong&gt;es50&lt;/strong&gt; maps similar to what organizations like &lt;strong&gt;OBIS&lt;/strong&gt; are &lt;br&gt;&lt;a href=&#34;https://www.researchgate.net/figure/Hurlberts-index-ES50-calculated-on-a-grid-of-5x5-degrees-ES50-is-the-expected_fig4_242783847&#34;&gt;already doing&lt;/a&gt;. I decided to make one for &lt;strong&gt;land animals&lt;/strong&gt; (graph above). &lt;a href=&#34;https://github.com/jhnwllr/es50&#34;&gt;link to code&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

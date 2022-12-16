@@ -1,107 +1,84 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>API on GBIF Data Blog</title>
-    <link>/tags/api/</link>
+    <link>https://data-blog.gbif.org/tags/api/</link>
     <description>Recent content in API on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 07 Sep 2021 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/api/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 07 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://data-blog.gbif.org/tags/api/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GBIF API beginners guide</title>
-      <link>/post/gbif-api-beginners-guide/</link>
+      <link>https://data-blog.gbif.org/post/gbif-api-beginners-guide/</link>
       <pubDate>Tue, 07 Sep 2021 00:00:00 +0000</pubDate>
       
-      <guid>/post/gbif-api-beginners-guide/</guid>
+      <guid>https://data-blog.gbif.org/post/gbif-api-beginners-guide/</guid>
       <description>&lt;p&gt;This a &lt;strong&gt;GBIF API&lt;/strong&gt; beginners guide.&lt;/p&gt;
-
 &lt;p&gt;The &lt;a href=&#34;https://www.gbif.org/developer/summary&#34;&gt;GBIF API technical documentation&lt;/a&gt; might be a bit confusing if you have never used an API before. The goal of this guide is to introduce the GBIF API to a semi-technical user who may have never used an API before.&lt;/p&gt;
-
-&lt;p&gt;The purpose of the GBIF API is to give users access to GBIF databases in a &lt;strong&gt;safe way&lt;/strong&gt;. The GBIF API also allows &lt;a href=&#34;https://www.gbif.org/&#34;&gt;GBIF.org&lt;/a&gt; and &lt;a href=&#34;https://github.com/ropensci/rgbif&#34;&gt;rgbif&lt;/a&gt; to function.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;The purpose of the GBIF API is to give users access to GBIF databases in a &lt;strong&gt;safe way&lt;/strong&gt;. The GBIF API also allows &lt;a href=&#34;https://www.gbif.org/&#34;&gt;GBIF.org&lt;/a&gt; and &lt;a href=&#34;https://github.com/ropensci/rgbif&#34;&gt;rgbif&lt;/a&gt; to function.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Did you know that...? - some of the lesser known functionalities around GBIF.org</title>
-      <link>/post/did-you-know/</link>
+      <link>https://data-blog.gbif.org/post/did-you-know/</link>
       <pubDate>Thu, 05 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>/post/did-you-know/</guid>
-      <description>&lt;p&gt;During the first-ever virtual GBIF 2021 Global Nodes Meeting, GBIFS hosted a &amp;ldquo;game show&amp;rdquo;: a one-hour &amp;ldquo;&lt;a href=&#34;https://gnm2021.gbif.org/sessions/friday-nodes-vs-helpdesk&#34;&gt;battle of Nodes vs. helpdesk&lt;/a&gt;&amp;rdquo;. The not-so-hidden goal was to demonstrate some of the lesser known functionalities of GBIF.org through a fun, interactive session.&lt;/p&gt;
-
-&lt;iframe title=&#34;vimeo-player&#34; src=&#34;https://player.vimeo.com/video/571521342&#34; width=100% height=&#34;300&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;
-
-&lt;p&gt;The following is a summary of the questions and answers from this session, plus some extras that did not manage to make it into the time frame of the event. The summary is following the layout and sequence of the interactive hour:&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <guid>https://data-blog.gbif.org/post/did-you-know/</guid>
+      <description>&lt;p&gt;During the first-ever virtual GBIF 2021 Global Nodes Meeting, GBIFS hosted a &amp;ldquo;game show&amp;rdquo;: a one-hour &amp;ldquo;&lt;a href=&#34;https://gnm2021.gbif.org/sessions/friday-nodes-vs-helpdesk&#34;&gt;battle of Nodes vs. helpdesk&lt;/a&gt;&amp;rdquo;. The not-so-hidden goal was to demonstrate some of the lesser known functionalities of GBIF.org through a fun, interactive session.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Which tools can I use to share my data on GBIF?</title>
-      <link>/post/installations-and-hosting-solutions-explained/</link>
+      <link>https://data-blog.gbif.org/post/installations-and-hosting-solutions-explained/</link>
       <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>/post/installations-and-hosting-solutions-explained/</guid>
+      <guid>https://data-blog.gbif.org/post/installations-and-hosting-solutions-explained/</guid>
       <description>As you probably already know, GBIF.org doesn&amp;rsquo;t host any data. The system relies on each data provider making their data available online in a GBIF-supported format. It also relies on organization letting GBIF know where to find these data (in other words registering the data). But how to do just that?
 The good news is that there are several GBIF-compatible systems. They will export or make available the data for you in the correct format and several provide means to register them as datasets on GBIF.</description>
     </item>
     
     <item>
       <title>Search, download, analyze and cite (repeat if necessary)</title>
-      <link>/post/search-download-analyze-cite/</link>
+      <link>https://data-blog.gbif.org/post/search-download-analyze-cite/</link>
       <pubDate>Fri, 04 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/search-download-analyze-cite/</guid>
+      <guid>https://data-blog.gbif.org/post/search-download-analyze-cite/</guid>
       <description>Finding and accessing data There is a lot of GBIF-mediated data available. More than 1.3 B occurrence records covering hundreds of thousands of species in all part of the worlds. All free, open and available at the touch of a button. Users can download data through the GBIF.org portal, via the GBIF API, or one of the third-party tools available for programmatic access, e.g. rgbif.
 If there is one area in which GBIF has been immensely successful, it&amp;rsquo;s making the data available to users.</description>
     </item>
     
     <item>
       <title>Downloading occurrences from a long list of species in R and Python</title>
-      <link>/post/downloading-long-species-lists-on-gbif/</link>
+      <link>https://data-blog.gbif.org/post/downloading-long-species-lists-on-gbif/</link>
       <pubDate>Wed, 04 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/downloading-long-species-lists-on-gbif/</guid>
-      <description>It is now possible to download up to 100,000 names on GBIF!
-Until recently it was not possible to download occurrences for more than a few hundred species at the same time, but it is now possible to request more species names (up to 100,000 taxonkeys).
-For those multiple taxa downloaders out there, GBIF now supports download requests of up to 100,000(!) taxa. That should cover most use cases :) For such large requests, however, you will need to POST you query to the Occurrence Download API service: https://t.</description>
-    </item>
-    
-    <item>
-      <title>Not a bird download</title>
-      <link>/post/not-a-bird/</link>
-      <pubDate>Wed, 19 Jun 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/not-a-bird/</guid>
-      <description>Recently we were asked on GitHub whether there was a way to get all animal occurrences that are not a bird. This seems like an easy enough request, but unfortunately, there is currently no way to exclude groups from a download search and get everything but a certain group.
-A user can get all birds, but they can’t get no birds!
-I thought this was an interesting question and probably useful for other people wanting smaller downloads, since there are currenly around half a billion occurrence records for birds.</description>
+      <guid>https://data-blog.gbif.org/post/downloading-long-species-lists-on-gbif/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;It is now possible to download up to &lt;strong&gt;100,000&lt;/strong&gt; names on &lt;strong&gt;GBIF!&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Until recently it was not possible to download occurrences for more than a few hundred species at the same time, but it is now possible to request more species names (&lt;strong&gt;up to 100,000 taxonkeys&lt;/strong&gt;).&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Big National Checklists</title>
-      <link>/post/big-national-checklists/</link>
+      <link>https://data-blog.gbif.org/post/big-national-checklists/</link>
       <pubDate>Thu, 06 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/big-national-checklists/</guid>
-      <description>link to interactive map
-Big 15-300K total namesMedium 5-15K total namesSmall 0-5K total namesHere I plot the total names in checklists published on GBIF linked to a single country. A checklist dataset is a term for any dataset that contains primarily a list of taxonomic names. National species checklists are lists of species recorded from a country usually through some organized effort. GBIF has published a guide on best practices for making national checklist datasets, which advises making national checklists as big as possible.</description>
+      <guid>https://data-blog.gbif.org/post/big-national-checklists/</guid>
+      <description>&lt;img src=&#34;https://data-blog.gbif.org/post/2019-05-15-big-national-checklists_files/europeMap.gif&#34; alt=&#34;&#34; width=&#34;586px&#34;/&gt;</description>
     </item>
     
     <item>
       <title>Finding citizen science datasets on GBIF</title>
-      <link>/post/gbif-citizen-science/</link>
+      <link>https://data-blog.gbif.org/post/gbif-citizen-science/</link>
       <pubDate>Fri, 09 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/gbif-citizen-science/</guid>
-      <description>Can we automatically label citizen science datasets? The short answer is yes, partially.
-Why label GBIF datasets as &amp;ldquo;citizen science&amp;rdquo;? What is citizen science? Citizen science is scientific research conducted, in whole or in part, by amateur (or non-professional) scientists. Citizen science is sometimes described as &amp;ldquo;public participation in scientific research,&amp;rdquo; participatory monitoring, and participatory action research (wikipedia definition).
-Citizen science on GBIF A 2016 study showed that nearly half of all occurrence records shared through the GBIF network come from datasets with significant volunteer contributions (for more information, see our &amp;ldquo;citizen science&amp;rdquo; page on gbif.</description>
+      <guid>https://data-blog.gbif.org/post/gbif-citizen-science/</guid>
+      <description>&lt;h1 id=&#34;can-we-automatically-label-citizen-science-datasets&#34;&gt;Can we automatically label citizen science datasets?&lt;/h1&gt;
+&lt;p&gt;The short answer is yes, partially.&lt;/p&gt;
+&lt;h2 id=&#34;why-label-gbif-datasets-as-citizen-science&#34;&gt;Why label GBIF datasets as &amp;ldquo;citizen science&amp;rdquo;?&lt;/h2&gt;
+&lt;h3 id=&#34;what-is-citizen-science&#34;&gt;What is citizen science?&lt;/h3&gt;
+&lt;p&gt;Citizen science is scientific research conducted, in whole or in part, by amateur (or non-professional) scientists. Citizen science is sometimes described as &amp;ldquo;public participation in scientific research,&amp;rdquo; participatory monitoring, and participatory action research (&lt;a href=&#34;https://en.wikipedia.org/wiki/Citizen_science&#34;&gt;wikipedia definition&lt;/a&gt;).&lt;/p&gt;</description>
     </item>
     
   </channel>

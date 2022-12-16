@@ -1,34 +1,29 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Citizen science on GBIF Data Blog</title>
-    <link>/tags/citizen-science/</link>
-    <description>Recent content in Citizen science on GBIF Data Blog</description>
+    <title>citizen science on GBIF Data Blog</title>
+    <link>https://data-blog.gbif.org/tags/citizen-science/</link>
+    <description>Recent content in citizen science on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 02 Aug 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/citizen-science/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 02 Aug 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://data-blog.gbif.org/tags/citizen-science/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Citizen Science on GBIF - 2019</title>
-      <link>/post/citizen-science-on-gbif-2019/</link>
+      <link>https://data-blog.gbif.org/post/citizen-science-on-gbif-2019/</link>
       <pubDate>Fri, 02 Aug 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/citizen-science-on-gbif-2019/</guid>
-      <description>Citizen Science datasets on GBIF plotted with all other (gray) GBIF datasets (&amp;gt;100K occurrences). There are many citizen science datasets with millions of occurrences (eBird, (Swedish) Artportalen), and the top 3 datasets on GBIF are all citizen science datasets. But in terms of number of unique species, only iNaturalist competes with large museum datasets like Smithsonian NMNH.
-Because of very large datasets like eBird and Artportalen, Citizen Science makes up a large percentage of the total occurrence records on GBIF.</description>
+      <guid>https://data-blog.gbif.org/post/citizen-science-on-gbif-2019/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://data-blog.gbif.org/post/2019-08-02-citizen-science-on-gbif-2019_files/datasetSpace.svg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color:#509E2F&#34;&gt;&lt;b&gt;Citizen Science&lt;/b&gt;&lt;/span&gt; datasets on GBIF plotted with all other (&lt;span style=&#34;color:#E8E8E8&#34;&gt;&lt;b&gt;gray&lt;/b&gt;&lt;/span&gt;) GBIF datasets (&amp;gt;100K occurrences). There are many citizen science datasets with millions of occurrences (&lt;strong&gt;eBird&lt;/strong&gt;, (Swedish) &lt;strong&gt;Artportalen&lt;/strong&gt;), and the top 3 datasets on GBIF are all citizen science datasets. But in terms of number of unique species, only &lt;strong&gt;iNaturalist&lt;/strong&gt; competes with large museum datasets like &lt;strong&gt;Smithsonian NMNH&lt;/strong&gt;.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Will citizen science take over?</title>
-      <link>/post/gbif-citizen-science-data/</link>
+      <link>https://data-blog.gbif.org/post/gbif-citizen-science-data/</link>
       <pubDate>Mon, 21 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/gbif-citizen-science-data/</guid>
-      <description>Citizen scienceCitizen science is scientific research conducted, in whole or in part, by amateur (or non-professional) scientists. Biodiversity observations by citizen scientists have become significant in the last 10 years thanks to projects like:
-eBirdiNaturalistArtportalen SwedenArtsdatabanken NorwaySouthern African Bird AtlasBird Life AustrailiaDansk Ornitologisk ForeningGreat Back Yard Bird CountCitizen science is scientific research conducted, in whole or in part, by amateur (or non-professional) scientists.</description>
+      <guid>https://data-blog.gbif.org/post/gbif-citizen-science-data/</guid>
+      <description>&lt;p&gt;Citizen science is scientific research conducted, in whole or in part, by amateur (or non-professional) scientists. Biodiversity observations by citizen scientists have become significant in the last 10 years thanks to projects like:&lt;/p&gt;</description>
     </item>
     
   </channel>

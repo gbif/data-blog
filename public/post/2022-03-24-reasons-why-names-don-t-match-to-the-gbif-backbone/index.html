@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Finding data gaps in the GBIF backbone taxonomy - GBIF Data Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="John Waller" />
+  <meta name="description" content="When publishers supply GBIF with a scientific name, this name is sometimes not found in the GBIF taxonomic backbone. In these cases, the occurrence record gets a data quality flag called taxon match higher rank. This means that GBIF was only able to match the name to a higher rank (genus, family, order &amp;hellip;).
+" />
+
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.91.2" />
+
+
+<link rel="canonical" href="https://data-blog.gbif.org/post/2022-03-24-reasons-why-names-don-t-match-to-the-gbif-backbone/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.2.0" rel="stylesheet">
+
+
+
+
+<link rel="stylesheet" href="/css//custom.css">
+
+
+<meta property="og:title" content="Finding data gaps in the GBIF backbone taxonomy" />
+<meta property="og:description" content="When publishers supply GBIF with a scientific name, this name is sometimes not found in the GBIF taxonomic backbone. In these cases, the occurrence record gets a data quality flag called taxon match higher rank. This means that GBIF was only able to match the name to a higher rank (genus, family, order &hellip;)." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://data-blog.gbif.org/post/2022-03-24-reasons-why-names-don-t-match-to-the-gbif-backbone/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-04-25T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-03-24T13:55:46+01:00" />
+
+<meta itemprop="name" content="Finding data gaps in the GBIF backbone taxonomy">
+<meta itemprop="description" content="When publishers supply GBIF with a scientific name, this name is sometimes not found in the GBIF taxonomic backbone. In these cases, the occurrence record gets a data quality flag called taxon match higher rank. This means that GBIF was only able to match the name to a higher rank (genus, family, order &hellip;)."><meta itemprop="datePublished" content="2022-04-25T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-03-24T13:55:46+01:00" />
+<meta itemprop="wordCount" content="992">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Finding data gaps in the GBIF backbone taxonomy"/>
+<meta name="twitter:description" content="When publishers supply GBIF with a scientific name, this name is sometimes not found in the GBIF taxonomic backbone. In these cases, the occurrence record gets a data quality flag called taxon match higher rank. This means that GBIF was only able to match the name to a higher rank (genus, family, order &hellip;)."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">GBIF Data Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/categories/gbif/">
+        <li class="mobile-menu-item">posts</li>
+      </a><a href="https://discourse.gbif.org/c/data-blog">
+        <li class="mobile-menu-item">community-forum</li>
+      </a><a href="https://www.gbif.org/">
+        <li class="mobile-menu-item">gbif.org</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">about</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">
+	<img src= "/logo.png" alt="GBIF-analytics-blog" style ="width:20%;">
+  </a>
+  
+	
+  
+  
+</div>
+
+<nav class="site-navbar">
+
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/categories/gbif/">posts</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://discourse.gbif.org/c/data-blog">community-forum</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://www.gbif.org/">gbif.org</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">about</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+	
+    <header class="post-header">
+      <h1 class="post-title">Finding data gaps in the GBIF backbone taxonomy</h1>
+	  
+	  
+      <div class="post-author">John Waller</div>
+
+      <div class="post-meta">
+        <span class="post-time"> 2022-04-25 </span>
+        <div class="post-category">
+            
+              <a href="/categories/gbif/"> GBIF </a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    
+    
+
+    
+    <div class="post-content">
+      <p>When publishers supply GBIF with a <strong>scientific name</strong>, this name is sometimes not found in the <a href="https://www.gbif.org/dataset/d7dddbf4-2cf0-4f39-9b2a-bb099caae36c">GBIF taxonomic backbone</a>. In these cases, the occurrence record gets a data quality flag called <strong>taxon match higher rank</strong>. This means that GBIF was only able to match the name to a <strong>higher rank</strong> (genus, family, order &hellip;).</p>
+<p>At GBIF, we would always like to match the name supplied by the publisher to the lowest rank possible, so that when a user comes to GBIF looking for a certain name, they will have access to the largest amount of occurrence data.</p>
+<!--
+## Common reasons for higher rank matches: 
+
+1) Name is **poorly formatted**.
+2) Name is **misspelled**. 
+3) Name is an [OTU](https://en.wikipedia.org/wiki/Operational_taxonomic_unit) (which is acceptable but not usually in the GBIF backbone).
+4) Name is **missing** from the backbone.
+5) Name is **incomplete** (missing authorship).
+-->
+<p>In the graph below I divide <strong>names</strong> (not occurrences) supplied to GBIF from publishers that have received the <a href="https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_HIGHERRANK&amp;advanced=1">taxon match higher rank flag</a>.</p>
+<ul>
+<li><span style="color:#e32636"><b>other</b></span> : means that I could not find a good reason for why this name did not match to the backbone. This could be a misspelling or the name could be <strong>missing from the GBIF backbone</strong>. These are names which might reflect <strong>data gaps</strong>.</li>
+<li><span style="color:#ff7373"><b>unmatchable name</b></span> : is a catch-all group for poorly formatted or unmatchable names (see below).</li>
+<li><span style="color:#FCC200"><b>hybrid</b></span> (hybrid formula) : means the name is referring to hybrid. We expect poor checklist coverage for hybrid names.</li>
+<li><span style="color:#40BFFF"><b>below species</b></span> : means a name at a taxonomic rank below the species level could not be matched at that level. Usually we expect less checklist coverage for <strong>subspecies</strong> and <strong>varieties</strong>.</li>
+<li><span style="color:#26e3d3"><b>too many choices</b></span> : GBIF has two or more names with different authorship (homonyms), but the publishers does not provide authorship and/or higher taxonomy, so the name cannot be matched unambiguously.</li>
+</ul>
+<p>I have processed some names from select groups to see if there are <span style="color:#e32636"><b>gaps</b></span> for GBIF to fill.</p>
+<p><img src="images/reason_buckets_3.svg" alt=""></p>
+<p>Here we see that GBIF is probably missing many names from <strong>Coleoptera</strong> (Beetles) and <strong>Lepidoptera</strong> (Butterflies/Moths). There are also many potential missing names within birds, but this might be due to the large number of occurrence records we get from this group (Passeriformes).</p>
+<p>If we break down <strong>Beetles</strong> by family we see that <strong>Chrysomelidae</strong> (Leaf beetles) are responsible for a large portion of the <a href="https://www.gbif.org/occurrence/search?offset=20&amp;issue=TAXON_MATCH_HIGHERRANK&amp;taxon_key=7780">missing names</a> in Beetles.</p>
+<p><img src="images/reason_buckets_coleoptera.svg" alt=""></p>
+<h2 id="too-many-choices">Too many choices</h2>
+<p>Sometimes publishers do not provide enough information for GBIF to choose between names in the backbone. For example, if a publisher only supplied us with <strong>Glocianus punctiger</strong> we would not be able to determine between the <a href="https://www.gbif.org/species/search?q=Glocianus%20punctiger">two choices</a>, and it would get moved to the <strong>higher rank</strong> (genus Glocianus).</p>
+<p><img src="images/too_many_choices.png" alt=""></p>
+<p><strong>Providing authorship</strong> would allow GBIF to correctly match these occurrences to backbone.</p>
+<h2 id="unmatchable-names">Unmatchable names</h2>
+<p>Publishers supply GBIF with a variety of what I call <strong>unmatchable names</strong>, which are names that are impossible to match to the GBIF backbone. Sometimes these names are ok names but still missing from the backbone, like <strong>missing hybrids</strong> or <strong>OTUs</strong>. Other names are simply bad names that we can&rsquo;t expect to fix. Some examples below:</p>
+<table>
+<thead>
+<tr>
+<th>name not matched</th>
+<th>reason</th>
+<th>link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Mystery mystery</strong></td>
+<td>bad name</td>
+<td><a href="https://www.gbif.org/occurrence/search?advanced=1&amp;verbatim_scientific_name=Mystery%20mystery">records</a></td>
+</tr>
+<tr>
+<td><strong>Sonus naturalis</strong></td>
+<td>bad name</td>
+<td><a href="https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_HIGHERRANK&amp;advanced=1&amp;verbatim_scientific_name=Sonus%20naturalis">records</a></td>
+</tr>
+<tr>
+<td><strong>Bambusoideae spec.</strong></td>
+<td>subfamily name</td>
+<td><a href="https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_HIGHERRANK&amp;advanced=1&amp;verbatim_scientific_name=Bambusoideae%20spec.">records</a></td>
+</tr>
+<tr>
+<td><strong>Coleoptera indet.</strong></td>
+<td>order name</td>
+<td><a href="https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_HIGHERRANK&amp;advanced=1&amp;verbatim_scientific_name=Coleoptera%20indet.">records</a></td>
+</tr>
+<tr>
+<td><strong>Astarte juv.</strong></td>
+<td>genus name with life stage</td>
+<td><a href="https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_HIGHERRANK&amp;advanced=1&amp;verbatim_scientific_name=Astarte%20juv.">records</a></td>
+</tr>
+<tr>
+<td><strong>Gen. sp.</strong></td>
+<td>bad name</td>
+<td><a href="https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_HIGHERRANK&amp;advanced=1&amp;verbatim_scientific_name=Gen.%20sp.">records</a></td>
+</tr>
+<tr>
+<td><strong>Astarte sp. BIOUG14667-B01</strong></td>
+<td>family with id</td>
+<td><a href="https://www.gbif.org/occurrence/search?offset=0&amp;issue=TAXON_MATCH_HIGHERRANK&amp;advanced=1&amp;verbatim_scientific_name=Astarte%20sp.%20BIOUG14667-B01">records</a></td>
+</tr>
+<tr>
+<td><strong>Phoneutria depilata (Strand 1909) sp. reval.</strong></td>
+<td>species name with remark</td>
+<td><a href="https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_HIGHERRANK&amp;advanced=1&amp;verbatim_scientific_name=Phoneutria%20depilata%20(Strand%201909)%20sp.%20reval.">records</a></td>
+</tr>
+<tr>
+<td><strong>Anisoptera Unknown Dragonfly Species</strong></td>
+<td>infra-order name with remarks</td>
+<td><a href="https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_HIGHERRANK&amp;advanced=1&amp;verbatim_scientific_name=Anisoptera%20Unknown%20Dragonfly%20Species">records</a></td>
+</tr>
+<tr>
+<td><strong>Zygoptera</strong></td>
+<td>suborder name</td>
+<td><a href="https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_HIGHERRANK&amp;advanced=1&amp;verbatim_scientific_name=Zygoptera">records</a></td>
+</tr>
+<tr>
+<td><strong>Philodromus Philodromus albidus / rufus</strong></td>
+<td>doubtful identification (alternative)</td>
+<td><a href="https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_HIGHERRANK&amp;advanced=1&amp;verbatim_scientific_name=Philodromus%20albidus%20~2F%20rufus">records</a></td>
+</tr>
+<tr>
+<td><strong>Certhia brachydactyla/Certhia familiaris</strong></td>
+<td>doubtful identification (alternative)</td>
+<td><a href="https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_HIGHERRANK&amp;advanced=1&amp;verbatim_scientific_name=Certhia%20brachydactyla~2FCerthia%20familiaris">records</a></td>
+</tr>
+<tr>
+<td><strong>Corvus corone x C. cornix</strong></td>
+<td>missing hybrid</td>
+<td><a href="https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_HIGHERRANK&amp;advanced=1&amp;verbatim_scientific_name=Corvus%20corone%20x%20C.%20cornix">records</a></td>
+</tr>
+<tr>
+<td><strong>BOLD:ADV7315</strong></td>
+<td>OTU</td>
+<td><a href="https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_HIGHERRANK&amp;advanced=1&amp;verbatim_scientific_name=BOLD:ADV7315">records</a></td>
+</tr>
+<tr>
+<td><strong>BOLD:ADX5419</strong></td>
+<td>OTU</td>
+<td><a href="https://www.gbif.org/occurrence/search?issue=TAXON_MATCH_HIGHERRANK&amp;advanced=1&amp;verbatim_scientific_name=BOLD:ADX5419">records</a></td>
+</tr>
+</tbody>
+</table>
+<p>If a name is truly missing from the GBIF backbone, GBIF would like to <strong>fill that data gap</strong>. This can be done by updating the checklists that feed into the <a href="https://data-blog.gbif.org/post/gbif-backbone-taxonomy/">backbone construction process</a>.</p>
+<h2 id="other-possibly-missing">Other (possibly missing)</h2>
+<p>As a non-expert it is hard to tell if a name is a <strong>data gap</strong>, just a <strong>misspelling</strong> or something else. So how many possibly missing names are actual <strong>data gaps</strong>? To check, I randomly sampled <a href="https://docs.google.com/spreadsheets/d/1WprHkAa6bez58T3YQrmXD4AknEwLGtscsNL92L-g-0I/edit?usp=sharing">five possibly missing names from each group</a> in the graph above to check if I could manually locate a source outside GBIF with the name.</p>
+<p>Around <strong>50%</strong> (44 of 86) of the <strong>possibly missing</strong> names appear to be <strong>genuinely missing</strong> from the GBIF backbone. We can therefore conservatively assume that there are thousands of missing names in the GBIF backbone. Keep in mind, however, that many missing names are <strong>missing synonyms</strong>—that is, they are not unique taxon concepts. Halving this number (25%) we can make a conservative <strong>minimum missing names table</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>group</th>
+<th>friendly name</th>
+<th>min estimated missing names*</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Coleoptera</td>
+<td>Beetles</td>
+<td>26,600</td>
+</tr>
+<tr>
+<td>Lepidoptera</td>
+<td>Butterflies</td>
+<td>17,700</td>
+</tr>
+<tr>
+<td>Passeriformes</td>
+<td>Bird order</td>
+<td>4,200</td>
+</tr>
+<tr>
+<td>Fabales</td>
+<td>Plant order</td>
+<td>4,100</td>
+</tr>
+<tr>
+<td>Asterales</td>
+<td>Plant order</td>
+<td>4,000</td>
+</tr>
+<tr>
+<td>Agaricales</td>
+<td>Mushrooms</td>
+<td>1,600</td>
+</tr>
+<tr>
+<td>Araneae</td>
+<td>Spiders</td>
+<td>1,200</td>
+</tr>
+<tr>
+<td>Rodentia</td>
+<td>Rodents</td>
+<td>1,100</td>
+</tr>
+<tr>
+<td>Carditida</td>
+<td>Bivalves</td>
+<td>700</td>
+</tr>
+<tr>
+<td>Anura</td>
+<td>Frogs</td>
+<td>600</td>
+</tr>
+<tr>
+<td>Carnivora</td>
+<td>Carnivores</td>
+<td>300</td>
+</tr>
+<tr>
+<td>Odonata</td>
+<td>Dragonflies</td>
+<td>300</td>
+</tr>
+<tr>
+<td>Chiroptera</td>
+<td>Bats</td>
+<td>200</td>
+</tr>
+<tr>
+<td>Cyatheales</td>
+<td>Ferns</td>
+<td>100</td>
+</tr>
+<tr>
+<td>Primates</td>
+<td>Primates</td>
+<td>100</td>
+</tr>
+<tr>
+<td>Neuroptera</td>
+<td>Insect order</td>
+<td>&lt;100</td>
+</tr>
+<tr>
+<td>Percopsiformes</td>
+<td>Fish order</td>
+<td>&lt;100</td>
+</tr>
+</tbody>
+</table>
+<p><small> *Based on conservative judgment that 25% of potentially missing names are genuinely missing from GBIF backbone. Download a full table of possibly missing names from the groups above <a href="data/possibly_missing_table.zip">here</a>. </small></p>
+<p>This table, of course, gives us no indication about <strong>how well described</strong> a certain group is; it just reflects the relative completeness of the GBIF backbone. This table also includes fossils, which might inflate some groups (such as primates). Also, these counts do not necessarily represent unique <strong>species concepts</strong> but just unique <strong>name strings</strong> that GBIF receives.</p>
+<h2 id="gbif-data-publisher-advice">GBIF data publisher advice</h2>
+<p>As a data publisher, there are few things that can be done to improve name matching to the <strong>GBIF backbone</strong>.</p>
+<ol>
+<li>Run your dataset through the <a href="https://www.gbif.org/tools/data-validator">data validator</a> and examine any names that get the data quality flag <strong>taxon match higher rank</strong>.</li>
+<li>Attempt to match your names to the GBIF backbone before publishing using the <a href="https://www.gbif.org/tools/species-lookup">name matcher</a> or <a href="https://docs.ropensci.org/rgbif/reference/name_backbone_checklist.htm">rgbif</a>.</li>
+<li>Check if your names all have <strong>authorship</strong> (if possible).</li>
+<li>Fill known <strong>higher-taxonomy</strong>.</li>
+<li>Try to avoid working name <strong>placeholders</strong> for the dwc:scientificName, but rather fill in the lowest known rank.</li>
+<li>Do <strong>not</strong> use <strong>ALL CAPS</strong> for names.</li>
+<li>Do not put <strong>identification qualifiers</strong> in the dwc:scientificName field but rather use the <a href="http://rs.tdwg.org/dwc/terms/identificationQualifier">dwc:identificationQualifier</a> field.</li>
+</ol>
+    </div>
+
+    
+    
+
+    
+    
+
+    <footer class="post-footer">
+      
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/data-shareability/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Which data can be shared through GBIF and what cannot</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/2022-02-01-the-world-checklist-of-vascular-plants-fabaceae/">
+            <span class="next-text nav-default">The World Checklist of Vascular Plants (Fabaceae)</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      
+
+
+ 
+<div>
+<h3>This post represents the ideas of the author.</h3>
+</div>
+<div id='discourse-comments'></div>
+<script type="text/javascript">
+  DiscourseEmbed = { discourseUrl: 'https://discourse.gbif.org/',
+                     discourseEmbedUrl: 'https://data-blog.gbif.org\/post\/2022-03-24-reasons-why-names-don-t-match-to-the-gbif-backbone\/' };
+
+  (function() {
+    var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+    d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+  })();
+</script>  
+
+
+<div class = "copyright">
+	<a class="theme-link" href="https://www.gbif.org/what-is-gbif">What is GBIF?</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://www.gbif.org/developer/summary">API</a> 
+	<span class="division">|</span>
+	<a class="theme-link" href="https://www.gbif.org/faq">FAQ</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://discourse.gbif.org/">Community-Forum</a>
+</div>
+
+<div class = "copyright"> 
+	<span class="theme-info">GBIF Secretariat</span> 
+	<span class="theme-info">Universitetsparken 15</span> 
+	<span class="theme-info">DK-2100 Copenhagen Ø</span> 
+	<span class="theme-info" >Denmark</span>
+</div>
+
+<div class="copyright">
+	<span class="power-by">
+	Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+	</span>
+	<span class="division">|</span>
+	<span class="theme-info">
+	Theme - 
+	<a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+	</span>
+
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+<script type="text/javascript" src="/dist/even.min.js?v=3.2.0"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,37 +1,27 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Citation on GBIF Data Blog</title>
-    <link>/tags/citation/</link>
-    <description>Recent content in Citation on GBIF Data Blog</description>
+    <title>citation on GBIF Data Blog</title>
+    <link>https://data-blog.gbif.org/tags/citation/</link>
+    <description>Recent content in citation on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 05 Aug 2021 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/citation/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 05 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://data-blog.gbif.org/tags/citation/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Did you know that...? - some of the lesser known functionalities around GBIF.org</title>
-      <link>/post/did-you-know/</link>
+      <link>https://data-blog.gbif.org/post/did-you-know/</link>
       <pubDate>Thu, 05 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>/post/did-you-know/</guid>
-      <description>&lt;p&gt;During the first-ever virtual GBIF 2021 Global Nodes Meeting, GBIFS hosted a &amp;ldquo;game show&amp;rdquo;: a one-hour &amp;ldquo;&lt;a href=&#34;https://gnm2021.gbif.org/sessions/friday-nodes-vs-helpdesk&#34;&gt;battle of Nodes vs. helpdesk&lt;/a&gt;&amp;rdquo;. The not-so-hidden goal was to demonstrate some of the lesser known functionalities of GBIF.org through a fun, interactive session.&lt;/p&gt;
-
-&lt;iframe title=&#34;vimeo-player&#34; src=&#34;https://player.vimeo.com/video/571521342&#34; width=100% height=&#34;300&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;
-
-&lt;p&gt;The following is a summary of the questions and answers from this session, plus some extras that did not manage to make it into the time frame of the event. The summary is following the layout and sequence of the interactive hour:&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <guid>https://data-blog.gbif.org/post/did-you-know/</guid>
+      <description>&lt;p&gt;During the first-ever virtual GBIF 2021 Global Nodes Meeting, GBIFS hosted a &amp;ldquo;game show&amp;rdquo;: a one-hour &amp;ldquo;&lt;a href=&#34;https://gnm2021.gbif.org/sessions/friday-nodes-vs-helpdesk&#34;&gt;battle of Nodes vs. helpdesk&lt;/a&gt;&amp;rdquo;. The not-so-hidden goal was to demonstrate some of the lesser known functionalities of GBIF.org through a fun, interactive session.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Search, download, analyze and cite (repeat if necessary)</title>
-      <link>/post/search-download-analyze-cite/</link>
+      <link>https://data-blog.gbif.org/post/search-download-analyze-cite/</link>
       <pubDate>Fri, 04 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/search-download-analyze-cite/</guid>
+      <guid>https://data-blog.gbif.org/post/search-download-analyze-cite/</guid>
       <description>Finding and accessing data There is a lot of GBIF-mediated data available. More than 1.3 B occurrence records covering hundreds of thousands of species in all part of the worlds. All free, open and available at the touch of a button. Users can download data through the GBIF.org portal, via the GBIF API, or one of the third-party tools available for programmatic access, e.g. rgbif.
 If there is one area in which GBIF has been immensely successful, it&amp;rsquo;s making the data available to users.</description>
     </item>

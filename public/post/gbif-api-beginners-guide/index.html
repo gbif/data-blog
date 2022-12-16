@@ -20,7 +20,6 @@
   <meta name="description" content="This a GBIF API beginners guide.
 The GBIF API technical documentation might be a bit confusing if you have never used an API before. The goal of this guide is to introduce the GBIF API to a semi-technical user who may have never used an API before.
 The purpose of the GBIF API is to give users access to GBIF databases in a safe way. The GBIF API also allows GBIF.org and rgbif to function.
-
 " />
 
   <meta name="keywords" content="Hugo, theme, even" />
@@ -30,10 +29,10 @@ The purpose of the GBIF API is to give users access to GBIF databases in a safe 
 
 
 
-<meta name="generator" content="Hugo 0.42" />
+<meta name="generator" content="Hugo 0.91.2" />
 
 
-<link rel="canonical" href="/post/gbif-api-beginners-guide/" />
+<link rel="canonical" href="https://data-blog.gbif.org/post/gbif-api-beginners-guide/" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -57,57 +56,24 @@ The purpose of the GBIF API is to give users access to GBIF databases in a safe 
 
 <meta property="og:title" content="GBIF API beginners guide" />
 <meta property="og:description" content="This a GBIF API beginners guide.
-
 The GBIF API technical documentation might be a bit confusing if you have never used an API before. The goal of this guide is to introduce the GBIF API to a semi-technical user who may have never used an API before.
-
-The purpose of the GBIF API is to give users access to GBIF databases in a safe way. The GBIF API also allows GBIF.org and rgbif to function.
-
-" />
+The purpose of the GBIF API is to give users access to GBIF databases in a safe way. The GBIF API also allows GBIF.org and rgbif to function." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/post/gbif-api-beginners-guide/" />
-
-
-
-<meta property="article:published_time" content="2021-09-07T00:00:00&#43;00:00"/>
-
-<meta property="article:modified_time" content="2021-06-16T15:04:13&#43;02:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="og:url" content="https://data-blog.gbif.org/post/gbif-api-beginners-guide/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-09-07T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-06-16T15:04:13+02:00" />
 
 <meta itemprop="name" content="GBIF API beginners guide">
 <meta itemprop="description" content="This a GBIF API beginners guide.
-
 The GBIF API technical documentation might be a bit confusing if you have never used an API before. The goal of this guide is to introduce the GBIF API to a semi-technical user who may have never used an API before.
-
-The purpose of the GBIF API is to give users access to GBIF databases in a safe way. The GBIF API also allows GBIF.org and rgbif to function.
-
-">
-
-
-<meta itemprop="datePublished" content="2021-09-07T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2021-09-07T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1362">
-
-
-
-<meta itemprop="keywords" content="API," />
-<meta name="twitter:card" content="summary"/>
+The purpose of the GBIF API is to give users access to GBIF databases in a safe way. The GBIF API also allows GBIF.org and rgbif to function."><meta itemprop="datePublished" content="2021-09-07T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2021-06-16T15:04:13+02:00" />
+<meta itemprop="wordCount" content="1361">
+<meta itemprop="keywords" content="API," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="GBIF API beginners guide"/>
 <meta name="twitter:description" content="This a GBIF API beginners guide.
-
 The GBIF API technical documentation might be a bit confusing if you have never used an API before. The goal of this guide is to introduce the GBIF API to a semi-technical user who may have never used an API before.
-
-The purpose of the GBIF API is to give users access to GBIF databases in a safe way. The GBIF API also allows GBIF.org and rgbif to function.
-
-"/>
+The purpose of the GBIF API is to give users access to GBIF databases in a safe way. The GBIF API also allows GBIF.org and rgbif to function."/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -204,53 +170,39 @@ The purpose of the GBIF API is to give users access to GBIF databases in a safe 
     
     <div class="post-content">
       <p>This a <strong>GBIF API</strong> beginners guide.</p>
-
 <p>The <a href="https://www.gbif.org/developer/summary">GBIF API technical documentation</a> might be a bit confusing if you have never used an API before. The goal of this guide is to introduce the GBIF API to a semi-technical user who may have never used an API before.</p>
-
 <p>The purpose of the GBIF API is to give users access to GBIF databases in a <strong>safe way</strong>. The GBIF API also allows <a href="https://www.gbif.org/">GBIF.org</a> and <a href="https://github.com/ropensci/rgbif">rgbif</a> to function.</p>
-
-<p></p>
-
 <p>You do not need any special software or skills to access the GBIF API. You simply have to visit a URL.</p>
-
-<p><center><big><a href="https://api.gbif.org/v1/species/match?name=Passer%20domesticus">https://api.gbif.org/v1/species/match?name=Passer domesticus</a></big></center></p>
-
+<center><big><a href="https://api.gbif.org/v1/species/match?name=Passer%20domesticus">https://api.gbif.org/v1/species/match?name=Passer%20domesticus</a></big></center>
 <p>You should see a <strong>wall of text</strong> known as <a href="https://www.w3schools.com/js/js_json_intro.asp">JSON</a>.</p>
-
-<pre><code class="language-JSON">{
-  &quot;usageKey&quot;: 5231190,
-  &quot;scientificName&quot;: &quot;Passer domesticus (Linnaeus, 1758)&quot;,
-  &quot;canonicalName&quot;: &quot;Passer domesticus&quot;,
-  &quot;rank&quot;: &quot;SPECIES&quot;,
-  &quot;status&quot;: &quot;ACCEPTED&quot;,
-  &quot;confidence&quot;: 98,
-  &quot;matchType&quot;: &quot;EXACT&quot;,
-  &quot;kingdom&quot;: &quot;Animalia&quot;,
-  &quot;phylum&quot;: &quot;Chordata&quot;,
-  &quot;order&quot;: &quot;Passeriformes&quot;,
-  &quot;family&quot;: &quot;Passeridae&quot;,
-  &quot;genus&quot;: &quot;Passer&quot;,
-  &quot;species&quot;: &quot;Passer domesticus&quot;,
-  &quot;kingdomKey&quot;: 1,
-  &quot;phylumKey&quot;: 44,
-  &quot;classKey&quot;: 212,
-  &quot;orderKey&quot;: 729,
-  &quot;familyKey&quot;: 5264,
-  &quot;genusKey&quot;: 2492321,
-  &quot;speciesKey&quot;: 5231190,
-  &quot;synonym&quot;: false,
-  &quot;class&quot;: &quot;Aves&quot;
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
+  <span style="color:#268bd2">&#34;usageKey&#34;</span>: <span style="color:#2aa198">5231190</span>,
+  <span style="color:#268bd2">&#34;scientificName&#34;</span>: <span style="color:#2aa198">&#34;Passer domesticus (Linnaeus, 1758)&#34;</span>,
+  <span style="color:#268bd2">&#34;canonicalName&#34;</span>: <span style="color:#2aa198">&#34;Passer domesticus&#34;</span>,
+  <span style="color:#268bd2">&#34;rank&#34;</span>: <span style="color:#2aa198">&#34;SPECIES&#34;</span>,
+  <span style="color:#268bd2">&#34;status&#34;</span>: <span style="color:#2aa198">&#34;ACCEPTED&#34;</span>,
+  <span style="color:#268bd2">&#34;confidence&#34;</span>: <span style="color:#2aa198">98</span>,
+  <span style="color:#268bd2">&#34;matchType&#34;</span>: <span style="color:#2aa198">&#34;EXACT&#34;</span>,
+  <span style="color:#268bd2">&#34;kingdom&#34;</span>: <span style="color:#2aa198">&#34;Animalia&#34;</span>,
+  <span style="color:#268bd2">&#34;phylum&#34;</span>: <span style="color:#2aa198">&#34;Chordata&#34;</span>,
+  <span style="color:#268bd2">&#34;order&#34;</span>: <span style="color:#2aa198">&#34;Passeriformes&#34;</span>,
+  <span style="color:#268bd2">&#34;family&#34;</span>: <span style="color:#2aa198">&#34;Passeridae&#34;</span>,
+  <span style="color:#268bd2">&#34;genus&#34;</span>: <span style="color:#2aa198">&#34;Passer&#34;</span>,
+  <span style="color:#268bd2">&#34;species&#34;</span>: <span style="color:#2aa198">&#34;Passer domesticus&#34;</span>,
+  <span style="color:#268bd2">&#34;kingdomKey&#34;</span>: <span style="color:#2aa198">1</span>,
+  <span style="color:#268bd2">&#34;phylumKey&#34;</span>: <span style="color:#2aa198">44</span>,
+  <span style="color:#268bd2">&#34;classKey&#34;</span>: <span style="color:#2aa198">212</span>,
+  <span style="color:#268bd2">&#34;orderKey&#34;</span>: <span style="color:#2aa198">729</span>,
+  <span style="color:#268bd2">&#34;familyKey&#34;</span>: <span style="color:#2aa198">5264</span>,
+  <span style="color:#268bd2">&#34;genusKey&#34;</span>: <span style="color:#2aa198">2492321</span>,
+  <span style="color:#268bd2">&#34;speciesKey&#34;</span>: <span style="color:#2aa198">5231190</span>,
+  <span style="color:#268bd2">&#34;synonym&#34;</span>: <span style="color:#cb4b16">false</span>,
+  <span style="color:#268bd2">&#34;class&#34;</span>: <span style="color:#2aa198">&#34;Aves&#34;</span>
 }
-</code></pre>
-
-<p><small>You can use a <a href="https://chrome.google.com/webstore/detail/json-viewer/gbmdgpbipfallnflgajpaliibnhdgobh">chrome extension</a> to make the JSON look more readable. </small></p>
-
+</code></pre></div><p><small>You can use a <a href="https://chrome.google.com/webstore/detail/json-viewer/gbmdgpbipfallnflgajpaliibnhdgobh">chrome extension</a> to make the JSON look more readable. </small></p>
 <p>This link just performed a <strong>match query</strong> of all species records with &ldquo;Passer domesticus&rdquo; (House sparrow) in the GBIF backbone. This is useful for getting GBIF taxonkeys (&ldquo;usageKey&rdquo; here). See <a href="https://discourse.gbif.org/t/understanding-gbif-taxonomic-keys-usagekey-taxonkey-specieskey/3045">this post</a> explaining the difference between different GBIF taxonomic keys.</p>
-
 <p>JSON can become very complex and nested. You might be thinking that a <strong>table would be more convenient</strong>. I will show you some strategies for converting to a table later on. Highly nested data is a <strong>common headache of working with JSON</strong>.</p>
-
 <h2 id="api-examples">API Examples</h2>
-
 <style>
 .w3-card{
 box-shadow:0 1px 2px 0 rgba(0,0,0,0.16),0 2px 5px 0 rgba(0,0,0,0.12)
@@ -261,11 +213,9 @@ margin-top:2px;
 margin-bottom:2px
 }
 </style>
-
 <p>The <strong>basic pattern</strong> of an API call: <p>
-https:// <span style="color:#73B273"><b>base url</b></span> / <span style="color:#CD915E"><b>api</b></span> / <span style="color:#3498DB"><b>function</b></span> ? <span style="color:#231F20"><b>parameter</b></span> = <span style="color:#d62d20"><b>query</b></span>
-</p></p>
-
+https:// <span style="color:#73B273"><b>base url</b></span> / <span style="color:#CD915E"><b>api</b></span> / <span style="color:#3498DB"><b>function</b></span> ? <span style="color:#231F20"><b>parameter</b></span> = <span style="color:#d62d20"><b>query</b></span></p>
+</p>
 <ul>
   <li><span style="color:#73B273"><b>base url</b></span> : this will always be <b>https://api.gbif.org/v1/</b></li>
     <li><span style="color:#CD915E"><b>api</b></span> : this is the GBIF API group/namespace you want to query. GBIF has a few of these: species, download, occurrence, dataset ...</li>
@@ -273,189 +223,138 @@ https:// <span style="color:#73B273"><b>base url</b></span> / <span style="color
   <li><span style="color:#231F20"><b>parameter</b></span> : the parameters for your API call. A <b>?</b> is sometimes used.  </li>
   <li><span style="color:#d62d20"><b>query</b></span> : the query you fill in. Sometimes will be free text and sometimes will be a predefined argument.  </li>
 </ul>  
-
 <p>The <a href="https://www.gbif.org/developer/species">GBIF species API</a> is one of the more useful APIs to know. Often the best way to learn how an API works is by looking at examples. The <a href="https://www.gbif.org/tools/species-lookup">name matcher</a> is one of the more useful GBIF API endpoints.</p>
-
 <div class="w3-panel w3-card"><p>
 https://<b><span style="color:#73B273">api.gbif.org/v1</span></b>/<span style="color:#CD915E"><b>species</b></span>/<span style="color:#3498DB"><b>match</b></span>?<span style="color:#231F20"><b>name</b></span>=<span style="color:#d62d20"><b>Passer domesticus</b></span><br>
 <small><a href="https://api.gbif.org/v1/species/match?name=Passer domesticus">https://api.gbif.org/v1/species/match?name=Passer domesticus</a></small> <br> The most interesting part of the JSON result is the "usageKey": 5231190, which is the GBIF taxonkey for house sparrows. A taxonkey is a GBIF internal id for a species or taxnomic group. These are useful in other parts of the API.<br>
 </p></div>
-
 <div class="w3-panel w3-card"><p>
 https://<b><span style="color:#73B273">api.gbif.org/v1</span></b>/<span style="color:#CD915E"><b>species</b></span>/<span style="color:#3498DB"><b>match</b></span>?<span style="color:#231F20"><b>name</b></span>=<span style="color:#d62d20"><b>Tracheophyta</b></span><br>
 <small><a href="https://api.gbif.org/v1/species/match?name=Tracheophyta">https://api.gbif.org/v1/species/match?name=Tracheophyta</a></small> <br>"usageKey": 7707728 is the GBIF taxonkey for vascular plants.<br>
 </p></div>
-
 <p><code>?</code> is the so-called <strong>query parameter</strong> (<a href="https://stackoverflow.com/questions/4024271/rest-api-best-practices-where-to-put-parameters">more info</a>). It is usually hard to predict when you will need <code>?</code> before seeing an example. You might have noticed that your web browser filled in <code>%20</code> for the <strong>spaces</strong> in the last examples (you usually don&rsquo;t need to add this yourself).</p>
-
 <p>You can also get <strong>lists of species</strong> from higher groups using the species API.</p>
-
 <div class="w3-panel w3-card"><p>
 https://<b><span style="color:#73B273">api.gbif.org/v1</span></b>/<span style="color:#CD915E"><b>species</b></span>/<span style="color:#3498DB"><b>search</b></span>?<span style="color:#231F20"><b>rank</b></span>=<span style="color:#d62d20"><b>SPECIES</b></span>&<span style="color:#231F20"><b>highertaxon_key</b></span>=<span style="color:#d62d20"><b>7707728</b></span><br>
 <small><a href="https://api.gbif.org/v1/species/search?rank=SPECIES&highertaxon_key=7707728">https://api.gbif.org/v1/species/search?rank=SPECIES&highertaxon_key=7707728
 </a></small><br>Will give back a list of vascular plant species information. This will just be the first 20 records, so it is not very useful.<br>
 </p></div>
-
 <p>You can make use of the <strong>limit</strong> parameter to get back more results, <strong>but only up to 1000 at a time</strong>. This is because these results are usually held in a memory cache on GBIF servers. This design decision helps GBIF.org run more quickly. These <a href="https://www.gbif.org/occurrence/search?taxon_key=7707728">20 results</a> should load quickly. And these <a href="https://www.gbif.org/occurrence/search?taxon_key=7707728&amp;limit=100">100 results</a> should load more slowly.</p>
-
 <div class="w3-panel w3-card"><p>
 https://<b><span style="color:#73B273">api.gbif.org/v1</span></b>/<span style="color:#CD915E"><b>species</b></span>/<span style="color:#3498DB"><b>search</b></span><span style="color:#231F20">?<b>rank</b></span>=<span style="color:#d62d20"><b>SPECIES</b></span>&<span style="color:#231F20"><b>highertaxon_key</b></span>=<span style="color:#d62d20"><b>212</b></span>&</span><span style="color:#231F20"><b>limit</b></span>=<span style="color:#d62d20"><b>100</b></span><br>
 <small><a href="https://api.gbif.org/v1/species/search?rank=SPECIES&highertaxon_key=212&limit=100">https://api.gbif.org/v1/species/search?rank=SPECIES&highertaxon_key=212&limit=100</a></small> <br> Will give back 100 bird species records.<br>
 </p></div>
-
 <p>You can also use the <span style="color:#231F20"><b>offset</b></span> parameter to skip through the first page of results to get to the next 1000 records.</p>
-
 <div class="w3-panel w3-card"><p>
 https://<b><span style="color:#73B273">api.gbif.org/v1</span></b>/<span style="color:#CD915E"><b>species</b></span>/<span style="color:#3498DB"><b>search</b></span><span style="color:#231F20">?<b>rank</b></span>=<span style="color:#d62d20"><b>SPECIES</b></span>&<span style="color:#231F20"><b>highertaxon_key</b></span>=<span style="color:#d62d20"><b>212</b></span>&</span><span style="color:#231F20"><b>limit</b></span>=<span style="color:#d62d20"><b>1000</b></span>&<span style="color:#231F20"><b>offset</b>=</span><span style="color:#d62d20"><b>1000</b></span><br>
 <small><a href="https://api.gbif.org/v1/species/search?rank=SPECIES&highertaxon_key=212&limit=1000&offset=1000">https://api.gbif.org/v1/species/search?rank=SPECIES&highertaxon_key=212&limit=1000&offset=1000</a></small> 
 <br>Get the next 1000 records of birds. Offset will move the window of results up by 1000. You can <b>page through</b> API results if you want more records, but you can only go 100,000 records deep.<br>
 </p></div>
-
 <p>Notice the use of <strong>&amp;</strong> to combine parameters.</p>
-
 <div class="w3-panel w3-card"><p>
 https://<b><span style="color:#73B273">api.gbif.org/v1</span></b>/<span style="color:#CD915E"><b>species</b></span>/<span style="color:#3498DB"><b>search</b></span><span style="color:#231F20">?<b>rank</b></span>=<span style="color:#d62d20"><b>SPECIES</b></span>&<span style="color:#231F20"><b>highertaxon_key</b></span>=<span style="color:#d62d20"><b>212</b></span>&</span><span style="color:#231F20"><b>limit</b></span>=<span style="color:#d62d20"><b>1000</b></span>&<span style="color:#231F20"><b>offset</b>=</span><span style="color:#d62d20"><b>2000</b></span><br>
 <small><a href="https://api.gbif.org/v1/species/search?rank=SPECIES&highertaxon_key=212&limit=1000&offset=2000">https://api.gbif.org/v1/species/search?rank=SPECIES&highertaxon_key=212&limit=1000&offset=2000</a></small> 
 <br>Page through 1000 more records.<br>
 </p></div>
-
 <p>There are also other useful functions of the species API. Here are few examples of how to get synonyms and common names.</p>
-
 <div class="w3-panel w3-card"><p>
 https://<b><span style="color:#73B273">api.gbif.org/v1</span></b>/<span style="color:#CD915E"><b>species</b></span>/<span style="color:#d62d20"><b>212</b></span>/<span style="color:#231F20"><b>synonyms</b></span><br>
 <small><a href="https://api.gbif.org/v1/species/212/synonyms">https://api.gbif.org/v1/species/212/synonyms</a></small> <br>All taxonomic synonyms of birds (there are none).<br>
 </p></div>
-
 <div class="w3-panel w3-card"><p>
 https://<b><span style="color:#73B273">api.gbif.org/v1</span></b>/<span style="color:#CD915E"><b>species</b></span>/<span style="color:#d62d20"><b>7707728</b></span>/<span style="color:#231F20"><b>synonyms</b></span><br>
 <small><a href="https://api.gbif.org/v1/species/7707728/synonyms">https://api.gbif.org/v1/species/7707728/synonyms</a></small> <br>All taxonomic synonyms of Tracheophyta.<br>
 </p></div>
-
 <div class="w3-panel w3-card"><p>
 https://<b><span style="color:#73B273">api.gbif.org/v1</span></b>/<span style="color:#CD915E"><b>species</b></span>/<span style="color:#d62d20"><b>7707728</b></span>/<span style="color:#231F20"><b>vernacularNames</b></span><br>
 <small><a href="https://api.gbif.org/v1/species/7707728/vernacularNames">https://api.gbif.org/v1/species/7707728/vernacularNames</a></small> <br>Gives you any common names for Tracheophyta, commonly known as "vascular plants".<br>
 </p></div>
-
 <p>Hopefully with this introduction you will be able to figure out how the other GBIF API(s) work. Check out these other examples.</p>
-
 <ul>
 <li><a href="https://api.gbif.org/v1/occurrence/1258202889">https://api.gbif.org/v1/occurrence/1258202889</a>
-
 <ul>
 <li>information about this occurrence id</li>
-</ul></li>
+</ul>
+</li>
 <li><a href="https://api.gbif.org/v1/occurrence/1258202889/verbatim">https://api.gbif.org/v1/occurrence/1258202889/verbatim</a>
-
 <ul>
 <li>information about this occurrence with no GBIF interpretation</li>
-</ul></li>
+</ul>
+</li>
 <li><a href="https://api.gbif.org/v1/dataset/4fa7b334-ce0d-4e88-aaae-2e0c138d049e">https://api.gbif.org/v1/dataset/4fa7b334-ce0d-4e88-aaae-2e0c138d049e</a>
-
 <ul>
 <li>information about this dataset</li>
-</ul></li>
+</ul>
+</li>
 <li><a href="https://api.gbif.org/v1/dataset/8409e32e-f762-11e1-a439-00145eb45e9a/machineTag">https://api.gbif.org/v1/dataset/8409e32e-f762-11e1-a439-00145eb45e9a/machineTag</a>
-
 <ul>
 <li>all the machine tags (special/tags labels) for a certain dataset</li>
-</ul></li>
 </ul>
-
+</li>
+</ul>
 <h2 id="using-curl">Using Curl</h2>
-
 <p>So far all of the examples I have been showing you are just links accessed in the browser. Usually the main reason you would want to use an API is because you want <strong>software</strong>, to interact with GBIF somehow.</p>
-
 <p>Along with your web browser you can also use a command line program called <a href="https://curl.se/download.html">curl</a>. We can visit this page using curl <a href="https://api.gbif.org/v1/species/7707728/vernacularNames">https://api.gbif.org/v1/species/7707728/vernacularNames</a>. If you have curl <a href="https://stackoverflow.com/questions/9507353/how-do-i-install-and-use-curl-on-windows">installed</a>, you should be able to paste this into your any command line shell.</p>
-
-<pre><code class="language-shell">curl -i -H &quot;Accept: application/json&quot; -H &quot;Content-Type: application/json&quot; -X GET https://api.gbif.org/v1/species/7707728/vernacularNames
-</code></pre>
-
-<p>This should print the same result you saw in your web browser. This by itself is not useful. This would need to be back of something larger, to be useful. For example, getting all the vernacular names of humming birds would be an <a href="https://gist.github.com/jhnwllr/0c10feb4be1c64cfec81f92a1047fddd">interesting project</a>.</p>
-
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">curl -i -H <span style="color:#2aa198">&#34;Accept: application/json&#34;</span> -H <span style="color:#2aa198">&#34;Content-Type: application/json&#34;</span> -X GET https://api.gbif.org/v1/species/7707728/vernacularNames
+</code></pre></div><p>This should print the same result you saw in your web browser. This by itself is not useful. This would need to be back of something larger, to be useful. For example, getting all the vernacular names of humming birds would be an <a href="https://gist.github.com/jhnwllr/0c10feb4be1c64cfec81f92a1047fddd">interesting project</a>.</p>
 <p>Most scripting languages will have a library for doing <strong>http requests</strong>. I often use use the GBIF API from <strong>within R</strong> with the packages <code>httr</code> or <code>jsonlite</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">httr<span style="color:#719e07">::</span><span style="color:#268bd2">GET</span>(<span style="color:#2aa198">&#34;https://api.gbif.org/v1/species/match?name=Trochilidae&#34;</span>) <span style="color:#719e07">%&gt;%</span>
+httr<span style="color:#719e07">::</span><span style="color:#268bd2">content</span>()
 
-<pre><code class="language-r">httr::GET(&quot;https://api.gbif.org/v1/species/match?name=Trochilidae&quot;) %&gt;%
-httr::content()
-
-jsonlite::fromJSON(&quot;https://api.gbif.org/v1/species/match?name=Trochilidae&quot;)
-</code></pre>
-
-<h3 id="working-with-json-results-in-r">Working with JSON results in R</h3>
-
+jsonlite<span style="color:#719e07">::</span><span style="color:#268bd2">fromJSON</span>(<span style="color:#2aa198">&#34;https://api.gbif.org/v1/species/match?name=Trochilidae&#34;</span>)
+</code></pre></div><h3 id="working-with-json-results-in-r">Working with JSON results in R</h3>
 <p>JSON usually isn&rsquo;t a useful format for most end users, <strong>who would usually rather have a table</strong>. Turning JSON into a table can usually be done with a little bit of effort depending on the degree of JSON nesting.</p>
-
 <p>Below gets all of the vernacular names of Tracheophyta back as a data.frame in R.</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#268bd2">library</span>(jsonlite)
 
-<pre><code class="language-r">library(jsonlite)
+res <span style="color:#719e07">=</span> <span style="color:#268bd2">fromJSON</span>(<span style="color:#2aa198">&#34;https://api.gbif.org/v1/species/7707728/vernacularNames&#34;</span>,flatten <span style="color:#719e07">=</span> <span style="color:#cb4b16">TRUE</span>)
 
-res = fromJSON(&quot;https://api.gbif.org/v1/species/7707728/vernacularNames&quot;,flatten = TRUE)
-
-res$results # get a table of results
-</code></pre>
-
-<p>Unfortunately, <strong>turning JSON into a table is not always this easy</strong>. I have found <a href="https://purrr.tidyverse.org/">purrr</a> to be helpful in working with highly nested JSON.</p>
-
+res<span style="color:#719e07">$</span>results <span style="color:#586e75"># get a table of results</span>
+</code></pre></div><p>Unfortunately, <strong>turning JSON into a table is not always this easy</strong>. I have found <a href="https://purrr.tidyverse.org/">purrr</a> to be helpful in working with highly nested JSON.</p>
 <h3 id="downloads">Downloads</h3>
-
 <p>So far we have only covered <strong>getting</strong> data from the GBIF api. With the query (<code>?</code>) parameter we have sent back a few words or numbers, but often we need to send something more significant back to the GBIF servers, <strong>like an entire file</strong>.</p>
-
 <p>The <a href="https://www.gbif.org/developer/occurrence#predicates">downloads API</a> is the primary place where sending a file to GBIF is useful.</p>
-
 <p>This file is a request to GBIF to download all of the <a href="https://www.gbif.org/occurrence/search?country=CL">occurrences from Chile</a>. Put this in a file called <strong>query.json</strong>.</p>
-
-<pre><code class="language-json">{
-&quot;creator&quot;: &quot;fakeuser12&quot;,
-&quot;notification_address&quot;: [
-&quot;youremail1984@gbif.org&quot;
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+<span style="color:#268bd2">&#34;creator&#34;</span>: <span style="color:#2aa198">&#34;fakeuser12&#34;</span>,
+<span style="color:#268bd2">&#34;notification_address&#34;</span>: [
+<span style="color:#2aa198">&#34;youremail1984@gbif.org&#34;</span>
 ],
-&quot;sendNotification&quot;: true,
-&quot;format&quot;: &quot;SIMPLE_CSV&quot;,
-&quot;predicate&quot;: {
-&quot;type&quot;: &quot;and&quot;,
-&quot;predicates&quot;: [
+<span style="color:#268bd2">&#34;sendNotification&#34;</span>: <span style="color:#cb4b16">true</span>,
+<span style="color:#268bd2">&#34;format&#34;</span>: <span style="color:#2aa198">&#34;SIMPLE_CSV&#34;</span>,
+<span style="color:#268bd2">&#34;predicate&#34;</span>: {
+<span style="color:#268bd2">&#34;type&#34;</span>: <span style="color:#2aa198">&#34;and&#34;</span>,
+<span style="color:#268bd2">&#34;predicates&#34;</span>: [
 {
-&quot;type&quot;: &quot;in&quot;,
-&quot;key&quot;: &quot;COUNTRY&quot;,
-&quot;values&quot;: [&quot;CL&quot;]
+<span style="color:#268bd2">&#34;type&#34;</span>: <span style="color:#2aa198">&#34;in&#34;</span>,
+<span style="color:#268bd2">&#34;key&#34;</span>: <span style="color:#2aa198">&#34;COUNTRY&#34;</span>,
+<span style="color:#268bd2">&#34;values&#34;</span>: [<span style="color:#2aa198">&#34;CL&#34;</span>]
 }
 ]}}
 
-</code></pre>
+</code></pre></div><p><strong>userName:PASSWORD</strong> should be replaced with your <strong>GBIF username and password</strong> (for example: fakeuser12:12dfakePassword#osj323). Run this on the command line in the directory where you have your query.json file.</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">curl --include --user userName:PASSWORD --header <span style="color:#2aa198">&#34;Content-Type: application/json&#34;</span> --data @query.json https://api.gbif.org/v1/occurrence/download/request
+</code></pre></div><p>You could do the same thing also in R. Again here <code>user</code> and <code>pwd</code> are the your GBIF username and password.</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#268bd2">library</span>(httr)
 
-<p><strong>userName:PASSWORD</strong> should be replaced with your <strong>GBIF username and password</strong> (for example: fakeuser12:12dfakePassword#osj323). Run this on the command line in the directory where you have your query.json file.</p>
+<span style="color:#268bd2">POST</span>(url <span style="color:#719e07">=</span> http<span style="color:#719e07">://</span>api.gbif.org<span style="color:#719e07">/</span>v1<span style="color:#719e07">/</span>occurrence<span style="color:#719e07">/</span>download<span style="color:#719e07">/</span>request, 
+config <span style="color:#719e07">=</span> <span style="color:#268bd2">authenticate</span>(user, pwd), 
+<span style="color:#268bd2">add_headers</span>(<span style="color:#2aa198">&#34;Content-Type: application/json&#34;</span>),
+body <span style="color:#719e07">=</span> <span style="color:#268bd2">upload_file</span>(<span style="color:#2aa198">&#34;query.json&#34;</span>), <span style="color:#586e75"># path to your local file</span>
+encode <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39;json&#39;</span>) <span style="color:#719e07">%&gt;%</span> 
+<span style="color:#268bd2">content</span>(as <span style="color:#719e07">=</span> <span style="color:#2aa198">&#34;text&#34;</span>)
+</code></pre></div><p>And again you can always turn to <code>rgbif</code> for doing something like this quite compactly. See <a href="https://discourse.gbif.org/t/setting-up-your-rgbif-environment-with-username-and-password/3017">here</a> for a nice way to save your GBIF credentials.</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#586e75"># Here user,pwd, and email are your GBIF credentials.</span>
+<span style="color:#268bd2">library</span>(rgbif)
 
-<pre><code class="language-shell">curl --include --user userName:PASSWORD --header &quot;Content-Type: application/json&quot; --data @query.json https://api.gbif.org/v1/occurrence/download/request
-</code></pre>
-
-<p>You could do the same thing also in R. Again here <code>user</code> and <code>pwd</code> are the your GBIF username and password.</p>
-
-<pre><code class="language-r">library(httr)
-
-POST(url = http://api.gbif.org/v1/occurrence/download/request, 
-config = authenticate(user, pwd), 
-add_headers(&quot;Content-Type: application/json&quot;),
-body = upload_file(&quot;query.json&quot;), # path to your local file
-encode = 'json') %&gt;% 
-content(as = &quot;text&quot;)
-</code></pre>
-
-<p>And again you can always turn to <code>rgbif</code> for doing something like this quite compactly. See <a href="https://discourse.gbif.org/t/setting-up-your-rgbif-environment-with-username-and-password/3017">here</a> for a nice way to save your GBIF credentials.</p>
-
-<pre><code class="language-r"># Here user,pwd, and email are your GBIF credentials.
-library(rgbif)
-
-occ_download(
-pred(&quot;country&quot;, &quot;CL&quot;),
-format = &quot;SIMPLE_CSV&quot;,
-user=user,pwd=pwd,email=email
+<span style="color:#268bd2">occ_download</span>(
+<span style="color:#268bd2">pred</span>(<span style="color:#2aa198">&#34;country&#34;</span>, <span style="color:#2aa198">&#34;CL&#34;</span>),
+format <span style="color:#719e07">=</span> <span style="color:#2aa198">&#34;SIMPLE_CSV&#34;</span>,
+user<span style="color:#719e07">=</span>user,pwd<span style="color:#719e07">=</span>pwd,email<span style="color:#719e07">=</span>email
 )
 
-</code></pre>
-
-<p>You might be thinking that this query is <a href="https://www.gbif.org/occurrence/search?country=CL">easier to do in the web portal</a>. This is true. The motivation to do it this way would be if you need to do it repeatedly. Also certain features (such as <a href="https://www.gbif.org/developer/occurrence#download">not queries</a>) are only available via the API.</p>
-
+</code></pre></div><p>You might be thinking that this query is <a href="https://www.gbif.org/occurrence/search?country=CL">easier to do in the web portal</a>. This is true. The motivation to do it this way would be if you need to do it repeatedly. Also certain features (such as <a href="https://www.gbif.org/developer/occurrence#download">not queries</a>) are only available via the API.</p>
 <h3 id="further-reading">Further reading</h3>
-
 <ul>
 <li><a href="https://www.gbif.org/developer/summary">GBIF API Documentation</a></li>
 <li><a href="https://data-blog.gbif.org/post/gbif-species-api/">(Almost) everything you want to know about the GBIF Species API</a></li>

@@ -1,22 +1,27 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Institution on GBIF Data Blog</title>
-    <link>/tags/institution/</link>
+    <link>https://data-blog.gbif.org/tags/institution/</link>
     <description>Recent content in Institution on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 12 Mar 2021 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/institution/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Mon, 11 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://data-blog.gbif.org/tags/institution/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>What are the flags &#34;Collection match fuzzy&#34;, &#34;Collection match none&#34;, &#34;Institution match fuzzy&#34;, &#34;Institution match none&#34; and how to remove them?</title>
+      <link>https://data-blog.gbif.org/post/grscicoll-flags/</link>
+      <pubDate>Mon, 11 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/post/grscicoll-flags/</guid>
+      <description>&lt;p&gt;You are a data publisher of occurrence data through GBIF.org, care about your data quality, and wonder what to do about the issue flags that show up on your occurrences. You might have noticed a new type flag this year relating to collection and institution codes and identifiers. They are the result of our attempt at linking specimens records to &lt;a href=&#34;https://www.gbif.org/grscicoll&#34;&gt;our Registry of Scientific Collections (GRSciColl)&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>The GBIF Registry of Scientific Collections (GRSciColl) in 2021</title>
-      <link>/post/grscicoll-2021/</link>
+      <link>https://data-blog.gbif.org/post/grscicoll-2021/</link>
       <pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>/post/grscicoll-2021/</guid>
+      <guid>https://data-blog.gbif.org/post/grscicoll-2021/</guid>
       <description>The GBIF Registry of Scientific Collections, also known as GRSciColl, has been available on GBIF.org since 2019 but it recently got some more attention when we connected it to GBIF occurrences. Now is the perfect time to share a bit of GRSciColl history and what we plan for its future.
 A brief history of GRSciColl First of all, here are a few facts about GrSciColl today, at the start of 2021:</description>
     </item>

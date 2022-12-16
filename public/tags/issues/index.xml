@@ -1,24 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Issues on GBIF Data Blog</title>
-    <link>/tags/issues/</link>
-    <description>Recent content in Issues on GBIF Data Blog</description>
+    <title>issues on GBIF Data Blog</title>
+    <link>https://data-blog.gbif.org/tags/issues/</link>
+    <description>Recent content in issues on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 27 Oct 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/issues/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 27 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://data-blog.gbif.org/tags/issues/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GBIF Issues &amp; Flags</title>
-      <link>/post/issues-and-flags/</link>
+      <link>https://data-blog.gbif.org/post/issues-and-flags/</link>
       <pubDate>Tue, 27 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>/post/issues-and-flags/</guid>
-      <description>Publishers share datasets, but also manage data quality. GBIF provides access to the use of biodiversity data, but also flags suspicious or missing content. Users use data, but also clean and remove records. Each play an important role in managing and improving data quality..
-What are GBIF issues and flags? The GBIF network publishes datasets, integrating them into a common access system. Here users can retrieve data through common search and download services.</description>
+      <guid>https://data-blog.gbif.org/post/issues-and-flags/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Publishers&lt;/strong&gt; share datasets, but also manage data quality.  &lt;strong&gt;GBIF&lt;/strong&gt; provides &lt;strong&gt;access&lt;/strong&gt; to the use of biodiversity data, but also &lt;strong&gt;flags&lt;/strong&gt; suspicious or missing content. &lt;strong&gt;Users&lt;/strong&gt; use data, but also clean and remove records. Each play an important role in managing and improving data quality..&lt;/p&gt;</description>
     </item>
     
   </channel>

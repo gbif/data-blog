@@ -1,23 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hunger maps on GBIF Data Blog</title>
-    <link>/tags/hunger-maps/</link>
-    <description>Recent content in Hunger maps on GBIF Data Blog</description>
+    <title>hunger maps on GBIF Data Blog</title>
+    <link>https://data-blog.gbif.org/tags/hunger-maps/</link>
+    <description>Recent content in hunger maps on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 15 Feb 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/hunger-maps/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 15 Feb 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://data-blog.gbif.org/tags/hunger-maps/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hunger mapping</title>
-      <link>/post/hunger-mapping/</link>
+      <link>https://data-blog.gbif.org/post/hunger-mapping/</link>
       <pubDate>Fri, 15 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/hunger-mapping/</guid>
-      <description>Where are we missing biodiversity data?A hunger map is a map of missing biodiversity data (a biodiversity data gap). The main challenge with hunger mapping is proving that a species does not exist but should exist in a region. Hunger maps are important because they could be used to prioritize funding and digitization efforts. Currently, GBIF has no way of telling what species are missing from where. In this blog post I review some potential ways GBIF could make global biodiversity hunger maps.</description>
+      <guid>https://data-blog.gbif.org/post/hunger-mapping/</guid>
+      <description>&lt;h1 id=&#34;where-are-we-missing-biodiversity-data&#34;&gt;Where are we missing biodiversity data?&lt;/h1&gt;
+&lt;p&gt;A &lt;strong&gt;hunger map&lt;/strong&gt; is a map of missing biodiversity data (a biodiversity &lt;strong&gt;data gap&lt;/strong&gt;). The main challenge with hunger mapping is proving that a species &lt;a href=&#34;https://en.wikipedia.org/wiki/Evidence_of_absence&#34;&gt;does not exist but should exist&lt;/a&gt;  in a region. Hunger maps are important because they could be used to prioritize funding and digitization efforts. Currently, &lt;a href=&#34;https://www.gbif.org/what-is-gbif&#34;&gt;GBIF&lt;/a&gt; has no way of telling what species are missing from where. In this blog post I review some potential ways GBIF could make global biodiversity hunger maps.&lt;/p&gt;</description>
     </item>
     
   </channel>

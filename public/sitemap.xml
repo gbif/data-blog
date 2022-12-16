@@ -1,1202 +1,1117 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
+<?xml-stylesheet type="text/xsl" href="https://data-blog.gbif.org/sitemap.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>/about/</loc>
+    <loc>https://data-blog.gbif.org/about/</loc>
     <lastmod>2017-08-28T21:41:52+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/post/clustering-occurrences/</loc>
+    <loc>https://data-blog.gbif.org/author/</loc>
+    <lastmod>2022-03-24T13:55:46+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/categories/</loc>
+    <lastmod>2022-03-24T13:55:46+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/author/cecilie-svenningsen/</loc>
+    <lastmod>2022-01-04T10:19:14+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/categories/gbif/</loc>
+    <lastmod>2022-03-24T13:55:46+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/</loc>
+    <lastmod>2022-03-24T13:55:46+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/post/</loc>
+    <lastmod>2022-03-24T13:55:46+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/post/data-shareability/</loc>
+    <lastmod>2022-01-04T10:19:14+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/post/2022-03-24-reasons-why-names-don-t-match-to-the-gbif-backbone/</loc>
+    <lastmod>2022-03-24T13:55:46+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/author/john-waller/</loc>
+    <lastmod>2022-03-24T13:55:46+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/post/2022-02-01-the-world-checklist-of-vascular-plants-fabaceae/</loc>
+    <lastmod>2022-02-01T11:19:49+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/author/john-waller-and-carl-boettiger/</loc>
+    <lastmod>2022-01-04T10:19:14+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/post/apache-arrow-and-parquet/</loc>
+    <lastmod>2022-01-04T10:19:14+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/categories/data-use/</loc>
     <lastmod>2021-11-04T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/post/grscicoll-flags/</loc>
+    <loc>https://data-blog.gbif.org/tags/gbif/</loc>
+    <lastmod>2021-11-04T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/post/clustering-occurrences/</loc>
+    <lastmod>2021-11-04T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/author/marie-grosjean-and-tim-robertson/</loc>
+    <lastmod>2021-11-04T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/occurrence/</loc>
+    <lastmod>2021-11-04T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/specimen/</loc>
+    <lastmod>2021-11-04T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/</loc>
+    <lastmod>2021-11-04T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/collections/</loc>
     <lastmod>2019-12-05T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/post/gbif-api-beginners-guide/</loc>
-    <lastmod>2021-06-16T15:04:13+02:00</lastmod>
+    <loc>https://data-blog.gbif.org/tags/flags/</loc>
+    <lastmod>2020-10-08T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/post/did-you-know/</loc>
+    <loc>https://data-blog.gbif.org/tags/grscicoll/</loc>
     <lastmod>2021-07-30T14:30:00+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/post/aws-and-gbif/</loc>
-    <lastmod>2021-04-22T16:00:05+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>/post/derived-datasets/</loc>
-    <lastmod>2021-05-20T11:11:11+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>/post/microsoft-azure-and-gbif/</loc>
-    <lastmod>2021-04-22T16:00:05+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>/post/grscicoll-2021/</loc>
+    <loc>https://data-blog.gbif.org/tags/institution/</loc>
     <lastmod>2021-03-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/post/gbif-filtering-guide/</loc>
+    <loc>https://data-blog.gbif.org/author/marie-grosjean/</loc>
+    <lastmod>2021-03-12T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/publish/</loc>
+    <lastmod>2020-02-20T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/categories/publishing/</loc>
+    <lastmod>2020-02-20T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/sampling-event/</loc>
+    <lastmod>2019-12-05T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/post/grscicoll-flags/</loc>
+    <lastmod>2019-12-05T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/api/</loc>
+    <lastmod>2021-07-30T14:30:00+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/post/gbif-api-beginners-guide/</loc>
+    <lastmod>2021-06-16T15:04:13+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/author/andrea-hahn/</loc>
+    <lastmod>2021-07-30T14:30:00+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/citation/</loc>
+    <lastmod>2021-07-30T14:30:00+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/citethedoi/</loc>
+    <lastmod>2021-07-30T14:30:00+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/custom-metrics/</loc>
+    <lastmod>2021-07-30T14:30:00+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/post/did-you-know/</loc>
+    <lastmod>2021-07-30T14:30:00+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/doi/</loc>
+    <lastmod>2021-07-30T14:30:00+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/github/</loc>
+    <lastmod>2021-07-30T14:30:00+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/global-nodes-meeting-2021/</loc>
+    <lastmod>2021-07-30T14:30:00+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/ingestion-history/</loc>
+    <lastmod>2021-07-30T14:30:00+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/registry/</loc>
+    <lastmod>2021-07-30T14:30:00+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/release-notes/</loc>
+    <lastmod>2021-07-30T14:30:00+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/rollup-metrics/</loc>
+    <lastmod>2021-07-30T14:30:00+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/spatial-filtering/</loc>
+    <lastmod>2021-07-30T14:30:00+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/species-matching-tool/</loc>
+    <lastmod>2021-07-30T14:30:00+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/tools/</loc>
+    <lastmod>2021-07-30T14:30:00+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/user-feedback/</loc>
+    <lastmod>2021-07-30T14:30:00+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/aws/</loc>
+    <lastmod>2021-04-22T16:00:05+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/cloud-computing/</loc>
+    <lastmod>2021-04-22T16:00:05+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/post/aws-and-gbif/</loc>
+    <lastmod>2021-04-22T16:00:05+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/categories/citation/</loc>
+    <lastmod>2021-05-20T11:11:11+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/author/daniel-noesgaard/</loc>
+    <lastmod>2021-05-20T11:11:11+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/derived-datasets/</loc>
+    <lastmod>2021-05-20T11:11:11+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/post/derived-datasets/</loc>
+    <lastmod>2021-05-20T11:11:11+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/azure/</loc>
+    <lastmod>2021-04-22T16:00:05+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/post/microsoft-azure-and-gbif/</loc>
+    <lastmod>2021-04-22T16:00:05+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/collection/</loc>
+    <lastmod>2021-03-12T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/categories/grscicoll/</loc>
+    <lastmod>2021-03-12T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/idigbio/</loc>
+    <lastmod>2021-03-12T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/ih/</loc>
+    <lastmod>2021-03-12T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/categories/registry/</loc>
+    <lastmod>2021-03-12T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/post/grscicoll-2021/</loc>
+    <lastmod>2021-03-12T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/post/gbif-filtering-guide/</loc>
     <lastmod>2020-12-08T09:51:20+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/post/downloads-api-guide/</loc>
-    <lastmod>2021-01-05T13:07:01+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>/post/gbif-species-api/</loc>
+    <loc>https://data-blog.gbif.org/post/gbif-species-api/</loc>
     <lastmod>2020-11-16T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/post/issues-and-flags/</loc>
+    <loc>https://data-blog.gbif.org/categories/api/</loc>
+    <lastmod>2020-11-16T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/backbone/</loc>
+    <lastmod>2020-11-16T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/checklist/</loc>
+    <lastmod>2020-11-16T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/species-api/</loc>
+    <lastmod>2020-11-16T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/taxon-match-fuzzy/</loc>
+    <lastmod>2020-11-16T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/taxon-match-higherrank/</loc>
+    <lastmod>2020-11-16T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/taxon-match-none/</loc>
+    <lastmod>2020-11-16T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/data-quality/</loc>
     <lastmod>2020-10-08T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/post/outlier-detection-using-reverse-jackknife/</loc>
-    <lastmod>2020-10-07T14:47:17+02:00</lastmod>
+    <loc>https://data-blog.gbif.org/post/issues-and-flags/</loc>
+    <lastmod>2020-10-08T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/post/outlier-detection-using-dbscan/</loc>
-    <lastmod>2020-07-06T09:51:49+02:00</lastmod>
+    <loc>https://data-blog.gbif.org/tags/issues/</loc>
+    <lastmod>2020-10-08T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/post/gbif-regional-statistics-2020/</loc>
+    <loc>https://data-blog.gbif.org/author/leonardo-buitrago/</loc>
+    <lastmod>2020-10-08T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/post/gbif-regional-statistics-2020/</loc>
     <lastmod>2020-05-11T09:04:43+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/post/installations-and-hosting-solutions-explained/</loc>
+    <loc>https://data-blog.gbif.org/tags/gbif-regions/</loc>
+    <lastmod>2020-05-11T09:04:43+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/statistics/</loc>
+    <lastmod>2020-05-11T09:04:43+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/biocase/</loc>
     <lastmod>2020-02-20T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/post/gbif-occurrence-license-processing/</loc>
+    <loc>https://data-blog.gbif.org/tags/earthcape/</loc>
+    <lastmod>2020-02-20T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/hosting/</loc>
+    <lastmod>2020-02-20T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/installation/</loc>
+    <lastmod>2020-02-20T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/ipt/</loc>
+    <lastmod>2020-02-20T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/symbiota/</loc>
+    <lastmod>2020-02-20T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/post/installations-and-hosting-solutions-explained/</loc>
+    <lastmod>2020-02-20T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/post/gbif-occurrence-license-processing/</loc>
     <lastmod>2020-02-21T09:37:10+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/post/wikidata/</loc>
+    <loc>https://data-blog.gbif.org/tags/col/</loc>
     <lastmod>2020-02-21T13:15:00+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/post/frictionless-data-and-darwin-core/</loc>
+    <loc>https://data-blog.gbif.org/post/wikidata/</loc>
+    <lastmod>2020-02-21T13:15:00+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/categories/guest-post/</loc>
+    <lastmod>2020-02-21T13:15:00+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/lod/</loc>
+    <lastmod>2020-02-21T13:15:00+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/author/quentin-groom-deborah-paul/</loc>
+    <lastmod>2020-02-21T13:15:00+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/taxonomy/</loc>
+    <lastmod>2020-02-21T13:15:00+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/wikidata/</loc>
+    <lastmod>2020-02-21T13:15:00+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/author/andr%C3%A9-heughebaert/</loc>
     <lastmod>2020-01-15T09:37:51+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/post/metagenomics-occurrences-on-gbif/</loc>
-    <lastmod>2020-01-08T09:46:16+01:00</lastmod>
+    <loc>https://data-blog.gbif.org/tags/frictionless-data/</loc>
+    <lastmod>2020-01-15T09:37:51+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/post/choose-dataset-type/</loc>
+    <loc>https://data-blog.gbif.org/post/frictionless-data-and-darwin-core/</loc>
+    <lastmod>2020-01-15T09:37:51+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/dataset/</loc>
     <lastmod>2019-12-04T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/post/biodiversity-hotspots-density-table/</loc>
-    <lastmod>2019-09-10T13:55:38+02:00</lastmod>
+    <loc>https://data-blog.gbif.org/tags/dataset-classes/</loc>
+    <lastmod>2019-12-04T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/post/living-specimen-to-preserved-specimen-understanding-basis-of-record/</loc>
+    <loc>https://data-blog.gbif.org/tags/dataset-type/</loc>
+    <lastmod>2019-12-04T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/post/choose-dataset-type/</loc>
+    <lastmod>2019-12-04T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/metadata/</loc>
+    <lastmod>2019-12-04T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/post/living-specimen-to-preserved-specimen-understanding-basis-of-record/</loc>
     <lastmod>2019-09-06T10:40:05+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/post/search-download-analyze-cite/</loc>
+    <loc>https://data-blog.gbif.org/tags/rgbif/</loc>
     <lastmod>2018-09-24T12:15:04+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/post/gbif-backbone-taxonomy/</loc>
+    <loc>https://data-blog.gbif.org/post/search-download-analyze-cite/</loc>
+    <lastmod>2018-09-24T12:15:04+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/use/</loc>
+    <lastmod>2019-04-23T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/catalogue-of-life/</loc>
     <lastmod>2019-09-24T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/post/downloading-long-species-lists-on-gbif/</loc>
+    <loc>https://data-blog.gbif.org/post/gbif-backbone-taxonomy/</loc>
+    <lastmod>2019-09-24T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/categories/taxonomy/</loc>
+    <lastmod>2019-09-24T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/post/downloading-long-species-lists-on-gbif/</loc>
     <lastmod>2019-08-28T16:26:18+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/post/occurrence-density-by-country/</loc>
-    <lastmod>2019-08-07T09:57:06+02:00</lastmod>
+    <loc>https://data-blog.gbif.org/tags/downloads/</loc>
+    <lastmod>2019-08-28T16:26:18+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/post/citizen-science-on-gbif-2019/</loc>
+    <loc>https://data-blog.gbif.org/author/john-waller-and-marie-grosjean/</loc>
+    <lastmod>2019-08-28T16:26:18+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/tree-list/</loc>
+    <lastmod>2019-08-28T16:26:18+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/citizen-science/</loc>
     <lastmod>2019-08-02T08:39:12+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/post/exploring-es50-for-gbif/</loc>
+    <loc>https://data-blog.gbif.org/post/citizen-science-on-gbif-2019/</loc>
+    <lastmod>2019-08-02T08:39:12+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/data-gaps/</loc>
     <lastmod>2019-06-25T14:39:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/post/not-a-bird/</loc>
-    <lastmod>2019-06-19T15:58:23+02:00</lastmod>
+    <loc>https://data-blog.gbif.org/tags/es50/</loc>
+    <lastmod>2019-06-25T14:39:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/post/big-national-checklists/</loc>
+    <loc>https://data-blog.gbif.org/post/exploring-es50-for-gbif/</loc>
+    <lastmod>2019-06-25T14:39:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/maps/</loc>
+    <lastmod>2019-06-25T14:39:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/post/big-national-checklists/</loc>
     <lastmod>2019-05-15T09:32:20+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/post/gbif-checklist-datasets-and-data-gaps/</loc>
+    <loc>https://data-blog.gbif.org/tags/checklists/</loc>
+    <lastmod>2019-05-15T09:32:20+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/post/gbif-checklist-datasets-and-data-gaps/</loc>
     <lastmod>2019-04-23T09:02:19+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/post/gbif-molecular-data-quality/</loc>
+    <loc>https://data-blog.gbif.org/tags/dna/</loc>
     <lastmod>2019-04-23T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/post/gbif-molecular-data/</loc>
+    <loc>https://data-blog.gbif.org/tags/ebi/</loc>
     <lastmod>2019-04-23T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/post/gridded-datasets-update/</loc>
+    <loc>https://data-blog.gbif.org/tags/edna/</loc>
+    <lastmod>2019-04-23T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/ggbn/</loc>
+    <lastmod>2019-04-23T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/howto/</loc>
+    <lastmod>2019-04-23T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/metagenomics/</loc>
+    <lastmod>2019-04-23T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/mixs/</loc>
+    <lastmod>2019-04-23T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/molecular/</loc>
+    <lastmod>2019-04-23T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/otu/</loc>
+    <lastmod>2019-04-23T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/quality/</loc>
+    <lastmod>2019-04-23T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/sequence/</loc>
+    <lastmod>2019-04-23T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/post/gbif-molecular-data-quality/</loc>
+    <lastmod>2019-04-23T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/darwin-core/</loc>
+    <lastmod>2019-04-23T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/post/gbif-molecular-data/</loc>
+    <lastmod>2019-04-23T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/gridded-data/</loc>
     <lastmod>2019-02-21T10:23:10+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/post/country-centroids/</loc>
+    <loc>https://data-blog.gbif.org/post/gridded-datasets-update/</loc>
     <lastmod>2019-02-21T10:23:10+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/post/hunger-mapping/</loc>
+    <loc>https://data-blog.gbif.org/post/hunger-mapping/</loc>
     <lastmod>2019-02-15T10:10:56+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/post/gbif-citizen-science-data/</loc>
+    <loc>https://data-blog.gbif.org/tags/hunger-maps/</loc>
+    <lastmod>2019-02-15T10:10:56+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/rstats/</loc>
     <lastmod>2018-12-10T11:34:10+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/post/shapefiles/</loc>
+    <loc>https://data-blog.gbif.org/post/gbif-citizen-science-data/</loc>
+    <lastmod>2018-12-10T11:34:10+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/arctic/</loc>
     <lastmod>2018-11-21T15:24:11+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/post/gbif-multimedia/</loc>
+    <loc>https://data-blog.gbif.org/author/jan-kristoffer-legind/</loc>
+    <lastmod>2018-11-21T15:24:11+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/r/</loc>
+    <lastmod>2018-11-21T15:24:11+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/shapefile/</loc>
+    <lastmod>2018-11-21T15:24:11+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/post/shapefiles/</loc>
+    <lastmod>2018-11-21T15:24:11+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/dublin-core/</loc>
     <lastmod>2018-11-15T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/post/gbif-citizen-science/</loc>
+    <loc>https://data-blog.gbif.org/tags/image/</loc>
+    <lastmod>2018-11-15T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/media/</loc>
+    <lastmod>2018-11-15T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/multimedia/</loc>
+    <lastmod>2018-11-15T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/post/gbif-multimedia/</loc>
+    <lastmod>2018-11-15T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/sound/</loc>
+    <lastmod>2018-11-15T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/video/</loc>
+    <lastmod>2018-11-15T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/tags/citizen/</loc>
     <lastmod>2018-11-09T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/post/gbif-maps-api-using-r-and-leaflet/</loc>
-    <lastmod>2018-09-19T13:49:20+02:00</lastmod>
+    <loc>https://data-blog.gbif.org/post/gbif-citizen-science/</loc>
+    <lastmod>2018-11-09T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/post/finding-gridded-datasets/</loc>
+    <loc>https://data-blog.gbif.org/post/finding-gridded-datasets/</loc>
     <lastmod>2018-08-14T15:47:18+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/post/gbif-download-trends/</loc>
+    <loc>https://data-blog.gbif.org/post/gbif-download-trends/</loc>
     <lastmod>2018-08-14T15:35:14+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/tags/api/</loc>
-    <lastmod>2021-06-16T15:04:13+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/author/andrea-hahn/</loc>
-    <lastmod>2021-07-30T14:30:00+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/author/andr%C3%A9-heughebaert/</loc>
-    <lastmod>2020-01-15T09:37:51+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/api/</loc>
-    <lastmod>2020-11-16T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/arctic/</loc>
-    <lastmod>2018-11-21T15:24:11+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/author/</loc>
-    <lastmod>2021-07-30T14:30:00+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/aws/</loc>
-    <lastmod>2021-04-22T16:00:05+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/azure/</loc>
-    <lastmod>2021-04-22T16:00:05+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/backbone/</loc>
-    <lastmod>2020-11-16T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/biocase/</loc>
-    <lastmod>2020-02-20T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/catalogue-of-life/</loc>
-    <lastmod>2019-09-24T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/</loc>
-    <lastmod>2020-11-16T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/centroids/</loc>
-    <lastmod>2019-02-21T10:23:10+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/checklist/</loc>
-    <lastmod>2020-11-16T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/checklists/</loc>
-    <lastmod>2019-05-15T09:32:20+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/citation/</loc>
-    <lastmod>2021-07-30T14:30:00+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/citation/</loc>
-    <lastmod>2021-05-20T11:11:11+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/citethedoi/</loc>
-    <lastmod>2021-07-30T14:30:00+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/citizen/</loc>
-    <lastmod>2018-11-09T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/citizen-science/</loc>
-    <lastmod>2019-08-02T08:39:12+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/cloud-computing/</loc>
-    <lastmod>2021-04-22T16:00:05+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/col/</loc>
-    <lastmod>2019-09-24T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/col/</loc>
-    <lastmod>2019-09-24T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/collection/</loc>
-    <lastmod>2021-03-12T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/collections/</loc>
-    <lastmod>2019-12-05T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/custom-metrics/</loc>
-    <lastmod>2021-07-30T14:30:00+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/dna/</loc>
-    <lastmod>2019-04-23T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/doi/</loc>
-    <lastmod>2021-07-30T14:30:00+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/author/daniel-noesgaard/</loc>
-    <lastmod>2021-05-20T11:11:11+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/darwin-core/</loc>
-    <lastmod>2019-04-23T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/data-gaps/</loc>
-    <lastmod>2019-09-10T13:55:38+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/data-quality/</loc>
-    <lastmod>2020-10-08T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/data-use/</loc>
-    <lastmod>2021-11-04T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/dataset/</loc>
-    <lastmod>2019-12-04T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/dataset-classes/</loc>
-    <lastmod>2019-12-04T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/dataset-type/</loc>
-    <lastmod>2019-12-04T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/dbscan/</loc>
-    <lastmod>2020-07-06T09:51:49+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/derived-datasets/</loc>
-    <lastmod>2021-05-20T11:11:11+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/downloads/</loc>
-    <lastmod>2021-01-05T13:07:01+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/dublin-core/</loc>
-    <lastmod>2018-11-15T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/ebi/</loc>
-    <lastmod>2019-04-23T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/edna/</loc>
-    <lastmod>2019-04-23T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/earthcape/</loc>
-    <lastmod>2020-02-20T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/es50/</loc>
-    <lastmod>2019-06-25T14:39:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/flags/</loc>
-    <lastmod>2019-12-05T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/frictionless-data/</loc>
-    <lastmod>2020-01-15T09:37:51+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/gbif/</loc>
-    <lastmod>2021-11-04T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/gbif/</loc>
-    <lastmod>2021-11-04T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/</loc>
-    <lastmod>2017-08-28T21:41:52+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/ggbn/</loc>
-    <lastmod>2019-04-23T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/grscicoll/</loc>
-    <lastmod>2019-12-05T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/grscicoll/</loc>
-    <lastmod>2021-03-12T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/gbif/</loc>
-    <lastmod>2021-07-30T14:30:00+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/gbif-regions/</loc>
-    <lastmod>2020-05-11T09:04:43+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/github/</loc>
-    <lastmod>2021-07-30T14:30:00+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/global-nodes-meeting-2021/</loc>
-    <lastmod>2021-07-30T14:30:00+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/gridded-data/</loc>
-    <lastmod>2019-02-21T10:23:10+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/guest-post/</loc>
-    <lastmod>2020-02-21T13:15:00+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/hosting/</loc>
-    <lastmod>2020-02-20T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/hotspots/</loc>
-    <lastmod>2019-09-10T13:55:38+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/howto/</loc>
-    <lastmod>2019-04-23T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/hunger-maps/</loc>
-    <lastmod>2019-02-15T10:10:56+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/idigbio/</loc>
-    <lastmod>2021-03-12T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/ih/</loc>
-    <lastmod>2021-03-12T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/ipt/</loc>
-    <lastmod>2020-02-20T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/image/</loc>
-    <lastmod>2018-11-15T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/ingestion-history/</loc>
-    <lastmod>2021-07-30T14:30:00+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/installation/</loc>
-    <lastmod>2020-02-20T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/institution/</loc>
-    <lastmod>2021-03-12T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/institution/</loc>
-    <lastmod>2021-03-12T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/issues/</loc>
-    <lastmod>2020-10-08T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/author/jan-kristoffer-legind/</loc>
-    <lastmod>2018-11-21T15:24:11+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/author/john-waller/</loc>
-    <lastmod>2021-06-16T15:04:13+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/author/john-waller-and-marie-grosjean/</loc>
-    <lastmod>2019-08-28T16:26:18+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/leaflet/</loc>
-    <lastmod>2018-09-19T13:49:20+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/author/leonardo-buitrago/</loc>
-    <lastmod>2020-10-08T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/lod/</loc>
-    <lastmod>2020-02-21T13:15:00+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/maps/</loc>
-    <lastmod>2019-06-25T14:39:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/author/marie-grosjean/</loc>
-    <lastmod>2019-12-05T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/media/</loc>
-    <lastmod>2018-11-15T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/metadata/</loc>
-    <lastmod>2019-12-04T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/metagenomics/</loc>
-    <lastmod>2019-04-23T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/mixs/</loc>
-    <lastmod>2019-04-23T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/molecular/</loc>
-    <lastmod>2019-04-23T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/multimedia/</loc>
-    <lastmod>2018-11-15T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/otu/</loc>
-    <lastmod>2019-04-23T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/occurrence/</loc>
-    <lastmod>2021-11-04T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/outliers/</loc>
-    <lastmod>2020-10-07T14:47:17+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/post/</loc>
-    <lastmod>2021-11-04T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/publish/</loc>
-    <lastmod>2019-12-05T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/publishing/</loc>
-    <lastmod>2019-12-05T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/quality/</loc>
-    <lastmod>2019-04-23T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/author/quentin-groom--deborah-paul/</loc>
-    <lastmod>2020-02-21T13:15:00+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/r/</loc>
-    <lastmod>2018-11-21T15:24:11+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/registry/</loc>
-    <lastmod>2021-07-30T14:30:00+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/registry/</loc>
-    <lastmod>2021-03-12T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/release-notes/</loc>
-    <lastmod>2021-07-30T14:30:00+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/reverse-jackknife/</loc>
-    <lastmod>2020-10-07T14:47:17+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/rgbif/</loc>
-    <lastmod>2018-09-24T12:15:04+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/rollup-metrics/</loc>
-    <lastmod>2021-07-30T14:30:00+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/rstats/</loc>
-    <lastmod>2018-12-10T11:34:10+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/sampling-event/</loc>
-    <lastmod>2019-12-05T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/sequence/</loc>
-    <lastmod>2019-04-23T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/shapefile/</loc>
-    <lastmod>2018-11-21T15:24:11+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/shiny/</loc>
+    <loc>https://data-blog.gbif.org/tags/shiny/</loc>
     <lastmod>2018-08-14T15:35:14+02:00</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0</priority>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/tags/sound/</loc>
-    <lastmod>2018-11-15T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/spatial-filtering/</loc>
-    <lastmod>2021-07-30T14:30:00+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/species-api/</loc>
-    <lastmod>2020-11-16T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/species-matching-tool/</loc>
-    <lastmod>2021-07-30T14:30:00+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/specimen/</loc>
-    <lastmod>2021-11-04T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/statistics/</loc>
-    <lastmod>2020-05-11T09:04:43+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/symbiota/</loc>
-    <lastmod>2020-02-20T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
-    <lastmod>2021-06-16T15:04:13+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/taxon-match-fuzzy/</loc>
-    <lastmod>2020-11-16T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/taxon-match-higherrank/</loc>
-    <lastmod>2020-11-16T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/taxon-match-none/</loc>
-    <lastmod>2020-11-16T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/taxonomy/</loc>
-    <lastmod>2020-02-21T13:15:00+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/taxonomy/</loc>
-    <lastmod>2019-09-24T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/author/tim-robertson-and-marie-grosjean/</loc>
-    <lastmod>2021-11-04T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/tools/</loc>
-    <lastmod>2021-07-30T14:30:00+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/tree-list/</loc>
-    <lastmod>2019-08-28T16:26:18+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/use/</loc>
-    <lastmod>2018-09-24T12:15:04+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/user-feedback/</loc>
-    <lastmod>2021-07-30T14:30:00+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/users/</loc>
+    <loc>https://data-blog.gbif.org/tags/users/</loc>
     <lastmod>2018-08-14T15:35:14+02:00</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/video/</loc>
-    <lastmod>2018-11-15T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/wikidata/</loc>
-    <lastmod>2020-02-21T13:15:00+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
+    <priority>0.5</priority>
   </url>
   
 </urlset>

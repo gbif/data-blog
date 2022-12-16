@@ -1,27 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Citation on GBIF Data Blog</title>
-    <link>/categories/citation/</link>
+    <link>https://data-blog.gbif.org/categories/citation/</link>
     <description>Recent content in Citation on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 20 May 2021 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/categories/citation/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 20 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://data-blog.gbif.org/categories/citation/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Derived datasets</title>
-      <link>/post/derived-datasets/</link>
+      <link>https://data-blog.gbif.org/post/derived-datasets/</link>
       <pubDate>Thu, 20 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>/post/derived-datasets/</guid>
+      <guid>https://data-blog.gbif.org/post/derived-datasets/</guid>
       <description>&lt;p&gt;You&amp;rsquo;ve finished an analysis using GBIF-mediated data, you&amp;rsquo;re writing up your manuscript and checking all the references, but you&amp;rsquo;re unsure of how to cite GBIF. If you &lt;a href=&#34;https://www.google.com/search?q=how+to+cite+GBIF&#34;&gt;Google it&lt;/a&gt;, you&amp;rsquo;ll probably end up reading our &lt;a href=&#34;https://www.gbif.org/citation-guidelines&#34;&gt;citation guideslines&lt;/a&gt; and quickly realize that GBIF is all about DOIs. Datasets have their own DOIs and downloads of aggregated data also have their own DOIs.&lt;/p&gt;
-
-&lt;p&gt;But maybe you didn&amp;rsquo;t download data through the GBIF.org portal. Maybe you relied on an R package like rgbif or dismo that retrived data synchronously from the GBIF API? Maybe a grad student downloaded if for you? Maybe you accessed and analyzed the data using a cloud computing service, like Microsoft Azure or Amazon Web Services? In any case, which DOI do you cite &lt;em&gt;if you don&amp;rsquo;t have one&lt;/em&gt;?&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;But maybe you didn&amp;rsquo;t download data through the GBIF.org portal. Maybe you relied on an R package like rgbif or dismo that retrived data synchronously from the GBIF API? Maybe a grad student downloaded if for you? Maybe you accessed and analyzed the data using a cloud computing service, like Microsoft Azure or Amazon Web Services? In any case, which DOI do you cite &lt;em&gt;if you don&amp;rsquo;t have one&lt;/em&gt;?&lt;/p&gt;</description>
     </item>
     
   </channel>

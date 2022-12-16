@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cecilie Svenningsen on GBIF Data Blog</title>
+    <link>https://data-blog.gbif.org/author/cecilie-svenningsen/</link>
+    <description>Recent content in Cecilie Svenningsen on GBIF Data Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 17 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://data-blog.gbif.org/author/cecilie-svenningsen/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Which data can be shared through GBIF and what cannot</title>
+      <link>https://data-blog.gbif.org/post/data-shareability/</link>
+      <pubDate>Thu, 17 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/post/data-shareability/</guid>
+      <description>Preparing a dataset to be shared on GBIF.org can be a daunting task and many publishers realize that not all their data fits in the Darwin Core standard (DwC) and extensions GBIF uses to structure, standardize and display biodiversity data.
+This blog post will cover what data fits in GBIF, give examples of data that does not fit in the current format of GBIF, and provide guidance to how you can share relevant data in a metadata-only dataset or through a third-party.</description>
+    </item>
+    
+  </channel>
+</rss>

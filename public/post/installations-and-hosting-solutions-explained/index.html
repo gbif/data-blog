@@ -27,10 +27,10 @@ The good news is that there are several GBIF-compatible systems. They will expor
 
 
 
-<meta name="generator" content="Hugo 0.42" />
+<meta name="generator" content="Hugo 0.91.2" />
 
 
-<link rel="canonical" href="/post/installations-and-hosting-solutions-explained/" />
+<link rel="canonical" href="https://data-blog.gbif.org/post/installations-and-hosting-solutions-explained/" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -56,37 +56,16 @@ The good news is that there are several GBIF-compatible systems. They will expor
 <meta property="og:description" content="As you probably already know, GBIF.org doesn&rsquo;t host any data. The system relies on each data provider making their data available online in a GBIF-supported format. It also relies on organization letting GBIF know where to find these data (in other words registering the data). But how to do just that?
 The good news is that there are several GBIF-compatible systems. They will export or make available the data for you in the correct format and several provide means to register them as datasets on GBIF." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/post/installations-and-hosting-solutions-explained/" />
-
-
-
-<meta property="article:published_time" content="2020-03-02T00:00:00&#43;00:00"/>
-
-<meta property="article:modified_time" content="2020-02-20T00:00:00&#43;00:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="og:url" content="https://data-blog.gbif.org/post/installations-and-hosting-solutions-explained/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2020-03-02T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-02-20T00:00:00+00:00" />
 
 <meta itemprop="name" content="Which tools can I use to share my data on GBIF?">
 <meta itemprop="description" content="As you probably already know, GBIF.org doesn&rsquo;t host any data. The system relies on each data provider making their data available online in a GBIF-supported format. It also relies on organization letting GBIF know where to find these data (in other words registering the data). But how to do just that?
-The good news is that there are several GBIF-compatible systems. They will export or make available the data for you in the correct format and several provide means to register them as datasets on GBIF.">
-
-
-<meta itemprop="datePublished" content="2020-03-02T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2020-03-02T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1348">
-
-
-
-<meta itemprop="keywords" content="publish,GBIF,installation,IPT,symbiota,API,hosting,earthcape,BioCASe," />
-<meta name="twitter:card" content="summary"/>
+The good news is that there are several GBIF-compatible systems. They will export or make available the data for you in the correct format and several provide means to register them as datasets on GBIF."><meta itemprop="datePublished" content="2020-03-02T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2020-02-20T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1347">
+<meta itemprop="keywords" content="publish,GBIF,installation,IPT,symbiota,API,hosting,earthcape,BioCASe," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Which tools can I use to share my data on GBIF?"/>
 <meta name="twitter:description" content="As you probably already know, GBIF.org doesn&rsquo;t host any data. The system relies on each data provider making their data available online in a GBIF-supported format. It also relies on organization letting GBIF know where to find these data (in other words registering the data). But how to do just that?
 The good news is that there are several GBIF-compatible systems. They will export or make available the data for you in the correct format and several provide means to register them as datasets on GBIF."/>
@@ -187,74 +166,48 @@ The good news is that there are several GBIF-compatible systems. They will expor
 
     
     <div class="post-content">
-      
-
-<p>As you probably already know, <a href="https://www.gbif.org">GBIF.org</a> doesn&rsquo;t host any data. The system relies on each data provider making their data available online in a GBIF-supported format. It also relies on organization letting GBIF know where to find these data (in other words registering the data).
+      <p>As you probably already know, <a href="https://www.gbif.org">GBIF.org</a> doesn&rsquo;t host any data. The system relies on each data provider making their data available online in a GBIF-supported format. It also relies on organization letting GBIF know where to find these data (in other words registering the data).
 But how to do just that?</p>
-
 <p>The good news is that there are several GBIF-compatible systems. They will export or make available the data for you in the correct format and several provide means to register them as datasets on GBIF.</p>
-
 <p>In this blogpost, I will try to give a very brief overview of these tools and how they work with GBIF.</p>
-
 <blockquote>
 <p>If you are new to GBIF you might want to read our <a href="https://www.gbif.org/publishing-data">Quick guide to publishing data through GBIF.org</a> first. In addition to that, I would also suggest that you take a look at our documentation concerning <a href="https://www.gbif.org/article/4qfLORxmM8kYOIwSYSMc2M/data-hosting">data hosting</a>.</p>
 </blockquote>
-
 <h1 id="types-of-entities-on-gbif-datasets-organizations-nodes-installations">Types of entities on GBIF: datasets, organizations, nodes, installations</h1>
-
 <p>Before I start listing the various types of GBIF-compatible portals and systems, I need to explain some of the GBIF vocabulary.</p>
-
 <p>We have four kind of entities on GBIF (or four kinds of web pages if you prefer):</p>
-
 <ul>
 <li><strong>Datasets</strong> (for example: the <a href="https://www.gbif.org/dataset/72c4d3c6-5b8d-49f5-bfbe-febd53849588">Prairie Fen Biodiversity Project</a>).</li>
 <li>These datasets are published by an <strong>organization</strong> - also called publisher (for example: the <a href="https://www.gbif.org/publisher/a353a5fa-6426-4ae2-907d-a9bc1639eec5">Central Michigan University Herbarium</a>).</li>
 <li>Each organization is endorsed by a <strong>node</strong> (for example: the <a href="https://www.gbif.org/country/US/summary">U.S. Geological Survey</a>) or a committee (for organizations in non-participating countries). Endorsement not only ensures suitable data is shared, but often helps make connections between people in the network who can assist each other.</li>
 <li>These datasets are also hosted by an <strong>installation</strong> (for example: <a href="https://www.gbif.org/participant/375">IPT - Hosted by iDigBio</a>). An installation is attached to an organization. The type of an installation will depend on the type of publishing tool/portal/system you choose.</li>
 </ul>
-
 <p>I tried to summarize all of this in the schema below:
-<img src="/post/2020-02-20-installations-and-hosting-solutions-explained/schema_entities_one_organization.jpeg" alt="Schema one organization" /></p>
-
+<img src="/post/2020-02-20-installations-and-hosting-solutions-explained/schema_entities_one_organization.jpeg" alt="Schema one organization"></p>
 <p>But of course there are some variants to schema. The organization owning the data doesn&rsquo;t have to be the same as the organization hosting the data. For example, the <a href="https://www.gbif.org/dataset/72c4d3c6-5b8d-49f5-bfbe-febd53849588">Prairie Fen Biodiversity Project</a> is published by the <a href="https://www.gbif.org/publisher/a353a5fa-6426-4ae2-907d-a9bc1639eec5">Central Michigan University Herbarium</a> but hosted by <a href="https://www.gbif.org/installation/ac2ad091-91eb-482d-a73f-061744da5dbf">an installation</a> attached to the <a href="https://www.gbif.org/publisher/96710dc8-fecb-440d-ae3e-c34ae8a9616f">Arizona State University Biodiversity Knowledge Integration Center</a>.</p>
-
 <p>In that case, we will differentiate <strong>Publishing Organization</strong> and <strong>Hosting organization</strong> (see the schema below). Both organizations can also be endorsed by different nodes.</p>
-
-<p><img src="/post/2020-02-20-installations-and-hosting-solutions-explained/schema_entities_two_organizations.jpeg" alt="Schema two organizations" /></p>
-
+<p><img src="/post/2020-02-20-installations-and-hosting-solutions-explained/schema_entities_two_organizations.jpeg" alt="Schema two organizations"></p>
 <p>All of these entities are registered on GBIF. Amongst other things, this structure aims to represent everyone&rsquo;s contribution to the data and allow us to aggregate statistics at different levels.</p>
-
 <blockquote>
 <p>What if you are not affiliated with any organization? You can take part in one of the citizen science initiatives which contribute to GBIF such as <a href="https://www.inaturalist.org">iNaturalist</a>.</p>
 </blockquote>
-
 <h1 id="ipt-the-integrated-publishing-toolkit">IPT: The Integrated Publishing Toolkit</h1>
-
 <p>The <a href="https://www.gbif.org/ipt">IPT</a> is the tool developed and maintained by the GBIF secretariat. It is the most common type of installation connected to GBIF and provides the repository network for the marine community <a href="https://obis.org/">OBIS</a>.
 IPTs can generate <a href="https://dwc.tdwg.org/text/">Darwin Core Archives</a> for each dataset and register them on GBIF.</p>
-
 <blockquote>
 <p>The IPT was designed to share data on GBIF, it is not a data management system. However, some actual data management systems can export data to IPTs. This is the case for <a href="https://www.sustain.specifysoftware.org">Specify</a>, a software to manage specimen data for biological research collections.</p>
 </blockquote>
-
 <h2 id="setting-up-hosting-organization">Setting up hosting organization</h2>
-
 <p>When setting up an IPT, you will be asked to associate it with a (hosting) organization.</p>
-
 <h2 id="setting-up-publishing-organizations">Setting up publishing organizations</h2>
-
 <ol>
-<li>When an organization is endorsed, helpdesk@gbif.org will send to the organization technical contact(s) an IPT token associated with this organization (also called &ldquo;organization password&rdquo;).</li>
+<li>When an organization is endorsed, <a href="mailto:helpdesk@gbif.org">helpdesk@gbif.org</a> will send to the organization technical contact(s) an IPT token associated with this organization (also called &ldquo;organization password&rdquo;).</li>
 <li>The token will be needed to add the organization to an IPT. Only a IPT administrator can add an organization to an IPT. There is no limit on the number of organization registered in an IPT.</li>
 <li>IPT users can then select the relevant publishing organization when creating a publishing a new dataset.</li>
 </ol>
-
 <p>For more information, check out the <a href="https://github.com/gbif/ipt/wiki/IPT2ManualNotes.wiki">IPT documentation</a>.</p>
-
 <h1 id="api-based-systems">API-based systems</h1>
-
 <p>What I call &ldquo;API-based systems&rdquo; are tools/portals that rely on the <a href="https://www.gbif.org/developer/registry">GBIF registry API</a> to share data on GBIF. Most of these tools are data-management systems. They usually have many features and being GBIF-compatible is only one of them. Here are some of these tools (in no particular order):</p>
-
 <ul>
 <li>The <a href="https://living-atlases.gbif.org">Living Atlases</a>: Open source IT infrastructure for the aggregation and delivery of biodiversity data.</li>
 <li><a href="http://symbiota.org/docs/">Symbiota</a>: Open source content management system for curating specimen- and observation-based biodiversity data.</li>
@@ -262,47 +215,30 @@ IPTs can generate <a href="https://dwc.tdwg.org/text/">Darwin Core Archives</a> 
 <li><a href="https://earthcape.com">Earthcape</a>: Biodiversity database platform.</li>
 <li>Others: some organizations such as the <a href="https://www.gbif.org/publisher/396d5f30-dea9-11db-8ab4-b8a03c50a862">Naturalis Biodiversity Center</a> also made their own system GBIF-compatible by using our API.</li>
 </ul>
-
 <h2 id="setting-up-hosting-and-publishing-organizations">Setting up hosting and publishing organizations</h2>
-
 <p>These systems generate and host <a href="https://dwc.tdwg.org/text/">Darwin Core Archives</a> and register their endpoints on GBIF using the API. Because they use the registry API, all of them are associated with an API user account (= API username). This API username can be given permissions to register and update datasets on behalf of an organization or a node.</p>
-
 <p>If a username is given permissions to register and update datasets for a node, all the datasets from the organizations endorsed by this Node are concerned (this is the case for the <a href="https://nbnatlas.org">NBN Atlas</a> for example). However, in most cases, the permissions are set for one organization at the time.</p>
-
-<p>The GBIF Secretariat handle these permissions. This means that organizations have to send an email to heldpesk@gbif.org to request that a specific API username is given the permission to register and update their datasets.</p>
-
+<p>The GBIF Secretariat handle these permissions. This means that organizations have to send an email to <a href="mailto:heldpesk@gbif.org">heldpesk@gbif.org</a> to request that a specific API username is given the permission to register and update their datasets.</p>
 <p>I tried to summarize all of this below:</p>
-
-<p><img src="/post/2020-02-20-installations-and-hosting-solutions-explained/schema_API_installation.jpeg" alt="API-based installation" /></p>
-
+<p><img src="/post/2020-02-20-installations-and-hosting-solutions-explained/schema_API_installation.jpeg" alt="API-based installation"></p>
 <h1 id="other-systems">Other systems</h1>
-
 <p>Some systems expose databases online through open web protocols, which require setting up some specific wrappers. As for the API-based systems, being GBIF-compatible is only one of their features. Here are some of these tools:</p>
-
 <ul>
 <li><a href="https://www.biocase.org/index.shtml">BioCASe</a> (BioCASe and BioCASe Provider Software are more than that, see the next paragraph for some explanations)</li>
 <li><a href="http://digir.sourceforge.net">DiGIR</a> (still GBIF-compatible but has no active support)</li>
 <li><a href="https://www.tdwg.org/standards/tapir/">TAPIR</a> (still GBIF-compatible but has no active support)</li>
 </ul>
-
 <h2 id="setting-up-hosting-and-publishing-organizations-1">Setting up hosting and publishing organizations</h2>
-
 <p>In most cases, these protocols don&rsquo;t generate Darwin Core Archives. Instead, the GBIF system uses the defined protocol to query the data page by page and parse the result. For example <a href="http://ww3.bgbm.org/biocase/pywrapper.cgi?dsa=BoBo&amp;request=%3C%3Fxml+version%3D%271.0%27+encoding%3D%27UTF-8%27%3F%3E%0A%3Crequest+xmlns%3D%27http%3A%2F%2Fwww.biocase.org%2Fschemas%2Fprotocol%2F1.3%27%0A+++++++++xmlns%3Axsi%3D%27http%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema-instance%27%0A+++++++++xsi%3AschemaLocation%3D%27http%3A%2F%2Fwww.biocase.org%2Fschemas%2Fprotocol%2F1.3+http%3A%2F%2Fwww.bgbm.org%2Fbiodivinf%2FSchema%2Fprotocol_1_3.xsd%27%3E%0A++%3Cheader%3E%0A++++%3Ctype%3Esearch%3C%2Ftype%3E%0A++%3C%2Fheader%3E%0A++%3Csearch%3E%0A++++%3CrequestFormat%3Ehttp%3A%2F%2Fwww.tdwg.org%2Fschemas%2Fabcd%2F2.06%3C%2FrequestFormat%3E%0A++++%3CresponseFormat+start%3D%220%22+limit%3D%221000%22%3Ehttp%3A%2F%2Fwww.tdwg.org%2Fschemas%2Fabcd%2F2.06%3C%2FresponseFormat%3E%0A++++%3Cfilter%3E%0A++++++%3Cand%3E%0A++++++++%3Cequals+path%3D%22%2FDataSets%2FDataSet%2FMetadata%2FDescription%2FRepresentation%2FTitle%22%3EBoBO+-+Botanic+Garden+and+Botanical+Museum+Berlin+Observations%3C%2Fequals%3E%0A++++++++%3Cand%3E%0A++++++++++%3CgreaterThanOrEquals+path%3D%22%2FDataSets%2FDataSet%2FUnits%2FUnit%2FIdentifications%2FIdentification%2FResult%2FTaxonIdentified%2FScientificName%2FFullScientificNameString%22%3EZaa%3C%2FgreaterThanOrEquals%3E%0A++++++++%3C%2Fand%3E%0A++++++%3C%2Fand%3E%0A++++%3C%2Ffilter%3E%0A++++%3Ccount%3Efalse%3C%2Fcount%3E%0A++%3C%2Fsearch%3E%0A%3C%2Frequest%3E%0A">this</a> is the result you get from querying the <a href="https://www.gbif.org/dataset/e1beb83c-9b83-4d17-ac5e-d24e09507ec5">BoBO - Botanic Garden and Botanical Museum Berlin Observations</a> (scientific name &gt;= &lsquo;Zaa&rsquo;). This works pretty well for small datasets but can sometimes give inconsistent results for very large datasets as the ingestion process is much longer (days) and is more likely to be interrupted.</p>
-
 <blockquote>
-<p>Although the BioCASe the protocol does not generate Darwin Core Archives, the tool BioCASe Provider Software can be configured to expose ABCD-A (also called &ldquo;BioCASe XML Archive&rdquo;) and Darwin Core Archive and GBIF support both formats. In other words, data providers can choose how to share their data on GBIF (either with the BioCASe protocol or in an archive). Check out the <a href="https://www.biocase.org/products/provider_software/index.shtml">BioCASe Provider Software documentation</a> for more information.</p>
+<p>Although the BioCASe protocol does not generate Darwin Core Archives, the tool BioCASe Provider Software can be configured to expose ABCD-A (also called &ldquo;BioCASe XML Archive&rdquo;) and Darwin Core Archive and GBIF support both formats. In other words, data providers can choose how to share their data on GBIF (either with the BioCASe protocol or in an archive). Check out the <a href="https://www.biocase.org/products/provider_software/index.shtml">BioCASe Provider Software documentation</a> for more information.</p>
 </blockquote>
-
 <p>In any case, the registration of these systems in GBIF is handled by the GBIF Secretariat.</p>
-
-<p>This means that if you set up a BioCAse installation for example, you need to write to helpdesk@gbif.org and we will register the installation endpoint with the correct hosting organization.
+<p>This means that if you set up a BioCAse installation for example, you need to write to <a href="mailto:helpdesk@gbif.org">helpdesk@gbif.org</a> and we will register the installation endpoint with the correct hosting organization.
 Afterwards, we will launch the &ldquo;synchronization&rdquo; of this installation. Depending on the way the installation and wrappers are configures, this will create the corresponding datasets on GBIF under the same organization.
-If the hosting organization differs from the publishing organization, you will have to notify helpdesk@gbif.org and we will make the update on our side manually.</p>
-
+If the hosting organization differs from the publishing organization, you will have to notify <a href="mailto:helpdesk@gbif.org">helpdesk@gbif.org</a> and we will make the update on our side manually.</p>
 <h1 id="to-go-further">To go further</h1>
-
 <p>Here is a little summary of all the tools I link in this post:</p>
-
 <ul>
 <li><a href="https://www.gbif.org/ipt">IPT</a></li>
 <li><a href="https://www.sustain.specifysoftware.org">Specify</a></li>
@@ -314,12 +250,9 @@ If the hosting organization differs from the publishing organization, you will h
 <li><a href="http://digir.sourceforge.net">DiGIR</a></li>
 <li><a href="https://www.tdwg.org/standards/tapir/">TAPIR</a></li>
 </ul>
-
 <p>The chart below might give you an idea of how these tools are represented on GBIF. Note that some of them are still registered on GBIF but no longer host any datasets while some other host many datasets.
-<img src="/post/2020-02-20-installations-and-hosting-solutions-explained/number_installations_registered.jpg" alt="API-based installation" /></p>
-
+<img src="/post/2020-02-20-installations-and-hosting-solutions-explained/number_installations_registered.jpg" alt="API-based installation"></p>
 <p>Please let me know if you know if I forgot to include any GBIF-compatible system in this post.</p>
-
 <p>Should we make an other blogpost to compare these tools? If so, which criteria would you like to see represented?</p>
 
     </div>

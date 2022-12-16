@@ -1,24 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Specimen on GBIF Data Blog</title>
-    <link>/tags/specimen/</link>
-    <description>Recent content in Specimen on GBIF Data Blog</description>
+    <title>specimen on GBIF Data Blog</title>
+    <link>https://data-blog.gbif.org/tags/specimen/</link>
+    <description>Recent content in specimen on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 04 Nov 2021 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/specimen/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 04 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://data-blog.gbif.org/tags/specimen/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Identifying potentially related records - How does the GBIF data-clustring feature work?</title>
-      <link>/post/clustering-occurrences/</link>
+      <title>Identifying potentially related records - How does the GBIF data-clustering feature work?</title>
+      <link>https://data-blog.gbif.org/post/clustering-occurrences/</link>
       <pubDate>Thu, 04 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>/post/clustering-occurrences/</guid>
-      <description>The data available in GBIF include many so-called &amp;ldquo;duplicate&amp;rdquo; records. This is something that users might be familiar with. You download data from GBIF, analyze them and realize that some records have the same date, scientific name, catalogue number and location but come from two different publishers or have slightly different attributes.
-Sometimes an observation was recorded in two different systems, sometimes a specimen was digitized twice, sometimes a record has been enriched with genetic information and republished via a different platform&amp;hellip; There can be many reasons why these duplicates appear on GBIF.</description>
+      <guid>https://data-blog.gbif.org/post/clustering-occurrences/</guid>
+      <description>Many data users may suspect they’ve discovered duplicated records in the GBIF index. You download data from GBIF, analyze them and realize that some records have the same date, scientific name, catalogue number and location but come from two different publishers or have slightly different attributes.
+There are many valid reasons why these duplicates appear on GBIF. Sometimes an observation was recorded in two different systems, sometimes several records correspond to herbaria duplicates (you can check the work of Nicky Nicolson on the topic), sometimes a specimen was digitized twice, sometimes a record has been enriched with genetic information and republished via a different platform&amp;hellip;</description>
     </item>
     
   </channel>

@@ -1,22 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Sound on GBIF Data Blog</title>
-    <link>/tags/sound/</link>
-    <description>Recent content in Sound on GBIF Data Blog</description>
+    <title>sound on GBIF Data Blog</title>
+    <link>https://data-blog.gbif.org/tags/sound/</link>
+    <description>Recent content in sound on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 19 Nov 2018 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/sound/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 19 Nov 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://data-blog.gbif.org/tags/sound/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Sharing images, sounds and videos on GBIF</title>
-      <link>/post/gbif-multimedia/</link>
+      <link>https://data-blog.gbif.org/post/gbif-multimedia/</link>
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/gbif-multimedia/</guid>
+      <guid>https://data-blog.gbif.org/post/gbif-multimedia/</guid>
       <description>This blog post covers the publication of multimedia on GBIF. However, it is not intended to be documentation. For more information, please check the references below.
 NB: GBIF does not host original multimedia files and there is no way to upload pictures to the platform. For more information, please read the how to publish paragraphs.
 Media displayed on the GBIF portal Let&amp;rsquo;s say that you are looking for pictures of otters, or perhaps the call of a sea eagle.</description>

@@ -1,931 +1,846 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on GBIF Data Blog</title>
-    <link>/tags/</link>
+    <link>https://data-blog.gbif.org/tags/</link>
     <description>Recent content in Tags on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 07 Sep 2021 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 04 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://data-blog.gbif.org/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>API</title>
-      <link>/tags/api/</link>
-      <pubDate>Tue, 07 Sep 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/api/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Arctic</title>
-      <link>/tags/arctic/</link>
-      <pubDate>Thu, 22 Nov 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/arctic/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Aws</title>
-      <link>/tags/aws/</link>
-      <pubDate>Fri, 04 Jun 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/aws/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Azure</title>
-      <link>/tags/azure/</link>
-      <pubDate>Wed, 19 May 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/azure/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Backbone</title>
-      <link>/tags/backbone/</link>
-      <pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/backbone/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>BioCASe</title>
-      <link>/tags/biocase/</link>
-      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/biocase/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Catalogue of Life</title>
-      <link>/tags/catalogue-of-life/</link>
-      <pubDate>Tue, 24 Sep 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/catalogue-of-life/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Centroids</title>
-      <link>/tags/centroids/</link>
-      <pubDate>Tue, 19 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/centroids/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Checklist</title>
-      <link>/tags/checklist/</link>
-      <pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/checklist/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Checklists</title>
-      <link>/tags/checklists/</link>
-      <pubDate>Thu, 06 Jun 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/checklists/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Citation</title>
-      <link>/tags/citation/</link>
-      <pubDate>Thu, 05 Aug 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/citation/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>CiteTheDOI</title>
-      <link>/tags/citethedoi/</link>
-      <pubDate>Thu, 05 Aug 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/citethedoi/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Citizen</title>
-      <link>/tags/citizen/</link>
-      <pubDate>Fri, 09 Nov 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/citizen/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Citizen science</title>
-      <link>/tags/citizen-science/</link>
-      <pubDate>Fri, 02 Aug 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/citizen-science/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Cloud computing</title>
-      <link>/tags/cloud-computing/</link>
-      <pubDate>Fri, 04 Jun 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/cloud-computing/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Col</title>
-      <link>/tags/col/</link>
-      <pubDate>Tue, 24 Sep 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/col/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Col</title>
-      <link>/tags/col/</link>
-      <pubDate>Tue, 24 Sep 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/col/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Collection</title>
-      <link>/tags/collection/</link>
-      <pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/collection/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Collections</title>
-      <link>/tags/collections/</link>
-      <pubDate>Mon, 11 Oct 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/collections/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Custom metrics</title>
-      <link>/tags/custom-metrics/</link>
-      <pubDate>Thu, 05 Aug 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/custom-metrics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>DNA</title>
-      <link>/tags/dna/</link>
-      <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/dna/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>DOI</title>
-      <link>/tags/doi/</link>
-      <pubDate>Thu, 05 Aug 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/doi/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Darwin Core</title>
-      <link>/tags/darwin-core/</link>
-      <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/darwin-core/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Data gaps</title>
-      <link>/tags/data-gaps/</link>
-      <pubDate>Thu, 14 Nov 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/data-gaps/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Data quality</title>
-      <link>/tags/data-quality/</link>
-      <pubDate>Tue, 27 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/data-quality/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Dataset</title>
-      <link>/tags/dataset/</link>
-      <pubDate>Wed, 04 Dec 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/dataset/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Dataset classes</title>
-      <link>/tags/dataset-classes/</link>
-      <pubDate>Wed, 04 Dec 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/dataset-classes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Dataset type</title>
-      <link>/tags/dataset-type/</link>
-      <pubDate>Wed, 04 Dec 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/dataset-type/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Dbscan</title>
-      <link>/tags/dbscan/</link>
-      <pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/dbscan/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Derived datasets</title>
-      <link>/tags/derived-datasets/</link>
-      <pubDate>Thu, 20 May 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/derived-datasets/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Downloads</title>
-      <link>/tags/downloads/</link>
-      <pubDate>Tue, 05 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/downloads/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Dublin Core</title>
-      <link>/tags/dublin-core/</link>
-      <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/dublin-core/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>EBI</title>
-      <link>/tags/ebi/</link>
-      <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/ebi/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>EDNA</title>
-      <link>/tags/edna/</link>
-      <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/edna/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Earthcape</title>
-      <link>/tags/earthcape/</link>
-      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/earthcape/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Es50</title>
-      <link>/tags/es50/</link>
-      <pubDate>Wed, 10 Jul 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/es50/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Flags</title>
-      <link>/tags/flags/</link>
-      <pubDate>Mon, 11 Oct 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/flags/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Frictionless Data</title>
-      <link>/tags/frictionless-data/</link>
-      <pubDate>Wed, 15 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/frictionless-data/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>GBIF</title>
-      <link>/tags/gbif/</link>
+      <title>gbif</title>
+      <link>https://data-blog.gbif.org/tags/gbif/</link>
       <pubDate>Thu, 04 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>/tags/gbif/</guid>
+      <guid>https://data-blog.gbif.org/tags/gbif/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>GGBN</title>
-      <link>/tags/ggbn/</link>
-      <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
+      <title>occurrence</title>
+      <link>https://data-blog.gbif.org/tags/occurrence/</link>
+      <pubDate>Thu, 04 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>/tags/ggbn/</guid>
+      <guid>https://data-blog.gbif.org/tags/occurrence/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>specimen</title>
+      <link>https://data-blog.gbif.org/tags/specimen/</link>
+      <pubDate>Thu, 04 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/specimen/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>collections</title>
+      <link>https://data-blog.gbif.org/tags/collections/</link>
+      <pubDate>Mon, 11 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/collections/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>flags</title>
+      <link>https://data-blog.gbif.org/tags/flags/</link>
+      <pubDate>Mon, 11 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/flags/</guid>
       <description></description>
     </item>
     
     <item>
       <title>GRSciColl</title>
-      <link>/tags/grscicoll/</link>
+      <link>https://data-blog.gbif.org/tags/grscicoll/</link>
       <pubDate>Mon, 11 Oct 2021 00:00:00 +0000</pubDate>
       
-      <guid>/tags/grscicoll/</guid>
+      <guid>https://data-blog.gbif.org/tags/grscicoll/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Gbif</title>
-      <link>/tags/gbif/</link>
+      <title>Institution</title>
+      <link>https://data-blog.gbif.org/tags/institution/</link>
+      <pubDate>Mon, 11 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/institution/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>publish</title>
+      <link>https://data-blog.gbif.org/tags/publish/</link>
+      <pubDate>Mon, 11 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/publish/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sampling-event</title>
+      <link>https://data-blog.gbif.org/tags/sampling-event/</link>
+      <pubDate>Mon, 11 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/sampling-event/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>API</title>
+      <link>https://data-blog.gbif.org/tags/api/</link>
+      <pubDate>Tue, 07 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/api/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>citation</title>
+      <link>https://data-blog.gbif.org/tags/citation/</link>
       <pubDate>Thu, 05 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>/tags/gbif/</guid>
+      <guid>https://data-blog.gbif.org/tags/citation/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Gbif regions</title>
-      <link>/tags/gbif-regions/</link>
-      <pubDate>Tue, 19 May 2020 00:00:00 +0000</pubDate>
+      <title>CiteTheDOI</title>
+      <link>https://data-blog.gbif.org/tags/citethedoi/</link>
+      <pubDate>Thu, 05 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>/tags/gbif-regions/</guid>
+      <guid>https://data-blog.gbif.org/tags/citethedoi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>custom metrics</title>
+      <link>https://data-blog.gbif.org/tags/custom-metrics/</link>
+      <pubDate>Thu, 05 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/custom-metrics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DOI</title>
+      <link>https://data-blog.gbif.org/tags/doi/</link>
+      <pubDate>Thu, 05 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/doi/</guid>
       <description></description>
     </item>
     
     <item>
       <title>GitHub</title>
-      <link>/tags/github/</link>
+      <link>https://data-blog.gbif.org/tags/github/</link>
       <pubDate>Thu, 05 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>/tags/github/</guid>
+      <guid>https://data-blog.gbif.org/tags/github/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Global Nodes Meeting 2021</title>
-      <link>/tags/global-nodes-meeting-2021/</link>
+      <link>https://data-blog.gbif.org/tags/global-nodes-meeting-2021/</link>
       <pubDate>Thu, 05 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>/tags/global-nodes-meeting-2021/</guid>
+      <guid>https://data-blog.gbif.org/tags/global-nodes-meeting-2021/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Gridded data</title>
-      <link>/tags/gridded-data/</link>
-      <pubDate>Thu, 21 Mar 2019 00:00:00 +0000</pubDate>
+      <title>ingestion history</title>
+      <link>https://data-blog.gbif.org/tags/ingestion-history/</link>
+      <pubDate>Thu, 05 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>/tags/gridded-data/</guid>
+      <guid>https://data-blog.gbif.org/tags/ingestion-history/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Hosting</title>
-      <link>/tags/hosting/</link>
-      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
+      <title>registry</title>
+      <link>https://data-blog.gbif.org/tags/registry/</link>
+      <pubDate>Thu, 05 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>/tags/hosting/</guid>
+      <guid>https://data-blog.gbif.org/tags/registry/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Hotspots</title>
-      <link>/tags/hotspots/</link>
-      <pubDate>Thu, 14 Nov 2019 00:00:00 +0000</pubDate>
+      <title>release notes</title>
+      <link>https://data-blog.gbif.org/tags/release-notes/</link>
+      <pubDate>Thu, 05 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>/tags/hotspots/</guid>
+      <guid>https://data-blog.gbif.org/tags/release-notes/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Howto</title>
-      <link>/tags/howto/</link>
-      <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
+      <title>rollup metrics</title>
+      <link>https://data-blog.gbif.org/tags/rollup-metrics/</link>
+      <pubDate>Thu, 05 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>/tags/howto/</guid>
+      <guid>https://data-blog.gbif.org/tags/rollup-metrics/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Hunger maps</title>
-      <link>/tags/hunger-maps/</link>
-      <pubDate>Fri, 15 Feb 2019 00:00:00 +0000</pubDate>
+      <title>spatial filtering</title>
+      <link>https://data-blog.gbif.org/tags/spatial-filtering/</link>
+      <pubDate>Thu, 05 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>/tags/hunger-maps/</guid>
+      <guid>https://data-blog.gbif.org/tags/spatial-filtering/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>IDigBio</title>
-      <link>/tags/idigbio/</link>
+      <title>species matching tool</title>
+      <link>https://data-blog.gbif.org/tags/species-matching-tool/</link>
+      <pubDate>Thu, 05 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/species-matching-tool/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tools</title>
+      <link>https://data-blog.gbif.org/tags/tools/</link>
+      <pubDate>Thu, 05 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/tools/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>user feedback</title>
+      <link>https://data-blog.gbif.org/tags/user-feedback/</link>
+      <pubDate>Thu, 05 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/user-feedback/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>aws</title>
+      <link>https://data-blog.gbif.org/tags/aws/</link>
+      <pubDate>Fri, 04 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/aws/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cloud computing</title>
+      <link>https://data-blog.gbif.org/tags/cloud-computing/</link>
+      <pubDate>Fri, 04 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/cloud-computing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Derived datasets</title>
+      <link>https://data-blog.gbif.org/tags/derived-datasets/</link>
+      <pubDate>Thu, 20 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/derived-datasets/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>azure</title>
+      <link>https://data-blog.gbif.org/tags/azure/</link>
+      <pubDate>Wed, 19 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/azure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Collection</title>
+      <link>https://data-blog.gbif.org/tags/collection/</link>
       <pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>/tags/idigbio/</guid>
+      <guid>https://data-blog.gbif.org/tags/collection/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>iDigBio</title>
+      <link>https://data-blog.gbif.org/tags/idigbio/</link>
+      <pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/idigbio/</guid>
       <description></description>
     </item>
     
     <item>
       <title>IH</title>
-      <link>/tags/ih/</link>
+      <link>https://data-blog.gbif.org/tags/ih/</link>
       <pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>/tags/ih/</guid>
+      <guid>https://data-blog.gbif.org/tags/ih/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>IPT</title>
-      <link>/tags/ipt/</link>
-      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/ipt/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Image</title>
-      <link>/tags/image/</link>
-      <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/image/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ingestion history</title>
-      <link>/tags/ingestion-history/</link>
-      <pubDate>Thu, 05 Aug 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/ingestion-history/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Installation</title>
-      <link>/tags/installation/</link>
-      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/installation/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Institution</title>
-      <link>/tags/institution/</link>
-      <pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/institution/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Institution</title>
-      <link>/tags/institution/</link>
-      <pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/institution/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Issues</title>
-      <link>/tags/issues/</link>
-      <pubDate>Tue, 27 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/issues/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Leaflet</title>
-      <link>/tags/leaflet/</link>
-      <pubDate>Wed, 19 Sep 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/leaflet/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Lod</title>
-      <link>/tags/lod/</link>
-      <pubDate>Fri, 21 Feb 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/lod/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Maps</title>
-      <link>/tags/maps/</link>
-      <pubDate>Wed, 10 Jul 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/maps/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Media</title>
-      <link>/tags/media/</link>
-      <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/media/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Metadata</title>
-      <link>/tags/metadata/</link>
-      <pubDate>Wed, 04 Dec 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/metadata/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Metagenomics</title>
-      <link>/tags/metagenomics/</link>
-      <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/metagenomics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>MixS</title>
-      <link>/tags/mixs/</link>
-      <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/mixs/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Molecular</title>
-      <link>/tags/molecular/</link>
-      <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/molecular/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Multimedia</title>
-      <link>/tags/multimedia/</link>
-      <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/multimedia/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>OTU</title>
-      <link>/tags/otu/</link>
-      <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/otu/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Occurrence</title>
-      <link>/tags/occurrence/</link>
-      <pubDate>Thu, 04 Nov 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/occurrence/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Outliers</title>
-      <link>/tags/outliers/</link>
-      <pubDate>Wed, 07 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/outliers/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Publish</title>
-      <link>/tags/publish/</link>
-      <pubDate>Mon, 11 Oct 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/publish/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Quality</title>
-      <link>/tags/quality/</link>
-      <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/quality/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>R</title>
-      <link>/tags/r/</link>
-      <pubDate>Thu, 22 Nov 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/r/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Registry</title>
-      <link>/tags/registry/</link>
-      <pubDate>Thu, 05 Aug 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/registry/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Release notes</title>
-      <link>/tags/release-notes/</link>
-      <pubDate>Thu, 05 Aug 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/release-notes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Reverse jackknife</title>
-      <link>/tags/reverse-jackknife/</link>
-      <pubDate>Wed, 07 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/reverse-jackknife/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Rgbif</title>
-      <link>/tags/rgbif/</link>
-      <pubDate>Fri, 04 Oct 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/rgbif/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Rollup metrics</title>
-      <link>/tags/rollup-metrics/</link>
-      <pubDate>Thu, 05 Aug 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/rollup-metrics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Rstats</title>
-      <link>/tags/rstats/</link>
-      <pubDate>Mon, 21 Jan 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/rstats/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Sampling-event</title>
-      <link>/tags/sampling-event/</link>
-      <pubDate>Mon, 11 Oct 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/sampling-event/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Sequence</title>
-      <link>/tags/sequence/</link>
-      <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/sequence/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Shapefile</title>
-      <link>/tags/shapefile/</link>
-      <pubDate>Thu, 22 Nov 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/shapefile/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Shiny</title>
-      <link>/tags/shiny/</link>
-      <pubDate>Tue, 14 Aug 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/shiny/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Sound</title>
-      <link>/tags/sound/</link>
-      <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/sound/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Spatial filtering</title>
-      <link>/tags/spatial-filtering/</link>
-      <pubDate>Thu, 05 Aug 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/spatial-filtering/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Species api</title>
-      <link>/tags/species-api/</link>
+      <title>backbone</title>
+      <link>https://data-blog.gbif.org/tags/backbone/</link>
       <pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>/tags/species-api/</guid>
+      <guid>https://data-blog.gbif.org/tags/backbone/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Species matching tool</title>
-      <link>/tags/species-matching-tool/</link>
-      <pubDate>Thu, 05 Aug 2021 00:00:00 +0000</pubDate>
+      <title>checklist</title>
+      <link>https://data-blog.gbif.org/tags/checklist/</link>
+      <pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>/tags/species-matching-tool/</guid>
+      <guid>https://data-blog.gbif.org/tags/checklist/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Specimen</title>
-      <link>/tags/specimen/</link>
-      <pubDate>Thu, 04 Nov 2021 00:00:00 +0000</pubDate>
+      <title>species api</title>
+      <link>https://data-blog.gbif.org/tags/species-api/</link>
+      <pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>/tags/specimen/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Statistics</title>
-      <link>/tags/statistics/</link>
-      <pubDate>Tue, 19 May 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/statistics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Symbiota</title>
-      <link>/tags/symbiota/</link>
-      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/symbiota/</guid>
+      <guid>https://data-blog.gbif.org/tags/species-api/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Taxon match fuzzy</title>
-      <link>/tags/taxon-match-fuzzy/</link>
+      <link>https://data-blog.gbif.org/tags/taxon-match-fuzzy/</link>
       <pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>/tags/taxon-match-fuzzy/</guid>
+      <guid>https://data-blog.gbif.org/tags/taxon-match-fuzzy/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Taxon match higherrank</title>
-      <link>/tags/taxon-match-higherrank/</link>
+      <link>https://data-blog.gbif.org/tags/taxon-match-higherrank/</link>
       <pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>/tags/taxon-match-higherrank/</guid>
+      <guid>https://data-blog.gbif.org/tags/taxon-match-higherrank/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Taxon match none</title>
-      <link>/tags/taxon-match-none/</link>
+      <link>https://data-blog.gbif.org/tags/taxon-match-none/</link>
       <pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>/tags/taxon-match-none/</guid>
+      <guid>https://data-blog.gbif.org/tags/taxon-match-none/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Taxonomy</title>
-      <link>/tags/taxonomy/</link>
+      <title>data quality</title>
+      <link>https://data-blog.gbif.org/tags/data-quality/</link>
+      <pubDate>Tue, 27 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/data-quality/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>issues</title>
+      <link>https://data-blog.gbif.org/tags/issues/</link>
+      <pubDate>Tue, 27 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/issues/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gbif regions</title>
+      <link>https://data-blog.gbif.org/tags/gbif-regions/</link>
+      <pubDate>Tue, 19 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/gbif-regions/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>statistics</title>
+      <link>https://data-blog.gbif.org/tags/statistics/</link>
+      <pubDate>Tue, 19 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/statistics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>BioCASe</title>
+      <link>https://data-blog.gbif.org/tags/biocase/</link>
+      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/biocase/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>earthcape</title>
+      <link>https://data-blog.gbif.org/tags/earthcape/</link>
+      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/earthcape/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hosting</title>
+      <link>https://data-blog.gbif.org/tags/hosting/</link>
+      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/hosting/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>installation</title>
+      <link>https://data-blog.gbif.org/tags/installation/</link>
+      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/installation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>IPT</title>
+      <link>https://data-blog.gbif.org/tags/ipt/</link>
+      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/ipt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>symbiota</title>
+      <link>https://data-blog.gbif.org/tags/symbiota/</link>
+      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/symbiota/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Col</title>
+      <link>https://data-blog.gbif.org/tags/col/</link>
       <pubDate>Fri, 21 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>/tags/taxonomy/</guid>
+      <guid>https://data-blog.gbif.org/tags/col/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Tools</title>
-      <link>/tags/tools/</link>
-      <pubDate>Thu, 05 Aug 2021 00:00:00 +0000</pubDate>
+      <title>lod</title>
+      <link>https://data-blog.gbif.org/tags/lod/</link>
+      <pubDate>Fri, 21 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>/tags/tools/</guid>
+      <guid>https://data-blog.gbif.org/tags/lod/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Tree list</title>
-      <link>/tags/tree-list/</link>
-      <pubDate>Wed, 04 Sep 2019 00:00:00 +0000</pubDate>
+      <title>taxonomy</title>
+      <link>https://data-blog.gbif.org/tags/taxonomy/</link>
+      <pubDate>Fri, 21 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>/tags/tree-list/</guid>
+      <guid>https://data-blog.gbif.org/tags/taxonomy/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Use</title>
-      <link>/tags/use/</link>
+      <title>wikidata</title>
+      <link>https://data-blog.gbif.org/tags/wikidata/</link>
+      <pubDate>Fri, 21 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/wikidata/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Frictionless Data</title>
+      <link>https://data-blog.gbif.org/tags/frictionless-data/</link>
+      <pubDate>Wed, 15 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/frictionless-data/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dataset</title>
+      <link>https://data-blog.gbif.org/tags/dataset/</link>
+      <pubDate>Wed, 04 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/dataset/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dataset classes</title>
+      <link>https://data-blog.gbif.org/tags/dataset-classes/</link>
+      <pubDate>Wed, 04 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/dataset-classes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dataset type</title>
+      <link>https://data-blog.gbif.org/tags/dataset-type/</link>
+      <pubDate>Wed, 04 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/dataset-type/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>metadata</title>
+      <link>https://data-blog.gbif.org/tags/metadata/</link>
+      <pubDate>Wed, 04 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/metadata/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rgbif</title>
+      <link>https://data-blog.gbif.org/tags/rgbif/</link>
       <pubDate>Fri, 04 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>/tags/use/</guid>
+      <guid>https://data-blog.gbif.org/tags/rgbif/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>User feedback</title>
-      <link>/tags/user-feedback/</link>
-      <pubDate>Thu, 05 Aug 2021 00:00:00 +0000</pubDate>
+      <title>use</title>
+      <link>https://data-blog.gbif.org/tags/use/</link>
+      <pubDate>Fri, 04 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>/tags/user-feedback/</guid>
+      <guid>https://data-blog.gbif.org/tags/use/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Users</title>
-      <link>/tags/users/</link>
-      <pubDate>Tue, 14 Aug 2018 00:00:00 +0000</pubDate>
+      <title>Catalogue of Life</title>
+      <link>https://data-blog.gbif.org/tags/catalogue-of-life/</link>
+      <pubDate>Tue, 24 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>/tags/users/</guid>
+      <guid>https://data-blog.gbif.org/tags/catalogue-of-life/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Video</title>
-      <link>/tags/video/</link>
+      <title>downloads</title>
+      <link>https://data-blog.gbif.org/tags/downloads/</link>
+      <pubDate>Wed, 04 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/downloads/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tree list</title>
+      <link>https://data-blog.gbif.org/tags/tree-list/</link>
+      <pubDate>Wed, 04 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/tree-list/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>citizen science</title>
+      <link>https://data-blog.gbif.org/tags/citizen-science/</link>
+      <pubDate>Fri, 02 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/citizen-science/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>data gaps</title>
+      <link>https://data-blog.gbif.org/tags/data-gaps/</link>
+      <pubDate>Wed, 10 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/data-gaps/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>es50</title>
+      <link>https://data-blog.gbif.org/tags/es50/</link>
+      <pubDate>Wed, 10 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/es50/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>maps</title>
+      <link>https://data-blog.gbif.org/tags/maps/</link>
+      <pubDate>Wed, 10 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/maps/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>checklists</title>
+      <link>https://data-blog.gbif.org/tags/checklists/</link>
+      <pubDate>Thu, 06 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/checklists/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DNA</title>
+      <link>https://data-blog.gbif.org/tags/dna/</link>
+      <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/dna/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>EBI</title>
+      <link>https://data-blog.gbif.org/tags/ebi/</link>
+      <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/ebi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>eDNA</title>
+      <link>https://data-blog.gbif.org/tags/edna/</link>
+      <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/edna/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GGBN</title>
+      <link>https://data-blog.gbif.org/tags/ggbn/</link>
+      <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/ggbn/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>howto</title>
+      <link>https://data-blog.gbif.org/tags/howto/</link>
+      <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/howto/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>metagenomics</title>
+      <link>https://data-blog.gbif.org/tags/metagenomics/</link>
+      <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/metagenomics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MixS</title>
+      <link>https://data-blog.gbif.org/tags/mixs/</link>
+      <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/mixs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>molecular</title>
+      <link>https://data-blog.gbif.org/tags/molecular/</link>
+      <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/molecular/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>OTU</title>
+      <link>https://data-blog.gbif.org/tags/otu/</link>
+      <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/otu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>quality</title>
+      <link>https://data-blog.gbif.org/tags/quality/</link>
+      <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/quality/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sequence</title>
+      <link>https://data-blog.gbif.org/tags/sequence/</link>
+      <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/sequence/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Darwin Core</title>
+      <link>https://data-blog.gbif.org/tags/darwin-core/</link>
+      <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/darwin-core/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gridded data</title>
+      <link>https://data-blog.gbif.org/tags/gridded-data/</link>
+      <pubDate>Thu, 21 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/gridded-data/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hunger maps</title>
+      <link>https://data-blog.gbif.org/tags/hunger-maps/</link>
+      <pubDate>Fri, 15 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/hunger-maps/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rstats</title>
+      <link>https://data-blog.gbif.org/tags/rstats/</link>
+      <pubDate>Mon, 21 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/rstats/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>arctic</title>
+      <link>https://data-blog.gbif.org/tags/arctic/</link>
+      <pubDate>Thu, 22 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/arctic/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>R</title>
+      <link>https://data-blog.gbif.org/tags/r/</link>
+      <pubDate>Thu, 22 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/r/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>shapefile</title>
+      <link>https://data-blog.gbif.org/tags/shapefile/</link>
+      <pubDate>Thu, 22 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/shapefile/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dublin Core</title>
+      <link>https://data-blog.gbif.org/tags/dublin-core/</link>
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/video/</guid>
+      <guid>https://data-blog.gbif.org/tags/dublin-core/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Wikidata</title>
-      <link>/tags/wikidata/</link>
-      <pubDate>Fri, 21 Feb 2020 00:00:00 +0000</pubDate>
+      <title>image</title>
+      <link>https://data-blog.gbif.org/tags/image/</link>
+      <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/wikidata/</guid>
+      <guid>https://data-blog.gbif.org/tags/image/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>media</title>
+      <link>https://data-blog.gbif.org/tags/media/</link>
+      <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/media/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>multimedia</title>
+      <link>https://data-blog.gbif.org/tags/multimedia/</link>
+      <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/multimedia/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sound</title>
+      <link>https://data-blog.gbif.org/tags/sound/</link>
+      <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/sound/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>video</title>
+      <link>https://data-blog.gbif.org/tags/video/</link>
+      <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/video/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>citizen</title>
+      <link>https://data-blog.gbif.org/tags/citizen/</link>
+      <pubDate>Fri, 09 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/citizen/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>shiny</title>
+      <link>https://data-blog.gbif.org/tags/shiny/</link>
+      <pubDate>Tue, 14 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/shiny/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>users</title>
+      <link>https://data-blog.gbif.org/tags/users/</link>
+      <pubDate>Tue, 14 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/users/</guid>
       <description></description>
     </item>
     

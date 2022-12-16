@@ -1,41 +1,33 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Taxon match none on GBIF Data Blog</title>
-    <link>/tags/taxon-match-none/</link>
+    <link>https://data-blog.gbif.org/tags/taxon-match-none/</link>
     <description>Recent content in Taxon match none on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 17 Nov 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/taxon-match-none/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 17 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://data-blog.gbif.org/tags/taxon-match-none/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>(Almost) everything you want to know about the GBIF Species API</title>
-      <link>/post/gbif-species-api/</link>
+      <link>https://data-blog.gbif.org/post/gbif-species-api/</link>
       <pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>/post/gbif-species-api/</guid>
+      <guid>https://data-blog.gbif.org/post/gbif-species-api/</guid>
       <description>&lt;p&gt;Today, we are talking about the &lt;a href=&#34;https://www.gbif.org/developer/species&#34;&gt;GBIF Species API&lt;/a&gt;. Although you might not use it directly, you probably encountered it while using the &lt;a href=&#34;https://www.gbif.org/&#34;&gt;GBIF web portal&lt;/a&gt;:&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;Typing a scientific name in the &lt;a href=&#34;https://www.gbif.org/occurrence/search?occurrence_status=present&amp;amp;q=&#34;&gt;GBIF Occurrence search&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;Seeing a &amp;ldquo;Taxon Match Fuzzy&amp;rdquo; flag.&lt;/li&gt;
 &lt;li&gt;Using the &lt;a href=&#34;https://www.gbif.org/tools/species-lookup&#34;&gt;Species Name matching tool&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;p&gt;This API is what allow us to navigate through the names available on GBIF. I will try to avoid repeating what you can already find in &lt;a href=&#34;https://www.gbif.org/developer/species&#34;&gt;its documentation&lt;/a&gt;. Instead, I will attempt to give an overview and answer some questions that we received in the past.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;This API is what allow us to navigate through the names available on GBIF. I will try to avoid repeating what you can already find in &lt;a href=&#34;https://www.gbif.org/developer/species&#34;&gt;its documentation&lt;/a&gt;. Instead, I will attempt to give an overview and answer some questions that we received in the past.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Six questions answered about the GBIF Backbone Taxonomy</title>
-      <link>/post/gbif-backbone-taxonomy/</link>
+      <link>https://data-blog.gbif.org/post/gbif-backbone-taxonomy/</link>
       <pubDate>Tue, 24 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/gbif-backbone-taxonomy/</guid>
+      <guid>https://data-blog.gbif.org/post/gbif-backbone-taxonomy/</guid>
       <description>This past week our informatics team has been updating the Backbone taxonomy on GBIF.org. This is a fairly disruptive process which sometimes involves massive taxonomic changes but DON’T PANIC.
 This update is a good thing. It means that some of the taxonomic issues reported have been addressed (see for example this issue concerning the Xylophagidae family) and that new species are now visible on GBIF. Plus, it gives me an excellent opportunity to talk about the GBIF backbone taxonomy and answer some of the questions you might have.</description>
     </item>

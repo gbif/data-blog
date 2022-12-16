@@ -1,36 +1,28 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Guest Post on GBIF Data Blog</title>
-    <link>/categories/guest-post/</link>
+    <link>https://data-blog.gbif.org/categories/guest-post/</link>
     <description>Recent content in Guest Post on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 21 Feb 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/categories/guest-post/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 21 Feb 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://data-blog.gbif.org/categories/guest-post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Does Biodiversity Informatics 💘 Wikidata?</title>
-      <link>/post/wikidata/</link>
+      <link>https://data-blog.gbif.org/post/wikidata/</link>
       <pubDate>Fri, 21 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>/post/wikidata/</guid>
-      <description>&lt;p&gt;Open online APIs are fantastic! You can use someone else&amp;rsquo;s infrastructure to create workflows, do research and create products without giving anything in return, except acknowledgement. But wait a minute! Why is everyone not using them? Why do we create our own data sources and suck up the costs in time and money? Not to mention the duplication of effort.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <guid>https://data-blog.gbif.org/post/wikidata/</guid>
+      <description>&lt;p&gt;Open online APIs are fantastic! You can use someone else&amp;rsquo;s infrastructure to create workflows, do research and create products without giving anything in return, except acknowledgement. But wait a minute! Why is everyone not using them? Why do we create our own data sources and suck up the costs in time and money? Not to mention the duplication of effort.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Frictionless Data and Darwin Core</title>
-      <link>/post/frictionless-data-and-darwin-core/</link>
+      <link>https://data-blog.gbif.org/post/frictionless-data-and-darwin-core/</link>
       <pubDate>Wed, 15 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>/post/frictionless-data-and-darwin-core/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Frictionless data&lt;/strong&gt; is about removing the friction in working with data through the creation of tools, standards, and best practices for publishing data using the Data Package standard, a containerization format for any kind of data. It offers specifications and software around data publication, transport and consumption. Similarly to Darwin Core, data resources are presented in CSV files while the data model is described in a JSON structure.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <guid>https://data-blog.gbif.org/post/frictionless-data-and-darwin-core/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Frictionless data&lt;/strong&gt; is about removing the friction in working with data through the creation of tools, standards, and best practices for publishing data using the Data Package standard, a containerization format for any kind of data. It offers specifications and software around data publication, transport and consumption. Similarly to Darwin Core, data resources are presented in CSV files while the data model is described in a JSON structure.&lt;/p&gt;</description>
     </item>
     
   </channel>

@@ -1,22 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>IPT on GBIF Data Blog</title>
-    <link>/tags/ipt/</link>
+    <link>https://data-blog.gbif.org/tags/ipt/</link>
     <description>Recent content in IPT on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 02 Mar 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/ipt/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 02 Mar 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://data-blog.gbif.org/tags/ipt/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Which tools can I use to share my data on GBIF?</title>
-      <link>/post/installations-and-hosting-solutions-explained/</link>
+      <link>https://data-blog.gbif.org/post/installations-and-hosting-solutions-explained/</link>
       <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>/post/installations-and-hosting-solutions-explained/</guid>
+      <guid>https://data-blog.gbif.org/post/installations-and-hosting-solutions-explained/</guid>
       <description>As you probably already know, GBIF.org doesn&amp;rsquo;t host any data. The system relies on each data provider making their data available online in a GBIF-supported format. It also relies on organization letting GBIF know where to find these data (in other words registering the data). But how to do just that?
 The good news is that there are several GBIF-compatible systems. They will export or make available the data for you in the correct format and several provide means to register them as datasets on GBIF.</description>
     </item>

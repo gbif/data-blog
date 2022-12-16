@@ -1,22 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>IH on GBIF Data Blog</title>
-    <link>/tags/ih/</link>
+    <link>https://data-blog.gbif.org/tags/ih/</link>
     <description>Recent content in IH on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 12 Mar 2021 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/ih/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 12 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://data-blog.gbif.org/tags/ih/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The GBIF Registry of Scientific Collections (GRSciColl) in 2021</title>
-      <link>/post/grscicoll-2021/</link>
+      <link>https://data-blog.gbif.org/post/grscicoll-2021/</link>
       <pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>/post/grscicoll-2021/</guid>
+      <guid>https://data-blog.gbif.org/post/grscicoll-2021/</guid>
       <description>The GBIF Registry of Scientific Collections, also known as GRSciColl, has been available on GBIF.org since 2019 but it recently got some more attention when we connected it to GBIF occurrences. Now is the perfect time to share a bit of GRSciColl history and what we plan for its future.
 A brief history of GRSciColl First of all, here are a few facts about GrSciColl today, at the start of 2021:</description>
     </item>

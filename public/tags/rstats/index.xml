@@ -1,54 +1,38 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Rstats on GBIF Data Blog</title>
-    <link>/tags/rstats/</link>
-    <description>Recent content in Rstats on GBIF Data Blog</description>
+    <title>rstats on GBIF Data Blog</title>
+    <link>https://data-blog.gbif.org/tags/rstats/</link>
+    <description>Recent content in rstats on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 21 Jan 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/rstats/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 21 Jan 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://data-blog.gbif.org/tags/rstats/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Will citizen science take over?</title>
-      <link>/post/gbif-citizen-science-data/</link>
+      <link>https://data-blog.gbif.org/post/gbif-citizen-science-data/</link>
       <pubDate>Mon, 21 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/gbif-citizen-science-data/</guid>
-      <description>Citizen scienceCitizen science is scientific research conducted, in whole or in part, by amateur (or non-professional) scientists. Biodiversity observations by citizen scientists have become significant in the last 10 years thanks to projects like:
-eBirdiNaturalistArtportalen SwedenArtsdatabanken NorwaySouthern African Bird AtlasBird Life AustrailiaDansk Ornitologisk ForeningGreat Back Yard Bird CountCitizen science is scientific research conducted, in whole or in part, by amateur (or non-professional) scientists.</description>
-    </item>
-    
-    <item>
-      <title>Plot almost anything using the GBIF maps api</title>
-      <link>/post/gbif-maps-api-using-r-and-leaflet/</link>
-      <pubDate>Wed, 19 Sep 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/post/gbif-maps-api-using-r-and-leaflet/</guid>
-      <description>The GBIF maps api is an under-used but powerful web service provided by GBIF. The maps api is used by the main GBIF portal to create the maps including the big map used on gbif.org. We can make a simple call to the api by pasting the link below into a web browser.
-https://api.gbif.org/v2/map/occurrence/density/0/0/0@1x.png?style=purpleYellow.pointYou should end up with an image like this.This api call is composed essentially of two elements</description>
+      <guid>https://data-blog.gbif.org/post/gbif-citizen-science-data/</guid>
+      <description>&lt;p&gt;Citizen science is scientific research conducted, in whole or in part, by amateur (or non-professional) scientists. Biodiversity observations by citizen scientists have become significant in the last 10 years thanks to projects like:&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Finding gridded datasets</title>
-      <link>/post/finding-gridded-datasets/</link>
+      <link>https://data-blog.gbif.org/post/finding-gridded-datasets/</link>
       <pubDate>Tue, 14 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/finding-gridded-datasets/</guid>
-      <description>EBCC Atlas of European Breeding Birds (gridded)Naturalis Biodiversity Center (NL) - Aves (not gridded)Gridded data in GBIFGridded datasets are a known problem at GBIF. Many datasets have equally-spaced points in a regular pattern. These datasets are usually systematic national surveys or data taken from some atlas (“so-called rasterized collection designs”).
-In this blog post I will describe how I found gridded dataset in GBIF.</description>
+      <guid>https://data-blog.gbif.org/post/finding-gridded-datasets/</guid>
+      <description>&lt;p&gt;Gridded datasets are a known problem at GBIF. Many datasets have equally-spaced points in a regular pattern. These datasets are usually systematic national surveys or data taken from some atlas (&amp;ldquo;so-called rasterized collection designs&amp;rdquo;).&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>GBIF download trends</title>
-      <link>/post/gbif-download-trends/</link>
+      <link>https://data-blog.gbif.org/post/gbif-download-trends/</link>
       <pubDate>Tue, 14 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/gbif-download-trends/</guid>
+      <guid>https://data-blog.gbif.org/post/gbif-download-trends/</guid>
       <description>Link To App
-Explanation of toolThis tool plots the downloads through time for species or other taxonomic groups with more than 25 downloads at GBIF. Downloads at GBIF most often occur through the web interface. In a previous post, we saw that most users are downloading data from GBIF via filtering by scientific name (aka Taxon Key). Since the GBIF index currently sits at over 1 billion records (a 400+GB csv), most users will simplying filter by their taxonomic group of interest and then generate a download.</description>
+Explanation of tool This tool plots the downloads through time for species or other taxonomic groups with more than 25 downloads at GBIF. Downloads at GBIF most often occur through the web interface. In a previous post, we saw that most users are downloading data from GBIF via filtering by scientific name (aka Taxon Key). Since the GBIF index currently sits at over 1 billion records (a 400+GB csv), most users will simplying filter by their taxonomic group of interest and then generate a download.</description>
     </item>
     
   </channel>

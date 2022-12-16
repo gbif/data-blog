@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Which data can be shared through GBIF and what cannot - GBIF Data Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Cecilie Svenningsen" />
+  <meta name="description" content="Preparing a dataset to be shared on GBIF.org can be a daunting task and many publishers realize that not all their data fits in the Darwin Core standard (DwC) and extensions GBIF uses to structure, standardize and display biodiversity data.
+This blog post will cover what data fits in GBIF, give examples of data that does not fit in the current format of GBIF, and provide guidance to how you can share relevant data in a metadata-only dataset or through a third-party." />
+
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.91.2" />
+
+
+<link rel="canonical" href="https://data-blog.gbif.org/post/data-shareability/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.2.0" rel="stylesheet">
+
+
+
+
+<link rel="stylesheet" href="/css//custom.css">
+
+
+<meta property="og:title" content="Which data can be shared through GBIF and what cannot" />
+<meta property="og:description" content="Preparing a dataset to be shared on GBIF.org can be a daunting task and many publishers realize that not all their data fits in the Darwin Core standard (DwC) and extensions GBIF uses to structure, standardize and display biodiversity data.
+This blog post will cover what data fits in GBIF, give examples of data that does not fit in the current format of GBIF, and provide guidance to how you can share relevant data in a metadata-only dataset or through a third-party." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://data-blog.gbif.org/post/data-shareability/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-11-17T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-01-04T10:19:14+01:00" />
+
+<meta itemprop="name" content="Which data can be shared through GBIF and what cannot">
+<meta itemprop="description" content="Preparing a dataset to be shared on GBIF.org can be a daunting task and many publishers realize that not all their data fits in the Darwin Core standard (DwC) and extensions GBIF uses to structure, standardize and display biodiversity data.
+This blog post will cover what data fits in GBIF, give examples of data that does not fit in the current format of GBIF, and provide guidance to how you can share relevant data in a metadata-only dataset or through a third-party."><meta itemprop="datePublished" content="2022-11-17T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-01-04T10:19:14+01:00" />
+<meta itemprop="wordCount" content="1235">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Which data can be shared through GBIF and what cannot"/>
+<meta name="twitter:description" content="Preparing a dataset to be shared on GBIF.org can be a daunting task and many publishers realize that not all their data fits in the Darwin Core standard (DwC) and extensions GBIF uses to structure, standardize and display biodiversity data.
+This blog post will cover what data fits in GBIF, give examples of data that does not fit in the current format of GBIF, and provide guidance to how you can share relevant data in a metadata-only dataset or through a third-party."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">GBIF Data Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/categories/gbif/">
+        <li class="mobile-menu-item">posts</li>
+      </a><a href="https://discourse.gbif.org/c/data-blog">
+        <li class="mobile-menu-item">community-forum</li>
+      </a><a href="https://www.gbif.org/">
+        <li class="mobile-menu-item">gbif.org</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">about</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">
+	<img src= "/logo.png" alt="GBIF-analytics-blog" style ="width:20%;">
+  </a>
+  
+	
+  
+  
+</div>
+
+<nav class="site-navbar">
+
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/categories/gbif/">posts</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://discourse.gbif.org/c/data-blog">community-forum</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://www.gbif.org/">gbif.org</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">about</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+	
+    <header class="post-header">
+      <h1 class="post-title">Which data can be shared through GBIF and what cannot</h1>
+	  
+	  
+      <div class="post-author">Cecilie Svenningsen</div>
+
+      <div class="post-meta">
+        <span class="post-time"> 2022-11-17 </span>
+        <div class="post-category">
+            
+              <a href="/categories/gbif/"> GBIF </a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    
+    
+
+    
+    <div class="post-content">
+      <p>Preparing a dataset to be shared on GBIF.org can be a daunting task and many publishers realize that not all their data fits in the <a href="https://www.gbif.org/darwin-core">Darwin Core standard (DwC)</a> and <a href="https://rs.gbif.org/extensions.html">extensions</a> GBIF uses to structure, standardize and display biodiversity data.</p>
+<p>This blog post will cover what data fits in GBIF, give examples of data that does not fit in the current format of GBIF, and provide guidance to how you can share relevant data in a metadata-only dataset or through a third-party.</p>
+<h2 id="what-data-can-you-share-on-gbif">👍What data can you share on GBIF?</h2>
+<p>At its core, <a href="https://www.gbif.org/what-is-gbif">GBIF</a> is a data infrastructure to share, view and retrieve global species occurrence data. All GBIF-mediated data comes from <a href="https://www.gbif.org/dataset-classes">four</a> different types of <a href="https://data-blog.gbif.org/post/choose-dataset-type/">datasets</a> published by <a href="https://www.gbif.org/endorsement-guidelines">endorsed organizations</a>. GBIF users expect data to adhere to the four dataset types and are usually looking for species occurrences at a specific place and time. It is therefore recommended that publishers always keep the end users in mind when preparing their dataset for publication.</p>
+<p><img src="/post/2022-10-28-which-data-can-be-shared-through-GBIF-and-what-cannot/please-share.png" alt="data you can share on GBIF"></p>
+<p>✔️<strong>Examples of data you can share in GBIF</strong> (the list is not exhaustive)</p>
+<ul>
+<li>the occurrence of a taxon at a given time and place (<a href="https://www.gbif.org/occurrence/3085788310">example</a>, notice each term is a standardised DwC or extension field)</li>
+<li>DNA-derived occurrences (<a href="https://www.gbif.org/occurrence/2238661140">example</a>, notice that this occurrence is in a <a href="https://www.gbif.org/occurrence/2238661140/cluster">cluster</a> with other occurrences that represent the same organism in <a href="https://www.gbif.org/occurrence/3019774852">this occurrence</a> and the occurrence record for the <a href="https://www.gbif.org/occurrence/3024253052">preserved specimen</a> from which the DNA was obtained)</li>
+<li>species checklists for a country or area (<a href="https://www.gbif.org/dataset/c20a2c3b-5041-4062-9658-85d269480384">example</a>)</li>
+<li>sampling events (example of <a href="https://www.gbif.org/dataset/aea17af8-5578-4b04-b5d3-7adf0c5a1e60/event/000279e0-f841-4522-a69c-5ca24b7d5bd6">event record</a> from an <a href="https://www.gbif.org/dataset/aea17af8-5578-4b04-b5d3-7adf0c5a1e60">sampling event dataset</a>, notice both present and absent occurrences were recorded)</li>
+<li>metadata-<strong>only</strong> datasets (<a href="https://www.gbif.org/dataset/4c3f6e6a-3432-4dc7-9a89-6ad3eb3d1209">example</a>, no occurrences or events, just describing the data)</li>
+</ul>
+<h2 id="what-you-cannot-or-should-not-share-on-gbif">👎What you cannot or should not share on GBIF</h2>
+<p>Researchers, collections, monitoring professionals, projects, etc. often collect data that extends beyond species occurrences, which, to a large extent, can be captured in a <a href="https://www.gbif.org/data-quality-requirements-sampling-events">sampling event dataset</a> or in <a href="https://rs.gbif.org/extensions.html">extensions</a>. But what should you do if you have data that does not seem to fit in GBIF?</p>
+<h3 id="data-structure-vs-data-content">Data structure vs. data content</h3>
+<p>There are two main reasons why data is not shareable in GBIF:</p>
+<ol>
+<li><strong>Data structure</strong>: the data structure is not supported within the DwC-Archive star schema GBIF uses to organize how data is related (the publication contains tables that relate to the extension files and not the core file, in other words - extension tables cannot have extensions themselves)</li>
+<li><strong>Data content</strong>: the data has no associated DwC data standard field or you cannot find a suitable field in any of the extensions</li>
+</ol>
+<h4 id="data-structure">Data structure</h4>
+<p>This blog post focuses on the data content (reason #2), but if you want to familiarize yourself with the schema and the associated data sharing limitations, you can read more in the <a href="https://ipt.gbif.org/manual/en/ipt/2.6/dwca-guide">Darwin Core Archive how-to-guide</a>.</p>
+<blockquote>
+<p>The central idea of an archive is that its data files are logically arranged in a star-like manner, with one core data file surrounded by any number of &gt; ‘extension’ data files. Core and extension files contain data records, one per line. Each extension record (or ‘extension file row’) points to a record in &gt; the core file; in this way, many extension records can exist for each single core record. This is sometimes referred to as a “star schema”.</p>
+</blockquote>
+<p>GBIF is aware that the star-shema structure of the archives are limiting to publishers and we are working on a solution to overcome such data structure limitations. If you want to follow the work, please take a look at the <a href="https://www.gbif.org/new-data-model">new data model</a> work.</p>
+<h4 id="data-content">Data content</h4>
+<p>GBIF has seen some creative ways to make the DwC standard fit to other types of data. The creativity tends to arise when researchers have (super cool!) complex, data-rich research projects often involving novel observation methods, or when scientific collections want to digitize additional information from their collections.</p>
+<p>Once we had to delete a dataset since all the occurrences were in the future. The project modelled probable occurrences to help inform policymakers of likely outbreaks of wheat disease, but GBIF does not support potential future occurrences.</p>
+<p><img src="/post/2022-10-28-which-data-can-be-shared-through-GBIF-and-what-cannot/dontshare_edit.png" alt="what not to share on GBIF"></p>
+<p>❌<strong>Examples of data that does not fit in GBIF</strong> (the list is not exhaustive)</p>
+<ul>
+<li>observations of humans (although they <a href="https://www.gbif.org/occurrence/search?taxon_key=2436436">occasionally</a> make their way into citizen science and collections datasets)</li>
+<li>datasets based on data extracted from GBIF and somehow modified or cleaned</li>
+<li>species occurrences in extraction blanks and PCR negatives from DNA-derived occurrence datasets</li>
+<li>future occurrences (like the example above)</li>
+<li><strong>occurrences</strong> of non-organisms (for example ecosystems, sampling areas, national parks, rocks (although we do support <a href="https://www.gbif.org/occurrence/search?basis_of_record=FOSSIL_SPECIMEN">fossil specimen occurrences</a>))</li>
+</ul>
+<h2 id="how-to-use-metadata-only-datasets-to-make-your-work-more-visible">How to use metadata-only datasets to make your work more visible</h2>
+<p>Metadata-only datasets can be used to share information of data not available online, including data that does not fit in the other dataset classes and the associated extensions.</p>
+<p>For example, collections can use metadata-only datasets to describe undigitized resources in their collections. Metadata-only datasets also receive a DOI upon publication similarily to the other dataset classes, so information in metadata datsets can be cited, making the information shared in the dataset more discoverable and reusable.</p>
+<h3 id="examples-of-metadata-only-datasets-in-gbiforg">Examples of metadata-only datasets in GBIF.org</h3>
+<p>A metadata-only dataset might contain information on external data resources not published in GBIF, but findable in other places. For example, to share that your organization provided data for the <a href="https://www.gbif.org/dataset/b47074e3-c116-461a-b2a1-0bf87da80bfb">2nd European Breeding Bird Atlas</a> or has a database on the <a href="https://www.gbif.org/dataset/052596c5-d27d-4c4f-a211-64c0f54d58a1">biodiversity of the Altai-Sayan ecoregion</a>.</p>
+<p>Another metadata-only dataset could share that a survey, sampling event or project was carried out, even though the data is not shared with GBIF, e.g. a <a href="https://www.gbif.org/dataset/d87b829c-43d6-4b21-afb4-37e66915c6d4">plankton survey the area of the Northern Antarctic Peninsula</a>.</p>
+<p>Complimentary to metadata-only datasets in GBIF, external repositories, e.g. <a href="https://zenodo.org/">Zenodo</a>, can be used to share data, code, etc.</p>
+<p>Sampling and lab protocols and bioinformatics pipelines, can be shared on <a href="https://www.protocols.io">protocols.io</a> which allows for a more stuctured and reusable sharing of protocol steps compared to what can be captured in GBIFs metadata section. Both <a href="https://zenodo.org/">Zenodo</a> and <a href="https://www.protocols.io">protocols.io</a> issues DOIs when datasets are published which can be referenced in the GBIF metadata-only dataset to increase discoverability.</p>
+<h2 id="bonus-example-of-how-to-share-data-from-a-sampling-event---and-how-not-to-share-the-data">💡Bonus: Example of how to share data from a sampling event - and how not to share the data</h2>
+<p>This section does not strictly cover data that does not fit in a GBIF sampling event, occurrence or checklist dataset. Rather, it covers an example of data from multispecies surveys that do fit into GBIFs publishing model, but where new publishers may be unsure how best to structure their dataset(s).</p>
+<h3 id="example">Example</h3>
+<p>An entomologist carries out sweep-net sampling of five different areas. Sweep-net sampling is carried out walking a transect, sweeping 10 times along the way, which yields a sample of multiple species each time.</p>
+<p><img src="/post/2022-10-28-which-data-can-be-shared-through-GBIF-and-what-cannot/sampling_events_nets.png" alt="sampling events"></p>
+<p>This type of data is best captured in an event table and an occurrences table, where the sampling event data goes in the event table and the species occurrences go in occurrence table, similar to the example previously.</p>
+<p><img src="/post/2022-10-28-which-data-can-be-shared-through-GBIF-and-what-cannot/sampling_occurrence_event.png" alt="sampling occurrence events"></p>
+<p>As mentioned in previously, publishers should not share occurrences of non-organisms so in this case, the publisher should not share the multi-taxa sampling event as an occurrence.</p>
+<p><img src="/post/2022-10-28-which-data-can-be-shared-through-GBIF-and-what-cannot/wrong_occurrence_file_edit.png" alt="wrong occurrence file"></p>
+<p>Technically, the occurrence file could be shared, but if useability is considered, then the example with an event file and an occurrence file yields much richer data and allows users to find specific taxa and discern between the sampling event and the occurrences.</p>
+<p>You can read more on how to choose dataset types in this <a href="https://data-blog.gbif.org/post/choose-dataset-type/">blogpost</a>.</p>
+<p><strong>NOTE!</strong> if you are in doubt if and how your data fits into GBIF, you can always contact <a href="mailto:helpdesk@gbif.org">helpdesk@gbif.org</a> and ask for guidance.</p>
+
+    </div>
+
+    
+    
+
+    
+    
+
+    <footer class="post-footer">
+      
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/2022-03-24-reasons-why-names-don-t-match-to-the-gbif-backbone/">
+            <span class="next-text nav-default">Finding data gaps in the GBIF backbone taxonomy</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      
+
+
+ 
+<div>
+<h3>This post represents the ideas of the author.</h3>
+</div>
+<div id='discourse-comments'></div>
+<script type="text/javascript">
+  DiscourseEmbed = { discourseUrl: 'https://discourse.gbif.org/',
+                     discourseEmbedUrl: 'https://data-blog.gbif.org\/post\/data-shareability\/' };
+
+  (function() {
+    var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+    d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+  })();
+</script>  
+
+
+<div class = "copyright">
+	<a class="theme-link" href="https://www.gbif.org/what-is-gbif">What is GBIF?</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://www.gbif.org/developer/summary">API</a> 
+	<span class="division">|</span>
+	<a class="theme-link" href="https://www.gbif.org/faq">FAQ</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://discourse.gbif.org/">Community-Forum</a>
+</div>
+
+<div class = "copyright"> 
+	<span class="theme-info">GBIF Secretariat</span> 
+	<span class="theme-info">Universitetsparken 15</span> 
+	<span class="theme-info">DK-2100 Copenhagen Ø</span> 
+	<span class="theme-info" >Denmark</span>
+</div>
+
+<div class="copyright">
+	<span class="power-by">
+	Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+	</span>
+	<span class="division">|</span>
+	<span class="theme-info">
+	Theme - 
+	<a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+	</span>
+
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+<script type="text/javascript" src="/dist/even.min.js?v=3.2.0"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

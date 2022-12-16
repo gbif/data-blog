@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>John Waller and Carl Boettiger on GBIF Data Blog</title>
+    <link>https://data-blog.gbif.org/author/john-waller-and-carl-boettiger/</link>
+    <description>Recent content in John Waller and Carl Boettiger on GBIF Data Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 18 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://data-blog.gbif.org/author/john-waller-and-carl-boettiger/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Using Apache Arrow and Parquet with GBIF-mediated occurrences</title>
+      <link>https://data-blog.gbif.org/post/apache-arrow-and-parquet/</link>
+      <pubDate>Fri, 18 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/post/apache-arrow-and-parquet/</guid>
+      <description>&lt;p&gt;As written about in a previous &lt;a href=&#34;https://data-blog.gbif.org/post/aws-and-gbif/&#34;&gt;blog post&lt;/a&gt;, GBIF now has database snapshots of occurrence records on &lt;a href=&#34;https://registry.opendata.aws/gbif/&#34;&gt;AWS&lt;/a&gt;. This allows users to access large tables of GBIF-mediated occurrence records from Amazon &lt;strong&gt;s3&lt;/strong&gt; remote storage. This access is &lt;strong&gt;free of charge&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
