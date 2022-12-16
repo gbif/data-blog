@@ -179,7 +179,7 @@ Build environment variables
 HUGO_VERSION: 0.91.2
 ```
 
-Build settings the [preview site](https://data-blog.gbif-uat.org/)
+Build settings for the [preview site](https://data-blog.gbif-uat.org/)
 
 ```
 Repository: https://github.com/gbif/data-blog
