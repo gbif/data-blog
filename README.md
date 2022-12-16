@@ -80,7 +80,7 @@ Previewing the site
 
 There is now a blog [preview site](https://data-blog.gbif-uat.org/). 
 
-This site will show all content on the blog and **ignore** `draft: yes`. Note that if, however, `hiddenFromHomePage: yes`, then your post still won't show up on the preview site homepage, but the page is still visible using the direct URL `https://data-blog.gbif.org/post/your-post/`.
+This site will show all content on the blog and **ignore** `draft: yes`. Note that if, however, `hiddenFromHomePage: yes`, then your post still won't show up on the preview site homepage, but the page is still visible using the direct URL https://data-blog.gbif-uat.org/post/your-post-slug/.
 
 The preview site is public, but [not indexed by google](https://data-blog.gbif-uat.org/robots.txt). 
 
