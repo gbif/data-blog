@@ -73,8 +73,9 @@ sequenceDiagrams:
 9. Check your post at https://data-blog.gbif.org/post/your-post/ (Netlify will build your post automatically)
 10. Ask [someone](https://github.com/jhnwllr) with admin access to [https://discourse.gbif.org/](https://discourse.gbif.org/) to turn on comments for you.  
 
-------
+
 ### Previewing a post using the preview site
+------
 
 There is now a blog [preview site](https://data-blog.gbif-uat.org/). 
 
@@ -82,8 +83,8 @@ This site will show all content on the blog and **ignore** `draft: yes`. Note th
 
 The preview site is public, but not indexed by google. 
 
-------
 ### Previewing a post locally 
+------
 
 Sometimes it's desirable to preview a post **locally**. If the site doesn't build on the [preview site](https://data-blog.gbif-uat.org/), then there may have been a build error. This can be de-bugged by building locally. 
 
