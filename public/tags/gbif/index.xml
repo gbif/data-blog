@@ -6,7 +6,17 @@
     <description>Recent content in gbif on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 04 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://data-blog.gbif.org/tags/gbif/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 08 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://data-blog.gbif.org/tags/gbif/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Checklist publishing on GBIF - some explanations on taxonID, scientificNameID, taxonConceptID, acceptedNameUsageID, nameAccordingTo</title>
+      <link>https://data-blog.gbif.org/post/some-checklist-terms-explained/</link>
+      <pubDate>Thu, 08 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/post/some-checklist-terms-explained/</guid>
+      <description>When data publishers publish checklists, they will use a a Darwin Core Archive Taxon Core. And although the taxon core terms are already described here, what exactly to put in which field can sometimes be confusing. And there is a lot to read, like here https://github.com/tdwg/tnc/issues/1
+Here I am sharing a summary of an email conversation we had with some data publishers on Helpdesk concerning some of the Taxon Core fields.</description>
+    </item>
+    
     <item>
       <title>Identifying potentially related records - How does the GBIF data-clustering feature work?</title>
       <link>https://data-blog.gbif.org/post/clustering-occurrences/</link>

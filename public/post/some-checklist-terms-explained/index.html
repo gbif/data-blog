@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Checklist publishing on GBIF - some explanations on taxonID, scientificNameID, taxonConceptID, acceptedNameUsageID, nameAccordingTo - GBIF Data Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Marie Grosjean" />
+  <meta name="description" content="When data publishers publish checklists, they will use a a Darwin Core Archive Taxon Core. And although the taxon core terms are already described here, what exactly to put in which field can sometimes be confusing. And there is a lot to read, like here https://github.com/tdwg/tnc/issues/1
+Here I am sharing a summary of an email conversation we had with some data publishers on Helpdesk concerning some of the Taxon Core fields." />
+<meta name="keywords" content="checklist, identifiers, circumscriptions, misapplied names" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.91.2" />
+
+
+<link rel="canonical" href="https://data-blog.gbif.org/post/some-checklist-terms-explained/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.2.0" rel="stylesheet">
+
+
+
+
+<link rel="stylesheet" href="/css//custom.css">
+
+
+<meta property="og:title" content="Checklist publishing on GBIF - some explanations on taxonID, scientificNameID, taxonConceptID, acceptedNameUsageID, nameAccordingTo" />
+<meta property="og:description" content="When data publishers publish checklists, they will use a a Darwin Core Archive Taxon Core. And although the taxon core terms are already described here, what exactly to put in which field can sometimes be confusing. And there is a lot to read, like here https://github.com/tdwg/tnc/issues/1
+Here I am sharing a summary of an email conversation we had with some data publishers on Helpdesk concerning some of the Taxon Core fields." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://data-blog.gbif.org/post/some-checklist-terms-explained/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-12-08T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-12-08T00:00:00+00:00" />
+
+<meta itemprop="name" content="Checklist publishing on GBIF - some explanations on taxonID, scientificNameID, taxonConceptID, acceptedNameUsageID, nameAccordingTo">
+<meta itemprop="description" content="When data publishers publish checklists, they will use a a Darwin Core Archive Taxon Core. And although the taxon core terms are already described here, what exactly to put in which field can sometimes be confusing. And there is a lot to read, like here https://github.com/tdwg/tnc/issues/1
+Here I am sharing a summary of an email conversation we had with some data publishers on Helpdesk concerning some of the Taxon Core fields."><meta itemprop="datePublished" content="2022-12-08T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-12-08T00:00:00+00:00" />
+<meta itemprop="wordCount" content="927">
+<meta itemprop="keywords" content="GBIF,checklist,publishing," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Checklist publishing on GBIF - some explanations on taxonID, scientificNameID, taxonConceptID, acceptedNameUsageID, nameAccordingTo"/>
+<meta name="twitter:description" content="When data publishers publish checklists, they will use a a Darwin Core Archive Taxon Core. And although the taxon core terms are already described here, what exactly to put in which field can sometimes be confusing. And there is a lot to read, like here https://github.com/tdwg/tnc/issues/1
+Here I am sharing a summary of an email conversation we had with some data publishers on Helpdesk concerning some of the Taxon Core fields."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">GBIF Data Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/categories/gbif/">
+        <li class="mobile-menu-item">posts</li>
+      </a><a href="https://discourse.gbif.org/c/data-blog">
+        <li class="mobile-menu-item">community-forum</li>
+      </a><a href="https://www.gbif.org/">
+        <li class="mobile-menu-item">gbif.org</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">about</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">
+	<img src= "/logo.png" alt="GBIF-analytics-blog" style ="width:20%;">
+  </a>
+  
+	
+  
+  
+</div>
+
+<nav class="site-navbar">
+
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/categories/gbif/">posts</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://discourse.gbif.org/c/data-blog">community-forum</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://www.gbif.org/">gbif.org</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">about</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+	
+    <header class="post-header">
+      <h1 class="post-title">Checklist publishing on GBIF - some explanations on taxonID, scientificNameID, taxonConceptID, acceptedNameUsageID, nameAccordingTo</h1>
+	  
+	  
+      <div class="post-author">Marie Grosjean</div>
+
+      <div class="post-meta">
+        <span class="post-time"> 2022-12-08 </span>
+        <div class="post-category">
+            
+              <a href="/categories/gbif/"> GBIF </a>
+            
+              <a href="/categories/data-publishing/"> data publishing </a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    
+    
+
+    
+    <div class="post-content">
+      <p>When data publishers publish checklists, they will use a a Darwin Core Archive <code>Taxon Core</code>. And although the taxon core terms are already described <a href="https://dwc.tdwg.org/terms/#taxon">here</a>, what exactly to put in which field can sometimes be confusing. And there is a lot to read, like here <a href="https://github.com/tdwg/tnc/issues/1">https://github.com/tdwg/tnc/issues/1</a></p>
+<p>Here I am sharing a summary of an email conversation we had with some data publishers on Helpdesk concerning some of the Taxon Core fields. I hope this can be useful for others.</p>
+<h2 id="general-considerations">General considerations</h2>
+<p>The <strong>dwc:taxonID</strong> field contains the identifier used to establish relationships between entries <em>within</em> a checklist. The <strong>dwc:taxonID</strong> field can be understood as a “nameUsageID”, that is, an identifier for a name as used in a specific context, here: the context of the checklist (it isn&rsquo;t called like that for historical reasons but this would match the concept better).
+This means the <strong>dwc:acceptedNameUsageID</strong> field must refer to identifiers used in the <strong>dwc:taxonID</strong> field. For example, to signify that <em>Caretta nasuta</em> is a synonym of <em>Caretta caretta</em> you could have a checklist like this:</p>
+<table>
+<thead>
+<tr>
+<th>taxonID</th>
+<th>scientificName</th>
+<th>acceptedNameUsageID</th>
+<th>taxonomicStatus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID1</td>
+<td>Caretta caretta (Linnaeus, 1758)</td>
+<td></td>
+<td>ACCEPTED</td>
+</tr>
+<tr>
+<td>ID2</td>
+<td>Caretta nasuta Rafinesque, 1814</td>
+<td><strong>ID1</strong></td>
+<td>SYNONYM</td>
+</tr>
+</tbody>
+</table>
+<p>Other fields such as <strong><a href="https://dwc.tdwg.org/terms/#dwc:parentNameUsageID">dwc:parentNameUsageID</a></strong> link to <strong>dwc:taxonID</strong>s.</p>
+<p>However, this doesn’t have to be the case for the <strong>scientificNameID</strong> and <strong>taxonConceptID</strong> fields</p>
+<p>The <strong>dwc:scientificNameID</strong> is meant to identify the name alone and ideally uses an identifier from a nomenclator such as IPNI or ZooBank, but can also be a name identifier specific for the dataset. Our system doesn’t really interpret this field.</p>
+<p>The <strong>dwc:taxonConceptID</strong> on the other hand is meant to identify the taxon concept regardless of which name is being used. <a href="https://avibase.bsc-eoc.org/avibase.jsp">Avibase</a>IDs (like <code>D3A260BCA65503C6</code> for <a href="https://avibase.ca/D3A260BC">https://avibase.ca/D3A260BC</a>) are a perfect fit for example. Even though we do not make use of them much, they could be used to identify identical concepts.</p>
+<p><strong>NB:</strong> The values in the <strong>dwc:taxonID</strong> field for the <a href="https://doi.org/10.15468/39omei">GBIF Backbone taxonomy checklist</a> correspond to the GBIF taxon keys used in species pages (like <code>https://www.gbif.org/species/2433753</code>) and to filter for GBIF occurrences (like <code>https://www.gbif.org/occurrence/search?taxon_key=2433753</code>). For any other checklist, the <strong>dwc:taxonID</strong> are likely to be different and unrelated to GBIF taxon keys. You can use any identifier in your own checklist.</p>
+<h2 id="relationship-between-those-fields-in-two-specific-cases-circumscriptions-and-misapplied-names">Relationship between those fields in two specific cases: circumscriptions and misapplied names</h2>
+<h3 id="for-capturing-possible-circumscriptions">For capturing possible circumscriptions:</h3>
+<p>For those of us who need a little reminder:</p>
+<blockquote>
+<p>In <a href="https://en.wikipedia.org/wiki/Taxonomy_(biology)">biological taxonomy</a>, <strong>circumscription</strong> is the content of a <a href="https://en.wikipedia.org/wiki/Taxon">taxon</a>, that is, the delimitation of which subordinate taxa are parts of that taxon. If we determine that species X, Y, and Z belong in Genus A, and species T, U, V, and W belong in Genus B, those are our circumscriptions of those two genera. Another systematist might determine that T, U, V, W, X, Y, and Z all belong in genus A. Agreement on circumscriptions is not governed by the Codes of <a href="https://en.wikipedia.org/wiki/International_Code_of_Zoological_Nomenclature">Zoological</a> or <a href="https://en.wikipedia.org/wiki/International_Code_of_Botanical_Nomenclature">Botanical</a> Nomenclature, and must be reached by scientific consensus.</p>
+</blockquote>
+<p>See: <a href="https://en.wikipedia.org/wiki/Circumscription_(taxonomy)">https://en.wikipedia.org/wiki/Circumscription_(taxonomy)</a></p>
+<p>How this would be translated into a checklist:</p>
+<ol>
+<li>each entry in the checklist dataset will have its own <strong>dwc:taxonID</strong></li>
+<li>multiple entries of the accepted name corresponding to the different circumscriptions would have the same <strong>dwc:scientificNameID</strong></li>
+<li>but each would have a distinct <strong>dwc:taxonConceptID</strong></li>
+<li>use <strong>dwc:nameAccordingTo</strong> to refer to the source of the circumscription.</li>
+</ol>
+<p>In practice, how that this look like?</p>
+<p>Let&rsquo;s try to apply this to the genus <em>Cortinarius</em> (Pers.) Gray. According to Liimatainen, K., Kim, J.T., Pokorny, L. <em>et al.</em> (<a href="https://doi.org/10.1007/s13225-022-00499-9)">https://doi.org/10.1007/s13225-022-00499-9)</a>, the family <em>Cortinariaceae</em>  should be split into ten genera. Following that assessment, the concept associated with the name <em>Cortinarius</em> became more narrow as many species have been moved to different genera like <em>Calonarius callochrous</em> (Pers.) Niskanen &amp; Liimat., 2022.</p>
+<p><img src="/post/2022-12-08-some-checklist-terms-explained/fungi-revised.jpg" alt="Fig. 3 From: Taming the beast: a revised classification of Cortinariaceae based on genomic data  |373x500"></p>
+<p>So if I want to model this idea in a checklist, I could do as following (here I am using the <a href="http://www.indexfungorum.org/Names/NamesRecord.asp?RecordID=17391">identifier from Index Fungorum</a> as scientificNameID):</p>
+<table>
+<thead>
+<tr>
+<th>taxonID</th>
+<th>scientificName</th>
+<th>dwc:nameAccordingTo</th>
+<th>scientificNameID</th>
+<th>dwc:taxonConceptID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID1</td>
+<td>Cortinarius (Pers.) Gray</td>
+<td></td>
+<td>urn:lsid:indexfungorum.org:names:17391</td>
+<td>conceptID-1</td>
+</tr>
+<tr>
+<td>ID2</td>
+<td>Cortinarius (Pers.) Gray</td>
+<td>Niskanen &amp; Liimat., 2022</td>
+<td>urn:lsid:indexfungorum.org:names:17391</td>
+<td>conceptID-2</td>
+</tr>
+</tbody>
+</table>
+<p>Note that we could also include the sensu/sec information in the <strong>dwc:scientificName</strong>. So the scientific name for the ID2 entry could also be <code>Cortinarius (Pers.) Gray. sec. Liimatainen, K., Kim, J.T., Pokorny, L. et al.</code> or <code>Cortinarius (Pers.) Gray. sensu Liimatainen, K., Kim, J.T., Pokorny, L. et al.</code>.</p>
+<p>We could do something similar for <em>Tyrannausorus rex</em> which had many different circumscriptions over the years as many specimens originally identified as separate species were later thought to be juvenile T. rex. For example, Holtz identified <em>Aublysodon mirandus</em> as a young T. rex in 2004.</p>
+<table>
+<thead>
+<tr>
+<th>taxonID</th>
+<th>scientificName</th>
+<th>dwc:nameAccordingTo</th>
+<th>scientificNameID</th>
+<th>dwc:taxonConceptID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID1</td>
+<td><em>Tyranosaurus rex</em> Osborn, 1905</td>
+<td>Rauhut 2003</td>
+<td><code>https://paleobiodb.org/classic/checkTaxonInfo?taxon_no=54833</code></td>
+<td>conceptID-16</td>
+</tr>
+<tr>
+<td>ID2</td>
+<td><em>Tyranosaurus rex</em> Osborn, 1905</td>
+<td>Holtz 2004</td>
+<td><code>https://paleobiodb.org/classic/checkTaxonInfo?taxon_no=54833</code></td>
+<td>conceptID-18</td>
+</tr>
+</tbody>
+</table>
+<h3 id="for-misapplied-names">For misapplied names:</h3>
+<blockquote>
+<p>A misapplied  name  is when  the  name  of  one  taxon  is  erroneously  applied  to  a  different  taxon.</p>
+</blockquote>
+<p>(From: <a href="https://doi.org/10.7560/740440-015">https://doi.org/10.7560/740440-015</a>)</p>
+<p>How this would be translated into a checklist:</p>
+<ol>
+<li>the entry for the misapplied name would have a unique <strong>dwc:taxonID</strong>,</li>
+<li>the <strong>dwc:taxonomicStatus</strong> would be <code>misapplied</code>,</li>
+<li>the <strong>dwc:nameAccordingTo</strong> would be used to specify the source being the author of the misapplication of the name,</li>
+<li>the field <strong>dwc:acceptedNameUsageID</strong> would contain the ID of the currently accepted name in the dataset for the actual taxonomic entity corresponding to the correct identification.</li>
+</ol>
+<p>For example:</p>
+<table>
+<thead>
+<tr>
+<th>taxonID</th>
+<th>scientificName</th>
+<th>dwc:nameAccordingTo</th>
+<th>dwc:taxonomicStatus</th>
+<th>dwc: acceptedNameUsageID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID1</td>
+<td><em>Ficus exasperata</em> Vahl</td>
+<td>Vahl. (1805). In: Enum. Pl. 2: 197.</td>
+<td>ACCEPTED</td>
+<td></td>
+</tr>
+<tr>
+<td>ID2</td>
+<td><em>Ficus exasperata</em></td>
+<td>De Wildeman &amp; Durand in Ann. Mus. Congo Belge, B, Bot., ser. 2, 1: 54. 1899</td>
+<td>MISAPPLIED</td>
+<td>ID1</td>
+</tr>
+</tbody>
+</table>
+<p>I hope this post is useful. If you would like us to cover more checklist cases and examples, please leave us a comment letting us know what you would like to see.</p>
+
+    </div>
+
+    
+    
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/gbif/">GBIF</a>
+          
+          <a href="/tags/checklist/">checklist</a>
+          
+          <a href="/tags/publishing/">publishing</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/data-shareability/">
+            <span class="next-text nav-default">Which data can be shared through GBIF and what cannot</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      
+
+
+ 
+<div>
+<h3>This post represents the ideas of the author.</h3>
+</div>
+<div id='discourse-comments'></div>
+<script type="text/javascript">
+  DiscourseEmbed = { discourseUrl: 'https://discourse.gbif.org/',
+                     discourseEmbedUrl: 'https://data-blog.gbif.org\/post\/some-checklist-terms-explained\/' };
+
+  (function() {
+    var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+    d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+  })();
+</script>  
+
+
+<div class = "copyright">
+	<a class="theme-link" href="https://www.gbif.org/what-is-gbif">What is GBIF?</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://www.gbif.org/developer/summary">API</a> 
+	<span class="division">|</span>
+	<a class="theme-link" href="https://www.gbif.org/faq">FAQ</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://discourse.gbif.org/">Community-Forum</a>
+</div>
+
+<div class = "copyright"> 
+	<span class="theme-info">GBIF Secretariat</span> 
+	<span class="theme-info">Universitetsparken 15</span> 
+	<span class="theme-info">DK-2100 Copenhagen Ø</span> 
+	<span class="theme-info" >Denmark</span>
+</div>
+
+<div class="copyright">
+	<span class="power-by">
+	Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+	</span>
+	<span class="division">|</span>
+	<span class="theme-info">
+	Theme - 
+	<a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+	</span>
+
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+<script type="text/javascript" src="/dist/even.min.js?v=3.2.0"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
