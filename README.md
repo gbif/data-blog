@@ -55,7 +55,8 @@ sequenceDiagrams:
  - `title: Your post` <- your title 
  - `authors: Your Name` <- your author name
  - `date: '2018-09-21'` <- the order the post will appear on blog. Does not necessarily have to be the same as the date in  `YYYY-MM-DD-your-post.md`. 
- - `slug: your-post` <- name that will appear in the url https://data-blog.gbif.org/post/your-post/  - `tags:` <- category tags for post
+ - `slug: your-post` <- name that will appear in the url https://data-blog.gbif.org/post/your-post/  
+ - `tags:` <- category tags for post
  - `hiddenFromHomePage: yes` <- keeps people from seeing your post as you work on it
  - `draft: yes` <- keeps the post off of navigation as you work on it 
 5. Copy `YYYY-MM-DD-your-post.md` and `YYYY-MM-DD-your-post_files` into `./content/post/`
