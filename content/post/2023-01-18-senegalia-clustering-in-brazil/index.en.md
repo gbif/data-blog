@@ -50,11 +50,9 @@ Many questions could be addressed with this type of data. The following three qu
 
 For this blog we used the following clustering settings:
 
-Location: non conflicting country, same country, non conflicting coordinates, same coordinates, within2km, within200m
-
-Identifiers: same accepted species, identifiers overlap, same recorder name, same specimen
-
-Date: samedate, nonconflictingdate, approximatedate
+* Location: non conflicting country, same country, non conflicting coordinates, same coordinates, within2km, within200m
+* Identifiers: same accepted species, identifiers overlap, same recorder name, same specimen
+* Date: samedate, nonconflictingdate, approximatedate
 
 **Name matching**
 
@@ -64,7 +62,7 @@ For better or worse, _Acacia_ was retypified after the Melbourne International B
 
 This gives us a chance to show that synonyms work and why they are critically important to data aggregation. Lack of synonyms is one GBIF's largest data gaps. Besides the generic names _Senegalia_ and _Acacia_, the older name _Mimosa_ was also found in the dataset. The majority of the pairs both use _Senegalia,_ with nearly 18% only using _Acacia_. Again, despite this use of different genera the synonymy works. There were only six uses of _Mimosa_
 
-<img src="images/image001.png" alt="drawing" width="50%"/>
+<img src="images/image001.png" alt="drawing" width="60%" style="display: block; margin-left: auto; margin-right:auto; width: 50%;"/>
 
 At the species epithet level 96% were identical, regardless of whether _Senegalia_ or _Acacia_ was used as the genus. These differences reflect recent species recircumscriptions. Of course, there may be uncaptured clusters in GBIF because we do not have the complete synonymy in our taxonomic backbone.
 
@@ -74,23 +72,23 @@ Occurrence data with coordinates are more valuable than data without coordinates
 
 Interestingly 23% of the pairs contained one specimen with coordinates and the other without. This could have many reasons from not sharing of collection notes, inadequate databasing and other reasons. The opportunity here is that the collection holding the specimen without a coordinate could get the coordinate information, or any other data, from its cluster pair.
 
-<img src="images/image003.png" alt="drawing" width="50%"/>
+<img src="images/image003.png" alt="drawing" width="60%" style="display: block; margin-left: auto; margin-right:auto; width: 50%;"/>
 
 **Specimen Cluster Network**
 
 We made a simple network graph of the cluster pairs by institutions. Because there are so many institutions with _Senegalia_ duplicate specimens, we constrained the visualization to the 30 institutions with the most specimens. These are arranged counterclockwise by country and cluster size. The results suggest a good habit and of sharing and collaboration within Brazil.
 
-![](images/institutioncode_network_3.svg)
+<img src="images/institutioncode_network_3.svg" alt="drawing"  style="display: block; margin-left: auto; margin-right:auto; width: 70%"/>
 
 First let's look at the patterns of sharing within Brazil. Keep in mind that these lines indicate only putative duplicates that have been databased and shared with GBIF. The institutions will have more _Senegalia_ specimens that are not duplicates and specimens of duplicates that are not shared with GBIF from the other institution. There are lots of red lines connecting Brazilian institutions, so we made a separate visualization with only the red lines.
 
 The thicker lines represent larger Brazilian herbaria and collections that specialize in legumes. There are many duplicates shared between EAC and UFC, between UFRGS and ICN as well as between UEFS and JBRJ (see lookup table for institution codes). Connections may indicate student-advisor relationships that have turned into collaborations. We welcome any inferences from Brazilian botanists on what they see in the graph.
 
-![](images/institutioncode_network_4_BR-BR.svg)
+<img src="images/institutioncode_network_4_BR-BR.svg" alt="drawing"  style="display: block; margin-left: auto; margin-right:auto; width: 70%"/>
 
 The non-red colored lines indicate duplicates specimens collected in Brazil and shared internationally. Not surprisingly the large US and European herbaria, including NYBG, MoBot, Smithsonian, Field Museum, Kew and Paris hold many duplicates. The largest pair of duplicate sharing is between NYBG and Kew (even bigger than any within Brazil) which suggest that researchers have a history of sending duplicates from Brazil to both of these herbaria. Further investigation of larger clusters (we looked at only pairs here) would probably show that more (the third) duplicates from those two herbaria will be housed in various Brazilian herbaria. The more interesting question that comes to mind is how many specimens are in these non-Brazilian herbaria that do not have duplicates in Brazil and vice versa.
 
-![](images/institutioncode_network_4_other.svg)
+<img src="images/institutioncode_network_4_other.svg" alt="drawing" style="display: block; margin-left: auto; margin-right:auto; width: 70%"/>
 
 **Conclusions**
 
