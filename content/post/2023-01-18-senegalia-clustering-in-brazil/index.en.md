@@ -1,5 +1,5 @@
 ---
-title: Senegalia Clustering in Brazil
+title: Exploring Related Records of the Flowering Plant Genus Senegalia in Brazil
 author: Joe Miller
 date: '2023-01-18'
 slug: senegalia-clustering-in-brazil
@@ -30,13 +30,11 @@ sequenceDiagrams:
   options: ''
 ---
 
-**Senegalia blog**
-
 In 2020 GBIF released a news item "[New data-clustering feature aims to improve data quality and reveal cross-dataset connections](https://www.gbif.org/news/4U1dz8LygQvqIywiRIRpAU/new-data-clustering-feature-aims-to-improve-data-quality-and-reveal-cross-dataset-connections)." Basically, we run an algorithm across datasets shared with GBIF to search for similarities in occurrences data fields such as location, identifiers and dates. Please read this [blog](https://data-blog.gbif.org/post/clustering-occurrences/) by Marie Grosjean and Tim Robertson for more details on how it works. In general, we can identify linkages between specimens, DNA sequences and literature citations.
 
 <!--more-->
 
-As a botanist I see the clustering as an opportunity to investigate patterns of sharing duplicate collections. It is common for plant collectors, like I did before joining GBIF, to collect multiple specimens from large plants, like trees, and to share them broadly. For example, if a collection expedition includes two botanists from different institutions, each may keep a "duplicate." It is also expected that the collectors send a duplicate(s) to local herbaria in the region where it was collected and send a duplicates to a major institution(s) in North America or Europe.
+As a botanist I see the [GBIF related records feature](https://www.gbif.org/occurrence/1056006536/cluster) as an opportunity to investigate patterns of sharing duplicates collections. It is common for plant collectors, like I did before joining GBIF, to collect multiple specimens from large plants, like trees, and to share them broadly. For example, if a collection expedition includes two botanists from different institutions, each may keep a "duplicate." It is also expected that the collectors send a duplicate(s) to local herbaria in the region where it was collected and send a duplicates to a major institution(s) in North America or Europe.
 
 Then what happens? These specimens then take a life on of their own. Some are databased and shared with GBIF and some specimens are imaged and others sequenced. Unfortunately, some herbaria don't have resources to digitize so information isn't digitally accessible. Of course, it is best to track these data digitally from collection onwards, but we can retroactively put these data together.
 
@@ -82,7 +80,7 @@ We made a simple network graph of the cluster pairs by institutions. Because the
 
 First let's look at the patterns of sharing within Brazil. Keep in mind that these lines indicate only putative duplicates that have been databased and shared with GBIF. The institutions may have other _Senegalia_ specimens that are not duplicates and specimens of duplicates that are not shared with GBIF by the other institution. There are lots of red lines connecting Brazilian institutions, so we made a separate visualization with only the red lines.
 
-The thicker lines represent larger Brazilian herbaria and collections that specialize in legumes. There are many duplicates shared between EAC and UFC, between UFRGS and ICN as well as between UEFS and JBRJ (see lookup table for institution codes). Connections may indicate student-advisor relationships that have turned into collaborations. We welcome any inferences from Brazilian botanists on what they see in the graph.
+The thicker lines represent larger Brazilian herbaria and collections that specialize in legumes. There are many duplicates shared between EAC and UFC, between UFRGS and ICN as well as between UEFS and JBRJ (see [lookup table](files/instit codes.xlsx) for institution codes). Connections may indicate student-advisor relationships that have turned into collaborations. We welcome any inferences from Brazilian botanists on what they see in the graph.
 
 <img src="images/institutioncode_network_4_BR-BR.svg" alt="drawing"  style="display: block; margin-left: auto; margin-right:auto; width: 70%"/>
 
