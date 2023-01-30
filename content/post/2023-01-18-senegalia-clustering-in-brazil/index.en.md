@@ -98,7 +98,7 @@ This work also reminded us of the importance of another GBIF community effort [G
 
 Some collections are beginning to use the clustered data to improve their own databases with missing data, for example filling in missing coordinates or updating scientific names. This is one of our goals in this work.
 
-The clustering work is only a GBIF side project, and we do not have an active development program. These simple analyses are the tip of an interesting iceberg and the intent behind the blog is to tempt you to investigate further. These clusters were only made between preserved specimens, but GBIF also has hundreds of millions of occurrences from DNA, material citations in the literature, and observations. This expands the questions that could be addressed by the clustering.
+The clustering work is only a GBIF side project and we do not have an active development program. These simple analyses are the tip of an interesting iceberg and the intent behind the blog is to tempt you to investigate further. These clusters were only made between preserved specimens, but GBIF also has hundreds of millions of occurrences from DNA, material citations in the literature, and observations. This expands the questions that could be addressed by the clustering.
 
 We recognize that there are many different types of clustering algorithms that could be run across the data that could be optimized for specific questions such as duplicates, relating type specimens, connecting DNA sequences to specimens, and literature material citations to specimens. GBIF is working with partners in a grant called [BiCIKL](https://bicikl-project.eu/) which is developing better integration among specimens, DNA sequences, literature and taxonomy and clustering can help that work.
 
@@ -112,5 +112,5 @@ Please let us know if you have some ideas by starting a discussion thread. Here 
 
 Acknowledgements:
 
-Thanks to GBIF colleagues Tim Robertson for the Cluster download and John Waller for the network cluster figures.
+Thanks to GBIF colleagues Tim Robertson for the cluster download and John Waller for the network cluster figures.
 
