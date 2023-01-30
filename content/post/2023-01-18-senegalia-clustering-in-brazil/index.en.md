@@ -1,5 +1,5 @@
 ---
-title: Exploring Related Records of the Flowering Plant Genus Senegalia in Brazil
+title: Exploring Related Records in the Flowering Plant Genus Senegalia in Brazil
 author: Joe Miller
 date: '2023-01-18'
 slug: senegalia-clustering-in-brazil
@@ -52,7 +52,7 @@ For this blog we used the following clustering settings:
 * Identifiers: same accepted species, identifiers overlap, same recorder name, same specimen
 * Date: samedate, nonconflictingdate, approximatedate
 
-**Name matching**
+### Name matching
 
 GBIF matches all incoming names to a taxonomy, the GBIF backbone. We use synonyms to match a name that is not an accepted species in the GBIF backbone. GBIF, and partner COL, welcome the involvement of your taxonomic expertise. Please see the work the legume community has done ([blog](https://data-blog.gbif.org/post/2022-02-01-the-world-checklist-of-vascular-plants-fabaceae/), [publication](https://doi.org/10.1038/s41597-022-01812-6)). The latest [LPWG taxonomy](https://www.legumedata.org/taxonomy/species-list/) can be found on the legume portal.
 
@@ -64,7 +64,7 @@ This gives us a chance to show that synonyms work and why they are critically im
 
 At the species epithet level 96% were identical, regardless of whether _Senegalia_ or _Acacia_ was used as the genus. These differences reflect recent species recircumscriptions. Of course, there may be uncaptured clusters in GBIF because we do not have the complete synonymy in our taxonomic backbone.
 
-**Coordinate matching**
+### Coordinate matching
 
 Occurrence data with coordinates are more valuable than data without coordinates, they will be reused more and cited more. We deleted any suspected centroids from the dataset. First of all the results indicate that we as a community need to do better and include coordinates in field notes and in the datasets, only 38% of the pairs contained coordinates on both specimens. Of the pairs which both have coordinates, 67% of the time it was an exact match with one-third were rounded on at least one specimen, but still good usable data.
 
@@ -72,23 +72,31 @@ Interestingly 23% of the pairs contained one specimen with coordinates and the o
 
 <img src="images/image003.png" alt="drawing" width="60%" style="display: block; margin-left: auto; margin-right:auto; width: 50%;"/>
 
-**Specimen Cluster Network**
+### Specimen Cluster Network
 
 We made a simple network graph of the cluster pairs by institutions. Because there are so many institutions with _Senegalia_ duplicate specimens, we constrained the visualization to the 30 institutions with the most specimens. These are arranged counterclockwise by country and cluster size. The results suggest a good habit and of sharing and collaboration within Brazil.
 
 <img src="images/institutioncode_network_3.svg" alt="drawing"  style="display: block; margin-left: auto; margin-right:auto; width: 70%"/>
 
+<div style="text-align: center;"><small>See <a href="https://github.com/gbif/data-blog/tree/master/content/post/2023-01-18-senegalia-clustering-in-brazil/files">lookup table </a> for institution codes</small></div>
+
 First let's look at the patterns of sharing within Brazil. Keep in mind that these lines indicate only putative duplicates that have been databased and shared with GBIF. The institutions may have other _Senegalia_ specimens that are not duplicates and specimens of duplicates that are not shared with GBIF by the other institution. There are lots of red lines connecting Brazilian institutions, so we made a separate visualization with only the red lines.
 
-The thicker lines represent larger Brazilian herbaria and collections that specialize in legumes. There are many duplicates shared between EAC and UFC, between UFRGS and ICN as well as between UEFS and JBRJ (see [lookup table](files/instit codes.xlsx) for institution codes). Connections may indicate student-advisor relationships that have turned into collaborations. We welcome any inferences from Brazilian botanists on what they see in the graph.
+The thicker lines represent larger Brazilian herbaria and collections that specialize in legumes. There are many duplicates shared between EAC and UFC, between UFRGS and ICN as well as between UEFS and JBRJ. Connections may indicate student-advisor relationships that have turned into collaborations. We welcome any inferences from Brazilian botanists on what they see in the graph.
 
 <img src="images/institutioncode_network_4_BR-BR.svg" alt="drawing"  style="display: block; margin-left: auto; margin-right:auto; width: 70%"/>
+
+<div style="text-align: center;"><small>See <a href="https://github.com/gbif/data-blog/tree/master/content/post/2023-01-18-senegalia-clustering-in-brazil/files">lookup table </a> for institution codes</small></div>
+
 
 The non-red colored lines indicate duplicates specimens collected in Brazil and shared internationally. Not surprisingly the large US and European herbaria, including NYBG, MoBot, Smithsonian, Field Museum, Kew and Paris hold many duplicates. The largest pair of duplicate sharing is between NYBG and Kew (even bigger than any within Brazil) which suggest that researchers have a history of sending duplicates from Brazil to both of these herbaria. Further investigation of larger clusters (we looked at only pairs here) would probably show that more (the third) duplicates from those two herbaria will be housed in various Brazilian herbaria. The more interesting question that comes to mind is how many specimens are in these non-Brazilian herbaria that do not have duplicates in Brazil and vice versa.
 
 <img src="images/institutioncode_network_4_other.svg" alt="drawing" style="display: block; margin-left: auto; margin-right:auto; width: 70%"/>
 
-**Conclusions**
+<div style="text-align: center;"><small>See <a href="https://github.com/gbif/data-blog/tree/master/content/post/2023-01-18-senegalia-clustering-in-brazil/files">lookup table </a> for institution codes</small></div>
+
+
+### Conclusions
 
 We only discussed the results of the clusters and didn't discuss the quality of the clusters. There are many obvious false positives in the dataset. This is an area in which we welcome collaboration which could identify which clustering settings are optimal for a particular question. This would benefit from a systematic and statistical analysis of various clustering algorithm settings. This could lead to a better overall arching clustering setting for GBIF to use across the infrastructure.
 
@@ -108,7 +116,7 @@ Please let us know if you have some ideas by starting a discussion thread. Here 
 - Can we intelligently use these data to understand co-location of biodiversity?
 - What can we learn about the people who have done the work, the collectors and identifiers?
 
-Acknowledgements:
+### Acknowledgements:
 
 Thanks to GBIF colleagues Tim Robertson for the cluster download and John Waller for the network cluster figures.
 

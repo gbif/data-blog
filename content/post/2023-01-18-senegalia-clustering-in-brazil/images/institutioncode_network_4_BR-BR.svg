@@ -788,6 +788,6 @@
 <text x='322.62' y='305.73' style='font-size: 7.15px; font-family: "Arial";' textLength='22.22px' lengthAdjust='spacingAndGlyphs'>US-BR</text>
 <text x='322.62' y='323.01' style='font-size: 7.15px; font-family: "Arial";' textLength='22.62px' lengthAdjust='spacingAndGlyphs'>US-GB</text>
 <text x='322.62' y='340.29' style='font-size: 7.15px; font-family: "Arial";' textLength='22.22px' lengthAdjust='spacingAndGlyphs'>US-US</text>
-<text x='360.00' y='358.15' text-anchor='end' style='font-size: 8.80px; font-family: "Arial";' textLength='146.31px' lengthAdjust='spacingAndGlyphs'>See lookup table for institution codes.</text>
+<text x='360.00' y='358.15' text-anchor='end' style='font-size: 8.80px; font-family: "Arial";' textLength='146.31px' lengthAdjust='spacingAndGlyphs'></text>
 </g>
 </svg>
