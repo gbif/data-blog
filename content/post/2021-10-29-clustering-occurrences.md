@@ -59,7 +59,7 @@ The system first creates a series of "hashes" for each record based on specified
 For example, one of the "hashes" used is based on the species key, rounded coordinates, year, month and day. This means that the records that share the same values for those fields will be grouped together in the candidate table for further inspection.
 
 The fields used to identify and group the candidates are a subset of what is used later on for comparing them (see the table below).
-See [this link](https://github.com/gbif/pipelines/blob/dev/gbif/pipelines/clustering-gbif/src/main/scala/org/gbif/pipelines/clustering/Cluster.scala) to check the details.
+See [this link](https://github.com/gbif/pipelines/blob/dev/gbif/ingestion/clustering-gbif/src/main/scala/org/gbif/pipelines/clustering/Cluster.scala) to check the details.
 
 
 
