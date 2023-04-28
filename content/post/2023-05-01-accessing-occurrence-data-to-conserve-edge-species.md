@@ -71,7 +71,7 @@ Occurrence maps are below with a few example areas highlighted.
 
 When I compared numbers of occurrence records found outside of protected areas with the total number of occurrences, I found that 23%, 40% and 37% of occurrence records for threatened EDGE species in Benin, Ecuador and Viet Nam respectively were from outside protected areas suggesting either a sampling bias within protected areas for those species or a concentration of those species within protected areas.
 
-What is clear is that, for the majority of threatened EDGE species in these example countries, GBIF has data available. we would encourage that use of the data when identifying areas to extend existing protected area networks.
+What is clear is that, for the majority of threatened EDGE species in these example countries, GBIF has data available. we would encourage that use of the data when identifying areas to extend existing protected area networks. 
 
 ---
 
