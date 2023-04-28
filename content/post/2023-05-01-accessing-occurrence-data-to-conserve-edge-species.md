@@ -5,14 +5,16 @@ date: '2023-05-01'
 slug: accessing-occurrence-data-to-conserve-edge-species
 categories:
   - GBIF
-tags: []
-lastmod: '2023-04-28T11:44:14+02:00'
+tags:
+  - GBIF
+  - Data Use
+lastmod: '2023-04-28'
 draft: no
-keywords: []
+keywords: ['EDGE', 'threatened species', 'protected areas', 'conservation financing', 'data availability']
 description: ''
 authors: ''
 comment: no
-toc: no
+toc: ''
 autoCollapseToc: no
 postMetaInFooter: no
 hiddenFromHomePage: yes
@@ -28,7 +30,6 @@ flowchartDiagrams:
 sequenceDiagrams:
   enable: no
   options: ''
-  
 ---
 
 After reviewing the recent call from the [EDGE Protected Area and Conserved Area Fund](https://www.edgeofexistence.org/edge-protected-and-conserved-area-fund/#:~:text=The%20EDGE%20Protected%20and%20Conserved,across%20the%20tropics%20and%20subtropics) for projects that extend existing protected area networks for the conservation of evolutionary distinct and globally endangered (EDGE) species, I wanted to see what data is currently available through GBIF that could help guide decisions on conservation financing. Uses like this are particularly pertinent given the recent commitments in the new [Kunming-Montreal Global Biodiversity Framework](https://www.cbd.int/article/cop15-final-text-kunming-montreal-gbf-221222) to protect 30 per cent of the Earth by 2030, and I was interested to what extent GBIF data can already support spatial prioritization processes. 
