@@ -74,6 +74,10 @@ When I compared numbers of occurrence records found outside of protected areas w
 
 What is clear is that, for the majority of threatened EDGE species in these example countries, GBIF has data available. we would encourage that use of the data when identifying areas to extend existing protected area networks. 
 
+![Benin table](/post/2023-05-01-accessing-occurrence-data-to-conserve-edge-species/benin_table.png)
+![Ecuador table](/post/2023-05-01-accessing-occurrence-data-to-conserve-edge-species/ecuador_table.png)
+![Viet Nam table](/post/2023-05-01-accessing-occurrence-data-to-conserve-edge-species/vietnam_table.png)
+
 ---
 
 ![Benin](/post/2023-05-01-accessing-occurrence-data-to-conserve-edge-species/benin-edge.png)
