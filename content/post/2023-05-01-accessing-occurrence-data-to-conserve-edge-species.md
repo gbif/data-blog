@@ -34,7 +34,7 @@ sequenceDiagrams:
 
 > [Evolutionarily Distinct and Globally Endangered](https://www.edgeofexistence.org/) or **EDGE species** have few close relatives on the tree of life and are often extremely unusual in the way they look, live and behave, as well as in their genetic make-up. They represent a unique and irreplaceable part of the world’s natural heritage. 
 
-After seeing an open call for projects that extend existing protected area networks for the conservation of EDGE species through the [EDGE Protected Area and Conserved Area Fund](https://www.edgeofexistence.org/edge-protected-and-conserved-area-fund/#:~:text=The%20EDGE%20Protected%20and%20Conserved,across%20the%20tropics%20and%20subtropics), I wanted to see what data is currently available through GBIF that could help guide decisions on conservation financing. The [Zoological Society of London](https://www.zsl.org/) (ZSL) directs funds through this call to projects that establish or expand protected areas for EDGE species that are a) not currently protected and b) either critically endangered (CR), endangered (EN) or vulnerable (VU) EDGE species whose ranges overlap with other unprotected CR or EN species. Importantly, the call notes that **recent verifiable evidence should exist for the named species occurring within the proposed site.** 
+After seeing an open call for projects that extend existing protected area networks for the conservation of EDGE species through the [EDGE Protected Area and Conserved Area Fund](https://www.edgeofexistence.org/edge-protected-and-conserved-area-fund/#:~:text=The%20EDGE%20Protected%20and%20Conserved,across%20the%20tropics%20and%20subtropics), I wanted to see what data is currently available through GBIF that could help guide decisions on conservation financing. This call will direct funds toward projects that establish or expand protected areas for EDGE species that are a) not currently protected and b) either critically endangered (CR), endangered (EN) or vulnerable (VU) EDGE species whose ranges overlap with other unprotected CR or EN species. Importantly, the call notes that **recent verifiable evidence should exist for the named species occurring within the proposed site.** 
 
 Given these criteria and a [list of eligible critically endangered, endangered and vulnerable species](https://www.edgeofexistence.org/wp-content/uploads/2023/03/2023_EDGE_species_RT_call.xlsx) provided within the call, I decided to look at data availability of EDGE species in three eligible countries within the GBIF member network: [Benin](https://www.gbif.org/country/BJ/about), [Ecuador](https://www.gbif.org/country/EC/about) and [Viet Nam](https://www.gbif.org/country/VN/about). Uses like this are particularly pertinent given the commitment agreed under the new [Kunming-Montreal Global Biodiversity Framework](https://www.cbd.int/article/cop15-final-text-kunming-montreal-gbf-221222) to protect 30 per cent of the Earth by 2030, and I was interested to see to what extent GBIF data can already support spatial prioritization processes. 
 
@@ -72,7 +72,7 @@ The majority of EDGE species listed as coming from each country had data availab
 
 Comparing the number of records found outside of protected areas with the total number of occurrences, I found that the lower percentage of occurrence records available for threatened EDGE species outside protected areas in Benin (23 per cent), Ecuador (40 per cent) and Viet Nam (37 per cent), respectively, suggests either a sampling bias within protected areas for those species or a concentration of those species within protected areas.
 
-What is clear is that, **for the majority of threatened EDGE species in these example countries, GBIF has data available**. We would encourage that use of the data when identifying areas to extend existing protected area networks. 
+What is clear is that, **for the majority of threatened EDGE species in these example countries, GBIF has data available**. We would encourage EDGE projects and alliance partners to make use of that data when identifying areas to extend existing protected area networks. 
 
 --- 
 
@@ -98,3 +98,8 @@ What is clear is that, **for the majority of threatened EDGE species in these ex
 
 ![Viet Nam table](/post/2023-05-01-accessing-occurrence-data-to-conserve-edge-species/vietnam_table.png)
 
+---
+
+### The EDGE alliance 
+
+The EDGE Protected and Conserved Fund is a partnership between [Durrell Wildlife Conservation Trust](https://www.durrell.org/), [On The Edge Conservation](https://www.ontheedge.org/), [Re:wild](https://www.rewild.org/), [Royal Botanic Gardens, Kew](https://www.kew.org/), [Synchronicity Earth](https://www.synchronicityearth.org/) and the [Zoological Society of London](https://www.zsl.org/), with funding provided by [Rainforest Trust](https://www.rainforesttrust.org/).
