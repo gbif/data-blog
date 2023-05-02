@@ -8,7 +8,7 @@ categories:
 tags:
   - GBIF
   - Data Use
-lastmod: '2023-04-28'
+lastmod: '2023-05-02'
 draft: no
 keywords: ['EDGE', 'threatened species', 'protected areas', 'conservation financing', 'data availability']
 description: ''
@@ -17,7 +17,7 @@ comment: no
 toc: ''
 autoCollapseToc: no
 postMetaInFooter: no
-hiddenFromHomePage: yes
+hiddenFromHomePage: no
 contentCopyright: no
 reward: no
 mathjax: no
