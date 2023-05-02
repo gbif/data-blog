@@ -72,7 +72,7 @@ The majority of EDGE species listed as coming from each country had data availab
 
 Comparing the number of records found outside of protected areas with the total number of occurrences, I found that the lower percentage of occurrence records available for threatened EDGE species outside protected areas in Benin (23 per cent), Ecuador (40 per cent) and Viet Nam (37 per cent), respectively, suggests either a sampling bias within protected areas for those species or a concentration of those species within protected areas.
 
-What is clear is that, **for the majority of threatened EDGE species in these example countries, GBIF has data available**. We would encourage EDGE projects and alliance partners to make use of that data when identifying areas to extend existing protected area networks. 
+What is clear is that, **for the majority of threatened EDGE species in these example countries, GBIF has data available**. We would encourage projects to use the data when identifying areas to extend existing protected area networks. 
 
 --- 
 
