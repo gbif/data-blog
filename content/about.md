@@ -1,7 +1,7 @@
 ---
 title: "about"
 date: 2017-08-20T21:38:52+08:00
-lastmod: 2017-08-28T21:41:52+08:00
+lastmod: 2023-05-08T09:30:52+08:00
 menu: "main"
 weight: 50
 
@@ -19,7 +19,7 @@ A place for GBIF staff and guest bloggers to contribute:
 
 # Who can contribute? 
 
-If you would like to contribute you can contact jwaller@gbif.org. **Guest blogs are very welcome.** 
+If you would like to contribute you can contact jwaller@gbif.org. **Guest posts are very welcome.** 
 
 # How can I write a post? 
 
