@@ -6,7 +6,17 @@
     <description>Recent content in gbif on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 08 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://data-blog.gbif.org/tags/gbif/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 02 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://data-blog.gbif.org/tags/gbif/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Accessing GBIF-mediated occurrence data to conserve EDGE species</title>
+      <link>https://data-blog.gbif.org/post/accessing-occurrence-data-to-conserve-edge-species/</link>
+      <pubDate>Tue, 02 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/post/accessing-occurrence-data-to-conserve-edge-species/</guid>
+      <description>Evolutionarily Distinct and Globally Endangered or EDGE species have few close relatives on the tree of life and are often extremely unusual in the way they look, live and behave, as well as in their genetic make-up. They represent a unique and irreplaceable part of the world’s natural heritage.
+ After seeing an open call for projects that extend existing protected area networks for the conservation of EDGE species through the EDGE Protected Area and Conserved Area Fund, I wanted to see what data is currently available through GBIF that could help guide decisions on conservation financing.</description>
+    </item>
+    
     <item>
       <title>Checklist publishing on GBIF - some explanations on taxonID, scientificNameID, taxonConceptID, acceptedNameUsageID, nameAccordingTo</title>
       <link>https://data-blog.gbif.org/post/some-checklist-terms-explained/</link>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Joe Miller on GBIF Data Blog</title>
+    <link>https://data-blog.gbif.org/author/joe-miller/</link>
+    <description>Recent content in Joe Miller on GBIF Data Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 18 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://data-blog.gbif.org/author/joe-miller/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Exploring Related Records in the Flowering Plant Genus Senegalia in Brazil</title>
+      <link>https://data-blog.gbif.org/post/senegalia-clustering-in-brazil/</link>
+      <pubDate>Wed, 18 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/post/senegalia-clustering-in-brazil/</guid>
+      <description>&lt;p&gt;In 2020 GBIF released a news item &amp;ldquo;&lt;a href=&#34;https://www.gbif.org/news/4U1dz8LygQvqIywiRIRpAU/new-data-clustering-feature-aims-to-improve-data-quality-and-reveal-cross-dataset-connections&#34;&gt;New data-clustering feature aims to improve data quality and reveal cross-dataset connections&lt;/a&gt;.&amp;rdquo; Basically, we run an algorithm across datasets shared with GBIF to search for similarities in occurrences data fields such as location, identifiers and dates. Please read this &lt;a href=&#34;https://data-blog.gbif.org/post/clustering-occurrences/&#34;&gt;blog&lt;/a&gt; by Marie Grosjean and Tim Robertson for more details on how it works. In general, we can identify linkages between specimens, DNA sequences and literature citations.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

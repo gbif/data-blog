@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Exploring Related Records in the Flowering Plant Genus Senegalia in Brazil - GBIF Data Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Joe Miller" />
+  <meta name="description" content="In 2020 GBIF released a news item &amp;ldquo;New data-clustering feature aims to improve data quality and reveal cross-dataset connections.&amp;rdquo; Basically, we run an algorithm across datasets shared with GBIF to search for similarities in occurrences data fields such as location, identifiers and dates. Please read this blog by Marie Grosjean and Tim Robertson for more details on how it works. In general, we can identify linkages between specimens, DNA sequences and literature citations.
+" />
+
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.91.2" />
+
+
+<link rel="canonical" href="https://data-blog.gbif.org/post/senegalia-clustering-in-brazil/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.2.0" rel="stylesheet">
+
+
+
+
+<link rel="stylesheet" href="/css//custom.css">
+
+
+<meta property="og:title" content="Exploring Related Records in the Flowering Plant Genus Senegalia in Brazil" />
+<meta property="og:description" content="In 2020 GBIF released a news item &ldquo;New data-clustering feature aims to improve data quality and reveal cross-dataset connections.&rdquo; Basically, we run an algorithm across datasets shared with GBIF to search for similarities in occurrences data fields such as location, identifiers and dates. Please read this blog by Marie Grosjean and Tim Robertson for more details on how it works. In general, we can identify linkages between specimens, DNA sequences and literature citations." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://data-blog.gbif.org/post/senegalia-clustering-in-brazil/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-01-18T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-01-18T09:53:25+01:00" />
+
+<meta itemprop="name" content="Exploring Related Records in the Flowering Plant Genus Senegalia in Brazil">
+<meta itemprop="description" content="In 2020 GBIF released a news item &ldquo;New data-clustering feature aims to improve data quality and reveal cross-dataset connections.&rdquo; Basically, we run an algorithm across datasets shared with GBIF to search for similarities in occurrences data fields such as location, identifiers and dates. Please read this blog by Marie Grosjean and Tim Robertson for more details on how it works. In general, we can identify linkages between specimens, DNA sequences and literature citations."><meta itemprop="datePublished" content="2023-01-18T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2023-01-18T09:53:25+01:00" />
+<meta itemprop="wordCount" content="1637">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Exploring Related Records in the Flowering Plant Genus Senegalia in Brazil"/>
+<meta name="twitter:description" content="In 2020 GBIF released a news item &ldquo;New data-clustering feature aims to improve data quality and reveal cross-dataset connections.&rdquo; Basically, we run an algorithm across datasets shared with GBIF to search for similarities in occurrences data fields such as location, identifiers and dates. Please read this blog by Marie Grosjean and Tim Robertson for more details on how it works. In general, we can identify linkages between specimens, DNA sequences and literature citations."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">GBIF Data Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/categories/gbif/">
+        <li class="mobile-menu-item">posts</li>
+      </a><a href="https://discourse.gbif.org/c/data-blog">
+        <li class="mobile-menu-item">community-forum</li>
+      </a><a href="https://www.gbif.org/">
+        <li class="mobile-menu-item">gbif.org</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">about</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">
+	<img src= "/logo.png" alt="GBIF-analytics-blog" style ="width:20%;">
+  </a>
+  
+	
+  
+  
+</div>
+
+<nav class="site-navbar">
+
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/categories/gbif/">posts</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://discourse.gbif.org/c/data-blog">community-forum</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://www.gbif.org/">gbif.org</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">about</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+	
+    <header class="post-header">
+      <h1 class="post-title">Exploring Related Records in the Flowering Plant Genus Senegalia in Brazil</h1>
+	  
+	  
+      <div class="post-author">Joe Miller</div>
+
+      <div class="post-meta">
+        <span class="post-time"> 2023-01-18 </span>
+        <div class="post-category">
+            
+              <a href="/categories/gbif/"> GBIF </a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    
+    
+
+    
+    <div class="post-content">
+      <p>In 2020 GBIF released a news item &ldquo;<a href="https://www.gbif.org/news/4U1dz8LygQvqIywiRIRpAU/new-data-clustering-feature-aims-to-improve-data-quality-and-reveal-cross-dataset-connections">New data-clustering feature aims to improve data quality and reveal cross-dataset connections</a>.&rdquo; Basically, we run an algorithm across datasets shared with GBIF to search for similarities in occurrences data fields such as location, identifiers and dates. Please read this <a href="https://data-blog.gbif.org/post/clustering-occurrences/">blog</a> by Marie Grosjean and Tim Robertson for more details on how it works. In general, we can identify linkages between specimens, DNA sequences and literature citations.</p>
+<p>As a botanist I see the <a href="https://www.gbif.org/occurrence/1056006536/cluster">GBIF related records feature</a> as an opportunity to investigate patterns of sharing duplicates collections. It is common for plant collectors, like I did before joining GBIF, to collect multiple specimens from large plants, like trees, and to share them broadly. For example, if a collection expedition includes two botanists from different institutions, each may keep a &ldquo;duplicate.&rdquo; It is also expected that the collectors send a duplicate(s) to local herbaria in the region where it was collected and send a duplicates to a major institution(s) in North America or Europe.</p>
+<p>Then what happens? These specimens then take a life on of their own. Some are databased and shared with GBIF and some specimens are imaged and others sequenced. Unfortunately, some herbaria don&rsquo;t have resources to digitize so information isn&rsquo;t digitally accessible. Of course, it is best to track these data digitally from collection onwards, but we can retroactively put these data together.</p>
+<p>Using the current algorithm settings, see below, there are more than 50 million clusters among datasets in GBIF, half of these in Plantae. To make a manageable study I focused on a group I know a bit about and have collected – preserved specimens of <em>Senegalia</em> from Brazil. These pairwise clusters often group together in larger clusters, i.e. the five duplicates from a single tree collection, but for this analysis we are focusing on the simple pairwise comparisons.</p>
+<p>Many questions could be addressed with this type of data. The following three questions interested me for this blog.</p>
+<ul>
+<li>Did each part of a cluster pair use the same species name?</li>
+<li>Did each part of a cluster pair include the locality latitude and longitude?</li>
+<li>Are there any sharing patterns that would show up in a simple network analysis?</li>
+</ul>
+<p>For this blog we used the following clustering settings:</p>
+<ul>
+<li>Location: non conflicting country, same country, non conflicting coordinates, same coordinates, within2km, within200m</li>
+<li>Identifiers: same accepted species, identifiers overlap, same recorder name, same specimen</li>
+<li>Date: samedate, nonconflictingdate, approximatedate</li>
+</ul>
+<h3 id="name-matching">Name matching</h3>
+<p>GBIF matches all incoming names to a taxonomy, the GBIF backbone. We use synonyms to match a name that is not an accepted species in the GBIF backbone. GBIF, and partner COL, welcome the involvement of your taxonomic expertise. Please see the work the legume community has done (<a href="https://data-blog.gbif.org/post/2022-02-01-the-world-checklist-of-vascular-plants-fabaceae/">blog</a>, <a href="https://doi.org/10.1038/s41597-022-01812-6">publication</a>). The latest <a href="https://www.legumedata.org/taxonomy/species-list/">LPWG taxonomy</a> can be found on the legume portal.</p>
+<p>For better or worse, <em>Acacia</em> was retypified after the Melbourne International Botanical Congress in 2011. This was the result of earlier phylogenetic work which has now led to the recognition of seven segregate genera, one being <em>Senegalia</em>.  <em>Senegalia</em> was an inevitable split from <em>Acacia</em> s.l. regardless of what name it would hold. Some institutions still use the <em>Acacia</em> names (and even some older names) either by choice or because they have not been updated.</p>
+<p>This gives us a chance to show that synonyms work and why they are critically important to data aggregation. Lack of synonyms is one GBIF&rsquo;s largest data gaps. Besides the generic names <em>Senegalia</em> and <em>Acacia</em>, the older name <em>Mimosa</em> was also found in the dataset. The majority of the pairs both use <em>Senegalia,</em> with nearly 18% only using <em>Acacia</em>. Again, despite this use of different genera the synonymy works. There were only six uses of <em>Mimosa</em></p>
+<img src="images/image001.png" alt="drawing" width="60%" style="display: block; margin-left: auto; margin-right:auto; width: 50%;"/>
+<p>At the species epithet level 96% were identical, regardless of whether <em>Senegalia</em> or <em>Acacia</em> was used as the genus. These differences reflect recent species recircumscriptions. Of course, there may be uncaptured clusters in GBIF because we do not have the complete synonymy in our taxonomic backbone.</p>
+<h3 id="coordinate-matching">Coordinate matching</h3>
+<p>Occurrence data with coordinates are more valuable than data without coordinates, they will be reused more and cited more. We deleted any suspected centroids from the dataset. First of all the results indicate that we as a community need to do better and include coordinates in field notes and in the datasets, only 38% of the pairs contained coordinates on both specimens. Of the pairs which both have coordinates, 67% of the time it was an exact match with one-third were rounded on at least one specimen, but still good usable data.</p>
+<p>Interestingly 23% of the pairs contained one specimen with coordinates and the other without. This could have many reasons from not sharing of collection notes, inadequate databasing and other reasons. The opportunity here is that the collection holding the specimen without a coordinate could get the coordinate information, or any other data, from its cluster pair.</p>
+<img src="images/image003.png" alt="drawing" width="60%" style="display: block; margin-left: auto; margin-right:auto; width: 50%;"/>
+<h3 id="specimen-cluster-network">Specimen Cluster Network</h3>
+<p>We made a simple network graph of the cluster pairs by institutions. Because there are so many institutions with <em>Senegalia</em> duplicate specimens, we constrained the visualization to the 30 institutions with the most specimens. These are arranged counterclockwise by country and cluster size. The results suggest a good habit and of sharing and collaboration within Brazil.</p>
+<img src="images/institutioncode_network_3.svg" alt="drawing"  style="display: block; margin-left: auto; margin-right:auto; width: 70%"/>
+<div style="text-align: center;"><small>See <a href="https://github.com/gbif/data-blog/tree/master/content/post/2023-01-18-senegalia-clustering-in-brazil/files">lookup table </a> for institution codes</small></div>
+<p>First let&rsquo;s look at the patterns of sharing within Brazil. Keep in mind that these lines indicate only putative duplicates that have been databased and shared with GBIF. The institutions may have other <em>Senegalia</em> specimens that are not duplicates and specimens of duplicates that are not shared with GBIF by the other institution. There are lots of red lines connecting Brazilian institutions, so we made a separate visualization with only the red lines.</p>
+<p>The thicker lines represent larger Brazilian herbaria and collections that specialize in legumes. There are many duplicates shared between EAC and UFC, between UFRGS and ICN as well as between UEFS and JBRJ. Connections may indicate student-advisor relationships that have turned into collaborations. We welcome any inferences from Brazilian botanists on what they see in the graph.</p>
+<img src="images/institutioncode_network_4_BR-BR.svg" alt="drawing"  style="display: block; margin-left: auto; margin-right:auto; width: 70%"/>
+<div style="text-align: center;"><small>See <a href="https://github.com/gbif/data-blog/tree/master/content/post/2023-01-18-senegalia-clustering-in-brazil/files">lookup table </a> for institution codes</small></div>
+<p>The non-red colored lines indicate duplicates specimens collected in Brazil and shared internationally. Not surprisingly the large US and European herbaria, including NYBG, MoBot, Smithsonian, Field Museum, Kew and Paris hold many duplicates. The largest pair of duplicate sharing is between NYBG and Kew (even bigger than any within Brazil) which suggest that researchers have a history of sending duplicates from Brazil to both of these herbaria. Further investigation of larger clusters (we looked at only pairs here) would probably show that more (the third) duplicates from those two herbaria will be housed in various Brazilian herbaria. The more interesting question that comes to mind is how many specimens are in these non-Brazilian herbaria that do not have duplicates in Brazil and vice versa.</p>
+<img src="images/institutioncode_network_4_other.svg" alt="drawing" style="display: block; margin-left: auto; margin-right:auto; width: 70%"/>
+<div style="text-align: center;"><small>See <a href="https://github.com/gbif/data-blog/tree/master/content/post/2023-01-18-senegalia-clustering-in-brazil/files">lookup table </a> for institution codes</small></div>
+<h3 id="conclusions">Conclusions</h3>
+<p>We only discussed the results of the clusters and didn&rsquo;t discuss the quality of the clusters. There are many obvious false positives in the dataset. This is an area in which we welcome collaboration which could identify which clustering settings are optimal for a particular question. This would benefit from a systematic and statistical analysis of various clustering algorithm settings. This could lead to a better overall arching clustering setting for GBIF to use across the infrastructure.</p>
+<p>This work also reminded us of the importance of another GBIF community effort <a href="https://www.gbif.org/grscicoll">GRSciColl</a>, Global Registry of Scientific Collections. The most time-consuming part of preparing the data for this blog was aligning data between datasets, collections and institutions. Combining them was not trivial and in hindsight we should have probably combined the data from CEN and Cenargen, which we are datasets from the same place. An updated and curated GRSciColl, with datasets, collections, and institutions all correctly accounted for, would enable scaling of certain clustering investigations. Please read up about <a href="https://www.gbif.org/grscicoll">GRSciColl</a> and suggest edits where needed.</p>
+<p>Some collections are beginning to use the clustered data to improve their own databases with missing data, for example filling in missing coordinates or updating scientific names. This is one of our goals in this work.</p>
+<p>The clustering work is only a GBIF side project and we do not have an active development program. These simple analyses are the tip of an interesting iceberg and the intent behind the blog is to tempt you to investigate further. These clusters were only made between preserved specimens, but GBIF also has hundreds of millions of occurrences from DNA, material citations in the literature, and observations. This expands the questions that could be addressed by the clustering.</p>
+<p>We recognize that there are many different types of clustering algorithms that could be run across the data that could be optimized for specific questions such as duplicates, relating type specimens, connecting DNA sequences to specimens, and literature material citations to specimens. GBIF is working with partners in a grant called <a href="https://bicikl-project.eu/">BiCIKL</a> which is developing better integration among specimens, DNA sequences, literature and taxonomy and clustering can help that work.</p>
+<p>Please let us know if you have some ideas by starting a discussion thread. Here are few questions I would like investigated:</p>
+<ul>
+<li>Building on the ideas of <a href="https://doi.org/10.1007/978-3-319-68765-0_20">Nicolson and Tucker</a>, can we predict where there are undatabased specimens?</li>
+<li>What are the patterns of sharing over time? Have collection practices improved over time with more involvement/leadership from biodiverse rich regions?</li>
+<li>It is expensive to collect, process and curate specimens, can we save money (and space) by better sharing material and data so that fewer &ldquo;duplicates&rdquo; are collected in the field?</li>
+<li>Can we intelligently use these data to understand co-location of biodiversity?</li>
+<li>What can we learn about the people who have done the work, the collectors and identifiers?</li>
+</ul>
+<h3 id="acknowledgements">Acknowledgements:</h3>
+<p>Thanks to GBIF colleagues Tim Robertson for the cluster download and John Waller for the network cluster figures.</p>
+    </div>
+
+    
+    
+
+    
+    
+
+    <footer class="post-footer">
+      
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/accessing-occurrence-data-to-conserve-edge-species/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Accessing GBIF-mediated occurrence data to conserve EDGE species</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/some-checklist-terms-explained/">
+            <span class="next-text nav-default">Checklist publishing on GBIF - some explanations on taxonID, scientificNameID, taxonConceptID, acceptedNameUsageID, nameAccordingTo</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      
+
+
+
+<div>
+<h3>This post represents the ideas of the author.</h3>
+</div>
+<div id='discourse-comments'></div>
+<script type="text/javascript">
+  DiscourseEmbed = { discourseUrl: 'https://discourse.gbif.org/',
+                     discourseEmbedUrl: 'https://data-blog.gbif.org\/post\/senegalia-clustering-in-brazil\/' };
+
+  (function() {
+    var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+    d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+  })();
+</script>
+
+
+<div class = "copyright">
+	<a class="theme-link" href="https://www.gbif.org/what-is-gbif">What is GBIF?</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://www.gbif.org/developer/summary">API</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://www.gbif.org/faq">FAQ</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://discourse.gbif.org/">Community-Forum</a>
+</div>
+
+<div class = "copyright">
+	<span class="theme-info">GBIF Secretariat</span>
+	<span class="theme-info">Universitetsparken 15</span>
+	<span class="theme-info">DK-2100 Copenhagen Ø</span>
+	<span class="theme-info" >Denmark</span>
+</div>
+
+<div class="copyright">
+	<span class="power-by">
+	Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+	</span>
+	<span class="division">|</span>
+	<span class="theme-info">
+	Theme -
+	<a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+	</span>
+
+</div>
+
+<script defer data-domain="data-blog.gbif.org,gbif.org" src="https://plausible.io/js/script.file-downloads.js"></script>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+<script type="text/javascript" src="/dist/even.min.js?v=3.2.0"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

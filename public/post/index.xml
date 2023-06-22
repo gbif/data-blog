@@ -6,7 +6,26 @@
     <description>Recent content in Posts on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 08 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://data-blog.gbif.org/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 02 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://data-blog.gbif.org/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Accessing GBIF-mediated occurrence data to conserve EDGE species</title>
+      <link>https://data-blog.gbif.org/post/accessing-occurrence-data-to-conserve-edge-species/</link>
+      <pubDate>Tue, 02 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/post/accessing-occurrence-data-to-conserve-edge-species/</guid>
+      <description>Evolutionarily Distinct and Globally Endangered or EDGE species have few close relatives on the tree of life and are often extremely unusual in the way they look, live and behave, as well as in their genetic make-up. They represent a unique and irreplaceable part of the world’s natural heritage.
+ After seeing an open call for projects that extend existing protected area networks for the conservation of EDGE species through the EDGE Protected Area and Conserved Area Fund, I wanted to see what data is currently available through GBIF that could help guide decisions on conservation financing.</description>
+    </item>
+    
+    <item>
+      <title>Exploring Related Records in the Flowering Plant Genus Senegalia in Brazil</title>
+      <link>https://data-blog.gbif.org/post/senegalia-clustering-in-brazil/</link>
+      <pubDate>Wed, 18 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/post/senegalia-clustering-in-brazil/</guid>
+      <description>&lt;p&gt;In 2020 GBIF released a news item &amp;ldquo;&lt;a href=&#34;https://www.gbif.org/news/4U1dz8LygQvqIywiRIRpAU/new-data-clustering-feature-aims-to-improve-data-quality-and-reveal-cross-dataset-connections&#34;&gt;New data-clustering feature aims to improve data quality and reveal cross-dataset connections&lt;/a&gt;.&amp;rdquo; Basically, we run an algorithm across datasets shared with GBIF to search for similarities in occurrences data fields such as location, identifiers and dates. Please read this &lt;a href=&#34;https://data-blog.gbif.org/post/clustering-occurrences/&#34;&gt;blog&lt;/a&gt; by Marie Grosjean and Tim Robertson for more details on how it works. In general, we can identify linkages between specimens, DNA sequences and literature citations.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Checklist publishing on GBIF - some explanations on taxonID, scientificNameID, taxonConceptID, acceptedNameUsageID, nameAccordingTo</title>
       <link>https://data-blog.gbif.org/post/some-checklist-terms-explained/</link>

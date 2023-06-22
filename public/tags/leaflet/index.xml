@@ -1,24 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Leaflet on GBIF Data Blog</title>
-    <link>/tags/leaflet/</link>
-    <description>Recent content in Leaflet on GBIF Data Blog</description>
+    <title>leaflet on GBIF Data Blog</title>
+    <link>https://data-blog.gbif.org/tags/leaflet/</link>
+    <description>Recent content in leaflet on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 19 Sep 2018 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/leaflet/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 19 Sep 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://data-blog.gbif.org/tags/leaflet/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Plot almost anything using the GBIF maps api</title>
-      <link>/post/gbif-maps-api-using-r-and-leaflet/</link>
+      <link>https://data-blog.gbif.org/post/gbif-maps-api-using-r-and-leaflet/</link>
       <pubDate>Wed, 19 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/gbif-maps-api-using-r-and-leaflet/</guid>
+      <guid>https://data-blog.gbif.org/post/gbif-maps-api-using-r-and-leaflet/</guid>
       <description>The GBIF maps api is an under-used but powerful web service provided by GBIF. The maps api is used by the main GBIF portal to create the maps including the big map used on gbif.org. We can make a simple call to the api by pasting the link below into a web browser.
-https://api.gbif.org/v2/map/occurrence/density/0/0/0@1x.png?style=purpleYellow.pointYou should end up with an image like this.This api call is composed essentially of two elements</description>
+https://api.gbif.org/v2/map/occurrence/density/0/0/0@1x.png?style=purpleYellow.pointYou should end up with an image like this.</description>
     </item>
     
   </channel>

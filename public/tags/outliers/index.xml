@@ -1,36 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Outliers on GBIF Data Blog</title>
-    <link>/tags/outliers/</link>
-    <description>Recent content in Outliers on GBIF Data Blog</description>
+    <title>outliers on GBIF Data Blog</title>
+    <link>https://data-blog.gbif.org/tags/outliers/</link>
+    <description>Recent content in outliers on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 07 Oct 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/outliers/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Outlier Detection Using Reverse Jackknife</title>
-      <link>/post/outlier-detection-using-reverse-jackknife/</link>
-      <pubDate>Wed, 07 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/post/outlier-detection-using-reverse-jackknife/</guid>
-      <description>Environmental outliers are a common problem for ecological modelers using GBIF occurrence data.
-One common way to remove these outliers is by using reverse jackknifing on environmental surfaces. This type of outlier detection takes the environmental values from point occurrences and checks whether the occurrence is an uncommon value in climate space ( reference pg 51 ).
-The jackknife method works by first calculating the sample mean, standard deviation and range; and then steps through the sorted values comparing the distance to the mean of it and the next value.</description>
-    </item>
-    
+    <lastBuildDate>Tue, 01 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://data-blog.gbif.org/tags/outliers/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Outlier Detection Using DBSCAN</title>
-      <link>/post/outlier-detection-using-dbscan/</link>
+      <link>https://data-blog.gbif.org/post/outlier-detection-using-dbscan/</link>
       <pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>/post/outlier-detection-using-dbscan/</guid>
-      <description>Geographic outliers at GBIF are a known problem.
-Outliers can be errors, coordinates with high uncertainty, or simply occurrences from an under-sampled region.
-In data cleaning pipelines outliers are often removed (even if they are legitimate points) because the researcher does not have time to verify each record one-by-one. In almost all cases, outlier points are occurrences that need attention. Currently, there is no outlier detection implemented at GBIF and it is up to the user to remove outliers themselves (e.</description>
+      <guid>https://data-blog.gbif.org/post/outlier-detection-using-dbscan/</guid>
+      <description>&lt;p&gt;Geographic outliers at &lt;strong&gt;GBIF&lt;/strong&gt; are a known problem.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Outliers&lt;/strong&gt; can be errors, coordinates with high uncertainty, or simply occurrences from an under-sampled region.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;In data cleaning pipelines outliers are often removed (even if they are legitimate points) because the researcher does not have time to verify each record one-by-one. In almost all cases, outlier points are occurrences that &lt;strong&gt;need attention&lt;/strong&gt;. Currently, there is no outlier detection implemented at &lt;strong&gt;GBIF&lt;/strong&gt; and it is up to the user to remove outliers themselves (e.g. using CoordinateCleaner, DIVA-GIS)&lt;/p&gt;</description>
     </item>
     
   </channel>

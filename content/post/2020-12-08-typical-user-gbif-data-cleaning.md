@@ -245,7 +245,22 @@ filter(decimalLatitude == 0 | decimalLongitude == 0)
 
 ## Country centroids
 
-You can remove country centroids and province centroids using **CoordinateCleaner**.
+> Sometimes GBIF data publishers will not know the exact lat-lon location of a record and will enter the lat-long center of the country instead. This is a data issue because users might be unaware that an observation is pinned to a country center and assume it is a precise location.
+
+It is now possible to filter out country/area centroids in a download using the **distanceFromCentroidInMeters** filter.
+
+```R
+# download occurrences that are at least 2km from a centroid in Sweden
+occ_download(
+pred_gte("distanceFromCentroidInMeters","2000"),
+pred("country","SE"),
+format = "SIMPLE_CSV")
+```
+
+GBIF currently uses only PCLI level centroids from the [Catalogue of Centroids](https://github.com/jhnwllr/catalogue-of-centroids). 
+
+
+You can also remove country centroids and province centroids using **CoordinateCleaner**.
 
 ```R 
 library(CoordinateCleaner)

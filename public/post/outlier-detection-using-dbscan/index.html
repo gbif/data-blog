@@ -18,8 +18,9 @@
 
 <meta name="author" content="John Waller" />
   <meta name="description" content="Geographic outliers at GBIF are a known problem.
-Outliers can be errors, coordinates with high uncertainty, or simply occurrences from an under-sampled region.
-In data cleaning pipelines outliers are often removed (even if they are legitimate points) because the researcher does not have time to verify each record one-by-one. In almost all cases, outlier points are occurrences that need attention. Currently, there is no outlier detection implemented at GBIF and it is up to the user to remove outliers themselves (e." />
+ Outliers can be errors, coordinates with high uncertainty, or simply occurrences from an under-sampled region.
+ In data cleaning pipelines outliers are often removed (even if they are legitimate points) because the researcher does not have time to verify each record one-by-one. In almost all cases, outlier points are occurrences that need attention. Currently, there is no outlier detection implemented at GBIF and it is up to the user to remove outliers themselves (e.g. using CoordinateCleaner, DIVA-GIS)
+" />
 
   <meta name="keywords" content="Hugo, theme, even" />
 
@@ -28,10 +29,10 @@
 
 
 
-<meta name="generator" content="Hugo 0.42" />
+<meta name="generator" content="Hugo 0.91.2" />
 
 
-<link rel="canonical" href="/post/outlier-detection-using-dbscan/" />
+<link rel="canonical" href="https://data-blog.gbif.org/post/outlier-detection-using-dbscan/" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -55,45 +56,30 @@
 
 <meta property="og:title" content="Outlier Detection Using DBSCAN" />
 <meta property="og:description" content="Geographic outliers at GBIF are a known problem.
-Outliers can be errors, coordinates with high uncertainty, or simply occurrences from an under-sampled region.
-In data cleaning pipelines outliers are often removed (even if they are legitimate points) because the researcher does not have time to verify each record one-by-one. In almost all cases, outlier points are occurrences that need attention. Currently, there is no outlier detection implemented at GBIF and it is up to the user to remove outliers themselves (e." />
+
+Outliers can be errors, coordinates with high uncertainty, or simply occurrences from an under-sampled region.
+
+In data cleaning pipelines outliers are often removed (even if they are legitimate points) because the researcher does not have time to verify each record one-by-one. In almost all cases, outlier points are occurrences that need attention. Currently, there is no outlier detection implemented at GBIF and it is up to the user to remove outliers themselves (e.g. using CoordinateCleaner, DIVA-GIS)" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/post/outlier-detection-using-dbscan/" />
-
-
-
-<meta property="article:published_time" content="2020-09-01T00:00:00&#43;00:00"/>
-
-<meta property="article:modified_time" content="2020-07-06T09:51:49&#43;02:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="og:url" content="https://data-blog.gbif.org/post/outlier-detection-using-dbscan/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2020-09-01T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-01-04T16:07:10+01:00" />
 
 <meta itemprop="name" content="Outlier Detection Using DBSCAN">
 <meta itemprop="description" content="Geographic outliers at GBIF are a known problem.
-Outliers can be errors, coordinates with high uncertainty, or simply occurrences from an under-sampled region.
-In data cleaning pipelines outliers are often removed (even if they are legitimate points) because the researcher does not have time to verify each record one-by-one. In almost all cases, outlier points are occurrences that need attention. Currently, there is no outlier detection implemented at GBIF and it is up to the user to remove outliers themselves (e.">
 
+Outliers can be errors, coordinates with high uncertainty, or simply occurrences from an under-sampled region.
 
-<meta itemprop="datePublished" content="2020-09-01T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2020-09-01T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="798">
-
-
-
-<meta itemprop="keywords" content="outliers,dbscan," />
-<meta name="twitter:card" content="summary"/>
+In data cleaning pipelines outliers are often removed (even if they are legitimate points) because the researcher does not have time to verify each record one-by-one. In almost all cases, outlier points are occurrences that need attention. Currently, there is no outlier detection implemented at GBIF and it is up to the user to remove outliers themselves (e.g. using CoordinateCleaner, DIVA-GIS)"><meta itemprop="datePublished" content="2020-09-01T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-01-04T16:07:10+01:00" />
+<meta itemprop="wordCount" content="799">
+<meta itemprop="keywords" content="outliers,dbscan," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Outlier Detection Using DBSCAN"/>
 <meta name="twitter:description" content="Geographic outliers at GBIF are a known problem.
-Outliers can be errors, coordinates with high uncertainty, or simply occurrences from an under-sampled region.
-In data cleaning pipelines outliers are often removed (even if they are legitimate points) because the researcher does not have time to verify each record one-by-one. In almost all cases, outlier points are occurrences that need attention. Currently, there is no outlier detection implemented at GBIF and it is up to the user to remove outliers themselves (e."/>
+
+Outliers can be errors, coordinates with high uncertainty, or simply occurrences from an under-sampled region.
+
+In data cleaning pipelines outliers are often removed (even if they are legitimate points) because the researcher does not have time to verify each record one-by-one. In almost all cases, outlier points are occurrences that need attention. Currently, there is no outlier detection implemented at GBIF and it is up to the user to remove outliers themselves (e.g. using CoordinateCleaner, DIVA-GIS)"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -193,15 +179,13 @@
 <blockquote>
 <p><strong>Outliers</strong> can be errors, coordinates with high uncertainty, or simply occurrences from an under-sampled region.</p>
 </blockquote>
-<p>In data cleaning pipelines outliers are often removed (even if they are legitimate points) because the researcher does not have time to verify each record one-by-one. In almost all cases, outlier points are occurrences that <strong>need attention</strong>. Currently, there is no outlier detection implemented at <strong>GBIF</strong> and it is up to the user to remove outliers themselves (e.g. using CoordinateCleaner, DIVA-GIS)</p>
-<!--more-->
+<p>In data cleaning pipelines outliers are often removed (even if they are legitimate points) because the researcher does not have time to verify each record one-by-one. In almost all cases, outlier points are occurrences that <strong>need attention</strong>. Currently, there is no outlier detection implemented at <strong>GBIF</strong> and it is up to the user to remove outliers themselves (e.g. using CoordinateCleaner, DIVA-GIS)</p>
 <p><strong>DBSCAN</strong> is a simple and popular clustering algorithm. Here is a nice <a href="https://ltjds.github.io/post/20200611/">introduction</a>. It uses distance and a minimum number of points per cluster to classify a point as an outlier.</p>
 <blockquote>
-<p>“A density-based algorithm for discovering clusters in large spatial databases with noise” - DBSCAN</p>
+<p>&ldquo;A density-based algorithm for discovering clusters in large spatial databases with noise&rdquo; - DBSCAN</p>
 </blockquote>
 <p>Since <strong>GBIF</strong> mediated occurrence data can be very patchy, clustering is important. One advantage of <strong>DBSCAN</strong> is that it does not need to know the expected number of clusters in advance. Also <strong>DBSCAN</strong> uses only distance and <strong>not</strong> some additional environmental variables like <a href="https://www.worldclim.org/data/bioclim.html">Bioclim</a>. This makes it simple, but also vulnerable to certain types of false positives.</p>
-<div id="plotted-examples" class="section level2">
-<h2>Plotted Examples</h2>
+<h2 id="plotted-examples">Plotted Examples</h2>
 <p>Here I plot some examples of <strong>DBSCAN</strong> outlier flagging.</p>
 <p>Details :</p>
 <ul>
@@ -211,42 +195,41 @@
 <li>Points here are unique points by (specieskey, lat-lon).</li>
 <li>Only run with species having <strong>&gt;30</strong> and <strong>&lt;30,000</strong> unique points.</li>
 <li>The gray gray circle around each point has a radius=~1500km.</li>
-<li>I was able to run this on <strong>all Plants</strong>, <strong>Animals</strong> and <strong>Fungi</strong> in under an hour with GBIF’s current cluster setup.</li>
+<li>I was able to run this on <strong>all Plants</strong>, <strong>Animals</strong> and <strong>Fungi</strong> in under an hour with GBIF&rsquo;s current cluster setup.</li>
 <li>No point was classified as an outlier if the publisher filled in the <strong>establishment means</strong> (where a publisher can put in that the occurrence is managed, in a zoo, garden ect.) or <strong>basis of record</strong> = <strong>Living Specimen</strong> or <strong>Fossil</strong>.</li>
 </ul>
 <div style="background-color: #F9F9F9">
-<p><b>Example 1</b></p>
-<p><img src="/post/2020-07-06-outlier-detection-using-dbscan_files//Thermopsis%20lupinoides.svg" /></p>
-<p>The two <span style="color:#FCB008"><b>outlier points</b></span> ( <a href="https://www.gbif.org/occurrence/2273331417">1</a>, <a href="https://www.gbif.org/occurrence/1702253738">2</a> ) in this example: 1. <strong>Botanical Garden in Denver</strong> 2. <strong>Herbarium in Norway</strong>. These are two points that most users would probably want to exclude. If you had 1000s of species, you would not want to do this manually.</p>
+<b>Example 1</b>
+<p><img src="images/Thermopsis_lupinoides.svg" alt=""></p>
+<p>The two <span style="color:#FCB008"><b>outlier points</b></span> ( <a href="https://www.gbif.org/occurrence/2273331417">1</a>, <a href="https://www.gbif.org/occurrence/1702253738">2</a> )  in this example: 1. <strong>Botanical Garden in Denver</strong> 2. <strong>Herbarium in Norway</strong>. These are two points that most users would probably want to exclude. If you had 1000s of species, you would not want to do this manually.</p>
 </div>
 <div style="background-color: #F9F9F9">
-<p><b>Example 2</b></p>
-<p><img src="/post/2020-07-06-outlier-detection-using-dbscan_files//Lycoris%20aurea.svg" /></p>
+<b>Example 2</b>
+<p><img src="images/Lycoris_aurea.svg" alt=""></p>
 <p>I think most agree that these <span style="color:#FCB008"><b>two points</b></span> ( <a href="https://www.gbif.org/occurrence/2423015120">1</a>, <a href="https://www.gbif.org/occurrence/2429371864">2</a> ) in North America are the most <strong>needing of attention/verification</strong>. These points are probably within private gardens.</p>
 </div>
 <div style="background-color: #F9F9F9">
-<p><b>Example 3</b></p>
-<p><img src="/post/2020-07-06-outlier-detection-using-dbscan_files//Cricotopus%20festivellus.svg" /></p>
+<b>Example 3</b>
+<p><img src="images/Cricotopus_festivellus.svg" alt=""></p>
 <p>Sometimes lacking <strong>environmental information</strong> produces results that a human being might think is probably not an outlier. In any case the result is reasonable, and out of all the points, the <span style="color:#FCB008"><b>outlier point</b></span> ( <a href="https://www.gbif.org/occurrence/2565934285">1</a> ) is probably the one that <strong>needs the most attention</strong>.</p>
 </div>
 <div style="background-color: #F9F9F9">
-<p><b>Example 4</b></p>
-<p><img src="/post/2020-07-06-outlier-detection-using-dbscan_files//Tradescantia%20occidentalis.svg" /></p>
+<b>Example 4</b>
+<p><img src="images/Tradescantia_occidentalis.svg" alt=""></p>
 <p>This <span style="color:#FCB008"><b>outlier</b></span> ( <a href="https://www.gbif.org/occurrence/1928465280">1</a> ) is near a <strong>botanical garden</strong>.</p>
 </div>
 <div style="background-color: #F9F9F9">
-<p><b>Example 5</b></p>
-<p><img src="/post/2020-07-06-outlier-detection-using-dbscan_files//Taphrina%20farlowii.svg" /></p>
-<p>This example shows that <strong>DBSCAN</strong> is able to <strong>cluster effectively</strong> while flagging an <span style="color:#FCB008"><b>outlier point</b></span>( <a href="https://www.gbif.org/occurrence/1829967830">1</a> ) with low additional support in Japan.</p>
+<b>Example 5</b>
+<p><img src="images/Taphrina_farlowii.svg" alt=""></p>
+<p>This  example shows that <strong>DBSCAN</strong> is able to <strong>cluster effectively</strong> while flagging an <span style="color:#FCB008"><b>outlier point</b></span>( <a href="https://www.gbif.org/occurrence/1829967830">1</a> ) with low additional support in Japan.</p>
 </div>
 <div style="background-color: #F9F9F9">
-<p><b>Example 6</b></p>
-<p><img src="/post/2020-07-06-outlier-detection-using-dbscan_files//Manducus%20maderensis.svg" /></p>
-<p>This example shows that <strong>DBSCAN</strong> does not do well when the species is poorly sampled in some regions, like the ocean. Also <strong>DBSCAN</strong> tends to flag occurrences on <strong>islands</strong> and <strong>other remote places</strong>.</p>
+<b>Example 6</b>
+<p><img src="images/Manducus_maderensis.svg" alt="">
+S
+This example shows that <strong>DBSCAN</strong> does not do well when the species is poorly sampled in some regions, like the ocean. Also <strong>DBSCAN</strong> tends to flag occurrences on <strong>islands</strong> and <strong>other remote places</strong>.</p>
 </div>
-</div>
-<div id="outlier-detection-vs-error-detection" class="section level2">
-<h2>Outlier detection vs error detection</h2>
+<h2 id="outlier-detection-vs-error-detection">Outlier detection vs error detection</h2>
 <p><strong>Outlier</strong> detection and <strong>error</strong> detection are different. If your goal is to produce a system with no false positives, <strong>it will fail</strong>. Probably combining this distance method with other environmentally informed methods would be very powerful way to flag outliers.</p>
 <p><strong>Advantages</strong> of DBSCAN :</p>
 <ul>
@@ -259,32 +242,20 @@
 <ul>
 <li>Only uses distance</li>
 <li>Must choose parameter settings</li>
-<li>Sensitive to sparse global sampling<br />
-</li>
+<li>Sensitive to sparse global sampling</li>
 <li>Does not include any other relevant information</li>
 </ul>
-<blockquote class="twitter-tweet">
-<p lang="en" dir="ltr">
-If you are interested in using biodiversity data you need to understand what it means. An example using <a href="https://twitter.com/atlaslivingaust?ref_src=twsrc%5Etfw"><span class="citation">@atlaslivingaust</span></a> data for Onychophora: the records far from the wetter margins of the continent are all either geocodes for states (WHY WOULD ANYONE DO THIS?) or bad geocodes. <a href="https://t.co/IZgZ9PgSIx">pic.twitter.com/IZgZ9PgSIx</a>
-</p>
-— Nick Porch (<span class="citation">@InvertoPhiles</span>) <a href="https://twitter.com/InvertoPhiles/status/1290864975574114305?ref_src=twsrc%5Etfw">August 5, 2020</a>
-</blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-<p>DBSCAN <strong>would not</strong> do well at flagging any of the outlier’s in this example from twitter. Environmentally-informed <a href="https://www.gbif.org/document/80528/principles-and-methods-of-data-cleaning-primary-species-and-species-occurrence-data">reverse jackknifing</a> would probably do better in these cases.</p>
-</div>
-<div id="percentage-of-taxa-group-outliers" class="section level2">
-<h2>Percentage of taxa-group outliers</h2>
-<p><img src="/post/2020-07-06-outlier-detection-using-dbscan_files//percent_class_outliers.svg" /></p>
-<p>Well sampled groups like Birds, Mammals, and flowering plants do not have many outliers. Less well-sampled groups, will have more outliers, which might not be “errors” but false positives caused by sparse sampling. Fortunately, if the class is somewhat well sampled &gt;50K records, the outlier flagging rate is less than 1% points.</p>
-<p><img src="/post/2020-07-06-outlier-detection-using-dbscan_files//percent_dataset_outliers.svg" /></p>
-<p>It is difficult to judge whether a dataset with a high percentage of outliers contains more “errors” or whether it has occurrences from under sampled regions (like the ocean or Siberia).</p>
-</div>
-<div id="current-implementation-details" class="section level2">
-<h2>Current implementation details</h2>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">If you are interested in using biodiversity data you need to understand what it means. An example using <a href="https://twitter.com/atlaslivingaust?ref_src=twsrc%5Etfw">@atlaslivingaust</a> data for Onychophora: the records far from the wetter margins of the continent are all either geocodes for states (WHY WOULD ANYONE DO THIS?) or bad geocodes. <a href="https://t.co/IZgZ9PgSIx">pic.twitter.com/IZgZ9PgSIx</a></p>&mdash; Nick Porch (@InvertoPhiles) <a href="https://twitter.com/InvertoPhiles/status/1290864975574114305?ref_src=twsrc%5Etfw">August 5, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<p>DBSCAN <strong>would not</strong> do well at flagging any of the outlier&rsquo;s in this example from twitter. Environmentally-informed <a href="https://www.gbif.org/document/80528/principles-and-methods-of-data-cleaning-primary-species-and-species-occurrence-data">reverse jackknifing</a> would probably do better in these cases.</p>
+<h2 id="percentage-of-taxa-group-outliers">Percentage of taxa-group outliers</h2>
+<p><img src="images/percent_class_outliers.svg" alt=""></p>
+<p>Well sampled groups like Birds, Mammals, and flowering plants do not have many outliers. Less well-sampled groups, will have more outliers, which might not be &ldquo;errors&rdquo; but false positives caused by sparse sampling. Fortunately, if the class is somewhat well sampled &gt;50K records, the outlier flagging rate is less than 1% points.</p>
+<p><img src="images/percent_dataset_outliers.svg" alt=""></p>
+<p>It is difficult to judge whether a dataset with a high percentage of outliers contains more &ldquo;errors&rdquo; or whether it has occurrences from under sampled regions (like the ocean or Siberia).</p>
+<h2 id="current-implementation-details">Current implementation details</h2>
 <p>Currently this DBSCAN-outlier detection is an <strong>internal tool</strong>. I am using it to find errors and assess dataset quality. It is a Spark job written in Scala ( <a href="https://github.com/jhnwllr/gbif-dbscan-outliers">github</a> ).</p>
 <p>Let me know in the comments if <strong>DBSCAN-based-outlier flagging</strong> is something <strong>GBIF</strong> should do?</p>
-</div>
-
+<!--more-->
     </div>
 
     
@@ -305,9 +276,9 @@ If you are interested in using biodiversity data you need to understand what it 
       
       <nav class="post-nav">
         
-          <a class="prev" href="/post/outlier-detection-using-reverse-jackknife/">
+          <a class="prev" href="/post/issues-and-flags/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Outlier Detection Using Reverse Jackknife</span>
+            <span class="prev-text nav-default">GBIF Issues &amp; Flags</span>
             <span class="prev-text nav-mobile">Prev</span>
           </a>
         
@@ -329,7 +300,7 @@ If you are interested in using biodiversity data you need to understand what it 
       
 
 
- 
+
 <div>
 <h3>This post represents the ideas of the author.</h3>
 </div>
@@ -343,23 +314,23 @@ If you are interested in using biodiversity data you need to understand what it 
     d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
   })();
-</script>  
+</script>
 
 
 <div class = "copyright">
 	<a class="theme-link" href="https://www.gbif.org/what-is-gbif">What is GBIF?</a>
 	<span class="division">|</span>
-	<a class="theme-link" href="https://www.gbif.org/developer/summary">API</a> 
+	<a class="theme-link" href="https://www.gbif.org/developer/summary">API</a>
 	<span class="division">|</span>
 	<a class="theme-link" href="https://www.gbif.org/faq">FAQ</a>
 	<span class="division">|</span>
 	<a class="theme-link" href="https://discourse.gbif.org/">Community-Forum</a>
 </div>
 
-<div class = "copyright"> 
-	<span class="theme-info">GBIF Secretariat</span> 
-	<span class="theme-info">Universitetsparken 15</span> 
-	<span class="theme-info">DK-2100 Copenhagen Ø</span> 
+<div class = "copyright">
+	<span class="theme-info">GBIF Secretariat</span>
+	<span class="theme-info">Universitetsparken 15</span>
+	<span class="theme-info">DK-2100 Copenhagen Ø</span>
 	<span class="theme-info" >Denmark</span>
 </div>
 
@@ -369,11 +340,14 @@ If you are interested in using biodiversity data you need to understand what it 
 	</span>
 	<span class="division">|</span>
 	<span class="theme-info">
-	Theme - 
+	Theme -
 	<a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
 	</span>
 
 </div>
+
+<script defer data-domain="data-blog.gbif.org,gbif.org" src="https://plausible.io/js/script.file-downloads.js"></script>
+
     </footer>
 
     <div class="back-to-top" id="back-to-top">

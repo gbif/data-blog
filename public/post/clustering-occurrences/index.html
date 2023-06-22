@@ -180,7 +180,7 @@ The goal was not only to detect potential duplicates but to also find interestin
 <p>The system first creates a series of &ldquo;hashes&rdquo; for each record based on specified fields. All records sharing a hash are candidates to compare against each other.</p>
 <p>For example, one of the &ldquo;hashes&rdquo; used is based on the species key, rounded coordinates, year, month and day. This means that the records that share the same values for those fields will be grouped together in the candidate table for further inspection.</p>
 <p>The fields used to identify and group the candidates are a subset of what is used later on for comparing them (see the table below).
-See <a href="https://github.com/gbif/pipelines/blob/dev/gbif/pipelines/clustering-gbif/src/main/scala/org/gbif/pipelines/clustering/Cluster.scala">this link</a> to check the details.</p>
+See <a href="https://github.com/gbif/pipelines/blob/dev/gbif/ingestion/clustering-gbif/src/main/scala/org/gbif/pipelines/clustering/Cluster.scala">this link</a> to check the details.</p>
 <h2 id="step-2-compare-candidates-with-each-other-and-assess-whether-they-are-potentially-related">Step 2: Compare candidates with each other and assess whether they are potentially related</h2>
 <p>Step 2: Compare candidates with each other and assess whether they are potentially related</p>
 <p>In this second phase, the system will compare all records in the candidate set to each other and generate assertions. The assertions are inspected and the algorithms decides if there is enough evidence in the assertions to create a relationship between them.
@@ -366,7 +366,7 @@ In the table below, I summarize how those assertions are made but if you would l
       
 
 
- 
+
 <div>
 <h3>This post represents the ideas of the author.</h3>
 </div>
@@ -380,23 +380,23 @@ In the table below, I summarize how those assertions are made but if you would l
     d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
   })();
-</script>  
+</script>
 
 
 <div class = "copyright">
 	<a class="theme-link" href="https://www.gbif.org/what-is-gbif">What is GBIF?</a>
 	<span class="division">|</span>
-	<a class="theme-link" href="https://www.gbif.org/developer/summary">API</a> 
+	<a class="theme-link" href="https://www.gbif.org/developer/summary">API</a>
 	<span class="division">|</span>
 	<a class="theme-link" href="https://www.gbif.org/faq">FAQ</a>
 	<span class="division">|</span>
 	<a class="theme-link" href="https://discourse.gbif.org/">Community-Forum</a>
 </div>
 
-<div class = "copyright"> 
-	<span class="theme-info">GBIF Secretariat</span> 
-	<span class="theme-info">Universitetsparken 15</span> 
-	<span class="theme-info">DK-2100 Copenhagen Ø</span> 
+<div class = "copyright">
+	<span class="theme-info">GBIF Secretariat</span>
+	<span class="theme-info">Universitetsparken 15</span>
+	<span class="theme-info">DK-2100 Copenhagen Ø</span>
 	<span class="theme-info" >Denmark</span>
 </div>
 
@@ -406,11 +406,14 @@ In the table below, I summarize how those assertions are made but if you would l
 	</span>
 	<span class="division">|</span>
 	<span class="theme-info">
-	Theme - 
+	Theme -
 	<a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
 	</span>
 
 </div>
+
+<script defer data-domain="data-blog.gbif.org,gbif.org" src="https://plausible.io/js/script.file-downloads.js"></script>
+
     </footer>
 
     <div class="back-to-top" id="back-to-top">
