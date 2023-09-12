@@ -101,6 +101,13 @@ map_fetch(z=3,x=7:9,y=0:2)
 ```R
 # Africa
 map_fetch(z=3,x=7:10,y=2:5)
+```
+
+<img src="images/africa.png" alt="" width="70%"/>
+
+
+```R 
+# I will leave it to you to plot these. 
 # Hawaii
 map_fetch(z=6,x=6:9,y=23:25)
 # South Africa 
@@ -116,7 +123,7 @@ map_fetch(z=12,x=4419:4420,y=1124:1125)
 
 I suggest using this [interactive page](https://api.gbif.org/v2/map/demo13.html#map=3/0/0/0) for getting the tile numbers. 
 
-Keep in mind that the the GBIF maps API wasn't designed to make high quality static maps, like it is being used for in `map_fetch()`. It was designed for interactive use on the [GBIF website](https://www.gbif.org/occurrence/map?), so the API design reflects this reality. This means that not all parameter and style choices are going to make nice looking maps. `map_fetch()` will try to prevent you from making bad style choices, but sometimes you might end up with a ugly map.  
+Keep in mind that the the GBIF maps API wasn't designed to make high quality static maps, like it is being used for in `map_fetch()`. It was designed for interactive use on the [GBIF website](https://www.gbif.org/occurrence/map?), so the API design reflects this reality. This means that not all parameter and style choices are going to make nice looking maps. That said, `map_fetch()` will try to prevent you from making bad style choices, but sometimes you might end up with a ugly map.  
 
 ```R 
 # ugly map
