@@ -90,7 +90,7 @@ map_fetch(z=3,x=13:14,y=4:5)
 
 Be aware that selecting many tiles will create a large image, and might crash your R session. You can control the resolution of your final image with `format`, with  `format="@4x.png"` being the highest possible value. 
 
-Below are some areas to give you an idea of how `z`,`x`,`y` it are working. 
+Below are some plotted areas to give you an idea of how `z`,`x`,`y` it are working. 
 
 ```R 
 # Europe
@@ -116,7 +116,14 @@ map_fetch(z=12,x=4419:4420,y=1124:1125)
 
 I suggest using this [interactive page](https://api.gbif.org/v2/map/demo13.html#map=3/0/0/0) for getting the tile numbers. 
 
-Keep in mind that the the GBIF maps API wasn't designed to make high quality static maps, like it is being used for in `map_fetch()`. It was designed for interactive use on the [GBIF website](https://www.gbif.org/occurrence/map?), so the API design reflects this reality. 
+Keep in mind that the the GBIF maps API wasn't designed to make high quality static maps, like it is being used for in `map_fetch()`. It was designed for interactive use on the [GBIF website](https://www.gbif.org/occurrence/map?), so the API design reflects this reality. This means that not all parameter and style choices are going to make nice looking maps. `map_fetch()` will try to prevent you from making bad style choices, but sometimes you might end up with a ugly map.  
+
+```R 
+# ugly map
+map_fetch(x=0,gadm_gid="USA",source="adhoc",style="classic.point")  
+```
+
+<img src="images/ugly.png" alt="" width="70%"/>
 
 When making maps, the **named paramters**, `taxonKey`, `datasetKey`, `country`, `publishingOrg`,  `publishingCountry`, `year`, and `basisOfRecord` are going to be the easiest to use.  However, It is possible to make "any" map (any [search filter](https://www.gbif.org/occurrence/map?recorded_by=John%20Waller&advanced=1&occurrence_status=present)) using `source=adhoc`. 
 
@@ -132,7 +139,7 @@ map_fetch(z=1,x=0:3,y=0:1,source="adhoc",iucn_red_list_category="CR",
 
 Here are some examples of maps with different parameters and styles. 
 
-`adhoc` is needed here  because `recordedBy` isn't one of the named paramters. `map_fetch()` automatically detects this and switches source to "adhoc". 
+`adhoc` is needed here  because `recordedBy` isn't one of the named paramters. `map_fetch()` automatically detects this and switches source to "adhoc". Note the default style for the adhoc interface is `scaled.circles` and base map style `gbif-light`. 
 
 ```R 
 map_fetch(recordedBy="John Waller")
@@ -140,28 +147,38 @@ map_fetch(recordedBy="John Waller")
 
 <img src="images/john_waller.png" alt="" width="70%"/>
 
-Occurrences in the OBIS network. Note that `squareSize` only works with `bin="square"`.
+Occurrences in the OBIS network. Note that `squareSize` only works with `bin="square"`. Also notice that the map only returns one tile since we didn't set `x` or `y` values. 
 
 ```R
 map_fetch(z=1,source="adhoc",style="green.poly",squareSize=64,bin="square",network_key="2b7c7b4f-4d4f-40d3-94de-c28b6fa054a6")
 ```
 
-Map of Texas using the `gadm` filter.
+<img src="images/obis_map.png" alt="" width="70%"/>
+
+Map of Texas using the `gadm` filter. I looked up the `gadm_gid` code using the GBIF [web interface](https://www.gbif.org/occurrence/map?gadm_gid=USA.44_1). 
 
 ```R 
 map_fetch(z=4,x=6:7,y=4:5,gadm_gid="USA.44_1",style="blue.marker") 
 ```
-`map_fetch()` is generally forgiving and will give you back at least some map with warnings or blank images when the parameters don't work.
+
+<img src="images/texas.png" alt="" width="50%"/>
+
+`map_fetch()` is generally forgiving and will give you back at least some map with warnings or blank images when the parameters don't work. You can see in the image below that there are three blank images stitched together. 
 
 ```R 
 map_fetch(x=1:5) # no tiles exist past 2, so blank images are returned
 ```
+
+<img src="images/blank.png" alt="" width="70%"/>
+
 
 All specimen bird records from the year 2000.
 
 ```R 
 map_fetch(taxonKey=212, basisOfRecord="PRESERVED_SPECIMEN", year=2000,style="classic-noborder.poly")  
 ```
+
+<img src="images/eBird.png" alt="" width="70%"/>
 
 Map of all country centroid locations.
 
@@ -176,6 +193,8 @@ In general, adhoc maps are harder to make look nice, but usually picking a non-p
 ```R 
 map_fetch(source="adhoc",project_id="BID-AF2015-0134-REG",style="green2.poly",hexPerTile=50)
 ```
+
+<img src="images/bid_project_hex.png" alt="" width="70%"/>
 
 A tip for getting the un-named adhoc parameters is to pull them from the occurrence search URL after looking them up via the [web interface](https://www.gbif.org/occurrence/map?advanced=1&project_id=BID-AF2015-0134-REG).
 
