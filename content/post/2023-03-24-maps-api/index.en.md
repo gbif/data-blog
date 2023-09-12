@@ -39,9 +39,9 @@ It is often useful to create a map from GBIF mediated occurrences. While it is a
 
 Additionally, large downloads of millions of lat-lon points can be difficult to plot using `ggplot2` or base R graphics. In these cases, using the [GBIF maps API](https://www.gbif.org/developer/maps) with `rgbif::map_fetch()` can be a good option. 
 
-## Using map_fetch()
+## Using rgbif::map_fetch()
 
-[rgbif](https://docs.ropensci.org/rgbif/index.html) has a function called `map_fetch()` interfaces directly with the GBIF [maps API](https://www.gbif.org/developer/maps). Running `map_fetch()` will return the default GBIF pixel map of all GBIF mediated occurrences. 
+[rgbif](https://docs.ropensci.org/rgbif/index.html) has a function called `map_fetch()`, which interfaces directly with the GBIF [maps API](https://www.gbif.org/developer/maps). Running `map_fetch()` will return the default GBIF pixel map of all GBIF mediated occurrences. 
 
 
 ```R
@@ -51,8 +51,7 @@ map_fetch()
 
 <img src="images/dot_map.png" alt="" width="70%"/>
 
-
-It is also possible to make static maps that look like default [occurrence search](https://www.gbif.org/occurrence/map?taxon_key=212) maps. See the maps api page for [available styles](https://tile.gbif.org/ui/). 
+It is possible to make static maps that look like default [occurrence search](https://www.gbif.org/occurrence/map?taxon_key=212) maps. See the maps api page for [available styles](https://tile.gbif.org/ui/). 
 
 ```R 
 map_fetch(taxonKey=212,style="scaled.circles",base_sytle="gbif-light")
@@ -61,7 +60,7 @@ map_fetch(taxonKey=212,style="scaled.circles",base_sytle="gbif-light")
 <img src="images/gbif-light-scaled-circles-birds.png" alt="" width="70%"/>
 
 
-For "poly" styles it is also possible to plot set the `hexPerTile` parameter, so that the binned occurrence data is essentially shown at a higher resolution. A tile is an individual `png` image that is fetch from the API in order to make a map. The default settings of `map_fetch()` will fetch two images, so the image below has 400 hexagons across the width of map. 
+For "poly" styles you can set the `hexPerTile` parameter, so that the binned occurrence data is essentially shown at a higher resolution. A tile is an individual `png` image that is fetch from the API in order to make a map. The default settings of `map_fetch()` will fetch two images (hemispheres), so the image below has 400 hexagons across the width of map. 
 
 ```R 
 map_fetch(hexPerTile=200,style="green.poly",base_style="gbif-dark",bin="hex")
@@ -69,7 +68,7 @@ map_fetch(hexPerTile=200,style="green.poly",base_style="gbif-dark",bin="hex")
 
 <img src="images/hexpertile.png" alt="" width="70%"/>
 
-There is also the option to plot with polar or arctic projections. For example, penguin records. 
+There is the option to plot with polar or arctic projections. For example, penguin records. 
 
 ```R 
 map_fetch(srs='EPSG:3031',taxonKey=7190978,style='glacier.point', base_style="gbif-dark")
@@ -77,9 +76,9 @@ map_fetch(srs='EPSG:3031',taxonKey=7190978,style='glacier.point', base_style="gb
 
 <img src="images/artic-peguins-glacier-point-gbif-dark.png" alt="" width="70%"/>
 
-It is also possible to get views other than just the global map, by zooming in and selecting only certain map tiles with `z`, `x`, `y`. 
+`map_fetch()` allows for views other than just the global map, by zooming in and selecting only certain map tiles with `z`, `x`, `y`. 
 
-Seleting tiles can be tricky to get right, but with a little trial-and-error, you can usually get close to the map you want to have. One trick for getting the right tiles, is to look at this [demo page](https://api.gbif.org/v2/map/demo13.html#map=3/0/0/0), where the `z,x,y` values are printed on the center of each tile. 
+Selecting tiles can be tricky to get right, but with a little trial-and-error, you can usually get close to the map you want to have. One trick for getting the right tiles, is to look at this [demo page](https://api.gbif.org/v2/map/demo13.html#map=3/0/0/0), where the `z,x,y` values are printed on the center of each tile. 
 
 For example, you can see what the tile values for a zoomed in map of Australia would be [here](https://api.gbif.org/v2/map/demo13.html#map=5/134.01/-21.64/0).
 
@@ -119,7 +118,7 @@ I suggest using this [interactive page](https://api.gbif.org/v2/map/demo13.html#
 
 Keep in mind that the the GBIF maps API wasn't designed to make high quality static maps, like it is being used for in `map_fetch()`. It was designed for interactive use on the [GBIF website](https://www.gbif.org/occurrence/map?), so the API design reflects this reality. 
 
-When making maps, the **named paramters**, `taxonKey`, `datasetKey`, `country`, `publishingOrg`,  `publishingCountry`, `year`, and `basisOfRecord` are going to be the easiest to use.  However, It is also possible to make "any" map (any [search filter](https://www.gbif.org/occurrence/map?recorded_by=John%20Waller&advanced=1&occurrence_status=present)) using `source=adhoc`. 
+When making maps, the **named paramters**, `taxonKey`, `datasetKey`, `country`, `publishingOrg`,  `publishingCountry`, `year`, and `basisOfRecord` are going to be the easiest to use.  However, It is possible to make "any" map (any [search filter](https://www.gbif.org/occurrence/map?recorded_by=John%20Waller&advanced=1&occurrence_status=present)) using `source=adhoc`. 
 
 ```R 
 # all occurrences with iucn status critically endangered 
