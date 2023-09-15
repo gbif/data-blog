@@ -1,14 +1,14 @@
 ---
 title: Creating high resolution maps with rgbif 
 author: John Waller
-date: '2023-09-11'
+date: '2023-09-15'
 slug: []
 categories:
   - GBIF
 tags:
   - API
 lastmod: '2023-03-24T14:31:05+01:00'
-draft: yes
+draft: no
 keywords: []
 description: ''
 authors: ''
