@@ -132,7 +132,7 @@ map_fetch(x=0,gadm_gid="USA",source="adhoc",style="classic.point")
 
 <img src="images/ugly.png" alt="" width="70%"/>
 
-When making maps, the **named paramters**, `taxonKey`, `datasetKey`, `country`, `publishingOrg`,  `publishingCountry`, `year`, and `basisOfRecord` are going to be the easiest to use.  However, It is possible to make "any" map (any [search filter](https://www.gbif.org/occurrence/map?recorded_by=John%20Waller&advanced=1&occurrence_status=present)) using `source=adhoc`. 
+When making maps, the **named parameters**, `taxonKey`, `datasetKey`, `country`, `publishingOrg`,  `publishingCountry`, `year`, and `basisOfRecord` are going to be the easiest to use.  However, It is possible to make "any" map (any [search filter](https://www.gbif.org/occurrence/map?recorded_by=John%20Waller&advanced=1&occurrence_status=present)) using `source=adhoc`. 
 
 ```R 
 # all occurrences with iucn status critically endangered 
@@ -146,7 +146,7 @@ map_fetch(z=1,x=0:3,y=0:1,source="adhoc",iucn_red_list_category="CR",
 
 Here are some examples of maps with different parameters and styles. 
 
-`adhoc` is needed here  because `recordedBy` isn't one of the named paramters. `map_fetch()` automatically detects this and switches source to "adhoc". Note the default style for the adhoc interface is `scaled.circles` and base map style `gbif-light`. 
+`adhoc` is needed here  because `recordedBy` isn't one of the named parameters. `map_fetch()` automatically detects this and switches source to "adhoc". Note the default style for the adhoc interface is `scaled.circles` and base map style `gbif-light`. 
 
 ```R 
 map_fetch(recordedBy="John Waller")
@@ -259,6 +259,22 @@ leaflet() %>%
 ```
 
 See [leaflet](https://ggplot2.tidyverse.org/reference/ggsf.html) docs for more. 
+
+## Citing maps data
+
+If you generate a map that you will use in a publication, it is good practice to cite the underlying data. This can be done by generating a download using the same filters you used in your map. 
+
+See articles : 
+
+* [rgbif citation article](https://docs.ropensci.org/rgbif/articles/gbif_citations.html)()
+* [GBIF Citation Guidelines](https://www.gbif.org/citation-guidelines)
+
+You might also want to cite **Open Street Map**, if you use a base map that uses their data. 
+
+* https://tile.gbif.org/ui/
+* https://wiki.openstreetmap.org/wiki/Researcher_Information
+
+
 
 
 
