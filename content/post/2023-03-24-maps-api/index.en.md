@@ -142,7 +142,7 @@ map_fetch(z=1,x=0:3,y=0:1,source="adhoc",iucn_red_list_category="CR",
 
 <img src="images/adhoc-iucn.png" alt="" width="70%"/>
 
-`map_fetch()` can also tell when you have used a parameter that is no a default parameter and automatically switch to `source="adhoc"` for you. I have found that point style don't work well with `source="adhoc"`, so `map_fetch()` will give a warning if you try to use a point style with `source="adhoc"`. 
+`map_fetch()` can also tell when you have used a parameter that is not a default parameter and automatically switch to `source="adhoc"` for you. I have found that point style don't work well with `source="adhoc"`, so `map_fetch()` will give a warning if you try to use a point style with `source="adhoc"`. 
 
 Here are some examples of maps with different parameters and styles. 
 
@@ -266,7 +266,7 @@ If you generate a map that you will use in a publication, it is good practice to
 
 See articles : 
 
-* [rgbif citation article](https://docs.ropensci.org/rgbif/articles/gbif_citations.html)()
+* [rgbif Citation Article](https://docs.ropensci.org/rgbif/articles/gbif_citations.html)
 * [GBIF Citation Guidelines](https://www.gbif.org/citation-guidelines)
 
 You might also want to cite **Open Street Map**, if you use a base map that uses their data. 
