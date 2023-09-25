@@ -1,5 +1,5 @@
 ---
-title: The GBIF Registry of Scientific Collections (GRSciColl) in 2021
+title: The Global Registry of Scientific Collections (GRSciColl) in 2021
 author: Marie Grosjean
 date: '2021-03-12'
 slug: grscicoll-2021
@@ -37,7 +37,7 @@ sequenceDiagrams:
   options: ''
 ---
 
-The [GBIF Registry of Scientific Collections](https://www.gbif.org/grscicoll), also known as GRSciColl, has been [available on GBIF.org since 2019](https://www.gbif.org/news/5kyAslpqTVxYqZTwYn1cub/gbif-provides-new-home-for-the-global-registry-of-scientific-collections) but it recently got some more attention when we connected it to GBIF occurrences.
+The [Global Registry of Scientific Collections](https://www.gbif.org/grscicoll), also known as GRSciColl, has been [available on GBIF.org since 2019](https://www.gbif.org/news/5kyAslpqTVxYqZTwYn1cub/gbif-provides-new-home-for-the-global-registry-of-scientific-collections) but it recently got some more attention when we connected it to GBIF occurrences.
 Now is the perfect time to share a bit of GRSciColl history and what we plan for its future.
 
 # A brief history of GRSciColl
