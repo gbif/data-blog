@@ -110,13 +110,13 @@ Another important note here is that migration can be done between datasets. If y
 
 GBIF helpdesk will contact the publishers when identifiers validation fails, but you are welcome to check the GBIF registry on your own. 
 
-You can access the registry from your dataset page on GBIF.org. Look for “GBIF Registry” link in the GBIF registration section. On the registry page, Click “Ingestion history” under the “Datasets” in the side menu. 
+You can access the registry from your dataset page on GBIF.org. Look for `GBIF Registry` link in the GBIF registration section. On the registry page, Click `Ingestion history` under the `Datasets` in the side menu. 
 
-If “VERBATIM_TO_IDENTIFIER : More than one metric” is in red characters, this means that the identifier validation failed (a big portion of new occurrenceIDs were detected).
+If `VERBATIM_TO_IDENTIFIER : More than one metric` is in red characters, this means that the identifier validation failed (a big portion of new occurrenceIDs were detected).
 
 ![Fig.4 GBIF registry: ingestion history](/content/post/2023-11-01-improve-identifier-stability/fig4.jpg)
 
-If you hover on “VERBATIM_TO_IDENTIFIER : More than one metric”, you can see record count in the metrics. The records with new occurrenceIDs are shown in the “absent gbif id count”.
+If you hover on `VERBATIM_TO_IDENTIFIER : More than one metric`, you can see record count in the metrics. The records with new occurrenceIDs are shown in the `absent gbif id count`.
 
 ![Fig.5 GBIF registry: ingestion history - occurrence count](/content/post/2023-11-01-improve-identifier-stability/fig5.jpg)
 
