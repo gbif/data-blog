@@ -12,7 +12,7 @@ tags:
   - data quality
   - issues
   - occurrence
-lastmod: '2022-01-04T10:19:14+01:00'
+lastmod: '2023-10-25'
 draft: yes
 keywords: ['identifiers', 'occurrenceID', 'persistent identifiers']
 description: ''
