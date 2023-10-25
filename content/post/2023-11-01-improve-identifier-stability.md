@@ -43,7 +43,7 @@ Our aim in this process is to minimize the changes of GBIF identifiers and to su
 
 ## What are GBIF identifiers? Why is it important to keep them?
 
-Once datasets are registered to GBIF, a unique **gbifID** (numeric string such as 1676099845) is assigned to each occurrence record to create a **URL** like [https://www.gbif.org/occurrence/1676099845](https://www.gbif.org/occurrence/1676099845). Even though these identifiers are not designed to offer persistent identifiers in the first place, these URLs are used for citing individual specimen or observation records outside GBIF services, for example in [Bionomia](https://bionomia.net/). We would like to prevent unwanted loss of links as much as we can, to support citations. More details on demands towards GBIF identifiers are introduced in [this news item](https://www.gbif.org/news/2M3n65fHOhvq4ek5oVOskc/new-processing-routine-improves-stability-of-gbif-occurrence-ids). 
+Once datasets are registered to GBIF, a unique **gbifID** (numeric string such as `1676099845`) is assigned to each occurrence record to create a **URL** like `https://www.gbif.org/occurrence/1676099845`. Even though these identifiers are not designed to offer persistent identifiers in the first place, these URLs are used for citing individual specimen or observation records outside GBIF services, for example in [Bionomia](https://bionomia.net/). We would like to prevent unwanted loss of links as much as we can, to support citations. More details on demands towards GBIF identifiers are introduced in [this news item](https://www.gbif.org/news/2M3n65fHOhvq4ek5oVOskc/new-processing-routine-improves-stability-of-gbif-occurrence-ids). 
 
 
 ## GBIF identifier management depends on occurrenceIDs
