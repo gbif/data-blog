@@ -54,7 +54,7 @@ See the figure below which is an example of updating a dataset (such as a change
  * Top example (no changes of occurrenceIDs): The URL of the occurrence will remain the same. 
  * Bottom example (changes of occurrenceIDs): A new URL will be issued for the updated data and the old URL will be deprecated.
 
-![Fig.1 The URL remains if the occurrenceID did not change. The URL is deprecated and a new URL is issued if the occurrenceID changed.](/content/post/2023-11-01-improve-identifier-stability/fig1.png)
+![Fig.1 The URL remains if the occurrenceID did not change. The URL is deprecated and a new URL is issued if the occurrenceID changed.](/content/post/2023-11-01-improve-identifier-stability/change_of_occurrenceIDs.png)
 
 The example above uses so-called “triplet”, the combination of the institutionCode, collectionCode and catalogNumber for occurenceIDs (such as `urn:catalog:UWBM:Bird:89776`). However, using meaningless string or integer is generally recommended for IDs. Currently there are no strict rules for occurrenceIDs aside from the uniqueness within a dataset. After the discussions with our community (such as [this GitHub issue](https://github.com/tdwg/dwc/issues/491)), GBIF has moved towards recommending meaningless occurrenceIDs to promote **persistent identifiers**. A globally unique identifier such as UUID (e.g. `000866d2-c177-4648-a200-ead4007051b9`) can be one of the best practices as recommended by [TDWG here](http://rs.tdwg.org/dwc/terms/occurrenceID). 
 
@@ -80,7 +80,7 @@ Firstly, we will ask whether the change is reasonable or unintentional errors. I
 
 Secondly, we suggest Option 3, if publishers can provide us with the relationship between the old occurrenceIDs and the new occurrenceIDs. Using a list of occurrenceIDs, we can migrate GBIF identifiers and keep the URLs of occurrences (see the figure below).
 
-![Fig.2 The URL remains the same after the migration of GBIF identifiers.](/content/post/2023-11-01-improve-identifier-stability/fig2.png)
+![Fig.2 The URL remains the same after the migration of GBIF identifiers.](/content/post/2023-11-01-improve-identifier-stability/occurrenceID_migration.png)
 
 Once we know that both Option 2 and Option 3 are not feasible, we will take Option 1 to resume the ingestion.
 
@@ -112,11 +112,11 @@ You can access the registry from your dataset page on GBIF.org. Look for `GBIF R
 
 If `VERBATIM_TO_IDENTIFIER : More than one metric` is in red characters, this means that the identifier validation failed (a big portion of new occurrenceIDs were detected).
 
-![Fig.3 GBIF registry: ingestion history](/content/post/2023-11-01-improve-identifier-stability/fig3.jpg)
+![Fig.3 GBIF registry: ingestion history](/content/post/2023-11-01-improve-identifier-stability/registry_ingestion_history.jpg)
 
 If you hover on `VERBATIM_TO_IDENTIFIER : More than one metric`, you can see record count in the metrics. The record count for new occurrenceIDs is shown in the `absent gbif id count`.
 
-![Fig.4 GBIF registry: ingestion history - occurrence count](/content/post/2023-11-01-improve-identifier-stability/fig4.jpg)
+![Fig.4 GBIF registry: ingestion history - occurrence count](/content/post/2023-11-01-improve-identifier-stability/registry_record_count.jpg)
 
 
 ## Links related to the identifier stability
