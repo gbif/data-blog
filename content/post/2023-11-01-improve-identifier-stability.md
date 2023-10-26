@@ -50,7 +50,7 @@ Once datasets are registered to GBIF, a unique **gbifID** (numeric string such a
 
 GBIF identifiers (i.e. gbifIDs) are automatically created by our system, using **occurenceIDs** provided by publishers. occurrenceIDs are the keys for the relationship between the existing records available on GBIF.org and the updated records in the latest version on the hosting web services. This means that if occurrenceIDs change, we won’t be able to relate them. When a record has a new occurrenceID, we treat the record as a “new” record and assign a new GBIF identifier. The record with the old occurrenceID (that exists on GBIF.org but not in the latest version on the hosting web services) will be considered deleted from the dataset, so the URL of the record will be deprecated like [this occurrence](https://www.gbif.org/occurrence/1252968762).
 
-See the figure below as an example of updating a dataset (such as due to a change of catalogue numbering system). 
+See the figure below which is an example of updating a dataset (such as a change of catalogue numbering system). 
  * Top example (no changes of occurrenceIDs): The URL of the occurrence will remain the same. 
  * Bottom example (changes of occurrenceIDs): A new URL will be issued for the updated data and the old URL will be deprecated.
 
