@@ -76,7 +76,7 @@ We offer three options to deal with the identifier issues.
 
 GBIF helpdesk consults with publishers to decide which option suits the dataset best. Option 2 and Option 3 could prevent losing the URLs of occurrences, while Option 1 leads to the loss of the URLs. 
 
-Firstly, we will ask whether the change is reasonable or unintentional errors. If an occurrence entity is different in the latest version, we will take Option 1 to resume the ingestion. If the changes of occurrenceIDs are errors, Option 2 can be a candidate solution. What publishers need to do here is to change back from the new occurrenceIDs to the old occurenceIDs and to update the datasets on the hosting web services. 
+Firstly, we ask whether the change is reasonable or unintentional errors. If an occurrence entity is different in the latest version, we will take Option 1 to resume the ingestion. If the changes of occurrenceIDs are errors, Option 2 can be a candidate solution. What publishers need to do here is to change back from the new occurrenceIDs to the old occurenceIDs and to update the datasets on the hosting web services. 
 
 Secondly, we suggest Option 3, if publishers can provide us with the relationship between the old occurrenceIDs and the new occurrenceIDs. Using a list of occurrenceIDs, we can migrate GBIF identifiers and keep the URLs of occurrences (see the figure below).
 
@@ -86,7 +86,7 @@ Once we know that both Option 2 and Option 3 are not feasible, we will take Opti
 
 Please be aware that we may take Option 1 if we don’t hear back from the publishers for more than two months after the first contact. We are happy to extend this timeframe on request.
 
-There are cases where identifier issues can be ignored. For example, when the number of occurrence records changes massively, the portion of new occurrenceIDs may reach the threshold. If we can tell an increase of records (like doubled or tripled) by looking at hosting web services such as IPTs, we take Option 1 without notification. Another example is the datasets from observation data aggregators in which occurrenceIDs always change. In this case, we set a flag to skip occurrenceID checks for these datasets, and data ingestion will not be paused during the identifier validation anymore.
+There are cases that identifier issues can be ignored. For example, when the number of occurrence records changes massively, the portion of new occurrenceIDs may reach the threshold. If we can tell an increase of records (like doubled or tripled) by looking at hosting web services such as IPTs, we take Option 1 without notification. Another example is the datasets from observation data aggregators in which occurrenceIDs always change. In this case, we set a flag to skip occurrenceID checks for these datasets, and data ingestion will not be paused during the identifier validation anymore.
 
 
 ## Requirements for identifier migrations
@@ -108,13 +108,19 @@ Another important note here is that migration can be done between datasets. If y
 
 GBIF helpdesk will contact the publishers when identifiers validation fails, but you are welcome to check the GBIF registry on your own. 
 
-You can access the registry from your dataset page on GBIF.org. Look for `GBIF Registry` link in the GBIF registration section. On the registry page, Click `Ingestion history` under the `Datasets` in the side menu. 
+You can access the registry from your dataset page on GBIF.org. 
+
+Look for `GBIF Registry` link in the GBIF registration section. 
+
+On the registry page, Click `Ingestion history` under the `Datasets` in the side menu. 
 
 If `VERBATIM_TO_IDENTIFIER : More than one metric` is in red characters, this means that the identifier validation failed (a big portion of new occurrenceIDs were detected).
 
 ![Fig.3 GBIF registry: ingestion history](/content/post/2023-11-01-improve-identifier-stability/registry_ingestion_history.jpg)
 
-If you hover on `VERBATIM_TO_IDENTIFIER : More than one metric`, you can see record count in the metrics. The record count for new occurrenceIDs is shown in the `absent gbif id count`.
+If you hover on `VERBATIM_TO_IDENTIFIER : More than one metric`, you can see record count in the metrics. 
+
+The record count for new occurrenceIDs is shown in the `absent gbif id count`.
 
 ![Fig.4 GBIF registry: ingestion history - occurrence count](/content/post/2023-11-01-improve-identifier-stability/registry_record_count.jpg)
 
