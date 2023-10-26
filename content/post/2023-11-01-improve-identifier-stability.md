@@ -56,10 +56,11 @@ See the figure below which is an example of updating a dataset (such as a change
 
 ![Fig.1 The URL remains if the occurrenceID did not change. The URL is deprecated and a new URL is issued if the occurrenceID changed.](/content/post/2023-11-01-improve-identifier-stability/change_of_occurrenceIDs.png)
 
-The example above uses so-called “triplet”, the combination of the institutionCode, collectionCode and catalogNumber for occurenceIDs (such as `urn:catalog:UWBM:Bird:89776`). However, using meaningless string or integer is generally recommended for IDs. Currently there are no strict rules for occurrenceIDs aside from the uniqueness within a dataset. After the discussions with our community (such as [this GitHub issue](https://github.com/tdwg/dwc/issues/491)), GBIF has moved towards recommending meaningless occurrenceIDs to promote **persistent identifiers**. A globally unique identifier such as UUID (e.g. `000866d2-c177-4648-a200-ead4007051b9`) can be one of the best practices as recommended by [TDWG here](http://rs.tdwg.org/dwc/terms/occurrenceID). 
+The example above uses so-called “triplet”, the combination of the **institutionCode**, **collectionCode** and **catalogNumber** for occurenceIDs (such as `urn:catalog:UWBM:Bird:89776`). However, using meaningless string or integer is generally recommended for IDs. Currently there are no strict rules for occurrenceIDs aside from the uniqueness within a dataset. After the discussions with our community (such as [this GitHub issue](https://github.com/tdwg/dwc/issues/491)), GBIF has moved towards recommending meaningless occurrenceIDs to promote **persistent identifiers**. A globally unique identifier such as UUID (e.g. `000866d2-c177-4648-a200-ead4007051b9`) can be one of the best practices as recommended by [TDWG here](http://rs.tdwg.org/dwc/terms/occurrenceID). 
 
 Please do not worry if you have already used the triplet or other meaningful content for occurrenceIDs in your published datasets. In case you change occurrenceIDs, there is a way to migrate gbifIDs and URLs from old occurenceIDs to new occurrenceIDs which will be more explained in the following sections.
 
+> Note: If you change catalogNumber, the former catalogNumber can be filled out in otherCatalogNumbers which is used for data-clustering (see [this blog post](https://data-blog.gbif.org/post/clustering-occurrences/)).
 
 ## Three options to deal with identifier issues
 
@@ -72,7 +73,7 @@ We offer three options to deal with the identifier issues.
 | 2 | Change back occurrenceIDs (i.e. restore the old occurrenceIDs) | Publishers | Data ingestion will be automatically resumed after publication and GBIF identifiers remain the same.
 | 3 | Migrate GBIF identifiers from old occurrenceIDs to new occurrenceIDs | GBIF helpdesk * | Data ingestion will be manually resumed and GBIF identifiers remain the same.
 
-\* Publishers need to provide a list
+> \* Publishers need to provide a list
 
 GBIF helpdesk consults with publishers to decide which option suits the dataset best. Option 2 and Option 3 could prevent losing the URLs of occurrences, while Option 1 leads to the loss of the URLs. 
 
