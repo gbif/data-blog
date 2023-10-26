@@ -43,7 +43,7 @@ Our aim in this process is to minimize the changes of GBIF identifiers and to su
 
 ## What are GBIF identifiers? Why is it important to keep them?
 
-Once datasets are registered to GBIF, a unique **gbifID** (numeric string such as `1676099845`) is assigned to each occurrence record to create a **URL** like `https://www.gbif.org/occurrence/1676099845`. Even though these identifiers are not designed to offer persistent identifiers in the first place, these URLs are used for citing individual specimen or observation records outside GBIF services, for example in [Bionomia](https://bionomia.net/). We would like to prevent unwanted loss of links as much as we can, to support citations. More details on demands towards GBIF identifiers are introduced in [this news item](https://www.gbif.org/news/2M3n65fHOhvq4ek5oVOskc/new-processing-routine-improves-stability-of-gbif-occurrence-ids). 
+Once datasets are registered to GBIF, a unique **gbifID** (numeric string such as `1676099845`) is assigned to each occurrence record to create a **URL** like `https://www.gbif.org/occurrence/1676099845`. Even though these identifiers are not designed to offer persistent identifiers in the first place, these URLs are used for citing individual specimen or observation records outside GBIF services, for example in [Bionomia](https://bionomia.net/). We would like to prevent loss of links as much as we can, to support citations. More details on demands towards GBIF identifiers are introduced in [this news item](https://www.gbif.org/news/2M3n65fHOhvq4ek5oVOskc/new-processing-routine-improves-stability-of-gbif-occurrence-ids). 
 
 
 ## GBIF identifier management depends on occurrenceIDs
@@ -65,8 +65,6 @@ Please do not worry if you have already used the triplet or other meaningful con
 
 Data ingestion initiates after publishers update a dataset on hosting web services. During the identifier validation, the system counts occurrence records and check the portion of new occurenceIDs. If this exceeds 50% of the record count, the data ingestion will be paused creating an issue on [GitHub](https://github.com/gbif/ingestion-management/issues) by a dataset basis.
 
-![Fig.2 Example of a GitHub issue](/content/post/2023-11-01-improve-identifier-stability/fig2.jpg)
-
 We offer three options to deal with the identifier issues. 
 | Number | Option | Who can do this | What happens after |
 |---|---|---|---|
@@ -82,7 +80,7 @@ Firstly, we will ask whether the change is reasonable or unintentional errors. I
 
 Secondly, we suggest Option 3, if publishers can provide us with the relationship between the old occurrenceIDs and the new occurrenceIDs. Using a list of occurrenceIDs, we can migrate GBIF identifiers and keep the URLs of occurrences (see the figure below).
 
-![Fig.3 The URL remains the same after the migration of GBIF identifiers.](/content/post/2023-11-01-improve-identifier-stability/fig3.png)
+![Fig.2 The URL remains the same after the migration of GBIF identifiers.](/content/post/2023-11-01-improve-identifier-stability/fig2.png)
 
 Once we know that both Option 2 and Option 3 are not feasible, we will take Option 1 to resume the ingestion.
 
@@ -101,7 +99,7 @@ old_id_00002,new_id_00002
 old_id_00003,new_id_00003
 ```
 
-If publishers can send a list to GBIF helpdesk (helpdesk@gbif.org), we can run an identifier migration for you. This can be done even before publishers update datasets on hosting web services. If you know occurrenceIDs will change in the next update, please do not hesitate to contact us.
+If publishers can send a list to GBIF helpdesk (helpdesk@gbif.org), we can run an identifier migration for you. This can be done even before publishers update datasets on hosting web services. If you know occurrenceIDs change in the next update, please do not hesitate to contact us.
 
 Another important note here is that migration can be done between datasets. If you are planning to republish occurrence records in new datasets by removing the records from the previous datasets or deleting the datasets themselves, this approach will help maintain the GBIF identifiers for the records. The URLs in the previous datasets can be used in the new datasets by identifier migrations anytime.
 
@@ -114,11 +112,11 @@ You can access the registry from your dataset page on GBIF.org. Look for `GBIF R
 
 If `VERBATIM_TO_IDENTIFIER : More than one metric` is in red characters, this means that the identifier validation failed (a big portion of new occurrenceIDs were detected).
 
-![Fig.4 GBIF registry: ingestion history](/content/post/2023-11-01-improve-identifier-stability/fig4.jpg)
+![Fig.3 GBIF registry: ingestion history](/content/post/2023-11-01-improve-identifier-stability/fig3.jpg)
 
-If you hover on `VERBATIM_TO_IDENTIFIER : More than one metric`, you can see record count in the metrics. The records with new occurrenceIDs are shown in the `absent gbif id count`.
+If you hover on `VERBATIM_TO_IDENTIFIER : More than one metric`, you can see record count in the metrics. The record count for new occurrenceIDs is shown in the `absent gbif id count`.
 
-![Fig.5 GBIF registry: ingestion history - occurrence count](/content/post/2023-11-01-improve-identifier-stability/fig5.jpg)
+![Fig.4 GBIF registry: ingestion history - occurrence count](/content/post/2023-11-01-improve-identifier-stability/fig4.jpg)
 
 
 ## Links related to the identifier stability
