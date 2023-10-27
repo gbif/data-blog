@@ -64,7 +64,7 @@ Please do not worry if you have already used the triplet or other meaningful con
 
 ## Three options to deal with identifier issues
 
-Data ingestion initiates after publishers update a dataset on hosting web services. During the identifier validation, the system counts occurrence records and check the portion of new occurenceIDs. If this exceeds 50% of the record count, the data ingestion will be paused creating an issue on [GitHub](https://github.com/gbif/ingestion-management/issues) by a dataset basis.
+Data ingestion initiates after publishers update and publish a dataset on hosting web services. During the identifier validation, the system counts occurrence records and check the portion of new occurenceIDs. If this exceeds 50% of the record count, the data ingestion will be paused creating an issue on [GitHub](https://github.com/gbif/ingestion-management/issues) by a dataset basis.
 
 We offer three options to deal with the identifier issues. 
 | Number | Option | Who can do this | What happens after |
@@ -119,7 +119,7 @@ If `VERBATIM_TO_IDENTIFIER : More than one metric` is in red characters, this me
 
 ![Fig.3 GBIF registry: ingestion history](/content/post/2023-11-01-improve-identifier-stability/registry_ingestion_history.jpg)
 
-If you hover on `VERBATIM_TO_IDENTIFIER : More than one metric`, you can see record count in the metrics. 
+If you hover on `VERBATIM_TO_IDENTIFIER : More than one metric`, you can see a record count in the metrics. 
 
 The record count for new occurrenceIDs is shown in the `absent gbif id count`.
 
