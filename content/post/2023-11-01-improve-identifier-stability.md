@@ -124,7 +124,7 @@ The record count for new occurrenceIDs is shown in the `absent gbif id count`.
 
 ![Fig.4 GBIF registry: ingestion history - occurrence count](/content/post/2023-11-01-improve-identifier-stability/registry_record_count.jpg)
 
-You can also check whether your dataset had identifier issues on [GitHub](https://github.com/gbif/ingestion-management/issues) searching by the dataset title.
+You can also check whether your dataset has identifier issues on [GitHub](https://github.com/gbif/ingestion-management/issues) searching by the dataset title.
 
 ## Links related to the identifier stability
   * [News item: New processing routine improves stability of GBIF occurrence IDs](https://www.gbif.org/news/2M3n65fHOhvq4ek5oVOskc/new-processing-routine-improves-stability-of-gbif-occurrence-ids)
