@@ -63,7 +63,7 @@ Please do not worry if you have already used the triplet or other meaningful con
 
 ## Three options to deal with identifier issues
 
-Data ingestion initiates after publishers update and publish a dataset on hosting web services. During the identifier validation, the system counts occurrence records and check the portion of new `occurenceID`s. If this exceeds 50% of the record count, the data ingestion will be paused creating an issue on [GitHub](https://github.com/gbif/ingestion-management/issues) on a per-dataset basis.
+Data ingestion initiates after publishers update and publish a dataset on hosting web services. During the identifier validation, the system counts occurrence records and checks the portion of new `occurenceID`s. If this exceeds 50% of the record count, the data ingestion will be paused creating an issue on [GitHub](https://github.com/gbif/ingestion-management/issues) on a per-dataset basis.
 
 We offer three options to deal with the identifier issues. 
 | Number | Option | Who can do this | What happens after |
