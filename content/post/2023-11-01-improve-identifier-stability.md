@@ -76,7 +76,7 @@ We offer three options to deal with the identifier issues.
 
 GBIF helpdesk consults with publishers to decide which option suits the dataset best. Option 2 and Option 3 could prevent losing the URLs of occurrences, while Option 1 leads to the loss of the URLs. 
 
-Firstly, we ask whether the change is intended or unintentional errors. If an occurrence entity is different in the latest version, we will take Option 1 to resume the ingestion. If the changes of `occurrenceID`s are errors, Option 2 can be a candidate solution. What publishers need to do here is to change back from the new `occurrenceID`s to the old occurenceIDs and to publish the datasets on the hosting web services. 
+Firstly, we ask whether the change is on purpose or unintentional errors. If the changes of `occurrenceID`s are errors, Option 2 can be a candidate solution. What publishers need to do here is to change back from the new `occurrenceID`s to the old occurenceIDs and to publish the datasets on the hosting web services. 
 
 Secondly, we suggest Option 3, if publishers can provide us with the relationship between the old `occurrenceID`s and the new `occurrenceID`s. Using the list of `occurrenceID`s, we can migrate GBIF identifiers and keep the URLs (see the figure below).
 
