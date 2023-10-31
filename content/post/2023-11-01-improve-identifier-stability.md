@@ -36,7 +36,7 @@ sequenceDiagrams:
   options: ''
 ---
 
-Since 2022, GBIF has been monitoring **changes of occurrenceIDs** in datasets to improve the stability of GBIF identifiers. We pause data ingestion when we detect more than half of occurrence records in the latest version have different `occurrenceID`s from the previous version (live on GBIF.org). This identifier validation process automatically creates issues on GitHub and GBIF helpdesk will contact the publishers to verify the changes of `occurrenceID`s. 
+Since 2022, GBIF has been monitoring **changes of `occurrenceID`s** in datasets to improve the stability of GBIF identifiers. We pause data ingestion when we detect more than half of occurrence records in the latest version have different `occurrenceID`s from the previous version (live on GBIF.org). This identifier validation process automatically creates issues on GitHub and GBIF helpdesk will contact the publishers to verify the changes of `occurrenceID`s. 
 
 Our aim in this process is to minimize the changes of GBIF identifiers and to support the needs for citations and data linking. In this blog post, we explain some background information on identifier stability, how we manage GBIF identifiers by `occurrenceID`s and what options we can take for identifier issues. 
 
