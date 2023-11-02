@@ -55,15 +55,15 @@ See the figure below which is an example of updating a dataset (such as a change
 
 ![Fig.1 The URL remains if the occurrenceID did not change. The URL is deprecated and a new URL is issued if the occurrenceID changed.](/content/post/2023-11-01-improve-identifier-stability/change_of_occurrenceIDs.png)
 
-The example above uses a so-called “triplet”, the combination of the **`institutionCode`**, **`collectionCode`** and **`catalogNumber`** for `occurenceID`s (such as `urn:catalog:UWBM:Bird:89776`). However, using meaningless string or integer values is generally recommended for IDs. Currently there are no strict rules for `occurrenceID`s aside from the uniqueness within a dataset. After the discussions with our community (such as [this GitHub issue](https://github.com/tdwg/dwc/issues/491)), GBIF has moved towards recommending meaningless `occurrenceID`s to promote **persistent identifiers**. A globally unique identifier such as UUID (e.g. `000866d2-c177-4648-a200-ead4007051b9`) can be one of the best practices as recommended by [TDWG here](http://rs.tdwg.org/dwc/terms/occurrenceID). 
+The example above uses a so-called “triplet”, the combination of the **`institutionCode`**, **`collectionCode`** and **`catalogNumber`** for `occurrenceID`s (such as `urn:catalog:UWBM:Bird:89776`). However, using meaningless string or integer values is generally recommended for IDs. Currently there are no strict rules for `occurrenceID`s aside from the uniqueness within a dataset. After the discussions with our community (such as [this GitHub issue](https://github.com/tdwg/dwc/issues/491)), GBIF has moved towards recommending meaningless `occurrenceID`s to promote **persistent identifiers**. A globally unique identifier such as UUID (e.g. `000866d2-c177-4648-a200-ead4007051b9`) can be one of the best practices as recommended by [TDWG here](http://rs.tdwg.org/dwc/terms/occurrenceID). 
 
-Please do not worry if you have already used the triplet or other meaningful content for `occurrenceID`s in your published datasets. In case you change `occurrenceID`s, there is a way to migrate gbifIDs and URLs from old `occurenceID`s to new `occurrenceID`s which will be more explained in the following sections.
+Please do not worry if you have already used the triplet or other meaningful content for `occurrenceID`s in your published datasets. In case you change `occurrenceID`s, there is a way to migrate gbifIDs and URLs from old `occurrenceID`s to new `occurrenceID`s which will be more explained in the following sections.
 
 > Note: If you change `catalogNumber`, the former `catalogNumber` can be filled out in `otherCatalogNumbers` which is used for data-clustering (see [this blog post](https://data-blog.gbif.org/post/clustering-occurrences/)).
 
 ## Three options to deal with identifier issues
 
-Data ingestion initiates after publishers update and publish a dataset on hosting web services. During the identifier validation, the system counts occurrence records and checks the portion of new `occurenceID`s. If this exceeds 50% of the record count, the data ingestion will be paused creating an issue on [GitHub](https://github.com/gbif/ingestion-management/issues) on a per-dataset basis.
+Data ingestion initiates after publishers update and publish a dataset on hosting web services. During the identifier validation, the system counts occurrence records and checks the portion of new `occurrenceID`s. If this exceeds 50% of the record count, the data ingestion will be paused creating an issue on [GitHub](https://github.com/gbif/ingestion-management/issues) on a per-dataset basis.
 
 We offer three options to deal with the identifier issues. 
 | Number | Option | Who can do this | What happens after |
@@ -76,7 +76,7 @@ We offer three options to deal with the identifier issues.
 
 GBIF helpdesk consults with publishers to decide which option suits the dataset best. Option 2 and Option 3 could prevent losing the URLs of occurrences, while Option 1 leads to the loss of the URLs. 
 
-Firstly, we ask whether the change is on purpose or unintentional errors. If the changes of `occurrenceID`s are errors, Option 2 can be a candidate solution. What publishers need to do here is to change back from the new `occurrenceID`s to the old occurenceIDs and to publish the datasets on the hosting web services. 
+Firstly, we ask whether the change is on purpose or unintentional errors. If the changes of `occurrenceID`s are errors, Option 2 can be a candidate solution. What publishers need to do here is to change back from the new `occurrenceID`s to the old occurrenceIDs and to publish the datasets on the hosting web services. 
 
 Secondly, we suggest Option 3, if publishers can provide us with the relationship between the old `occurrenceID`s and the new `occurrenceID`s. Using the list of `occurrenceID`s, we can migrate GBIF identifiers and keep the URLs (see the figure below).
 
@@ -91,7 +91,7 @@ There are cases that identifier issues can be ignored. For example, when the num
 
 ## Requirements for identifier migrations
 
-For migrating GBIF identifiers, a list of the relationship between the old `occurrenceID`s and the new `occurrenceID`s is required. The file has no header in a comma delimited format, and it should contain the old occurenceIDs in the first column, followed by the new `occurrenceID`s in the second column.  For example, like this:
+For migrating GBIF identifiers, a list of the relationship between the old `occurrenceID`s and the new `occurrenceID`s is required. The file has no header in a comma delimited format, and it should contain the old occurrenceIDs in the first column, followed by the new `occurrenceID`s in the second column.  For example, like this:
 
 ```
 old_id_00001,new_id_00001
@@ -128,5 +128,5 @@ You can also check whether your dataset has identifier issues on [GitHub](https:
 
 ## Links related about the identifier stability
   * [News item: New processing routine improves stability of GBIF occurrence IDs](https://www.gbif.org/news/2M3n65fHOhvq4ek5oVOskc/new-processing-routine-improves-stability-of-gbif-occurrence-ids)
-  * [GBIF community forum for the technical support hour for GBIF nodes: GBIF and occurenceID stability](https://discourse.gbif.org/t/occurrenceid-stability-gbif-technical-support-hour-for-nodes/4158/5)  
+  * [GBIF community forum for the technical support hour for GBIF nodes: GBIF and occurrenceID stability](https://discourse.gbif.org/t/occurrenceid-stability-gbif-technical-support-hour-for-nodes/4158/5)  
   * [GitHub: ingestion-management](https://github.com/gbif/ingestion-management)
