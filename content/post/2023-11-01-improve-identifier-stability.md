@@ -1,5 +1,5 @@
 ---
-title: GBIF attempts to improve identifier stability by monitoring changes of occurenceIDs
+title: GBIF attempts to improve identifier stability by monitoring changes of occurrenceIDs
 author: Kumiko Totsu
 date: '2023-11-01'
 slug: improve-identifier-stability
