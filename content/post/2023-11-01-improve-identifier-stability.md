@@ -13,7 +13,7 @@ tags:
   - issues
   - occurrence
 lastmod: '2023-11-06'
-draft: yes
+draft: no
 keywords: ['identifiers', 'occurrenceID', 'persistent identifiers']
 description: ''
 authors: ''
