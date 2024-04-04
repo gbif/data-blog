@@ -80,7 +80,7 @@ Both the **search** and **match** functions are based on the [Lucene](https://lu
 
 Note that it is possible to specify the field searched thanks to the `qField` parameter. For example, if you would like the algorithm to check vernacular names specifically, you can write `qField=VERNACULAR`.
 
-The code corresponding to the Search function can be found [here](https://github.com/gbif/checklistbank/blob/master/checklistbank-solr/src/main/java/org/gbif/checklistbank/index/service/SolrQueryBuilder.java#L52).
+The code corresponding to the Search function can be found [here](https://github.com/gbif/checklistbank/tree/master/checklistbank-elasticsearch/src/main/java/org/gbif/checklistbank/search/service).
 
 ---
 
@@ -101,7 +101,7 @@ If two matches score the same, nothing is returned as main match but they can be
 
 Note that not all taxonomic ranks are created equal in our scoring system. Because there can be so much variation in the taxonomies available, a difference at the order level doesn't weigh as much a as a difference at the kingdom level. In addition to that, our algorithm is more stringent when it comes to differentiate Animalia from Plantae than other kingdoms (Protista vs Animalia or Chromista vs Plantae, etc.)
 
-The code corresponding to the match function can be found [here](https://github.com/gbif/checklistbank/blob/master/checklistbank-nub/src/main/java/org/gbif/nub/lookup/fuzzy/NubMatchingServiceImpl.java).
+The code corresponding to the match function can be found [here](https://github.com/gbif/checklistbank/tree/master/checklistbank-nub/src/test/java/org/gbif/nub/lookup/fuzzy).
 
 > **Is it possible to get the result of a species search as an excel/CSV table?**
 >
