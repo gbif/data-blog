@@ -59,7 +59,9 @@ https://api.gbif.org/v1/species/search?rank=SPECIES&isExtinct=true
 
 Some checklist sources in the COL do not publish any extinct taxa, meaning either that there are no extinct species within the group or the checklist simply doesn't publish that information. Nevertheless, species within the a group of interest might still appear as extinct on GBIF, if it appears in another COL dataset, namely [The Paleobiology Database](https://www.catalogueoflife.org/data/dataset/268676). For example, the COL dataset of dragonflies [The World Odonata List](https://www.catalogueoflife.org/data/dataset/125101) does not publish any [extinct dragonflies](https://api.gbif.org/v1/species/4822633/speciesProfiles), but extinct dragonflies will still appear as extinct on GBIF, when they appear in **PaleoBioDB** or some other COL dataset publishing extinct taxa.  
 
-![](https://mediaphoto.mnhn.fr/media/1497436549184Bgz5CEiWRWmvHVxy)
+<img src="https://api.gbif.org/v1/image/cache/fit-in/500x/occurrence/418979581/media/b2fae8748e77446ef0bcd5a23e373bd6" width="500">
+
+ <small> Meganeura selysii (Brongniart, 1894) collected in France (licensed under http://creativecommons.org/licenses/by/4.0/) </small>
 
 Around 35K species-ranked names are labeled as `isExtinct` in the [GBIF backbone](https://api.gbif.org/v1/species/search?rank=SPECIES&isExtinct=true&limit=1000&datasetKey=d7dddbf4-2cf0-4f39-9b2a-bb099caae36c). As of the publishing of this blog post, there is no efficient way to extract all 35K `isExtinct` species using the GBIF species API. The current limit for any species search is `limit=1000`. Therefore, one can only extract the first 1000 records from any group. 
 
