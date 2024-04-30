@@ -52,7 +52,7 @@ Other fields such as **[dwc:parentNameUsageID](https://dwc.tdwg.org/terms/#dwc:p
 
 However, this doesn’t have to be the case for the **scientificNameID** and **taxonConceptID** fields
 
-The **dwc:scientificNameID** is meant to identify the name alone and ideally uses an identifier from a nomenclator such as IPNI or ZooBank, but can also be a name identifier specific for the dataset. Our system doesn’t really interpret this field.
+The **dwc:scientificNameID** is meant to identify the name alone and ideally uses an identifier from a nomenclator such as IPNI or ZooBank, but can also be a name identifier specific for the dataset. Our system doesn’t really interpret this field. [**Edit 2023-11-09:** the scientificNameID is now intepreted in specific contexts, if you want to know more, please read: https://github.com/gbif/pipelines/issues/217]
 
 The **dwc:taxonConceptID** on the other hand is meant to identify the taxon concept regardless of which name is being used. [Avibase](https://avibase.bsc-eoc.org/avibase.jsp)IDs (like `D3A260BCA65503C6` for https://avibase.ca/D3A260BC) are a perfect fit for example. Even though we do not make use of them much, they could be used to identify identical concepts. 
 

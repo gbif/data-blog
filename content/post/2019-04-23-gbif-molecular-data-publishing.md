@@ -114,9 +114,8 @@ There are two ways to convey this type of information in a tabular form:
 * Using non-core extensions
 * Using [Darwin Core terms](https://dwc.tdwg.org/terms/) only
 
-In the first case, the information can be structured using defined terms, which makes it easier for users to compare methods once the data is aggregated with other dataset. In addition to that, this is a good way to make the information compatible across platforms. For example, the [BIOWIDE eDNA Fungi dataset](https://doi.org/10.15468/nesbvx) uses [GGBN extensions](http://rs.gbif.org/extension/ggbn/). However, GBIF won't index these extenstions as it indexes only Core and Multimedia ones. Which means that the information isn't displayed on the portal. In fact, it is only available to users downloading the raw Darwin Core archive (see screenshot below).
-
-<img src="/post/2019-04-23-gbif-molecular-data-publishing_images/raw_DwcA_download.png" alt="Download Raw DwC-A" width="600"/>
+[**Edit:** 2023-11-09: this paragraph was updated]
+In the first case, the information can be structured using defined terms, which makes it easier for users to compare methods once the data is aggregated with other dataset. In addition to that, this is a good way to make the information compatible across platforms. For example, the [International Barcode of Life project (iBOL)](https://doi.org/10.15468/inygc6) uses [DNA derived data extension](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2022-02-23.xml). However, GBIF won't index these extenstions as it indexes only Core and Multimedia ones. Which means that the information isn't displayed on the portal. In fact, it is only available to users downloading the source Darwin Core archive on the dataset pages (click on the download tab and choose `Source archive`).
 
 The alternative is to use some of the [Darwin Core terms](https://dwc.tdwg.org/terms/). For example, [Mgnify](https://www.gbif.org/publisher/ab733144-7043-4e88-bd4f-fca7bf858880) organized its datasets as follow:
 
