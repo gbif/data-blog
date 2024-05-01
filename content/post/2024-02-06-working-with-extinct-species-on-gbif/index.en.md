@@ -42,12 +42,14 @@ Currently, there is no occurrence level filter for removing extinct species from
 
 ## isExtinct 
 
+This term is harvested from all 
+
 GBIF has a **species search** term called `isExtinct`. This term is (as of the writing of this blog post) is not visible on the [web UI](https://www.gbif.org/species/search), but it is available when using the [API](https://api.gbif.org/v1/species/search?rank=SPECIES&isExtinct=true
 ) or [rgbif](https://docs.ropensci.org/rgbif/reference/name_lookup.html
 )/[pygbif](https://pygbif.readthedocs.io/en/latest/modules/species.html#pygbif.species.name_lookup
 ). 
 
-This search term as the name suggests will tell you whether a taxon was marked as "extinct" by the source checklist of the name. The `isExtinct` designation on the GBIF API  only harvested from the Catalogue Of Life (COL) [source datasets](https://www.catalogueoflife.org/data/source-datasets). 
+This search term as the name suggests will tell you whether a taxon was marked as "extinct" by the source checklist of the name. The `isExtinct` designation on the GBIF API is harvested from the Catalogue Of Life (COL) [source datasets](https://www.catalogueoflife.org/data/source-datasets) and from the other [constituent datasets](https://www.gbif.org/dataset/d7dddbf4-2cf0-4f39-9b2a-bb099caae36c/constituents) of the GBIF backbone.  
 
 ```r
 name_lookup(isExtinct=TRUE)
@@ -61,14 +63,13 @@ species.name_lookup(isExtinct=True)
 https://api.gbif.org/v1/species/search?rank=SPECIES&isExtinct=true
 ```
 
-Some checklist sources in the COL do not publish any extinct taxa, meaning either that there are no extinct species within the group or the checklist simply doesn't publish that information. Nevertheless, species within the a group of interest might still appear as extinct on GBIF, if it appears in another COL dataset, namely [The Paleobiology Database](https://www.catalogueoflife.org/data/dataset/268676). For example, the COL dataset of dragonflies [The World Odonata List](https://www.catalogueoflife.org/data/dataset/125101) does not publish any [extinct dragonflies](https://api.gbif.org/v1/species/4822633/speciesProfiles), but extinct dragonflies will still appear as extinct on GBIF, when they appear in **PaleoBioDB** or some other COL dataset publishing extinct taxa.  
+Most checklist constituents in the GBIF backbone do not publish any extinct taxa, meaning either that there are no extinct species within the group or the checklist simply doesn't publish that information. 
 
+Around 35K species-ranked names are labeled as `isExtinct` in the [GBIF backbone](https://api.gbif.org/v1/species/search?rank=SPECIES&isExtinct=true&limit=1000&datasetKey=d7dddbf4-2cf0-4f39-9b2a-bb099caae36c). There is no efficient way to extract all 35K `isExtinct` species (+400K names) using the GBIF species API. The current limit for any species search is `limit=1000`. Therefore, one can only extract the first 1000 records from any search. 
 
-Around 35K species-ranked names are labeled as `isExtinct` in the [GBIF backbone](https://api.gbif.org/v1/species/search?rank=SPECIES&isExtinct=true&limit=1000&datasetKey=d7dddbf4-2cf0-4f39-9b2a-bb099caae36c). There is no efficient way to extract all 35K `isExtinct` species using the GBIF species API. The current limit for any species search is `limit=1000`. Therefore, one can only extract the first 1000 records from any group. 
+![](images/extinct_ds.svg)
 
-However, since all `isExtinct` taxa are sourced from the COL, one way to get all `isExtinct` taxa in GBIF is to download and process the [COL checklist on GBIF](https://www.gbif.org/dataset/7ddf754f-d193-4cc9-b351-99906754a03b). 
-
-Here is some R code where you can extract all of the `isExtinct` species from the COL checklist dataset. 
+However, since most `isExtinct` taxa are mainly sourced from a few large datasets, its possible to and process each of those checklists to extract all `isExtinct` species. Below is an example for getting `isExtinct` species from the **Catalogue of Life Checklist**. One could also do something similar for processing for the **Paleobiology Database** checklist or **World Register of Marine Species**. 
 
 ```r 
 # download and process COL dataset isExtinct
@@ -108,7 +109,9 @@ You can look up other COL `taxonID` values on the [COL website](https://www.cata
 * Trilobites (TRL) https://www.catalogueoflife.org/data/taxon/TRL
 * Birds (V2) https://www.catalogueoflife.org/data/taxon/V2
 
-When using the `isExtinct` term, one should keep in mind that the coverage and reliability of this term can vary between taxonomic groups and COL source datasets. 
+When using the `isExtinct` term, one should keep in mind that the coverage and reliability of this term can vary between taxonomic groups and COL source datasets. This basic fact also explains why the `isExtinct` term is not more visible on the GBIF web portal.
+
+> `isExtinct` on GBIF is only updated when the GBIF backbone is updated, so source datasets may be more up-to-date or disagree with the output of the GBIF API.
 
 [checklistbank API docs](https://github.com/CatalogueOfLife/backend/blob/master/API.md)
 
