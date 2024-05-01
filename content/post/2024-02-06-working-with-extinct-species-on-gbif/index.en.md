@@ -42,14 +42,12 @@ Currently, there is no occurrence level filter for removing extinct species from
 
 ## isExtinct 
 
-This term is harvested from all 
-
 GBIF has a **species search** term called `isExtinct`. This term is (as of the writing of this blog post) is not visible on the [web UI](https://www.gbif.org/species/search), but it is available when using the [API](https://api.gbif.org/v1/species/search?rank=SPECIES&isExtinct=true
 ) or [rgbif](https://docs.ropensci.org/rgbif/reference/name_lookup.html
 )/[pygbif](https://pygbif.readthedocs.io/en/latest/modules/species.html#pygbif.species.name_lookup
 ). 
 
-This search term as the name suggests will tell you whether a taxon was marked as "extinct" by the source checklist of the name. The `isExtinct` designation on the GBIF API is harvested from the Catalogue Of Life (COL) [source datasets](https://www.catalogueoflife.org/data/source-datasets) and from the other [constituent datasets](https://www.gbif.org/dataset/d7dddbf4-2cf0-4f39-9b2a-bb099caae36c/constituents) of the GBIF backbone.  
+This search term as the name suggests will tell you whether a taxon was marked as "extinct" by the source checklist of the name. The `isExtinct` designation on the GBIF API is harvested from the Catalogue Of Life (COL) [source datasets](https://www.catalogueoflife.org/data/source-datasets) and from the other GBIF backbone [constituent datasets](https://www.gbif.org/dataset/d7dddbf4-2cf0-4f39-9b2a-bb099caae36c/constituents) of the GBIF backbone.  
 
 ```r
 name_lookup(isExtinct=TRUE)
