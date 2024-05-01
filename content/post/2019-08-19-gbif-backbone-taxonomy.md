@@ -70,7 +70,7 @@ As you can imagine, not everyone uses the same classifications or names. This re
 The backbone is built from [other checklists](https://www.gbif.org/dataset/d7dddbf4-2cf0-4f39-9b2a-bb099caae36c/constituents). These include:
 
 * 55 authority checklists,
-* a checklist generated from the type specimens shared on GBIF,
+* a checklist generated from the type specimens shared on GBIF, [**EDIT 2024-04-30** the latest versions of the Backbone taxonomy no longer include this checklist as it contained a number of issues and was difficult to update as it relied on many different occurrence publishers.]
 * two large sources for **stable** Operational Taxonomic Units (OTUs): [iBOL Barcode Index Numbers](https://www.gbif.org/dataset/4cec8fef-f129-4966-89b7-4f8439aba058) and the [UNITE Species Hypothesis identifiers](https://www.gbif.org/dataset/61a5f178-b5fb-4484-b6d8-9b129739e59d),
 * and [any checklist shared by PLAZI.org](https://www.gbif.org/publisher/7ce8aef0-9e92-11dc-8738-b8a03c50a862) on GBIF (currently 27,054 but not all these were available when the backbone was generated).
 
@@ -131,7 +131,7 @@ You can also contribute even more by creating and sharing your own <br>[checklis
 If you are a data provider and that some of the names that you used cannot be found in the backbone, here is what you should do:
 
 * Keep the name as it is but add higher ranks taxa (our algorithm might not recognize the scientific name used but it can still find a higher taxon).
-* Add the type status if your specimen is a type (the name will be integrated to the next update).
+* Add the type status if your specimen is a type (the name will be integrated to the next update [**EDIT 2024-04-30** the latest versions of the Backbone taxonomy no longer include type specimens so this advice is out dated]).
 * Try some troubleshooting (see paragraph below).
 
 # Associated flags: Taxon match none, Taxon match fuzzy, Taxon Match higherrank, what do they mean? 
