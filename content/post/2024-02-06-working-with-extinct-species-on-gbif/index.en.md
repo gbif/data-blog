@@ -47,10 +47,10 @@ GBIF has a **species search** term called `isExtinct`. This term is (as of the w
 )/[pygbif](https://pygbif.readthedocs.io/en/latest/modules/species.html#pygbif.species.name_lookup
 ). 
 
-This search term as the name suggests will tell you whether a taxon was marked as "extinct" by the source checklist of the name. The `isExtinct` designation on the GBIF API is harvested from the Catalogue Of Life (COL) [source datasets](https://www.catalogueoflife.org/data/source-datasets) and from the other GBIF backbone [constituent datasets](https://www.gbif.org/dataset/d7dddbf4-2cf0-4f39-9b2a-bb099caae36c/constituents) of the GBIF backbone.  
+This search term will tell you whether a taxon was marked as "extinct" by the source checklist of the name. The `isExtinct` designation on the GBIF API is harvested from the Catalogue Of Life (COL) [source datasets](https://www.catalogueoflife.org/data/source-datasets) and from the other GBIF backbone [constituent datasets](https://www.gbif.org/dataset/d7dddbf4-2cf0-4f39-9b2a-bb099caae36c/constituents) of the GBIF backbone.  
 
 ```r
-name_lookup(isExtinct=TRUE)
+name_lookup(isExtinct=TRUE,limit=1000,offset=0)
 ```
 
 ```python
@@ -63,34 +63,18 @@ https://api.gbif.org/v1/species/search?rank=SPECIES&isExtinct=true
 
 Most checklist constituents in the GBIF backbone do not publish any extinct taxa, meaning either that there are no extinct species within the group or the checklist simply doesn't publish that information. 
 
-Around 35K species-ranked names are labeled as `isExtinct` in the [GBIF backbone](https://api.gbif.org/v1/species/search?rank=SPECIES&isExtinct=true&limit=1000&datasetKey=d7dddbf4-2cf0-4f39-9b2a-bb099caae36c). There is no efficient way to extract all 35K `isExtinct` species (+400K names) using the GBIF species API. The current limit for any species search is `limit=1000`. Therefore, one can only extract the first 1000 records from any search. 
+Around 35K species-ranked names are labeled as `isExtinct` in the [GBIF backbone](https://api.gbif.org/v1/species/search?rank=SPECIES&isExtinct=true&limit=1000&datasetKey=d7dddbf4-2cf0-4f39-9b2a-bb099caae36c). Unfortunately, there is no efficient way to extract all 35K `isExtinct` species (+400K names) using the GBIF species API. The current limit for any species search is `limit=1000`. Therefore, one can only extract the first 1000 records from any search. However, one can use the `offset` parameter to page through the results, but this will be slow and inefficient (offset is also limited to 100,000). See chechlistbank below for a likely better solution. 
 
 ![](images/extinct_ds.svg)
 
-However, since most `isExtinct` taxa are mainly sourced from a few large datasets, its possible to and process each of those checklists to extract all `isExtinct` species. Below is an example for getting `isExtinct` species from the **Catalogue of Life Checklist**. One could also do something similar for processing for the **Paleobiology Database** checklist or **World Register of Marine Species**. 
+## Checklistbank
+ 
+[Checklistbank](https://www.checklistbank.org/) is a somewhat new service which stores checklist datasets that make of the GBIF backbone and the COL checklist (and other checklists too). It is now possible to download all taxa marked `isExtinct` in the COL checklist dataset using the checklistbank UI. 
 
-```r 
-# download and process COL dataset isExtinct
-# https://download.catalogueoflife.org/col/latest_dwca.zip
-library(dplyr)
-current_dir <- getwd()
-temp_dir <- tempdir()
-setwd(temp_dir)
+![alt text](image.png)
 
-file_url <- "https://download.catalogueoflife.org/col/latest_dwca.zip"
-dest_file <- file.path(temp_dir, "latest_dwca.zip")
-download.file(file_url, destfile = dest_file, mode = "wb")
-unzip(dest_file, exdir = temp_dir)
-
-species_profile <- readr::read_tsv("SpeciesProfile.tsv") |> 
-filter(`gbif:isExtinct` == TRUE)
-
-taxon <- readr::read_tsv("Taxon.tsv")
-
-setwd(current_dir)
-merge(species_profile,taxon,by="dwc:taxonID",all.x=TRUE) |> 
-readr::write_tsv("isExtinct.tsv")
-```
+[link here](https://www.checklistbank.org/dataset/294826/names?extinct=true&facet=rank&facet=issue&facet=status&facet=nomStatus&facet=nomCode&facet=nameType&facet=field&facet=authorship&facet=authorshipYear&facet=extinct&facet=environment&facet=origin&facet=sectorMode&facet=secondarySourceGroup&facet=sectorDatasetKey&facet=group&limit=50&offset=0&sortBy=taxonomic)
+ 
  Alternatively, one can also extract all of the `isExtinct` names from the COL checklist dataset, using the  Checklistbank API. 
 
 ```shell 
