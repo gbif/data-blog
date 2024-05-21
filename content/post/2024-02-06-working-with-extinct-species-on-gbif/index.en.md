@@ -38,7 +38,7 @@ Currently, there is no occurrence level filter for removing extinct species from
 
 <img src="https://api.gbif.org/v1/image/cache/fit-in/500x/occurrence/418979581/media/b2fae8748e77446ef0bcd5a23e373bd6" width="500">
 
- <small> Meganeura selysii (Brongniart, 1894) collected in France (licensed under http://creativecommons.org/licenses/by/4.0/) </small>
+ <small> Meganeura selysii (Brongniart, 1894) <a href="https://www.gbif.org/occurrence/418979581">collected</a> in France (licensed under http://creativecommons.org/licenses/by/4.0/) </small>
 
 ## isExtinct 
 
