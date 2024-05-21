@@ -63,7 +63,7 @@ https://api.gbif.org/v1/species/search?rank=SPECIES&isExtinct=true
 
 Most checklist constituents in the GBIF backbone do not publish any extinct taxa, meaning either that there are no extinct species within the group or the checklist simply doesn't publish that information. 
 
-Around 35K species-ranked names are labeled as `isExtinct` in the [GBIF backbone](https://api.gbif.org/v1/species/search?rank=SPECIES&isExtinct=true&limit=1000&datasetKey=d7dddbf4-2cf0-4f39-9b2a-bb099caae36c). Unfortunately, there is no efficient way to extract all 35K `isExtinct` species (+400K names) using the GBIF species API. The current limit for any species search is `limit=1000`. Therefore, one can only extract the first 1000 records from any search. However, one can use the `offset` parameter to page through the results, but this will be slow and inefficient (offset is also limited to 100,000). See chechlistbank below for a likely better solution. 
+Around 35K species-ranked names are labeled as `isExtinct` in the [GBIF backbone](https://api.gbif.org/v1/species/search?rank=SPECIES&isExtinct=true&limit=1000&datasetKey=d7dddbf4-2cf0-4f39-9b2a-bb099caae36c). Unfortunately, there is no efficient way to extract all 35K `isExtinct` species (+400K names) using the GBIF species API. The current limit for any species search is `limit=1000`. Therefore, one can only extract the first 1000 records from any search. However, one can use the `offset` parameter to page through the results, but this will be slow and inefficient (offset is also limited to 100,000). See **Chechlistbank** section below for a likely better solution. 
 
 ![](images/extinct_ds.svg)
 
