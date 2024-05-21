@@ -1,12 +1,12 @@
 ---
 title: Working with extinct species on GBIF
 author: John Waller
-date: '2024-24-05'
+date: '2024-21-05'
 slug: []
 categories:
   - GBIF
 tags: []
-lastmod: '2024-05-24T10:24:15+01:00'
+lastmod: '2024-05-21T10:24:15+01:00'
 draft: no
 keywords: []
 description: ''
