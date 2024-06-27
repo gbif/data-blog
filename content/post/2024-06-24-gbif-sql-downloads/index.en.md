@@ -84,11 +84,23 @@ ORDER BY occurrence_count DESC;
 
 ## SQL examples - Time Series
 
+Another interesting query would be to get a times series of number of species "collection/event" over years, grouped by basis of record. 
 
+``` sql
+SELECT
+    basisOfRecord,
+    "year",
+    COUNT(DISTINCT speciesKey) AS unique_species_count
+FROM
+    occurrence
+GROUP BY
+    basisOfRecord,
+    "year";
+```
 
+Note that `"year"` needs to be double quoted as it is a reserve word. This is true also for other reserve words like `"month"`, `"day"` etc. This graphic shows the rising influence of **Human Observations** in GBIF mediated occurrences data. 
 
-
-
+![](images/ts.png)
 
 ## SQL examples - Grid Functions
 
@@ -146,7 +158,7 @@ In general the hardest part of generating images with GBIF's sql grid functions 
 
 <https://sdi.eea.europa.eu/data/93315b78-089d-43a5-ac76-b3df627b2e4cf>
 
-![](images/plot.jpg)
+![](images/plot%20(1).jpg)
 
 ## Supported SQL
 
@@ -167,6 +179,20 @@ http://api.gbif.org/v1/occurrence/search?facet=speciesKey&country=US
 http://api.gbif.org/v1/occurrence/search?facet=speciesKey&country=US&year=1800,1900
 http://api.gbif.org/v1/occurrence/search?facet=speciesKey&country=US&year=1800,1900&basisOfRecord=HUMAN_OBSERVATION
 http://api.gbif.org/v1/occurrence/search?facet=country&facetLimit=200
+```
+
+## rgbif example
+
+> There is an companion article about how to use SQL downloads with rgbif [here]().
+
+> As of the writing of this blog post, you will need to use download a development version of rgbif to make use of SQL downloads. You can install the development version of rgbif using `install_github("ropensci/rgbif", ref = "occ_download_sql")`.
+
+SQL downloads is also supported by [rgbif](https://docs.ropensci.org/rgbif/index.html) by using `occ_download_sql()`. You might also need to set up your **GBIF credentials**. Please see this [article](https://docs.ropensci.org/rgbif/articles/gbif_credentials.html) for the easiest way to do this.
+
+``` r
+library(rgbif)
+
+occ_download_sql("SELECT datasetKey, countryCode, COUNT(*) FROM occurrence WHERE continent = 'EUROPE' GROUP BY datasetKey, countryCode")
 ```
 
 ## Further Reading
