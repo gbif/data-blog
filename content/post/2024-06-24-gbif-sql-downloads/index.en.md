@@ -31,9 +31,9 @@ sequenceDiagrams:
 
 > GBIF has an experimental feature that allows users to download data from the GBIF database in SQL format. <https://techdocs.gbif.org/en/data-use/api-sql-downloads>
 
-> This article has a companion article focused on rgbif \[gbif-sql-downloads\]().
+> This article has a companion article focused on rgbif \[gbif-sql-downloads\]() (not yet published).
 
-> If your download can be formulated using the traditional predicate interface, it is usually going to be faster to use that interface.
+> If your download can be formulated using the traditional predicate downloads, it is usually going to be faster to use predicates.
 
 The experimental Occurrence SQL Download API allows users to query GBIF occurrences using SQL. In contrast to the [Predicate Download API](https://techdocs.gbif.org/en/data-use/api-sql-downloads), the SQL API allows selection of the columns of interest and generation of summary views of GBIF data.
 
@@ -120,7 +120,7 @@ SELECT
     100000, 
     decimalLatitude,
     decimalLongitude,
-    COALESCE(coordinateUncertaintyInMeters, 0) 
+    0 
   ) AS mgrs,
   COUNT(DISTINCT speciesKey) AS unique_species_count
 FROM
@@ -130,8 +130,6 @@ GROUP BY
 ```
 
 The grid code can then be used to join with a shapefile or geojson file that contains the grid cells.
-
-![](https://private-user-images.githubusercontent.com/4245213/328404302-d56ebcfd-9057-4e7a-a3fc-b0490c59f333.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTkyMzY1NjcsIm5iZiI6MTcxOTIzNjI2NywicGF0aCI6Ii80MjQ1MjEzLzMyODQwNDMwMi1kNTZlYmNmZC05MDU3LTRlN2EtYTNmYy1iMDQ5MGM1OWYzMzMuanBnP1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQVZDT0RZTFNBNTNQUUs0WkElMkYyMDI0MDYyNCUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyNDA2MjRUMTMzNzQ3WiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9OGFhNWQwMzQ4MzY0ZWE4Mjk4NDVkNzI2YTBiNzhlY2RlZjQ1ZjQyMDlhZDhkZTA2ZGNhNDcyNmU2NjU1YTI5NyZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QmYWN0b3JfaWQ9MCZrZXlfaWQ9MCZyZXBvX2lkPTAifQ.Z4sD8Sho8Id5sa8vUWMhm9KhjIn_u04Njj_pGf3u4rg)
 
 > You can get the code used to generate the figure from the [rgbif companion article]().
 
@@ -145,7 +143,7 @@ SELECT
     10000, 
     decimalLatitude,
     decimalLongitude,
-    COALESCE(coordinateUncertaintyInMeters, 0) 
+    0
   ) AS cellcode,
   COUNT(DISTINCT speciesKey) AS unique_species_count
 FROM
@@ -154,7 +152,7 @@ GROUP BY
   cellcode
 ```
 
-In general the hardest part of generating images with GBIF's sql grid functions is finding the corresponding shapefile or geojson file that matches the grid function used. The EEA reference grid example can be found here.
+In general the hardest part of generating images with GBIF's sql grid functions is finding the corresponding shapefile or geojson file that matches the grid function used. GBIF is currently working on creating shapefiles for all of the grid functions. The EEA reference grid example can be found here.
 
 <https://sdi.eea.europa.eu/data/93315b78-089d-43a5-ac76-b3df627b2e4cf>
 
