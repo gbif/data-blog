@@ -111,6 +111,7 @@ For this reason GBIF's SQL downloads provide support for a few pre-defined [grid
 -   **EEA Reference Grid**, GBIF_EEARGCode
 -   **Military Grid Reference System**, GBIF_MGRSCode
 -   **Quarter degree cell code**, GBIF_QDGCCode
+-   **ISEA3H Grid cell code**, GBIF_ISEA3HCode
 
 Below is example of working with the **Military Grid Reference System** (MGRS) grid. This example will return a table with unique species counts per grid cell and an attached grid code, which in this case is `mgrs`.
 
