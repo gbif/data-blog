@@ -29,9 +29,7 @@ sequenceDiagrams:
   options: ''
 ---
 
-> GBIF has an experimental feature that allows users to download data from the GBIF database in SQL format. <https://techdocs.gbif.org/en/data-use/api-sql-downloads>
-
-> This article has a companion article focused on rgbif \[gbif-sql-downloads\]() (not yet published).
+> GBIF has an experimental feature that allows users to download data from the GBIF database in SQL format. <https://techdocs.gbif.org/en/data-use/api-sql-downloads> Contact helpdesk@gbif.org to request access.
 
 > If your download can be formulated using the traditional predicate downloads, it is usually going to be faster to use predicates.
 
@@ -43,7 +41,7 @@ SQL downloads, like [predicate downloads](https://techdocs.gbif.org/en/data-use/
 
 ## SQL Download Workflow
 
-The first step is to prepare your query. There is only one table available for querying, the **occurrence** table. You can check if the query is ok using [query validation](https://techdocs.gbif.org/en/data-use/api-sql-downloads#sql-validation). You can also check what fields are available in the `occurrence` table using this endpoint `https://api.gbif.org/v1/occurrence/download/describe/sql`. There are +400 fields available.
+The first step is to prepare your query. There is only one table available for querying, the **occurrence** table. You can check if the query is ok using [query validation](https://techdocs.gbif.org/en/data-use/api-sql-downloads#sql-validation). You can also check what fields are available in the `occurrence` table using this endpoint `https://api.gbif.org/v1/occurrence/download/describe/sql`. There are +400 columns available.
 
 ``` sql
 SELECT datasetKey, countryCode, COUNT(*) FROM occurrence WHERE continent = 'EUROPE' GROUP BY datasetKey, countryCode
@@ -72,7 +70,7 @@ The download will appear in your [GBIF user account](https://www.gbif.org/user/d
 
 ## SQL examples - Species Counts
 
-One common query that is difficult to do with the regular download interface is to get a count of species by some other dimensions. This query gets a table with **countries with the most species published to GBIF** without having to download a large table and do the aggregation locally.
+One common query that is difficult to do with the traditional downloads interface is to get a count of species by some other dimensions. This query gets a table with **countries with the most species published to GBIF** without having to download a large table and do the aggregation locally.
 
 ``` sql
 SELECT publishingcountry, specieskey, COUNT(*) as occurrence_count
@@ -132,8 +130,6 @@ GROUP BY
 
 The grid code can then be used to join with a shapefile or geojson file that contains the grid cells.
 
-> You can get the code used to generate the figure from the [rgbif companion article]().
-
 This image uses shapefiles from [this repository](https://github.com/klaukh/MGRS).
 
 The sql grid functions were originally designed to be used with creating [species occurrence cubes](https://b-cubed.eu/data-and-evidence). Therefore a randomization parameter was supported `COALESCE(coordinateUncertaintyInMeters, 0)`. This should be set to 0 if you want to use the grid functions with **no randomization**.
@@ -153,7 +149,7 @@ GROUP BY
   cellcode
 ```
 
-In general the hardest part of generating images with GBIF's sql grid functions is finding the corresponding shapefile or geojson file that matches the grid function used. GBIF is currently working on creating shapefiles for all of the grid functions. The EEA reference grid example can be found here.
+The EEA reference grid example can be found here.
 
 <https://sdi.eea.europa.eu/data/93315b78-089d-43a5-ac76-b3df627b2e4cf>
 
@@ -171,7 +167,7 @@ Most common SQL operators and functions are supported, such as `AND`, `OR`, `NOT
 
 If you need only commonly used occurrence columns and simple filters, most of the time you can use the regular predicate download interface instead of the SQL interface, and it will likely be faster.
 
-Keep in mind that if you only need species counts for one dimension, then [facet queries](https://api.gbif.org/v1/occurrence/search?facet=specieskey) are usually going to be a much faster option. Some examples below:
+Keep in mind that if you only need species counts for one dimension, then [facet queries](https://api.gbif.org/v1/occurrence/search?facet=specieskey) are usually going to be a much faster option (although you won't receive a DOI). Some examples below:
 
 ```         
 http://api.gbif.org/v1/occurrence/search?facet=speciesKey&country=US
@@ -182,7 +178,6 @@ http://api.gbif.org/v1/occurrence/search?facet=country&facetLimit=200
 
 ## rgbif example
 
-> There is an companion article about how to use SQL downloads with rgbif [here]().
 
 > As of the writing of this blog post, you will need to use download a development version of rgbif to make use of SQL downloads. You can install the development version of rgbif using `install_github("ropensci/rgbif", ref = "occ_download_sql")`.
 
@@ -195,3 +190,7 @@ occ_download_sql("SELECT datasetKey, countryCode, COUNT(*) FROM occurrence WHERE
 ```
 
 ## Further Reading
+
+https://techdocs.gbif.org/en/data-use/api-sql-downloads
+
+
