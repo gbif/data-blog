@@ -4,7 +4,6 @@ author: John Waller
 date: '2024-09-02'
 slug: aws-and-gbif
 categories:
-  - GBIF
 tags:
   - cloud computing
   - aws
@@ -17,7 +16,7 @@ comment: no
 toc: ''
 autoCollapseToc: no
 postMetaInFooter: no
-hiddenFromHomePage: no
+hiddenFromHomePage: yes
 contentCopyright: no
 reward: no
 mathjax: no

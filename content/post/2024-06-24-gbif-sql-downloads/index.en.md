@@ -3,7 +3,8 @@ title: GBIF SQL Downloads
 author: John Waller
 date: '2024-09-30'
 slug: []
-categories: []
+categories: 
+  - GBIF
 tags: []
 lastmod: '2024-06-24T14:36:55+02:00'
 draft: no
