@@ -1,12 +1,12 @@
 ---
 title: GBIF SQL Downloads
 author: John Waller
-date: '2024-06-24'
+date: '2024-09-30'
 slug: []
 categories: []
 tags: []
 lastmod: '2024-06-24T14:36:55+02:00'
-draft: yes
+draft: no
 keywords: []
 description: ''
 authors: ''
@@ -187,7 +187,7 @@ http://api.gbif.org/v1/occurrence/search?facet=country&facetLimit=200
 
 ## rgbif example
 
-SQL downloads is also supported by [rgbif](https://docs.ropensci.org/rgbif/index.html) by using `occ_download_sql()`. You might also need to set up your **GBIF credentials**. Please see this [article](https://docs.ropensci.org/rgbif/articles/gbif_credentials.html) for the easiest way to do this.
+SQL downloads is also supported by [rgbif](https://docs.ropensci.org/rgbif/index.html) by using `occ_download_sql()`. Please see this [article](https://docs.ropensci.org/rgbif/articles/gbif_sql_downloads.html) for the easiest way get started with SQL downloads. Remember to set up your [GBIF credentials](https://docs.ropensci.org/rgbif/articles/gbif_credentials.html).
 
 ``` r
 library(rgbif)
