@@ -29,13 +29,13 @@ sequenceDiagrams:
   options: ''
 ---
 
-> GBIF has an experimental feature that allows users to download data from the GBIF database in SQL format. <https://techdocs.gbif.org/en/data-use/api-sql-downloads> Contact helpdesk@gbif.org to request access.
+> GBIF has an experimental feature that allows users to download data from the GBIF database in SQL format. Contact [helpdesk\@gbif.org](mailto:helpdesk@gbif.org) to request access. <https://techdocs.gbif.org/en/data-use/api-sql-downloads>
 
-> If your download can be formulated using the traditional predicate downloads, it is usually going to be faster to use predicates.
+> If your download can be formulated using the traditional predicate downloads, it is usually going to be faster to use regular downloads.
 
 The experimental Occurrence SQL Download API allows users to query GBIF occurrences using SQL. In contrast to the [Predicate Download API](https://techdocs.gbif.org/en/data-use/api-sql-downloads), the SQL API allows selection of the columns of interest and generation of summary views of GBIF data.
 
-SQL downloads, like [predicate downloads](https://techdocs.gbif.org/en/data-use/api-downloads), required you to have a GBIF [user account](https://www.gbif.org/user/profile).
+SQL downloads, like [predicate downloads](https://techdocs.gbif.org/en/data-use/api-downloads), require you to have a GBIF [user account](https://www.gbif.org/user/profile).
 
 <!--more-->
 
@@ -68,21 +68,30 @@ curl --include --user YOUR_GBIF_USERNAME:YOUR_PASSWORD --header "Content-Type: a
 
 The download will appear in your [GBIF user account](https://www.gbif.org/user/download).
 
-## SQL examples - Species Counts
+## SQL examples - Multi-dimension Counts
 
-One common query that is difficult to do with the traditional downloads interface is to get a count of species by some other dimensions. This query gets a table with **countries with the most species published to GBIF** without having to download a large table and do the aggregation locally.
+One common query that is difficult to do with the traditional downloads interface is to get a occurrence counts of species by multiple dimensions. This query gets a table with **countries and species with the most occurrences published to GBIF** without having to download a large table and do the aggregation locally.
 
 ``` sql
 SELECT publishingcountry, specieskey, COUNT(*) as occurrence_count
 FROM occurrence
 WHERE publishingcountry IS NOT NULL AND specieskey IS NOT NULL
-GROUP BY country, specieskey
+GROUP BY publishingcountry, specieskey
 ORDER BY occurrence_count DESC;
 ```
 
+| publishingcountry | specieskey | occurrence_count |
+|:------------------|-----------:|-----------------:|
+| US                |    2495347 |         23467566 |
+| US                |    2490384 |         21442333 |
+| US                |    9510564 |         20975419 |
+| US                |    2482507 |         20396610 |
+| US                |    2482593 |         17855746 |
+| US                |    9761484 |         17814101 |
+
 ## SQL examples - Time Series
 
-Another interesting query would be to get a times series of number of species "collection/event" over years, grouped by basis of record. 
+Another interesting query would be to get a times series of number of species "collected/observed" over years, grouped by basis of record.
 
 ``` sql
 SELECT
@@ -96,7 +105,7 @@ GROUP BY
     "year";
 ```
 
-Note that `"year"` needs to be double quoted as it is a reserve word. This is true also for other reserve words like `"month"`, `"day"` etc. This graphic shows the rising influence of **Human Observations** in GBIF mediated occurrences data. 
+Note that `"year"` needs to be double quoted as it is a reserve word. This is true also for other reserve words like `"month"`, `"day"` etc. This graphic shows the rising influence of **Human Observations** in GBIF mediated occurrences data.
 
 ![](images/ts.png)
 
@@ -165,7 +174,7 @@ Most common SQL operators and functions are supported, such as `AND`, `OR`, `NOT
 
 ## When not to use
 
-If you need only commonly used occurrence columns and simple filters, most of the time you can use the regular predicate download interface instead of the SQL interface, and it will likely be faster.
+If you need only commonly used occurrence columns and simple filters, most of the time you can use the regular [download interface](https://www.gbif.org/occurrence/search) instead of the SQL interface, and it will be faster.
 
 Keep in mind that if you only need species counts for one dimension, then [facet queries](https://api.gbif.org/v1/occurrence/search?facet=specieskey) are usually going to be a much faster option (although you won't receive a DOI). Some examples below:
 
@@ -178,9 +187,6 @@ http://api.gbif.org/v1/occurrence/search?facet=country&facetLimit=200
 
 ## rgbif example
 
-
-> As of the writing of this blog post, you will need to use download a development version of rgbif to make use of SQL downloads. You can install the development version of rgbif using `install_github("ropensci/rgbif", ref = "occ_download_sql")`.
-
 SQL downloads is also supported by [rgbif](https://docs.ropensci.org/rgbif/index.html) by using `occ_download_sql()`. You might also need to set up your **GBIF credentials**. Please see this [article](https://docs.ropensci.org/rgbif/articles/gbif_credentials.html) for the easiest way to do this.
 
 ``` r
@@ -191,6 +197,4 @@ occ_download_sql("SELECT datasetKey, countryCode, COUNT(*) FROM occurrence WHERE
 
 ## Further Reading
 
-https://techdocs.gbif.org/en/data-use/api-sql-downloads
-
-
+<https://techdocs.gbif.org/en/data-use/api-sql-downloads>

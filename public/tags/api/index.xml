@@ -6,7 +6,19 @@
     <description>Recent content in API on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 07 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://data-blog.gbif.org/tags/api/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 15 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://data-blog.gbif.org/tags/api/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Creating high resolution maps with rgbif</title>
+      <link>https://data-blog.gbif.org/post/2023-03-24-maps-api/</link>
+      <pubDate>Fri, 15 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/post/2023-03-24-maps-api/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;This article is an adapted version of the rgbif article found &lt;a href=&#34;https://docs.ropensci.org/rgbif/articles/creating_maps_from_occurrences.html&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;It is often useful to create a map from GBIF mediated occurrences. While it is always possible to take a screenshot of map on &lt;a href=&#34;https://www.gbif.org/occurrence/map?occurrence_status=present&#34;&gt;gbif.org&lt;/a&gt;, sometimes a publication quality map is needed.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>GBIF API beginners guide</title>
       <link>https://data-blog.gbif.org/post/gbif-api-beginners-guide/</link>

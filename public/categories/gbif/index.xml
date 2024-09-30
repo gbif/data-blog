@@ -6,7 +6,53 @@
     <description>Recent content in GBIF on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 02 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://data-blog.gbif.org/categories/gbif/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 02 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://data-blog.gbif.org/categories/gbif/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GBIF and Apache-Spark on AWS tutorial</title>
+      <link>https://data-blog.gbif.org/post/aws-and-gbif/</link>
+      <pubDate>Mon, 02 Sep 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/post/aws-and-gbif/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Some queries in the blog post can be done for free using a new feature called &lt;a href=&#34;https://data-blog.gbif.org/post/2024-06-24-gbif-sql-downloads/&#34;&gt;GBIF SQL downloads&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;GBIF&lt;/strong&gt; now has a &lt;a href=&#34;https://registry.opendata.aws/gbif/&#34;&gt;snapshots&lt;/a&gt; of billions occurrence&lt;sub&gt;✝&lt;/sub&gt; records on &lt;strong&gt;Amazon Web Services&lt;/strong&gt; (AWS). This guide will take you through running &lt;strong&gt;Spark notebooks&lt;/strong&gt; on AWS. The GBIF snapshot is documented : &lt;a href=&#34;https://github.com/gbif/occurrence/blob/master/aws-public-data.md&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;June snapshot of &lt;a href=&#34;https://t.co/CJaPsifdp0&#34;&gt;https://t.co/CJaPsifdp0&lt;/a&gt; occurrence data now available on the Amazon and Microsoft clouds, based on &lt;a href=&#34;https://t.co/aGbvTisapJ&#34;&gt;https://t.co/aGbvTisapJ&lt;/a&gt;. See &lt;a href=&#34;https://t.co/lRXM2uqFh0&#34;&gt;https://t.co/lRXM2uqFh0&lt;/a&gt; for more details.&lt;/p&gt;&amp;mdash; GBIF (@GBIF) &lt;a href=&#34;https://twitter.com/GBIF/status/1400009135362646021?ref_src=twsrc%5Etfw&#34;&gt;June 2, 2021&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+&lt;p&gt;You can &lt;strong&gt;read previous discussions about GBIF and cloud computing&lt;/strong&gt; &lt;a href=&#34;https://discourse.gbif.org/t/gbif-exports-as-public-datasets-in-cloud-environments/1835&#34;&gt;here&lt;/a&gt;. The main reason you would want to use cloud computing is to run &lt;strong&gt;big data queries&lt;/strong&gt; that are slow or impractical on a local machine.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Working with extinct species on GBIF</title>
+      <link>https://data-blog.gbif.org/post/2024-02-06-working-with-extinct-species-on-gbif/</link>
+      <pubDate>Tue, 21 May 2024 10:24:15 +0100</pubDate>
+      
+      <guid>https://data-blog.gbif.org/post/2024-02-06-working-with-extinct-species-on-gbif/</guid>
+      <description>&lt;p&gt;GBIF users are often interested in getting occurrences of only living species or &amp;ldquo;no extinct&amp;rdquo; species. This seemingly straightforward request is often difficult to fulfill in practice.&lt;/p&gt;
+&lt;p&gt;Currently, there is no occurrence level filter for removing extinct species from an occurrence search. Additionally, there is no authoritative global extinct species list available from GBIF. This article discusses the difficulties and complexities of working with extinct species and some possible solutions.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>GBIF attempts to improve identifier stability by monitoring changes of occurrenceIDs</title>
+      <link>https://data-blog.gbif.org/post/improve-identifier-stability/</link>
+      <pubDate>Mon, 06 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/post/improve-identifier-stability/</guid>
+      <description>Since 2022, GBIF has been monitoring changes of occurrenceIDs in datasets to improve the stability of GBIF identifiers. We pause data ingestion when we detect more than half of occurrence records in the latest version have different occurrenceIDs from the previous version (live on GBIF.org). This identifier validation process automatically creates issues on GitHub and GBIF helpdesk will contact the publishers to verify the changes of occurrenceIDs.
+Our aim in this process is to minimize the changes of GBIF identifiers and to support the needs for citations and data linking.</description>
+    </item>
+    
+    <item>
+      <title>Creating high resolution maps with rgbif</title>
+      <link>https://data-blog.gbif.org/post/2023-03-24-maps-api/</link>
+      <pubDate>Fri, 15 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/post/2023-03-24-maps-api/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;This article is an adapted version of the rgbif article found &lt;a href=&#34;https://docs.ropensci.org/rgbif/articles/creating_maps_from_occurrences.html&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;It is often useful to create a map from GBIF mediated occurrences. While it is always possible to take a screenshot of map on &lt;a href=&#34;https://www.gbif.org/occurrence/map?occurrence_status=present&#34;&gt;gbif.org&lt;/a&gt;, sometimes a publication quality map is needed.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Accessing GBIF-mediated occurrence data to conserve EDGE species</title>
       <link>https://data-blog.gbif.org/post/accessing-occurrence-data-to-conserve-edge-species/</link>
@@ -113,17 +159,6 @@ There are many valid reasons why these duplicates appear on GBIF. Sometimes an o
     </item>
     
     <item>
-      <title>GBIF and Apache-Spark on AWS tutorial</title>
-      <link>https://data-blog.gbif.org/post/aws-and-gbif/</link>
-      <pubDate>Fri, 04 Jun 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://data-blog.gbif.org/post/aws-and-gbif/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;GBIF&lt;/strong&gt; now has a &lt;a href=&#34;https://registry.opendata.aws/gbif/&#34;&gt;snapshot&lt;/a&gt; of 1.3 billion occurrence&lt;sub&gt;✝&lt;/sub&gt; records on &lt;strong&gt;Amazon Web Services&lt;/strong&gt; (AWS). This guide will take you through running &lt;strong&gt;Spark notebooks&lt;/strong&gt; on AWS. The GBIF snapshot is documented : &lt;a href=&#34;https://github.com/gbif/occurrence/blob/master/aws-public-data.md&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;June snapshot of &lt;a href=&#34;https://t.co/CJaPsifdp0&#34;&gt;https://t.co/CJaPsifdp0&lt;/a&gt; occurrence data now available on the Amazon and Microsoft clouds, based on &lt;a href=&#34;https://t.co/aGbvTisapJ&#34;&gt;https://t.co/aGbvTisapJ&lt;/a&gt;. See &lt;a href=&#34;https://t.co/lRXM2uqFh0&#34;&gt;https://t.co/lRXM2uqFh0&lt;/a&gt; for more details.&lt;/p&gt;&amp;mdash; GBIF (@GBIF) &lt;a href=&#34;https://twitter.com/GBIF/status/1400009135362646021?ref_src=twsrc%5Etfw&#34;&gt;June 2, 2021&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
-&lt;p&gt;You can &lt;strong&gt;read previous discussions about GBIF and cloud computing&lt;/strong&gt; &lt;a href=&#34;https://discourse.gbif.org/t/gbif-exports-as-public-datasets-in-cloud-environments/1835&#34;&gt;here&lt;/a&gt;. The main reason you would want to use cloud computing is to run &lt;strong&gt;big data queries&lt;/strong&gt; that are slow or impractical on a local machine.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>Derived datasets</title>
       <link>https://data-blog.gbif.org/post/derived-datasets/</link>
       <pubDate>Thu, 20 May 2021 00:00:00 +0000</pubDate>
@@ -144,12 +179,12 @@ There are many valid reasons why these duplicates appear on GBIF. Sometimes an o
     </item>
     
     <item>
-      <title>The GBIF Registry of Scientific Collections (GRSciColl) in 2021</title>
+      <title>The Global Registry of Scientific Collections (GRSciColl) in 2021</title>
       <link>https://data-blog.gbif.org/post/grscicoll-2021/</link>
       <pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>https://data-blog.gbif.org/post/grscicoll-2021/</guid>
-      <description>The GBIF Registry of Scientific Collections, also known as GRSciColl, has been available on GBIF.org since 2019 but it recently got some more attention when we connected it to GBIF occurrences. Now is the perfect time to share a bit of GRSciColl history and what we plan for its future.
+      <description>The Global Registry of Scientific Collections, also known as GRSciColl, has been available on GBIF.org since 2019 but it recently got some more attention when we connected it to GBIF occurrences. Now is the perfect time to share a bit of GRSciColl history and what we plan for its future.
 A brief history of GRSciColl First of all, here are a few facts about GrSciColl today, at the start of 2021:</description>
     </item>
     

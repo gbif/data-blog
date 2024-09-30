@@ -6,7 +6,17 @@
     <description>Recent content in gbif on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 02 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://data-blog.gbif.org/tags/gbif/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 06 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://data-blog.gbif.org/tags/gbif/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GBIF attempts to improve identifier stability by monitoring changes of occurrenceIDs</title>
+      <link>https://data-blog.gbif.org/post/improve-identifier-stability/</link>
+      <pubDate>Mon, 06 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/post/improve-identifier-stability/</guid>
+      <description>Since 2022, GBIF has been monitoring changes of occurrenceIDs in datasets to improve the stability of GBIF identifiers. We pause data ingestion when we detect more than half of occurrence records in the latest version have different occurrenceIDs from the previous version (live on GBIF.org). This identifier validation process automatically creates issues on GitHub and GBIF helpdesk will contact the publishers to verify the changes of occurrenceIDs.
+Our aim in this process is to minimize the changes of GBIF identifiers and to support the needs for citations and data linking.</description>
+    </item>
+    
     <item>
       <title>Accessing GBIF-mediated occurrence data to conserve EDGE species</title>
       <link>https://data-blog.gbif.org/post/accessing-occurrence-data-to-conserve-edge-species/</link>
@@ -56,12 +66,12 @@ There are many valid reasons why these duplicates appear on GBIF. Sometimes an o
     </item>
     
     <item>
-      <title>The GBIF Registry of Scientific Collections (GRSciColl) in 2021</title>
+      <title>The Global Registry of Scientific Collections (GRSciColl) in 2021</title>
       <link>https://data-blog.gbif.org/post/grscicoll-2021/</link>
       <pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>https://data-blog.gbif.org/post/grscicoll-2021/</guid>
-      <description>The GBIF Registry of Scientific Collections, also known as GRSciColl, has been available on GBIF.org since 2019 but it recently got some more attention when we connected it to GBIF occurrences. Now is the perfect time to share a bit of GRSciColl history and what we plan for its future.
+      <description>The Global Registry of Scientific Collections, also known as GRSciColl, has been available on GBIF.org since 2019 but it recently got some more attention when we connected it to GBIF occurrences. Now is the perfect time to share a bit of GRSciColl history and what we plan for its future.
 A brief history of GRSciColl First of all, here are a few facts about GrSciColl today, at the start of 2021:</description>
     </item>
     

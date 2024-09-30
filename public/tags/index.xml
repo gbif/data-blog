@@ -6,22 +6,85 @@
     <description>Recent content in Tags on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 02 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://data-blog.gbif.org/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 02 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://data-blog.gbif.org/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Data Use</title>
-      <link>https://data-blog.gbif.org/tags/data-use/</link>
-      <pubDate>Tue, 02 May 2023 00:00:00 +0000</pubDate>
+      <title>aws</title>
+      <link>https://data-blog.gbif.org/tags/aws/</link>
+      <pubDate>Mon, 02 Sep 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://data-blog.gbif.org/tags/data-use/</guid>
+      <guid>https://data-blog.gbif.org/tags/aws/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cloud computing</title>
+      <link>https://data-blog.gbif.org/tags/cloud-computing/</link>
+      <pubDate>Mon, 02 Sep 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/cloud-computing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>data quality</title>
+      <link>https://data-blog.gbif.org/tags/data-quality/</link>
+      <pubDate>Mon, 06 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/data-quality/</guid>
       <description></description>
     </item>
     
     <item>
       <title>gbif</title>
       <link>https://data-blog.gbif.org/tags/gbif/</link>
-      <pubDate>Tue, 02 May 2023 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 06 Nov 2023 00:00:00 +0000</pubDate>
       
       <guid>https://data-blog.gbif.org/tags/gbif/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>issues</title>
+      <link>https://data-blog.gbif.org/tags/issues/</link>
+      <pubDate>Mon, 06 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/issues/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>occurrence</title>
+      <link>https://data-blog.gbif.org/tags/occurrence/</link>
+      <pubDate>Mon, 06 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/occurrence/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>publish</title>
+      <link>https://data-blog.gbif.org/tags/publish/</link>
+      <pubDate>Mon, 06 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/publish/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>API</title>
+      <link>https://data-blog.gbif.org/tags/api/</link>
+      <pubDate>Fri, 15 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/api/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data Use</title>
+      <link>https://data-blog.gbif.org/tags/data-use/</link>
+      <pubDate>Tue, 02 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/data-use/</guid>
       <description></description>
     </item>
     
@@ -40,15 +103,6 @@
       <pubDate>Thu, 08 Dec 2022 00:00:00 +0000</pubDate>
       
       <guid>https://data-blog.gbif.org/tags/publishing/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>occurrence</title>
-      <link>https://data-blog.gbif.org/tags/occurrence/</link>
-      <pubDate>Thu, 04 Nov 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://data-blog.gbif.org/tags/occurrence/</guid>
       <description></description>
     </item>
     
@@ -98,29 +152,11 @@
     </item>
     
     <item>
-      <title>publish</title>
-      <link>https://data-blog.gbif.org/tags/publish/</link>
-      <pubDate>Mon, 11 Oct 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://data-blog.gbif.org/tags/publish/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>sampling-event</title>
       <link>https://data-blog.gbif.org/tags/sampling-event/</link>
       <pubDate>Mon, 11 Oct 2021 00:00:00 +0000</pubDate>
       
       <guid>https://data-blog.gbif.org/tags/sampling-event/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>API</title>
-      <link>https://data-blog.gbif.org/tags/api/</link>
-      <pubDate>Tue, 07 Sep 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://data-blog.gbif.org/tags/api/</guid>
       <description></description>
     </item>
     
@@ -251,24 +287,6 @@
     </item>
     
     <item>
-      <title>aws</title>
-      <link>https://data-blog.gbif.org/tags/aws/</link>
-      <pubDate>Fri, 04 Jun 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://data-blog.gbif.org/tags/aws/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>cloud computing</title>
-      <link>https://data-blog.gbif.org/tags/cloud-computing/</link>
-      <pubDate>Fri, 04 Jun 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://data-blog.gbif.org/tags/cloud-computing/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Derived datasets</title>
       <link>https://data-blog.gbif.org/tags/derived-datasets/</link>
       <pubDate>Thu, 20 May 2021 00:00:00 +0000</pubDate>
@@ -355,24 +373,6 @@
       <pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate>
       
       <guid>https://data-blog.gbif.org/tags/taxon-match-none/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>data quality</title>
-      <link>https://data-blog.gbif.org/tags/data-quality/</link>
-      <pubDate>Tue, 27 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://data-blog.gbif.org/tags/data-quality/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>issues</title>
-      <link>https://data-blog.gbif.org/tags/issues/</link>
-      <pubDate>Tue, 27 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://data-blog.gbif.org/tags/issues/</guid>
       <description></description>
     </item>
     

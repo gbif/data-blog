@@ -6,7 +6,25 @@
     <description>Recent content in Author on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 02 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://data-blog.gbif.org/author/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 02 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://data-blog.gbif.org/author/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>John Waller</title>
+      <link>https://data-blog.gbif.org/author/john-waller/</link>
+      <pubDate>Mon, 02 Sep 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/author/john-waller/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kumiko Totsu</title>
+      <link>https://data-blog.gbif.org/author/kumiko-totsu/</link>
+      <pubDate>Mon, 06 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/author/kumiko-totsu/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Andrew Rodrigues</title>
       <link>https://data-blog.gbif.org/author/andrew-rodrigues/</link>
@@ -40,15 +58,6 @@
       <pubDate>Thu, 17 Nov 2022 00:00:00 +0000</pubDate>
       
       <guid>https://data-blog.gbif.org/author/cecilie-svenningsen/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>John Waller</title>
-      <link>https://data-blog.gbif.org/author/john-waller/</link>
-      <pubDate>Mon, 25 Apr 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://data-blog.gbif.org/author/john-waller/</guid>
       <description></description>
     </item>
     
