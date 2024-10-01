@@ -88,7 +88,7 @@ A table could look like this fictional example:
 
 In the example above, the last column couldn’t be mapped to any Darwin Core nor Latimer Core term so it was left with a descriptive title. This column won’t be indexed, and users won’t be able to search data based on its values, but it will be displayed along the other descriptors on the collection page. See an example of collection descriptor for the [NY collection](https://scientific-collections.gbif.org/collection/b2190553-4505-4fdd-8fff-065c8ca26f72) where not every column is mapped to a standard:
 
-![NY collection descriptors]()
+![NY collection descriptors](/post/2024-10-01-grscicoll-collection-descriptors/NY_descriptors.png)
 
 Note that tables might contain overlapping information or different descriptions for the same subset of specimens.
 
@@ -109,7 +109,7 @@ Once you have your table of descriptors ready, the process to upload them is rel
 1. Go to the collection page that you would like to work on from https://scientific-collections.gbif.org
 2. Click on the edit button (you will be redirected to the editing interface)
 3. Click on the “Descriptor group” tab (see the screenshot below)
-![Descriptor Group tab]()
+![Descriptor Group tab](/post/2024-10-01-grscicoll-collection-descriptors/descriptor_group_ui.png)
 4. Click Add and fill in the title and description of the descriptor group and choose your CSV file.
 5. Then click “add”.
 
