@@ -86,7 +86,7 @@ A table could look like this fictional example:
 | Freshwater | Perciformes | Colombia | 300 |
 | Freshwater | Perciformes | Brazil | 145 |
 
-In the example above, the last column couldn’t be mapped to any Darwin Core or Latimer Core term so it was left with a descriptive title. This column will not be indexed, and users will not be able to search data based on its values, but it will be displayed along the other descriptors on the collection page. See an example of collection descriptors for the [NY collection](https://scientific-collections.gbif.org/collection/b2190553-4505-4fdd-8fff-065c8ca26f72) where not every column is mapped to a standard:
+In the example above, the last column couldn’t be mapped to any Darwin Core or Latimer Core term so it was left with a descriptive title. This column will not be indexed, and users will not be able to search data based on its values, but it will be displayed along the other descriptors on the collection page. See an example of collection descriptors for [The New York Botanical Garden collection](https://scientific-collections.gbif.org/collection/b2190553-4505-4fdd-8fff-065c8ca26f72) where not every column is mapped to a standard:
 
 ![NY collection descriptors](/post/2024-10-01-grscicoll-collection-descriptors/NY_descriptors.png)
 
@@ -94,10 +94,10 @@ Note that tables might contain overlapping information or different descriptions
 
 There is not any template to download as the descriptors can include a lot of headers. You are very welcome to download any table you like from GRSciColl and use it as your own template.
 Here are some examples that I compiled from real data while working on the implementation of descriptors. They could certainly be mapped differently, and this is to help give an idea of the type of mapping we expect:
-* [Example 1](https://github.com/gbif/registry/files/14419456/swisscollnet_ALTERNATIVE_dwcltc_part2_2a8835ad-4a2e-43df-b976-f924f76fe628.csv)
-* [Example 2](https://github.com/gbif/registry/files/14419488/swisscollnet_dwcltc_3c41e738-b94e-4ed6-a9ae-f57c7baaf521.csv)
-* [Example 3](https://github.com/gbif/registry/files/14419329/rnc_ALTERNATIVE_dwcltc_types_humbolt_a717e77c-ea99-4d81-83ff-81931e753ffc.csv)
-* [Example 4](https://github.com/gbif/registry/files/14419363/rnc_dwcltc_geography_6eae4377-f8b4-41ac-a9c1-db5a81afde98.csv)
+* [Example 1 from https://swisscollnet.scnat.ch on an entomological collection](https://github.com/gbif/registry/files/14419456/swisscollnet_ALTERNATIVE_dwcltc_part2_2a8835ad-4a2e-43df-b976-f924f76fe628.csv)
+* [Example 2 from https://swisscollnet.scnat.ch on a mineralogy collection](https://github.com/gbif/registry/files/14419488/swisscollnet_dwcltc_3c41e738-b94e-4ed6-a9ae-f57c7baaf521.csv)
+* [Example 3 from http://rnc.humboldt.org.co on a botanical garden collection](https://github.com/gbif/registry/files/14419329/rnc_ALTERNATIVE_dwcltc_types_humbolt_a717e77c-ea99-4d81-83ff-81931e753ffc.csv)
+* [Example 4 from http://rnc.humboldt.org.co on aherbarium collection](https://github.com/gbif/registry/files/14419363/rnc_dwcltc_geography_6eae4377-f8b4-41ac-a9c1-db5a81afde98.csv)
 
 **NB:** The Latimer core term objectClassificationName is very convenient to describe subsets of collections that do not necessarily have other ways of being grouped. For example, this is helpful for groups of non-monophyletic taxa (for example Algae). Ideally, the names used in this field should follow a controlled vocabulary. We haven’t set up one as we write though. If you need some guidance, I suggest following the DiSSCo discipline vocabulary for collections (see also DOI 10.3897/rio.10.e118244).
 
