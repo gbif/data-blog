@@ -59,7 +59,7 @@ You can find out more about GRSciColl and browse the GRSciColl data here: https:
 
 # What are collection descriptors in GRSciColl?
 
-Collection descriptors were implemented as part of the [GRSciColl 2024 roadmap](https://github.com/gbif/registry/blob/dev/roadmap-grscicoll-2023-2024.md). They are meant to share structured information about collections. They can contain relevant details about collections and sub-collections as well as quantitative data which cannot be shared on collection pages (for example, the number of type specimens for a particular taxon). Some collection descriptors are used for indexing collections. This means that they improve collection discoverability. For example, a collection associated with dragonfly species names will be found by users looking for “Odonata” in the scientific name field of the collection search.
+Collection descriptors were implemented as part of the [GRSciColl 2024 roadmap](https://github.com/gbif/registry/blob/dev/roadmap-grscicoll-2023-2024.md). They are meant to share structured information about collections. They can contain relevant details about collections and sub-collections as well as quantitative data which cannot be shared on collection pages (for example, the number of type specimens for a particular taxon). Some collection descriptors are used for indexing collections. This means that they improve collection discoverability. For example, a collection entry associated with dragonfly species names will be found by users looking for “Odonata” in the scientific name field of the collection search.
 
 Here are some examples of searches based on collection descriptors:
 * [Find some collections with specimens collected by M. J. Berkeley](https://scientific-collections.gbif.org/collection/search?recordedBy=M.%20J.%20Berkeley)
@@ -113,7 +113,7 @@ Once you have your table of descriptors ready, the process to upload them is rel
 4. Click Add and fill in the title and description of the descriptor group and choose your CSV file.
 5. Then click “add”.
 
-Note that the API can also be used to upload collection descriptors programmatically. It is documented here. Please contact us at scientific-collections@gbif.org if you have any questions.
+Note that the API can also be used to upload collection descriptors programmatically. It is documented [here](https://techdocs.gbif.org/en/openapi/v1/registry#/Collections/createCollectionDescriptorGroup). Please contact us at scientific-collections@gbif.org if you have any question.
 
 # Updating descriptors
 
