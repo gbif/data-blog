@@ -99,7 +99,7 @@ Here are some examples that I compiled from real data while working on the imple
 * [Example 3](https://github.com/gbif/registry/files/14419329/rnc_ALTERNATIVE_dwcltc_types_humbolt_a717e77c-ea99-4d81-83ff-81931e753ffc.csv)
 * [Example 4](https://github.com/gbif/registry/files/14419363/rnc_dwcltc_geography_6eae4377-f8b4-41ac-a9c1-db5a81afde98.csv)
 
-**NB:** The Latimer core term objectClassificationName is very convenient to describe subsets of collections that do not necessarily have other ways of being grouped. For example, this is helpful for groups of non-monophyletic taxa (for example Algae). Ideally, the names used in this field should follow a controlled vocabulary. We haven’t set up one as we write though. If you need some guidance, I suggest following the DiSSCo discipline vocabulary for collections.
+**NB:** The Latimer core term objectClassificationName is very convenient to describe subsets of collections that do not necessarily have other ways of being grouped. For example, this is helpful for groups of non-monophyletic taxa (for example Algae). Ideally, the names used in this field should follow a controlled vocabulary. We haven’t set up one as we write though. If you need some guidance, I suggest following the DiSSCo discipline vocabulary for collections (see also DOI 10.3897/rio.10.e118244).
 
 # How to upload descriptors
 
