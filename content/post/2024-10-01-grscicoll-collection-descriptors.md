@@ -113,7 +113,7 @@ Once you have your table of descriptors ready, the process to upload them is rel
 4. Click Add and fill in the title and description of the descriptor group and choose your CSV file.
 5. Then click “add”.
 
-Not that the API can also be used to upload collection descriptors programmatically. It is documented here. Please contact us at scientific-collections@gbif.org if you have any question.
+Not that the API can also be used to upload collection descriptors programmatically. It is documented [here](https://techdocs.gbif.org/en/openapi/v1/registry#/Collections/createCollectionDescriptorGroup). Please contact us at scientific-collections@gbif.org if you have any question.
 
 # Updating descriptors
 
