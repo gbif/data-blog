@@ -67,6 +67,11 @@ Here are some examples of searches based on collection descriptors:
 
 Currently, only a handful of collection descriptors are indexed and searchable: scientific name, country or area of coverage (of the specimen, this is based on the dwc:country term), recorded by and type status. However, GBIF will be able to add filters for more standardized terms as more descriptors are shared in GRSciColl.
 
+> **When to upload collection descriptors in GRSciColl:**
+> * The collection is not part of the GBIF Scope (for example, mineralogy, archeology, anthropology, etc.)
+> * The information about the collection is structured but not at the specimen level (e.g. you can create occurrences).
+> * You have information that does not fit the Darwin Core Standard.
+
 # How to format collection descriptors
 
 Each GRSciColl collection entry can have one or several collection descriptor groups. A group can correspond to descriptors for a particular aspect of the collection or a sub-collection. Each group requires:
@@ -106,7 +111,7 @@ Here are some examples that I compiled from real data while working on the imple
 Right now, only editors can upload descriptors to collections. If you are not a GRSciColl editor for the collection, institution or country of the collection and you would like to become one, please contact us at scientific-collections@gbif.org. You will need a GBIF account associated with your institutional email address.
 
 Once you have your table of descriptors ready, the process to upload them is relatively straightforward.
-1. Go to the collection page that you would like to work on from https://scientific-collections.gbif.org
+1. Go to the collection page that you would like to work on from https://scientific-collections.gbif.org/collection/search
 2. Click on the edit button (you will be redirected to the editing interface)
 3. Click on the “Descriptor group” tab (see the screenshot below)
 ![Descriptor Group tab](/post/2024-10-01-grscicoll-collection-descriptors/descriptor_group_ui.png)
