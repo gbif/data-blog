@@ -55,7 +55,7 @@ GRSciColl and GBIF have overlapping content: many of the collections listed in G
 
 You can find out more about GRSciColl and browse the GRSciColl data here: https://scientific-collections.gbif.org. You can also watch this short introduction below.
 
-<iframe title="vimeo-player" src="https://vimeo.com/showcase/10709937/video/872824009" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+<iframe title="vimeo-player" src="https://player.vimeo.com/video/872824009?h=c3aaa082e3" width="640" height="360" frameborder="0" allowfullscreen></iframe>
 
 # What are collection descriptors in GRSciColl?
 
