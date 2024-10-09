@@ -51,6 +51,7 @@ If that’s your case, you might be interested in packaging the data you have as
 
 The Global Registry of Scientific Collections (GRSciColl) is a registry of physical scientific collections (content, location and contacts) and associated institution.
 GRSciColl has its own history and scope. It was originally developed and maintained at the Smithsonian Institution before GBIF inherited it. You can read more about how [here](https://www.gbif.org/news/5kyAslpqTVxYqZTwYn1cub/gbif-provides-new-home-for-the-global-registry-of-scientific-collections) and [here](https://data-blog.gbif.org/post/grscicoll-2021/).
+
 GRSciColl and GBIF have overlapping content: many of the collections listed in GRSciColl are also datasets on GBIF. However, the scope of GRSciColl goes beyond biodiversity data, for example, GRSciColl contains mineralogy and archaeology collections but doesn’t include things like citizen science observation data.
 
 You can find out more about GRSciColl and browse the GRSciColl data here: https://scientific-collections.gbif.org. You can also watch this short introduction below.
