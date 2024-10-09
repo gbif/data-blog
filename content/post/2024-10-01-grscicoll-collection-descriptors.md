@@ -70,7 +70,7 @@ Currently, only a handful of collection descriptors are indexed and searchable: 
 
 > **When to upload collection descriptors in GRSciColl:**
 > * The collection is not part of the GBIF Scope (for example, mineralogy, archeology, anthropology, etc.)
-> * The information about the collection is structured but not at the specimen level (e.g. you can create occurrences).
+> * The information about the collection is structured but not at the specimen level (e.g. you can not create occurrences).
 > * You have information that does not fit the Darwin Core Standard.
 
 # How to format collection descriptors
