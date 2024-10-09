@@ -1,7 +1,7 @@
 ---
 title: Making collection content discoverable when you don’t have occurrences published on GBIF
 author: Marie Grosjean
-date: '2024-10-01'
+date: '2024-10-09'
 slug: grscicoll-collection-descriptors
 categories:
   - GRSciColl
@@ -15,15 +15,15 @@ tags:
   - GRSciColl
   - Darwin core
   - Latimer core
-lastmod: '2024-10-01'
-draft: yes
+lastmod: '2024-10-09'
+draft: no
 keywords: ["Collection descriptors", "Latimer Core", "Darwin Core", "Institution match none", "GRsciColl", "collection", "institution", "GBIF"]
 description: ''
 comment: no
 toc: ''
 autoCollapseToc: no
 postMetaInFooter: no
-hiddenFromHomePage: yes
+hiddenFromHomePage: no
 contentCopyright: no
 reward: no
 mathjax: no
