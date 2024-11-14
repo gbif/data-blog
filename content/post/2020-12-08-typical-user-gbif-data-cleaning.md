@@ -181,7 +181,7 @@ You can also do this on the [web portal](https://www.gbif.org/occurrence/search?
 
 ## Fossils and living specimens
 
-You might want to remove **fossils** and **living specimens**, and **non-naturally established species**.
+You might want to remove **fossils** and **living specimens**.
 
 ```R
 gbif_download %>% 
