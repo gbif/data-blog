@@ -68,7 +68,9 @@ See [this link](https://github.com/gbif/pipelines/tree/master/gbif/ingestion/clu
 Step 2: Compare candidates with each other and assess whether they are potentially related
 
 In this second phase, the system will compare all records in the candidate set to each other and generate assertions. The assertions are inspected and the algorithms decides if there is enough evidence in the assertions to create a relationship between them.
-In the table below, I summarize how those assertions are made but if you would like more details, you can check the code available [here](https://github.com/gbif/pipelines/blob/dev/sdks/core/src/main/java/org/gbif/pipelines/core/parsers/clustering/OccurrenceRelationships.java#L26).
+In the table below, I summarize how those assertions are made but if you would like more details, you can check the code available [here](https://github.com/gbif/clustering/blob/dev/src/main/java/org/gbif/clustering/parsers/OccurrenceRelationships.java#L44).
+
+
 
 [Edit 2022-06-23 : the table below has updated to reflect some changes in the clustering function https://github.com/gbif/pipelines/issues/733]
 
