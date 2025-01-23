@@ -33,7 +33,7 @@ sequenceDiagrams:
   options: ''
 ---
 
->[!NOTE]
+>**NOTE**:
 >The content of this blog post is now maintained in the technical documentation. Please view [this source](https://techdocs.gbif.org/en/data-processing/clustering-occurrences) for the most up to date information on the topic.
 
 Many data users may suspect they’ve discovered duplicated records in the GBIF index. You download data from GBIF, analyze them and realize that some records have the same date, scientific name, catalogue number and location but come from two different publishers or have slightly different attributes.
@@ -100,7 +100,7 @@ The table below summarises the combinations of assertions that are sufficient to
 
 ![Combination of assersiton conditions to create cluster](/post/2021-10-29-clustering-occurrences/table_2.png)
 
->[!NOTE]
+>**NOTE**:
 >Any group of occurrences associated with the assertion `Different date` or `Different country` will not be clustered together.
 
 # Why some occurrences are not clustered
