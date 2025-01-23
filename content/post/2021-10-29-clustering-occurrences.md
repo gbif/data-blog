@@ -33,6 +33,9 @@ sequenceDiagrams:
   options: ''
 ---
 
+>[!NOTE]
+>The content of this blog post is now maintained in the technical documentation. Please view [this source](https://techdocs.gbif.org/en/data-processing/clustering-occurrences) for the most up to date information on the topic.
+
 Many data users may suspect they’ve discovered duplicated records in the GBIF index. You download data from GBIF, analyze them and realize that some records have the same date, scientific name, catalogue number and location but come from two different publishers or have slightly different attributes.
 
 There are many valid reasons why these duplicates appear on GBIF. Sometimes [an observation was recorded in two different systems](https://discourse.gbif.org/t/duplicate-observations-across-datasets/3069), sometimes several records correspond to herbaria duplicates (you can check [the work of Nicky Nicolson on the topic](https://www.gbif.org/news/4n8ZCfuK3zxseKAHRMcfA8/award-winner-uses-data-mining-and-machine-learning-to-identify-collectors-and-duplicated-herbarium-specimens)), sometimes a specimen was digitized twice, sometimes a record has been enriched with genetic information and republished via a different platform...
@@ -101,7 +104,8 @@ The table below summarises the combinations of assertions that are sufficient to
 
 ![Combination of assersiton conditions to create cluster](/post/2021-10-29-clustering-occurrences/table_2.png)
 
-> **NB**: Any group of occurrence associated with the assertion `Different date` or `Different country` will not be clustered together.
+>[!NOTE]
+>Any group of occurrences associated with the assertion `Different date` or `Different country` will not be clustered together.
 
 # Why some occurrences are not clustered
 
