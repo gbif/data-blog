@@ -6,6 +6,7 @@ slug: grscicoll-collection-descriptors
 categories:
   - GRSciColl
   - Publishing
+  - GBIF
 tags:
   - publish
   - GBIF
