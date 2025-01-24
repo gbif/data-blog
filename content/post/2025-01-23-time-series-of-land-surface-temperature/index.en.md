@@ -1,6 +1,6 @@
 ---
 title: Tutorial using Google Earth Engine with GBIF mediated occurrences
-author: Kristen Lewers
+author: Kit Lewers
 date: '2025-01-23'
 slug: []
 categories:
@@ -56,15 +56,14 @@ We used remote sensing data from the Landsat 8 satellite to compute monthly aver
 -   Fetching observation records using spatial and temporal filters (e.g., only human observations from 2019).
 -   Preprocessing these records to extract relevant metadata, such as the month of observation and geographical coordinates.
 
-1.  **Combining Datasets for Time-Series Analysis** The LST data and *Cardinalis cardinalis* observation records were combined into a single dataset to enable time-series analysis. Key steps included:
+1.  **Combining Datasets for Time-Series Analysis** The LST data and _Cardinalis cardinalis_ observation records were combined into a single dataset to enable time-series analysis. Key steps included:
 
 -   Summarizing monthly observation counts.
 -   Merging these counts with monthly average temperatures for the same region.
 
 1.  **Data Visualization** The final step was visualizing the relationships between temperature and bird observations through:
 
--   **Line plots** showing temporal trends in temperature and observation counts across the year.
--   **Scatter plots** highlighting correlations between average monthly temperature and the number of Cardinalis cardinalis observations.
+ -   **Scatter plots** highlighting correlations between average monthly temperature and the number of _Cardinalis cardinalis_ observations.
 
 ### Insights and Applications
 
