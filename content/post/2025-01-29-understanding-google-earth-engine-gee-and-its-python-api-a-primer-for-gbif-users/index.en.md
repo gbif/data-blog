@@ -110,7 +110,7 @@ print(nir_band.getInfo())
 ## Resources and Next Steps
 
 -   **GEE Documentation**: [Developers Guide](https://developers.google.com/earth-engine)
--   **Python API Reference**: [GEE Python API](https://developers.google.com/earth-engine/python)
+-   **Python API Reference**: [GEE Python API](https://developers.google.com/earth-engine/tutorials/community/intro-to-python-api)
 -   **GBIF Data Integration**: [GBIF API](https://www.gbif.org/developer/summary)
 
 By combining GEE's robust geospatial capabilities with GBIF's biodiversity data, researchers can unlock powerful insights to tackle ecological challenges. With just a few lines of Python code, the possibilities are vast, from tracking species distributions to monitoring habitat changes and beyond.
