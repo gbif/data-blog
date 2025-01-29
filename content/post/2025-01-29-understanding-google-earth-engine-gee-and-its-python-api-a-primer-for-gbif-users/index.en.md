@@ -1,6 +1,5 @@
 ---
-title: 'Understanding Google Earth Engine (GEE) and Its Python API: A Primer for GBIF
-  Users'
+title: 'Understanding Google Earth Engine (GEE) and Its Python API'
 author: Kit Lewers
 date: '2025-01-29'
 slug: []
