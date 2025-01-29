@@ -60,7 +60,9 @@ For GBIF users, GEE offers unique advantages for biodiversity-related research, 
 
 The GEE Python API provides programmatic access to the platform, enabling automation and integration into data science workflows. Python users can:
 
--   **Access GEE Data Collections**: Query and filter datasets programmatically. **Perform Geospatial Analyses**: Compute statistics, generate maps, and run algorithms. **Export Results**: Save outputs as GeoTIFFs, CSVs, or other formats for use in external applications.
+-   **Access GEE Data Collections**: Query and filter datasets programmatically.
+-   **Perform Geospatial Analyses**: Compute statistics, generate maps, and run algorithms.
+-   **Export Results**: Save outputs as GeoTIFFs, CSVs, or other formats for use in external applications.
 
 ## How to Get Started with GEE and the Python API
 
@@ -105,17 +107,11 @@ print(nir_band.getInfo())
 -   Use GBIF's API or export occurrence data.
 -   Overlay species data on habitat layers to analyze distributions or trends.
 
-## Example Use Case: Habitat Suitability Modeling
-
-1.  **Load Environmental Layers** Combine layers such as elevation, moisture content, and temperature from GEE's datasets.
-
-2.  **Integrate Species Occurrence Data** Use GBIF data to pinpoint species occurrences.
-
-3.  **Run Analysis** Use machine learning or statistical models in Python to predict suitable habitats.
-
 ## Resources and Next Steps
 
--   **GEE Documentation**: [Developers Guide](https://developers.google.com/earth-engine) **Python API Reference**: [GEE Python API](https://developers.google.com/earth-engine/python) **GBIF Data Integration**: [GBIF API](https://www.gbif.org/developer/summary)
+-   **GEE Documentation**: [Developers Guide](https://developers.google.com/earth-engine)
+-   **Python API Reference**: [GEE Python API](https://developers.google.com/earth-engine/python)
+-   **GBIF Data Integration**: [GBIF API](https://www.gbif.org/developer/summary)
 
 By combining GEE's robust geospatial capabilities with GBIF's biodiversity data, researchers can unlock powerful insights to tackle ecological challenges. With just a few lines of Python code, the possibilities are vast, from tracking species distributions to monitoring habitat changes and beyond.
 
