@@ -1,13 +1,13 @@
 ---
 title: 'Understanding Google Earth Engine (GEE) and Its Python API'
 author: Kit Lewers
-date: '2025-01-29'
+date: '2025-02-06'
 slug: []
 categories: 
   - GBIF
 tags: []
 lastmod: '2025-01-29T10:38:09+01:00'
-draft: yes
+draft: no
 keywords: []
 description: ''
 authors: ''
