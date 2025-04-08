@@ -32,9 +32,9 @@ sequenceDiagrams:
 
 With GBIF's new feature SQL downloads, it is now possible to easily create useful custom metrics. In this post, I will create species accumulation curves for various countries/areas using [GBIF SQL downloads](https://techdocs.gbif.org/en/data-use/api-sql-downloads) and R.
 
-A **species accumulation curve** is a plot of the total cumulative running total species in a region. These curves are useful for assessing whether more sampling is likely to yield more knowledge of a region. For example, if the curve is increasing rapidly, it is likely that the region is undersampled for the group, and there could be data gaps. Conversely, if the curve is flattening out, it is likely that the region is well sampled for the group.
-
 > GBIF now has a new [repository](https://github.com/gbif/CommunityMetrics), **Community Metrics**, for collecting input from the GBIF community on the creation of data products derived from GBIF - mediated data that can complement those already provided through GBIF´s [data analytics](https://www.gbif.org/analytics/global). The goal of this work is to produce new or further develop existing metrics, indicators and time series (trend) data products to support decision making.
+
+A **species accumulation curve** is a plot of the total cumulative running total species in a region. These curves are useful for assessing whether more sampling is likely to yield more knowledge of a region. For example, if the curve is increasing rapidly, it is likely that the region is undersampled for the group, and there could be data gaps. Conversely, if the curve is flattening out, it is likely that the region is well sampled for the group.
 
 <!--more-->
 
@@ -122,9 +122,17 @@ We can also compare other countries together on the same graphic to see differen
 
 ![](images/CN-AU.svg)
 
-**Severe undersampling** can also create a pattern that looks like a flatter curve. Here we see that Botswana (BW) has a somewhat flat curve, but this like is due to a low amount of sampling for Amphibians (~20 occurrences per year).
+**Severe undersampling** can also create a pattern that looks like a flatter curve. Here we see that **Botswana** (BW) has a somewhat flat curve, but this like is due to a low amount of sampling for Amphibians (~20 occurrences per year).
 
 ![](images/BW.svg)
+
+The species accumulation curve for **Brazil** (BR) is interesting, as the country has a fair amount of sampling per year (~5000 occ per yearr), but still appears to be gaining new species knowledge each year.
+
+![](images/BR.png)
+
+**Saudi Arabia** (SA) is not expected to be rich in Amphibian species and has a fairly flat curve, which probably wouldn't steepen much with increased sampling.
+
+![](images/SA.png)
 
 ## Using grids
 
