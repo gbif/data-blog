@@ -1,5 +1,5 @@
 ---
-title: Species accumulations curves with GBIF SQL downloads
+title: Species accumulation curves with GBIF SQL downloads
 author: John Waller
 date: '2025-03-26'
 slug: []
@@ -40,7 +40,7 @@ A **species accumulation curve** is a plot of the total cumulative running total
 
 In this post, I will focus on the group **Amphibia**.
 
-Here below is a basic species accumulation curve for **Amphibia** in **Sweden**. Here we see that since around 1980, the total number of species has been fairly constant, suggesting that the group is well sampled in Sweden, and therefore it is very unlikely for there to be any **data gaps** for Amphibia is Sweden. This, of course, does not imply that continued monitoring is not useful for other reasons.
+Here below is a basic species accumulation curve for **Amphibia** in **Sweden** (SE). Here we see that since around 1980, the total number of species has been fairly constant, suggesting that the group is well sampled in Sweden, and therefore it is very unlikely for there to be any **data gaps** for Amphibia is Sweden. This, of course, does not imply that continued monitoring is not useful for other reasons.
 
 The total number of occurrences for Amphibia are also plotted as variably-sized circles. We can see that the rate of increase is less than 1 species "discovered" species per year.
 
@@ -118,7 +118,7 @@ p <- ggplot(dd, aes(x = year, y = cumulative_species_count)) +
     theme(legend.position = "top")
 ```
 
-We can also compare other countries together on the same graphic to see differences species accumulation. Here we see that **Australia** (AU) has a much flatter curve than **China** (CN), which implies that continued sampling is unlikely increase our knowledge of Amphibians in Australia. Whereas in China, the curve is still increasing, suggesting that there are potential data gaps. This could be useful information for conservation funding and future mobilization efforts. Of course continued sampling, even in saturated regions, is still useful for other reasons.
+We can also compare other countries together on the same graphic to see differences species accumulation. Here we see that **Australia** (AU) has a much flatter curve than **China** (CN), which implies that continued sampling is unlikely increase our knowledge of Amphibians in Australia. Whereas in China, the curve is still increasing, suggesting that there are potential data gaps. This could be useful information for conservation funding and future mobilization efforts. Of course continued sampling, even in well known regions, is still useful for other reasons.
 
 ![](images/CN-AU.svg)
 
@@ -130,7 +130,7 @@ The species accumulation curve for **Brazil** (BR) is interesting, as the countr
 
 ![](images/BR.png)
 
-**Saudi Arabia** (SA) is not expected to be rich in Amphibian species and has a fairly flat curve, which probably wouldn't steepen much with increased sampling.
+**Saudi Arabia** (SA) is not expected to be rich in Amphibian species and has a fairly flat curve, which probably wouldn't steepen much with increased sampling, but increased sampling effort might be good for monitoring the existing species.
 
 ![](images/SA.png)
 
@@ -228,6 +228,8 @@ theme(
 
 ![](images/map.png)
 
-Here we can see that a few areas with likely data gaps for Amphibians. By only including areas where there have been more than 1000 occurrence records for Amphibians in the last 10 years, I have somewhat accounted for flat curves due to low sampling effort. Of course one should not interpret every gridcell completely literally because data quality issues, such as a few mis-indentifications, could create a high slope artificially. However, clusters of gridcells with potential gaps are likely to be more indicative of reality.
+> Note, there is an open issue with the grid MGRS where certain codes are missing from the shapefile near Austrailia. <https://github.com/ngageoint/mgrs-java/issues/4>
+
+Here we can see that a few areas with likely data gaps for Amphibians. By only including areas where there have been more than 1000 occurrence records for Amphibians in the last 10 years, I have somewhat accounted for flat curves due to low sampling effort. Of course one should not interpret every grid-cell completely literally because data quality issues, such as a few mis-indentifications, could create a high slope artificially. However, clusters of grid-cells with red gaps are likely to be more indicative of real data gaps in GBIF mediated data.
 
 ## 
