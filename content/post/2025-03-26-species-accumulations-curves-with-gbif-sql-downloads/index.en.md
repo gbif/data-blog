@@ -30,9 +30,9 @@ sequenceDiagrams:
   options: ''
 ---
 
-With GBIF's new feature SQL downloads, it is now possible to easily create useful custom metrics. In this post, I will create species accumulation curves for various countries/areas using [GBIF SQL downloads](https://techdocs.gbif.org/en/data-use/api-sql-downloads) and R.
+With GBIF's new SQL downloads feature, it is now possible to easily create useful custom metrics. In this post, I will create species accumulation curves for various countries/areas using [GBIF SQL downloads](https://techdocs.gbif.org/en/data-use/api-sql-downloads) and R.
 
-> GBIF now has a new [repository](https://github.com/gbif/CommunityMetrics), **Community Metrics**, for collecting input from the GBIF community on the creation of data products derived from GBIF - mediated data that can complement those already provided through GBIF´s [data analytics](https://www.gbif.org/analytics/global). The goal of this work is to produce new or further develop existing metrics, indicators and time series (trend) data products to support decision making.
+> GBIF now has a new [repository](https://github.com/gbif/CommunityMetrics), **Community Metrics**, for collecting input from the GBIF community on the creation of data products derived from GBIF-mediated data that can complement those already provided through GBIF's [data analytics](https://www.gbif.org/analytics/global). The goal of this work is to produce new or further develop existing metrics, indicators and time series (trend) data products to support decision making.
 
 A **species accumulation curve** is a plot of the total cumulative running total species in a region. These curves are useful for assessing whether more sampling is likely to yield more knowledge of a region. For example, if the curve is increasing rapidly, it is likely that the region is undersampled for the group, and there could be data gaps. Conversely, if the curve is flattening out, it is likely that the region is well sampled for the group.
 
@@ -84,7 +84,7 @@ Short explanation of the SQL above:
 
 This will return of a table with occurrence counts the columns `year`, `countrycode`, `speciesKey`, `scientificname`, and `occ_count`.
 
-Note that this will **not** work in the current GBIF SQL downloads implementation:
+Note that the below query will **not** work in the current GBIF SQL downloads implementation:
 
 ``` sql
     COUNT(DISTINCT speciesKey) OVER (
@@ -93,7 +93,7 @@ Note that this will **not** work in the current GBIF SQL downloads implementatio
     ) AS cumulative_species_count
 ```
 
-Because we cannot do the cumulative aggregation in the GBIF SQL downloads, it is necessary to do this in R.
+As we cannot do the cumulative aggregation in the GBIF SQL downloads, it is necessary to do this in R.
 
 ``` r
 library(rgbif)
