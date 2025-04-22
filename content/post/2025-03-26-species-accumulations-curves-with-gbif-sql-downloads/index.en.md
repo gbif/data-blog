@@ -1,13 +1,13 @@
 ---
 title: Species accumulation curves with GBIF SQL downloads
 author: John Waller
-date: '2025-03-26'
+date: '2025-04-22'
 slug: []
 categories:
   - GBIF
 tags: []
 lastmod: '2025-03-26T15:53:38+01:00'
-draft: yes
+draft: no
 keywords: []
 description: ''
 authors: ''
@@ -126,7 +126,7 @@ We can also compare other countries together on the same graphic to see differen
 
 ![](images/BW.svg)
 
-The species accumulation curve for **Brazil** (BR) is interesting, as the country has a fair amount of sampling per year (~5000 occ per yearr), but still appears to be gaining new species knowledge each year.
+The species accumulation curve for **Brazil** (BR) is interesting, as the country has a fair amount of sampling per year (~5000 occ per year), but still appears to be gaining new species knowledge each year.
 
 ![](images/BR.png)
 
@@ -228,7 +228,7 @@ theme(
 
 ![](images/map.png)
 
-> Note, there is an open issue with the grid MGRS where certain codes are missing from the shapefile near Austrailia. <https://github.com/ngageoint/mgrs-java/issues/4>
+> Note, there is an open issue with the MGRS grid where certain codes are missing from the shapefile near Austrailia. <https://github.com/ngageoint/mgrs-java/issues/4>
 
 Here we can see that a few areas with likely data gaps for Amphibians. By only including areas where there have been more than 1000 occurrence records for Amphibians in the last 10 years, I have somewhat accounted for flat curves due to low sampling effort. Of course one should not interpret every grid-cell completely literally because data quality issues, such as a few mis-indentifications, could create a high slope artificially. However, clusters of grid-cells with red gaps are likely to be more indicative of real data gaps in GBIF mediated data.
 
