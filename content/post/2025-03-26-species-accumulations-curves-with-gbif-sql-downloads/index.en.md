@@ -97,6 +97,8 @@ As we cannot do the cumulative aggregation in the GBIF SQL downloads, it is nece
 
 ``` r
 library(rgbif)
+library(ggplot2)
+library(dplyr)
 
 d <- occ_download_get("0000317-250325103851331") %>%    
     occ_download_import() |> 
@@ -108,7 +110,7 @@ d <- occ_download_get("0000317-250325103851331") %>%
     occ_count = sum(occ_count)) |>
     ungroup() 
 
-p <- ggplot(dd, aes(x = year, y = cumulative_species_count)) +
+p <- ggplot(d, aes(x = year, y = cumulative_species_count)) +
     geom_line() +
     geom_point(aes(size=occ_count),shape=1) +
     geom_point(size=0.5) +
@@ -116,6 +118,7 @@ p <- ggplot(dd, aes(x = year, y = cumulative_species_count)) +
          size = "total occ count for year: ") +
     theme_minimal() +
     theme(legend.position = "top")
+p
 ```
 
 We can also compare other countries together on the same graphic to see differences species accumulation. Here we see that **Australia** (AU) has a much flatter curve than **China** (CN), which implies that continued sampling is unlikely increase our knowledge of Amphibians in Australia. Whereas in China, the curve is still increasing, suggesting that there are potential data gaps. This could be useful information for conservation funding and future mobilization efforts. Of course continued sampling, even in well known regions, is still useful for other reasons.
