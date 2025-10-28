@@ -144,7 +144,6 @@ Using data coverage and availability over a company’s footprint, companies can
 ### Data Access
 GBIF provides the infrastructure through which **species occurrence data** used in company assessments can be shared.  
 While not all required data will be found in GBIF, additional company-collected data can be **published through GBIF**, increasing **transparency** and supporting the broader data ecosystem.
-
 ## GBIF Recommendations to Improve Biodiversity Disclosure Reporting
 
 It is encouraging that businesses recognise GBIF as a data source and infrastructure for sharing species occurrence data. To strengthen the link between business biodiversity reporting and the GBIF infrastructure, we recommend:
