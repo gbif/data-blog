@@ -17,5 +17,15 @@
 This blog post will cover what data fits in GBIF, give examples of data that does not fit in the current format of GBIF, and provide guidance to how you can share relevant data in a metadata-only dataset or through a third-party.</description>
     </item>
     
+    <item>
+      <title>The data landscape of GBIF</title>
+      <link>https://data-blog.gbif.org/post/gbif-data-landscape/</link>
+      <pubDate>Wed, 06 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/post/gbif-data-landscape/</guid>
+      <description>How does all the different data provided by participants, publisher and organisations fit into the data landscape of GBIF visualized on gbif.org? Here, I will give a general overview of the different systems and data sources and how they relate to one another.
+To share data through GBIF.org, publishers typically have to collate or transform existing datasets into a standardized format. The transformations include additional processing, content editing and mapping the content of the data to standardized data formats.</description>
+    </item>
+    
   </channel>
 </rss>

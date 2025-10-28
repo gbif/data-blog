@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Making collection content discoverable when you don’t have occurrences published on GBIF - GBIF Data Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Marie Grosjean" />
+  <meta name="description" content="This blog post is a tutorial on how to upload collection descriptors in the Global Registry of Scientific Collections (GRSciColl).
+If you are someone working with a physical collection or work with people who do, you might be interested in making these collections findable. Ideally, the content of these collections would be digitized and made available online on relevant platforms like GBIF.org, iDigBio.org, ALA.org.au, etc. Sharing digital specimen records is a great way to ensure the discoverability of collection content." />
+<meta name="keywords" content="Collection descriptors, Latimer Core, Darwin Core, Institution match none, GRsciColl, collection, institution, GBIF" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.91.2" />
+
+
+<link rel="canonical" href="https://data-blog.gbif.org/post/grscicoll-collection-descriptors/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.2.0" rel="stylesheet">
+
+
+
+
+<link rel="stylesheet" href="/css//custom.css">
+
+
+<meta property="og:title" content="Making collection content discoverable when you don’t have occurrences published on GBIF" />
+<meta property="og:description" content="This blog post is a tutorial on how to upload collection descriptors in the Global Registry of Scientific Collections (GRSciColl).
+If you are someone working with a physical collection or work with people who do, you might be interested in making these collections findable. Ideally, the content of these collections would be digitized and made available online on relevant platforms like GBIF.org, iDigBio.org, ALA.org.au, etc. Sharing digital specimen records is a great way to ensure the discoverability of collection content." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://data-blog.gbif.org/post/grscicoll-collection-descriptors/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2024-10-09T00:00:00+00:00" />
+<meta property="article:modified_time" content="2024-10-09T00:00:00+00:00" />
+
+<meta itemprop="name" content="Making collection content discoverable when you don’t have occurrences published on GBIF">
+<meta itemprop="description" content="This blog post is a tutorial on how to upload collection descriptors in the Global Registry of Scientific Collections (GRSciColl).
+If you are someone working with a physical collection or work with people who do, you might be interested in making these collections findable. Ideally, the content of these collections would be digitized and made available online on relevant platforms like GBIF.org, iDigBio.org, ALA.org.au, etc. Sharing digital specimen records is a great way to ensure the discoverability of collection content."><meta itemprop="datePublished" content="2024-10-09T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2024-10-09T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1415">
+<meta itemprop="keywords" content="publish,GBIF,collection descriptors,collections,institution,GRSciColl,Darwin core,Latimer core," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Making collection content discoverable when you don’t have occurrences published on GBIF"/>
+<meta name="twitter:description" content="This blog post is a tutorial on how to upload collection descriptors in the Global Registry of Scientific Collections (GRSciColl).
+If you are someone working with a physical collection or work with people who do, you might be interested in making these collections findable. Ideally, the content of these collections would be digitized and made available online on relevant platforms like GBIF.org, iDigBio.org, ALA.org.au, etc. Sharing digital specimen records is a great way to ensure the discoverability of collection content."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">GBIF Data Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/categories/gbif/">
+        <li class="mobile-menu-item">posts</li>
+      </a><a href="https://discourse.gbif.org/c/data-blog">
+        <li class="mobile-menu-item">community-forum</li>
+      </a><a href="https://www.gbif.org/">
+        <li class="mobile-menu-item">gbif.org</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">about</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">
+	<img src= "/logo.png" alt="GBIF-analytics-blog" style ="width:20%;">
+  </a>
+  
+	
+  
+  
+</div>
+
+<nav class="site-navbar">
+
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/categories/gbif/">posts</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://discourse.gbif.org/c/data-blog">community-forum</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://www.gbif.org/">gbif.org</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">about</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+	
+    <header class="post-header">
+      <h1 class="post-title">Making collection content discoverable when you don’t have occurrences published on GBIF</h1>
+	  
+	  
+      <div class="post-author">Marie Grosjean</div>
+
+      <div class="post-meta">
+        <span class="post-time"> 2024-10-09 </span>
+        <div class="post-category">
+            
+              <a href="/categories/grscicoll/"> GRSciColl </a>
+            
+              <a href="/categories/publishing/"> Publishing </a>
+            
+              <a href="/categories/gbif/"> GBIF </a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    
+    
+
+    
+    <div class="post-content">
+      <p>This blog post is a tutorial on how to upload collection descriptors in the <a href="https://scientific-collections.gbif.org">Global Registry of Scientific Collections</a> (GRSciColl).</p>
+<p>If you are someone working with a physical collection or work with people who do, you might be interested in making these collections findable. Ideally, the content of these collections would be digitized and made available online on relevant platforms like GBIF.org, iDigBio.org, ALA.org.au, etc.
+Sharing digital specimen records is a great way to ensure the discoverability of collection content. Not only users can find your collection but can also use individual records relevant to their research. If you can publish occurrences on GBIF, please do it!</p>
+<p>However, not everyone can share records at the specimen level on GBIF. For example, you might be working with a mineralogy collection where the data would be outside of the GBIF scope. Or perhaps you only have partial information about your collection: for example, you might only have the number of jars of amphibians or fish.</p>
+<p>If that’s your case, you might be interested in packaging the data you have as collection descriptors and uploading them to the Global Registry of Scientific Collections (GRSciColl).</p>
+<h1 id="a-brief-reminder-of-what-grscicoll-is">A brief reminder of what GRScicoll is</h1>
+<p>The Global Registry of Scientific Collections (GRSciColl) is a registry of physical scientific collections (content, location and contacts) and associated institution.
+GRSciColl has its own history and scope. It was originally developed and maintained at the Smithsonian Institution before GBIF inherited it. You can read more about how <a href="https://www.gbif.org/news/5kyAslpqTVxYqZTwYn1cub/gbif-provides-new-home-for-the-global-registry-of-scientific-collections">here</a> and <a href="https://data-blog.gbif.org/post/grscicoll-2021/">here</a>.</p>
+<p>GRSciColl and GBIF have overlapping content: many of the collections listed in GRSciColl are also datasets on GBIF. However, the scope of GRSciColl goes beyond biodiversity data, for example, GRSciColl contains mineralogy and archaeology collections but doesn’t include things like citizen science observation data.</p>
+<p>You can find out more about GRSciColl and browse the GRSciColl data here: <a href="https://scientific-collections.gbif.org">https://scientific-collections.gbif.org</a>. You can also watch this short introduction below.</p>
+<iframe title="vimeo-player" src="https://player.vimeo.com/video/872824009?h=c3aaa082e3" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+<h1 id="what-are-collection-descriptors-in-grscicoll">What are collection descriptors in GRSciColl?</h1>
+<p>Collection descriptors were implemented as part of the <a href="https://github.com/gbif/registry/blob/dev/roadmap-grscicoll-2023-2024.md">GRSciColl 2024 roadmap</a>. They are meant to share structured information about collections. They can contain relevant details about collections and sub-collections as well as quantitative data which cannot be shared on collection pages (for example, the number of type specimens for a particular taxon). Some collection descriptors are used for indexing collections. This means that they improve collection discoverability. For example, a collection entry associated with dragonfly species names will be found by users looking for “Odonata” in the scientific name field of the collection search.</p>
+<p>Here are some examples of searches based on collection descriptors:</p>
+<ul>
+<li><a href="https://scientific-collections.gbif.org/collection/search?recordedBy=M.%20J.%20Berkeley">Find some collections with specimens collected by M. J. Berkeley</a></li>
+<li><a href="https://scientific-collections.gbif.org/collection/search?country=FR&amp;taxonKey=59">Find some fern collections hosted in French institutions</a></li>
+</ul>
+<p>Currently, only a handful of collection descriptors are indexed and searchable: scientific name, country or area of coverage (of the specimen, this is based on the dwc:country term), recorded by and type status. However, GBIF will be able to add filters for more standardized terms as more descriptors are shared in GRSciColl.</p>
+<blockquote>
+<p><strong>When to upload collection descriptors in GRSciColl:</strong></p>
+<ul>
+<li>The collection is not part of the GBIF Scope (for example, mineralogy, archeology, anthropology, etc.)</li>
+<li>The information about the collection is structured but not at the specimen level (e.g. you can not create occurrences).</li>
+<li>You have information that does not fit the Darwin Core Standard.</li>
+</ul>
+</blockquote>
+<h1 id="how-to-format-collection-descriptors">How to format collection descriptors</h1>
+<p>Each GRSciColl collection entry can have one or several collection descriptor groups. A group can correspond to descriptors for a particular aspect of the collection or a sub-collection. Each group requires:</p>
+<ul>
+<li>A title of the set of descriptors. For example, “Taxonomic breakdown of the algae sub-collection”.</li>
+<li>A description for the set of descriptors. For example, “These descriptors are based on the 2008 inventory of the algarium. This inventory focused mainly on type specimens”.</li>
+<li>A comma-separated file containing the descriptors where each column is a descriptor and each row a subset of the collection described. The header of the table is used to map its content to <a href="https://dwc.tdwg.org/terms">Darwin Core</a> and <a href="https://ltc.tdwg.org/quick-reference/">Latimer Core</a> (see more details below).</li>
+</ul>
+<h2 id="the-descriptor-table">The descriptor table</h2>
+<p>As mentioned above the descriptor tables are CSV files where each row is a subset of the collection (or a group of specimens) and each column is a descriptor.
+When possible, the data should be mapped to the <a href="https://dwc.tdwg.org/terms">Darwin Core</a> and <a href="https://ltc.tdwg.org/quick-reference/">Latimer Core</a> standards but it is possible to share data that is not mapped to any standard. When mapped to one of the standards, the header of the column should contain the prefix of the standard (<code>ltc:</code> for Latimer Core and <code>dwc:</code> for Darwin Core) as well as the name of the term.</p>
+<p>A table could look like this fictional example:</p>
+<table>
+<thead>
+<tr>
+<th>ltc:biomeType</th>
+<th>dwc:scientificName</th>
+<th>dwc:country</th>
+<th>Number of identified specimens at genus level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Freshwater</td>
+<td>Perciformes</td>
+<td>Colombia</td>
+<td>300</td>
+</tr>
+<tr>
+<td>Freshwater</td>
+<td>Perciformes</td>
+<td>Brazil</td>
+<td>145</td>
+</tr>
+</tbody>
+</table>
+<p>In the example above, the last column couldn’t be mapped to any Darwin Core or Latimer Core term so it was left with a descriptive title. This column will not be indexed, and users will not be able to search data based on its values, but it will be displayed along the other descriptors on the collection page. See an example of collection descriptors for <a href="https://scientific-collections.gbif.org/collection/b2190553-4505-4fdd-8fff-065c8ca26f72">The New York Botanical Garden collection</a> where not every column is mapped to a standard:</p>
+<p><img src="/post/2024-10-01-grscicoll-collection-descriptors/NY_descriptors.png" alt="NY collection descriptors"></p>
+<p>Note that tables might contain overlapping information or different descriptions for the same subset of specimens.</p>
+<p>There is not any template to download as the descriptors can include a lot of headers. You are very welcome to download any table you like from GRSciColl and use it as your own template.
+Here are some examples that I compiled from real data while working on the implementation of descriptors. They could certainly be mapped differently, and this is to help give an idea of the type of mapping we expect:</p>
+<ul>
+<li><a href="https://github.com/gbif/registry/files/14419456/swisscollnet_ALTERNATIVE_dwcltc_part2_2a8835ad-4a2e-43df-b976-f924f76fe628.csv">Example 1 from https://swisscollnet.scnat.ch on an entomological collection</a></li>
+<li><a href="https://github.com/gbif/registry/files/14419488/swisscollnet_dwcltc_3c41e738-b94e-4ed6-a9ae-f57c7baaf521.csv">Example 2 from https://swisscollnet.scnat.ch on a mineralogy collection</a></li>
+<li><a href="https://github.com/gbif/registry/files/14419329/rnc_ALTERNATIVE_dwcltc_types_humbolt_a717e77c-ea99-4d81-83ff-81931e753ffc.csv">Example 3 from http://rnc.humboldt.org.co on a botanical garden collection</a></li>
+<li><a href="https://github.com/gbif/registry/files/14419363/rnc_dwcltc_geography_6eae4377-f8b4-41ac-a9c1-db5a81afde98.csv">Example 4 from http://rnc.humboldt.org.co on aherbarium collection</a></li>
+</ul>
+<p><strong>NB:</strong> The Latimer core term objectClassificationName is very convenient to describe subsets of collections that do not necessarily have other ways of being grouped. For example, this is helpful for groups of non-monophyletic taxa (for example Algae). Ideally, the names used in this field should follow a controlled vocabulary. We haven’t set up one as we write though. If you need some guidance, I suggest following the DiSSCo discipline vocabulary for collections (see also DOI 10.3897/rio.10.e118244).</p>
+<h1 id="how-to-upload-descriptors">How to upload descriptors</h1>
+<p>Right now, only editors can upload descriptors to collections. If you are not a GRSciColl editor for the collection, institution or country of the collection and you would like to become one, please contact us at <a href="mailto:scientific-collections@gbif.org">scientific-collections@gbif.org</a>. You will need a GBIF account associated with your institutional email address.</p>
+<p>Once you have your table of descriptors ready, the process to upload them is relatively straightforward.</p>
+<ol>
+<li>Go to the collection page that you would like to work on from <a href="https://scientific-collections.gbif.org/collection/search">https://scientific-collections.gbif.org/collection/search</a></li>
+<li>Click on the edit button (you will be redirected to the editing interface)</li>
+<li>Click on the “Descriptor group” tab (see the screenshot below)
+<img src="/post/2024-10-01-grscicoll-collection-descriptors/descriptor_group_ui.png" alt="Descriptor Group tab"></li>
+<li>Click Add and fill in the title and description of the descriptor group and choose your CSV file.</li>
+<li>Then click “add”.</li>
+</ol>
+<p>Note that the API can also be used to upload collection descriptors programmatically. It is documented <a href="https://techdocs.gbif.org/en/openapi/v1/registry#/Collections/createCollectionDescriptorGroup">here</a>. Please contact us at <a href="mailto:scientific-collections@gbif.org">scientific-collections@gbif.org</a> if you have any question.</p>
+<h1 id="updating-descriptors">Updating descriptors</h1>
+<p>You can update collection descriptors by clicking on the “edit” button of an existing descriptor group and replacing the table with a new one.</p>
+<h1 id="improving-collection-descriptors-and-how-to-contribute">Improving collection descriptors and how to contribute</h1>
+<p>The collection descriptors are very new on GRSciColl and we would like to make them as useful to the community as possible. If you would like to give your input, please consider joining <a href="https://lists.gbif.org/mailman/listinfo/scientific-collections">our mailing list</a> or write a post on the <a href="https://discourse.gbif.org/c/grscicoll/29">GRSciColl section of our forum</a> or leave us a comment here.</p>
+<p>Here are a few points where we would like your input:</p>
+<ul>
+<li>Some descriptors would benefit from controlled vocabularies (like the ltc:objectClassificationName). Do you have suggestions or recommendations of existing vocabularies that we could use? Or specific values that you would like to see?</li>
+<li>We would like to index more descriptors as they are made available on GRSciColl. What type of descriptors would you like to share and see indexed?</li>
+<li>If you have unmappable data and would like to see them indexed in GRSciColl, please consider reaching out to the Latimer Core maintenance group or open a ticket in their GitHub repository.</li>
+</ul>
+<p>Thank you very much! Happy collection describing.</p>
+
+    </div>
+
+    
+    
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/publish/">publish</a>
+          
+          <a href="/tags/gbif/">GBIF</a>
+          
+          <a href="/tags/collection-descriptors/">collection descriptors</a>
+          
+          <a href="/tags/collections/">collections</a>
+          
+          <a href="/tags/institution/">institution</a>
+          
+          <a href="/tags/grscicoll/">GRSciColl</a>
+          
+          <a href="/tags/darwin-core/">Darwin core</a>
+          
+          <a href="/tags/latimer-core/">Latimer core</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/2025-01-23-time-series-of-land-surface-temperature/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Tutorial using Google Earth Engine with GBIF mediated occurrences</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/2024-06-24-gbif-sql-downloads/">
+            <span class="next-text nav-default">GBIF SQL Downloads</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      
+
+
+
+<div>
+<h3>This post represents the ideas of the author.</h3>
+</div>
+<div id='discourse-comments'></div>
+<script type="text/javascript">
+  DiscourseEmbed = { discourseUrl: 'https://discourse.gbif.org/',
+                     discourseEmbedUrl: 'https://data-blog.gbif.org\/post\/grscicoll-collection-descriptors\/' };
+
+  (function() {
+    var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+    d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+  })();
+</script>
+
+
+<div class = "copyright">
+	<a class="theme-link" href="https://www.gbif.org/what-is-gbif">What is GBIF?</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://www.gbif.org/developer/summary">API</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://www.gbif.org/faq">FAQ</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://discourse.gbif.org/">Community-Forum</a>
+</div>
+
+<div class = "copyright">
+	<span class="theme-info">GBIF Secretariat</span>
+	<span class="theme-info">Universitetsparken 15</span>
+	<span class="theme-info">DK-2100 Copenhagen Ø</span>
+	<span class="theme-info" >Denmark</span>
+</div>
+
+<div class="copyright">
+	<span class="power-by">
+	Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+	</span>
+	<span class="division">|</span>
+	<span class="theme-info">
+	Theme -
+	<a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+	</span>
+
+</div>
+
+<script defer data-domain="data-blog.gbif.org,gbif.org" src="https://plausible.io/js/script.file-downloads.js"></script>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+<script type="text/javascript" src="/dist/even.min.js?v=3.2.0"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

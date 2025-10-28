@@ -6,7 +6,79 @@
     <description>Recent content in Tags on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 02 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://data-blog.gbif.org/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 09 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://data-blog.gbif.org/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>collection descriptors</title>
+      <link>https://data-blog.gbif.org/tags/collection-descriptors/</link>
+      <pubDate>Wed, 09 Oct 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/collection-descriptors/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>collections</title>
+      <link>https://data-blog.gbif.org/tags/collections/</link>
+      <pubDate>Wed, 09 Oct 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/collections/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Darwin Core</title>
+      <link>https://data-blog.gbif.org/tags/darwin-core/</link>
+      <pubDate>Wed, 09 Oct 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/darwin-core/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gbif</title>
+      <link>https://data-blog.gbif.org/tags/gbif/</link>
+      <pubDate>Wed, 09 Oct 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/gbif/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GRSciColl</title>
+      <link>https://data-blog.gbif.org/tags/grscicoll/</link>
+      <pubDate>Wed, 09 Oct 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/grscicoll/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Institution</title>
+      <link>https://data-blog.gbif.org/tags/institution/</link>
+      <pubDate>Wed, 09 Oct 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/institution/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Latimer core</title>
+      <link>https://data-blog.gbif.org/tags/latimer-core/</link>
+      <pubDate>Wed, 09 Oct 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/latimer-core/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>publish</title>
+      <link>https://data-blog.gbif.org/tags/publish/</link>
+      <pubDate>Wed, 09 Oct 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/publish/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>aws</title>
       <link>https://data-blog.gbif.org/tags/aws/</link>
@@ -35,15 +107,6 @@
     </item>
     
     <item>
-      <title>gbif</title>
-      <link>https://data-blog.gbif.org/tags/gbif/</link>
-      <pubDate>Mon, 06 Nov 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://data-blog.gbif.org/tags/gbif/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>issues</title>
       <link>https://data-blog.gbif.org/tags/issues/</link>
       <pubDate>Mon, 06 Nov 2023 00:00:00 +0000</pubDate>
@@ -58,15 +121,6 @@
       <pubDate>Mon, 06 Nov 2023 00:00:00 +0000</pubDate>
       
       <guid>https://data-blog.gbif.org/tags/occurrence/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>publish</title>
-      <link>https://data-blog.gbif.org/tags/publish/</link>
-      <pubDate>Mon, 06 Nov 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://data-blog.gbif.org/tags/publish/</guid>
       <description></description>
     </item>
     
@@ -116,38 +170,11 @@
     </item>
     
     <item>
-      <title>collections</title>
-      <link>https://data-blog.gbif.org/tags/collections/</link>
-      <pubDate>Mon, 11 Oct 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://data-blog.gbif.org/tags/collections/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>flags</title>
       <link>https://data-blog.gbif.org/tags/flags/</link>
       <pubDate>Mon, 11 Oct 2021 00:00:00 +0000</pubDate>
       
       <guid>https://data-blog.gbif.org/tags/flags/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>GRSciColl</title>
-      <link>https://data-blog.gbif.org/tags/grscicoll/</link>
-      <pubDate>Mon, 11 Oct 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://data-blog.gbif.org/tags/grscicoll/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Institution</title>
-      <link>https://data-blog.gbif.org/tags/institution/</link>
-      <pubDate>Mon, 11 Oct 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://data-blog.gbif.org/tags/institution/</guid>
       <description></description>
     </item>
     
@@ -373,6 +400,24 @@
       <pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate>
       
       <guid>https://data-blog.gbif.org/tags/taxon-match-none/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dbscan</title>
+      <link>https://data-blog.gbif.org/tags/dbscan/</link>
+      <pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/dbscan/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>outliers</title>
+      <link>https://data-blog.gbif.org/tags/outliers/</link>
+      <pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/outliers/</guid>
       <description></description>
     </item>
     
@@ -719,20 +764,20 @@
     </item>
     
     <item>
-      <title>Darwin Core</title>
-      <link>https://data-blog.gbif.org/tags/darwin-core/</link>
-      <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://data-blog.gbif.org/tags/darwin-core/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>gridded data</title>
       <link>https://data-blog.gbif.org/tags/gridded-data/</link>
       <pubDate>Thu, 21 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>https://data-blog.gbif.org/tags/gridded-data/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>centroids</title>
+      <link>https://data-blog.gbif.org/tags/centroids/</link>
+      <pubDate>Tue, 19 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/centroids/</guid>
       <description></description>
     </item>
     
@@ -841,6 +886,15 @@
       <pubDate>Fri, 09 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>https://data-blog.gbif.org/tags/citizen/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>leaflet</title>
+      <link>https://data-blog.gbif.org/tags/leaflet/</link>
+      <pubDate>Wed, 19 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/tags/leaflet/</guid>
       <description></description>
     </item>
     

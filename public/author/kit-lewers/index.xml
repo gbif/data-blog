@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kit Lewers on GBIF Data Blog</title>
+    <link>https://data-blog.gbif.org/author/kit-lewers/</link>
+    <description>Recent content in Kit Lewers on GBIF Data Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 06 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://data-blog.gbif.org/author/kit-lewers/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Understanding Google Earth Engine (GEE) and Its Python API</title>
+      <link>https://data-blog.gbif.org/post/2025-01-29-understanding-google-earth-engine-gee-and-its-python-api-a-primer-for-gbif-users/</link>
+      <pubDate>Thu, 06 Feb 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/post/2025-01-29-understanding-google-earth-engine-gee-and-its-python-api-a-primer-for-gbif-users/</guid>
+      <description>&lt;p&gt;Google Earth Engine (GEE) is a cloud-based platform designed to process and analyze vast amounts of geospatial data. With access to a rich archive of remote sensing imagery, climate datasets, and geographic information, GEE empowers researchers, conservationists, and policymakers to address critical environmental and biodiversity challenges. This primer introduces GEE, its Python API, and how GBIF users can leverage these tools for biodiversity informatics.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Tutorial using Google Earth Engine with GBIF mediated occurrences</title>
+      <link>https://data-blog.gbif.org/post/2025-01-23-time-series-of-land-surface-temperature/</link>
+      <pubDate>Thu, 23 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/post/2025-01-23-time-series-of-land-surface-temperature/</guid>
+      <description>&lt;iframe src=&#34;https://www.loom.com/embed/ac617862ef8d4e978684c561d93e9950?sid=409893b6-ae8b-43dc-bcf4-ee6425507788&#34;
+        frameborder=&#34;0&#34;
+        webkitallowfullscreen
+        mozallowfullscreen
+        allowfullscreen&gt;
+&lt;/iframe&gt;
+&lt;p&gt;In this tutorial, we explored how to integrate remote sensing data with biodiversity observations to analyze the relationships between environmental factors and species occurrences. Specifically, we focused on analyzing &lt;strong&gt;Land Surface Temperature (LST)&lt;/strong&gt; over time and its relationship to observations of the Northern Cardinal (Cardinalis cardinalis), a well-known songbird species.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

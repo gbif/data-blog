@@ -23,8 +23,8 @@ Our aim in this process is to minimize the changes of GBIF identifiers and to su
       <pubDate>Thu, 04 Nov 2021 00:00:00 +0000</pubDate>
       
       <guid>https://data-blog.gbif.org/post/clustering-occurrences/</guid>
-      <description>Many data users may suspect they’ve discovered duplicated records in the GBIF index. You download data from GBIF, analyze them and realize that some records have the same date, scientific name, catalogue number and location but come from two different publishers or have slightly different attributes.
-There are many valid reasons why these duplicates appear on GBIF. Sometimes an observation was recorded in two different systems, sometimes several records correspond to herbaria duplicates (you can check the work of Nicky Nicolson on the topic), sometimes a specimen was digitized twice, sometimes a record has been enriched with genetic information and republished via a different platform&amp;hellip;</description>
+      <description>NOTE: The content of this blog post is now maintained in the technical documentation. Please view this source for the most up to date information on the topic.
+ Many data users may suspect they’ve discovered duplicated records in the GBIF index. You download data from GBIF, analyze them and realize that some records have the same date, scientific name, catalogue number and location but come from two different publishers or have slightly different attributes.</description>
     </item>
     
     <item>

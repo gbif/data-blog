@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Dealing with sampling bias GBIF mediated occurrence records - GBIF Data Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="John Waller" />
+  <meta name="description" content="Spatial Thinning: Even Out the Spatial Effort One straightforward way to reduce spatial bias is spatial thinning (also called spatial filtering). The idea is to remove or subsample occurrences that are too close to each other, so that no locality or region is overrepresented. This addresses the common situation where many records cluster around cities, roads, or popular parks, while other areas have few or none. By thinning the data, we ensure a more even spatial coverage.
+A common approach is to impose a minimum distance or grid cell size between records. For example, we might only keep one occurrence per 5 km radius or per grid cell of a certain size. “A common approach to reducing spatial bias in occurrence records is to randomly select one (or a small number) of samples present in each cell in the landscape”. If a keen birder logged 500 observations in one city park, spatial thinning will pick just one (or a few) of those and discard the rest, preventing that park from overwhelming the analysis. This way, areas with intense sampling effort are down-sampled to more closely match areas with low effort.
+In R, you can do spatial thinning in various ways. Specialized packages like spThin or GeoThinneR implement distance-based thinning algorithms, and the dismo package offers a simple gridSample function. However, you can also use base R or tidyverse tools for a quick solution. For example, to thin occurrences by keeping at most one record per 0.1° grid (≈11 km) you could do:
+library(dplyr) # Example: thin occurrence data to one record per 0.1° grid cell thinned_data &amp;lt;- occurrences %&amp;gt;% mutate( lat_bin = round(decimalLatitude, 1), # bin latitude into 0.1° cells lon_bin = round(decimalLongitude, 1) # bin longitude into 0.1° cells ) %&amp;gt;% group_by(lat_bin, lon_bin) %&amp;gt;% slice_sample(n = 1) # pick one record per grid cell In the code above, we round coordinates to one decimal place and then randomly select one occurrence for each unique lat-long bin. The result is a thinned dataset with a more uniform spatial distribution of points. You can adjust the grid size (or use a distance in kilometers if converting to a planar coordinate system) based on your needs – larger distances yield stronger thinning.
+Spatial thinning is very useful before modeling species distributions or mapping diversity. By removing dense clusters of records, we reduce the chance that our analysis is skewed towards well-sampled locations. Essentially, thinning trades off some data (you lose many records from oversampled spots) in exchange for less bias. Even though we end up with fewer points, those points carry more equal weight geographically. This often improves model performance: studies have found that using spatially thinned data can produce better predictive models despite using fewer records. In short, thinning helps “level the playing field” across space.
+(Pro tip: If you have hundreds of thousands of points, use packages like spThin or GeoThinneR which are optimized for efficiency. They offer options for specifying distance thresholds or grid sizes and can handle large datasets.)
+Effort-Based Filtering: Use (or Impose) Sampling Effort Information Another tactic is effort-based filtering, which means subsetting or weighting the data based on known sampling effort. Not all occurrence records are collected with the same effort: some come from structured surveys where people diligently record everything they find in an area, and others are casual or biased observations (e.g. a tourist snapping a photo of a butterfly). By filtering for records with higher or more standardized effort, we can reduce bias from haphazard sampling.
+One example comes from bird data. The eBird project (a major contributor of bird records to GBIF) allows birders to submit checklists of sightings. Some of these checklists are complete (the observer reports all species they could identify, with details on effort like duration and distance), while others are incidental (just reporting a few species opportunistically). It turns out that “complete checklists with effort information facilitate robust analyses, and thus represent the gold standard of eBird data”. In practice, researchers often filter eBird-sourced GBIF records to include only complete checklists (with at least some minimum effort, say 10 minutes or 1 km of survey). This removes many biased records where effort was low or unreported, yielding a more uniform dataset.
+Effort-based filtering can also be as simple as removing obvious duplicate sampling. For instance, if a scientist collected 100 plant specimens from one small site on the same day, those 100 occurrence records don’t represent 100 independent data points – they represent one intensive sampling event. We might choose to keep just one record per site per day in such cases. Here’s how you could filter to one occurrence per location per day in R:
+library(dplyr) # Filter to one record per unique location (lat-long) per day filtered_data &amp;lt;- occurrences %&amp;gt;% mutate(date = as.Date(eventDate)) %&amp;gt;% # ensure we have a Date column arrange(date) %&amp;gt;% distinct(decimalLatitude, decimalLongitude, date, .keep_all = TRUE) This code will drop any additional records that share the same lat/long and date, keeping only the first occurrence for each such combination. The rationale is that multiple records from the same place and day likely reflect repeated observations of the same population or a concentrated survey effort. By keeping only one, we down-weight that intense effort to be equivalent to a single observation event.
+Effort filtering can be tailored to your data. If you have an effort metric (e.g., person-hours, trap nights, transect length), you might exclude records with very low effort or explicitly incorporate effort as a covariate in models. If you know certain datasets are biased (e.g., a museum collection that sampled primarily along roads), you could exclude or down-weight those records. The goal is to make the remaining data more comparable. Essentially, we’re trying to compare apples to apples – for example, one standardized survey to another – rather than apples to oranges (casual observations vs. intensive surveys). This reduces bias by ensuring each data point comes from a roughly similar amount of search effort.
+Rarefaction: Standardizing Sample Size for Fair Comparison Rarefaction is a classic ecological method to address sampling bias, especially for comparing species richness across areas or datasets with different sample sizes. The concept is to subsample the data to a common sample size and measure diversity from that equal footing. In plainer terms, if Region A has 1,000 occurrence records and Region B has only 100 records, of course A will list more species – but is it because A is truly more diverse, or just more sampled? Rarefaction helps answer that by asking: if we only had 100 records from Region A, how many species would we expect to find? This gives a fairer richness comparison between A and B.
+One way to do rarefaction is through simulation: randomly draw (say) 100 records from Region A, count how many species are in that subset, and repeat this many times to get an average. A more analytical way uses combinatorics (Hurlbert’s formula) to compute the expected number of species for a given sample size without brute-force simulation. This is often called the Hurlbert’s index or ES(n) – expected species for n samples. For example, ES50 is the expected number of unique species in a random sample of 50 occurrences. John Waller (GBIF data scientist) used this metric to compare diversity in his blog, noting that “es50 &amp;hellip; is an indicator of biodiversity richness” and importantly “somewhat corrects for sampling bias”.
+In R, the vegan package provides functions for rarefaction. We can use vegan::rarefy() on a matrix of species counts. For instance, if we have occurrence records split by region or grid cell, we can create a matrix of counts (rows = regions, columns = species). Then we rarefy each region to the same number of samples:
+library(vegan) # Suppose &amp;#39;occurrences&amp;#39; has a column &amp;#39;region&amp;#39; and &amp;#39;species&amp;#39; # Create a matrix of species counts per region: region_species_matrix &amp;lt;- table(occurrences$region, occurrences$species) # Perform rarefaction to a sample size of 100 occurrences per region rarefied_richness &amp;lt;- rarefy(region_species_matrix, sample = 100) rarefied_richness The result rarefied_richness will be a vector giving the estimated number of species in each region if we only had 100 records from that region. Regions with a lot more than 100 records get “down-sampled” in theory, and regions with fewer than 100 records cannot be raised (rarefaction can’t invent species beyond what was observed; typically those will just have their actual species count if they have fewer records than the rarefaction number).
+Rarefaction is very powerful for comparative analyses. It essentially tells us what the diversity would be at a common sampling effort. By doing so, it highlights the places that are truly diverse rather than just well-sampled. For example, applying rarefaction can reveal tropical regions as having higher underlying species richness even if their raw record counts are low. This helps counter the bias where, say, temperate zones look richer purely because of more observers. If we rarefy everything to, say, 50 records per area, the playing field is level. In practice, you might use rarefied richness metrics to build maps or to correlate biodiversity with environmental factors without the confounding effect of sampling effort.
+One drawback: rarefaction uses less data (it ignores records beyond the rarefaction cutoff in well-sampled areas), so you’re intentionally not using all information. Also, if some regions have extremely low sampling (fewer records than the chosen cutoff), you can’t directly rarefy them to the same level – you might have to drop those or choose a smaller uniform sample size. Despite these issues, rarefaction is a widely used technique to mitigate sampling bias in richness studies, and it pairs nicely with the next topic: grid-based mapping.
+Grid-Based Richness Estimation: Apples-to-Apples on the Map When mapping species richness or other biodiversity metrics, using a spatial grid is a common practice to handle sampling bias. By aggregating occurrences into grid cells (e.g. 10×10 km squares or hexagons), you ensure each spatial unit has a more comparable area and sampling effort basis. Grid-based analyses convert raw point data into a form of presence/absence or counts per cell, which inherently dampens the influence of duplicate records in the same location.
+The simplest grid-based approach is to count the number of species in each cell (species richness per cell). But as noted earlier, if some cells have a ton of records and others have very few, a raw richness map will still be biased – it will light up cells that were sampled to death, and leave poorly-sampled cells looking species-poor (even if in reality they might harbor many unrecorded species). Therefore, it’s common to combine grid-based aggregation with a threshold or rarefaction. For example, you might only map cells that have at least 20 records, to avoid showing spurious low-richness in cells where you have near-zero effort. Or better yet, apply rarefaction within each cell: calculate something like ES50 for every cell so that each cell’s richness is evaluated at an equal sample size.
+ An example of grid-based rarefied richness: This map shows the Hurlbert’s ES50 for animal genera on a global hexagon grid (each hex ~480 km across). Cooler colors (blue/green) mean higher expected genera count in a sample of 50 records, warmer colors (yellow/red) mean lower richness. Notice how this rarefied richness map highlights the tropical diversity hotspots (Central Amazon, Congo, Southeast Asia) even though those areas have fewer total records than temperate zones. By contrast, a raw species count map (not shown here) would mainly highlight places like Europe and the US – essentially mirroring observer distribution. The grid-based ES50 approach helps reveal genuine biodiversity patterns by controlling for sampling effort: “one of the main advantages of es50 is that it somewhat corrects for sampling bias”.
+To implement grid-based richness in R, you can use packages like sf or raster/terra to make spatial grids, or do it with simple grouping operations. For example, using dplyr you could assign each occurrence to a grid cell and then count unique species:
+library(dplyr) # Define grid cell IDs, e.g., rounding coordinates to 0.5° for a ~50x50 km grid occurrences &amp;lt;- occurrences %&amp;gt;% mutate( lon_bin = floor(decimalLongitude / 0.5) * 0.5, lat_bin = floor(decimalLatitude / 0.5) * 0.5, cell_id = paste(lat_bin, lon_bin, sep = &amp;#34;_&amp;#34;) ) # Calculate richness and record count per cell grid_stats &amp;lt;- occurrences %&amp;gt;% group_by(cell_id) %&amp;gt;% summarize( n_records = n(), n_species = n_distinct(species) ) # Filter cells with at least 20 records grid_stats &amp;lt;- filter(grid_stats, n_records &amp;gt;= 20) In this snippet, we binned lat/long into 0.5° cells (you could also use a fixed coordinate grid or a shapefile of equal-area grids). Then we counted how many records and how many species each cell has, and filtered to cells with 20&#43; records to focus on reasonably sampled cells. The result grid_stats can be joined to an sf grid for mapping. This kind of map will still show some bias (20 records in one cell might catalog fewer species than 20 in another if communities differ), but it’s much better than mapping raw occurrence counts. The key is that every mapped cell is based on comparable effort.
+For an even more robust approach, you could calculate a rarefied richness per cell. This essentially combines the above two methods: use each cell’s species-occurrence data to compute an ESThreshold (like ES20 if 20 is the minimum records per cell, or ES50 if many cells have ≥50 records). Cells with fewer records than the threshold can be ignored or shown as having lower confidence. The result is a map like the one above, where sampling bias is greatly reduced and you can start to see the true patterns of biodiversity.
+Putting It All Together (and Final Tips) Handling sampling bias often requires using multiple methods in tandem and making judgment calls based on your data and research question. There is no one-size-fits-all fix, but the approaches above are commonly used toolbox items:
+ Spatial thinning removes oversampled clusters and is great for preparing data for species distribution modeling or anytime spatial autocorrelation from sampling is a concern. Effort filtering ensures you’re comparing data with similar collection effort (filtering out the junk or overly duplicated observations), which yields more reliable analyses. Rarefaction standardizes comparisons by equalizing sample sizes, crucial for fair biodiversity comparisons across regions or time periods. Grid-based estimation provides a structured way to aggregate data spatially, often combined with minimum effort thresholds or rarefaction to produce maps that reflect reality more than collector density.  In practice, you might apply several of these in one workflow. For example, if you were studying the diversity of butterflies in South America, you could first filter out records without good effort info (say, only use survey data, or only one record per site/day), then apply spatial thinning so that e.g. no two records are within 10 km. Next, divide the continent into grid cells and compute rarefied species richness per cell. The end result could be a richness map that is much less biased. You’d avoid the pitfall of simply mapping raw data which might have all of coastal Brazil glowing just because that’s where people live and collect data, and instead highlight inland Amazon cells if the data – once equalized – show high richness there.
+Finally, always remember to check the sensitivity of your results to these methods. Because each method involves discarding or re-weighting data, it’s good to try a few variations (e.g. different thinning distances or rarefaction sizes) to ensure your conclusions aren’t an artifact of the correction method. The improvements are usually worth it: accounting for sampling bias can lead to major gains in the realism and accuracy of your analyses, even if it means working with a bit less data. In summary, by applying these techniques, you’ll extract more meaningful ecological signal from the noise of sampling bias – turning a biased occurrence dataset into insights that are closer to the truth of nature’s patterns. Good luck, and happy (unbiased) mapping!
+Sources:
+ Waller, J. (2019). Exploring es50 for GBIF. GBIF Data Blog. GBIF (2023). Sampling biases shape our view of the natural world. Plantarum (2021). Thinning Occurrence Records in R. Best Practices for Using eBird Data (2021). Complete Checklists. Meyer et al. (2016). Spatial bias in the GBIF database affects SDMs. " />
+
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.91.2" />
+
+
+<link rel="canonical" href="https://data-blog.gbif.org/post/2025-05-21-dealing-with-sampling-bias-gbif-mediated-occurrence-records/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.2.0" rel="stylesheet">
+
+
+
+
+<link rel="stylesheet" href="/css//custom.css">
+
+
+<meta property="og:title" content="Dealing with sampling bias GBIF mediated occurrence records" />
+<meta property="og:description" content="Spatial Thinning: Even Out the Spatial Effort
+One straightforward way to reduce spatial bias is spatial thinning (also called spatial filtering). The idea is to remove or subsample occurrences that are too close to each other, so that no locality or region is overrepresented. This addresses the common situation where many records cluster around cities, roads, or popular parks, while other areas have few or none. By thinning the data, we ensure a more even spatial coverage.
+A common approach is to impose a minimum distance or grid cell size between records. For example, we might only keep one occurrence per 5 km radius or per grid cell of a certain size. “A common approach to reducing spatial bias in occurrence records is to randomly select one (or a small number) of samples present in each cell in the landscape”. If a keen birder logged 500 observations in one city park, spatial thinning will pick just one (or a few) of those and discard the rest, preventing that park from overwhelming the analysis. This way, areas with intense sampling effort are down-sampled to more closely match areas with low effort.
+In R, you can do spatial thinning in various ways. Specialized packages like spThin or GeoThinneR implement distance-based thinning algorithms, and the dismo package offers a simple gridSample function. However, you can also use base R or tidyverse tools for a quick solution. For example, to thin occurrences by keeping at most one record per 0.1° grid (≈11 km) you could do:
+library(dplyr)
+
+# Example: thin occurrence data to one record per 0.1° grid cell
+thinned_data &lt;- occurrences %&gt;%
+  mutate(
+    lat_bin = round(decimalLatitude, 1),    # bin latitude into 0.1° cells
+    lon_bin = round(decimalLongitude, 1)    # bin longitude into 0.1° cells
+  ) %&gt;%
+  group_by(lat_bin, lon_bin) %&gt;%
+  slice_sample(n = 1)    # pick one record per grid cell
+In the code above, we round coordinates to one decimal place and then randomly select one occurrence for each unique lat-long bin. The result is a thinned dataset with a more uniform spatial distribution of points. You can adjust the grid size (or use a distance in kilometers if converting to a planar coordinate system) based on your needs – larger distances yield stronger thinning.
+Spatial thinning is very useful before modeling species distributions or mapping diversity. By removing dense clusters of records, we reduce the chance that our analysis is skewed towards well-sampled locations. Essentially, thinning trades off some data (you lose many records from oversampled spots) in exchange for less bias. Even though we end up with fewer points, those points carry more equal weight geographically. This often improves model performance: studies have found that using spatially thinned data can produce better predictive models despite using fewer records. In short, thinning helps “level the playing field” across space.
+(Pro tip: If you have hundreds of thousands of points, use packages like spThin or GeoThinneR which are optimized for efficiency. They offer options for specifying distance thresholds or grid sizes and can handle large datasets.)
+Effort-Based Filtering: Use (or Impose) Sampling Effort Information
+Another tactic is effort-based filtering, which means subsetting or weighting the data based on known sampling effort. Not all occurrence records are collected with the same effort: some come from structured surveys where people diligently record everything they find in an area, and others are casual or biased observations (e.g. a tourist snapping a photo of a butterfly). By filtering for records with higher or more standardized effort, we can reduce bias from haphazard sampling.
+One example comes from bird data. The eBird project (a major contributor of bird records to GBIF) allows birders to submit checklists of sightings. Some of these checklists are complete (the observer reports all species they could identify, with details on effort like duration and distance), while others are incidental (just reporting a few species opportunistically). It turns out that “complete checklists with effort information facilitate robust analyses, and thus represent the gold standard of eBird data”. In practice, researchers often filter eBird-sourced GBIF records to include only complete checklists (with at least some minimum effort, say 10 minutes or 1 km of survey). This removes many biased records where effort was low or unreported, yielding a more uniform dataset.
+Effort-based filtering can also be as simple as removing obvious duplicate sampling. For instance, if a scientist collected 100 plant specimens from one small site on the same day, those 100 occurrence records don’t represent 100 independent data points – they represent one intensive sampling event. We might choose to keep just one record per site per day in such cases. Here’s how you could filter to one occurrence per location per day in R:
+library(dplyr)
+
+# Filter to one record per unique location (lat-long) per day
+filtered_data &lt;- occurrences %&gt;%
+  mutate(date = as.Date(eventDate)) %&gt;%            # ensure we have a Date column
+  arrange(date) %&gt;%
+  distinct(decimalLatitude, decimalLongitude, date, .keep_all = TRUE)
+This code will drop any additional records that share the same lat/long and date, keeping only the first occurrence for each such combination. The rationale is that multiple records from the same place and day likely reflect repeated observations of the same population or a concentrated survey effort. By keeping only one, we down-weight that intense effort to be equivalent to a single observation event.
+Effort filtering can be tailored to your data. If you have an effort metric (e.g., person-hours, trap nights, transect length), you might exclude records with very low effort or explicitly incorporate effort as a covariate in models. If you know certain datasets are biased (e.g., a museum collection that sampled primarily along roads), you could exclude or down-weight those records. The goal is to make the remaining data more comparable. Essentially, we’re trying to compare apples to apples – for example, one standardized survey to another – rather than apples to oranges (casual observations vs. intensive surveys). This reduces bias by ensuring each data point comes from a roughly similar amount of search effort.
+Rarefaction: Standardizing Sample Size for Fair Comparison
+Rarefaction is a classic ecological method to address sampling bias, especially for comparing species richness across areas or datasets with different sample sizes. The concept is to subsample the data to a common sample size and measure diversity from that equal footing. In plainer terms, if Region A has 1,000 occurrence records and Region B has only 100 records, of course A will list more species – but is it because A is truly more diverse, or just more sampled? Rarefaction helps answer that by asking: if we only had 100 records from Region A, how many species would we expect to find? This gives a fairer richness comparison between A and B.
+One way to do rarefaction is through simulation: randomly draw (say) 100 records from Region A, count how many species are in that subset, and repeat this many times to get an average. A more analytical way uses combinatorics (Hurlbert’s formula) to compute the expected number of species for a given sample size without brute-force simulation. This is often called the Hurlbert’s index or ES(n) – expected species for n samples. For example, ES50 is the expected number of unique species in a random sample of 50 occurrences. John Waller (GBIF data scientist) used this metric to compare diversity in his blog, noting that “es50 &hellip; is an indicator of biodiversity richness” and importantly “somewhat corrects for sampling bias”.
+In R, the vegan package provides functions for rarefaction. We can use vegan::rarefy() on a matrix of species counts. For instance, if we have occurrence records split by region or grid cell, we can create a matrix of counts (rows = regions, columns = species). Then we rarefy each region to the same number of samples:
+library(vegan)
+
+# Suppose &#39;occurrences&#39; has a column &#39;region&#39; and &#39;species&#39;
+# Create a matrix of species counts per region:
+region_species_matrix &lt;- table(occurrences$region, occurrences$species)
+
+# Perform rarefaction to a sample size of 100 occurrences per region
+rarefied_richness &lt;- rarefy(region_species_matrix, sample = 100)
+rarefied_richness
+The result rarefied_richness will be a vector giving the estimated number of species in each region if we only had 100 records from that region. Regions with a lot more than 100 records get “down-sampled” in theory, and regions with fewer than 100 records cannot be raised (rarefaction can’t invent species beyond what was observed; typically those will just have their actual species count if they have fewer records than the rarefaction number).
+Rarefaction is very powerful for comparative analyses. It essentially tells us what the diversity would be at a common sampling effort. By doing so, it highlights the places that are truly diverse rather than just well-sampled. For example, applying rarefaction can reveal tropical regions as having higher underlying species richness even if their raw record counts are low. This helps counter the bias where, say, temperate zones look richer purely because of more observers. If we rarefy everything to, say, 50 records per area, the playing field is level. In practice, you might use rarefied richness metrics to build maps or to correlate biodiversity with environmental factors without the confounding effect of sampling effort.
+One drawback: rarefaction uses less data (it ignores records beyond the rarefaction cutoff in well-sampled areas), so you’re intentionally not using all information. Also, if some regions have extremely low sampling (fewer records than the chosen cutoff), you can’t directly rarefy them to the same level – you might have to drop those or choose a smaller uniform sample size. Despite these issues, rarefaction is a widely used technique to mitigate sampling bias in richness studies, and it pairs nicely with the next topic: grid-based mapping.
+Grid-Based Richness Estimation: Apples-to-Apples on the Map
+When mapping species richness or other biodiversity metrics, using a spatial grid is a common practice to handle sampling bias. By aggregating occurrences into grid cells (e.g. 10×10 km squares or hexagons), you ensure each spatial unit has a more comparable area and sampling effort basis. Grid-based analyses convert raw point data into a form of presence/absence or counts per cell, which inherently dampens the influence of duplicate records in the same location.
+The simplest grid-based approach is to count the number of species in each cell (species richness per cell). But as noted earlier, if some cells have a ton of records and others have very few, a raw richness map will still be biased – it will light up cells that were sampled to death, and leave poorly-sampled cells looking species-poor (even if in reality they might harbor many unrecorded species). Therefore, it’s common to combine grid-based aggregation with a threshold or rarefaction. For example, you might only map cells that have at least 20 records, to avoid showing spurious low-richness in cells where you have near-zero effort. Or better yet, apply rarefaction within each cell: calculate something like ES50 for every cell so that each cell’s richness is evaluated at an equal sample size.
+ An example of grid-based rarefied richness: This map shows the Hurlbert’s ES50 for animal genera on a global hexagon grid (each hex ~480 km across). Cooler colors (blue/green) mean higher expected genera count in a sample of 50 records, warmer colors (yellow/red) mean lower richness. Notice how this rarefied richness map highlights the tropical diversity hotspots (Central Amazon, Congo, Southeast Asia) even though those areas have fewer total records than temperate zones. By contrast, a raw species count map (not shown here) would mainly highlight places like Europe and the US – essentially mirroring observer distribution. The grid-based ES50 approach helps reveal genuine biodiversity patterns by controlling for sampling effort: “one of the main advantages of es50 is that it somewhat corrects for sampling bias”.
+To implement grid-based richness in R, you can use packages like sf or raster/terra to make spatial grids, or do it with simple grouping operations. For example, using dplyr you could assign each occurrence to a grid cell and then count unique species:
+library(dplyr)
+
+# Define grid cell IDs, e.g., rounding coordinates to 0.5° for a ~50x50 km grid
+occurrences &lt;- occurrences %&gt;%
+  mutate(
+    lon_bin = floor(decimalLongitude / 0.5) * 0.5,
+    lat_bin = floor(decimalLatitude / 0.5) * 0.5,
+    cell_id = paste(lat_bin, lon_bin, sep = &#34;_&#34;)
+  )
+
+# Calculate richness and record count per cell
+grid_stats &lt;- occurrences %&gt;%
+  group_by(cell_id) %&gt;%
+  summarize(
+    n_records = n(),
+    n_species = n_distinct(species)
+  )
+# Filter cells with at least 20 records
+grid_stats &lt;- filter(grid_stats, n_records &gt;= 20)
+In this snippet, we binned lat/long into 0.5° cells (you could also use a fixed coordinate grid or a shapefile of equal-area grids). Then we counted how many records and how many species each cell has, and filtered to cells with 20&#43; records to focus on reasonably sampled cells. The result grid_stats can be joined to an sf grid for mapping. This kind of map will still show some bias (20 records in one cell might catalog fewer species than 20 in another if communities differ), but it’s much better than mapping raw occurrence counts. The key is that every mapped cell is based on comparable effort.
+For an even more robust approach, you could calculate a rarefied richness per cell. This essentially combines the above two methods: use each cell’s species-occurrence data to compute an ESThreshold (like ES20 if 20 is the minimum records per cell, or ES50 if many cells have ≥50 records). Cells with fewer records than the threshold can be ignored or shown as having lower confidence. The result is a map like the one above, where sampling bias is greatly reduced and you can start to see the true patterns of biodiversity.
+Putting It All Together (and Final Tips)
+Handling sampling bias often requires using multiple methods in tandem and making judgment calls based on your data and research question. There is no one-size-fits-all fix, but the approaches above are commonly used toolbox items:
+
+Spatial thinning removes oversampled clusters and is great for preparing data for species distribution modeling or anytime spatial autocorrelation from sampling is a concern.
+Effort filtering ensures you’re comparing data with similar collection effort (filtering out the junk or overly duplicated observations), which yields more reliable analyses.
+Rarefaction standardizes comparisons by equalizing sample sizes, crucial for fair biodiversity comparisons across regions or time periods.
+Grid-based estimation provides a structured way to aggregate data spatially, often combined with minimum effort thresholds or rarefaction to produce maps that reflect reality more than collector density.
+
+In practice, you might apply several of these in one workflow. For example, if you were studying the diversity of butterflies in South America, you could first filter out records without good effort info (say, only use survey data, or only one record per site/day), then apply spatial thinning so that e.g. no two records are within 10 km. Next, divide the continent into grid cells and compute rarefied species richness per cell. The end result could be a richness map that is much less biased. You’d avoid the pitfall of simply mapping raw data which might have all of coastal Brazil glowing just because that’s where people live and collect data, and instead highlight inland Amazon cells if the data – once equalized – show high richness there.
+Finally, always remember to check the sensitivity of your results to these methods. Because each method involves discarding or re-weighting data, it’s good to try a few variations (e.g. different thinning distances or rarefaction sizes) to ensure your conclusions aren’t an artifact of the correction method. The improvements are usually worth it: accounting for sampling bias can lead to major gains in the realism and accuracy of your analyses, even if it means working with a bit less data. In summary, by applying these techniques, you’ll extract more meaningful ecological signal from the noise of sampling bias – turning a biased occurrence dataset into insights that are closer to the truth of nature’s patterns. Good luck, and happy (unbiased) mapping!
+Sources:
+
+Waller, J. (2019). Exploring es50 for GBIF. GBIF Data Blog.
+GBIF (2023). Sampling biases shape our view of the natural world.
+Plantarum (2021). Thinning Occurrence Records in R.
+Best Practices for Using eBird Data (2021). Complete Checklists.
+Meyer et al. (2016). Spatial bias in the GBIF database affects SDMs.
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://data-blog.gbif.org/post/2025-05-21-dealing-with-sampling-bias-gbif-mediated-occurrence-records/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2025-05-21T00:00:00+00:00" />
+<meta property="article:modified_time" content="2025-05-21T15:51:13+02:00" />
+
+<meta itemprop="name" content="Dealing with sampling bias GBIF mediated occurrence records">
+<meta itemprop="description" content="Spatial Thinning: Even Out the Spatial Effort
+One straightforward way to reduce spatial bias is spatial thinning (also called spatial filtering). The idea is to remove or subsample occurrences that are too close to each other, so that no locality or region is overrepresented. This addresses the common situation where many records cluster around cities, roads, or popular parks, while other areas have few or none. By thinning the data, we ensure a more even spatial coverage.
+A common approach is to impose a minimum distance or grid cell size between records. For example, we might only keep one occurrence per 5 km radius or per grid cell of a certain size. “A common approach to reducing spatial bias in occurrence records is to randomly select one (or a small number) of samples present in each cell in the landscape”. If a keen birder logged 500 observations in one city park, spatial thinning will pick just one (or a few) of those and discard the rest, preventing that park from overwhelming the analysis. This way, areas with intense sampling effort are down-sampled to more closely match areas with low effort.
+In R, you can do spatial thinning in various ways. Specialized packages like spThin or GeoThinneR implement distance-based thinning algorithms, and the dismo package offers a simple gridSample function. However, you can also use base R or tidyverse tools for a quick solution. For example, to thin occurrences by keeping at most one record per 0.1° grid (≈11 km) you could do:
+library(dplyr)
+
+# Example: thin occurrence data to one record per 0.1° grid cell
+thinned_data &lt;- occurrences %&gt;%
+  mutate(
+    lat_bin = round(decimalLatitude, 1),    # bin latitude into 0.1° cells
+    lon_bin = round(decimalLongitude, 1)    # bin longitude into 0.1° cells
+  ) %&gt;%
+  group_by(lat_bin, lon_bin) %&gt;%
+  slice_sample(n = 1)    # pick one record per grid cell
+In the code above, we round coordinates to one decimal place and then randomly select one occurrence for each unique lat-long bin. The result is a thinned dataset with a more uniform spatial distribution of points. You can adjust the grid size (or use a distance in kilometers if converting to a planar coordinate system) based on your needs – larger distances yield stronger thinning.
+Spatial thinning is very useful before modeling species distributions or mapping diversity. By removing dense clusters of records, we reduce the chance that our analysis is skewed towards well-sampled locations. Essentially, thinning trades off some data (you lose many records from oversampled spots) in exchange for less bias. Even though we end up with fewer points, those points carry more equal weight geographically. This often improves model performance: studies have found that using spatially thinned data can produce better predictive models despite using fewer records. In short, thinning helps “level the playing field” across space.
+(Pro tip: If you have hundreds of thousands of points, use packages like spThin or GeoThinneR which are optimized for efficiency. They offer options for specifying distance thresholds or grid sizes and can handle large datasets.)
+Effort-Based Filtering: Use (or Impose) Sampling Effort Information
+Another tactic is effort-based filtering, which means subsetting or weighting the data based on known sampling effort. Not all occurrence records are collected with the same effort: some come from structured surveys where people diligently record everything they find in an area, and others are casual or biased observations (e.g. a tourist snapping a photo of a butterfly). By filtering for records with higher or more standardized effort, we can reduce bias from haphazard sampling.
+One example comes from bird data. The eBird project (a major contributor of bird records to GBIF) allows birders to submit checklists of sightings. Some of these checklists are complete (the observer reports all species they could identify, with details on effort like duration and distance), while others are incidental (just reporting a few species opportunistically). It turns out that “complete checklists with effort information facilitate robust analyses, and thus represent the gold standard of eBird data”. In practice, researchers often filter eBird-sourced GBIF records to include only complete checklists (with at least some minimum effort, say 10 minutes or 1 km of survey). This removes many biased records where effort was low or unreported, yielding a more uniform dataset.
+Effort-based filtering can also be as simple as removing obvious duplicate sampling. For instance, if a scientist collected 100 plant specimens from one small site on the same day, those 100 occurrence records don’t represent 100 independent data points – they represent one intensive sampling event. We might choose to keep just one record per site per day in such cases. Here’s how you could filter to one occurrence per location per day in R:
+library(dplyr)
+
+# Filter to one record per unique location (lat-long) per day
+filtered_data &lt;- occurrences %&gt;%
+  mutate(date = as.Date(eventDate)) %&gt;%            # ensure we have a Date column
+  arrange(date) %&gt;%
+  distinct(decimalLatitude, decimalLongitude, date, .keep_all = TRUE)
+This code will drop any additional records that share the same lat/long and date, keeping only the first occurrence for each such combination. The rationale is that multiple records from the same place and day likely reflect repeated observations of the same population or a concentrated survey effort. By keeping only one, we down-weight that intense effort to be equivalent to a single observation event.
+Effort filtering can be tailored to your data. If you have an effort metric (e.g., person-hours, trap nights, transect length), you might exclude records with very low effort or explicitly incorporate effort as a covariate in models. If you know certain datasets are biased (e.g., a museum collection that sampled primarily along roads), you could exclude or down-weight those records. The goal is to make the remaining data more comparable. Essentially, we’re trying to compare apples to apples – for example, one standardized survey to another – rather than apples to oranges (casual observations vs. intensive surveys). This reduces bias by ensuring each data point comes from a roughly similar amount of search effort.
+Rarefaction: Standardizing Sample Size for Fair Comparison
+Rarefaction is a classic ecological method to address sampling bias, especially for comparing species richness across areas or datasets with different sample sizes. The concept is to subsample the data to a common sample size and measure diversity from that equal footing. In plainer terms, if Region A has 1,000 occurrence records and Region B has only 100 records, of course A will list more species – but is it because A is truly more diverse, or just more sampled? Rarefaction helps answer that by asking: if we only had 100 records from Region A, how many species would we expect to find? This gives a fairer richness comparison between A and B.
+One way to do rarefaction is through simulation: randomly draw (say) 100 records from Region A, count how many species are in that subset, and repeat this many times to get an average. A more analytical way uses combinatorics (Hurlbert’s formula) to compute the expected number of species for a given sample size without brute-force simulation. This is often called the Hurlbert’s index or ES(n) – expected species for n samples. For example, ES50 is the expected number of unique species in a random sample of 50 occurrences. John Waller (GBIF data scientist) used this metric to compare diversity in his blog, noting that “es50 &hellip; is an indicator of biodiversity richness” and importantly “somewhat corrects for sampling bias”.
+In R, the vegan package provides functions for rarefaction. We can use vegan::rarefy() on a matrix of species counts. For instance, if we have occurrence records split by region or grid cell, we can create a matrix of counts (rows = regions, columns = species). Then we rarefy each region to the same number of samples:
+library(vegan)
+
+# Suppose &#39;occurrences&#39; has a column &#39;region&#39; and &#39;species&#39;
+# Create a matrix of species counts per region:
+region_species_matrix &lt;- table(occurrences$region, occurrences$species)
+
+# Perform rarefaction to a sample size of 100 occurrences per region
+rarefied_richness &lt;- rarefy(region_species_matrix, sample = 100)
+rarefied_richness
+The result rarefied_richness will be a vector giving the estimated number of species in each region if we only had 100 records from that region. Regions with a lot more than 100 records get “down-sampled” in theory, and regions with fewer than 100 records cannot be raised (rarefaction can’t invent species beyond what was observed; typically those will just have their actual species count if they have fewer records than the rarefaction number).
+Rarefaction is very powerful for comparative analyses. It essentially tells us what the diversity would be at a common sampling effort. By doing so, it highlights the places that are truly diverse rather than just well-sampled. For example, applying rarefaction can reveal tropical regions as having higher underlying species richness even if their raw record counts are low. This helps counter the bias where, say, temperate zones look richer purely because of more observers. If we rarefy everything to, say, 50 records per area, the playing field is level. In practice, you might use rarefied richness metrics to build maps or to correlate biodiversity with environmental factors without the confounding effect of sampling effort.
+One drawback: rarefaction uses less data (it ignores records beyond the rarefaction cutoff in well-sampled areas), so you’re intentionally not using all information. Also, if some regions have extremely low sampling (fewer records than the chosen cutoff), you can’t directly rarefy them to the same level – you might have to drop those or choose a smaller uniform sample size. Despite these issues, rarefaction is a widely used technique to mitigate sampling bias in richness studies, and it pairs nicely with the next topic: grid-based mapping.
+Grid-Based Richness Estimation: Apples-to-Apples on the Map
+When mapping species richness or other biodiversity metrics, using a spatial grid is a common practice to handle sampling bias. By aggregating occurrences into grid cells (e.g. 10×10 km squares or hexagons), you ensure each spatial unit has a more comparable area and sampling effort basis. Grid-based analyses convert raw point data into a form of presence/absence or counts per cell, which inherently dampens the influence of duplicate records in the same location.
+The simplest grid-based approach is to count the number of species in each cell (species richness per cell). But as noted earlier, if some cells have a ton of records and others have very few, a raw richness map will still be biased – it will light up cells that were sampled to death, and leave poorly-sampled cells looking species-poor (even if in reality they might harbor many unrecorded species). Therefore, it’s common to combine grid-based aggregation with a threshold or rarefaction. For example, you might only map cells that have at least 20 records, to avoid showing spurious low-richness in cells where you have near-zero effort. Or better yet, apply rarefaction within each cell: calculate something like ES50 for every cell so that each cell’s richness is evaluated at an equal sample size.
+ An example of grid-based rarefied richness: This map shows the Hurlbert’s ES50 for animal genera on a global hexagon grid (each hex ~480 km across). Cooler colors (blue/green) mean higher expected genera count in a sample of 50 records, warmer colors (yellow/red) mean lower richness. Notice how this rarefied richness map highlights the tropical diversity hotspots (Central Amazon, Congo, Southeast Asia) even though those areas have fewer total records than temperate zones. By contrast, a raw species count map (not shown here) would mainly highlight places like Europe and the US – essentially mirroring observer distribution. The grid-based ES50 approach helps reveal genuine biodiversity patterns by controlling for sampling effort: “one of the main advantages of es50 is that it somewhat corrects for sampling bias”.
+To implement grid-based richness in R, you can use packages like sf or raster/terra to make spatial grids, or do it with simple grouping operations. For example, using dplyr you could assign each occurrence to a grid cell and then count unique species:
+library(dplyr)
+
+# Define grid cell IDs, e.g., rounding coordinates to 0.5° for a ~50x50 km grid
+occurrences &lt;- occurrences %&gt;%
+  mutate(
+    lon_bin = floor(decimalLongitude / 0.5) * 0.5,
+    lat_bin = floor(decimalLatitude / 0.5) * 0.5,
+    cell_id = paste(lat_bin, lon_bin, sep = &#34;_&#34;)
+  )
+
+# Calculate richness and record count per cell
+grid_stats &lt;- occurrences %&gt;%
+  group_by(cell_id) %&gt;%
+  summarize(
+    n_records = n(),
+    n_species = n_distinct(species)
+  )
+# Filter cells with at least 20 records
+grid_stats &lt;- filter(grid_stats, n_records &gt;= 20)
+In this snippet, we binned lat/long into 0.5° cells (you could also use a fixed coordinate grid or a shapefile of equal-area grids). Then we counted how many records and how many species each cell has, and filtered to cells with 20&#43; records to focus on reasonably sampled cells. The result grid_stats can be joined to an sf grid for mapping. This kind of map will still show some bias (20 records in one cell might catalog fewer species than 20 in another if communities differ), but it’s much better than mapping raw occurrence counts. The key is that every mapped cell is based on comparable effort.
+For an even more robust approach, you could calculate a rarefied richness per cell. This essentially combines the above two methods: use each cell’s species-occurrence data to compute an ESThreshold (like ES20 if 20 is the minimum records per cell, or ES50 if many cells have ≥50 records). Cells with fewer records than the threshold can be ignored or shown as having lower confidence. The result is a map like the one above, where sampling bias is greatly reduced and you can start to see the true patterns of biodiversity.
+Putting It All Together (and Final Tips)
+Handling sampling bias often requires using multiple methods in tandem and making judgment calls based on your data and research question. There is no one-size-fits-all fix, but the approaches above are commonly used toolbox items:
+
+Spatial thinning removes oversampled clusters and is great for preparing data for species distribution modeling or anytime spatial autocorrelation from sampling is a concern.
+Effort filtering ensures you’re comparing data with similar collection effort (filtering out the junk or overly duplicated observations), which yields more reliable analyses.
+Rarefaction standardizes comparisons by equalizing sample sizes, crucial for fair biodiversity comparisons across regions or time periods.
+Grid-based estimation provides a structured way to aggregate data spatially, often combined with minimum effort thresholds or rarefaction to produce maps that reflect reality more than collector density.
+
+In practice, you might apply several of these in one workflow. For example, if you were studying the diversity of butterflies in South America, you could first filter out records without good effort info (say, only use survey data, or only one record per site/day), then apply spatial thinning so that e.g. no two records are within 10 km. Next, divide the continent into grid cells and compute rarefied species richness per cell. The end result could be a richness map that is much less biased. You’d avoid the pitfall of simply mapping raw data which might have all of coastal Brazil glowing just because that’s where people live and collect data, and instead highlight inland Amazon cells if the data – once equalized – show high richness there.
+Finally, always remember to check the sensitivity of your results to these methods. Because each method involves discarding or re-weighting data, it’s good to try a few variations (e.g. different thinning distances or rarefaction sizes) to ensure your conclusions aren’t an artifact of the correction method. The improvements are usually worth it: accounting for sampling bias can lead to major gains in the realism and accuracy of your analyses, even if it means working with a bit less data. In summary, by applying these techniques, you’ll extract more meaningful ecological signal from the noise of sampling bias – turning a biased occurrence dataset into insights that are closer to the truth of nature’s patterns. Good luck, and happy (unbiased) mapping!
+Sources:
+
+Waller, J. (2019). Exploring es50 for GBIF. GBIF Data Blog.
+GBIF (2023). Sampling biases shape our view of the natural world.
+Plantarum (2021). Thinning Occurrence Records in R.
+Best Practices for Using eBird Data (2021). Complete Checklists.
+Meyer et al. (2016). Spatial bias in the GBIF database affects SDMs.
+"><meta itemprop="datePublished" content="2025-05-21T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2025-05-21T15:51:13+02:00" />
+<meta itemprop="wordCount" content="2694">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Dealing with sampling bias GBIF mediated occurrence records"/>
+<meta name="twitter:description" content="Spatial Thinning: Even Out the Spatial Effort
+One straightforward way to reduce spatial bias is spatial thinning (also called spatial filtering). The idea is to remove or subsample occurrences that are too close to each other, so that no locality or region is overrepresented. This addresses the common situation where many records cluster around cities, roads, or popular parks, while other areas have few or none. By thinning the data, we ensure a more even spatial coverage.
+A common approach is to impose a minimum distance or grid cell size between records. For example, we might only keep one occurrence per 5 km radius or per grid cell of a certain size. “A common approach to reducing spatial bias in occurrence records is to randomly select one (or a small number) of samples present in each cell in the landscape”. If a keen birder logged 500 observations in one city park, spatial thinning will pick just one (or a few) of those and discard the rest, preventing that park from overwhelming the analysis. This way, areas with intense sampling effort are down-sampled to more closely match areas with low effort.
+In R, you can do spatial thinning in various ways. Specialized packages like spThin or GeoThinneR implement distance-based thinning algorithms, and the dismo package offers a simple gridSample function. However, you can also use base R or tidyverse tools for a quick solution. For example, to thin occurrences by keeping at most one record per 0.1° grid (≈11 km) you could do:
+library(dplyr)
+
+# Example: thin occurrence data to one record per 0.1° grid cell
+thinned_data &lt;- occurrences %&gt;%
+  mutate(
+    lat_bin = round(decimalLatitude, 1),    # bin latitude into 0.1° cells
+    lon_bin = round(decimalLongitude, 1)    # bin longitude into 0.1° cells
+  ) %&gt;%
+  group_by(lat_bin, lon_bin) %&gt;%
+  slice_sample(n = 1)    # pick one record per grid cell
+In the code above, we round coordinates to one decimal place and then randomly select one occurrence for each unique lat-long bin. The result is a thinned dataset with a more uniform spatial distribution of points. You can adjust the grid size (or use a distance in kilometers if converting to a planar coordinate system) based on your needs – larger distances yield stronger thinning.
+Spatial thinning is very useful before modeling species distributions or mapping diversity. By removing dense clusters of records, we reduce the chance that our analysis is skewed towards well-sampled locations. Essentially, thinning trades off some data (you lose many records from oversampled spots) in exchange for less bias. Even though we end up with fewer points, those points carry more equal weight geographically. This often improves model performance: studies have found that using spatially thinned data can produce better predictive models despite using fewer records. In short, thinning helps “level the playing field” across space.
+(Pro tip: If you have hundreds of thousands of points, use packages like spThin or GeoThinneR which are optimized for efficiency. They offer options for specifying distance thresholds or grid sizes and can handle large datasets.)
+Effort-Based Filtering: Use (or Impose) Sampling Effort Information
+Another tactic is effort-based filtering, which means subsetting or weighting the data based on known sampling effort. Not all occurrence records are collected with the same effort: some come from structured surveys where people diligently record everything they find in an area, and others are casual or biased observations (e.g. a tourist snapping a photo of a butterfly). By filtering for records with higher or more standardized effort, we can reduce bias from haphazard sampling.
+One example comes from bird data. The eBird project (a major contributor of bird records to GBIF) allows birders to submit checklists of sightings. Some of these checklists are complete (the observer reports all species they could identify, with details on effort like duration and distance), while others are incidental (just reporting a few species opportunistically). It turns out that “complete checklists with effort information facilitate robust analyses, and thus represent the gold standard of eBird data”. In practice, researchers often filter eBird-sourced GBIF records to include only complete checklists (with at least some minimum effort, say 10 minutes or 1 km of survey). This removes many biased records where effort was low or unreported, yielding a more uniform dataset.
+Effort-based filtering can also be as simple as removing obvious duplicate sampling. For instance, if a scientist collected 100 plant specimens from one small site on the same day, those 100 occurrence records don’t represent 100 independent data points – they represent one intensive sampling event. We might choose to keep just one record per site per day in such cases. Here’s how you could filter to one occurrence per location per day in R:
+library(dplyr)
+
+# Filter to one record per unique location (lat-long) per day
+filtered_data &lt;- occurrences %&gt;%
+  mutate(date = as.Date(eventDate)) %&gt;%            # ensure we have a Date column
+  arrange(date) %&gt;%
+  distinct(decimalLatitude, decimalLongitude, date, .keep_all = TRUE)
+This code will drop any additional records that share the same lat/long and date, keeping only the first occurrence for each such combination. The rationale is that multiple records from the same place and day likely reflect repeated observations of the same population or a concentrated survey effort. By keeping only one, we down-weight that intense effort to be equivalent to a single observation event.
+Effort filtering can be tailored to your data. If you have an effort metric (e.g., person-hours, trap nights, transect length), you might exclude records with very low effort or explicitly incorporate effort as a covariate in models. If you know certain datasets are biased (e.g., a museum collection that sampled primarily along roads), you could exclude or down-weight those records. The goal is to make the remaining data more comparable. Essentially, we’re trying to compare apples to apples – for example, one standardized survey to another – rather than apples to oranges (casual observations vs. intensive surveys). This reduces bias by ensuring each data point comes from a roughly similar amount of search effort.
+Rarefaction: Standardizing Sample Size for Fair Comparison
+Rarefaction is a classic ecological method to address sampling bias, especially for comparing species richness across areas or datasets with different sample sizes. The concept is to subsample the data to a common sample size and measure diversity from that equal footing. In plainer terms, if Region A has 1,000 occurrence records and Region B has only 100 records, of course A will list more species – but is it because A is truly more diverse, or just more sampled? Rarefaction helps answer that by asking: if we only had 100 records from Region A, how many species would we expect to find? This gives a fairer richness comparison between A and B.
+One way to do rarefaction is through simulation: randomly draw (say) 100 records from Region A, count how many species are in that subset, and repeat this many times to get an average. A more analytical way uses combinatorics (Hurlbert’s formula) to compute the expected number of species for a given sample size without brute-force simulation. This is often called the Hurlbert’s index or ES(n) – expected species for n samples. For example, ES50 is the expected number of unique species in a random sample of 50 occurrences. John Waller (GBIF data scientist) used this metric to compare diversity in his blog, noting that “es50 &hellip; is an indicator of biodiversity richness” and importantly “somewhat corrects for sampling bias”.
+In R, the vegan package provides functions for rarefaction. We can use vegan::rarefy() on a matrix of species counts. For instance, if we have occurrence records split by region or grid cell, we can create a matrix of counts (rows = regions, columns = species). Then we rarefy each region to the same number of samples:
+library(vegan)
+
+# Suppose &#39;occurrences&#39; has a column &#39;region&#39; and &#39;species&#39;
+# Create a matrix of species counts per region:
+region_species_matrix &lt;- table(occurrences$region, occurrences$species)
+
+# Perform rarefaction to a sample size of 100 occurrences per region
+rarefied_richness &lt;- rarefy(region_species_matrix, sample = 100)
+rarefied_richness
+The result rarefied_richness will be a vector giving the estimated number of species in each region if we only had 100 records from that region. Regions with a lot more than 100 records get “down-sampled” in theory, and regions with fewer than 100 records cannot be raised (rarefaction can’t invent species beyond what was observed; typically those will just have their actual species count if they have fewer records than the rarefaction number).
+Rarefaction is very powerful for comparative analyses. It essentially tells us what the diversity would be at a common sampling effort. By doing so, it highlights the places that are truly diverse rather than just well-sampled. For example, applying rarefaction can reveal tropical regions as having higher underlying species richness even if their raw record counts are low. This helps counter the bias where, say, temperate zones look richer purely because of more observers. If we rarefy everything to, say, 50 records per area, the playing field is level. In practice, you might use rarefied richness metrics to build maps or to correlate biodiversity with environmental factors without the confounding effect of sampling effort.
+One drawback: rarefaction uses less data (it ignores records beyond the rarefaction cutoff in well-sampled areas), so you’re intentionally not using all information. Also, if some regions have extremely low sampling (fewer records than the chosen cutoff), you can’t directly rarefy them to the same level – you might have to drop those or choose a smaller uniform sample size. Despite these issues, rarefaction is a widely used technique to mitigate sampling bias in richness studies, and it pairs nicely with the next topic: grid-based mapping.
+Grid-Based Richness Estimation: Apples-to-Apples on the Map
+When mapping species richness or other biodiversity metrics, using a spatial grid is a common practice to handle sampling bias. By aggregating occurrences into grid cells (e.g. 10×10 km squares or hexagons), you ensure each spatial unit has a more comparable area and sampling effort basis. Grid-based analyses convert raw point data into a form of presence/absence or counts per cell, which inherently dampens the influence of duplicate records in the same location.
+The simplest grid-based approach is to count the number of species in each cell (species richness per cell). But as noted earlier, if some cells have a ton of records and others have very few, a raw richness map will still be biased – it will light up cells that were sampled to death, and leave poorly-sampled cells looking species-poor (even if in reality they might harbor many unrecorded species). Therefore, it’s common to combine grid-based aggregation with a threshold or rarefaction. For example, you might only map cells that have at least 20 records, to avoid showing spurious low-richness in cells where you have near-zero effort. Or better yet, apply rarefaction within each cell: calculate something like ES50 for every cell so that each cell’s richness is evaluated at an equal sample size.
+ An example of grid-based rarefied richness: This map shows the Hurlbert’s ES50 for animal genera on a global hexagon grid (each hex ~480 km across). Cooler colors (blue/green) mean higher expected genera count in a sample of 50 records, warmer colors (yellow/red) mean lower richness. Notice how this rarefied richness map highlights the tropical diversity hotspots (Central Amazon, Congo, Southeast Asia) even though those areas have fewer total records than temperate zones. By contrast, a raw species count map (not shown here) would mainly highlight places like Europe and the US – essentially mirroring observer distribution. The grid-based ES50 approach helps reveal genuine biodiversity patterns by controlling for sampling effort: “one of the main advantages of es50 is that it somewhat corrects for sampling bias”.
+To implement grid-based richness in R, you can use packages like sf or raster/terra to make spatial grids, or do it with simple grouping operations. For example, using dplyr you could assign each occurrence to a grid cell and then count unique species:
+library(dplyr)
+
+# Define grid cell IDs, e.g., rounding coordinates to 0.5° for a ~50x50 km grid
+occurrences &lt;- occurrences %&gt;%
+  mutate(
+    lon_bin = floor(decimalLongitude / 0.5) * 0.5,
+    lat_bin = floor(decimalLatitude / 0.5) * 0.5,
+    cell_id = paste(lat_bin, lon_bin, sep = &#34;_&#34;)
+  )
+
+# Calculate richness and record count per cell
+grid_stats &lt;- occurrences %&gt;%
+  group_by(cell_id) %&gt;%
+  summarize(
+    n_records = n(),
+    n_species = n_distinct(species)
+  )
+# Filter cells with at least 20 records
+grid_stats &lt;- filter(grid_stats, n_records &gt;= 20)
+In this snippet, we binned lat/long into 0.5° cells (you could also use a fixed coordinate grid or a shapefile of equal-area grids). Then we counted how many records and how many species each cell has, and filtered to cells with 20&#43; records to focus on reasonably sampled cells. The result grid_stats can be joined to an sf grid for mapping. This kind of map will still show some bias (20 records in one cell might catalog fewer species than 20 in another if communities differ), but it’s much better than mapping raw occurrence counts. The key is that every mapped cell is based on comparable effort.
+For an even more robust approach, you could calculate a rarefied richness per cell. This essentially combines the above two methods: use each cell’s species-occurrence data to compute an ESThreshold (like ES20 if 20 is the minimum records per cell, or ES50 if many cells have ≥50 records). Cells with fewer records than the threshold can be ignored or shown as having lower confidence. The result is a map like the one above, where sampling bias is greatly reduced and you can start to see the true patterns of biodiversity.
+Putting It All Together (and Final Tips)
+Handling sampling bias often requires using multiple methods in tandem and making judgment calls based on your data and research question. There is no one-size-fits-all fix, but the approaches above are commonly used toolbox items:
+
+Spatial thinning removes oversampled clusters and is great for preparing data for species distribution modeling or anytime spatial autocorrelation from sampling is a concern.
+Effort filtering ensures you’re comparing data with similar collection effort (filtering out the junk or overly duplicated observations), which yields more reliable analyses.
+Rarefaction standardizes comparisons by equalizing sample sizes, crucial for fair biodiversity comparisons across regions or time periods.
+Grid-based estimation provides a structured way to aggregate data spatially, often combined with minimum effort thresholds or rarefaction to produce maps that reflect reality more than collector density.
+
+In practice, you might apply several of these in one workflow. For example, if you were studying the diversity of butterflies in South America, you could first filter out records without good effort info (say, only use survey data, or only one record per site/day), then apply spatial thinning so that e.g. no two records are within 10 km. Next, divide the continent into grid cells and compute rarefied species richness per cell. The end result could be a richness map that is much less biased. You’d avoid the pitfall of simply mapping raw data which might have all of coastal Brazil glowing just because that’s where people live and collect data, and instead highlight inland Amazon cells if the data – once equalized – show high richness there.
+Finally, always remember to check the sensitivity of your results to these methods. Because each method involves discarding or re-weighting data, it’s good to try a few variations (e.g. different thinning distances or rarefaction sizes) to ensure your conclusions aren’t an artifact of the correction method. The improvements are usually worth it: accounting for sampling bias can lead to major gains in the realism and accuracy of your analyses, even if it means working with a bit less data. In summary, by applying these techniques, you’ll extract more meaningful ecological signal from the noise of sampling bias – turning a biased occurrence dataset into insights that are closer to the truth of nature’s patterns. Good luck, and happy (unbiased) mapping!
+Sources:
+
+Waller, J. (2019). Exploring es50 for GBIF. GBIF Data Blog.
+GBIF (2023). Sampling biases shape our view of the natural world.
+Plantarum (2021). Thinning Occurrence Records in R.
+Best Practices for Using eBird Data (2021). Complete Checklists.
+Meyer et al. (2016). Spatial bias in the GBIF database affects SDMs.
+"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">GBIF Data Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/categories/gbif/">
+        <li class="mobile-menu-item">posts</li>
+      </a><a href="https://discourse.gbif.org/c/data-blog">
+        <li class="mobile-menu-item">community-forum</li>
+      </a><a href="https://www.gbif.org/">
+        <li class="mobile-menu-item">gbif.org</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">about</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">
+	<img src= "/logo.png" alt="GBIF-analytics-blog" style ="width:20%;">
+  </a>
+  
+	
+  
+  
+</div>
+
+<nav class="site-navbar">
+
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/categories/gbif/">posts</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://discourse.gbif.org/c/data-blog">community-forum</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://www.gbif.org/">gbif.org</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">about</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+	
+    <header class="post-header">
+      <h1 class="post-title">Dealing with sampling bias GBIF mediated occurrence records</h1>
+	  
+	  
+      <div class="post-author">John Waller</div>
+
+      <div class="post-meta">
+        <span class="post-time"> 2025-05-21 </span>
+        
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    
+    
+
+    
+    <div class="post-content">
+      <h2 id="spatial-thinning-even-out-the-spatial-effort">Spatial Thinning: Even Out the Spatial Effort</h2>
+<p>One straightforward way to reduce spatial bias is <strong>spatial thinning</strong> (also called spatial filtering). The idea is to <em>remove or subsample occurrences that are too close to each other</em>, so that no locality or region is overrepresented. This addresses the common situation where many records cluster around cities, roads, or popular parks, while other areas have few or none. By thinning the data, we ensure a more even spatial coverage.</p>
+<p>A common approach is to impose a minimum distance or grid cell size between records. For example, we might only keep one occurrence <strong>per 5 km radius</strong> or <strong>per grid cell</strong> of a certain size. <em>“A common approach to reducing spatial bias in occurrence records is to randomly select one (or a small number) of samples present in each cell in the landscape”</em>. If a keen birder logged 500 observations in one city park, spatial thinning will pick just one (or a few) of those and discard the rest, preventing that park from overwhelming the analysis. This way, areas with intense sampling effort are down-sampled to more closely match areas with low effort.</p>
+<p>In R, you can do spatial thinning in various ways. Specialized packages like <strong><code>spThin</code></strong> or <strong><code>GeoThinneR</code></strong> implement distance-based thinning algorithms, and the <strong><code>dismo</code></strong> package offers a simple <code>gridSample</code> function. However, you can also use base R or tidyverse tools for a quick solution. For example, to thin occurrences by keeping at most one record per 0.1° grid (≈11 km) you could do:</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#268bd2">library</span>(dplyr)
+
+<span style="color:#586e75"># Example: thin occurrence data to one record per 0.1° grid cell</span>
+thinned_data <span style="color:#719e07">&lt;-</span> occurrences <span style="color:#719e07">%&gt;%</span>
+  <span style="color:#268bd2">mutate</span>(
+    lat_bin <span style="color:#719e07">=</span> <span style="color:#268bd2">round</span>(decimalLatitude, <span style="color:#2aa198">1</span>),    <span style="color:#586e75"># bin latitude into 0.1° cells</span>
+    lon_bin <span style="color:#719e07">=</span> <span style="color:#268bd2">round</span>(decimalLongitude, <span style="color:#2aa198">1</span>)    <span style="color:#586e75"># bin longitude into 0.1° cells</span>
+  ) <span style="color:#719e07">%&gt;%</span>
+  <span style="color:#268bd2">group_by</span>(lat_bin, lon_bin) <span style="color:#719e07">%&gt;%</span>
+  <span style="color:#268bd2">slice_sample</span>(n <span style="color:#719e07">=</span> <span style="color:#2aa198">1</span>)    <span style="color:#586e75"># pick one record per grid cell</span>
+</code></pre></div><p>In the code above, we round coordinates to one decimal place and then randomly select one occurrence for each unique lat-long bin. The result is a thinned dataset with a more uniform spatial distribution of points. You can adjust the grid size (or use a distance in kilometers if converting to a planar coordinate system) based on your needs – larger distances yield stronger thinning.</p>
+<p>Spatial thinning is very useful before modeling species distributions or mapping diversity. By removing dense clusters of records, we reduce the chance that our analysis is <strong>skewed towards well-sampled locations</strong>. Essentially, thinning trades off some data (you lose many records from oversampled spots) in exchange for less bias. Even though we end up with fewer points, those points carry more equal weight geographically. This often improves model performance: studies have found that <strong>using spatially thinned data can produce better predictive models</strong> despite using fewer records. In short, thinning helps “level the playing field” across space.</p>
+<p><em>(Pro tip: If you have hundreds of thousands of points, use packages like <code>spThin</code> or <code>GeoThinneR</code> which are optimized for efficiency. They offer options for specifying distance thresholds or grid sizes and can handle large datasets.)</em></p>
+<h2 id="effort-based-filtering-use-or-impose-sampling-effort-information">Effort-Based Filtering: Use (or Impose) Sampling Effort Information</h2>
+<p>Another tactic is <strong>effort-based filtering</strong>, which means subsetting or weighting the data based on known sampling effort. Not all occurrence records are collected with the same effort: some come from structured surveys where people diligently record <em>everything</em> they find in an area, and others are casual or biased observations (e.g. a tourist snapping a photo of a butterfly). By filtering for records with higher or more standardized effort, we can reduce bias from haphazard sampling.</p>
+<p>One example comes from bird data. The eBird project (a major contributor of bird records to GBIF) allows birders to submit checklists of sightings. Some of these checklists are <strong>complete</strong> (the observer reports all species they could identify, with details on effort like duration and distance), while others are <strong>incidental</strong> (just reporting a few species opportunistically). It turns out that <em>“complete checklists with effort information facilitate robust analyses, and thus represent the gold standard of eBird data”</em>. In practice, researchers often filter eBird-sourced GBIF records to <strong>include only complete checklists</strong> (with at least some minimum effort, say 10 minutes or 1 km of survey). This removes many biased records where effort was low or unreported, yielding a more uniform dataset.</p>
+<p>Effort-based filtering can also be as simple as removing obvious duplicate sampling. For instance, if a scientist collected 100 plant specimens from one small site on the same day, those 100 occurrence records don’t represent 100 independent data points – they represent one intensive sampling event. We might choose to keep just one record per site per day in such cases. Here’s how you could filter to one occurrence per location per day in R:</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#268bd2">library</span>(dplyr)
+
+<span style="color:#586e75"># Filter to one record per unique location (lat-long) per day</span>
+filtered_data <span style="color:#719e07">&lt;-</span> occurrences <span style="color:#719e07">%&gt;%</span>
+  <span style="color:#268bd2">mutate</span>(date <span style="color:#719e07">=</span> <span style="color:#268bd2">as.Date</span>(eventDate)) <span style="color:#719e07">%&gt;%</span>            <span style="color:#586e75"># ensure we have a Date column</span>
+  <span style="color:#268bd2">arrange</span>(date) <span style="color:#719e07">%&gt;%</span>
+  <span style="color:#268bd2">distinct</span>(decimalLatitude, decimalLongitude, date, .keep_all <span style="color:#719e07">=</span> <span style="color:#cb4b16">TRUE</span>)
+</code></pre></div><p>This code will drop any additional records that share the same lat/long and date, keeping only the first occurrence for each such combination. The rationale is that multiple records from the same place and day likely reflect repeated observations of the same population or a concentrated survey effort. By keeping only one, we down-weight that intense effort to be equivalent to a single observation event.</p>
+<p>Effort filtering can be tailored to your data. If you have an <strong>effort metric</strong> (e.g., person-hours, trap nights, transect length), you might exclude records with very low effort or explicitly incorporate effort as a covariate in models. If you know certain datasets are biased (e.g., a museum collection that sampled primarily along roads), you could exclude or down-weight those records. The goal is to make the remaining data more comparable. Essentially, we’re trying to compare apples to apples – for example, one <em>standardized survey</em> to another – rather than apples to oranges (casual observations vs. intensive surveys). This reduces bias by ensuring each data point comes from a roughly similar amount of search effort.</p>
+<h2 id="rarefaction-standardizing-sample-size-for-fair-comparison">Rarefaction: Standardizing Sample Size for Fair Comparison</h2>
+<p><strong>Rarefaction</strong> is a classic ecological method to address sampling bias, especially for comparing species richness across areas or datasets with different sample sizes. The concept is to <em>subsample</em> the data to a common sample size and measure diversity from that equal footing. In plainer terms, if Region A has 1,000 occurrence records and Region B has only 100 records, of course A will list more species – but is it because A is truly more diverse, or just more sampled? Rarefaction helps answer that by asking: <em>if we only had 100 records from Region A, how many species would we expect to find?</em> This gives a fairer richness comparison between A and B.</p>
+<p>One way to do rarefaction is through simulation: randomly draw (say) 100 records from Region A, count how many species are in that subset, and repeat this many times to get an average. A more analytical way uses combinatorics (Hurlbert’s formula) to compute the expected number of species for a given sample size without brute-force simulation. This is often called the <strong>Hurlbert’s index</strong> or ES(n) – expected species for n samples. For example, <em>ES50</em> is the expected number of unique species in a random sample of 50 occurrences. <strong>John Waller</strong> (GBIF data scientist) used this metric to compare diversity in his blog, noting that <em>“es50 &hellip; is an indicator of biodiversity richness”</em> and importantly <em>“somewhat corrects for sampling bias”</em>.</p>
+<p>In R, the <strong><code>vegan</code></strong> package provides functions for rarefaction. We can use <code>vegan::rarefy()</code> on a matrix of species counts. For instance, if we have occurrence records split by region or grid cell, we can create a matrix of counts (rows = regions, columns = species). Then we rarefy each region to the same number of samples:</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#268bd2">library</span>(vegan)
+
+<span style="color:#586e75"># Suppose &#39;occurrences&#39; has a column &#39;region&#39; and &#39;species&#39;</span>
+<span style="color:#586e75"># Create a matrix of species counts per region:</span>
+region_species_matrix <span style="color:#719e07">&lt;-</span> <span style="color:#268bd2">table</span>(occurrences<span style="color:#719e07">$</span>region, occurrences<span style="color:#719e07">$</span>species)
+
+<span style="color:#586e75"># Perform rarefaction to a sample size of 100 occurrences per region</span>
+rarefied_richness <span style="color:#719e07">&lt;-</span> <span style="color:#268bd2">rarefy</span>(region_species_matrix, sample <span style="color:#719e07">=</span> <span style="color:#2aa198">100</span>)
+rarefied_richness
+</code></pre></div><p>The result <code>rarefied_richness</code> will be a vector giving the <strong>estimated number of species in each region if we only had 100 records</strong> from that region. Regions with a lot more than 100 records get “down-sampled” in theory, and regions with fewer than 100 records cannot be raised (rarefaction can’t invent species beyond what was observed; typically those will just have their actual species count if they have fewer records than the rarefaction number).</p>
+<p>Rarefaction is very powerful for <strong>comparative analyses</strong>. It essentially tells us <em>what the diversity would be at a common sampling effort</em>. By doing so, it highlights the places that are truly diverse rather than just well-sampled. For example, applying rarefaction can reveal tropical regions as having higher <em>underlying</em> species richness even if their raw record counts are low. This helps counter the bias where, say, temperate zones look richer purely because of more observers. If we rarefy everything to, say, 50 records per area, the playing field is level. In practice, you might use rarefied richness metrics to build maps or to correlate biodiversity with environmental factors without the confounding effect of sampling effort.</p>
+<p>One drawback: rarefaction <strong>uses less data</strong> (it ignores records beyond the rarefaction cutoff in well-sampled areas), so you’re intentionally not using all information. Also, if some regions have extremely low sampling (fewer records than the chosen cutoff), you can’t directly rarefy them to the same level – you might have to drop those or choose a smaller uniform sample size. Despite these issues, rarefaction is a widely used technique to mitigate sampling bias in richness studies, and it pairs nicely with the next topic: grid-based mapping.</p>
+<h2 id="grid-based-richness-estimation-apples-to-apples-on-the-map">Grid-Based Richness Estimation: Apples-to-Apples on the Map</h2>
+<p>When mapping species richness or other biodiversity metrics, using a spatial <strong>grid</strong> is a common practice to handle sampling bias. By aggregating occurrences into grid cells (e.g. 10×10 km squares or hexagons), you ensure each spatial unit has a more comparable area and sampling effort basis. Grid-based analyses convert raw point data into a form of <strong>presence/absence or counts per cell</strong>, which inherently dampens the influence of duplicate records in the same location.</p>
+<p>The simplest grid-based approach is to count the number of species in each cell (species richness per cell). But as noted earlier, if some cells have a ton of records and others have very few, a raw richness map will still be biased – it will light up cells that were sampled to death, and leave poorly-sampled cells looking species-poor (even if in reality they might harbor many unrecorded species). Therefore, it’s common to combine grid-based aggregation <strong>with a threshold or rarefaction</strong>. For example, you might <strong>only map cells that have at least 20 records</strong>, to avoid showing spurious low-richness in cells where you have near-zero effort. Or better yet, apply rarefaction within each cell: calculate something like ES50 for every cell so that each cell’s richness is evaluated at an equal sample size.</p>
+<p> <em>An example of grid-based rarefied richness: This map shows the <strong>Hurlbert’s ES50</strong> for animal genera on a global hexagon grid (each hex ~480 km across). Cooler colors (blue/green) mean higher expected genera count in a sample of 50 records, warmer colors (yellow/red) mean lower richness.</em> Notice how this rarefied richness map highlights the <strong>tropical diversity hotspots</strong> (Central Amazon, Congo, Southeast Asia) even though those areas have fewer total records than temperate zones. By contrast, a raw species count map (not shown here) would mainly highlight places like Europe and the US – essentially mirroring observer distribution. The grid-based ES50 approach helps reveal genuine biodiversity patterns by controlling for sampling effort: <em>“one of the main advantages of es50 is that it somewhat corrects for sampling bias”</em>.</p>
+<p>To implement grid-based richness in R, you can use packages like <strong><code>sf</code></strong> or <strong><code>raster/terra</code></strong> to make spatial grids, or do it with simple grouping operations. For example, using <code>dplyr</code> you could assign each occurrence to a grid cell and then count unique species:</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#268bd2">library</span>(dplyr)
+
+<span style="color:#586e75"># Define grid cell IDs, e.g., rounding coordinates to 0.5° for a ~50x50 km grid</span>
+occurrences <span style="color:#719e07">&lt;-</span> occurrences <span style="color:#719e07">%&gt;%</span>
+  <span style="color:#268bd2">mutate</span>(
+    lon_bin <span style="color:#719e07">=</span> <span style="color:#268bd2">floor</span>(decimalLongitude <span style="color:#719e07">/</span> <span style="color:#2aa198">0.5</span>) <span style="color:#719e07">*</span> <span style="color:#2aa198">0.5</span>,
+    lat_bin <span style="color:#719e07">=</span> <span style="color:#268bd2">floor</span>(decimalLatitude <span style="color:#719e07">/</span> <span style="color:#2aa198">0.5</span>) <span style="color:#719e07">*</span> <span style="color:#2aa198">0.5</span>,
+    cell_id <span style="color:#719e07">=</span> <span style="color:#268bd2">paste</span>(lat_bin, lon_bin, sep <span style="color:#719e07">=</span> <span style="color:#2aa198">&#34;_&#34;</span>)
+  )
+
+<span style="color:#586e75"># Calculate richness and record count per cell</span>
+grid_stats <span style="color:#719e07">&lt;-</span> occurrences <span style="color:#719e07">%&gt;%</span>
+  <span style="color:#268bd2">group_by</span>(cell_id) <span style="color:#719e07">%&gt;%</span>
+  <span style="color:#268bd2">summarize</span>(
+    n_records <span style="color:#719e07">=</span> <span style="color:#268bd2">n</span>(),
+    n_species <span style="color:#719e07">=</span> <span style="color:#268bd2">n_distinct</span>(species)
+  )
+<span style="color:#586e75"># Filter cells with at least 20 records</span>
+grid_stats <span style="color:#719e07">&lt;-</span> <span style="color:#268bd2">filter</span>(grid_stats, n_records <span style="color:#719e07">&gt;=</span> <span style="color:#2aa198">20</span>)
+</code></pre></div><p>In this snippet, we binned lat/long into 0.5° cells (you could also use a fixed coordinate grid or a shapefile of equal-area grids). Then we counted how many records and how many species each cell has, and filtered to cells with 20+ records to focus on reasonably sampled cells. The result <code>grid_stats</code> can be joined to an <code>sf</code> grid for mapping. This kind of map will still show some bias (20 records in one cell might catalog fewer species than 20 in another if communities differ), but it’s much better than mapping raw occurrence counts. <strong>The key is that every mapped cell is based on comparable effort.</strong></p>
+<p>For an even more robust approach, you could calculate a rarefied richness per cell. This essentially combines the above two methods: use each cell’s species-occurrence data to compute an ESThreshold (like ES20 if 20 is the minimum records per cell, or ES50 if many cells have ≥50 records). Cells with fewer records than the threshold can be ignored or shown as having lower confidence. The result is a map like the one above, where sampling bias is greatly reduced and you can start to see the true patterns of biodiversity.</p>
+<h2 id="putting-it-all-together-and-final-tips">Putting It All Together (and Final Tips)</h2>
+<p>Handling sampling bias often requires <strong>using multiple methods in tandem</strong> and making judgment calls based on your data and research question. There is no one-size-fits-all fix, but the approaches above are commonly used toolbox items:</p>
+<ul>
+<li><strong>Spatial thinning</strong> removes oversampled clusters and is great for preparing data for species distribution modeling or anytime spatial autocorrelation from sampling is a concern.</li>
+<li><strong>Effort filtering</strong> ensures you’re comparing data with similar collection effort (filtering out the junk or overly duplicated observations), which yields more reliable analyses.</li>
+<li><strong>Rarefaction</strong> standardizes comparisons by equalizing sample sizes, crucial for fair biodiversity comparisons across regions or time periods.</li>
+<li><strong>Grid-based estimation</strong> provides a structured way to aggregate data spatially, often combined with minimum effort thresholds or rarefaction to produce maps that reflect reality more than collector density.</li>
+</ul>
+<p>In practice, you might apply <strong>several of these in one workflow</strong>. For example, if you were studying the diversity of butterflies in South America, you could first filter out records without good effort info (say, only use survey data, or only one record per site/day), then apply spatial thinning so that e.g. no two records are within 10 km. Next, divide the continent into grid cells and compute rarefied species richness per cell. The end result could be a richness map that is much less biased. You’d avoid the pitfall of simply mapping raw data which might have all of coastal Brazil glowing just because that’s where people live and collect data, and instead highlight inland Amazon cells if the data – once equalized – show high richness there.</p>
+<p>Finally, always remember to <strong>check the sensitivity</strong> of your results to these methods. Because each method involves discarding or re-weighting data, it’s good to try a few variations (e.g. different thinning distances or rarefaction sizes) to ensure your conclusions aren’t an artifact of the correction method. The improvements are usually worth it: accounting for sampling bias can lead to major gains in the realism and accuracy of your analyses, even if it means working with a bit less data. In summary, by applying these techniques, you’ll extract more meaningful ecological signal from the noise of sampling bias – turning a biased occurrence dataset into insights that are closer to the truth of nature’s patterns. Good luck, and happy (unbiased) mapping!</p>
+<p><strong>Sources:</strong></p>
+<ul>
+<li>Waller, J. (2019). <em>Exploring es50 for GBIF</em>. GBIF Data Blog.</li>
+<li>GBIF (2023). <em>Sampling biases shape our view of the natural world</em>.</li>
+<li>Plantarum (2021). <em>Thinning Occurrence Records in R</em>.</li>
+<li>Best Practices for Using eBird Data (2021). <em>Complete Checklists</em>.</li>
+<li>Meyer et al. (2016). <em>Spatial bias in the GBIF database affects SDMs</em>.</li>
+</ul>
+    </div>
+
+    
+    
+
+    
+    
+
+    <footer class="post-footer">
+      
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/2025-10-28-species-occurrence-data-and-corporate-sustainability-frameworks/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Species Occurrence Data and Corporate Sustainability Frameworks</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/2025-03-26-species-accumulations-curves-with-gbif-sql-downloads/">
+            <span class="next-text nav-default">Species accumulation curves with GBIF SQL downloads</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      
+
+
+
+<div>
+<h3>This post represents the ideas of the author.</h3>
+</div>
+<div id='discourse-comments'></div>
+<script type="text/javascript">
+  DiscourseEmbed = { discourseUrl: 'https://discourse.gbif.org/',
+                     discourseEmbedUrl: 'https://data-blog.gbif.org\/post\/2025-05-21-dealing-with-sampling-bias-gbif-mediated-occurrence-records\/' };
+
+  (function() {
+    var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+    d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+  })();
+</script>
+
+
+<div class = "copyright">
+	<a class="theme-link" href="https://www.gbif.org/what-is-gbif">What is GBIF?</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://www.gbif.org/developer/summary">API</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://www.gbif.org/faq">FAQ</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://discourse.gbif.org/">Community-Forum</a>
+</div>
+
+<div class = "copyright">
+	<span class="theme-info">GBIF Secretariat</span>
+	<span class="theme-info">Universitetsparken 15</span>
+	<span class="theme-info">DK-2100 Copenhagen Ø</span>
+	<span class="theme-info" >Denmark</span>
+</div>
+
+<div class="copyright">
+	<span class="power-by">
+	Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+	</span>
+	<span class="division">|</span>
+	<span class="theme-info">
+	Theme -
+	<a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+	</span>
+
+</div>
+
+<script defer data-domain="data-blog.gbif.org,gbif.org" src="https://plausible.io/js/script.file-downloads.js"></script>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+<script type="text/javascript" src="/dist/even.min.js?v=3.2.0"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -6,13 +6,31 @@
     <description>Recent content in Categories on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 02 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://data-blog.gbif.org/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 22 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://data-blog.gbif.org/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GBIF</title>
       <link>https://data-blog.gbif.org/categories/gbif/</link>
-      <pubDate>Mon, 02 Sep 2024 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 22 Apr 2025 00:00:00 +0000</pubDate>
       
       <guid>https://data-blog.gbif.org/categories/gbif/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GRSciColl</title>
+      <link>https://data-blog.gbif.org/categories/grscicoll/</link>
+      <pubDate>Wed, 09 Oct 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/categories/grscicoll/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Publishing</title>
+      <link>https://data-blog.gbif.org/categories/publishing/</link>
+      <pubDate>Wed, 09 Oct 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/categories/publishing/</guid>
       <description></description>
     </item>
     
@@ -35,29 +53,11 @@
     </item>
     
     <item>
-      <title>Publishing</title>
-      <link>https://data-blog.gbif.org/categories/publishing/</link>
-      <pubDate>Mon, 11 Oct 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://data-blog.gbif.org/categories/publishing/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Citation</title>
       <link>https://data-blog.gbif.org/categories/citation/</link>
       <pubDate>Thu, 20 May 2021 00:00:00 +0000</pubDate>
       
       <guid>https://data-blog.gbif.org/categories/citation/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>GRSciColl</title>
-      <link>https://data-blog.gbif.org/categories/grscicoll/</link>
-      <pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://data-blog.gbif.org/categories/grscicoll/</guid>
       <description></description>
     </item>
     

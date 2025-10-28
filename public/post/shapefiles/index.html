@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Using shapefiles on GBIF data with R - GBIF Data Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Jan Kristoffer Legind" />
+  <meta name="description" content="Not all filters are born equal It happens sometimes that users need GBIF data that fall within specific boundaries. The GBIF Portal provides a location filter where it is possible to draw a rectangle or a polygon on the map and get the occurrence records within this shape. However these tools have a limited precision and occasionally the job calls for more complex shapes than the GBIF Portal currently supports." />
+
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.91.2" />
+
+
+<link rel="canonical" href="https://data-blog.gbif.org/post/shapefiles/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.2.0" rel="stylesheet">
+
+
+
+
+<link rel="stylesheet" href="/css//custom.css">
+
+
+<meta property="og:title" content="Using shapefiles on GBIF data with R" />
+<meta property="og:description" content="Not all filters are born equal It happens sometimes that users need GBIF data that fall within specific boundaries. The GBIF Portal provides a location filter where it is possible to draw a rectangle or a polygon on the map and get the occurrence records within this shape. However these tools have a limited precision and occasionally the job calls for more complex shapes than the GBIF Portal currently supports." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://data-blog.gbif.org/post/shapefiles/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2018-11-22T00:00:00+00:00" />
+<meta property="article:modified_time" content="2018-11-21T15:24:11+02:00" />
+
+<meta itemprop="name" content="Using shapefiles on GBIF data with R">
+<meta itemprop="description" content="Not all filters are born equal It happens sometimes that users need GBIF data that fall within specific boundaries. The GBIF Portal provides a location filter where it is possible to draw a rectangle or a polygon on the map and get the occurrence records within this shape. However these tools have a limited precision and occasionally the job calls for more complex shapes than the GBIF Portal currently supports."><meta itemprop="datePublished" content="2018-11-22T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2018-11-21T15:24:11+02:00" />
+<meta itemprop="wordCount" content="871">
+<meta itemprop="keywords" content="R,maps,arctic,shapefile," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Using shapefiles on GBIF data with R"/>
+<meta name="twitter:description" content="Not all filters are born equal It happens sometimes that users need GBIF data that fall within specific boundaries. The GBIF Portal provides a location filter where it is possible to draw a rectangle or a polygon on the map and get the occurrence records within this shape. However these tools have a limited precision and occasionally the job calls for more complex shapes than the GBIF Portal currently supports."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">GBIF Data Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/categories/gbif/">
+        <li class="mobile-menu-item">posts</li>
+      </a><a href="https://discourse.gbif.org/c/data-blog">
+        <li class="mobile-menu-item">community-forum</li>
+      </a><a href="https://www.gbif.org/">
+        <li class="mobile-menu-item">gbif.org</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">about</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">
+	<img src= "/logo.png" alt="GBIF-analytics-blog" style ="width:20%;">
+  </a>
+  
+	
+  
+  
+</div>
+
+<nav class="site-navbar">
+
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/categories/gbif/">posts</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://discourse.gbif.org/c/data-blog">community-forum</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://www.gbif.org/">gbif.org</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">about</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+	
+    <header class="post-header">
+      <h1 class="post-title">Using shapefiles on GBIF data with R</h1>
+	  
+	  
+      <div class="post-author">Jan Kristoffer Legind</div>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-11-22 </span>
+        <div class="post-category">
+            
+              <a href="/categories/gbif/"> GBIF </a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    
+    
+
+    
+    <div class="post-content">
+      <h2 id="not-all-filters-are-born-equal">Not all filters are born equal</h2>
+<p>It happens sometimes that users need GBIF data that fall within specific boundaries. The GBIF Portal provides a location filter where it is possible to draw a rectangle or a polygon on the map and get the occurrence records within this shape. However these tools have a limited precision and occasionally the job calls for more complex shapes than the GBIF Portal currently supports.</p>
+<h2 id="the-shapefile">The shapefile</h2>
+<p>In this case I want to use a <strong>Circumpolar Arctic Map</strong> which already here is providing us with some challenges.<br>
+The map projection for this is &lsquo;laea&rsquo; (<em>Lambert Azimuthal Equal Area</em> for those of you out in mercator land) and it is well suited to polar perspective.<br>
+So the task is to identify the Plant records that fall within this shape file of land areas in the Arctic region.<br>
+The arctic shape file can be downloaded here: <a href="https://github.com/jlegind/Polygon-Shapefile-Occurrence-Filter/blob/master/Bioclimate_Subzones%5B1%5D.zip">Bioclimate subzones</a></p>
+<p><img src="/post/2018-11-22-R_shapefiles_GBIF/arcticPlot.png" alt="arctic"></p>
+<h2 id="the-gbif-data">The GBIF data</h2>
+<p>Since we are not going to work on GBIF data directly in the portal, we have to download a subset to work on in R. Now, the more data we grab the bigger the risk that we will blow through memory. These are the steps taken to reduce the initial GBIF data download:</p>
+<ol>
+<li>As the target is the <em>arctic region</em> it would be reasonable to query for all plant records above 55 degrees latitude. This returns a file of about ~35 million records. This is too large.</li>
+<li>Remove records within Sweden, Finland, Denmark and Great Britain.</li>
+<li>Filter records out that have the geospatial issues flag and now we are down to ~12 million records. Further reductions are possible with some judicious taxonomic discrimination.<br>
+The records are available from GBIF using this <a href="https://www.gbif.org/occurrence/search?country=NO&amp;country=FI&amp;country=IS&amp;country=RU&amp;country=CA&amp;country=US&amp;country=SJ&amp;taxon_key=6&amp;geometry=POLYGON((-180%2055,180%2055,180%2090,-180%2090,-180%2055))">filtered search</a></li>
+</ol>
+<p>The GBIF download comes with many columns but for the purpose of using the shape file we only need the coordinates and the unique record ID. More on this later.
+Due to the size of the download file the R function <em>fread()</em> is recommended for turning the GBIF records into a data table because it is much faster than <em>read.table</em> or <em>read.csv</em>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">gbif <span style="color:#719e07">&lt;-</span> <span style="color:#268bd2">fread</span>(<span style="color:#2aa198">&#34;arctic_plants.txt&#34;</span>, sep <span style="color:#719e07">=</span> <span style="color:#2aa198">&#34;\t&#34;</span>, header <span style="color:#719e07">=</span> <span style="color:#cb4b16">TRUE</span>, na.strings <span style="color:#719e07">=</span> <span style="color:#2aa198">&#34;\\N&#34;</span>)
+</code></pre></div><h2 id="putting-it-together-in-r">Putting it together in R</h2>
+<p>It would be sensible to insert a warning here that the R script relies on a suite of packages and that there could be some dependencies that need to be resolved before these will load. Make sure these are installed:</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#268bd2">library</span>(rgeos)
+<span style="color:#268bd2">library</span>(maptools)
+<span style="color:#268bd2">library</span>(proj4)
+<span style="color:#268bd2">library</span>(data.table)
+<span style="color:#268bd2">library</span>(rgdal)
+<span style="color:#268bd2">library</span>(dplyr)
+<span style="color:#268bd2">library</span>(raster)
+</code></pre></div><p>Assuming the shape file archive is unpacked and in the work directory:</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">shpfile <span style="color:#719e07">&lt;-</span> <span style="color:#2aa198">&#34;Bioclimate_Subzones.shp&#34;</span>
+</code></pre></div><p>The <em>readOGR</em> function from the <em>rgdal</em> package is used to pull the shape data into a spatial vector object in R.<br>
+Now comes a function that takes as arguments the shapefile (.shp), a data frame/data table, the three column names we need lat/long coordinates and the record ID, and lastly the datum for the GBIF records.</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#586e75">#&#39;Filter georeferenced records by shapefile</span>
+<span style="color:#586e75">#&#39;</span>
+<span style="color:#586e75">#&#39; @param shapefile A shapefile object (.shp)</span>
+<span style="color:#586e75">#&#39; @param occurrence_df A data frame of georeferenced records. For large csv use fread()</span>
+<span style="color:#586e75">#&#39; @param lat The column name for latitude in the data frame</span>
+<span style="color:#586e75">#&#39; @param lon The column name for longitude in the data frame</span>
+<span style="color:#586e75">#&#39; @param gbifid A unique record key</span>
+<span style="color:#586e75">#&#39; @param map_crs The datum assigned to the occurrence data frame</span>
+<span style="color:#586e75">#&#39; @param mkplot Whether to draw the map plots. Can be very expensive</span>
+occurrence.from.shapefile <span style="color:#719e07">&lt;-</span> <span style="color:#268bd2">function</span>(shapefile, occurrence_df, lat, lon, gbifid, map_crs <span style="color:#719e07">=</span> <span style="color:#2aa198">&#34;+proj=longlat +datum=WGS84&#34;</span>, mkplot <span style="color:#719e07">=</span> <span style="color:#cb4b16">FALSE</span>){
+    
+    shape <span style="color:#719e07">&lt;-</span> <span style="color:#268bd2">readOGR</span>(shapefile)
+    <span style="color:#268bd2">print</span>(<span style="color:#268bd2">proj4string</span>(shape))
+    
+    <span style="color:#586e75">#subset the GBIF data into a data frame</span>
+    occ.map <span style="color:#719e07">&lt;-</span> <span style="color:#268bd2">data.frame</span>(occurrence_df[[lon]], occurrence_df[[lat]], occurrence_df[[gbifid]])
+    <span style="color:#268bd2">print</span>(<span style="color:#268bd2">str</span>(occ.map, <span style="color:#2aa198">1</span>))
+    <span style="color:#586e75">#simplify column names</span>
+    <span style="color:#268bd2">names</span>(occ.map)[1<span style="color:#719e07">:</span><span style="color:#2aa198">3</span>] <span style="color:#719e07">&lt;-</span> <span style="color:#268bd2">c</span>(<span style="color:#2aa198">&#39;long&#39;</span>, <span style="color:#2aa198">&#39;lat&#39;</span>, <span style="color:#2aa198">&#39;gbifid&#39;</span>)
+    <span style="color:#268bd2">print</span>(<span style="color:#268bd2">head</span>(occ.map, <span style="color:#2aa198">10</span>))
+    <span style="color:#586e75">#turning the data frame into a &#34;spatial points data frame&#34;</span>
+    <span style="color:#268bd2">coordinates</span>(occ.map) <span style="color:#719e07">&lt;-</span> <span style="color:#268bd2">c</span>(<span style="color:#2aa198">&#34;long&#34;</span>, <span style="color:#2aa198">&#34;lat&#34;</span>)
+    <span style="color:#586e75">#defining the datum </span>
+    <span style="color:#268bd2">proj4string</span>(occ.map) <span style="color:#719e07">&lt;-</span> <span style="color:#268bd2">CRS</span>(map_crs)
+    <span style="color:#586e75">#reprojecting the &#39;gbif&#39; data frame to the same as in the &#39;shape&#39; object </span>
+    occ.map <span style="color:#719e07">&lt;-</span> <span style="color:#268bd2">spTransform</span>(occ.map, <span style="color:#268bd2">proj4string</span>(shape))
+    
+    <span style="color:#586e75">#Identifying records from gbif that fall within the shape polygons</span>
+    inside <span style="color:#719e07">&lt;-</span> occ.map<span style="color:#268bd2">[apply</span>(<span style="color:#268bd2">gIntersects</span>(occ.map, shape, byid <span style="color:#719e07">=</span> <span style="color:#cb4b16">TRUE</span>), <span style="color:#2aa198">2</span>, any),]
+
+    <span style="color:#268bd2">if</span>(mkplot){
+        raster<span style="color:#719e07">::</span><span style="color:#268bd2">plot</span>(shape)
+        <span style="color:#268bd2">points</span>(inside, col <span style="color:#719e07">=</span> <span style="color:#2aa198">&#34;olivedrab3&#34;</span>)
+    }  
+    
+    <span style="color:#586e75">#Prepare data frame for joining with the occcurrence df so only records </span>
+    <span style="color:#586e75">#that fall inside the polygons get selected </span>
+    res.gbif <span style="color:#719e07">&lt;-</span> <span style="color:#268bd2">data.frame</span>(inside<span style="color:#719e07">@</span>data)
+    final.gbif <span style="color:#719e07">&lt;-</span> gbif <span style="color:#719e07">%&gt;%</span> <span style="color:#268bd2">semi_join</span>(res.gbif, by <span style="color:#719e07">=</span> <span style="color:#268bd2">c</span>(gbifid <span style="color:#719e07">=</span> <span style="color:#2aa198">&#34;gbifid&#34;</span>))
+        
+    <span style="color:#268bd2">return</span>(final.gbif)
+}  
+</code></pre></div><p>A brief explanation of the CRS function used is in order; the occ.map spatial points data frame becomes associated with the Coordinate Reference System (the <em>map_crs</em> argument).</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#268bd2">proj4string</span>(occ.map) <span style="color:#719e07">&lt;-</span> <span style="color:#268bd2">CRS</span>(map_crs)
+</code></pre></div><p>This allows us to reproject the GBIF data to the same projection that the shape file comes with which is, as mentioned above, the <em>Lambert Azimuthal Equal Area</em> projection.<br>
+The next part of the function picks out the GBIF record IDs which are located within the polygons in the shape file. Now we are ready to join the initial GBIF records data frame with the selected GBIF IDs we have found (res.gbif) for the final data frame output. The filtered output comes to 11,108 GBIF plant records.</p>
+<p>Of course it would be really nice to have a plot of the shape file with the occurrence records displayed. If RStudio is used the plot will render in the Plots tab when the <em>mkplot</em> parameter is set to TRUE.<br>
+<img src="/post/2018-11-22-R_shapefiles_GBIF/arcticPlantsBlog.png" alt="arctic_plants">
+The complete <a href="https://github.com/jlegind/Polygon-Shapefile-Occurrence-Filter/blob/master/arctic6.R">R code can be found here.</a></p>
+
+    </div>
+
+    
+    
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/r/">R</a>
+          
+          <a href="/tags/maps/">maps</a>
+          
+          <a href="/tags/arctic/">arctic</a>
+          
+          <a href="/tags/shapefile/">shapefile</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/gbif-citizen-science-data/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Will citizen science take over?</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/gbif-multimedia/">
+            <span class="next-text nav-default">Sharing images, sounds and videos on GBIF</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      
+
+
+
+<div>
+<h3>This post represents the ideas of the author.</h3>
+</div>
+<div id='discourse-comments'></div>
+<script type="text/javascript">
+  DiscourseEmbed = { discourseUrl: 'https://discourse.gbif.org/',
+                     discourseEmbedUrl: 'https://data-blog.gbif.org\/post\/shapefiles\/' };
+
+  (function() {
+    var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+    d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+  })();
+</script>
+
+
+<div class = "copyright">
+	<a class="theme-link" href="https://www.gbif.org/what-is-gbif">What is GBIF?</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://www.gbif.org/developer/summary">API</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://www.gbif.org/faq">FAQ</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://discourse.gbif.org/">Community-Forum</a>
+</div>
+
+<div class = "copyright">
+	<span class="theme-info">GBIF Secretariat</span>
+	<span class="theme-info">Universitetsparken 15</span>
+	<span class="theme-info">DK-2100 Copenhagen Ø</span>
+	<span class="theme-info" >Denmark</span>
+</div>
+
+<div class="copyright">
+	<span class="power-by">
+	Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+	</span>
+	<span class="division">|</span>
+	<span class="theme-info">
+	Theme -
+	<a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+	</span>
+
+</div>
+
+<script defer data-domain="data-blog.gbif.org,gbif.org" src="https://plausible.io/js/script.file-downloads.js"></script>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+<script type="text/javascript" src="/dist/even.min.js?v=3.2.0"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

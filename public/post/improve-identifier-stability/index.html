@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>GBIF attempts to improve identifier stability by monitoring changes of occurrenceIDs - GBIF Data Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Kumiko Totsu" />
+  <meta name="description" content="Since 2022, GBIF has been monitoring changes of occurrenceIDs in datasets to improve the stability of GBIF identifiers. We pause data ingestion when we detect more than half of occurrence records in the latest version have different occurrenceIDs from the previous version (live on GBIF.org). This identifier validation process automatically creates issues on GitHub and GBIF helpdesk will contact the publishers to verify the changes of occurrenceIDs.
+Our aim in this process is to minimize the changes of GBIF identifiers and to support the needs for citations and data linking." />
+<meta name="keywords" content="identifiers, occurrenceID, persistent identifiers" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.91.2" />
+
+
+<link rel="canonical" href="https://data-blog.gbif.org/post/improve-identifier-stability/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.2.0" rel="stylesheet">
+
+
+
+
+<link rel="stylesheet" href="/css//custom.css">
+
+
+<meta property="og:title" content="GBIF attempts to improve identifier stability by monitoring changes of occurrenceIDs" />
+<meta property="og:description" content="Since 2022, GBIF has been monitoring changes of occurrenceIDs in datasets to improve the stability of GBIF identifiers. We pause data ingestion when we detect more than half of occurrence records in the latest version have different occurrenceIDs from the previous version (live on GBIF.org). This identifier validation process automatically creates issues on GitHub and GBIF helpdesk will contact the publishers to verify the changes of occurrenceIDs.
+Our aim in this process is to minimize the changes of GBIF identifiers and to support the needs for citations and data linking." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://data-blog.gbif.org/post/improve-identifier-stability/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-11-06T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-11-06T00:00:00+00:00" />
+
+<meta itemprop="name" content="GBIF attempts to improve identifier stability by monitoring changes of occurrenceIDs">
+<meta itemprop="description" content="Since 2022, GBIF has been monitoring changes of occurrenceIDs in datasets to improve the stability of GBIF identifiers. We pause data ingestion when we detect more than half of occurrence records in the latest version have different occurrenceIDs from the previous version (live on GBIF.org). This identifier validation process automatically creates issues on GitHub and GBIF helpdesk will contact the publishers to verify the changes of occurrenceIDs.
+Our aim in this process is to minimize the changes of GBIF identifiers and to support the needs for citations and data linking."><meta itemprop="datePublished" content="2023-11-06T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2023-11-06T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1393">
+<meta itemprop="keywords" content="GBIF,publish,data quality,issues,occurrence," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="GBIF attempts to improve identifier stability by monitoring changes of occurrenceIDs"/>
+<meta name="twitter:description" content="Since 2022, GBIF has been monitoring changes of occurrenceIDs in datasets to improve the stability of GBIF identifiers. We pause data ingestion when we detect more than half of occurrence records in the latest version have different occurrenceIDs from the previous version (live on GBIF.org). This identifier validation process automatically creates issues on GitHub and GBIF helpdesk will contact the publishers to verify the changes of occurrenceIDs.
+Our aim in this process is to minimize the changes of GBIF identifiers and to support the needs for citations and data linking."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">GBIF Data Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/categories/gbif/">
+        <li class="mobile-menu-item">posts</li>
+      </a><a href="https://discourse.gbif.org/c/data-blog">
+        <li class="mobile-menu-item">community-forum</li>
+      </a><a href="https://www.gbif.org/">
+        <li class="mobile-menu-item">gbif.org</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">about</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">
+	<img src= "/logo.png" alt="GBIF-analytics-blog" style ="width:20%;">
+  </a>
+  
+	
+  
+  
+</div>
+
+<nav class="site-navbar">
+
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/categories/gbif/">posts</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://discourse.gbif.org/c/data-blog">community-forum</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://www.gbif.org/">gbif.org</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">about</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+	
+    <header class="post-header">
+      <h1 class="post-title">GBIF attempts to improve identifier stability by monitoring changes of occurrenceIDs</h1>
+	  
+	  
+      <div class="post-author">Kumiko Totsu</div>
+
+      <div class="post-meta">
+        <span class="post-time"> 2023-11-06 </span>
+        <div class="post-category">
+            
+              <a href="/categories/gbif/"> GBIF </a>
+            
+              <a href="/categories/data-publishing/"> data publishing </a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    
+    
+
+    
+    <div class="post-content">
+      <p>Since 2022, GBIF has been monitoring <strong>changes of <code>occurrenceID</code>s</strong> in datasets to improve the stability of GBIF identifiers. We pause data ingestion when we detect more than half of occurrence records in the latest version have different <code>occurrenceID</code>s from the previous version (live on GBIF.org). This identifier validation process automatically creates issues on GitHub and GBIF helpdesk will contact the publishers to verify the changes of <code>occurrenceID</code>s.</p>
+<p>Our aim in this process is to minimize the changes of GBIF identifiers and to support the needs for citations and data linking. In this blog post, we explain some background information on identifier stability, how we manage GBIF identifiers by <code>occurrenceID</code>s and what options we can take for identifier issues.</p>
+<h2 id="what-are-gbif-identifiers-why-is-it-important-to-keep-them">What are GBIF identifiers? Why is it important to keep them?</h2>
+<p>Once datasets are registered to GBIF, a unique <strong>gbifID</strong> (numeric string such as <code>1676099845</code>) is assigned to each occurrence record to create a <strong>URL</strong> like <code>https://www.gbif.org/occurrence/1676099845</code>. Even though these identifiers are not designed to offer persistent identifiers in the first place, these URLs are used for citing individual specimen or observation records outside GBIF services, for example in <a href="https://bionomia.net/">Bionomia</a>. We would like to prevent loss of links as much as we can, to support citations. More details on demands towards GBIF identifiers are introduced in <a href="https://www.gbif.org/news/2M3n65fHOhvq4ek5oVOskc/new-processing-routine-improves-stability-of-gbif-occurrence-ids">this news item</a>. Thanks to efforts and collaboration with publishers toward this project, the percentage of <code>occurrenceID</code>s that changed in specimen records has dropped from 3.75% (2021-2022) to 1.39% (2022-2023) as reported in the 30th meeting of GBIF Governing Board (GB30).</p>
+<h2 id="gbif-identifier-management-depends-on-occurrenceids">GBIF identifier management depends on occurrenceIDs</h2>
+<p>GBIF identifiers (i.e. gbifIDs) are automatically created by our system, using <strong><code>occurrenceID</code>s</strong> provided by publishers. <code>occurrenceID</code>s are the keys for the relationship between the existing records available on GBIF.org and the updated records in the latest version on the hosting web services. This means that if <code>occurrenceID</code>s change, we won’t be able to relate them. When a record has a new <code>occurrenceID</code>, we treat the record as a “new” record and assign a new GBIF identifier. The record with the old <code>occurrenceID</code> (that exists on GBIF.org but not in the latest version on the hosting web services) will be considered deleted from the dataset, so the URL of the record will be deprecated like <a href="https://www.gbif.org/occurrence/1252968762">this occurrence</a>.</p>
+<p>See the figure below which is an example of updating a dataset (such as a change of catalogue numbering system).</p>
+<ul>
+<li>Top example (no changes of <code>occurrenceID</code>s): The URL of the occurrence will remain the same.</li>
+<li>Bottom example (changes of <code>occurrenceID</code>s): A new URL will be issued for the updated data and the old URL will be deprecated.</li>
+</ul>
+<p><img src="/post/2023-11-01-improve-identifier-stability/change_of_occurrenceIDs.png" alt="Fig.1 The URL remains if the occurrenceID did not change. The URL is deprecated and a new URL is issued if the occurrenceID changed."></p>
+<p>The example above uses a so-called “triplet”, the combination of the <strong><code>institutionCode</code></strong>, <strong><code>collectionCode</code></strong> and <strong><code>catalogNumber</code></strong> for <code>occurrenceID</code>s (such as <code>urn:catalog:UWBM:Bird:89776</code>). However, using meaningless string or integer values is generally recommended for IDs. Currently there are no strict rules for <code>occurrenceID</code>s aside from the uniqueness within a dataset. After the discussions with our community (such as <a href="https://github.com/tdwg/dwc/issues/491">this GitHub issue</a>), GBIF has moved towards recommending meaningless <code>occurrenceID</code>s to promote <strong>persistent identifiers</strong>. A globally unique identifier such as UUID (e.g. <code>000866d2-c177-4648-a200-ead4007051b9</code>) can be one of the best practices as recommended by <a href="http://rs.tdwg.org/dwc/terms/occurrenceID">TDWG here</a>.</p>
+<p>Please do not worry if you have already used the triplet or other meaningful content for <code>occurrenceID</code>s in your published datasets. In case you change <code>occurrenceID</code>s, there is a way to migrate gbifIDs and URLs from old <code>occurrenceID</code>s to new <code>occurrenceID</code>s which will be more explained in the following sections.</p>
+<blockquote>
+<p>Note: If you change <code>catalogNumber</code>, the former <code>catalogNumber</code> can be filled out in <code>otherCatalogNumbers</code> which is used for data-clustering (see <a href="https://data-blog.gbif.org/post/clustering-occurrences/">this blog post</a>).</p>
+</blockquote>
+<h2 id="three-options-to-deal-with-identifier-issues">Three options to deal with identifier issues</h2>
+<p>Data ingestion initiates after publishers update and publish a dataset on hosting web services. During the identifier validation, the system counts occurrence records and checks the portion of new <code>occurrenceID</code>s. If this exceeds 50% of the record count, the data ingestion will be paused creating an issue on <a href="https://github.com/gbif/ingestion-management/issues">GitHub</a> on a per-dataset basis.</p>
+<p>We offer three options to deal with the identifier issues. </p>
+<table>
+<thead>
+<tr>
+<th>Number</th>
+<th>Option</th>
+<th>Who can do this</th>
+<th>What happens after</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Resume the data ingestion by allowing changes of <code>occurrenceID</code>s</td>
+<td>GBIF helpdesk</td>
+<td>GBIF identifiers under old <code>occurrenceID</code>s will be deprecated and new GBIF identifiers will be given for new <code>occurrenceID</code>s.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Change back <code>occurrenceID</code>s (i.e. restore the old <code>occurrenceID</code>s)</td>
+<td>Publishers</td>
+<td>Data ingestion will be automatically resumed after publication and GBIF identifiers remain the same.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Migrate GBIF identifiers from old <code>occurrenceID</code>s to new <code>occurrenceID</code>s</td>
+<td>GBIF helpdesk *</td>
+<td>Data ingestion will be manually resumed and GBIF identifiers remain the same.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>* Publishers need to provide a list</p>
+</blockquote>
+<p>GBIF helpdesk consults with publishers to decide which option suits the dataset best. Option 2 and Option 3 could prevent losing the URLs of occurrences, while Option 1 leads to the loss of the URLs.</p>
+<p>Firstly, we ask whether the change is on purpose or unintentional errors. If the changes of <code>occurrenceID</code>s are errors, Option 2 can be a candidate solution. What publishers need to do here is to change back from the new <code>occurrenceID</code>s to the old occurrenceIDs and to publish the datasets on the hosting web services.</p>
+<p>Secondly, we suggest Option 3, if publishers can provide us with the relationship between the old <code>occurrenceID</code>s and the new <code>occurrenceID</code>s. Using the list of <code>occurrenceID</code>s, we can migrate GBIF identifiers and keep the URLs (see the figure below).</p>
+<p><img src="/post/2023-11-01-improve-identifier-stability/occurrenceID_migration.png" alt="Fig.2 The URL remains the same after the migration of GBIF identifiers."></p>
+<p>Once we know that both Option 2 and Option 3 are not feasible, we will take Option 1 to resume the ingestion.</p>
+<p>Please be aware that we may take Option 1 if we don’t hear back from the publishers for more than two months after the first contact. We are happy to extend this timeframe on request.</p>
+<p>There are cases that identifier issues can be ignored. For example, when the number of occurrence records changes massively, the portion of new <code>occurrenceID</code>s may reach the threshold. If we can tell an increase of records (like doubled or tripled) by looking at hosting web services such as IPTs, we take Option 1 without notification. Another example is the datasets from observation data aggregators in which <code>occurrenceID</code>s always change. In this case, we set a flag to skip <code>occurrenceID</code> checks for these datasets, and data ingestion will not be paused during the identifier validation anymore.</p>
+<h2 id="requirements-for-identifier-migrations">Requirements for identifier migrations</h2>
+<p>For migrating GBIF identifiers, a list of the relationship between the old <code>occurrenceID</code>s and the new <code>occurrenceID</code>s is required. The file has no header in a comma delimited format, and it should contain the old occurrenceIDs in the first column, followed by the new <code>occurrenceID</code>s in the second column.  For example, like this:</p>
+<pre tabindex="0"><code>old_id_00001,new_id_00001
+old_id_00002,new_id_00002
+old_id_00003,new_id_00003
+</code></pre><p>If publishers can send a list to GBIF helpdesk (<a href="mailto:helpdesk@gbif.org">helpdesk@gbif.org</a>), we can run an identifier migration for you. This can be done even before publishers update datasets on hosting web services. If you know <code>occurrenceID</code>s change in the next update, please do not hesitate to contact us.</p>
+<p>Another important note here is that migration can be done between datasets. If you are planning to republish occurrence records in new datasets by removing the records from the previous datasets or deleting the datasets themselves, this approach will help maintain the GBIF identifiers for the records. The URLs in the previous datasets can be used in the new datasets by identifier migrations anytime.</p>
+<h2 id="more-information-for-publishers-how-to-detect-identifier-issues-on-the-gbif-registry">More information for publishers: how to detect identifier issues on the GBIF registry.</h2>
+<p>GBIF helpdesk will contact the publishers when identifiers validation fails, but you are welcome to check the GBIF registry on your own.</p>
+<p>You can access the registry from your dataset page on GBIF.org.</p>
+<p>Look for <code>GBIF Registry</code> link in the GBIF registration section.</p>
+<p>On the registry page, Click <code>Ingestion history</code> under the <code>Datasets</code> in the side menu.</p>
+<p>If <code>VERBATIM_TO_IDENTIFIER : More than one metric</code> is in red characters, this means that the identifier validation failed (a big portion of new <code>occurrenceID</code>s were detected).</p>
+<p><img src="/post/2023-11-01-improve-identifier-stability/registry_ingestion_history.jpg" alt="Fig.3 GBIF registry: ingestion history"></p>
+<p>If you hover on <code>VERBATIM_TO_IDENTIFIER : More than one metric</code>, you can see a record count in the metrics.</p>
+<p>The record count for new <code>occurrenceID</code>s is shown in the <code>absent gbif id count</code>.</p>
+<p><img src="/post/2023-11-01-improve-identifier-stability/registry_record_count.jpg" alt="Fig.4 GBIF registry: ingestion history - occurrence count"></p>
+<p>You can also check whether your dataset has identifier issues on <a href="https://github.com/gbif/ingestion-management/issues">GitHub</a> searching by the dataset title.</p>
+<h2 id="links-related-about-the-identifier-stability">Links related about the identifier stability</h2>
+<ul>
+<li><a href="https://www.gbif.org/news/2M3n65fHOhvq4ek5oVOskc/new-processing-routine-improves-stability-of-gbif-occurrence-ids">News item: New processing routine improves stability of GBIF occurrence IDs</a></li>
+<li><a href="https://discourse.gbif.org/t/occurrenceid-stability-gbif-technical-support-hour-for-nodes/4158/5">GBIF community forum for the technical support hour for GBIF nodes: GBIF and occurrenceID stability</a></li>
+<li><a href="https://github.com/gbif/ingestion-management">GitHub: ingestion-management</a></li>
+</ul>
+
+    </div>
+
+    
+    
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/gbif/">GBIF</a>
+          
+          <a href="/tags/publish/">publish</a>
+          
+          <a href="/tags/data-quality/">data quality</a>
+          
+          <a href="/tags/issues/">issues</a>
+          
+          <a href="/tags/occurrence/">occurrence</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/2024-02-06-working-with-extinct-species-on-gbif/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Working with extinct species on GBIF</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/2023-03-24-maps-api/">
+            <span class="next-text nav-default">Creating high resolution maps with rgbif</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      
+
+
+
+<div>
+<h3>This post represents the ideas of the author.</h3>
+</div>
+<div id='discourse-comments'></div>
+<script type="text/javascript">
+  DiscourseEmbed = { discourseUrl: 'https://discourse.gbif.org/',
+                     discourseEmbedUrl: 'https://data-blog.gbif.org\/post\/improve-identifier-stability\/' };
+
+  (function() {
+    var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+    d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+  })();
+</script>
+
+
+<div class = "copyright">
+	<a class="theme-link" href="https://www.gbif.org/what-is-gbif">What is GBIF?</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://www.gbif.org/developer/summary">API</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://www.gbif.org/faq">FAQ</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://discourse.gbif.org/">Community-Forum</a>
+</div>
+
+<div class = "copyright">
+	<span class="theme-info">GBIF Secretariat</span>
+	<span class="theme-info">Universitetsparken 15</span>
+	<span class="theme-info">DK-2100 Copenhagen Ø</span>
+	<span class="theme-info" >Denmark</span>
+</div>
+
+<div class="copyright">
+	<span class="power-by">
+	Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+	</span>
+	<span class="division">|</span>
+	<span class="theme-info">
+	Theme -
+	<a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+	</span>
+
+</div>
+
+<script defer data-domain="data-blog.gbif.org,gbif.org" src="https://plausible.io/js/script.file-downloads.js"></script>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+<script type="text/javascript" src="/dist/even.min.js?v=3.2.0"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

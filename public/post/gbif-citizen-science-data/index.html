@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Will citizen science take over? - GBIF Data Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="John Waller" />
+  <meta name="description" content="Citizen science is scientific research conducted, in whole or in part, by amateur (or non-professional) scientists. Biodiversity observations by citizen scientists have become significant in the last 10 years thanks to projects like:
+" />
+
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.91.2" />
+
+
+<link rel="canonical" href="https://data-blog.gbif.org/post/gbif-citizen-science-data/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.2.0" rel="stylesheet">
+
+
+
+
+<link rel="stylesheet" href="/css//custom.css">
+
+
+<meta property="og:title" content="Will citizen science take over?" />
+<meta property="og:description" content="Citizen science is scientific research conducted, in whole or in part, by amateur (or non-professional) scientists. Biodiversity observations by citizen scientists have become significant in the last 10 years thanks to projects like:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://data-blog.gbif.org/post/gbif-citizen-science-data/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2019-01-21T00:00:00+00:00" />
+<meta property="article:modified_time" content="2018-12-10T11:34:10+01:00" />
+
+<meta itemprop="name" content="Will citizen science take over?">
+<meta itemprop="description" content="Citizen science is scientific research conducted, in whole or in part, by amateur (or non-professional) scientists. Biodiversity observations by citizen scientists have become significant in the last 10 years thanks to projects like:"><meta itemprop="datePublished" content="2019-01-21T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2018-12-10T11:34:10+01:00" />
+<meta itemprop="wordCount" content="636">
+<meta itemprop="keywords" content="citizen science,rstats," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Will citizen science take over?"/>
+<meta name="twitter:description" content="Citizen science is scientific research conducted, in whole or in part, by amateur (or non-professional) scientists. Biodiversity observations by citizen scientists have become significant in the last 10 years thanks to projects like:"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">GBIF Data Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/categories/gbif/">
+        <li class="mobile-menu-item">posts</li>
+      </a><a href="https://discourse.gbif.org/c/data-blog">
+        <li class="mobile-menu-item">community-forum</li>
+      </a><a href="https://www.gbif.org/">
+        <li class="mobile-menu-item">gbif.org</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">about</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">
+	<img src= "/logo.png" alt="GBIF-analytics-blog" style ="width:20%;">
+  </a>
+  
+	
+  
+  
+</div>
+
+<nav class="site-navbar">
+
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/categories/gbif/">posts</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://discourse.gbif.org/c/data-blog">community-forum</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://www.gbif.org/">gbif.org</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">about</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+	
+    <header class="post-header">
+      <h1 class="post-title">Will citizen science take over?</h1>
+	  
+	  
+      <div class="post-author">John Waller</div>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-01-21 </span>
+        <div class="post-category">
+            
+              <a href="/categories/gbif/"> GBIF </a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    
+    
+
+    
+    <div class="post-content">
+      <p>Citizen science is scientific research conducted, in whole or in part, by amateur (or non-professional) scientists. Biodiversity observations by citizen scientists have become significant in the last 10 years thanks to projects like:</p>
+<ul>
+<li><a href="https://ebird.org/home">eBird</a></li>
+<li><a href="https://www.inaturalist.org/home">iNaturalist</a></li>
+<li><a href="https://www.artportalen.se/">Artportalen Sweden</a></li>
+<li><a href="https://www.artsdatabanken.no/">Artsdatabanken Norway</a></li>
+<li><a href="http://sabap2.adu.org.za/">Southern African Bird Atlas</a></li>
+<li><a href="https://birdlife.org.au/">Bird Life Austrailia</a></li>
+<li><a href="http://www.dof.dk/">Dansk Ornitologisk Forening</a></li>
+<li><a href="http://gbbc.birdcount.org/">Great Back Yard Bird Count</a></li>
+</ul>
+<blockquote>
+<p>Citizen science is scientific research conducted, in whole or in part, by amateur (or non-professional) scientists. Citizen science is sometimes described as “public participation in scientific research,” participatory monitoring, and participatory action research (wikipedia).</p>
+</blockquote>
+<h1 id="the-rise-of-citizen-science-on-the-gbif-network">The rise of citizen science on the GBIF network</h1>
+<p><img src="/post/2018-12-10-gbif-citizen-science-data_files/growthOfCitizenScienceWeb.jpg" alt=""></p>
+<p>Citizen scientists have been contributing a large and growing percentage of records to the GBIF network.</p>
+<h1 id="50-of-occurrence-records-on-gbif-are-citizen-science-observations">50% of occurrence records on GBIF are citizen science observations</h1>
+<p><img src="/post/2018-12-10-gbif-citizen-science-data_files/percentageOfGBIFWeb.jpg" alt=""></p>
+<p>For the last few years, citizen science observations make up around 50% of the biodiversity knowledge on the GBIF network. The <a href="http://www.birds.cornell.edu/Page.aspx?pid=1478#_ga=2.205672981.721396792.1547556286-1941218201.1542284276">eBird</a> dataset is by far the largest contributor and when this dataset is updated we can see a spike in the percentage graph. In between eBird updates, non-citizen science datasets decrease the percentage.</p>
+<h1 id="largest-datasets-on-gbif-are-citizen-science-datasets">Largest datasets on GBIF are citizen science datasets</h1>
+<p><img src="/post/2018-12-10-gbif-citizen-science-data_files/citizenScienceBarplotWeb.jpg" alt=""></p>
+<p><strong>6 of the top 10</strong> datasets on the GBIF network are citizen science datasets.</p>
+<h1 id="birds-are-very-popular-in-citizen-science">Birds are very popular in citizen science</h1>
+<p><strong>617 of the top 800 species</strong> observed by citizen scientists are birds.</p>
+<ul>
+<li>Top <strong>bird</strong> 1st place (seagull, 8M records)</li>
+<li>Top <strong>insect</strong> 426th place (red admiral butterfly, 200k records)</li>
+<li>Top <strong>mammal</strong> 540th place (row deer, 140k records)</li>
+<li>Top <strong>plant</strong> 645th place (common nettle, 100k records)</li>
+</ul>
+<p>Here I plot the top 800 species in citizen science in terms of occurrence count.</p>
+<p><img src="/post/2018-12-10-gbif-citizen-science-data_files/top800speciesBarplotWeb.jpg" alt=""></p>
+<p><a href="https://jhnwllr.github.io/charts/csPlotTopSpecies.html">interactive version of graph above</a></p>
+<h1 id="there-are--8-000-000-seagull-occurrence-records">There are &gt; 8 000 000 seagull occurrence records</h1>
+<img src="/post/2018-12-10-gbif-citizen-science-data_files/LarusArgentatus.JPG" alt="roe deer" width="50%">
+<p><a href="https://www.gbif.org/occurrence/1913125694"><em>Larus argentatus</em> subsp. <em>argenteus</em></a> by G.Droege via Botanic Garden and Botanical Museum Berlin-Dahlem. Photo licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a></p>
+<h1 id="top-insect-is-the-red-admiral-butterfly-200k-records">Top insect is the red admiral butterfly 200k records</h1>
+<img src="/post/2018-12-10-gbif-citizen-science-data_files/VanessaAtalanta.JPG" alt="roe deer" width="50%">
+<p><a href="https://www.gbif.org/occurrence/1913125579"><em>Vanessa atalanta</em></a> by W.-H. Kusber via BoBO - Botanic Garden and Botanical Museum Berlin-Dahlem Observations. Photo licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></p>
+<h1 id="top-mammal-is-the-roe-deer-140k-records">Top mammal is the roe deer 140k records</h1>
+<p>&lt;img src=&quot;/post/2018-12-10-gbif-citizen-science-data_files/CapreolusCapreolus.JPG&quot; alt=&ldquo;roe deer&rdquo; width=50%&quot;&gt;</p>
+<p><a href="https://www.gbif.org/occurrence/1883110155"><em>Capreolus capreolus</em></a> by Trine Brevig via the Norwegian Species Observation Service. Photo licensed under <a href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>
+<h1 id="top-plant-is-the-common-nettle-100k-records">Top plant is the common nettle 100k records</h1>
+<p>&lt;img src=&quot;/post/2018-12-10-gbif-citizen-science-data_files/UrticaDioica.jpg&quot; alt=&ldquo;common nettle&rdquo; width=50%&quot;&gt;</p>
+<p><a href="https://www.gbif.org/occurrence/1802757183"><em>Urtica dioica</em> subsp. <em>dioica</em></a> by Peter de Lange via iNaturalist. No copyright.</p>
+<h1 id="citizen-science-is-less-biodiverse-than-professional-science">Citizen science is less biodiverse than professional science</h1>
+<p><img src="/post/2018-12-10-gbif-citizen-science-data_files/genusCountsCSWeb.jpg" alt=""></p>
+<p>Here I plot the number of unique genera observed by citizen scientists against those recorded by non-citizen science datasets or likely collected by professional scientists.</p>
+<blockquote>
+<p>So while citizen science is an important and growing part of biodiversity data, it cannot replace well-curated professional museum collections and other professional sources.</p>
+</blockquote>
+<p>While citizen scientists have observed over <strong>50% of GBIF records</strong> (500 Million!), they have <strong>only 20% of the genera</strong> observed by professional scientists (50k out of around 200k genera). <strong>So while citizen science will probably not replace professional science</strong>, it is still and important and growing part of biodiveristy monitoring and data collection. No doubt the biodiversity of citizen science observations will continue to increase as more specialists start using apps like <a href="https://www.inaturalist.org/home">iNaturalist</a>.  Perhaps citizen scientists will observe 60k or 70k genera by the end of 2019, and do it for free!</p>
+<h1 id="technical-details">Technical details</h1>
+<ul>
+<li><a href="https://github.com/jhnwllr/citizen-science">Link</a> to gitHub with data and R code.</li>
+<li><a href="https://data-blog.gbif.org/post/gbif-citizen-science/">Link</a> to a previous blog post where we describe how we classified citizen science datasets.</li>
+<li>As of the writing of this blog there are <strong>412 datasets</strong> classified as citizen science on the GBIF network.</li>
+</ul>
+<p>You too can get a list of the citizen science datasets using the gbif api. Paste the following link into a web browser and get a list of citizen science datasets via the GBIF api.</p>
+<pre tabindex="0"><code>http://api.gbif.org/v1/dataset?machineTagNamespace=citizenScience.mgrosjean.gbif.org&amp;limit=500
+
+</code></pre><p>There is also a static csv table <a href="https://github.com/jhnwllr/citizen-science/blob/master/data/citizenScienceTable.csv">here</a>.</p>
+<p>Do you know a citizen science dataset that is not in the list? Leave a comment.</p>
+<!--more-->
+    </div>
+
+    
+    
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/citizen-science/">citizen science</a>
+          
+          <a href="/tags/rstats/">rstats</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/hunger-mapping/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Hunger mapping</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/shapefiles/">
+            <span class="next-text nav-default">Using shapefiles on GBIF data with R</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      
+
+
+
+<div>
+<h3>This post represents the ideas of the author.</h3>
+</div>
+<div id='discourse-comments'></div>
+<script type="text/javascript">
+  DiscourseEmbed = { discourseUrl: 'https://discourse.gbif.org/',
+                     discourseEmbedUrl: 'https://data-blog.gbif.org\/post\/gbif-citizen-science-data\/' };
+
+  (function() {
+    var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+    d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+  })();
+</script>
+
+
+<div class = "copyright">
+	<a class="theme-link" href="https://www.gbif.org/what-is-gbif">What is GBIF?</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://www.gbif.org/developer/summary">API</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://www.gbif.org/faq">FAQ</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://discourse.gbif.org/">Community-Forum</a>
+</div>
+
+<div class = "copyright">
+	<span class="theme-info">GBIF Secretariat</span>
+	<span class="theme-info">Universitetsparken 15</span>
+	<span class="theme-info">DK-2100 Copenhagen Ø</span>
+	<span class="theme-info" >Denmark</span>
+</div>
+
+<div class="copyright">
+	<span class="power-by">
+	Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+	</span>
+	<span class="division">|</span>
+	<span class="theme-info">
+	Theme -
+	<a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+	</span>
+
+</div>
+
+<script defer data-domain="data-blog.gbif.org,gbif.org" src="https://plausible.io/js/script.file-downloads.js"></script>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+<script type="text/javascript" src="/dist/even.min.js?v=3.2.0"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

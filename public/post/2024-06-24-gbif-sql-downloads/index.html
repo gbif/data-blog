@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>GBIF SQL Downloads - GBIF Data Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="John Waller" />
+  <meta name="description" content=" GBIF has an experimental feature that allows users to download data from the GBIF database in SQL format. Contact helpdesk@gbif.org to request access. https://techdocs.gbif.org/en/data-use/api-sql-downloads
+  If your download can be formulated using the traditional predicate downloads, it is usually going to be faster to use regular downloads.
+ The experimental Occurrence SQL Download API allows users to query GBIF occurrences using SQL. In contrast to the Predicate Download API, the SQL API allows selection of the columns of interest and generation of summary views of GBIF data.
+SQL downloads, like predicate downloads, require you to have a GBIF user account.
+" />
+
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.91.2" />
+
+
+<link rel="canonical" href="https://data-blog.gbif.org/post/2024-06-24-gbif-sql-downloads/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.2.0" rel="stylesheet">
+
+
+
+
+<link rel="stylesheet" href="/css//custom.css">
+
+
+<meta property="og:title" content="GBIF SQL Downloads" />
+<meta property="og:description" content="
+GBIF has an experimental feature that allows users to download data from the GBIF database in SQL format. Contact helpdesk@gbif.org to request access. https://techdocs.gbif.org/en/data-use/api-sql-downloads
+
+
+If your download can be formulated using the traditional predicate downloads, it is usually going to be faster to use regular downloads.
+
+The experimental Occurrence SQL Download API allows users to query GBIF occurrences using SQL. In contrast to the Predicate Download API, the SQL API allows selection of the columns of interest and generation of summary views of GBIF data.
+SQL downloads, like predicate downloads, require you to have a GBIF user account." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://data-blog.gbif.org/post/2024-06-24-gbif-sql-downloads/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2024-09-30T00:00:00+00:00" />
+<meta property="article:modified_time" content="2024-06-24T14:36:55+02:00" />
+
+<meta itemprop="name" content="GBIF SQL Downloads">
+<meta itemprop="description" content="
+GBIF has an experimental feature that allows users to download data from the GBIF database in SQL format. Contact helpdesk@gbif.org to request access. https://techdocs.gbif.org/en/data-use/api-sql-downloads
+
+
+If your download can be formulated using the traditional predicate downloads, it is usually going to be faster to use regular downloads.
+
+The experimental Occurrence SQL Download API allows users to query GBIF occurrences using SQL. In contrast to the Predicate Download API, the SQL API allows selection of the columns of interest and generation of summary views of GBIF data.
+SQL downloads, like predicate downloads, require you to have a GBIF user account."><meta itemprop="datePublished" content="2024-09-30T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2024-06-24T14:36:55+02:00" />
+<meta itemprop="wordCount" content="892">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="GBIF SQL Downloads"/>
+<meta name="twitter:description" content="
+GBIF has an experimental feature that allows users to download data from the GBIF database in SQL format. Contact helpdesk@gbif.org to request access. https://techdocs.gbif.org/en/data-use/api-sql-downloads
+
+
+If your download can be formulated using the traditional predicate downloads, it is usually going to be faster to use regular downloads.
+
+The experimental Occurrence SQL Download API allows users to query GBIF occurrences using SQL. In contrast to the Predicate Download API, the SQL API allows selection of the columns of interest and generation of summary views of GBIF data.
+SQL downloads, like predicate downloads, require you to have a GBIF user account."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">GBIF Data Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/categories/gbif/">
+        <li class="mobile-menu-item">posts</li>
+      </a><a href="https://discourse.gbif.org/c/data-blog">
+        <li class="mobile-menu-item">community-forum</li>
+      </a><a href="https://www.gbif.org/">
+        <li class="mobile-menu-item">gbif.org</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">about</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">
+	<img src= "/logo.png" alt="GBIF-analytics-blog" style ="width:20%;">
+  </a>
+  
+	
+  
+  
+</div>
+
+<nav class="site-navbar">
+
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/categories/gbif/">posts</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://discourse.gbif.org/c/data-blog">community-forum</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://www.gbif.org/">gbif.org</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">about</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+	
+    <header class="post-header">
+      <h1 class="post-title">GBIF SQL Downloads</h1>
+	  
+	  
+      <div class="post-author">John Waller</div>
+
+      <div class="post-meta">
+        <span class="post-time"> 2024-09-30 </span>
+        <div class="post-category">
+            
+              <a href="/categories/gbif/"> GBIF </a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    
+    
+
+    
+    <div class="post-content">
+      <blockquote>
+<p>GBIF has an experimental feature that allows users to download data from the GBIF database in SQL format. Contact <a href="mailto:helpdesk@gbif.org">helpdesk@gbif.org</a> to request access. <a href="https://techdocs.gbif.org/en/data-use/api-sql-downloads">https://techdocs.gbif.org/en/data-use/api-sql-downloads</a></p>
+</blockquote>
+<blockquote>
+<p>If your download can be formulated using the traditional predicate downloads, it is usually going to be faster to use regular downloads.</p>
+</blockquote>
+<p>The experimental Occurrence SQL Download API allows users to query GBIF occurrences using SQL. In contrast to the <a href="https://techdocs.gbif.org/en/data-use/api-sql-downloads">Predicate Download API</a>, the SQL API allows selection of the columns of interest and generation of summary views of GBIF data.</p>
+<p>SQL downloads, like <a href="https://techdocs.gbif.org/en/data-use/api-downloads">predicate downloads</a>, require you to have a GBIF <a href="https://www.gbif.org/user/profile">user account</a>.</p>
+<h2 id="sql-download-workflow">SQL Download Workflow</h2>
+<p>The first step is to prepare your query. There is only one table available for querying, the <strong>occurrence</strong> table. You can check if the query is ok using <a href="https://techdocs.gbif.org/en/data-use/api-sql-downloads#sql-validation">query validation</a>. You can also check what fields are available in the <code>occurrence</code> table using this endpoint <code>https://api.gbif.org/v1/occurrence/download/describe/sql</code>. There are +400 columns available.</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#719e07">SELECT</span> datasetKey, countryCode, <span style="color:#719e07">COUNT</span>(<span style="color:#719e07">*</span>) <span style="color:#719e07">FROM</span> occurrence <span style="color:#719e07">WHERE</span> continent <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39;EUROPE&#39;</span> <span style="color:#719e07">GROUP</span> <span style="color:#719e07">BY</span> datasetKey, countryCode
+</code></pre></div><p>This query should be included in a json POST request, and saved to a file named, for example, <code>query.json</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#268bd2">&#34;sendNotification&#34;</span>: <span style="color:#cb4b16">true</span>,
+  <span style="color:#268bd2">&#34;notificationAddresses&#34;</span>: [
+    <span style="color:#2aa198">&#34;userEmail@example.org&#34;</span> 
+  ],
+  <span style="color:#268bd2">&#34;format&#34;</span>: <span style="color:#2aa198">&#34;SQL_TSV_ZIP&#34;</span>, 
+  <span style="color:#268bd2">&#34;sql&#34;</span>: <span style="color:#2aa198">&#34;SELECT datasetKey, countryCode, COUNT(*) FROM occurrence WHERE continent = &#39;EUROPE&#39; GROUP BY datasetKey, countryCode&#34;</span> 
+}
+</code></pre></div><p>The request should then be sent as a POST request to the endpoint <code>https://api.gbif.org/v2/occurrence/download/request</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">curl --include --user YOUR_GBIF_USERNAME:YOUR_PASSWORD --header <span style="color:#2aa198">&#34;Content-Type: application/json&#34;</span> --data @query.json https://api.gbif.org/v1/occurrence/download/request
+</code></pre></div><p>The download will appear in your <a href="https://www.gbif.org/user/download">GBIF user account</a>.</p>
+<h2 id="sql-examples---multi-dimension-counts">SQL examples - Multi-dimension Counts</h2>
+<p>One common query that is difficult to do with the traditional downloads interface is to get a occurrence counts of species by multiple dimensions. This query gets a table with <strong>countries and species with the most occurrences published to GBIF</strong> without having to download a large table and do the aggregation locally.</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#719e07">SELECT</span> publishingcountry, specieskey, <span style="color:#719e07">COUNT</span>(<span style="color:#719e07">*</span>) <span style="color:#719e07">as</span> occurrence_count
+<span style="color:#719e07">FROM</span> occurrence
+<span style="color:#719e07">WHERE</span> publishingcountry <span style="color:#719e07">IS</span> <span style="color:#719e07">NOT</span> <span style="color:#719e07">NULL</span> <span style="color:#719e07">AND</span> specieskey <span style="color:#719e07">IS</span> <span style="color:#719e07">NOT</span> <span style="color:#719e07">NULL</span>
+<span style="color:#719e07">GROUP</span> <span style="color:#719e07">BY</span> publishingcountry, specieskey
+<span style="color:#719e07">ORDER</span> <span style="color:#719e07">BY</span> occurrence_count <span style="color:#719e07">DESC</span>;
+</code></pre></div><table>
+<thead>
+<tr>
+<th style="text-align:left">publishingcountry</th>
+<th style="text-align:right">specieskey</th>
+<th style="text-align:right">occurrence_count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">US</td>
+<td style="text-align:right">2495347</td>
+<td style="text-align:right">23467566</td>
+</tr>
+<tr>
+<td style="text-align:left">US</td>
+<td style="text-align:right">2490384</td>
+<td style="text-align:right">21442333</td>
+</tr>
+<tr>
+<td style="text-align:left">US</td>
+<td style="text-align:right">9510564</td>
+<td style="text-align:right">20975419</td>
+</tr>
+<tr>
+<td style="text-align:left">US</td>
+<td style="text-align:right">2482507</td>
+<td style="text-align:right">20396610</td>
+</tr>
+<tr>
+<td style="text-align:left">US</td>
+<td style="text-align:right">2482593</td>
+<td style="text-align:right">17855746</td>
+</tr>
+<tr>
+<td style="text-align:left">US</td>
+<td style="text-align:right">9761484</td>
+<td style="text-align:right">17814101</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sql-examples---time-series">SQL examples - Time Series</h2>
+<p>Another interesting query would be to get a times series of number of species &ldquo;collected/observed&rdquo; over years, grouped by basis of record.</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#719e07">SELECT</span>
+    basisOfRecord,
+    <span style="color:#2aa198">&#34;year&#34;</span>,
+    <span style="color:#719e07">COUNT</span>(<span style="color:#719e07">DISTINCT</span> speciesKey) <span style="color:#719e07">AS</span> unique_species_count
+<span style="color:#719e07">FROM</span>
+    occurrence
+<span style="color:#719e07">GROUP</span> <span style="color:#719e07">BY</span>
+    basisOfRecord,
+    <span style="color:#2aa198">&#34;year&#34;</span>;
+</code></pre></div><p>Note that <code>&quot;year&quot;</code> needs to be double quoted as it is a reserve word. This is true also for other reserve words like <code>&quot;month&quot;</code>, <code>&quot;day&quot;</code> etc. This graphic shows the rising influence of <strong>Human Observations</strong> in GBIF mediated occurrences data.</p>
+<p><img src="images/ts.png" alt=""></p>
+<h2 id="sql-examples---grid-functions">SQL examples - Grid Functions</h2>
+<p>Making a global map of unique species counts per grid cell is a common task, but because it requires a spatial join with the chosen spatial grid, it can be difficult to do without working with a large amount occurrence records.</p>
+<p>For this reason GBIF&rsquo;s SQL downloads provide support for a few pre-defined <a href="https://techdocs.gbif.org/en/data-use/api-sql-download-functions">grid functions</a>. These functions will return a <strong>grid cell code</strong> for each occurrence, which can then be used to aggregate or plot the data.</p>
+<ul>
+<li><strong>EEA Reference Grid</strong>, GBIF_EEARGCode</li>
+<li><strong>Military Grid Reference System</strong>, GBIF_MGRSCode</li>
+<li><strong>Quarter degree cell code</strong>, GBIF_QDGCCode</li>
+<li><strong>ISEA3H Grid cell code</strong>, GBIF_ISEA3HCode</li>
+</ul>
+<p>Below is example of working with the <strong>Military Grid Reference System</strong> (MGRS) grid. This example will return a table with unique species counts per grid cell and an attached grid code, which in this case is <code>mgrs</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#719e07">SELECT</span> 
+  GBIF_MGRSCode(
+    <span style="color:#2aa198">100000</span>, 
+    decimalLatitude,
+    decimalLongitude,
+    <span style="color:#2aa198">0</span> 
+  ) <span style="color:#719e07">AS</span> mgrs,
+  <span style="color:#719e07">COUNT</span>(<span style="color:#719e07">DISTINCT</span> speciesKey) <span style="color:#719e07">AS</span> unique_species_count
+<span style="color:#719e07">FROM</span>
+  occurrence
+<span style="color:#719e07">GROUP</span> <span style="color:#719e07">BY</span>
+  mgrs
+</code></pre></div><p>The grid code can then be used to join with a shapefile or geojson file that contains the grid cells.</p>
+<p>This image uses shapefiles from <a href="https://github.com/klaukh/MGRS">this repository</a>.</p>
+<p>The sql grid functions were originally designed to be used with creating <a href="https://b-cubed.eu/data-and-evidence">species occurrence cubes</a>. Therefore a randomization parameter was supported <code>COALESCE(coordinateUncertaintyInMeters, 0)</code>. This should be set to 0 if you want to use the grid functions with <strong>no randomization</strong>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#719e07">SELECT</span> 
+  GBIF_EEARGCode(
+    <span style="color:#2aa198">10000</span>, 
+    decimalLatitude,
+    decimalLongitude,
+    <span style="color:#2aa198">0</span>
+  ) <span style="color:#719e07">AS</span> cellcode,
+  <span style="color:#719e07">COUNT</span>(<span style="color:#719e07">DISTINCT</span> speciesKey) <span style="color:#719e07">AS</span> unique_species_count
+<span style="color:#719e07">FROM</span>
+  occurrence
+<span style="color:#719e07">GROUP</span> <span style="color:#719e07">BY</span>
+  cellcode
+</code></pre></div><p>The EEA reference grid example can be found here.</p>
+<p><a href="https://sdi.eea.europa.eu/data/93315b78-089d-43a5-ac76-b3df627b2e4cf">https://sdi.eea.europa.eu/data/93315b78-089d-43a5-ac76-b3df627b2e4cf</a></p>
+<p><img src="images/plot%20(1).jpg" alt=""></p>
+<h2 id="supported-sql">Supported SQL</h2>
+<p>Only <code>SELECT</code> queries are supported, and only queries against a single table named <code>occurrence</code>. <code>JOIN</code> queries and sub-queries are not allowed. Selecting <code>*</code> is also not allowed. One must explicitly select the columns needed.</p>
+<p><code>GROUP BY</code> queries are supported, as are basic SQL window functions (<code>OVER</code> and <code>PARTITION BY</code>). <code>ORDER BY</code> is supported.</p>
+<p>Most common SQL operators and functions are supported, such as <code>AND</code>, <code>OR</code>, <code>NOT</code>, <code>IS NULL</code>, <code>RAND()</code>, <code>ROUND(…)</code>, <code>LOWER(…)</code>, etc. Case is ignored by the GBIF SQL parser, and all column names are returned as lowercase.</p>
+<h2 id="when-not-to-use">When not to use</h2>
+<p>If you need only commonly used occurrence columns and simple filters, most of the time you can use the regular <a href="https://www.gbif.org/occurrence/search">download interface</a> instead of the SQL interface, and it will be faster.</p>
+<p>Keep in mind that if you only need species counts for one dimension, then <a href="https://api.gbif.org/v1/occurrence/search?facet=specieskey">facet queries</a> are usually going to be a much faster option (although you won&rsquo;t receive a DOI). Some examples below:</p>
+<pre tabindex="0"><code>http://api.gbif.org/v1/occurrence/search?facet=speciesKey&amp;country=US
+http://api.gbif.org/v1/occurrence/search?facet=speciesKey&amp;country=US&amp;year=1800,1900
+http://api.gbif.org/v1/occurrence/search?facet=speciesKey&amp;country=US&amp;year=1800,1900&amp;basisOfRecord=HUMAN_OBSERVATION
+http://api.gbif.org/v1/occurrence/search?facet=country&amp;facetLimit=200
+</code></pre><h2 id="rgbif-example">rgbif example</h2>
+<p>SQL downloads is also supported by <a href="https://docs.ropensci.org/rgbif/index.html">rgbif</a> by using <code>occ_download_sql()</code>. Please see this <a href="https://docs.ropensci.org/rgbif/articles/gbif_sql_downloads.html">article</a> for the easiest way get started with SQL downloads. Remember to set up your <a href="https://docs.ropensci.org/rgbif/articles/gbif_credentials.html">GBIF credentials</a>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#268bd2">library</span>(rgbif)
+
+<span style="color:#268bd2">occ_download_sql</span>(<span style="color:#2aa198">&#34;SELECT datasetKey, countryCode, COUNT(*) FROM occurrence WHERE continent = &#39;EUROPE&#39; GROUP BY datasetKey, countryCode&#34;</span>)
+</code></pre></div><h2 id="further-reading">Further Reading</h2>
+<p><a href="https://techdocs.gbif.org/en/data-use/api-sql-downloads">https://techdocs.gbif.org/en/data-use/api-sql-downloads</a></p>
+    </div>
+
+    
+    
+
+    
+    
+
+    <footer class="post-footer">
+      
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/grscicoll-collection-descriptors/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Making collection content discoverable when you don’t have occurrences published on GBIF</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/aws-and-gbif/">
+            <span class="next-text nav-default">GBIF and Apache-Spark on AWS tutorial</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      
+
+
+
+<div>
+<h3>This post represents the ideas of the author.</h3>
+</div>
+<div id='discourse-comments'></div>
+<script type="text/javascript">
+  DiscourseEmbed = { discourseUrl: 'https://discourse.gbif.org/',
+                     discourseEmbedUrl: 'https://data-blog.gbif.org\/post\/2024-06-24-gbif-sql-downloads\/' };
+
+  (function() {
+    var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+    d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+  })();
+</script>
+
+
+<div class = "copyright">
+	<a class="theme-link" href="https://www.gbif.org/what-is-gbif">What is GBIF?</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://www.gbif.org/developer/summary">API</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://www.gbif.org/faq">FAQ</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://discourse.gbif.org/">Community-Forum</a>
+</div>
+
+<div class = "copyright">
+	<span class="theme-info">GBIF Secretariat</span>
+	<span class="theme-info">Universitetsparken 15</span>
+	<span class="theme-info">DK-2100 Copenhagen Ø</span>
+	<span class="theme-info" >Denmark</span>
+</div>
+
+<div class="copyright">
+	<span class="power-by">
+	Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+	</span>
+	<span class="division">|</span>
+	<span class="theme-info">
+	Theme -
+	<a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+	</span>
+
+</div>
+
+<script defer data-domain="data-blog.gbif.org,gbif.org" src="https://plausible.io/js/script.file-downloads.js"></script>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+<script type="text/javascript" src="/dist/even.min.js?v=3.2.0"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -134,10 +134,516 @@
     
       <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/aws-and-gbif/">GBIF and Apache-Spark on AWS tutorial</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/post/2025-10-28-species-occurrence-data-and-corporate-sustainability-frameworks/">Species Occurrence Data and Corporate Sustainability Frameworks</a></h1>
     <div class="post-meta">
 	<div class="post-author">John Waller</div>
-      <span class="post-time"> 2024-09-02 </span>
+      <span class="post-time"> 2025-10-28 </span>
+      
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <!-- Add your content here -->
+<h1 id="species-occurrence-data-and-corporate-sustainability-frameworks">Species Occurrence Data and Corporate Sustainability Frameworks</h1>
+<p>As the business and financial sectors increasingly look towards integrating biodiversity within their sustainability frameworks, this overview outlines the different frameworks that exist, the sectors they belong to, and how the <strong>GBIF infrastructure</strong> and the <strong>data it provides</strong> can support these sectors.</p>
+<p>It is important to say upfront how <strong>GBIF-mediated data</strong> fits within the wider biodiversity data landscape in order to prevent confusion on what one can, and cannot, do with the data. GBIF-mediated data provides records of <strong>where and when species have been observed or collected</strong> from data-holding organizations across the globe.</p>
+<p>At a minimum, data will have:</p>
+<ul>
+<li>a <strong>species name</strong> (Latin binomial),</li>
+<li>a <strong>timestamp</strong> of when the observation occurred, and</li>
+<li><strong>location information</strong> (often latitude–longitude coordinates).</li>
+</ul>
+<p>Although not limited to these, other information from the time of collection or observation can also be shared. GBIF is the <strong>world’s largest aggregator</strong> of such data and is used as the basis for derived information products that support biodiversity disclosures such as <strong>ecological niche models</strong> and <strong>Red Lists</strong>.</p>
+<p>The reliability of such derived products is directly correlated to the availability of GBIF-mediated data, and GBIF-mediated data can be seen as a <strong>complementary data source</strong> for ground-truthing these derived products.</p>
+<hr>
+<h2 id="safeguard-frameworks">Safeguard Frameworks</h2>
+<p><strong>Multilateral Development Banks (MDBs)</strong> employ environmental and social safeguard frameworks for their financed projects—both public and private. Projects must demonstrate how they plan to mitigate environmental and social impacts of their activities.</p>
+<p>In the case of biodiversity, MDB standards typically require clients to follow the <strong>mitigation hierarchy</strong> when implementing projects:<br>
+<strong>Avoid → Minimise → Restore → Offset.</strong></p>
+<p>These standards also compel financiers to fund projects that:</p>
+<ul>
+<li>reduce biodiversity impacts, or</li>
+<li>commit to <em>no net loss in natural habitat</em> or <em>net gain in critical habitat.</em></li>
+</ul>
+<p>Below is a list of some commonly used safeguard frameworks used by MDBs:</p>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>Institution / Framework</th>
+<th>Who It Applies To</th>
+<th>Scope &amp; Instruments</th>
+<th>Safeguard / Framework</th>
+<th>Biodiversity Expectations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Project-level finance (public)</td>
+<td><strong>World Bank (IBRD/IDA)</strong></td>
+<td>Governments (sovereign borrowers, public projects)</td>
+<td>Loans, grants, guarantees</td>
+<td>Environmental &amp; Social Framework (ESF) → Financed projects must meet 10 ESS*</td>
+<td><strong>ESS6</strong> - Avoid/minimize biodiversity impacts, sustainable natural resource use; use of offsets less prescriptive; relies on national systems</td>
+</tr>
+<tr>
+<td>Project-level finance (private)</td>
+<td><strong>IFC (International Finance Corporation)</strong></td>
+<td>Private companies, PPPs, private equity funds, banks</td>
+<td>Loans, equity, advisory, syndicated finance</td>
+<td>IFC Performance Standards (PSs) → Financed projects must meet 8 PSs (last update, 2012)</td>
+<td><strong>PS6</strong> - Strong mitigation hierarchy; no net loss in natural habitats, net gain in critical habitats</td>
+</tr>
+<tr>
+<td>Regional project-level (public &amp; private)**</td>
+<td><strong>EBRD (European Bank for Reconstruction and Development)</strong></td>
+<td>Private and public clients in EBRD region (Eastern Europe, Central Asia, Southern and Eastern Mediterranean, Northern Africa, Sub-Saharan Africa)</td>
+<td>Loans, equity, bonds, guarantees, syndicated finance</td>
+<td>EBRD 10 Environmental and Social Requirements (PRs) → Financed projects must meet 10 ESRs</td>
+<td><strong>ESR6</strong> - reviewed in 2024; similar to but more up to date than IFC PS6; plus EU law compliance (Habitats/Birds Directives, Natura 2000); strict on protected areas</td>
+</tr>
+</tbody>
+</table>
+<p>*Environmental and Social Standards<br>
+**Other regional major MDB Safeguard Frameworks include:</p>
+<ul>
+<li><strong>ADB</strong> (Asian Development Bank): Safeguard Policy Statement (updated 2024)</li>
+<li><strong>AfDB</strong> (African Development Bank): Integrated Safeguards System (5 Operational Safeguards)</li>
+<li><strong>IDB</strong> (Inter-American Development Bank): Environmental and Social Policy Framework (2021, aligned with IFC PSs)</li>
+<li><strong>IsDB</strong> (Islamic Development Bank): Environmental &amp; Social Framework</li>
+<li><strong>EIB</strong> (European Investment Bank): Environmental and Social Standards (10 standards, EU-aligned)</li>
+</ul>
+<p>In addition, these MDB safeguard frameworks are extended into:</p>
+<ul>
+<li><strong>Commercial banking</strong> via the voluntary <em>Equator Principles</em>, which require borrowers to apply IFC Performance Standards (e.g., PS6).</li>
+<li><strong>Export credit agencies</strong> of OECD countries through <em>OECD Common Approaches</em>, which encourage benchmarking against IFC/WB standards (though biodiversity safeguards are less prescriptive).</li>
+</ul>
+<hr>
+<h3 id="how-financial-institutions-vet-projects">How Financial Institutions Vet Projects</h3>
+<p>Below is an outline of an idealised evaluation process outlining opportunities for GBIF-mediated data to support financial institutions in making appropriate investment decisions.</p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Process</th>
+<th>Role of GBIF</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Screening &amp; Categorization</strong></td>
+<td>Bank assigns a risk category (A/B/C, or High/Medium/Low) based on environmental &amp; social risk, which determines the level of safeguard requirements. <br>Example: WB: High risk → full ESIA; IFC: Category A → significant biodiversity/habitat risks.</td>
+<td>GBIF-mediated data can provide known presences (and, in some cases, absences) of species, including those of conservation importance (e.g., threatened or invasive species) at the proposed project.</td>
+</tr>
+<tr>
+<td><strong>Environmental &amp; Social Impact Assessment (ESIA)</strong></td>
+<td>The borrower must prepare an ESIA identifying biodiversity, habitat, and ecosystem impacts and proposing mitigation following the mitigation hierarchy.</td>
+<td>GBIF-mediated data can help assess the <em>state of nature before the project</em>, providing known species occurrences, including those of conservation importance, to support “no net loss” or “net gain” goals. Baseline data collected should be shared publicly.</td>
+</tr>
+<tr>
+<td><strong>Safeguard Action Plans</strong></td>
+<td>If risks are found, banks require Environmental and Social Management Plans (ESMPs) or Biodiversity Action Plans (BAPs) with mitigation commitments.</td>
+<td>GBIF-mediated data can help design biodiversity indicators for monitoring “no net loss” or “net gain” by identifying where and what needs monitoring. Publishing monitoring data via GBIF facilitates compliance checks.</td>
+</tr>
+<tr>
+<td><strong>Loan/Investment Conditions</strong></td>
+<td>Safeguard compliance is written into the loan or investment contract. Failure to comply can lead to suspension or cancellation.</td>
+<td>GBIF-mediated data can provide evidence that clients are meeting biodiversity-related loan stipulations.</td>
+</tr>
+<tr>
+<td><strong>Independent Review &amp; Due Diligence</strong></td>
+<td>Independent check of borrower’s studies.</td>
+<td>Independent datasets like GBIF reduce reliance on consultant-provided, opaque data.</td>
+</tr>
+<tr>
+<td><strong>Monitoring &amp; Supervision</strong></td>
+<td>Borrowers must report regularly; banks may conduct audits, site visits, or consultations.</td>
+<td>Borrowers can share monitoring data through GBIF to facilitate audits and adaptive management.</td>
+</tr>
+<tr>
+<td><strong>Grievance Mechanisms</strong></td>
+<td>Banks (e.g., WB Inspection Panel, IFC’s CAO, EBRD’s IPAM) allow affected communities or NGOs to file complaints.</td>
+<td>GBIF can provide a data source for validating claims, especially when project data is shared through it.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note:</strong> To achieve <em>no net loss in natural habitats</em> and <em>net gains in critical habitats</em>, clients must assess the <strong>biodiversity baseline</strong> in the area to be affected by the project (EAAA).<br>
+That baseline assessment produces invaluable biodiversity data that should be <strong>publicly shared</strong>.</p>
+<hr>
+<h2 id="environmental-social-and-governance-esg-frameworks">Environmental, Social and Governance (ESG) Frameworks</h2>
+<p>MDB safeguard mechanisms ensure biodiversity is considered in project financing. Parallel to these, <strong>business ESG frameworks</strong> guide corporate sustainability performance.</p>
+<h3 id="disclosure-frameworks">Disclosure Frameworks</h3>
+<p>Disclosure frameworks set standards on how companies should report on specific ESG issues.</p>
+<p>The <strong>Taskforce for Nature-related Financial Disclosure (TNFD)</strong> develops the biodiversity component of these frameworks, building on the <strong>Taskforce for Climate-related Financial Disclosure (TCFD)</strong>.</p>
+<p>TNFD ensures that <strong>biodiversity dependencies and impacts</strong> are disclosed in a standardised manner across sectors. While voluntary, ESG disclosures are typically made through:</p>
+<ul>
+<li>Company <strong>annual or ESG reports</strong> (e.g. <a href="https://www.nestle.com/sustainability">Nestlé’s Sustainability Report</a>)</li>
+<li><strong>Voluntary platforms</strong>, e.g., Carbon Disclosure Project (CDP), Global Reporting Initiative (GRI)</li>
+<li><strong>Regulatory filings</strong>, e.g., under EU’s Corporate Sustainability Reporting Directive (CSRD)</li>
+</ul>
+<p>Below is an example of regulatory frameworks in different jurisdictions:</p>
+<table>
+<thead>
+<tr>
+<th>Jurisdiction</th>
+<th>Framework / Scope</th>
+<th>Status of Disclosures</th>
+<th>Who Must Comply</th>
+<th>Filing / Regulator</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>UK</strong></td>
+<td>TCFD-aligned climate disclosure (mandatory since 2022)</td>
+<td>Climate = mandatory; Biodiversity = voluntary (TNFD encouraged)</td>
+<td>Premium-listed companies, large private firms, banks, insurers</td>
+<td>FCA (Financial Conduct Authority)</td>
+</tr>
+<tr>
+<td><strong>New Zealand</strong></td>
+<td>Climate-Related Disclosures (CRD), TCFD/ISSB-aligned</td>
+<td>Climate = mandatory; Biodiversity = not yet mandatory (TNFD next)</td>
+<td>Large listed companies, banks, insurers, asset managers</td>
+<td>FMA (Financial Markets Authority)</td>
+</tr>
+<tr>
+<td><strong>Japan</strong></td>
+<td>TCFD-aligned disclosure in securities reports (since 2022)</td>
+<td>Climate = mandatory; Biodiversity = voluntary (TNFD pilots)</td>
+<td>All companies on TSE Prime Market</td>
+<td>FSA (Financial Services Agency)</td>
+</tr>
+<tr>
+<td><strong>EU</strong></td>
+<td>Corporate Sustainability Reporting Directive (CSRD) – mandatory ESRS</td>
+<td>Climate = mandatory; Biodiversity = mandatory under ESRS E4</td>
+<td>Companies with &gt;1000 employees, &gt;€50M turnover or &gt;€25M balance sheet, EU-listed</td>
+<td>National regulators under CSRD</td>
+</tr>
+<tr>
+<td><strong>USA</strong></td>
+<td>SEC Climate Disclosure Rule (adopted 2024)</td>
+<td>Climate = mandatory (under challenge); Biodiversity = voluntary</td>
+<td>Public companies (registrants)</td>
+<td>SEC</td>
+</tr>
+<tr>
+<td><strong>Brazil</strong></td>
+<td>Emerging ESG/nature disclosure rules</td>
+<td>Biodiversity-related disclosures expanding (e.g., deforestation risk)</td>
+<td>Banks &amp; listed companies</td>
+<td>Banco Central, B3</td>
+</tr>
+<tr>
+<td><strong>Indonesia</strong></td>
+<td>OJK sustainability disclosure rules</td>
+<td>Includes biodiversity aspects (forestry, palm oil, extractives)</td>
+<td>Large listed &amp; financial institutions</td>
+<td>OJK</td>
+</tr>
+<tr>
+<td><strong>China</strong></td>
+<td>Draft ESG/nature disclosure guidelines (2023–2024)</td>
+<td>Biodiversity included; expected to be mandatory soon</td>
+<td>Listed companies (esp. resource-intensive sectors)</td>
+<td>CSRC &amp; Stock Exchanges</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="science-based-targets-and-the-tnfd">Science-Based Targets and the TNFD</h3>
+<p>Through the TNFD, companies are encouraged to adopt <strong>Science Based Targets for Nature (SBTN)</strong> to set <strong>measurable, science-based biodiversity goals</strong>, e.g.:</p>
+<ul>
+<li>restore <em>X</em> hectares,</li>
+<li>reduce water withdrawal by <em>Y%</em>, or</li>
+<li>eliminate deforestation from supply chains.</li>
+</ul>
+<p>SBTN aligns with the <strong>Kunming-Montreal Global Biodiversity Framework</strong> and complements TNFD by helping companies <em>set internal goals (SBTN)</em> and <em>disclose them externally (TNFD).</em></p>
+<hr>
+<h2 id="how-gbif-supports-business-biodiversity-disclosures">How GBIF Supports Business Biodiversity Disclosures</h2>
+<p>Many of the uses of GBIF listed for safeguards apply equally to corporate disclosures:</p>
+<h3 id="screening">Screening</h3>
+<p>The spatial–temporal nature of GBIF data allows companies to determine known species presences (and, in some cases, absences), including species of conservation importance.<br>
+This enables biodiversity baseline assessments across a company’s operations, helping to <strong>avoid and minimise biodiversity impacts</strong>.</p>
+<h3 id="biodiversity-monitoring">Biodiversity Monitoring</h3>
+<p>Using data coverage and availability over a company’s footprint, companies can design monitoring systems to <strong>measure biodiversity impact</strong> over time and <strong>track progress</strong> towards targets.</p>
+<h3 id="data-access">Data Access</h3>
+<p>GBIF provides the infrastructure through which <strong>species occurrence data</strong> used in company assessments can be shared.<br>
+While not all required data will be found in GBIF, additional company-collected data can be <strong>published through GBIF</strong>, increasing <strong>transparency</strong> and supporting the broader data ecosystem.</p>
+<hr>
+<h2 id="gbif-recommendations-to-improve-biodiversity-disclosure-reporting">GBIF Recommendations to Improve Biodiversity Disclosure Reporting</h2>
+<p>It is encouraging that businesses recognise GBIF as a data source and infrastructure for sharing species occurrence data. To strengthen the link between business biodiversity reporting and the GBIF infrastructure, we recommend:</p>
+<ol>
+<li>
+<p><strong>Transparency across all biodiversity disclosures</strong><br>
+Biodiversity disclosures should be traceable, with sources and data clearly cited. The issuing of <strong>DOIs</strong> by GBIF provides a mechanism for traceability.</p>
+</li>
+<li>
+<p><strong>Companies should acknowledge data gaps and set collection targets</strong><br>
+Address <strong>taxonomic, spatial, and temporal biases</strong> in occurrence data through targeted collection efforts. Companies can help fill data gaps that support robust science and contribute to <strong>Target 21</strong> of the Kunming-Montreal Global Biodiversity Framework.<br>
+GBIF <strong>nodes</strong> should build capacity to support company data sharing.</p>
+</li>
+<li>
+<p><strong>Adherence to data licensing</strong><br>
+Though GBIF data is freely available, downstream users must <strong>adhere to GBIF data licences</strong> and respect attribution and reuse conditions.</p>
+</li>
+<li>
+<p><strong>Capacity building within companies</strong><br>
+Strengthen internal capacity to <strong>use and interpret GBIF-mediated data</strong> and understand its limitations to ensure responsible use in biodiversity reporting.</p>
+</li>
+<li>
+<p><strong>Accessible, standardised reports</strong><br>
+Biodiversity disclosure reports should be <strong>machine-readable</strong> (e.g., digital XML/JSON/CSV) and accessible through open repositories (e.g., <strong>Zenodo</strong>)—as mandated under frameworks like <strong>CSRD</strong>—to ensure public access to underlying data.</p>
+</li>
+</ol>
+<hr>
+    </div>
+    <div class="read-more">
+      <a href="/post/2025-10-28-species-occurrence-data-and-corporate-sustainability-frameworks/" class="read-more-link">Read more..</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2025-05-21-dealing-with-sampling-bias-gbif-mediated-occurrence-records/">Dealing with sampling bias GBIF mediated occurrence records</a></h1>
+    <div class="post-meta">
+	<div class="post-author">John Waller</div>
+      <span class="post-time"> 2025-05-21 </span>
+      
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <h2 id="spatial-thinning-even-out-the-spatial-effort">Spatial Thinning: Even Out the Spatial Effort</h2>
+<p>One straightforward way to reduce spatial bias is <strong>spatial thinning</strong> (also called spatial filtering). The idea is to <em>remove or subsample occurrences that are too close to each other</em>, so that no locality or region is overrepresented. This addresses the common situation where many records cluster around cities, roads, or popular parks, while other areas have few or none. By thinning the data, we ensure a more even spatial coverage.</p>
+<p>A common approach is to impose a minimum distance or grid cell size between records. For example, we might only keep one occurrence <strong>per 5 km radius</strong> or <strong>per grid cell</strong> of a certain size. <em>“A common approach to reducing spatial bias in occurrence records is to randomly select one (or a small number) of samples present in each cell in the landscape”</em>. If a keen birder logged 500 observations in one city park, spatial thinning will pick just one (or a few) of those and discard the rest, preventing that park from overwhelming the analysis. This way, areas with intense sampling effort are down-sampled to more closely match areas with low effort.</p>
+<p>In R, you can do spatial thinning in various ways. Specialized packages like <strong><code>spThin</code></strong> or <strong><code>GeoThinneR</code></strong> implement distance-based thinning algorithms, and the <strong><code>dismo</code></strong> package offers a simple <code>gridSample</code> function. However, you can also use base R or tidyverse tools for a quick solution. For example, to thin occurrences by keeping at most one record per 0.1° grid (≈11 km) you could do:</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#268bd2">library</span>(dplyr)
+
+<span style="color:#586e75"># Example: thin occurrence data to one record per 0.1° grid cell</span>
+thinned_data <span style="color:#719e07">&lt;-</span> occurrences <span style="color:#719e07">%&gt;%</span>
+  <span style="color:#268bd2">mutate</span>(
+    lat_bin <span style="color:#719e07">=</span> <span style="color:#268bd2">round</span>(decimalLatitude, <span style="color:#2aa198">1</span>),    <span style="color:#586e75"># bin latitude into 0.1° cells</span>
+    lon_bin <span style="color:#719e07">=</span> <span style="color:#268bd2">round</span>(decimalLongitude, <span style="color:#2aa198">1</span>)    <span style="color:#586e75"># bin longitude into 0.1° cells</span>
+  ) <span style="color:#719e07">%&gt;%</span>
+  <span style="color:#268bd2">group_by</span>(lat_bin, lon_bin) <span style="color:#719e07">%&gt;%</span>
+  <span style="color:#268bd2">slice_sample</span>(n <span style="color:#719e07">=</span> <span style="color:#2aa198">1</span>)    <span style="color:#586e75"># pick one record per grid cell</span>
+</code></pre></div><p>In the code above, we round coordinates to one decimal place and then randomly select one occurrence for each unique lat-long bin. The result is a thinned dataset with a more uniform spatial distribution of points. You can adjust the grid size (or use a distance in kilometers if converting to a planar coordinate system) based on your needs – larger distances yield stronger thinning.</p>
+<p>Spatial thinning is very useful before modeling species distributions or mapping diversity. By removing dense clusters of records, we reduce the chance that our analysis is <strong>skewed towards well-sampled locations</strong>. Essentially, thinning trades off some data (you lose many records from oversampled spots) in exchange for less bias. Even though we end up with fewer points, those points carry more equal weight geographically. This often improves model performance: studies have found that <strong>using spatially thinned data can produce better predictive models</strong> despite using fewer records. In short, thinning helps “level the playing field” across space.</p>
+<p><em>(Pro tip: If you have hundreds of thousands of points, use packages like <code>spThin</code> or <code>GeoThinneR</code> which are optimized for efficiency. They offer options for specifying distance thresholds or grid sizes and can handle large datasets.)</em></p>
+<h2 id="effort-based-filtering-use-or-impose-sampling-effort-information">Effort-Based Filtering: Use (or Impose) Sampling Effort Information</h2>
+<p>Another tactic is <strong>effort-based filtering</strong>, which means subsetting or weighting the data based on known sampling effort. Not all occurrence records are collected with the same effort: some come from structured surveys where people diligently record <em>everything</em> they find in an area, and others are casual or biased observations (e.g. a tourist snapping a photo of a butterfly). By filtering for records with higher or more standardized effort, we can reduce bias from haphazard sampling.</p>
+<p>One example comes from bird data. The eBird project (a major contributor of bird records to GBIF) allows birders to submit checklists of sightings. Some of these checklists are <strong>complete</strong> (the observer reports all species they could identify, with details on effort like duration and distance), while others are <strong>incidental</strong> (just reporting a few species opportunistically). It turns out that <em>“complete checklists with effort information facilitate robust analyses, and thus represent the gold standard of eBird data”</em>. In practice, researchers often filter eBird-sourced GBIF records to <strong>include only complete checklists</strong> (with at least some minimum effort, say 10 minutes or 1 km of survey). This removes many biased records where effort was low or unreported, yielding a more uniform dataset.</p>
+<p>Effort-based filtering can also be as simple as removing obvious duplicate sampling. For instance, if a scientist collected 100 plant specimens from one small site on the same day, those 100 occurrence records don’t represent 100 independent data points – they represent one intensive sampling event. We might choose to keep just one record per site per day in such cases. Here’s how you could filter to one occurrence per location per day in R:</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#268bd2">library</span>(dplyr)
+
+<span style="color:#586e75"># Filter to one record per unique location (lat-long) per day</span>
+filtered_data <span style="color:#719e07">&lt;-</span> occurrences <span style="color:#719e07">%&gt;%</span>
+  <span style="color:#268bd2">mutate</span>(date <span style="color:#719e07">=</span> <span style="color:#268bd2">as.Date</span>(eventDate)) <span style="color:#719e07">%&gt;%</span>            <span style="color:#586e75"># ensure we have a Date column</span>
+  <span style="color:#268bd2">arrange</span>(date) <span style="color:#719e07">%&gt;%</span>
+  <span style="color:#268bd2">distinct</span>(decimalLatitude, decimalLongitude, date, .keep_all <span style="color:#719e07">=</span> <span style="color:#cb4b16">TRUE</span>)
+</code></pre></div><p>This code will drop any additional records that share the same lat/long and date, keeping only the first occurrence for each such combination. The rationale is that multiple records from the same place and day likely reflect repeated observations of the same population or a concentrated survey effort. By keeping only one, we down-weight that intense effort to be equivalent to a single observation event.</p>
+<p>Effort filtering can be tailored to your data. If you have an <strong>effort metric</strong> (e.g., person-hours, trap nights, transect length), you might exclude records with very low effort or explicitly incorporate effort as a covariate in models. If you know certain datasets are biased (e.g., a museum collection that sampled primarily along roads), you could exclude or down-weight those records. The goal is to make the remaining data more comparable. Essentially, we’re trying to compare apples to apples – for example, one <em>standardized survey</em> to another – rather than apples to oranges (casual observations vs. intensive surveys). This reduces bias by ensuring each data point comes from a roughly similar amount of search effort.</p>
+<h2 id="rarefaction-standardizing-sample-size-for-fair-comparison">Rarefaction: Standardizing Sample Size for Fair Comparison</h2>
+<p><strong>Rarefaction</strong> is a classic ecological method to address sampling bias, especially for comparing species richness across areas or datasets with different sample sizes. The concept is to <em>subsample</em> the data to a common sample size and measure diversity from that equal footing. In plainer terms, if Region A has 1,000 occurrence records and Region B has only 100 records, of course A will list more species – but is it because A is truly more diverse, or just more sampled? Rarefaction helps answer that by asking: <em>if we only had 100 records from Region A, how many species would we expect to find?</em> This gives a fairer richness comparison between A and B.</p>
+<p>One way to do rarefaction is through simulation: randomly draw (say) 100 records from Region A, count how many species are in that subset, and repeat this many times to get an average. A more analytical way uses combinatorics (Hurlbert’s formula) to compute the expected number of species for a given sample size without brute-force simulation. This is often called the <strong>Hurlbert’s index</strong> or ES(n) – expected species for n samples. For example, <em>ES50</em> is the expected number of unique species in a random sample of 50 occurrences. <strong>John Waller</strong> (GBIF data scientist) used this metric to compare diversity in his blog, noting that <em>“es50 &hellip; is an indicator of biodiversity richness”</em> and importantly <em>“somewhat corrects for sampling bias”</em>.</p>
+<p>In R, the <strong><code>vegan</code></strong> package provides functions for rarefaction. We can use <code>vegan::rarefy()</code> on a matrix of species counts. For instance, if we have occurrence records split by region or grid cell, we can create a matrix of counts (rows = regions, columns = species). Then we rarefy each region to the same number of samples:</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#268bd2">library</span>(vegan)
+
+<span style="color:#586e75"># Suppose &#39;occurrences&#39; has a column &#39;region&#39; and &#39;species&#39;</span>
+<span style="color:#586e75"># Create a matrix of species counts per region:</span>
+region_species_matrix <span style="color:#719e07">&lt;-</span> <span style="color:#268bd2">table</span>(occurrences<span style="color:#719e07">$</span>region, occurrences<span style="color:#719e07">$</span>species)
+
+<span style="color:#586e75"># Perform rarefaction to a sample size of 100 occurrences per region</span>
+rarefied_richness <span style="color:#719e07">&lt;-</span> <span style="color:#268bd2">rarefy</span>(region_species_matrix, sample <span style="color:#719e07">=</span> <span style="color:#2aa198">100</span>)
+rarefied_richness
+</code></pre></div><p>The result <code>rarefied_richness</code> will be a vector giving the <strong>estimated number of species in each region if we only had 100 records</strong> from that region. Regions with a lot more than 100 records get “down-sampled” in theory, and regions with fewer than 100 records cannot be raised (rarefaction can’t invent species beyond what was observed; typically those will just have their actual species count if they have fewer records than the rarefaction number).</p>
+<p>Rarefaction is very powerful for <strong>comparative analyses</strong>. It essentially tells us <em>what the diversity would be at a common sampling effort</em>. By doing so, it highlights the places that are truly diverse rather than just well-sampled. For example, applying rarefaction can reveal tropical regions as having higher <em>underlying</em> species richness even if their raw record counts are low. This helps counter the bias where, say, temperate zones look richer purely because of more observers. If we rarefy everything to, say, 50 records per area, the playing field is level. In practice, you might use rarefied richness metrics to build maps or to correlate biodiversity with environmental factors without the confounding effect of sampling effort.</p>
+<p>One drawback: rarefaction <strong>uses less data</strong> (it ignores records beyond the rarefaction cutoff in well-sampled areas), so you’re intentionally not using all information. Also, if some regions have extremely low sampling (fewer records than the chosen cutoff), you can’t directly rarefy them to the same level – you might have to drop those or choose a smaller uniform sample size. Despite these issues, rarefaction is a widely used technique to mitigate sampling bias in richness studies, and it pairs nicely with the next topic: grid-based mapping.</p>
+<h2 id="grid-based-richness-estimation-apples-to-apples-on-the-map">Grid-Based Richness Estimation: Apples-to-Apples on the Map</h2>
+<p>When mapping species richness or other biodiversity metrics, using a spatial <strong>grid</strong> is a common practice to handle sampling bias. By aggregating occurrences into grid cells (e.g. 10×10 km squares or hexagons), you ensure each spatial unit has a more comparable area and sampling effort basis. Grid-based analyses convert raw point data into a form of <strong>presence/absence or counts per cell</strong>, which inherently dampens the influence of duplicate records in the same location.</p>
+<p>The simplest grid-based approach is to count the number of species in each cell (species richness per cell). But as noted earlier, if some cells have a ton of records and others have very few, a raw richness map will still be biased – it will light up cells that were sampled to death, and leave poorly-sampled cells looking species-poor (even if in reality they might harbor many unrecorded species). Therefore, it’s common to combine grid-based aggregation <strong>with a threshold or rarefaction</strong>. For example, you might <strong>only map cells that have at least 20 records</strong>, to avoid showing spurious low-richness in cells where you have near-zero effort. Or better yet, apply rarefaction within each cell: calculate something like ES50 for every cell so that each cell’s richness is evaluated at an equal sample size.</p>
+<p> <em>An example of grid-based rarefied richness: This map shows the <strong>Hurlbert’s ES50</strong> for animal genera on a global hexagon grid (each hex ~480 km across). Cooler colors (blue/green) mean higher expected genera count in a sample of 50 records, warmer colors (yellow/red) mean lower richness.</em> Notice how this rarefied richness map highlights the <strong>tropical diversity hotspots</strong> (Central Amazon, Congo, Southeast Asia) even though those areas have fewer total records than temperate zones. By contrast, a raw species count map (not shown here) would mainly highlight places like Europe and the US – essentially mirroring observer distribution. The grid-based ES50 approach helps reveal genuine biodiversity patterns by controlling for sampling effort: <em>“one of the main advantages of es50 is that it somewhat corrects for sampling bias”</em>.</p>
+<p>To implement grid-based richness in R, you can use packages like <strong><code>sf</code></strong> or <strong><code>raster/terra</code></strong> to make spatial grids, or do it with simple grouping operations. For example, using <code>dplyr</code> you could assign each occurrence to a grid cell and then count unique species:</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#268bd2">library</span>(dplyr)
+
+<span style="color:#586e75"># Define grid cell IDs, e.g., rounding coordinates to 0.5° for a ~50x50 km grid</span>
+occurrences <span style="color:#719e07">&lt;-</span> occurrences <span style="color:#719e07">%&gt;%</span>
+  <span style="color:#268bd2">mutate</span>(
+    lon_bin <span style="color:#719e07">=</span> <span style="color:#268bd2">floor</span>(decimalLongitude <span style="color:#719e07">/</span> <span style="color:#2aa198">0.5</span>) <span style="color:#719e07">*</span> <span style="color:#2aa198">0.5</span>,
+    lat_bin <span style="color:#719e07">=</span> <span style="color:#268bd2">floor</span>(decimalLatitude <span style="color:#719e07">/</span> <span style="color:#2aa198">0.5</span>) <span style="color:#719e07">*</span> <span style="color:#2aa198">0.5</span>,
+    cell_id <span style="color:#719e07">=</span> <span style="color:#268bd2">paste</span>(lat_bin, lon_bin, sep <span style="color:#719e07">=</span> <span style="color:#2aa198">&#34;_&#34;</span>)
+  )
+
+<span style="color:#586e75"># Calculate richness and record count per cell</span>
+grid_stats <span style="color:#719e07">&lt;-</span> occurrences <span style="color:#719e07">%&gt;%</span>
+  <span style="color:#268bd2">group_by</span>(cell_id) <span style="color:#719e07">%&gt;%</span>
+  <span style="color:#268bd2">summarize</span>(
+    n_records <span style="color:#719e07">=</span> <span style="color:#268bd2">n</span>(),
+    n_species <span style="color:#719e07">=</span> <span style="color:#268bd2">n_distinct</span>(species)
+  )
+<span style="color:#586e75"># Filter cells with at least 20 records</span>
+grid_stats <span style="color:#719e07">&lt;-</span> <span style="color:#268bd2">filter</span>(grid_stats, n_records <span style="color:#719e07">&gt;=</span> <span style="color:#2aa198">20</span>)
+</code></pre></div><p>In this snippet, we binned lat/long into 0.5° cells (you could also use a fixed coordinate grid or a shapefile of equal-area grids). Then we counted how many records and how many species each cell has, and filtered to cells with 20+ records to focus on reasonably sampled cells. The result <code>grid_stats</code> can be joined to an <code>sf</code> grid for mapping. This kind of map will still show some bias (20 records in one cell might catalog fewer species than 20 in another if communities differ), but it’s much better than mapping raw occurrence counts. <strong>The key is that every mapped cell is based on comparable effort.</strong></p>
+<p>For an even more robust approach, you could calculate a rarefied richness per cell. This essentially combines the above two methods: use each cell’s species-occurrence data to compute an ESThreshold (like ES20 if 20 is the minimum records per cell, or ES50 if many cells have ≥50 records). Cells with fewer records than the threshold can be ignored or shown as having lower confidence. The result is a map like the one above, where sampling bias is greatly reduced and you can start to see the true patterns of biodiversity.</p>
+<h2 id="putting-it-all-together-and-final-tips">Putting It All Together (and Final Tips)</h2>
+<p>Handling sampling bias often requires <strong>using multiple methods in tandem</strong> and making judgment calls based on your data and research question. There is no one-size-fits-all fix, but the approaches above are commonly used toolbox items:</p>
+<ul>
+<li><strong>Spatial thinning</strong> removes oversampled clusters and is great for preparing data for species distribution modeling or anytime spatial autocorrelation from sampling is a concern.</li>
+<li><strong>Effort filtering</strong> ensures you’re comparing data with similar collection effort (filtering out the junk or overly duplicated observations), which yields more reliable analyses.</li>
+<li><strong>Rarefaction</strong> standardizes comparisons by equalizing sample sizes, crucial for fair biodiversity comparisons across regions or time periods.</li>
+<li><strong>Grid-based estimation</strong> provides a structured way to aggregate data spatially, often combined with minimum effort thresholds or rarefaction to produce maps that reflect reality more than collector density.</li>
+</ul>
+<p>In practice, you might apply <strong>several of these in one workflow</strong>. For example, if you were studying the diversity of butterflies in South America, you could first filter out records without good effort info (say, only use survey data, or only one record per site/day), then apply spatial thinning so that e.g. no two records are within 10 km. Next, divide the continent into grid cells and compute rarefied species richness per cell. The end result could be a richness map that is much less biased. You’d avoid the pitfall of simply mapping raw data which might have all of coastal Brazil glowing just because that’s where people live and collect data, and instead highlight inland Amazon cells if the data – once equalized – show high richness there.</p>
+<p>Finally, always remember to <strong>check the sensitivity</strong> of your results to these methods. Because each method involves discarding or re-weighting data, it’s good to try a few variations (e.g. different thinning distances or rarefaction sizes) to ensure your conclusions aren’t an artifact of the correction method. The improvements are usually worth it: accounting for sampling bias can lead to major gains in the realism and accuracy of your analyses, even if it means working with a bit less data. In summary, by applying these techniques, you’ll extract more meaningful ecological signal from the noise of sampling bias – turning a biased occurrence dataset into insights that are closer to the truth of nature’s patterns. Good luck, and happy (unbiased) mapping!</p>
+<p><strong>Sources:</strong></p>
+<ul>
+<li>Waller, J. (2019). <em>Exploring es50 for GBIF</em>. GBIF Data Blog.</li>
+<li>GBIF (2023). <em>Sampling biases shape our view of the natural world</em>.</li>
+<li>Plantarum (2021). <em>Thinning Occurrence Records in R</em>.</li>
+<li>Best Practices for Using eBird Data (2021). <em>Complete Checklists</em>.</li>
+<li>Meyer et al. (2016). <em>Spatial bias in the GBIF database affects SDMs</em>.</li>
+</ul>
+    </div>
+    <div class="read-more">
+      <a href="/post/2025-05-21-dealing-with-sampling-bias-gbif-mediated-occurrence-records/" class="read-more-link">Read more..</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2025-03-26-species-accumulations-curves-with-gbif-sql-downloads/">Species accumulation curves with GBIF SQL downloads</a></h1>
+    <div class="post-meta">
+	<div class="post-author">John Waller</div>
+      <span class="post-time"> 2025-04-22 </span>
+      <div class="post-category">
+          
+            <a href="/categories/gbif/"> GBIF </a>
+          
+        </div>
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>With GBIF&rsquo;s new SQL downloads feature, it is now possible to easily create useful custom metrics. In this post, I will create species accumulation curves for various countries/areas using <a href="https://techdocs.gbif.org/en/data-use/api-sql-downloads">GBIF SQL downloads</a> and R.</p>
+<blockquote>
+<p>GBIF now has a new <a href="https://github.com/gbif/CommunityMetrics">repository</a>, <strong>Community Metrics</strong>, for collecting input from the GBIF community on the creation of data products derived from GBIF-mediated data that can complement those already provided through GBIF&rsquo;s <a href="https://www.gbif.org/analytics/global">data analytics</a>. The goal of this work is to produce new or further develop existing metrics, indicators and time series (trend) data products to support decision making.</p>
+</blockquote>
+<p>A <strong>species accumulation curve</strong> is a plot of the total cumulative running total species in a region. These curves are useful for assessing whether more sampling is likely to yield more knowledge of a region. For example, if the curve is increasing rapidly, it is likely that the region is undersampled for the group, and there could be data gaps. Conversely, if the curve is flattening out, it is likely that the region is well sampled for the group.</p>
+    </div>
+    <div class="read-more">
+      <a href="/post/2025-03-26-species-accumulations-curves-with-gbif-sql-downloads/" class="read-more-link">Read more..</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2025-01-29-understanding-google-earth-engine-gee-and-its-python-api-a-primer-for-gbif-users/">Understanding Google Earth Engine (GEE) and Its Python API</a></h1>
+    <div class="post-meta">
+	<div class="post-author">Kit Lewers</div>
+      <span class="post-time"> 2025-02-06 </span>
+      <div class="post-category">
+          
+            <a href="/categories/gbif/"> GBIF </a>
+          
+        </div>
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>Google Earth Engine (GEE) is a cloud-based platform designed to process and analyze vast amounts of geospatial data. With access to a rich archive of remote sensing imagery, climate datasets, and geographic information, GEE empowers researchers, conservationists, and policymakers to address critical environmental and biodiversity challenges. This primer introduces GEE, its Python API, and how GBIF users can leverage these tools for biodiversity informatics.</p>
+    </div>
+    <div class="read-more">
+      <a href="/post/2025-01-29-understanding-google-earth-engine-gee-and-its-python-api-a-primer-for-gbif-users/" class="read-more-link">Read more..</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2025-01-23-time-series-of-land-surface-temperature/">Tutorial using Google Earth Engine with GBIF mediated occurrences</a></h1>
+    <div class="post-meta">
+	<div class="post-author">Kit Lewers</div>
+      <span class="post-time"> 2025-01-23 </span>
+      <div class="post-category">
+          
+            <a href="/categories/gbif/"> GBIF </a>
+          
+        </div>
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <iframe src="https://www.loom.com/embed/ac617862ef8d4e978684c561d93e9950?sid=409893b6-ae8b-43dc-bcf4-ee6425507788"
+        frameborder="0"
+        webkitallowfullscreen
+        mozallowfullscreen
+        allowfullscreen>
+</iframe>
+<p>In this tutorial, we explored how to integrate remote sensing data with biodiversity observations to analyze the relationships between environmental factors and species occurrences. Specifically, we focused on analyzing <strong>Land Surface Temperature (LST)</strong> over time and its relationship to observations of the Northern Cardinal (Cardinalis cardinalis), a well-known songbird species.</p>
+    </div>
+    <div class="read-more">
+      <a href="/post/2025-01-23-time-series-of-land-surface-temperature/" class="read-more-link">Read more..</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/grscicoll-collection-descriptors/">Making collection content discoverable when you don’t have occurrences published on GBIF</a></h1>
+    <div class="post-meta">
+	<div class="post-author">Marie Grosjean</div>
+      <span class="post-time"> 2024-10-09 </span>
+      <div class="post-category">
+          
+            <a href="/categories/grscicoll/"> GRSciColl </a>
+          
+            <a href="/categories/publishing/"> Publishing </a>
+          
+            <a href="/categories/gbif/"> GBIF </a>
+          
+        </div>
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      This blog post is a tutorial on how to upload collection descriptors in the Global Registry of Scientific Collections (GRSciColl).
+If you are someone working with a physical collection or work with people who do, you might be interested in making these collections findable. Ideally, the content of these collections would be digitized and made available online on relevant platforms like GBIF.org, iDigBio.org, ALA.org.au, etc. Sharing digital specimen records is a great way to ensure the discoverability of collection content.
+    </div>
+    <div class="read-more">
+      <a href="/post/grscicoll-collection-descriptors/" class="read-more-link">Read more..</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2024-06-24-gbif-sql-downloads/">GBIF SQL Downloads</a></h1>
+    <div class="post-meta">
+	<div class="post-author">John Waller</div>
+      <span class="post-time"> 2024-09-30 </span>
       <div class="post-category">
           
             <a href="/categories/gbif/"> GBIF </a>
@@ -150,14 +656,42 @@
   <div class="post-content">
     <div class="post-summary">
       <blockquote>
-<p>Some queries in the blog post can be done for free using a new feature called <a href="https://data-blog.gbif.org/post/2024-06-24-gbif-sql-downloads/">GBIF SQL downloads</a>.</p>
+<p>GBIF has an experimental feature that allows users to download data from the GBIF database in SQL format. Contact <a href="mailto:helpdesk@gbif.org">helpdesk@gbif.org</a> to request access. <a href="https://techdocs.gbif.org/en/data-use/api-sql-downloads">https://techdocs.gbif.org/en/data-use/api-sql-downloads</a></p>
 </blockquote>
-<p><strong>GBIF</strong> now has a <a href="https://registry.opendata.aws/gbif/">snapshots</a> of billions occurrence<sub>✝</sub> records on <strong>Amazon Web Services</strong> (AWS). This guide will take you through running <strong>Spark notebooks</strong> on AWS. The GBIF snapshot is documented : <a href="https://github.com/gbif/occurrence/blob/master/aws-public-data.md">here</a>.</p>
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">June snapshot of <a href="https://t.co/CJaPsifdp0">https://t.co/CJaPsifdp0</a> occurrence data now available on the Amazon and Microsoft clouds, based on <a href="https://t.co/aGbvTisapJ">https://t.co/aGbvTisapJ</a>. See <a href="https://t.co/lRXM2uqFh0">https://t.co/lRXM2uqFh0</a> for more details.</p>&mdash; GBIF (@GBIF) <a href="https://twitter.com/GBIF/status/1400009135362646021?ref_src=twsrc%5Etfw">June 2, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-<p>You can <strong>read previous discussions about GBIF and cloud computing</strong> <a href="https://discourse.gbif.org/t/gbif-exports-as-public-datasets-in-cloud-environments/1835">here</a>. The main reason you would want to use cloud computing is to run <strong>big data queries</strong> that are slow or impractical on a local machine.</p>
+<blockquote>
+<p>If your download can be formulated using the traditional predicate downloads, it is usually going to be faster to use regular downloads.</p>
+</blockquote>
+<p>The experimental Occurrence SQL Download API allows users to query GBIF occurrences using SQL. In contrast to the <a href="https://techdocs.gbif.org/en/data-use/api-sql-downloads">Predicate Download API</a>, the SQL API allows selection of the columns of interest and generation of summary views of GBIF data.</p>
+<p>SQL downloads, like <a href="https://techdocs.gbif.org/en/data-use/api-downloads">predicate downloads</a>, require you to have a GBIF <a href="https://www.gbif.org/user/profile">user account</a>.</p>
     </div>
     <div class="read-more">
-      <a href="/post/aws-and-gbif/" class="read-more-link">Read more..</a>
+      <a href="/post/2024-06-24-gbif-sql-downloads/" class="read-more-link">Read more..</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2024-05-27-getting-fish-trees-reptiles/">Getting fish trees reptiles</a></h1>
+    <div class="post-meta">
+	<div class="post-author">John Waller</div>
+      <span class="post-time"> 2024-05-27 </span>
+      <div class="post-category">
+          
+            <a href="/categories/gbif/"> GBIF </a>
+          
+        </div>
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>Recently, changes made to the <a href="https://www.gbif.org/dataset/d7dddbf4-2cf0-4f39-9b2a-bb099caae36c">GBIF backbone taxonomy</a> have made searching for popular groups <strong>Fish</strong> (Actinopterygii) and <strong>Reptiles</strong> more difficult. This is because of changes to the <a href="https://www.gbif.org/dataset/7ddf754f-d193-4cc9-b351-99906754a03b">Catalogue of Life checklist</a> which underlies the GBIF backbone taxonomy. Below are occurrence search links for searching for these groups.</p>
+    </div>
+    <div class="read-more">
+      <a href="/post/2024-05-27-getting-fish-trees-reptiles/" class="read-more-link">Read more..</a>
     </div>
   </div>
 </article>
@@ -385,6 +919,33 @@ This blog post will cover what data fits in GBIF, give examples of data that doe
     
       <article class="post">
   <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/gbif-data-landscape/">The data landscape of GBIF</a></h1>
+    <div class="post-meta">
+	<div class="post-author">Cecilie Svenningsen</div>
+      <span class="post-time"> 2022-04-06 </span>
+      <div class="post-category">
+          
+            <a href="/categories/gbif/"> GBIF </a>
+          
+        </div>
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      How does all the different data provided by participants, publisher and organisations fit into the data landscape of GBIF visualized on gbif.org? Here, I will give a general overview of the different systems and data sources and how they relate to one another.
+To share data through GBIF.org, publishers typically have to collate or transform existing datasets into a standardized format. The transformations include additional processing, content editing and mapping the content of the data to standardized data formats.
+    </div>
+    <div class="read-more">
+      <a href="/post/gbif-data-landscape/" class="read-more-link">Read more..</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/2022-02-01-the-world-checklist-of-vascular-plants-fabaceae/">The World Checklist of Vascular Plants (Fabaceae)</a></h1>
     <div class="post-meta">
 	<div class="post-author">John Waller</div>
@@ -454,8 +1015,8 @@ This blog post will cover what data fits in GBIF, give examples of data that doe
   
   <div class="post-content">
     <div class="post-summary">
-      Many data users may suspect they’ve discovered duplicated records in the GBIF index. You download data from GBIF, analyze them and realize that some records have the same date, scientific name, catalogue number and location but come from two different publishers or have slightly different attributes.
-There are many valid reasons why these duplicates appear on GBIF. Sometimes an observation was recorded in two different systems, sometimes several records correspond to herbaria duplicates (you can check the work of Nicky Nicolson on the topic), sometimes a specimen was digitized twice, sometimes a record has been enriched with genetic information and republished via a different platform&hellip;
+      NOTE: The content of this blog post is now maintained in the technical documentation. Please view this source for the most up to date information on the topic.
+ Many data users may suspect they’ve discovered duplicated records in the GBIF index. You download data from GBIF, analyze them and realize that some records have the same date, scientific name, catalogue number and location but come from two different publishers or have slightly different attributes.
     </div>
     <div class="read-more">
       <a href="/post/clustering-occurrences/" class="read-more-link">Read more..</a>
@@ -719,6 +1280,36 @@ This guide is intended to give you a checklist of <strong>common things</strong>
     </div>
     <div class="read-more">
       <a href="/post/issues-and-flags/" class="read-more-link">Read more..</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/outlier-detection-using-dbscan/">Outlier Detection Using DBSCAN</a></h1>
+    <div class="post-meta">
+	<div class="post-author">John Waller</div>
+      <span class="post-time"> 2020-09-01 </span>
+      <div class="post-category">
+          
+            <a href="/categories/gbif/"> GBIF </a>
+          
+        </div>
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>Geographic outliers at <strong>GBIF</strong> are a known problem.</p>
+<blockquote>
+<p><strong>Outliers</strong> can be errors, coordinates with high uncertainty, or simply occurrences from an under-sampled region.</p>
+</blockquote>
+<p>In data cleaning pipelines outliers are often removed (even if they are legitimate points) because the researcher does not have time to verify each record one-by-one. In almost all cases, outlier points are occurrences that <strong>need attention</strong>. Currently, there is no outlier detection implemented at <strong>GBIF</strong> and it is up to the user to remove outliers themselves (e.g. using CoordinateCleaner, DIVA-GIS)</p>
+    </div>
+    <div class="read-more">
+      <a href="/post/outlier-detection-using-dbscan/" class="read-more-link">Read more..</a>
     </div>
   </div>
 </article>
@@ -1210,6 +1801,33 @@ style="display: block;margin-left: auto;margin-right: auto;"/></p>
     
       <article class="post">
   <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2019-03-19-country-centroids/">Country Centroids</a></h1>
+    <div class="post-meta">
+	<div class="post-author">John Waller</div>
+      <span class="post-time"> 2019-03-19 </span>
+      <div class="post-category">
+          
+            <a href="/categories/gbif/"> GBIF </a>
+          
+        </div>
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      Country Centroids are a known data quality issue within the GBIF network.
+Sometimes data publishers will not know the exact lat-lon location of a record and will enter the lat-long center of the country instead. This is a data issue because users might be unaware that an observation is pinned to a country center and assume it is a precise location.
+    </div>
+    <div class="read-more">
+      <a href="/post/2019-03-19-country-centroids/" class="read-more-link">Read more..</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/hunger-mapping/">Hunger mapping</a></h1>
     <div class="post-meta">
 	<div class="post-author">John Waller</div>
@@ -1261,148 +1879,15 @@ style="display: block;margin-left: auto;margin-right: auto;"/></p>
 </article>
 
     
-      <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/shapefiles/">Using shapefiles on GBIF data with R</a></h1>
-    <div class="post-meta">
-	<div class="post-author">Jan Kristoffer Legind</div>
-      <span class="post-time"> 2018-11-22 </span>
-      <div class="post-category">
-          
-            <a href="/categories/gbif/"> GBIF </a>
-          
-        </div>
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      Not all filters are born equal It happens sometimes that users need GBIF data that fall within specific boundaries. The GBIF Portal provides a location filter where it is possible to draw a rectangle or a polygon on the map and get the occurrence records within this shape. However these tools have a limited precision and occasionally the job calls for more complex shapes than the GBIF Portal currently supports.
-    </div>
-    <div class="read-more">
-      <a href="/post/shapefiles/" class="read-more-link">Read more..</a>
-    </div>
-  </div>
-</article>
-
-    
-      <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/gbif-multimedia/">Sharing images, sounds and videos on GBIF</a></h1>
-    <div class="post-meta">
-	<div class="post-author">Marie Grosjean</div>
-      <span class="post-time"> 2018-11-19 </span>
-      <div class="post-category">
-          
-            <a href="/categories/gbif/"> GBIF </a>
-          
-        </div>
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      This blog post covers the publication of multimedia on GBIF. However, it is not intended to be documentation. For more information, please check the references below.
-NB: GBIF does not host original multimedia files and there is no way to upload pictures to the platform. For more information, please read the how to publish paragraphs.
-Media displayed on the GBIF portal Let&rsquo;s say that you are looking for pictures of otters, or perhaps the call of a sea eagle.
-    </div>
-    <div class="read-more">
-      <a href="/post/gbif-multimedia/" class="read-more-link">Read more..</a>
-    </div>
-  </div>
-</article>
-
-    
-      <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/gbif-citizen-science/">Finding citizen science datasets on GBIF</a></h1>
-    <div class="post-meta">
-	<div class="post-author">Marie Grosjean</div>
-      <span class="post-time"> 2018-11-09 </span>
-      <div class="post-category">
-          
-            <a href="/categories/gbif/"> GBIF </a>
-          
-        </div>
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <h1 id="can-we-automatically-label-citizen-science-datasets">Can we automatically label citizen science datasets?</h1>
-<p>The short answer is yes, partially.</p>
-<h2 id="why-label-gbif-datasets-as-citizen-science">Why label GBIF datasets as &ldquo;citizen science&rdquo;?</h2>
-<h3 id="what-is-citizen-science">What is citizen science?</h3>
-<p>Citizen science is scientific research conducted, in whole or in part, by amateur (or non-professional) scientists. Citizen science is sometimes described as &ldquo;public participation in scientific research,&rdquo; participatory monitoring, and participatory action research (<a href="https://en.wikipedia.org/wiki/Citizen_science">wikipedia definition</a>).</p>
-    </div>
-    <div class="read-more">
-      <a href="/post/gbif-citizen-science/" class="read-more-link">Read more..</a>
-    </div>
-  </div>
-</article>
-
-    
-      <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/finding-gridded-datasets/">Finding gridded datasets</a></h1>
-    <div class="post-meta">
-	<div class="post-author">John Waller</div>
-      <span class="post-time"> 2018-08-14 </span>
-      <div class="post-category">
-          
-            <a href="/categories/gbif/"> GBIF </a>
-          
-        </div>
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>Gridded datasets are a known problem at GBIF. Many datasets have equally-spaced points in a regular pattern. These datasets are usually systematic national surveys or data taken from some atlas (&ldquo;so-called rasterized collection designs&rdquo;).</p>
-    </div>
-    <div class="read-more">
-      <a href="/post/finding-gridded-datasets/" class="read-more-link">Read more..</a>
-    </div>
-  </div>
-</article>
-
-    
-      <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/gbif-download-trends/">GBIF download trends</a></h1>
-    <div class="post-meta">
-	<div class="post-author">John Waller</div>
-      <span class="post-time"> 2018-08-14 </span>
-      <div class="post-category">
-          
-            <a href="/categories/gbif/"> GBIF </a>
-          
-        </div>
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      Link To App
-Explanation of tool This tool plots the downloads through time for species or other taxonomic groups with more than 25 downloads at GBIF. Downloads at GBIF most often occur through the web interface. In a previous post, we saw that most users are downloading data from GBIF via filtering by scientific name (aka Taxon Key). Since the GBIF index currently sits at over 1 billion records (a 400+GB csv), most users will simplying filter by their taxonomic group of interest and then generate a download.
-    </div>
-    <div class="read-more">
-      <a href="/post/gbif-download-trends/" class="read-more-link">Read more..</a>
-    </div>
-  </div>
-</article>
-
-    
   </section>
   
   <nav class="pagination">
     
     
+      <a class="next" href="/page/2/">
+        <span class="next-text">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
   </nav>
 
         </div>

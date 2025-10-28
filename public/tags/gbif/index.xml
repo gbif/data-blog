@@ -6,7 +6,17 @@
     <description>Recent content in gbif on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 06 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://data-blog.gbif.org/tags/gbif/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 09 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://data-blog.gbif.org/tags/gbif/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Making collection content discoverable when you don’t have occurrences published on GBIF</title>
+      <link>https://data-blog.gbif.org/post/grscicoll-collection-descriptors/</link>
+      <pubDate>Wed, 09 Oct 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/post/grscicoll-collection-descriptors/</guid>
+      <description>This blog post is a tutorial on how to upload collection descriptors in the Global Registry of Scientific Collections (GRSciColl).
+If you are someone working with a physical collection or work with people who do, you might be interested in making these collections findable. Ideally, the content of these collections would be digitized and made available online on relevant platforms like GBIF.org, iDigBio.org, ALA.org.au, etc. Sharing digital specimen records is a great way to ensure the discoverability of collection content.</description>
+    </item>
+    
     <item>
       <title>GBIF attempts to improve identifier stability by monitoring changes of occurrenceIDs</title>
       <link>https://data-blog.gbif.org/post/improve-identifier-stability/</link>
@@ -43,8 +53,8 @@ Here I am sharing a summary of an email conversation we had with some data publi
       <pubDate>Thu, 04 Nov 2021 00:00:00 +0000</pubDate>
       
       <guid>https://data-blog.gbif.org/post/clustering-occurrences/</guid>
-      <description>Many data users may suspect they’ve discovered duplicated records in the GBIF index. You download data from GBIF, analyze them and realize that some records have the same date, scientific name, catalogue number and location but come from two different publishers or have slightly different attributes.
-There are many valid reasons why these duplicates appear on GBIF. Sometimes an observation was recorded in two different systems, sometimes several records correspond to herbaria duplicates (you can check the work of Nicky Nicolson on the topic), sometimes a specimen was digitized twice, sometimes a record has been enriched with genetic information and republished via a different platform&amp;hellip;</description>
+      <description>NOTE: The content of this blog post is now maintained in the technical documentation. Please view this source for the most up to date information on the topic.
+ Many data users may suspect they’ve discovered duplicated records in the GBIF index. You download data from GBIF, analyze them and realize that some records have the same date, scientific name, catalogue number and location but come from two different publishers or have slightly different attributes.</description>
     </item>
     
     <item>
@@ -175,6 +185,16 @@ This update is a good thing. It means that some of the taxonomic issues reported
 &lt;h2 id=&#34;why-label-gbif-datasets-as-citizen-science&#34;&gt;Why label GBIF datasets as &amp;ldquo;citizen science&amp;rdquo;?&lt;/h2&gt;
 &lt;h3 id=&#34;what-is-citizen-science&#34;&gt;What is citizen science?&lt;/h3&gt;
 &lt;p&gt;Citizen science is scientific research conducted, in whole or in part, by amateur (or non-professional) scientists. Citizen science is sometimes described as &amp;ldquo;public participation in scientific research,&amp;rdquo; participatory monitoring, and participatory action research (&lt;a href=&#34;https://en.wikipedia.org/wiki/Citizen_science&#34;&gt;wikipedia definition&lt;/a&gt;).&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Plot almost anything using the GBIF maps api</title>
+      <link>https://data-blog.gbif.org/post/gbif-maps-api-using-r-and-leaflet/</link>
+      <pubDate>Wed, 19 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/post/gbif-maps-api-using-r-and-leaflet/</guid>
+      <description>The GBIF maps api is an under-used but powerful web service provided by GBIF. The maps api is used by the main GBIF portal to create the maps including the big map used on gbif.org. We can make a simple call to the api by pasting the link below into a web browser.
+https://api.gbif.org/v2/map/occurrence/density/0/0/0@1x.png?style=purpleYellow.pointYou should end up with an image like this.</description>
     </item>
     
     <item>

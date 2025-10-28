@@ -6,19 +6,77 @@
     <description>Recent content in GBIF on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 02 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://data-blog.gbif.org/categories/gbif/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 22 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://data-blog.gbif.org/categories/gbif/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>GBIF and Apache-Spark on AWS tutorial</title>
-      <link>https://data-blog.gbif.org/post/aws-and-gbif/</link>
-      <pubDate>Mon, 02 Sep 2024 00:00:00 +0000</pubDate>
+      <title>Species accumulation curves with GBIF SQL downloads</title>
+      <link>https://data-blog.gbif.org/post/2025-03-26-species-accumulations-curves-with-gbif-sql-downloads/</link>
+      <pubDate>Tue, 22 Apr 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://data-blog.gbif.org/post/aws-and-gbif/</guid>
-      <description>&lt;blockquote&gt;
-&lt;p&gt;Some queries in the blog post can be done for free using a new feature called &lt;a href=&#34;https://data-blog.gbif.org/post/2024-06-24-gbif-sql-downloads/&#34;&gt;GBIF SQL downloads&lt;/a&gt;.&lt;/p&gt;
+      <guid>https://data-blog.gbif.org/post/2025-03-26-species-accumulations-curves-with-gbif-sql-downloads/</guid>
+      <description>&lt;p&gt;With GBIF&amp;rsquo;s new SQL downloads feature, it is now possible to easily create useful custom metrics. In this post, I will create species accumulation curves for various countries/areas using &lt;a href=&#34;https://techdocs.gbif.org/en/data-use/api-sql-downloads&#34;&gt;GBIF SQL downloads&lt;/a&gt; and R.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;GBIF now has a new &lt;a href=&#34;https://github.com/gbif/CommunityMetrics&#34;&gt;repository&lt;/a&gt;, &lt;strong&gt;Community Metrics&lt;/strong&gt;, for collecting input from the GBIF community on the creation of data products derived from GBIF-mediated data that can complement those already provided through GBIF&amp;rsquo;s &lt;a href=&#34;https://www.gbif.org/analytics/global&#34;&gt;data analytics&lt;/a&gt;. The goal of this work is to produce new or further develop existing metrics, indicators and time series (trend) data products to support decision making.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;GBIF&lt;/strong&gt; now has a &lt;a href=&#34;https://registry.opendata.aws/gbif/&#34;&gt;snapshots&lt;/a&gt; of billions occurrence&lt;sub&gt;✝&lt;/sub&gt; records on &lt;strong&gt;Amazon Web Services&lt;/strong&gt; (AWS). This guide will take you through running &lt;strong&gt;Spark notebooks&lt;/strong&gt; on AWS. The GBIF snapshot is documented : &lt;a href=&#34;https://github.com/gbif/occurrence/blob/master/aws-public-data.md&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;June snapshot of &lt;a href=&#34;https://t.co/CJaPsifdp0&#34;&gt;https://t.co/CJaPsifdp0&lt;/a&gt; occurrence data now available on the Amazon and Microsoft clouds, based on &lt;a href=&#34;https://t.co/aGbvTisapJ&#34;&gt;https://t.co/aGbvTisapJ&lt;/a&gt;. See &lt;a href=&#34;https://t.co/lRXM2uqFh0&#34;&gt;https://t.co/lRXM2uqFh0&lt;/a&gt; for more details.&lt;/p&gt;&amp;mdash; GBIF (@GBIF) &lt;a href=&#34;https://twitter.com/GBIF/status/1400009135362646021?ref_src=twsrc%5Etfw&#34;&gt;June 2, 2021&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
-&lt;p&gt;You can &lt;strong&gt;read previous discussions about GBIF and cloud computing&lt;/strong&gt; &lt;a href=&#34;https://discourse.gbif.org/t/gbif-exports-as-public-datasets-in-cloud-environments/1835&#34;&gt;here&lt;/a&gt;. The main reason you would want to use cloud computing is to run &lt;strong&gt;big data queries&lt;/strong&gt; that are slow or impractical on a local machine.&lt;/p&gt;</description>
+&lt;p&gt;A &lt;strong&gt;species accumulation curve&lt;/strong&gt; is a plot of the total cumulative running total species in a region. These curves are useful for assessing whether more sampling is likely to yield more knowledge of a region. For example, if the curve is increasing rapidly, it is likely that the region is undersampled for the group, and there could be data gaps. Conversely, if the curve is flattening out, it is likely that the region is well sampled for the group.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Understanding Google Earth Engine (GEE) and Its Python API</title>
+      <link>https://data-blog.gbif.org/post/2025-01-29-understanding-google-earth-engine-gee-and-its-python-api-a-primer-for-gbif-users/</link>
+      <pubDate>Thu, 06 Feb 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/post/2025-01-29-understanding-google-earth-engine-gee-and-its-python-api-a-primer-for-gbif-users/</guid>
+      <description>&lt;p&gt;Google Earth Engine (GEE) is a cloud-based platform designed to process and analyze vast amounts of geospatial data. With access to a rich archive of remote sensing imagery, climate datasets, and geographic information, GEE empowers researchers, conservationists, and policymakers to address critical environmental and biodiversity challenges. This primer introduces GEE, its Python API, and how GBIF users can leverage these tools for biodiversity informatics.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Tutorial using Google Earth Engine with GBIF mediated occurrences</title>
+      <link>https://data-blog.gbif.org/post/2025-01-23-time-series-of-land-surface-temperature/</link>
+      <pubDate>Thu, 23 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/post/2025-01-23-time-series-of-land-surface-temperature/</guid>
+      <description>&lt;iframe src=&#34;https://www.loom.com/embed/ac617862ef8d4e978684c561d93e9950?sid=409893b6-ae8b-43dc-bcf4-ee6425507788&#34;
+        frameborder=&#34;0&#34;
+        webkitallowfullscreen
+        mozallowfullscreen
+        allowfullscreen&gt;
+&lt;/iframe&gt;
+&lt;p&gt;In this tutorial, we explored how to integrate remote sensing data with biodiversity observations to analyze the relationships between environmental factors and species occurrences. Specifically, we focused on analyzing &lt;strong&gt;Land Surface Temperature (LST)&lt;/strong&gt; over time and its relationship to observations of the Northern Cardinal (Cardinalis cardinalis), a well-known songbird species.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Making collection content discoverable when you don’t have occurrences published on GBIF</title>
+      <link>https://data-blog.gbif.org/post/grscicoll-collection-descriptors/</link>
+      <pubDate>Wed, 09 Oct 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/post/grscicoll-collection-descriptors/</guid>
+      <description>This blog post is a tutorial on how to upload collection descriptors in the Global Registry of Scientific Collections (GRSciColl).
+If you are someone working with a physical collection or work with people who do, you might be interested in making these collections findable. Ideally, the content of these collections would be digitized and made available online on relevant platforms like GBIF.org, iDigBio.org, ALA.org.au, etc. Sharing digital specimen records is a great way to ensure the discoverability of collection content.</description>
+    </item>
+    
+    <item>
+      <title>GBIF SQL Downloads</title>
+      <link>https://data-blog.gbif.org/post/2024-06-24-gbif-sql-downloads/</link>
+      <pubDate>Mon, 30 Sep 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/post/2024-06-24-gbif-sql-downloads/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;GBIF has an experimental feature that allows users to download data from the GBIF database in SQL format. Contact &lt;a href=&#34;mailto:helpdesk@gbif.org&#34;&gt;helpdesk@gbif.org&lt;/a&gt; to request access. &lt;a href=&#34;https://techdocs.gbif.org/en/data-use/api-sql-downloads&#34;&gt;https://techdocs.gbif.org/en/data-use/api-sql-downloads&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;If your download can be formulated using the traditional predicate downloads, it is usually going to be faster to use regular downloads.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The experimental Occurrence SQL Download API allows users to query GBIF occurrences using SQL. In contrast to the &lt;a href=&#34;https://techdocs.gbif.org/en/data-use/api-sql-downloads&#34;&gt;Predicate Download API&lt;/a&gt;, the SQL API allows selection of the columns of interest and generation of summary views of GBIF data.&lt;/p&gt;
+&lt;p&gt;SQL downloads, like &lt;a href=&#34;https://techdocs.gbif.org/en/data-use/api-downloads&#34;&gt;predicate downloads&lt;/a&gt;, require you to have a GBIF &lt;a href=&#34;https://www.gbif.org/user/profile&#34;&gt;user account&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Getting fish trees reptiles</title>
+      <link>https://data-blog.gbif.org/post/2024-05-27-getting-fish-trees-reptiles/</link>
+      <pubDate>Mon, 27 May 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/post/2024-05-27-getting-fish-trees-reptiles/</guid>
+      <description>&lt;p&gt;Recently, changes made to the &lt;a href=&#34;https://www.gbif.org/dataset/d7dddbf4-2cf0-4f39-9b2a-bb099caae36c&#34;&gt;GBIF backbone taxonomy&lt;/a&gt; have made searching for popular groups &lt;strong&gt;Fish&lt;/strong&gt; (Actinopterygii) and &lt;strong&gt;Reptiles&lt;/strong&gt; more difficult. This is because of changes to the &lt;a href=&#34;https://www.gbif.org/dataset/7ddf754f-d193-4cc9-b351-99906754a03b&#34;&gt;Catalogue of Life checklist&lt;/a&gt; which underlies the GBIF backbone taxonomy. Below are occurrence search links for searching for these groups.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -102,6 +160,16 @@ This blog post will cover what data fits in GBIF, give examples of data that doe
     </item>
     
     <item>
+      <title>The data landscape of GBIF</title>
+      <link>https://data-blog.gbif.org/post/gbif-data-landscape/</link>
+      <pubDate>Wed, 06 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/post/gbif-data-landscape/</guid>
+      <description>How does all the different data provided by participants, publisher and organisations fit into the data landscape of GBIF visualized on gbif.org? Here, I will give a general overview of the different systems and data sources and how they relate to one another.
+To share data through GBIF.org, publishers typically have to collate or transform existing datasets into a standardized format. The transformations include additional processing, content editing and mapping the content of the data to standardized data formats.</description>
+    </item>
+    
+    <item>
       <title>The World Checklist of Vascular Plants (Fabaceae)</title>
       <link>https://data-blog.gbif.org/post/2022-02-01-the-world-checklist-of-vascular-plants-fabaceae/</link>
       <pubDate>Mon, 28 Mar 2022 00:00:00 +0000</pubDate>
@@ -125,8 +193,8 @@ This blog post will cover what data fits in GBIF, give examples of data that doe
       <pubDate>Thu, 04 Nov 2021 00:00:00 +0000</pubDate>
       
       <guid>https://data-blog.gbif.org/post/clustering-occurrences/</guid>
-      <description>Many data users may suspect they’ve discovered duplicated records in the GBIF index. You download data from GBIF, analyze them and realize that some records have the same date, scientific name, catalogue number and location but come from two different publishers or have slightly different attributes.
-There are many valid reasons why these duplicates appear on GBIF. Sometimes an observation was recorded in two different systems, sometimes several records correspond to herbaria duplicates (you can check the work of Nicky Nicolson on the topic), sometimes a specimen was digitized twice, sometimes a record has been enriched with genetic information and republished via a different platform&amp;hellip;</description>
+      <description>NOTE: The content of this blog post is now maintained in the technical documentation. Please view this source for the most up to date information on the topic.
+ Many data users may suspect they’ve discovered duplicated records in the GBIF index. You download data from GBIF, analyze them and realize that some records have the same date, scientific name, catalogue number and location but come from two different publishers or have slightly different attributes.</description>
     </item>
     
     <item>
@@ -224,6 +292,19 @@ This guide is intended to give you a checklist of &lt;strong&gt;common things&lt
       
       <guid>https://data-blog.gbif.org/post/issues-and-flags/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Publishers&lt;/strong&gt; share datasets, but also manage data quality.  &lt;strong&gt;GBIF&lt;/strong&gt; provides &lt;strong&gt;access&lt;/strong&gt; to the use of biodiversity data, but also &lt;strong&gt;flags&lt;/strong&gt; suspicious or missing content. &lt;strong&gt;Users&lt;/strong&gt; use data, but also clean and remove records. Each play an important role in managing and improving data quality..&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Outlier Detection Using DBSCAN</title>
+      <link>https://data-blog.gbif.org/post/outlier-detection-using-dbscan/</link>
+      <pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/post/outlier-detection-using-dbscan/</guid>
+      <description>&lt;p&gt;Geographic outliers at &lt;strong&gt;GBIF&lt;/strong&gt; are a known problem.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Outliers&lt;/strong&gt; can be errors, coordinates with high uncertainty, or simply occurrences from an under-sampled region.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;In data cleaning pipelines outliers are often removed (even if they are legitimate points) because the researcher does not have time to verify each record one-by-one. In almost all cases, outlier points are occurrences that &lt;strong&gt;need attention&lt;/strong&gt;. Currently, there is no outlier detection implemented at &lt;strong&gt;GBIF&lt;/strong&gt; and it is up to the user to remove outliers themselves (e.g. using CoordinateCleaner, DIVA-GIS)&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -412,6 +493,16 @@ style=&#34;display: block;margin-left: auto;margin-right: auto;&#34;/&gt;&lt;/p&
     </item>
     
     <item>
+      <title>Country Centroids</title>
+      <link>https://data-blog.gbif.org/post/2019-03-19-country-centroids/</link>
+      <pubDate>Tue, 19 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/post/2019-03-19-country-centroids/</guid>
+      <description>Country Centroids are a known data quality issue within the GBIF network.
+Sometimes data publishers will not know the exact lat-lon location of a record and will enter the lat-long center of the country instead. This is a data issue because users might be unaware that an observation is pinned to a country center and assume it is a precise location.</description>
+    </item>
+    
+    <item>
       <title>Hunger mapping</title>
       <link>https://data-blog.gbif.org/post/hunger-mapping/</link>
       <pubDate>Fri, 15 Feb 2019 00:00:00 +0000</pubDate>
@@ -461,6 +552,16 @@ Media displayed on the GBIF portal Let&amp;rsquo;s say that you are looking for 
 &lt;h2 id=&#34;why-label-gbif-datasets-as-citizen-science&#34;&gt;Why label GBIF datasets as &amp;ldquo;citizen science&amp;rdquo;?&lt;/h2&gt;
 &lt;h3 id=&#34;what-is-citizen-science&#34;&gt;What is citizen science?&lt;/h3&gt;
 &lt;p&gt;Citizen science is scientific research conducted, in whole or in part, by amateur (or non-professional) scientists. Citizen science is sometimes described as &amp;ldquo;public participation in scientific research,&amp;rdquo; participatory monitoring, and participatory action research (&lt;a href=&#34;https://en.wikipedia.org/wiki/Citizen_science&#34;&gt;wikipedia definition&lt;/a&gt;).&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Plot almost anything using the GBIF maps api</title>
+      <link>https://data-blog.gbif.org/post/gbif-maps-api-using-r-and-leaflet/</link>
+      <pubDate>Wed, 19 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/post/gbif-maps-api-using-r-and-leaflet/</guid>
+      <description>The GBIF maps api is an under-used but powerful web service provided by GBIF. The maps api is used by the main GBIF portal to create the maps including the big map used on gbif.org. We can make a simple call to the api by pasting the link below into a web browser.
+https://api.gbif.org/v2/map/occurrence/density/0/0/0@1x.png?style=purpleYellow.pointYou should end up with an image like this.</description>
     </item>
     
     <item>

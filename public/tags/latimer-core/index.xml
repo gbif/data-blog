@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Latimer core on GBIF Data Blog</title>
+    <link>https://data-blog.gbif.org/tags/latimer-core/</link>
+    <description>Recent content in Latimer core on GBIF Data Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 09 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://data-blog.gbif.org/tags/latimer-core/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Making collection content discoverable when you don’t have occurrences published on GBIF</title>
+      <link>https://data-blog.gbif.org/post/grscicoll-collection-descriptors/</link>
+      <pubDate>Wed, 09 Oct 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/post/grscicoll-collection-descriptors/</guid>
+      <description>This blog post is a tutorial on how to upload collection descriptors in the Global Registry of Scientific Collections (GRSciColl).
+If you are someone working with a physical collection or work with people who do, you might be interested in making these collections findable. Ideally, the content of these collections would be digitized and made available online on relevant platforms like GBIF.org, iDigBio.org, ALA.org.au, etc. Sharing digital specimen records is a great way to ensure the discoverability of collection content.</description>
+    </item>
+    
+  </channel>
+</rss>

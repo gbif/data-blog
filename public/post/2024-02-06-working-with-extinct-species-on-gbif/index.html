@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Working with extinct species on GBIF - GBIF Data Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="John Waller" />
+  <meta name="description" content="GBIF users are often interested in getting occurrences of only living species or &amp;ldquo;no extinct&amp;rdquo; species. This seemingly straightforward request is often difficult to fulfill in practice.
+Currently, there is no occurrence level filter for removing extinct species from an occurrence search. Additionally, there is no authoritative global extinct species list available from GBIF. This article discusses the difficulties and complexities of working with extinct species and some possible solutions.
+" />
+
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.91.2" />
+
+
+<link rel="canonical" href="https://data-blog.gbif.org/post/2024-02-06-working-with-extinct-species-on-gbif/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.2.0" rel="stylesheet">
+
+
+
+
+<link rel="stylesheet" href="/css//custom.css">
+
+
+<meta property="og:title" content="Working with extinct species on GBIF" />
+<meta property="og:description" content="GBIF users are often interested in getting occurrences of only living species or &ldquo;no extinct&rdquo; species. This seemingly straightforward request is often difficult to fulfill in practice.
+Currently, there is no occurrence level filter for removing extinct species from an occurrence search. Additionally, there is no authoritative global extinct species list available from GBIF. This article discusses the difficulties and complexities of working with extinct species and some possible solutions." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://data-blog.gbif.org/post/2024-02-06-working-with-extinct-species-on-gbif/" /><meta property="article:section" content="post" />
+
+<meta property="article:modified_time" content="2024-05-21T10:24:15+01:00" />
+
+<meta itemprop="name" content="Working with extinct species on GBIF">
+<meta itemprop="description" content="GBIF users are often interested in getting occurrences of only living species or &ldquo;no extinct&rdquo; species. This seemingly straightforward request is often difficult to fulfill in practice.
+Currently, there is no occurrence level filter for removing extinct species from an occurrence search. Additionally, there is no authoritative global extinct species list available from GBIF. This article discusses the difficulties and complexities of working with extinct species and some possible solutions.">
+<meta itemprop="dateModified" content="2024-05-21T10:24:15+01:00" />
+<meta itemprop="wordCount" content="676">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Working with extinct species on GBIF"/>
+<meta name="twitter:description" content="GBIF users are often interested in getting occurrences of only living species or &ldquo;no extinct&rdquo; species. This seemingly straightforward request is often difficult to fulfill in practice.
+Currently, there is no occurrence level filter for removing extinct species from an occurrence search. Additionally, there is no authoritative global extinct species list available from GBIF. This article discusses the difficulties and complexities of working with extinct species and some possible solutions."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">GBIF Data Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/categories/gbif/">
+        <li class="mobile-menu-item">posts</li>
+      </a><a href="https://discourse.gbif.org/c/data-blog">
+        <li class="mobile-menu-item">community-forum</li>
+      </a><a href="https://www.gbif.org/">
+        <li class="mobile-menu-item">gbif.org</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">about</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">
+	<img src= "/logo.png" alt="GBIF-analytics-blog" style ="width:20%;">
+  </a>
+  
+	
+  
+  
+</div>
+
+<nav class="site-navbar">
+
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/categories/gbif/">posts</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://discourse.gbif.org/c/data-blog">community-forum</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://www.gbif.org/">gbif.org</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">about</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+	
+    <header class="post-header">
+      <h1 class="post-title">Working with extinct species on GBIF</h1>
+	  
+	  
+      <div class="post-author">John Waller</div>
+
+      <div class="post-meta">
+        <span class="post-time"> 2024-05-21 </span>
+        <div class="post-category">
+            
+              <a href="/categories/gbif/"> GBIF </a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    
+    
+
+    
+    <div class="post-content">
+      <p>GBIF users are often interested in getting occurrences of only living species or &ldquo;no extinct&rdquo; species. This seemingly straightforward request is often difficult to fulfill in practice.</p>
+<p>Currently, there is no occurrence level filter for removing extinct species from an occurrence search. Additionally, there is no authoritative global extinct species list available from GBIF. This article discusses the difficulties and complexities of working with extinct species and some possible solutions.</p>
+<img src="https://api.gbif.org/v1/image/cache/fit-in/500x/occurrence/418979581/media/b2fae8748e77446ef0bcd5a23e373bd6" width="500">
+<p><small> Meganeura selysii (Brongniart, 1894) <a href="https://www.gbif.org/occurrence/418979581">collected</a> in France (licensed under <a href="http://creativecommons.org/licenses/by/4.0/">http://creativecommons.org/licenses/by/4.0/</a>) </small></p>
+<h2 id="isextinct">isExtinct</h2>
+<p>GBIF has a <strong>species search</strong> term called <code>isExtinct</code>. This term is (as of the writing of this blog post) is not visible on the <a href="https://www.gbif.org/species/search">web UI</a>, but it is available when using the <a href="https://api.gbif.org/v1/species/search?rank=SPECIES&amp;isExtinct=true">API</a> or <a href="https://docs.ropensci.org/rgbif/reference/name_lookup.html">rgbif</a>/<a href="https://pygbif.readthedocs.io/en/latest/modules/species.html#pygbif.species.name_lookup">pygbif</a>.</p>
+<p>This search term will tell you whether a taxon was marked as &ldquo;extinct&rdquo; by the source checklist of the name. The <code>isExtinct</code> designation on the GBIF API is harvested from the Catalogue Of Life (COL) <a href="https://www.catalogueoflife.org/data/source-datasets">source datasets</a> and from the other GBIF backbone <a href="https://www.gbif.org/dataset/d7dddbf4-2cf0-4f39-9b2a-bb099caae36c/constituents">constituent datasets</a> of the GBIF backbone.</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#268bd2">name_lookup</span>(isExtinct<span style="color:#719e07">=</span><span style="color:#cb4b16">TRUE</span>,limit<span style="color:#719e07">=</span><span style="color:#2aa198">1000</span>,offset<span style="color:#719e07">=</span><span style="color:#2aa198">0</span>)
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">species<span style="color:#719e07">.</span>name_lookup(isExtinct<span style="color:#719e07">=</span><span style="color:#cb4b16">True</span>)
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">https://api.gbif.org/v1/species/search?rank<span style="color:#719e07">=</span>SPECIES&amp;<span style="color:#268bd2">isExtinct</span><span style="color:#719e07">=</span><span style="color:#b58900">true</span>
+</code></pre></div><p>Most checklist constituents in the GBIF backbone do not publish any extinct taxa, meaning either that there are no extinct species within the group or the checklist simply doesn&rsquo;t publish that information.</p>
+<p>Around 35K species-ranked names are labeled as <code>isExtinct</code> in the <a href="https://api.gbif.org/v1/species/search?rank=SPECIES&amp;isExtinct=true&amp;limit=1000&amp;datasetKey=d7dddbf4-2cf0-4f39-9b2a-bb099caae36c">GBIF backbone</a>. Unfortunately, there is no efficient way to extract all 35K <code>isExtinct</code> species (+400K names) using the GBIF species API. The current limit for any species search is <code>limit=1000</code>. Therefore, one can only extract the first 1000 records from any search. However, one can use the <code>offset</code> parameter to page through the results, but this will be slow and inefficient (offset is also limited to 100,000). See <strong>Chechlistbank</strong> section below for a likely better solution.</p>
+<p><img src="images/extinct_ds.svg" alt=""></p>
+<h2 id="checklistbank">Checklistbank</h2>
+<p><a href="https://www.checklistbank.org/">Checklistbank</a> is a somewhat new service which stores checklist datasets that make of the GBIF backbone and the COL checklist (and other checklists too). It is now possible to download all taxa marked <code>isExtinct</code> in the COL checklist dataset using the checklistbank UI.</p>
+<p><img src="image.png" alt="alt text"></p>
+<p><a href="https://www.checklistbank.org/dataset/294826/names?extinct=true&amp;facet=rank&amp;facet=issue&amp;facet=status&amp;facet=nomStatus&amp;facet=nomCode&amp;facet=nameType&amp;facet=field&amp;facet=authorship&amp;facet=authorshipYear&amp;facet=extinct&amp;facet=environment&amp;facet=origin&amp;facet=sectorMode&amp;facet=secondarySourceGroup&amp;facet=sectorDatasetKey&amp;facet=group&amp;limit=50&amp;offset=0&amp;sortBy=taxonomic">link here</a></p>
+<p>Alternatively, one can also extract all of the <code>isExtinct</code> names from the COL checklist dataset, using the  Checklistbank API.</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#586e75"># export all extinct names </span>
+http://api.checklistbank.org/dataset/3LR/export.txt?extinct<span style="color:#719e07">=</span><span style="color:#b58900">true</span>
+<span style="color:#586e75"># export from a certain group </span>
+<span style="color:#586e75">## Trilobites taxonID=TRL</span>
+http://api.checklistbank.org/dataset/COL2022/export.txt?taxonID<span style="color:#719e07">=</span>TRL&amp;<span style="color:#268bd2">extinct</span><span style="color:#719e07">=</span><span style="color:#b58900">true</span>
+</code></pre></div><p>You can look up other COL <code>taxonID</code> values on the <a href="https://www.catalogueoflife.org/">COL website</a>, just copy the last part of the URL after searching for the group you want.</p>
+<ul>
+<li>Odonata (B6LCL) <a href="https://www.catalogueoflife.org/data/taxon/B6LCL">https://www.catalogueoflife.org/data/taxon/B6LCL</a></li>
+<li>Trilobites (TRL) <a href="https://www.catalogueoflife.org/data/taxon/TRL">https://www.catalogueoflife.org/data/taxon/TRL</a></li>
+<li>Birds (V2) <a href="https://www.catalogueoflife.org/data/taxon/V2">https://www.catalogueoflife.org/data/taxon/V2</a></li>
+</ul>
+<p>When using the <code>isExtinct</code> term, one should keep in mind that the coverage and reliability of this term can vary between taxonomic groups and COL source datasets. This basic fact also explains why the <code>isExtinct</code> term is not more visible on the GBIF web portal.</p>
+<blockquote>
+<p><code>isExtinct</code> on GBIF is only updated when the GBIF backbone is updated, so source datasets may be more up-to-date or disagree with the output of the GBIF API.</p>
+</blockquote>
+<p><a href="https://github.com/CatalogueOfLife/backend/blob/master/API.md">checklistbank API docs</a></p>
+<h2 id="iucn-threat-status">IUCN Threat Status</h2>
+<p>The term <code>isExtinct</code> is not always reliable for more <strong>recently extinct</strong> species. For more recently extinct species, <code>iucnRedListCategory</code> tends to work better. For example, no adult <a href="https://www.gbif.org/species/2422444">Golden Toads</a> have been seen since May 15, 1989. While GBIF lists <code>isExtinct=false</code> for the Golden Toad, the <code>iucnRedListCategory</code> lists the Golden Toad correctly as <a href="https://api.gbif.org/v1/species/2422444/iucnRedListCategory">&ldquo;EXTINCT&rdquo;</a>.</p>
+<p>Here are some examples of how to use <code>iucnRedListCategory</code> to search for extinct species and occurrences with <strong>rgbif</strong> and the API:</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#268bd2">occ_search</span>(taxonKey<span style="color:#719e07">=</span><span style="color:#2aa198">2422444</span>,iucnRedListCategory<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;EX&#34;</span>)
+<span style="color:#268bd2">name_usage</span>(<span style="color:#2aa198">2422444</span>,data<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;iucnRedListCategory&#34;</span>)
+<span style="color:#586e75"># occ_download(pred(iucnRedListCategory,&#34;EX&#34;))</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">https://api.gbif.org/v1/species/2422444/iucnRedListCategory
+</code></pre></div><p>The <code>iucnRedListCategory</code> is also available as a web UI search : 
+<a href="https://www.gbif.org/occurrence/search?iucn_red_list_category=EX">https://www.gbif.org/occurrence/search?iucn_red_list_category=EX</a></p>
+<h2 id="fossil-occurrences">fossil occurrences</h2>
+<p>Finally, one might want to consider occurrences marked with the basis of record &ldquo;FOSSIL SPECIMENS&rdquo;. While fossil specimens may not always be extinct taxa, it is often useful for filtering out or cross-referencing potentially extinct occurrences.</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#586e75"># rgbif has a useful default function for removing fossil occurrences and other</span>
+<span style="color:#586e75"># often filtered data, such as living specimens. </span>
+<span style="color:#268bd2">occ_download</span>(<span style="color:#268bd2">pred_default</span>())
+<span style="color:#268bd2">occ_download</span>(<span style="color:#268bd2">pred_not</span>(<span style="color:#268bd2">pred</span>(<span style="color:#2aa198">&#34;basisOfRecord&#34;</span>,<span style="color:#2aa198">&#34;FOSSIL_SPECIMEN&#34;</span>)))
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#719e07">from</span> pygbif <span style="color:#719e07">import</span> occurrences <span style="color:#719e07">as</span> occ
+occ<span style="color:#719e07">.</span>download(<span style="color:#2aa198">&#39;basisOfRecord !in [&#34;FOSSIL_SPECIMEN&#34;]&#39;</span>)
+</code></pre></div><p>Working with extinct taxa can be challenging, but hopefully you have found some solutions here. As always, if you haven&rsquo;t found what you are looking for, you can always contact us at <a href="mailto:helpdesk@gbif.org">helpdesk@gbif.org</a>.</p>
+    </div>
+
+    
+    
+
+    
+    
+
+    <footer class="post-footer">
+      
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/2024-05-27-getting-fish-trees-reptiles/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Getting fish trees reptiles</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/improve-identifier-stability/">
+            <span class="next-text nav-default">GBIF attempts to improve identifier stability by monitoring changes of occurrenceIDs</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      
+
+
+
+<div>
+<h3>This post represents the ideas of the author.</h3>
+</div>
+<div id='discourse-comments'></div>
+<script type="text/javascript">
+  DiscourseEmbed = { discourseUrl: 'https://discourse.gbif.org/',
+                     discourseEmbedUrl: 'https://data-blog.gbif.org\/post\/2024-02-06-working-with-extinct-species-on-gbif\/' };
+
+  (function() {
+    var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+    d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+  })();
+</script>
+
+
+<div class = "copyright">
+	<a class="theme-link" href="https://www.gbif.org/what-is-gbif">What is GBIF?</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://www.gbif.org/developer/summary">API</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://www.gbif.org/faq">FAQ</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://discourse.gbif.org/">Community-Forum</a>
+</div>
+
+<div class = "copyright">
+	<span class="theme-info">GBIF Secretariat</span>
+	<span class="theme-info">Universitetsparken 15</span>
+	<span class="theme-info">DK-2100 Copenhagen Ø</span>
+	<span class="theme-info" >Denmark</span>
+</div>
+
+<div class="copyright">
+	<span class="power-by">
+	Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+	</span>
+	<span class="division">|</span>
+	<span class="theme-info">
+	Theme -
+	<a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+	</span>
+
+</div>
+
+<script defer data-domain="data-blog.gbif.org,gbif.org" src="https://plausible.io/js/script.file-downloads.js"></script>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+<script type="text/javascript" src="/dist/even.min.js?v=3.2.0"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

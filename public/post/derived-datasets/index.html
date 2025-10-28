@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Derived datasets - GBIF Data Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Daniel Noesgaard" />
+  <meta name="description" content="You&amp;rsquo;ve finished an analysis using GBIF-mediated data, you&amp;rsquo;re writing up your manuscript and checking all the references, but you&amp;rsquo;re unsure of how to cite GBIF. If you Google it, you&amp;rsquo;ll probably end up reading our citation guideslines and quickly realize that GBIF is all about DOIs. Datasets have their own DOIs and downloads of aggregated data also have their own DOIs.
+But maybe you didn&amp;rsquo;t download data through the GBIF.org portal. Maybe you relied on an R package like rgbif or dismo that retrived data synchronously from the GBIF API? Maybe a grad student downloaded if for you? Maybe you accessed and analyzed the data using a cloud computing service, like Microsoft Azure or Amazon Web Services? In any case, which DOI do you cite if you don&amp;rsquo;t have one?
+" />
+
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.91.2" />
+
+
+<link rel="canonical" href="https://data-blog.gbif.org/post/derived-datasets/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.2.0" rel="stylesheet">
+
+
+
+
+<link rel="stylesheet" href="/css//custom.css">
+
+
+<meta property="og:title" content="Derived datasets" />
+<meta property="og:description" content="You&rsquo;ve finished an analysis using GBIF-mediated data, you&rsquo;re writing up your manuscript and checking all the references, but you&rsquo;re unsure of how to cite GBIF. If you Google it, you&rsquo;ll probably end up reading our citation guideslines and quickly realize that GBIF is all about DOIs. Datasets have their own DOIs and downloads of aggregated data also have their own DOIs.
+But maybe you didn&rsquo;t download data through the GBIF.org portal. Maybe you relied on an R package like rgbif or dismo that retrived data synchronously from the GBIF API? Maybe a grad student downloaded if for you? Maybe you accessed and analyzed the data using a cloud computing service, like Microsoft Azure or Amazon Web Services? In any case, which DOI do you cite if you don&rsquo;t have one?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://data-blog.gbif.org/post/derived-datasets/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-05-20T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-05-20T11:11:11+02:00" />
+
+<meta itemprop="name" content="Derived datasets">
+<meta itemprop="description" content="You&rsquo;ve finished an analysis using GBIF-mediated data, you&rsquo;re writing up your manuscript and checking all the references, but you&rsquo;re unsure of how to cite GBIF. If you Google it, you&rsquo;ll probably end up reading our citation guideslines and quickly realize that GBIF is all about DOIs. Datasets have their own DOIs and downloads of aggregated data also have their own DOIs.
+But maybe you didn&rsquo;t download data through the GBIF.org portal. Maybe you relied on an R package like rgbif or dismo that retrived data synchronously from the GBIF API? Maybe a grad student downloaded if for you? Maybe you accessed and analyzed the data using a cloud computing service, like Microsoft Azure or Amazon Web Services? In any case, which DOI do you cite if you don&rsquo;t have one?"><meta itemprop="datePublished" content="2021-05-20T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2021-05-20T11:11:11+02:00" />
+<meta itemprop="wordCount" content="595">
+<meta itemprop="keywords" content="DOI,CiteTheDOI,Derived datasets," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Derived datasets"/>
+<meta name="twitter:description" content="You&rsquo;ve finished an analysis using GBIF-mediated data, you&rsquo;re writing up your manuscript and checking all the references, but you&rsquo;re unsure of how to cite GBIF. If you Google it, you&rsquo;ll probably end up reading our citation guideslines and quickly realize that GBIF is all about DOIs. Datasets have their own DOIs and downloads of aggregated data also have their own DOIs.
+But maybe you didn&rsquo;t download data through the GBIF.org portal. Maybe you relied on an R package like rgbif or dismo that retrived data synchronously from the GBIF API? Maybe a grad student downloaded if for you? Maybe you accessed and analyzed the data using a cloud computing service, like Microsoft Azure or Amazon Web Services? In any case, which DOI do you cite if you don&rsquo;t have one?"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">GBIF Data Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/categories/gbif/">
+        <li class="mobile-menu-item">posts</li>
+      </a><a href="https://discourse.gbif.org/c/data-blog">
+        <li class="mobile-menu-item">community-forum</li>
+      </a><a href="https://www.gbif.org/">
+        <li class="mobile-menu-item">gbif.org</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">about</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">
+	<img src= "/logo.png" alt="GBIF-analytics-blog" style ="width:20%;">
+  </a>
+  
+	
+  
+  
+</div>
+
+<nav class="site-navbar">
+
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/categories/gbif/">posts</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://discourse.gbif.org/c/data-blog">community-forum</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://www.gbif.org/">gbif.org</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">about</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+	
+    <header class="post-header">
+      <h1 class="post-title">Derived datasets</h1>
+	  
+	  
+      <div class="post-author">Daniel Noesgaard</div>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-05-20 </span>
+        <div class="post-category">
+            
+              <a href="/categories/gbif/"> GBIF </a>
+            
+              <a href="/categories/citation/"> Citation </a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    
+    
+
+    
+    <div class="post-content">
+      <p>You&rsquo;ve finished an analysis using GBIF-mediated data, you&rsquo;re writing up your manuscript and checking all the references, but you&rsquo;re unsure of how to cite GBIF. If you <a href="https://www.google.com/search?q=how+to+cite+GBIF">Google it</a>, you&rsquo;ll probably end up reading our <a href="https://www.gbif.org/citation-guidelines">citation guideslines</a> and quickly realize that GBIF is all about DOIs. Datasets have their own DOIs and downloads of aggregated data also have their own DOIs.</p>
+<p>But maybe you didn&rsquo;t download data through the GBIF.org portal. Maybe you relied on an R package like rgbif or dismo that retrived data synchronously from the GBIF API? Maybe a grad student downloaded if for you? Maybe you accessed and analyzed the data using a cloud computing service, like Microsoft Azure or Amazon Web Services? In any case, which DOI do you cite <em>if you don&rsquo;t have one</em>?</p>
+<h2 id="introducing-derived-datasets">Introducing Derived Datasets</h2>
+<p>To overcome this problem and any other situation in which a user wishes to assign a DOI to a subset of GBIF-mediated data, for which a DOI doesn&rsquo;t exist or isn&rsquo;t representative, we introduce the <strong>Derived Dataset</strong>. Simply put, a derived dataset is a citable record (with a unique DOI) representing a dataset that doesn&rsquo;t exist as a conventional, unfiltered GBIF.org download. So what does it take to create one and how do you do it?</p>
+<p>As a minimum you&rsquo;ll need two things: 1) a GBIF.org account and 2) a list of contributing (parent) datasets with record counts—i.e. how many records did each dataset contribute. If your data contains all available fields from GBIF, you&rsquo;ll need to summarize it based on the <code>datasetKey</code> field (<a href="#noDatasetKey">What if you don&rsquo;t have this field?</a>). There are numerous ways of doing this in R, using Excel, datamash, and other similar tools. But in the end you&rsquo;ll want to have a list like this:</p>
+<pre tabindex="0"><code>&lt;datasetKey 1&gt;	&lt;# records&gt;
+&lt;datasetKey 2&gt;	&lt;# records&gt;
+&lt;datasetKey 3&gt;	&lt;# records&gt;
+</code></pre><p>etc.</p>
+<p>Secondly, in the interest of reproducibility, make sure to deposit your dataset somewhere publicly accessible (e.g. Zenodo). When you&rsquo;re ready, go to the <a href="https://www.gbif.org/derived-dataset/register">derived dataset tool</a> and fill it out as shown below.</p>
+<p><img src="/post/2021-05-05-derivedDatasets_files/dd_form.png" alt=""></p>
+<p>All it takes is</p>
+<ul>
+<li>a <strong>title</strong>,</li>
+<li>the <strong>URL of where your dataset is deposited</strong>,</li>
+<li>a <strong>list of datasets</strong> (by datasetKey or DOI) with record counts either as a CSV file or filled in on-screen, and</li>
+<li>a <strong>description of what the dataset</strong> is and how it came together.</li>
+</ul>
+<p>That&rsquo;s it!</p>
+<p>The form also has two <strong>optional</strong> fields: one for specifying an original download DOI if the derived dataset represents a filtered version of that download, and a registration date, if, for someone reason you wish the derived dataset to be registered in the future rather than immediately (e.g. embargoed materials).</p>
+<p>Hit <strong>SUBMIT</strong> and once the registration is complete, you can click the <strong>GO TO DATASET</strong> button to see the result and get the DOI.</p>
+<p>You&rsquo;ll notice that there&rsquo;s a suggested citation string there as well. You&rsquo;re welcome to change this to your liking as long as you keep the DOI.</p>
+<p><img src="/post/2021-05-05-derivedDatasets_files/dd_landing_page.png" alt=""></p>
+<hr>
+<h2 id="noDatasetKey">My data doesn't have the datasetKey field</h2>
+<p>If your data does <strong>not</strong> have this field, you may be able to use the occurrence <code>key</code> instead and look up the parent dataset, i.e. from</p>
+<p><code>https://api.gbif.org/v1/occurrence/&lt;occurrence key&gt;</code></p>
+<p>get value of the field <code>datasetKey</code>, e.g.,</p>
+<pre tabindex="0"><code>&quot;datasetKey&quot;: &quot;cd6e21c8-9e8a-493a-8a76-fbf7862069e5&quot;
+</code></pre><p>Note, that this method requires that the occurrence records are still available in GBIF. If a few are missing, that&rsquo;s ok. If you are able to successfully identify the parent datasets of most of the occurrences in your dataset, you&rsquo;re still good to go. It&rsquo;s better to accurately cite and credit <em>some</em> of the data publishers whose data you used than <em>none at all</em>!</p>
+    </div>
+
+    
+    
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/doi/">DOI</a>
+          
+          <a href="/tags/citethedoi/">CiteTheDOI</a>
+          
+          <a href="/tags/derived-datasets/">Derived datasets</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/did-you-know/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Did you know that...? - some of the lesser known functionalities around GBIF.org</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/microsoft-azure-and-gbif/">
+            <span class="next-text nav-default">GBIF and Apache-Spark on Microsoft Azure tutorial</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      
+
+
+
+<div>
+<h3>This post represents the ideas of the author.</h3>
+</div>
+<div id='discourse-comments'></div>
+<script type="text/javascript">
+  DiscourseEmbed = { discourseUrl: 'https://discourse.gbif.org/',
+                     discourseEmbedUrl: 'https://data-blog.gbif.org\/post\/derived-datasets\/' };
+
+  (function() {
+    var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+    d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+  })();
+</script>
+
+
+<div class = "copyright">
+	<a class="theme-link" href="https://www.gbif.org/what-is-gbif">What is GBIF?</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://www.gbif.org/developer/summary">API</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://www.gbif.org/faq">FAQ</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://discourse.gbif.org/">Community-Forum</a>
+</div>
+
+<div class = "copyright">
+	<span class="theme-info">GBIF Secretariat</span>
+	<span class="theme-info">Universitetsparken 15</span>
+	<span class="theme-info">DK-2100 Copenhagen Ø</span>
+	<span class="theme-info" >Denmark</span>
+</div>
+
+<div class="copyright">
+	<span class="power-by">
+	Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+	</span>
+	<span class="division">|</span>
+	<span class="theme-info">
+	Theme -
+	<a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+	</span>
+
+</div>
+
+<script defer data-domain="data-blog.gbif.org,gbif.org" src="https://plausible.io/js/script.file-downloads.js"></script>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+<script type="text/javascript" src="/dist/even.min.js?v=3.2.0"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

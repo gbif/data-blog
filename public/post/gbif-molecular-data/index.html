@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Sequence-based data on GBIF - Sharing your data - GBIF Data Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Marie Grosjean" />
+  <meta name="description" content="[Edit 2021-09-16]
+Important: To find guidance on how to publish Sequence-based data on GBIF, please consult the following guide:
+ Andersson AF, Bissett A, Finstad AG, Fossøy F, Grosjean M, Hope M, Jeppesen TS, Kõljalg U, Lundin D, Nilsson RN, Prager M, Svenningsen C &amp;amp; Schigel D (2020) Publishing DNA-derived data through biodiversity data platforms. v1.0 Copenhagen: GBIF Secretariat. https://doi.org/10.35035/doc-vf1a-nr22.
+ [End edit 2021-09-16]
+GBIF is trying to make it easier to share sequence-based data. In fact, this past year alone, we worked with UNITE to integrate species hypothesis for fungi and with EMBL-EBI to publish 295 metagenomics datasets.
+Unfortunately, documentation is not as quick to follow. Although we have now an FAQ on the topic, I thought that anyone could use a blog post with some advice and examples.
+Note that this blog post is not intended to be documentation. The information written is subject to change, feel free to leave comments if you have any question or suggestion.
+" />
+<meta name="keywords" content="molecular, metagenomics, eDNA, sequence" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.91.2" />
+
+
+<link rel="canonical" href="https://data-blog.gbif.org/post/gbif-molecular-data/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.2.0" rel="stylesheet">
+
+
+
+
+<link rel="stylesheet" href="/css//custom.css">
+
+
+<meta property="og:title" content="Sequence-based data on GBIF - Sharing your data" />
+<meta property="og:description" content="[Edit 2021-09-16]
+Important: To find guidance on how to publish Sequence-based data on GBIF, please consult the following guide:
+
+Andersson AF, Bissett A, Finstad AG, Fossøy F, Grosjean M, Hope M, Jeppesen TS, Kõljalg U, Lundin D, Nilsson RN, Prager M, Svenningsen C &amp; Schigel D (2020) Publishing DNA-derived data through biodiversity data platforms. v1.0 Copenhagen: GBIF Secretariat. https://doi.org/10.35035/doc-vf1a-nr22.
+
+[End edit 2021-09-16]
+GBIF is trying to make it easier to share sequence-based data. In fact, this past year alone, we worked with UNITE to integrate species hypothesis for fungi and with EMBL-EBI to publish 295 metagenomics datasets.
+Unfortunately, documentation is not as quick to follow. Although we have now an FAQ on the topic, I thought that anyone could use a blog post with some advice and examples.
+Note that this blog post is not intended to be documentation. The information written is subject to change, feel free to leave comments if you have any question or suggestion." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://data-blog.gbif.org/post/gbif-molecular-data/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2019-04-24T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-04-23T00:00:00+00:00" />
+
+<meta itemprop="name" content="Sequence-based data on GBIF - Sharing your data">
+<meta itemprop="description" content="[Edit 2021-09-16]
+Important: To find guidance on how to publish Sequence-based data on GBIF, please consult the following guide:
+
+Andersson AF, Bissett A, Finstad AG, Fossøy F, Grosjean M, Hope M, Jeppesen TS, Kõljalg U, Lundin D, Nilsson RN, Prager M, Svenningsen C &amp; Schigel D (2020) Publishing DNA-derived data through biodiversity data platforms. v1.0 Copenhagen: GBIF Secretariat. https://doi.org/10.35035/doc-vf1a-nr22.
+
+[End edit 2021-09-16]
+GBIF is trying to make it easier to share sequence-based data. In fact, this past year alone, we worked with UNITE to integrate species hypothesis for fungi and with EMBL-EBI to publish 295 metagenomics datasets.
+Unfortunately, documentation is not as quick to follow. Although we have now an FAQ on the topic, I thought that anyone could use a blog post with some advice and examples.
+Note that this blog post is not intended to be documentation. The information written is subject to change, feel free to leave comments if you have any question or suggestion."><meta itemprop="datePublished" content="2019-04-24T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2019-04-23T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1612">
+<meta itemprop="keywords" content="molecular,DNA,eDNA,GBIF,MixS,GGBN,EBI,sequence,OTU,Darwin Core,howto,publish," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Sequence-based data on GBIF - Sharing your data"/>
+<meta name="twitter:description" content="[Edit 2021-09-16]
+Important: To find guidance on how to publish Sequence-based data on GBIF, please consult the following guide:
+
+Andersson AF, Bissett A, Finstad AG, Fossøy F, Grosjean M, Hope M, Jeppesen TS, Kõljalg U, Lundin D, Nilsson RN, Prager M, Svenningsen C &amp; Schigel D (2020) Publishing DNA-derived data through biodiversity data platforms. v1.0 Copenhagen: GBIF Secretariat. https://doi.org/10.35035/doc-vf1a-nr22.
+
+[End edit 2021-09-16]
+GBIF is trying to make it easier to share sequence-based data. In fact, this past year alone, we worked with UNITE to integrate species hypothesis for fungi and with EMBL-EBI to publish 295 metagenomics datasets.
+Unfortunately, documentation is not as quick to follow. Although we have now an FAQ on the topic, I thought that anyone could use a blog post with some advice and examples.
+Note that this blog post is not intended to be documentation. The information written is subject to change, feel free to leave comments if you have any question or suggestion."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">GBIF Data Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/categories/gbif/">
+        <li class="mobile-menu-item">posts</li>
+      </a><a href="https://discourse.gbif.org/c/data-blog">
+        <li class="mobile-menu-item">community-forum</li>
+      </a><a href="https://www.gbif.org/">
+        <li class="mobile-menu-item">gbif.org</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">about</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">
+	<img src= "/logo.png" alt="GBIF-analytics-blog" style ="width:20%;">
+  </a>
+  
+	
+  
+  
+</div>
+
+<nav class="site-navbar">
+
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/categories/gbif/">posts</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://discourse.gbif.org/c/data-blog">community-forum</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://www.gbif.org/">gbif.org</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">about</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+	
+    <header class="post-header">
+      <h1 class="post-title">Sequence-based data on GBIF - Sharing your data</h1>
+	  
+	  
+      <div class="post-author">Marie Grosjean</div>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-04-24 </span>
+        <div class="post-category">
+            
+              <a href="/categories/gbif/"> GBIF </a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    
+    
+
+    
+    <div class="post-content">
+      <p>[Edit 2021-09-16]</p>
+<p><strong>Important</strong>: To find guidance on how to publish Sequence-based data on GBIF, please consult the following guide:</p>
+<blockquote>
+<p>Andersson AF, Bissett A, Finstad AG, Fossøy F, Grosjean M, Hope M, Jeppesen TS, Kõljalg U, Lundin D, Nilsson RN, Prager M, Svenningsen C &amp; Schigel D (2020) Publishing DNA-derived data through biodiversity data platforms. v1.0 Copenhagen: GBIF Secretariat. <a href="https://doi.org/10.35035/doc-vf1a-nr22">https://doi.org/10.35035/doc-vf1a-nr22</a>.</p>
+</blockquote>
+<p>[End edit 2021-09-16]</p>
+<p>GBIF is trying to make it easier to share sequence-based data. In fact, this past year alone, we worked with <a href="https://unite.ut.ee">UNITE</a> to integrate species hypothesis for fungi and with EMBL-<a href="https://www.ebi.ac.uk">EBI</a> to publish 295 metagenomics datasets.</p>
+<p>Unfortunately, documentation is not as quick to follow. Although we have now an <a href="https://www.gbif.org/faq?question=how-can-i-publish-molecular-data-to-gbif">FAQ</a> on the topic, I thought that anyone could use a blog post with some advice and examples.</p>
+<p>Note that this blog post is not intended to be documentation. The information written is subject to change, feel free to leave comments if you have any question or suggestion.</p>
+<img src="https://www.publicdomainpictures.net/pictures/40000/velka/--1359709322C31.jpg#.XLcmtPqn2pQ.link" alt="Structure Of DNA - Public Domain" width="600"/>
+<h1 id="type-of-sequence-based-data-on-gbif">Type of sequence-based data on GBIF</h1>
+<p>The term <code>sequence-based data</code> or <code>molecular-based data</code> refers to any type of data associated to some genetic material (DNA or RNA sequence, genotype, etc.).
+These data can  be sorted in one of the two following categories:</p>
+<ul>
+<li>the genetic material comes from an <strong>observable specimen</strong> (whether it is macro or microscopic).</li>
+<li>the genetic material is the <strong>only evidence of a given organism or community</strong>, see for example metagenomics samples.</li>
+</ul>
+<p>These two categories have different implications in terms of quality control but this will be the topic of an other post.</p>
+<h1 id="examples">Examples</h1>
+<p>The examples I will use in this post are the following:</p>
+<ul>
+<li>Frøslev T, Ejrnæs R (2018). BIOWIDE eDNA Fungi dataset. Danish Biodiversity Information Facility. Occurrence dataset <a href="https://doi.org/10.15468/nesbvx">https://doi.org/10.15468/nesbvx</a> accessed via GBIF.org on 2019-04-17.</li>
+<li>PlutoF (2019). UNITE - Unified system for the DNA based fungal species linked to the classification. Version 1.2. Checklist dataset <a href="https://doi.org/10.15156/bio/587474">https://doi.org/10.15156/bio/587474</a> accessed via GBIF.org on 2019-04-17.</li>
+<li>Cox F, Newsham K, Robinson C, Sweetlove M (2019). Microbial Fungi in soils on different Sub-Antarctic islands. SCAR - Microbial Antarctic Resource System. Metadata dataset <a href="https://doi.org/10.15468/jekfdj">https://doi.org/10.15468/jekfdj</a> accessed via GBIF.org on 2019-04-17. + <a href="https://www.gbif.org/dataset/search?type=METADATA&amp;publishing_org=af290483-8639-4b58-87fb-a4824c65e577">all the SCAR - Microbial Antarctic Resource System metadata-only datasets</a></li>
+<li>MGnify (2017). EMOSE (2017) Inter-Comparison of Marine Plankton Metagenome Analysis Methods. Sampling event dataset <a href="https://doi.org/10.15468/re7eoi">https://doi.org/10.15468/re7eoi</a> accessed via GBIF.org on 2019-04-17. + <a href="https://www.gbif.org/dataset/search?publishing_org=ab733144-7043-4e88-bd4f-fca7bf858880">MGnify datasets</a></li>
+<li>Telfer A (2018). Centre for Biodiversity Genomics - Canadian Specimens. University of Guelph. Occurrence dataset <a href="https://doi.org/10.15468/mbwnw9">https://doi.org/10.15468/mbwnw9</a> accessed via GBIF.org on 2019-04-17.</li>
+</ul>
+<h1 id="choosing-a-dataset-class">Choosing a dataset class</h1>
+<p>Data providers must organize their data into datasets in order to share them on GBIF. Four different dataset classes are supported: resources metadata, checklists, occurrence datasets and sampling-event datasets (see <a href="https://www.gbif.org/dataset-classes">this page</a> for more details). For the rest of this post, I assume that you are familiar with the structures of Darwin Core Archives, please consult <a href="https://github.com/gbif/ipt/wiki/DwCAHowToGuide">this page</a> for more information).</p>
+<p>When choosing which dataset class would suit your data best, keep in mind that extensions can only describe the core file. For example:</p>
+<ul>
+<li>If you would like to share sequences for each occurrence, consider organizing your data as an occurrence dataset: the extension containing the sequences will attached to occurrences (see <a href="https://doi.org/10.15468/nesbvx">BIOWIDE eDNA Fungi dataset</a>.</li>
+<li>Sampling-event datasets allow to put a greater emphasis on sampling protocol. This is the class adopted by <a href="https://www.gbif.org/publisher/ab733144-7043-4e88-bd4f-fca7bf858880">Mgnify</a> to map its metagenomics data.</li>
+</ul>
+<p>Hopefully, the rest of this blog post might give you a better idea of what is possible.</p>
+<h1 id="linnaean-classification-and-non-linnaean-classification">Linnaean classification and non-Linnaean classification</h1>
+<img align="right" style="padding: 15px" src="https://upload.wikimedia.org/wikipedia/commons/c/c0/Carolus_Linnaeus.jpg" alt="Portrait of Carl von Linné (Carolus Linnaeus) - Public domain" width="300"/>
+<p>As mentioned in our <a href="https://www.gbif.org/faq?question=how-can-i-publish-molecular-data-to-gbif">FAQ</a>:</p>
+<p>A basic requirement [on GBIF] is that organisms are identified–either using Linnean classification or another accepted taxonomy (e.g. DNA-based Species Hypotheses (SH) for fungi). If a specific taxonomy is not available, organisms may be identified to the nearest possible taxon (e.g. Bacteria).</p>
+<p>In other words, checklists, occurrence and sampling-event datasets must contain scientific names (our system doesn&rsquo;t handle OTUs). If you would like to check what can be matched to the GBIF taxonomy, please try out our name matching tool: <a href="https://www.gbif.org/tools/species-lookup">https://www.gbif.org/tools/species-lookup</a>.</p>
+<p>The <a href="https://doi.org/10.15468/nesbvx">BIOWIDE eDNA Fungi dataset</a> is a good example of dataset with some DNA-based Species Hypotheses (SH) for fungi.
+If no scientific name is available, you can always publish metadata-only datasets. See for example this dataset about <a href="https://doi.org/10.15468/jekfdj">Microbial Fungi in soils on different Sub-Antarctic islands</a>.</p>
+<h1 id="protocols-and-analysis-pipelines">Protocols and analysis pipelines</h1>
+<p>The sampling protocol, sequencing technology, quality control and sequence analysis pipelines make a huge difference in what can be detected at the microscopic level. For metagenomics datasets, the set of methods employed is probably the most valuable piece of information for a data user.
+There are two ways to convey this type of information in a tabular form:</p>
+<ul>
+<li>Using non-core extensions</li>
+<li>Using <a href="https://dwc.tdwg.org/terms/">Darwin Core terms</a> only</li>
+</ul>
+<p>[<strong>Edit:</strong> 2023-11-09: this paragraph was updated]
+In the first case, the information can be structured using defined terms, which makes it easier for users to compare methods once the data is aggregated with other dataset. In addition to that, this is a good way to make the information compatible across platforms. For example, the <a href="https://doi.org/10.15468/inygc6">International Barcode of Life project (iBOL)</a> uses <a href="https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2024-07-11.xml">DNA derived data extension</a>. However, GBIF won&rsquo;t index these extenstions as it indexes only Core and Multimedia ones. Which means that the information isn&rsquo;t displayed on the portal. In fact, it is only available to users downloading the source Darwin Core archive on the dataset pages (click on the download tab and choose <code>Source archive</code>).</p>
+<p>The alternative is to use some of the <a href="https://dwc.tdwg.org/terms/">Darwin Core terms</a>. For example, <a href="https://www.gbif.org/publisher/ab733144-7043-4e88-bd4f-fca7bf858880">Mgnify</a> organized its datasets as follow:</p>
+<ul>
+<li>The sampling protocols are described in the event files under the <a href="https://dwc.tdwg.org/terms/#dwc:samplingProtocol">dwc:samplingProtocol</a> and the <a href="https://dwc.tdwg.org/terms/#dwc:eventRemarks">dwc:eventRemarks</a> terms (see <a href="https://www.gbif.org/dataset/20b968fd-b7e0-4002-9136-1ccfa8e5b9df/event/MGYA00163069">this event</a> from the <a href="https://doi.org/10.15468/re7eoi">Inter-Comparison of Marine Plankton Metagenome Analysis Methods</a>).</li>
+<li>The bioinformatics analysis pipelines are described in the occurrence files under <a href="https://dwc.tdwg.org/terms/#dwc:identificationReferences">dwc:identificationReferences</a> with a link to the pipeline and <a href="https://dwc.tdwg.org/terms/#dwc:identificationRemarks">dwc:identificationRemarks</a> with the description (see <a href="https://www.gbif.org/occurrence/2027240778">this occurrence</a> from the same dataset).</li>
+<li>The total number of reads in a sample are given in the event file under <a href="https://dwc.tdwg.org/terms/#dwc:sampleSizeValue">dwc:sampleSizeValue</a> and <a href="https://dwc.tdwg.org/terms/#dwc:sampleSizeUnit">dwc:sampleSizeUnit</a> and the number of reads matched to a specific taxon are given in the occurrence file under <a href="https://dwc.tdwg.org/terms/#dwc:organismQuantity">dwc:organismQuantity</a> and <a href="https://dwc.tdwg.org/terms/#dwc:organismQuantityType">dwc:organismQuantityType</a>.</li>
+</ul>
+<p>These fields are displayed on the occurrence and event pages but contain mostly free text. The lack of structure can be an issue when comparing data from different data sources.</p>
+<p>Note that the methods can also be described in the datasets metadata. For example, the <a href="https://www.gbif.org/dataset/search?type=METADATA&amp;publishing_org=af290483-8639-4b58-87fb-a4824c65e577">SCAR - Microbial Antarctic Resource System metadata-only datasets</a> contain sampling and laboratory protocols (see for example <a href="https://doi.org/10.15468/jekfdj">Microbial Fungi in soils on different Sub-Antarctic islands</a>)</p>
+<p>A third option could be to do both: structure the information in extensions and make it available in <a href="https://dwc.tdwg.org/terms/">Darwin Core terms</a>. This approach would require more work but would ensure that the information is structured and accessible to more users.</p>
+<h3 id="extensions-available">Extensions available</h3>
+<p>A few extensions are currently available for structuring laboratory protocols. As mentioned previously, <a href="https://doi.org/10.15468/nesbvx">BIOWIDE eDNA Fungi dataset</a> uses <a href="http://rs.gbif.org/extension/ggbn/">GGBN extensions</a>.
+The <a href="https://rs.gbif.org/sandbox/extension/mixs_sample.xml">MIxS sample extension</a> can also be an alternative.</p>
+<p>Keep in mind that GBIF doesn&rsquo;t maintain extensions (it is up to the community) so some extensions available can become deprecated.</p>
+<h1 id="sequences">Sequences</h1>
+<p>You cannot make your sequences available directly on GBIF but you can reference them via the <a href="https://dwc.tdwg.org/terms/#dwc:associatedSequences">dwc:associatedSequences</a> field or share them via an extension.</p>
+<p>The <a href="https://dwc.tdwg.org/terms/#dwc:associatedSequences">dwc:associatedSequences</a> field should contain a reference to a sequence (for example to EBI or EMBL) not the sequence itself, see for example, the <a href="https://doi.org/10.15468/mbwnw9">Centre for Biodiversity Genomics - Canadian Specimens</a>.</p>
+<p>The <a href="http://rs.gbif.org/extension/ggbn/">GGBN extensions</a> allow to share sequences but it is not indexed by the system and is therefore available only in the raw Darwin Core archive, see the <a href="https://doi.org/10.15468/nesbvx">BIOWIDE eDNA Fungi dataset</a>.</p>
+<h1 id="environmental-data">Environmental data</h1>
+<p>Your samples or observations might be associated with measurements such as the water salinity or the soil pH. You can structure this type of information by using the <a href="http://rs.tdwg.org/dwc/terms/#measurementorfact">MeasurmentOrFact</a> extension. However, as I mentioned in the two paragraphs above, GBIF doesn&rsquo;t index extension so these measurements would only be available in the Darwin Core Archive.</p>
+<p>An alternative would be to use the <a href="http://rs.tdwg.org/dwc/terms/#dwc:dynamicProperties">dwc:dynamicProperties</a> field. This solution is not ideal but the properties will be displayed on the portal (see <a href="https://www.gbif.org/occurrence/2027240778">this occurrence</a> from the <a href="https://doi.org/10.15468/re7eoi">Inter-Comparison of Marine Plankton Metagenome Analysis Methods</a>).</p>
+<p>Perhaps the best solution for now would be to use both <a href="http://rs.tdwg.org/dwc/terms/#measurementorfact">MeasurmentOrFact</a> and <a href="http://rs.tdwg.org/dwc/terms/#dwc:dynamicProperties">dwc:dynamicProperties</a> to ensure that the information is accessible.</p>
+<h1 id="in-summary">In summary</h1>
+<p>Publishing molecular data on GBIF is like publishing any other type of data, it depends on each particular case. We are still figuring things out and would appreciated any thoughts on the topic. Don&rsquo;t hesitate to leave a comment or email <a href="mailto:helpdesk@gbif.org">helpdesk@gbif.org</a> if you have any question.</p>
+<h1 id="references">References</h1>
+<ul>
+<li><a href="https://www.gbif.org/news/2LrgV5t3ZuGeU2WIymSEuk/adding-sequence-based-identifiers-to-backbone-taxonomy-reveals-dark-taxa-fungi">Adding sequence-based identifiers to backbone taxonomy reveals &lsquo;dark taxa&rsquo; fungi</a></li>
+<li><a href="https://unite.ut.ee">UNITE</a></li>
+<li><a href="https://www.gbif.org/news/6ewyUhBpRYammYWI2CgsM4/biodiversity-infrastructures-to-crosslink-metagenomics-and-species-occurrence-data">Biodiversity infrastructures to crosslink metagenomics and species occurrence data</a></li>
+<li><a href="https://www.ebi.ac.uk">EBI</a></li>
+<li><a href="https://www.gbif.org/faq?question=how-can-i-publish-molecular-data-to-gbif">(How) can I publish molecular/sequence/DNA based data to GBIF?</a></li>
+<li><a href="https://www.gbif.org/dataset-classes">Dataset classes</a></li>
+<li><a href="https://github.com/gbif/ipt/wiki/DwCAHowToGuide">Darwin Core Archives - How-to Guide</a></li>
+<li><a href="https://dwc.tdwg.org/terms/">Darwin Core terms quick reference guide</a></li>
+<li><a href="https://github.com/gbif/ipt/wiki">IPT manual</a></li>
+<li><a href="https://www.gbif.org/publishing-data">Quick guide to publishing data through GBIF.org</a></li>
+<li><a href="https://www.gbif.org/faq?question=how-can-i-publish-molecular-data-to-gbif">FAQ - (How) can I publish molecular/sequence/DNA based data to GBIF?</a></li>
+<li><a href="https://www.gbif.org/tools/species-lookup">Name matching tool</a></li>
+<li><a href="https://tools.gbif.org/dwca-validator/extensions.do">Extensions</a></li>
+<li><a href="http://rs.tdwg.org/dwc/terms/#measurementorfact">MeasurmentOrFact extension</a></li>
+<li><a href="http://rs.gbif.org/extension/ggbn/">GGBN extensions</a></li>
+<li>Frøslev T, Ejrnæs R (2018). BIOWIDE eDNA Fungi dataset. Danish Biodiversity Information Facility. Occurrence dataset <a href="https://doi.org/10.15468/nesbvx">https://doi.org/10.15468/nesbvx</a> accessed via GBIF.org on 2019-04-17.</li>
+<li>PlutoF (2019). UNITE - Unified system for the DNA based fungal species linked to the classification. Version 1.2. Checklist dataset <a href="https://doi.org/10.15156/bio/587474">https://doi.org/10.15156/bio/587474</a> accessed via GBIF.org on 2019-04-17.</li>
+<li>Cox F, Newsham K, Robinson C, Sweetlove M (2019). Microbial Fungi in soils on different Sub-Antarctic islands. SCAR - Microbial Antarctic Resource System. Metadata dataset <a href="https://doi.org/10.15468/jekfdj">https://doi.org/10.15468/jekfdj</a> accessed via GBIF.org on 2019-04-17. + <a href="https://www.gbif.org/dataset/search?type=METADATA&amp;publishing_org=af290483-8639-4b58-87fb-a4824c65e577">all the SCAR - Microbial Antarctic Resource System metadata-only datasets</a></li>
+<li>MGnify (2017). EMOSE (2017) Inter-Comparison of Marine Plankton Metagenome Analysis Methods. Sampling event dataset <a href="https://doi.org/10.15468/re7eoi">https://doi.org/10.15468/re7eoi</a> accessed via GBIF.org on 2019-04-17. + <a href="https://www.gbif.org/dataset/search?publishing_org=ab733144-7043-4e88-bd4f-fca7bf858880">MGnify datasets</a></li>
+<li>Telfer A (2018). Centre for Biodiversity Genomics - Canadian Specimens. University of Guelph. Occurrence dataset <a href="https://doi.org/10.15468/mbwnw9">https://doi.org/10.15468/mbwnw9</a> accessed via GBIF.org on 2019-04-17.</li>
+</ul>
+    </div>
+
+    
+    
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/molecular/">molecular</a>
+          
+          <a href="/tags/dna/">DNA</a>
+          
+          <a href="/tags/edna/">eDNA</a>
+          
+          <a href="/tags/gbif/">GBIF</a>
+          
+          <a href="/tags/mixs/">MixS</a>
+          
+          <a href="/tags/ggbn/">GGBN</a>
+          
+          <a href="/tags/ebi/">EBI</a>
+          
+          <a href="/tags/sequence/">sequence</a>
+          
+          <a href="/tags/otu/">OTU</a>
+          
+          <a href="/tags/darwin-core/">Darwin Core</a>
+          
+          <a href="/tags/howto/">howto</a>
+          
+          <a href="/tags/publish/">publish</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/gbif-molecular-data-quality/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Sequenced-based data on GBIF - What you need to know before analyzing data</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/gridded-datasets-update/">
+            <span class="next-text nav-default">Gridded Datasets Update</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      
+
+
+
+<div>
+<h3>This post represents the ideas of the author.</h3>
+</div>
+<div id='discourse-comments'></div>
+<script type="text/javascript">
+  DiscourseEmbed = { discourseUrl: 'https://discourse.gbif.org/',
+                     discourseEmbedUrl: 'https://data-blog.gbif.org\/post\/gbif-molecular-data\/' };
+
+  (function() {
+    var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+    d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+  })();
+</script>
+
+
+<div class = "copyright">
+	<a class="theme-link" href="https://www.gbif.org/what-is-gbif">What is GBIF?</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://www.gbif.org/developer/summary">API</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://www.gbif.org/faq">FAQ</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://discourse.gbif.org/">Community-Forum</a>
+</div>
+
+<div class = "copyright">
+	<span class="theme-info">GBIF Secretariat</span>
+	<span class="theme-info">Universitetsparken 15</span>
+	<span class="theme-info">DK-2100 Copenhagen Ø</span>
+	<span class="theme-info" >Denmark</span>
+</div>
+
+<div class="copyright">
+	<span class="power-by">
+	Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+	</span>
+	<span class="division">|</span>
+	<span class="theme-info">
+	Theme -
+	<a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+	</span>
+
+</div>
+
+<script defer data-domain="data-blog.gbif.org,gbif.org" src="https://plausible.io/js/script.file-downloads.js"></script>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+<script type="text/javascript" src="/dist/even.min.js?v=3.2.0"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>GBIF and Apache-Spark on AWS tutorial - GBIF Data Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="John Waller" />
+  <meta name="description" content=" Some queries in the blog post can be done for free using a new feature called GBIF SQL downloads.
+ GBIF has snapshots of billions occurrence records on Amazon Web Services (AWS). This guide will take you through running Spark notebooks on AWS. The GBIF snapshot is documented : here.
+You can read previous discussions about GBIF and cloud computing here. The main reason you would want to use cloud computing is to run big data queries that are slow or impractical on a local machine.
+" />
+
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.91.2" />
+
+
+<link rel="canonical" href="https://data-blog.gbif.org/post/aws-and-gbif/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.2.0" rel="stylesheet">
+
+
+
+
+<link rel="stylesheet" href="/css//custom.css">
+
+
+<meta property="og:title" content="GBIF and Apache-Spark on AWS tutorial" />
+<meta property="og:description" content="
+Some queries in the blog post can be done for free using a new feature called GBIF SQL downloads.
+
+GBIF has snapshots of billions occurrence records on Amazon Web Services (AWS). This guide will take you through running Spark notebooks on AWS. The GBIF snapshot is documented : here.
+You can read previous discussions about GBIF and cloud computing here. The main reason you would want to use cloud computing is to run big data queries that are slow or impractical on a local machine." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://data-blog.gbif.org/post/aws-and-gbif/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2024-09-02T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-04-22T16:00:05+02:00" />
+
+<meta itemprop="name" content="GBIF and Apache-Spark on AWS tutorial">
+<meta itemprop="description" content="
+Some queries in the blog post can be done for free using a new feature called GBIF SQL downloads.
+
+GBIF has snapshots of billions occurrence records on Amazon Web Services (AWS). This guide will take you through running Spark notebooks on AWS. The GBIF snapshot is documented : here.
+You can read previous discussions about GBIF and cloud computing here. The main reason you would want to use cloud computing is to run big data queries that are slow or impractical on a local machine."><meta itemprop="datePublished" content="2024-09-02T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2021-04-22T16:00:05+02:00" />
+<meta itemprop="wordCount" content="1083">
+<meta itemprop="keywords" content="cloud computing,aws," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="GBIF and Apache-Spark on AWS tutorial"/>
+<meta name="twitter:description" content="
+Some queries in the blog post can be done for free using a new feature called GBIF SQL downloads.
+
+GBIF has snapshots of billions occurrence records on Amazon Web Services (AWS). This guide will take you through running Spark notebooks on AWS. The GBIF snapshot is documented : here.
+You can read previous discussions about GBIF and cloud computing here. The main reason you would want to use cloud computing is to run big data queries that are slow or impractical on a local machine."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">GBIF Data Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/categories/gbif/">
+        <li class="mobile-menu-item">posts</li>
+      </a><a href="https://discourse.gbif.org/c/data-blog">
+        <li class="mobile-menu-item">community-forum</li>
+      </a><a href="https://www.gbif.org/">
+        <li class="mobile-menu-item">gbif.org</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">about</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">
+	<img src= "/logo.png" alt="GBIF-analytics-blog" style ="width:20%;">
+  </a>
+  
+	
+  
+  
+</div>
+
+<nav class="site-navbar">
+
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/categories/gbif/">posts</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://discourse.gbif.org/c/data-blog">community-forum</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://www.gbif.org/">gbif.org</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">about</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+	
+    <header class="post-header">
+      <h1 class="post-title">GBIF and Apache-Spark on AWS tutorial</h1>
+	  
+	  
+      <div class="post-author">John Waller</div>
+
+      <div class="post-meta">
+        <span class="post-time"> 2024-09-02 </span>
+        
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    
+    
+
+    
+    <div class="post-content">
+      <blockquote>
+<p>Some queries in the blog post can be done for free using a new feature called <a href="https://data-blog.gbif.org/post/2024-06-24-gbif-sql-downloads/">GBIF SQL downloads</a>.</p>
+</blockquote>
+<p><strong>GBIF</strong> has <a href="https://registry.opendata.aws/gbif/">snapshots</a> of billions occurrence records on <strong>Amazon Web Services</strong> (AWS). This guide will take you through running <strong>Spark notebooks</strong> on AWS. The GBIF snapshot is documented : <a href="https://github.com/gbif/occurrence/blob/master/aws-public-data.md">here</a>.</p>
+<p>You can <strong>read previous discussions about GBIF and cloud computing</strong> <a href="https://discourse.gbif.org/t/gbif-exports-as-public-datasets-in-cloud-environments/1835">here</a>. The main reason you would want to use cloud computing is to run <strong>big data queries</strong> that are slow or impractical on a local machine.</p>
+<p>In this tutorial, I will be running a simple query on billions of occurrences records. I will be using <a href="https://spark.apache.org/">apache-spark</a> with the <strong>Scala</strong> and <strong>Python</strong> APIs. This guide is similar to the one written previously about <a href="https://data-blog.gbif.org/post/microsoft-azure-and-gbif/">Microsoft Azure</a>. You can also work with the snapshots using <strong>SQL</strong> <a href="https://github.com/gbif/occurrence/blob/master/aws-public-data.md#getting-started-with-athena">example here</a>.</p>
+<p>The snapshots includes all records shared under CC0 and CC BY designations published through GBIF that have coordinates which have passed automated quality checks. The GBIF mediated occurrence data are stored in Parquet files in AWS s3 storage in <a href="https://github.com/gbif/occurrence/blob/master/aws-public-data.md">several regions</a>.</p>
+<h2 id="running-apache-spark-on-aws">Running Apache-Spark on AWS</h2>
+<p><strong>Create an AWS account</strong> : <a href="https://aws.amazon.com/">here</a></p>
+<blockquote>
+<p>You will be able to run free queries for a time, but eventually you will have to pay for your compute time.</p>
+</blockquote>
+<p><strong>Sign into the console account</strong>. I logged in as the root user.</p>
+<p><img src="/post/2021-05-31-aws-and-gbif_files/root_user.png" alt="root user"></p>
+<p>In the services drop down (there are a lot of services), search for and <strong>click on EMR</strong>.</p>
+<p><img src="/post/2021-05-31-aws-and-gbif_files/find_emr2.png" alt="find emr"></p>
+<p>Next click <strong>create a cluster</strong>.</p>
+<p><img src="/post/2021-05-31-aws-and-gbif_files/create_cluster2.png" alt="create cluster"></p>
+<p><strong>Configure your cluster</strong>.</p>
+<p><img src="/post/2021-05-31-aws-and-gbif_files/cluster_settings2.png" alt="advanced options"></p>
+<p>Make sure to select:</p>
+<ul>
+<li><strong>Livy</strong></li>
+<li><strong>Spark</strong></li>
+<li><strong>JupyterHub</strong></li>
+</ul>
+<p>You can keep also these selected: Hadoop, Hive, Pig, Hue.</p>
+<p>I used <strong>emr-7.2.0</strong>. I found <strong>some other emr versions didn&rsquo;t work</strong>. You might want to use the latest emr version. Give your cluster a name. I called mine <code>gbif_cluster</code>. <strong>I kept all of the other default settings</strong>. The cluster will take a few minutes to start up. Make sure to terminate your cluster when you are finished with this tutorial because Amazon will charge you even if your cluster is in the &ldquo;Waiting&rdquo; state.</p>
+<p>I selected default settings for each <strong>EMR</strong> role.</p>
+<p><img src="/post/2021-05-31-aws-and-gbif_files/emr_roles.png" alt="emr roles"></p>
+<p>Next find studios. Look in the side panel if you don&rsquo;t find it.</p>
+<p><img src="/post/2021-05-31-aws-and-gbif_files/create_studio.png" alt="create studio"></p>
+<p>Next we will create a Studio. Click <strong>create Studio</strong>.</p>
+<p><img src="/post/2021-05-31-aws-and-gbif_files/create_studio_page.png" alt="create studio"></p>
+<p>Set up a <strong>Studio</strong>. I named my studio <code>gbif_studio</code>.</p>
+<!-- ![studio settings](/post/2021-05-31-aws-and-gbif_files/studio_settings.png) -->
+<!-- Next click **Create Workspace**. -->
+<!-- ![create workspace](/post/2021-05-31-aws-and-gbif_files/create_workspace2.png) -->
+<!-- ## Export a csv table -->
+<!-- If you would like to export `export_df` from the previous section into a csv file for download, you need to set up a **s3 bucket**.  -->
+<p>AWS now requires you to set up an <strong>s3 bucket</strong> to store your data before creating a <strong>workspace</strong>.</p>
+<p><img src="/post/2021-05-31-aws-and-gbif_files/create_success.png" alt="find s3"></p>
+<p><strong>Go to s3</strong>. In the services drop down (there are a lot of services), find and <strong>click on S3</strong>.</p>
+<!-- ![find s3](/post/2021-05-31-aws-and-gbif_files/find_s3_bucket.png) -->
+<p><strong>Create a s3 bucket</strong>.</p>
+<!-- ![gbif bucket](/post/2021-05-31-aws-and-gbif_files/gbif-bucket.png) -->
+<p><strong>Give your s3 bucket a globally unique name</strong>. I have used &ldquo;<strong>gbifbucket</strong>&rdquo;, so you will have to pick another one. Keep all of the default settings.</p>
+<p>Next <strong>Find notebooks</strong>. Look in the side panel if you don&rsquo;t find it.</p>
+<p><img src="/post/2021-05-31-aws-and-gbif_files/find_notebooks.png" alt="find notebooks"></p>
+<p>Next <strong>Go to workspaces (notebooks)</strong>.</p>
+<p><img src="/post/2021-05-31-aws-and-gbif_files/workbooks.png" alt="create workspace"></p>
+<!-- ![create notebook](/post/2021-05-31-aws-and-gbif_files/create_notebook.png) -->
+<p><strong>Choose a cluster</strong> for your notebook. Choose the <code>gbif_cluster</code> from before.</p>
+<!-- ![choose cluster](/post/2021-05-31-aws-and-gbif_files/choose_a_cluster.png) -->
+<p><strong>Name your notebook.</strong> I called mine <code>gbif_notebook</code>.</p>
+<!-- ![name notebook](/post/2021-05-31-aws-and-gbif_files/name_notebook.png) -->
+<p><strong>Open your notebook</strong>. &ldquo;Open in JupyterLab&rdquo;.</p>
+<!-- ![open jupyter](/post/2021-05-31-aws-and-gbif_files/open_jupyter.png) -->
+<p>You are now ready to run the examples below in your notebook. I will be running examples using the <strong>Python</strong> and <strong>Scala</strong> APIs.</p>
+<p><strong>Choose notebook kernel</strong> (Spark or PySpark).</p>
+<!-- ![choose notebook api](/post/2021-05-31-aws-and-gbif_files/choose_notebook_language.png) -->
+<p><strong>Paste in one of the following code chunks below</strong>. They will both produce the same output. The code chunks will <strong>count the number of species (specieskeys) with occurrences in each country</strong>. Press shift-enter to run it.</p>
+<!-- ![code chunk](/post/2021-05-31-aws-and-gbif_files/code_chunk.png) -->
+<p>Use the <strong>Spark</strong> kernel for this code chunk.</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#719e07">import</span> org.apache.spark.sql.functions._
+<span style="color:#719e07">val</span> gbif_snapshot_path <span style="color:#719e07">=</span> <span style="color:#2aa198">&#34;s3://gbif-open-data-eu-central-1/occurrence/2021-06-01/occurrence.parquet/*&#34;</span>
+<span style="color:#719e07">val</span> df <span style="color:#719e07">=</span> spark<span style="color:#719e07">.</span>read<span style="color:#719e07">.</span>parquet<span style="color:#719e07">(</span>gbif_snapshot_path<span style="color:#719e07">)</span>
+
+ 
+<span style="color:#719e07">val</span> df <span style="color:#719e07">=</span> spark<span style="color:#719e07">.</span>read<span style="color:#719e07">.</span>parquet<span style="color:#719e07">(</span>gbif_snapshot_path<span style="color:#719e07">)</span>
+df<span style="color:#719e07">.</span>printSchema <span style="color:#586e75">// show columns
+</span><span style="color:#586e75"></span>df<span style="color:#719e07">.</span>count<span style="color:#719e07">()</span> <span style="color:#586e75">// count the number of occurrences. 1.2B
+</span><span style="color:#586e75"></span>
+<span style="color:#586e75">// find the country with the most species
+</span><span style="color:#586e75"></span><span style="color:#719e07">val</span> export_df <span style="color:#719e07">=</span> df<span style="color:#719e07">.</span>
+select<span style="color:#719e07">(</span><span style="color:#2aa198">&#34;countrycode&#34;</span><span style="color:#719e07">,</span><span style="color:#2aa198">&#34;specieskey&#34;</span><span style="color:#719e07">).</span>
+distinct<span style="color:#719e07">().</span>
+groupBy<span style="color:#719e07">(</span><span style="color:#2aa198">&#34;countrycode&#34;</span><span style="color:#719e07">).</span>
+count<span style="color:#719e07">().</span>
+orderBy<span style="color:#719e07">(</span>desc<span style="color:#719e07">(</span><span style="color:#2aa198">&#34;count&#34;</span><span style="color:#719e07">))</span>
+
+export_df<span style="color:#719e07">.</span>show<span style="color:#719e07">()</span>
+</code></pre></div><p>Use the <strong>Pyspark</strong> kernel for this code chunk.</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#719e07">from</span> pyspark.sql <span style="color:#719e07">import</span> SQLContext
+<span style="color:#719e07">from</span> pyspark.sql.functions <span style="color:#719e07">import</span> <span style="color:#719e07">*</span>
+sqlContext <span style="color:#719e07">=</span> SQLContext(sc)
+
+gbif_snapshot_path <span style="color:#719e07">=</span> <span style="color:#2aa198">&#34;s3://gbif-open-data-eu-central-1/occurrence/2021-06-01/occurrence.parquet/*&#34;</span>
+
+<span style="color:#586e75"># to read parquet file</span>
+df <span style="color:#719e07">=</span> sqlContext<span style="color:#719e07">.</span>read<span style="color:#719e07">.</span>parquet(gbif_snapshot_path)
+df<span style="color:#719e07">.</span>printSchema <span style="color:#586e75"># show columns</span>
+
+<span style="color:#586e75"># find the country with the most species</span>
+export_df <span style="color:#719e07">=</span> df\
+<span style="color:#719e07">.</span>select(<span style="color:#2aa198">&#34;countrycode&#34;</span>,<span style="color:#2aa198">&#34;specieskey&#34;</span>)\
+<span style="color:#719e07">.</span>distinct()\
+<span style="color:#719e07">.</span>groupBy(<span style="color:#2aa198">&#34;countrycode&#34;</span>)\
+<span style="color:#719e07">.</span>count()\
+<span style="color:#719e07">.</span>orderBy(col(<span style="color:#2aa198">&#34;count&#34;</span>)<span style="color:#719e07">.</span>desc())
+
+export_df<span style="color:#719e07">.</span>show()
+</code></pre></div><p>The result should be a table like this:</p>
+<pre tabindex="0"><code>+-----------+------+
+|countrycode| count|
++-----------+------+
+|         US|187515|
+|         AU|122746|
+|         MX| 86399|
+|         BR| 69167|
+|         CA| 64422|
+|         ZA| 60682|
+</code></pre><h2 id="export-a-csv-table">Export a csv table</h2>
+<p>If you would like to export <code>export_df</code> from the previous section into a csv file for download, you need to set up a <strong>s3 bucket</strong>.</p>
+<p><strong>Go to s3</strong>. In the services drop down (there are a lot of services), find and <strong>click on S3</strong>.</p>
+<p><img src="/post/2021-05-31-aws-and-gbif_files/find_s3.png" alt="find s3"></p>
+<p><strong>Create a s3 bucket</strong>. You will  put your csv table here.</p>
+<p><img src="/post/2021-05-31-aws-and-gbif_files/gbif_bucket.png" alt="gbif bucket"></p>
+<p><strong>Give your s3 bucket a globally unique name</strong>. I have used &ldquo;<strong>gbifbucket</strong>&rdquo;, so you will have to pick another one. Keep all of the default settings. Now you can <strong>run the following code in one of your notebooks</strong> to export a csv file to your s3 bucket.</p>
+<p>Change <code>gbifbucket</code> to your bucket name.</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#719e07">import</span> spark.implicits._
+
+export_df<span style="color:#719e07">.</span>
+coalesce<span style="color:#719e07">(</span><span style="color:#2aa198">1</span><span style="color:#719e07">).</span>
+write<span style="color:#719e07">.</span>
+mode<span style="color:#719e07">(</span><span style="color:#2aa198">&#34;overwrite&#34;</span><span style="color:#719e07">).</span>
+option<span style="color:#719e07">(</span><span style="color:#2aa198">&#34;header&#34;</span><span style="color:#719e07">,</span> <span style="color:#2aa198">&#34;true&#34;</span><span style="color:#719e07">).</span>
+option<span style="color:#719e07">(</span><span style="color:#2aa198">&#34;sep&#34;</span><span style="color:#719e07">,</span> <span style="color:#2aa198">&#34;\t&#34;</span><span style="color:#719e07">).</span>
+format<span style="color:#719e07">(</span><span style="color:#2aa198">&#34;csv&#34;</span><span style="color:#719e07">).</span>
+save<span style="color:#719e07">(</span><span style="color:#2aa198">&#34;s3a://gbifbucket/df_export.csv&#34;</span><span style="color:#719e07">)</span>
+
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">export_df\
+<span style="color:#719e07">.</span>coalesce(<span style="color:#2aa198">1</span>)\
+<span style="color:#719e07">.</span>write\
+<span style="color:#719e07">.</span>mode(<span style="color:#2aa198">&#34;overwrite&#34;</span>)\
+<span style="color:#719e07">.</span>option(<span style="color:#2aa198">&#34;header&#34;</span>, <span style="color:#2aa198">&#34;true&#34;</span>)\
+<span style="color:#719e07">.</span>option(<span style="color:#2aa198">&#34;sep&#34;</span>, <span style="color:#2aa198">&#34;</span><span style="color:#cb4b16">\t</span><span style="color:#2aa198">&#34;</span>)\
+<span style="color:#719e07">.</span>format(<span style="color:#2aa198">&#34;csv&#34;</span>)\
+<span style="color:#719e07">.</span>save(<span style="color:#2aa198">&#34;s3a://gbifbucket/df_export.csv&#34;</span>)
+</code></pre></div><p>To download. Go to your <a href="https://s3.console.aws.amazon.com/s3/home?">S3 bucket</a>. Your file will be a directory named &ldquo;df_export&rdquo;. The file you want will look something like this:</p>
+<p><code>part-00000-4c2e7420-b122-404b-b8c6-62adb07173e0-c000.csv</code></p>
+<h2 id="citing-custom-filteredprocessed-data">Citing custom filtered/processed data</h2>
+<p>If you end up using your <strong>exported csv</strong> file in a research paper, you will want a <strong>DOI</strong>. GBIF now has a <a href="https://www.gbif.org/derived-dataset/register">service</a> for generating a <strong>citable doi</strong> from <strong>a list of involved datasetkeys with occurrences counts</strong>. See the <a href="https://www.gbif.org/citation-guidelines">GBIF citation guidelines</a> and <a href="https://data-blog.gbif.org/post/derived-datasets/">previous blog post</a>.</p>
+<p>You can generate a <strong>citation file</strong> for your custom dataset above using the following code chunk. Since our <code>export_df.csv</code> used all of the occurrences, we can simply group by datasetkey and count all of the occurrences to generate our <code>citation.csv</code> file.</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#719e07">import</span> org.apache.spark.sql.functions._
+<span style="color:#719e07">val</span> gbif_snapshot_path <span style="color:#719e07">=</span> <span style="color:#2aa198">&#34;s3://gbif-open-data-eu-central-1/occurrence/2021-06-01/occurrence.parquet/*&#34;</span>
+
+<span style="color:#719e07">val</span> citation_df <span style="color:#719e07">=</span> spark<span style="color:#719e07">.</span>read<span style="color:#719e07">.</span>parquet<span style="color:#719e07">(</span>gbif_snapshot_path<span style="color:#719e07">).</span>
+groupBy<span style="color:#719e07">(</span><span style="color:#2aa198">&#34;datasetkey&#34;</span><span style="color:#719e07">).</span>
+count<span style="color:#719e07">()</span>
+
+citation_df<span style="color:#719e07">.</span>
+coalesce<span style="color:#719e07">(</span><span style="color:#2aa198">1</span><span style="color:#719e07">).</span>
+write<span style="color:#719e07">.</span>
+mode<span style="color:#719e07">(</span><span style="color:#2aa198">&#34;overwrite&#34;</span><span style="color:#719e07">).</span>
+option<span style="color:#719e07">(</span><span style="color:#2aa198">&#34;header&#34;</span><span style="color:#719e07">,</span> <span style="color:#2aa198">&#34;true&#34;</span><span style="color:#719e07">).</span>
+option<span style="color:#719e07">(</span><span style="color:#2aa198">&#34;sep&#34;</span><span style="color:#719e07">,</span> <span style="color:#2aa198">&#34;\t&#34;</span><span style="color:#719e07">).</span>
+format<span style="color:#719e07">(</span><span style="color:#2aa198">&#34;csv&#34;</span><span style="color:#719e07">).</span>
+save<span style="color:#719e07">(</span><span style="color:#2aa198">&#34;s3a://gbifbucket/citation.csv&#34;</span><span style="color:#719e07">)</span>
+</code></pre></div><p>You can also now use your <strong>citation file</strong> with the <strong>development version</strong> of <code>rgbif</code> to create a derived dataset and a citable DOI, <strong>although you would need to upload your exported dataset to Zenodo (or something similar) first</strong>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#586e75"># pak::pkg_install(&#34;ropensci/rgbif&#34;) # requires development version of rgbif</span>
+
+<span style="color:#268bd2">library</span>(rgbif)
+
+citation_data <span style="color:#719e07">=</span> readr<span style="color:#719e07">::</span><span style="color:#268bd2">read_tsv</span>(<span style="color:#2aa198">&#34;citation.csv&#34;</span>)
+
+<span style="color:#586e75"># use derived_dataset_prep() if you just want to test</span>
+<span style="color:#268bd2">derived_dataset</span>(
+citation_data <span style="color:#719e07">=</span> citation_data,
+title <span style="color:#719e07">=</span> <span style="color:#2aa198">&#34;Research dataset derived from GBIF snapshot on AWS&#34;</span>,
+description <span style="color:#719e07">=</span> <span style="color:#2aa198">&#34;I used AWS and apache-spark to filter GBIF snapshot 2021-06-01.&#34;</span>,
+source_url <span style="color:#719e07">=</span> <span style="color:#2aa198">&#34;https://zenodo.org/fake_upload&#34;</span>,
+user<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;your_gbif_user_name&#34;</span>,
+pwd<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;your_gbif_password&#34;</span>
+)
+</code></pre></div><p>The derived dataset with a <strong>citable DOI</strong> will appear on your <a href="https://www.gbif.org/derived-dataset">gbif user page</a>.</p>
+<p>Hopefully you have everything that you need to start using GBIF mediated occurrence data on AWS. Please leave a comment if something does not work for you.</p>
+    </div>
+
+    
+    
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/cloud-computing/">cloud computing</a>
+          
+          <a href="/tags/aws/">aws</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/2024-06-24-gbif-sql-downloads/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">GBIF SQL Downloads</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/2024-05-27-getting-fish-trees-reptiles/">
+            <span class="next-text nav-default">Getting fish trees reptiles</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      
+
+
+
+<div>
+<h3>This post represents the ideas of the author.</h3>
+</div>
+<div id='discourse-comments'></div>
+<script type="text/javascript">
+  DiscourseEmbed = { discourseUrl: 'https://discourse.gbif.org/',
+                     discourseEmbedUrl: 'https://data-blog.gbif.org\/post\/aws-and-gbif\/' };
+
+  (function() {
+    var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+    d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+  })();
+</script>
+
+
+<div class = "copyright">
+	<a class="theme-link" href="https://www.gbif.org/what-is-gbif">What is GBIF?</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://www.gbif.org/developer/summary">API</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://www.gbif.org/faq">FAQ</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://discourse.gbif.org/">Community-Forum</a>
+</div>
+
+<div class = "copyright">
+	<span class="theme-info">GBIF Secretariat</span>
+	<span class="theme-info">Universitetsparken 15</span>
+	<span class="theme-info">DK-2100 Copenhagen Ø</span>
+	<span class="theme-info" >Denmark</span>
+</div>
+
+<div class="copyright">
+	<span class="power-by">
+	Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+	</span>
+	<span class="division">|</span>
+	<span class="theme-info">
+	Theme -
+	<a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+	</span>
+
+</div>
+
+<script defer data-domain="data-blog.gbif.org,gbif.org" src="https://plausible.io/js/script.file-downloads.js"></script>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+<script type="text/javascript" src="/dist/even.min.js?v=3.2.0"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

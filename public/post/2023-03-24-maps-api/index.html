@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Creating high resolution maps with rgbif - GBIF Data Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="John Waller" />
+  <meta name="description" content=" This article is an adapted version of the rgbif article found here.
+ It is often useful to create a map from GBIF mediated occurrences. While it is always possible to take a screenshot of map on gbif.org, sometimes a publication quality map is needed.
+" />
+
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.91.2" />
+
+
+<link rel="canonical" href="https://data-blog.gbif.org/post/2023-03-24-maps-api/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.2.0" rel="stylesheet">
+
+
+
+
+<link rel="stylesheet" href="/css//custom.css">
+
+
+<meta property="og:title" content="Creating high resolution maps with rgbif" />
+<meta property="og:description" content="
+This article is an adapted version of the rgbif article found here.
+
+It is often useful to create a map from GBIF mediated occurrences. While it is always possible to take a screenshot of map on gbif.org, sometimes a publication quality map is needed." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://data-blog.gbif.org/post/2023-03-24-maps-api/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-09-15T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-03-24T14:31:05+01:00" />
+
+<meta itemprop="name" content="Creating high resolution maps with rgbif">
+<meta itemprop="description" content="
+This article is an adapted version of the rgbif article found here.
+
+It is often useful to create a map from GBIF mediated occurrences. While it is always possible to take a screenshot of map on gbif.org, sometimes a publication quality map is needed."><meta itemprop="datePublished" content="2023-09-15T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2023-03-24T14:31:05+01:00" />
+<meta itemprop="wordCount" content="1021">
+<meta itemprop="keywords" content="API," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Creating high resolution maps with rgbif"/>
+<meta name="twitter:description" content="
+This article is an adapted version of the rgbif article found here.
+
+It is often useful to create a map from GBIF mediated occurrences. While it is always possible to take a screenshot of map on gbif.org, sometimes a publication quality map is needed."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">GBIF Data Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/categories/gbif/">
+        <li class="mobile-menu-item">posts</li>
+      </a><a href="https://discourse.gbif.org/c/data-blog">
+        <li class="mobile-menu-item">community-forum</li>
+      </a><a href="https://www.gbif.org/">
+        <li class="mobile-menu-item">gbif.org</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">about</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">
+	<img src= "/logo.png" alt="GBIF-analytics-blog" style ="width:20%;">
+  </a>
+  
+	
+  
+  
+</div>
+
+<nav class="site-navbar">
+
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/categories/gbif/">posts</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://discourse.gbif.org/c/data-blog">community-forum</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://www.gbif.org/">gbif.org</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">about</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+	
+    <header class="post-header">
+      <h1 class="post-title">Creating high resolution maps with rgbif</h1>
+	  
+	  
+      <div class="post-author">John Waller</div>
+
+      <div class="post-meta">
+        <span class="post-time"> 2023-09-15 </span>
+        <div class="post-category">
+            
+              <a href="/categories/gbif/"> GBIF </a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    
+    
+
+    
+    <div class="post-content">
+      <blockquote>
+<p>This article is an adapted version of the rgbif article found <a href="https://docs.ropensci.org/rgbif/articles/creating_maps_from_occurrences.html">here</a>.</p>
+</blockquote>
+<p>It is often useful to create a map from GBIF mediated occurrences. While it is always possible to take a screenshot of map on <a href="https://www.gbif.org/occurrence/map?occurrence_status=present">gbif.org</a>, sometimes a publication quality map is needed.</p>
+<p>Additionally, large downloads of millions of lat-lon points can be difficult to plot using <code>ggplot2</code> or base R graphics. In these cases, using the <a href="https://www.gbif.org/developer/maps">GBIF maps API</a> with <code>rgbif::map_fetch()</code> can be a good option.</p>
+<h2 id="using-rgbifmap_fetch">Using rgbif::map_fetch()</h2>
+<p><a href="https://docs.ropensci.org/rgbif/index.html">rgbif</a> has a function called <code>map_fetch()</code>, which interfaces directly with the GBIF <a href="https://www.gbif.org/developer/maps">maps API</a>. Running <code>map_fetch()</code> will return the default GBIF pixel map of all GBIF mediated occurrences.</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#268bd2">library</span>(rgbif)
+<span style="color:#268bd2">map_fetch</span>()
+</code></pre></div><img src="images/dot_map.png" alt="" width="70%"/>
+<p>It is possible to make static maps that look like default <a href="https://www.gbif.org/occurrence/map?taxon_key=212">occurrence search</a> maps. See the maps api page for <a href="https://tile.gbif.org/ui/">available styles</a>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#268bd2">map_fetch</span>(taxonKey<span style="color:#719e07">=</span><span style="color:#2aa198">212</span>,style<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;scaled.circles&#34;</span>,base_sytle<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;gbif-light&#34;</span>)
+</code></pre></div><img src="images/gbif-light-scaled-circles-birds.png" alt="" width="70%"/>
+<p>For &ldquo;poly&rdquo; styles you can set the <code>hexPerTile</code> parameter, so that the binned occurrence data is essentially shown at a higher resolution. A tile is an individual <code>png</code> image that is fetch from the API in order to make a map. The default settings of <code>map_fetch()</code> will fetch two images (hemispheres), so the image below has 400 hexagons across the width of map.</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#268bd2">map_fetch</span>(hexPerTile<span style="color:#719e07">=</span><span style="color:#2aa198">200</span>,style<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;green.poly&#34;</span>,base_style<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;gbif-dark&#34;</span>,bin<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;hex&#34;</span>)
+</code></pre></div><img src="images/hexpertile.png" alt="" width="70%"/>
+<p>There is the option to plot with polar or arctic projections. For example, penguin records.</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#268bd2">map_fetch</span>(srs<span style="color:#719e07">=</span><span style="color:#2aa198">&#39;EPSG:3031&#39;</span>,taxonKey<span style="color:#719e07">=</span><span style="color:#2aa198">7190978</span>,style<span style="color:#719e07">=</span><span style="color:#2aa198">&#39;glacier.point&#39;</span>, base_style<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;gbif-dark&#34;</span>)
+</code></pre></div><img src="images/artic-peguins-glacier-point-gbif-dark.png" alt="" width="70%"/>
+<p><code>map_fetch()</code> allows for views other than just the global map, by zooming in and selecting only certain map tiles with <code>z</code>, <code>x</code>, <code>y</code>.</p>
+<p>Selecting tiles can be tricky to get right, but with a little trial-and-error, you can usually get close to the map you want to have. One trick for getting the right tiles, is to look at this <a href="https://api.gbif.org/v2/map/demo13.html#map=3/0/0/0">demo page</a>, where the <code>z,x,y</code> values are printed on the center of each tile.</p>
+<p>For example, you can see what the tile values for a zoomed in map of Australia would be <a href="https://api.gbif.org/v2/map/demo13.html#map=5/134.01/-21.64/0">here</a>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#268bd2">map_fetch</span>(z<span style="color:#719e07">=</span><span style="color:#2aa198">3</span>,x<span style="color:#719e07">=</span><span style="color:#2aa198">13</span><span style="color:#719e07">:</span><span style="color:#2aa198">14</span>,y<span style="color:#719e07">=</span><span style="color:#2aa198">4</span><span style="color:#719e07">:</span><span style="color:#2aa198">5</span>)
+</code></pre></div><img src="images/AU-zoom.png" alt="" width="70%"/>
+<p>Be aware that selecting many tiles will create a large image, and might crash your R session. You can control the resolution of your final image with <code>format</code>, with  <code>format=&quot;@4x.png&quot;</code> being the highest possible value.</p>
+<p>Below are some plotted areas to give you an idea of how <code>z</code>,<code>x</code>,<code>y</code> it are working.</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#586e75"># Europe</span>
+<span style="color:#268bd2">map_fetch</span>(z<span style="color:#719e07">=</span><span style="color:#2aa198">3</span>,x<span style="color:#719e07">=</span><span style="color:#2aa198">7</span><span style="color:#719e07">:</span><span style="color:#2aa198">9</span>,y<span style="color:#719e07">=</span><span style="color:#2aa198">0</span><span style="color:#719e07">:</span><span style="color:#2aa198">2</span>)
+</code></pre></div><img src="images/europe_zoom.png" alt="" width="70%"/>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#586e75"># Africa</span>
+<span style="color:#268bd2">map_fetch</span>(z<span style="color:#719e07">=</span><span style="color:#2aa198">3</span>,x<span style="color:#719e07">=</span><span style="color:#2aa198">7</span><span style="color:#719e07">:</span><span style="color:#2aa198">10</span>,y<span style="color:#719e07">=</span><span style="color:#2aa198">2</span><span style="color:#719e07">:</span><span style="color:#2aa198">5</span>)
+</code></pre></div><img src="images/africa.png" alt="" width="70%"/>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#586e75"># I will leave it to you to plot these. </span>
+<span style="color:#586e75"># Hawaii</span>
+<span style="color:#268bd2">map_fetch</span>(z<span style="color:#719e07">=</span><span style="color:#2aa198">6</span>,x<span style="color:#719e07">=</span><span style="color:#2aa198">6</span><span style="color:#719e07">:</span><span style="color:#2aa198">9</span>,y<span style="color:#719e07">=</span><span style="color:#2aa198">23</span><span style="color:#719e07">:</span><span style="color:#2aa198">25</span>)
+<span style="color:#586e75"># South Africa </span>
+<span style="color:#268bd2">map_fetch</span>(z<span style="color:#719e07">=</span><span style="color:#2aa198">5</span>,x<span style="color:#719e07">=</span><span style="color:#2aa198">34</span><span style="color:#719e07">:</span><span style="color:#2aa198">38</span>,y<span style="color:#719e07">=</span><span style="color:#2aa198">19</span><span style="color:#719e07">:</span><span style="color:#2aa198">22</span>)
+<span style="color:#586e75"># Ukraine </span>
+<span style="color:#268bd2">map_fetch</span>(z<span style="color:#719e07">=</span><span style="color:#2aa198">6</span>,x<span style="color:#719e07">=</span><span style="color:#2aa198">70</span><span style="color:#719e07">:</span><span style="color:#2aa198">78</span>,y<span style="color:#719e07">=</span><span style="color:#2aa198">13</span><span style="color:#719e07">:</span><span style="color:#2aa198">16</span>)
+<span style="color:#586e75"># Iceland</span>
+<span style="color:#268bd2">map_fetch</span>(z<span style="color:#719e07">=</span><span style="color:#2aa198">6</span>,x<span style="color:#719e07">=</span><span style="color:#2aa198">55</span><span style="color:#719e07">:</span><span style="color:#2aa198">59</span>,y<span style="color:#719e07">=</span><span style="color:#2aa198">8</span><span style="color:#719e07">:</span><span style="color:#2aa198">9</span>)
+<span style="color:#586e75"># Capri Is. </span>
+<span style="color:#268bd2">map_fetch</span>(z<span style="color:#719e07">=</span><span style="color:#2aa198">12</span>,x<span style="color:#719e07">=</span><span style="color:#2aa198">4419</span><span style="color:#719e07">:</span><span style="color:#2aa198">4420</span>,y<span style="color:#719e07">=</span><span style="color:#2aa198">1124</span><span style="color:#719e07">:</span><span style="color:#2aa198">1125</span>)
+</code></pre></div><p>I suggest using this <a href="https://api.gbif.org/v2/map/demo13.html#map=3/0/0/0">interactive page</a> for getting the tile numbers.</p>
+<p>Keep in mind that the the GBIF maps API wasn&rsquo;t designed to make high quality static maps, like it is being used for in <code>map_fetch()</code>. It was designed for interactive use on the <a href="https://www.gbif.org/occurrence/map?">GBIF website</a>, so the API design reflects this reality. This means that not all parameter and style choices are going to make nice looking maps. That said, <code>map_fetch()</code> will try to prevent you from making bad style choices, but sometimes you might end up with a ugly map.</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#586e75"># ugly map</span>
+<span style="color:#268bd2">map_fetch</span>(x<span style="color:#719e07">=</span><span style="color:#2aa198">0</span>,gadm_gid<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;USA&#34;</span>,source<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;adhoc&#34;</span>,style<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;classic.point&#34;</span>)  
+</code></pre></div><img src="images/ugly.png" alt="" width="70%"/>
+<p>When making maps, the <strong>named parameters</strong>, <code>taxonKey</code>, <code>datasetKey</code>, <code>country</code>, <code>publishingOrg</code>,  <code>publishingCountry</code>, <code>year</code>, and <code>basisOfRecord</code> are going to be the easiest to use.  However, It is possible to make &ldquo;any&rdquo; map (any <a href="https://www.gbif.org/occurrence/map?recorded_by=John%20Waller&amp;advanced=1&amp;occurrence_status=present">search filter</a>) using <code>source=adhoc</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#586e75"># all occurrences with iucn status critically endangered </span>
+<span style="color:#268bd2">map_fetch</span>(z<span style="color:#719e07">=</span><span style="color:#2aa198">1</span>,x<span style="color:#719e07">=</span><span style="color:#2aa198">0</span><span style="color:#719e07">:</span><span style="color:#2aa198">3</span>,y<span style="color:#719e07">=</span><span style="color:#2aa198">0</span><span style="color:#719e07">:</span><span style="color:#2aa198">1</span>,source<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;adhoc&#34;</span>,iucn_red_list_category<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;CR&#34;</span>,
+          style<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;iNaturalist.poly&#34;</span>,base_style<span style="color:#719e07">=</span><span style="color:#2aa198">&#39;osm-bright&#39;</span>,bin<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;hex&#34;</span>)
+</code></pre></div><img src="images/adhoc-iucn.png" alt="" width="70%"/>
+<p><code>map_fetch()</code> can also tell when you have used a parameter that is not a default parameter and automatically switch to <code>source=&quot;adhoc&quot;</code> for you. I have found that point style don&rsquo;t work well with <code>source=&quot;adhoc&quot;</code>, so <code>map_fetch()</code> will give a warning if you try to use a point style with <code>source=&quot;adhoc&quot;</code>.</p>
+<p>Here are some examples of maps with different parameters and styles.</p>
+<p><code>adhoc</code> is needed here  because <code>recordedBy</code> isn&rsquo;t one of the named parameters. <code>map_fetch()</code> automatically detects this and switches source to &ldquo;adhoc&rdquo;. Note the default style for the adhoc interface is <code>scaled.circles</code> and base map style <code>gbif-light</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#268bd2">map_fetch</span>(recordedBy<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;John Waller&#34;</span>)
+</code></pre></div><img src="images/john_waller.png" alt="" width="70%"/>
+<p>Occurrences in the OBIS network. Note that <code>squareSize</code> only works with <code>bin=&quot;square&quot;</code>. Also notice that the map only returns one tile since we didn&rsquo;t set <code>x</code> or <code>y</code> values.</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#268bd2">map_fetch</span>(z<span style="color:#719e07">=</span><span style="color:#2aa198">1</span>,source<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;adhoc&#34;</span>,style<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;green.poly&#34;</span>,squareSize<span style="color:#719e07">=</span><span style="color:#2aa198">64</span>,bin<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;square&#34;</span>,network_key<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;2b7c7b4f-4d4f-40d3-94de-c28b6fa054a6&#34;</span>)
+</code></pre></div><img src="images/obis_map.png" alt="" width="70%"/>
+<p>Map of Texas using the <code>gadm</code> filter. I looked up the <code>gadm_gid</code> code using the GBIF <a href="https://www.gbif.org/occurrence/map?gadm_gid=USA.44_1">web interface</a>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#268bd2">map_fetch</span>(z<span style="color:#719e07">=</span><span style="color:#2aa198">4</span>,x<span style="color:#719e07">=</span><span style="color:#2aa198">6</span><span style="color:#719e07">:</span><span style="color:#2aa198">7</span>,y<span style="color:#719e07">=</span><span style="color:#2aa198">4</span><span style="color:#719e07">:</span><span style="color:#2aa198">5</span>,gadm_gid<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;USA.44_1&#34;</span>,style<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;blue.marker&#34;</span>) 
+</code></pre></div><img src="images/texas.png" alt="" width="50%"/>
+<p><code>map_fetch()</code> is generally forgiving and will give you back at least some map with warnings or blank images when the parameters don&rsquo;t work. You can see in the image below that there are three blank images stitched together.</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#268bd2">map_fetch</span>(x<span style="color:#719e07">=</span><span style="color:#2aa198">1</span><span style="color:#719e07">:</span><span style="color:#2aa198">5</span>) <span style="color:#586e75"># no tiles exist past 2, so blank images are returned</span>
+</code></pre></div><img src="images/blank.png" alt="" width="70%"/>
+<p>All specimen bird records from the year 2000.</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#268bd2">map_fetch</span>(taxonKey<span style="color:#719e07">=</span><span style="color:#2aa198">212</span>, basisOfRecord<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;PRESERVED_SPECIMEN&#34;</span>, year<span style="color:#719e07">=</span><span style="color:#2aa198">2000</span>,style<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;classic-noborder.poly&#34;</span>)  
+</code></pre></div><img src="images/eBird.png" alt="" width="70%"/>
+<p>Map of all country centroid locations.</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#268bd2">map_fetch</span>(distanceFromCentroidInMeters<span style="color:#719e07">=</span><span style="color:#2aa198">0</span>,base_style<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;osm-bright&#34;</span>)
+</code></pre></div><img src="images/centroids.png" alt="" width="70%"/>
+<p>In general, adhoc maps are harder to make look nice, but usually picking a non-point style and tuning <code>hexPerTile</code> and perhaps also <code>squareSize</code>, will make a nice map.</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#268bd2">map_fetch</span>(source<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;adhoc&#34;</span>,project_id<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;BID-AF2015-0134-REG&#34;</span>,style<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;green2.poly&#34;</span>,hexPerTile<span style="color:#719e07">=</span><span style="color:#2aa198">50</span>)
+</code></pre></div><img src="images/bid_project_hex.png" alt="" width="70%"/>
+<p>A tip for getting the un-named adhoc parameters is to pull them from the occurrence search URL after looking them up via the <a href="https://www.gbif.org/occurrence/map?advanced=1&amp;project_id=BID-AF2015-0134-REG">web interface</a>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#586e75"># https://www.gbif.org/occurrence/map?advanced=1&amp;project_id=BID-AF2015-0134-REG</span>
+<span style="color:#268bd2">map_fetch</span>(source<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;adhoc&#34;</span>,project_id<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;BID-AF2015-0134-REG&#34;</span>) 
+</code></pre></div><p>You can read more about <code>map_fetch()</code> on the rgbif documentation website <a href="https://docs.ropensci.org/rgbif/reference/map_fetch.html">here</a>.</p>
+<h2 id="using-ggplot2geom_sf">Using ggplot2::geom_sf()</h2>
+<p>The GBIF maps API is powerful and useful, but can be frustrating if your plot needs a some custom styling or legends. If you don&rsquo;t have a <strong>large</strong> dataset, then using <code>ggplot::geom_sf()</code> can be a good option.</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#268bd2">library</span>(rgbif)
+<span style="color:#268bd2">library</span>(ggplot2)
+<span style="color:#268bd2">library</span>(sf)
+<span style="color:#268bd2">library</span>(rnaturalearth)
+
+<span style="color:#586e75"># occ_download(pred_default(),pred(taxonKey,&#34;1427067&#34;),format=&#34;SIMPLE_CSV&#34;)</span>
+
+worldmap <span style="color:#719e07">&lt;-</span> <span style="color:#268bd2">ne_countries</span>(scale <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39;medium&#39;</span>, type <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39;map_units&#39;</span>,returnclass <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39;sf&#39;</span>)
+
+<span style="color:#586e75"># a download I made of all Calopteryx splendens occurrences </span>
+d <span style="color:#719e07">&lt;-</span> <span style="color:#268bd2">occ_download_get</span>(<span style="color:#2aa198">&#39;0001707-230810091245214&#39;</span>) <span style="color:#719e07">%&gt;%</span>
+  <span style="color:#268bd2">occ_download_import</span>()
+
+d_sf <span style="color:#719e07">&lt;-</span> sf<span style="color:#719e07">::</span><span style="color:#268bd2">st_as_sf</span>(d, coords <span style="color:#719e07">=</span> <span style="color:#268bd2">c</span>(<span style="color:#2aa198">&#34;decimalLongitude&#34;</span>, <span style="color:#2aa198">&#34;decimalLatitude&#34;</span>),
+        crs <span style="color:#719e07">=</span> <span style="color:#2aa198">&#34;+proj=longlat +datum=WGS84&#34;</span>)
+
+<span style="color:#586e75"># color occurrences by basisOfRecord</span>
+<span style="color:#268bd2">ggplot</span>() <span style="color:#719e07">+</span> 
+  <span style="color:#268bd2">geom_sf</span>(data <span style="color:#719e07">=</span> worldmap) <span style="color:#719e07">+</span> 
+  <span style="color:#268bd2">geom_sf</span>(data <span style="color:#719e07">=</span> d_sf,<span style="color:#268bd2">aes</span>(color<span style="color:#719e07">=</span>basisOfRecord))
+   
+</code></pre></div><p><img src="images/geom_sf.png" alt=""></p>
+<p>See <a href="https://ggplot2.tidyverse.org/reference/ggsf.html">ggplot2</a> docs for more.</p>
+<h2 id="using-leaflet">Using leaflet</h2>
+<p>Since the GBIF maps API was designed to work as an interactive map, it can be used with <a href="https://rstudio.github.io/leaflet/">leaflet</a>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#268bd2">library</span>(leaflet)
+
+<span style="color:#268bd2">leaflet</span>() <span style="color:#719e07">%&gt;%</span> 
+  <span style="color:#268bd2">addTiles</span>() <span style="color:#719e07">%&gt;%</span>
+  <span style="color:#268bd2">addTiles</span>(urlTemplate<span style="color:#719e07">=</span><span style="color:#2aa198">&#39;https://api.gbif.org/v2/map/occurrence/density/{z}/{x}/{y}@1x.png?style=scaled.circles&amp;taxonKey=5219404&#39;</span>) 
+
+</code></pre></div><p>See <a href="https://ggplot2.tidyverse.org/reference/ggsf.html">leaflet</a> docs for more.</p>
+<h2 id="citing-maps-data">Citing maps data</h2>
+<p>If you generate a map that you will use in a publication, it is good practice to cite the underlying data. This can be done by generating a download using the same filters you used in your map.</p>
+<p>See articles :</p>
+<ul>
+<li><a href="https://docs.ropensci.org/rgbif/articles/gbif_citations.html">rgbif Citation Article</a></li>
+<li><a href="https://www.gbif.org/citation-guidelines">GBIF Citation Guidelines</a></li>
+</ul>
+<p>You might also want to cite <strong>Open Street Map</strong>, if you use a base map that uses their data.</p>
+<ul>
+<li><a href="https://tile.gbif.org/ui/">https://tile.gbif.org/ui/</a></li>
+<li><a href="https://wiki.openstreetmap.org/wiki/Researcher_Information">https://wiki.openstreetmap.org/wiki/Researcher_Information</a></li>
+</ul>
+    </div>
+
+    
+    
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/api/">API</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/improve-identifier-stability/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">GBIF attempts to improve identifier stability by monitoring changes of occurrenceIDs</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/accessing-occurrence-data-to-conserve-edge-species/">
+            <span class="next-text nav-default">Accessing GBIF-mediated occurrence data to conserve EDGE species</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      
+
+
+
+<div>
+<h3>This post represents the ideas of the author.</h3>
+</div>
+<div id='discourse-comments'></div>
+<script type="text/javascript">
+  DiscourseEmbed = { discourseUrl: 'https://discourse.gbif.org/',
+                     discourseEmbedUrl: 'https://data-blog.gbif.org\/post\/2023-03-24-maps-api\/' };
+
+  (function() {
+    var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+    d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+  })();
+</script>
+
+
+<div class = "copyright">
+	<a class="theme-link" href="https://www.gbif.org/what-is-gbif">What is GBIF?</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://www.gbif.org/developer/summary">API</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://www.gbif.org/faq">FAQ</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://discourse.gbif.org/">Community-Forum</a>
+</div>
+
+<div class = "copyright">
+	<span class="theme-info">GBIF Secretariat</span>
+	<span class="theme-info">Universitetsparken 15</span>
+	<span class="theme-info">DK-2100 Copenhagen Ø</span>
+	<span class="theme-info" >Denmark</span>
+</div>
+
+<div class="copyright">
+	<span class="power-by">
+	Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+	</span>
+	<span class="division">|</span>
+	<span class="theme-info">
+	Theme -
+	<a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+	</span>
+
+</div>
+
+<script defer data-domain="data-blog.gbif.org,gbif.org" src="https://plausible.io/js/script.file-downloads.js"></script>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+<script type="text/javascript" src="/dist/even.min.js?v=3.2.0"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

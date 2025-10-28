@@ -6,13 +6,31 @@
     <description>Recent content in Author on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 02 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://data-blog.gbif.org/author/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://data-blog.gbif.org/author/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>John Waller</title>
       <link>https://data-blog.gbif.org/author/john-waller/</link>
-      <pubDate>Mon, 02 Sep 2024 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 28 Oct 2025 00:00:00 +0000</pubDate>
       
       <guid>https://data-blog.gbif.org/author/john-waller/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kit Lewers</title>
+      <link>https://data-blog.gbif.org/author/kit-lewers/</link>
+      <pubDate>Thu, 06 Feb 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/author/kit-lewers/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Marie Grosjean</title>
+      <link>https://data-blog.gbif.org/author/marie-grosjean/</link>
+      <pubDate>Wed, 09 Oct 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/author/marie-grosjean/</guid>
       <description></description>
     </item>
     
@@ -40,15 +58,6 @@
       <pubDate>Wed, 18 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://data-blog.gbif.org/author/joe-miller/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Marie Grosjean</title>
-      <link>https://data-blog.gbif.org/author/marie-grosjean/</link>
-      <pubDate>Thu, 08 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://data-blog.gbif.org/author/marie-grosjean/</guid>
       <description></description>
     </item>
     

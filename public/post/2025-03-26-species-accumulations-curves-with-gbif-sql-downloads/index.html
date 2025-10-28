@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Species accumulation curves with GBIF SQL downloads - GBIF Data Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="John Waller" />
+  <meta name="description" content="With GBIF&amp;rsquo;s new SQL downloads feature, it is now possible to easily create useful custom metrics. In this post, I will create species accumulation curves for various countries/areas using GBIF SQL downloads and R.
+ GBIF now has a new repository, Community Metrics, for collecting input from the GBIF community on the creation of data products derived from GBIF-mediated data that can complement those already provided through GBIF&amp;rsquo;s data analytics. The goal of this work is to produce new or further develop existing metrics, indicators and time series (trend) data products to support decision making.
+ A species accumulation curve is a plot of the total cumulative running total species in a region. These curves are useful for assessing whether more sampling is likely to yield more knowledge of a region. For example, if the curve is increasing rapidly, it is likely that the region is undersampled for the group, and there could be data gaps. Conversely, if the curve is flattening out, it is likely that the region is well sampled for the group.
+" />
+
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.91.2" />
+
+
+<link rel="canonical" href="https://data-blog.gbif.org/post/2025-03-26-species-accumulations-curves-with-gbif-sql-downloads/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.2.0" rel="stylesheet">
+
+
+
+
+<link rel="stylesheet" href="/css//custom.css">
+
+
+<meta property="og:title" content="Species accumulation curves with GBIF SQL downloads" />
+<meta property="og:description" content="With GBIF&rsquo;s new SQL downloads feature, it is now possible to easily create useful custom metrics. In this post, I will create species accumulation curves for various countries/areas using GBIF SQL downloads and R.
+
+GBIF now has a new repository, Community Metrics, for collecting input from the GBIF community on the creation of data products derived from GBIF-mediated data that can complement those already provided through GBIF&rsquo;s data analytics. The goal of this work is to produce new or further develop existing metrics, indicators and time series (trend) data products to support decision making.
+
+A species accumulation curve is a plot of the total cumulative running total species in a region. These curves are useful for assessing whether more sampling is likely to yield more knowledge of a region. For example, if the curve is increasing rapidly, it is likely that the region is undersampled for the group, and there could be data gaps. Conversely, if the curve is flattening out, it is likely that the region is well sampled for the group." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://data-blog.gbif.org/post/2025-03-26-species-accumulations-curves-with-gbif-sql-downloads/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2025-04-22T00:00:00+00:00" />
+<meta property="article:modified_time" content="2025-03-26T15:53:38+01:00" />
+
+<meta itemprop="name" content="Species accumulation curves with GBIF SQL downloads">
+<meta itemprop="description" content="With GBIF&rsquo;s new SQL downloads feature, it is now possible to easily create useful custom metrics. In this post, I will create species accumulation curves for various countries/areas using GBIF SQL downloads and R.
+
+GBIF now has a new repository, Community Metrics, for collecting input from the GBIF community on the creation of data products derived from GBIF-mediated data that can complement those already provided through GBIF&rsquo;s data analytics. The goal of this work is to produce new or further develop existing metrics, indicators and time series (trend) data products to support decision making.
+
+A species accumulation curve is a plot of the total cumulative running total species in a region. These curves are useful for assessing whether more sampling is likely to yield more knowledge of a region. For example, if the curve is increasing rapidly, it is likely that the region is undersampled for the group, and there could be data gaps. Conversely, if the curve is flattening out, it is likely that the region is well sampled for the group."><meta itemprop="datePublished" content="2025-04-22T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2025-03-26T15:53:38+01:00" />
+<meta itemprop="wordCount" content="1152">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Species accumulation curves with GBIF SQL downloads"/>
+<meta name="twitter:description" content="With GBIF&rsquo;s new SQL downloads feature, it is now possible to easily create useful custom metrics. In this post, I will create species accumulation curves for various countries/areas using GBIF SQL downloads and R.
+
+GBIF now has a new repository, Community Metrics, for collecting input from the GBIF community on the creation of data products derived from GBIF-mediated data that can complement those already provided through GBIF&rsquo;s data analytics. The goal of this work is to produce new or further develop existing metrics, indicators and time series (trend) data products to support decision making.
+
+A species accumulation curve is a plot of the total cumulative running total species in a region. These curves are useful for assessing whether more sampling is likely to yield more knowledge of a region. For example, if the curve is increasing rapidly, it is likely that the region is undersampled for the group, and there could be data gaps. Conversely, if the curve is flattening out, it is likely that the region is well sampled for the group."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">GBIF Data Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/categories/gbif/">
+        <li class="mobile-menu-item">posts</li>
+      </a><a href="https://discourse.gbif.org/c/data-blog">
+        <li class="mobile-menu-item">community-forum</li>
+      </a><a href="https://www.gbif.org/">
+        <li class="mobile-menu-item">gbif.org</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">about</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">
+	<img src= "/logo.png" alt="GBIF-analytics-blog" style ="width:20%;">
+  </a>
+  
+	
+  
+  
+</div>
+
+<nav class="site-navbar">
+
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/categories/gbif/">posts</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://discourse.gbif.org/c/data-blog">community-forum</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://www.gbif.org/">gbif.org</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">about</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+	
+    <header class="post-header">
+      <h1 class="post-title">Species accumulation curves with GBIF SQL downloads</h1>
+	  
+	  
+      <div class="post-author">John Waller</div>
+
+      <div class="post-meta">
+        <span class="post-time"> 2025-04-22 </span>
+        <div class="post-category">
+            
+              <a href="/categories/gbif/"> GBIF </a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    
+    
+
+    
+    <div class="post-content">
+      <p>With GBIF&rsquo;s new SQL downloads feature, it is now possible to easily create useful custom metrics. In this post, I will create species accumulation curves for various countries/areas using <a href="https://techdocs.gbif.org/en/data-use/api-sql-downloads">GBIF SQL downloads</a> and R.</p>
+<blockquote>
+<p>GBIF now has a new <a href="https://github.com/gbif/CommunityMetrics">repository</a>, <strong>Community Metrics</strong>, for collecting input from the GBIF community on the creation of data products derived from GBIF-mediated data that can complement those already provided through GBIF&rsquo;s <a href="https://www.gbif.org/analytics/global">data analytics</a>. The goal of this work is to produce new or further develop existing metrics, indicators and time series (trend) data products to support decision making.</p>
+</blockquote>
+<p>A <strong>species accumulation curve</strong> is a plot of the total cumulative running total species in a region. These curves are useful for assessing whether more sampling is likely to yield more knowledge of a region. For example, if the curve is increasing rapidly, it is likely that the region is undersampled for the group, and there could be data gaps. Conversely, if the curve is flattening out, it is likely that the region is well sampled for the group.</p>
+<p>In this post, I will focus on the group <strong>Amphibia</strong>.</p>
+<p>Here below is a basic species accumulation curve for <strong>Amphibia</strong> in <strong>Sweden</strong> (SE). Here we see that since around 1980, the total number of species has been fairly constant, suggesting that the group is well sampled in Sweden, and therefore it is very unlikely for there to be any <strong>data gaps</strong> for Amphibia is Sweden. This, of course, does not imply that continued monitoring is not useful for other reasons.</p>
+<p>The total number of occurrences for Amphibia are also plotted as variably-sized circles. We can see that the rate of increase is less than 1 species &ldquo;discovered&rdquo; species per year.</p>
+<p><img src="images/SE.svg" alt=""></p>
+<p>Below I will show how I created this curve using GBIF SQL downloads and R.</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#268bd2">library</span>(rgbif)
+
+<span style="color:#268bd2">occ_download_sql</span>(<span style="color:#2aa198">&#34;
+</span><span style="color:#2aa198">SELECT 
+</span><span style="color:#2aa198">    \&#34;year\&#34;, 
+</span><span style="color:#2aa198">    countrycode,
+</span><span style="color:#2aa198">    speciesKey,
+</span><span style="color:#2aa198">    scientificname,
+</span><span style="color:#2aa198">    COUNT(*) AS occ_count
+</span><span style="color:#2aa198">FROM occurrence
+</span><span style="color:#2aa198">WHERE \&#34;year\&#34; &gt; 1969 AND \&#34;year\&#34; &lt; 2025
+</span><span style="color:#2aa198">  AND hasCoordinate = TRUE
+</span><span style="color:#2aa198">  AND hasgeospatialissues = FALSE
+</span><span style="color:#2aa198">  AND speciesKey IS NOT NULL
+</span><span style="color:#2aa198">  AND countryCode IS NOT NULL
+</span><span style="color:#2aa198">  AND classKey = 131
+</span><span style="color:#2aa198">  AND basisOfRecord != &#39;FOSSIL_SPECIMEN&#39;
+</span><span style="color:#2aa198">  AND taxonrank = &#39;SPECIES&#39;
+</span><span style="color:#2aa198">GROUP BY 
+</span><span style="color:#2aa198">speciesKey,
+</span><span style="color:#2aa198">scientificname, 
+</span><span style="color:#2aa198">\&#34;year\&#34;,
+</span><span style="color:#2aa198">countrycode;
+</span><span style="color:#2aa198">&#34;</span>)
+</code></pre></div><p>Short explanation of the SQL above:</p>
+<ul>
+<li>We select the columns we want from the big +400 column <code>occurrence</code> table</li>
+<li>We filter the data to only include records from 1970 to 2024</li>
+<li><code>131</code> is the classKey for <strong>Amphibia</strong></li>
+<li>We remove fossils</li>
+</ul>
+<p>This will return of a table with occurrence counts the columns <code>year</code>, <code>countrycode</code>, <code>speciesKey</code>, <code>scientificname</code>, and <code>occ_count</code>.</p>
+<p>Note that the below query will <strong>not</strong> work in the current GBIF SQL downloads implementation:</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">    <span style="color:#719e07">COUNT</span>(<span style="color:#719e07">DISTINCT</span> speciesKey) OVER (
+        <span style="color:#719e07">ORDER</span> <span style="color:#719e07">BY</span> <span style="color:#2aa198">&#34;year&#34;</span>
+        <span style="color:#719e07">ROWS</span> <span style="color:#719e07">BETWEEN</span> UNBOUNDED PRECEDING <span style="color:#719e07">AND</span> <span style="color:#719e07">CURRENT</span> <span style="color:#719e07">ROW</span>
+    ) <span style="color:#719e07">AS</span> cumulative_species_count
+</code></pre></div><p>As we cannot do the cumulative aggregation in the GBIF SQL downloads, it is necessary to do this in R.</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#268bd2">library</span>(rgbif)
+<span style="color:#268bd2">library</span>(ggplot2)
+<span style="color:#268bd2">library</span>(dplyr)
+
+d <span style="color:#719e07">&lt;-</span> <span style="color:#268bd2">occ_download_get</span>(<span style="color:#2aa198">&#34;0000317-250325103851331&#34;</span>) <span style="color:#719e07">%&gt;%</span>    
+    <span style="color:#268bd2">occ_download_import</span>() <span style="color:#719e07">|&gt;</span> 
+    <span style="color:#268bd2">filter</span>(countrycode <span style="color:#719e07">==</span> <span style="color:#2aa198">&#34;SE&#34;</span>) <span style="color:#719e07">|&gt;</span>
+    <span style="color:#268bd2">arrange</span>(year) <span style="color:#719e07">|&gt;</span>
+    <span style="color:#268bd2">mutate</span>(cumulative_species_count <span style="color:#719e07">=</span> <span style="color:#268bd2">cumsum</span>(<span style="color:#719e07">!</span><span style="color:#268bd2">duplicated</span>(specieskey))) <span style="color:#719e07">|&gt;</span>
+    <span style="color:#268bd2">group_by</span>(year) <span style="color:#719e07">|&gt;</span>
+    <span style="color:#268bd2">summarise</span>(cumulative_species_count <span style="color:#719e07">=</span> <span style="color:#268bd2">max</span>(cumulative_species_count, na.rm <span style="color:#719e07">=</span> <span style="color:#cb4b16">TRUE</span>),
+    occ_count <span style="color:#719e07">=</span> <span style="color:#268bd2">sum</span>(occ_count)) <span style="color:#719e07">|&gt;</span>
+    <span style="color:#268bd2">ungroup</span>() 
+
+p <span style="color:#719e07">&lt;-</span> <span style="color:#268bd2">ggplot</span>(d, <span style="color:#268bd2">aes</span>(x <span style="color:#719e07">=</span> year, y <span style="color:#719e07">=</span> cumulative_species_count)) <span style="color:#719e07">+</span>
+    <span style="color:#268bd2">geom_line</span>() <span style="color:#719e07">+</span>
+    <span style="color:#268bd2">geom_point</span>(<span style="color:#268bd2">aes</span>(size<span style="color:#719e07">=</span>occ_count),shape<span style="color:#719e07">=</span><span style="color:#2aa198">1</span>) <span style="color:#719e07">+</span>
+    <span style="color:#268bd2">geom_point</span>(size<span style="color:#719e07">=</span><span style="color:#2aa198">0.5</span>) <span style="color:#719e07">+</span>
+    <span style="color:#268bd2">labs</span>(title <span style="color:#719e07">=</span> <span style="color:#2aa198">&#34;cumulative sp count by year - Amphibia&#34;</span>,
+         size <span style="color:#719e07">=</span> <span style="color:#2aa198">&#34;total occ count for year: &#34;</span>) <span style="color:#719e07">+</span>
+    <span style="color:#268bd2">theme_minimal</span>() <span style="color:#719e07">+</span>
+    <span style="color:#268bd2">theme</span>(legend.position <span style="color:#719e07">=</span> <span style="color:#2aa198">&#34;top&#34;</span>)
+p
+</code></pre></div><p>We can also compare other countries together on the same graphic to see differences species accumulation. Here we see that <strong>Australia</strong> (AU) has a much flatter curve than <strong>China</strong> (CN), which implies that continued sampling is unlikely increase our knowledge of Amphibians in Australia. Whereas in China, the curve is still increasing, suggesting that there are potential data gaps. This could be useful information for conservation funding and future mobilization efforts. Of course continued sampling, even in well known regions, is still useful for other reasons.</p>
+<p><img src="images/CN-AU.svg" alt=""></p>
+<p><strong>Severe undersampling</strong> can also create a pattern that looks like a flatter curve. Here we see that <strong>Botswana</strong> (BW) has a somewhat flat curve, but this like is due to a low amount of sampling for Amphibians (~20 occurrences per year).</p>
+<p><img src="images/BW.svg" alt=""></p>
+<p>The species accumulation curve for <strong>Brazil</strong> (BR) is interesting, as the country has a fair amount of sampling per year (~5000 occ per year), but still appears to be gaining new species knowledge each year.</p>
+<p><img src="images/BR.png" alt=""></p>
+<p><strong>Saudi Arabia</strong> (SA) is not expected to be rich in Amphibian species and has a fairly flat curve, which probably wouldn&rsquo;t steepen much with increased sampling, but increased sampling effort might be good for monitoring the existing species.</p>
+<p><img src="images/SA.png" alt=""></p>
+<h2 id="using-grids">Using grids</h2>
+<p>GBIF SQL downloads also allows for occurrences to be linked to grid cells. Supposed we wanted to map slopes for the last 10 years for each grid cell, attempting to reveal potential data gaps. A &ldquo;high&rdquo; slope for a small grid cell might be less than one species per year, but any cut off point will be somewhat arbitrary.</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#268bd2">occ_download_sql</span>(<span style="color:#2aa198">&#34;
+</span><span style="color:#2aa198">SELECT 
+</span><span style="color:#2aa198">  GBIF_MGRSCode(
+</span><span style="color:#2aa198">    10000, 
+</span><span style="color:#2aa198">    decimalLatitude,
+</span><span style="color:#2aa198">    decimalLongitude,
+</span><span style="color:#2aa198">    0
+</span><span style="color:#2aa198">  ) AS gridcode,
+</span><span style="color:#2aa198">    \&#34;year\&#34;, 
+</span><span style="color:#2aa198">    countrycode,
+</span><span style="color:#2aa198">    speciesKey,
+</span><span style="color:#2aa198">    scientificname,
+</span><span style="color:#2aa198">    COUNT(*) AS occ_count
+</span><span style="color:#2aa198">FROM occurrence
+</span><span style="color:#2aa198">WHERE \&#34;year\&#34; &gt; 1969 AND \&#34;year\&#34; &lt; 2025
+</span><span style="color:#2aa198">  AND hasCoordinate = TRUE
+</span><span style="color:#2aa198">  AND hasgeospatialissues = FALSE
+</span><span style="color:#2aa198">  AND speciesKey IS NOT NULL
+</span><span style="color:#2aa198">  AND countryCode IS NOT NULL
+</span><span style="color:#2aa198">  AND classKey = 131
+</span><span style="color:#2aa198">  AND basisOfRecord != &#39;FOSSIL_SPECIMEN&#39;
+</span><span style="color:#2aa198">  AND taxonrank = &#39;SPECIES&#39;
+</span><span style="color:#2aa198">GROUP BY 
+</span><span style="color:#2aa198">speciesKey,
+</span><span style="color:#2aa198">scientificname, 
+</span><span style="color:#2aa198">\&#34;year\&#34;,
+</span><span style="color:#2aa198">countrycode,
+</span><span style="color:#2aa198">gridcode;
+</span><span style="color:#2aa198">&#34;</span>)
+</code></pre></div><p>You can download the combined shapefile I used for this example here: <a href="https://github.com/jhnwllr/mgrs-grid">https://github.com/jhnwllr/mgrs-grid</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#268bd2">library</span>(rgbif)
+<span style="color:#268bd2">library</span>(dplyr)
+<span style="color:#268bd2">library</span>(ggplot2)
+<span style="color:#268bd2">library</span>(purrr)
+<span style="color:#268bd2">library</span>(sf)
+
+d <span style="color:#719e07">&lt;-</span> <span style="color:#268bd2">occ_download_get</span>(<span style="color:#2aa198">&#34;0005222-250325103851331&#34;</span>) <span style="color:#719e07">%&gt;%</span>    
+    <span style="color:#268bd2">occ_download_import</span>() <span style="color:#719e07">|&gt;</span> 
+    <span style="color:#268bd2">glimpse</span>()
+
+dd <span style="color:#719e07">&lt;-</span> d <span style="color:#719e07">|&gt;</span> 
+    <span style="color:#268bd2">arrange</span>(gridcode,year) <span style="color:#719e07">|&gt;</span>
+    <span style="color:#268bd2">mutate</span>(cumulative_species_count <span style="color:#719e07">=</span> <span style="color:#268bd2">cumsum</span>(<span style="color:#719e07">!</span><span style="color:#268bd2">duplicated</span>(specieskey))) <span style="color:#719e07">|&gt;</span>
+    <span style="color:#268bd2">filter</span>(year <span style="color:#719e07">&gt;=</span> <span style="color:#2aa198">2015</span>) <span style="color:#719e07">|&gt;</span> <span style="color:#586e75"># only get for the last 10 years </span>
+    <span style="color:#268bd2">na.omit</span>() <span style="color:#719e07">|&gt;</span>
+    <span style="color:#268bd2">group_by</span>(gridcode) <span style="color:#719e07">|&gt;</span>
+    <span style="color:#268bd2">summarize</span>(slope <span style="color:#719e07">=</span> <span style="color:#268bd2">coef</span>(<span style="color:#268bd2">lm</span>(cumulative_species_count <span style="color:#719e07">~</span> year))[2], 
+              occ_count <span style="color:#719e07">=</span> <span style="color:#268bd2">max</span>(occ_count, na.rm <span style="color:#719e07">=</span> <span style="color:#cb4b16">TRUE</span>)) <span style="color:#719e07">|&gt;</span>
+    <span style="color:#268bd2">ungroup</span>() <span style="color:#719e07">|&gt;</span>
+    <span style="color:#268bd2">select</span>(MGRS <span style="color:#719e07">=</span> gridcode, slope, occ_count) <span style="color:#719e07">|&gt;</span>
+    <span style="color:#268bd2">glimpse</span>() 
+
+mgrs_grid <span style="color:#719e07">&lt;-</span> <span style="color:#268bd2">st_layers</span>(<span style="color:#2aa198">&#34;mgrs-grid/&#34;</span>)<span style="color:#719e07">$</span>name <span style="color:#719e07">%&gt;%</span>
+<span style="color:#268bd2">map</span>(<span style="color:#719e07">~</span> <span style="color:#268bd2">st_read</span>(<span style="color:#2aa198">&#34;mgrs-grid/&#34;</span>, layer <span style="color:#719e07">=</span> .) <span style="color:#719e07">%&gt;%</span> <span style="color:#268bd2">st_transform</span>(<span style="color:#2aa198">4326</span>)) <span style="color:#719e07">%&gt;%</span>
+dplyr<span style="color:#719e07">::</span><span style="color:#268bd2">bind_rows</span>() <span style="color:#719e07">%&gt;%</span> 
+<span style="color:#268bd2">left_join</span>(dd, by <span style="color:#719e07">=</span> <span style="color:#2aa198">&#34;MGRS&#34;</span>) <span style="color:#719e07">|&gt;</span>
+  <span style="color:#268bd2">mutate</span>(
+    slope_category <span style="color:#719e07">=</span> <span style="color:#268bd2">case_when</span>(
+      slope <span style="color:#719e07">&lt;=</span> <span style="color:#2aa198">0.1</span> <span style="color:#719e07">~</span> <span style="color:#2aa198">&#34;no gap (&lt;0.1)&#34;</span>,
+      slope <span style="color:#719e07">&gt;</span> <span style="color:#2aa198">0.1</span> <span style="color:#719e07">~</span> <span style="color:#2aa198">&#34;potential gap (&gt;0.1)&#34;</span>,
+      occ_count <span style="color:#719e07">&lt;=</span> <span style="color:#2aa198">1000</span> <span style="color:#719e07">~</span> <span style="color:#2aa198">&#34;low sampling (&lt;1000 occ)&#34;</span>,
+      <span style="color:#cb4b16">TRUE</span> <span style="color:#719e07">~</span> <span style="color:#2aa198">&#34;no data&#34;</span> 
+    )
+  )
+
+
+p <span style="color:#719e07">&lt;-</span> <span style="color:#268bd2">ggplot</span>(mgrs_grid) <span style="color:#719e07">+</span>
+<span style="color:#268bd2">geom_sf</span>(<span style="color:#268bd2">aes</span>(fill <span style="color:#719e07">=</span> slope_category), color <span style="color:#719e07">=</span> <span style="color:#cb4b16">NA</span>) <span style="color:#719e07">+</span>
+  <span style="color:#268bd2">scale_fill_manual</span>(
+    values <span style="color:#719e07">=</span> <span style="color:#268bd2">c</span>(<span style="color:#2aa198">&#34;no gap (&lt;0.1)&#34;</span> <span style="color:#719e07">=</span> <span style="color:#2aa198">&#34;blue&#34;</span>, 
+    <span style="color:#2aa198">&#34;potential gap (&gt;0.1)&#34;</span> <span style="color:#719e07">=</span> <span style="color:#2aa198">&#34;red&#34;</span>, 
+    <span style="color:#2aa198">&#34;low sampling (&lt;1000 occ)&#34;</span> <span style="color:#719e07">=</span> <span style="color:#2aa198">&#34;lightgrey&#34;</span>,
+    <span style="color:#2aa198">&#34;no data&#34;</span> <span style="color:#719e07">=</span> <span style="color:#2aa198">&#34;bisque&#34;</span>),  
+    na.value <span style="color:#719e07">=</span> <span style="color:#2aa198">&#34;white&#34;</span>  
+  ) <span style="color:#719e07">+</span>
+<span style="color:#268bd2">theme_minimal</span>() <span style="color:#719e07">+</span> 
+<span style="color:#268bd2">theme</span>(
+  legend.position <span style="color:#719e07">=</span> <span style="color:#2aa198">&#34;top&#34;</span>,
+  legend.title <span style="color:#719e07">=</span> <span style="color:#268bd2">element_blank</span>(),
+  plot.title <span style="color:#719e07">=</span> <span style="color:#268bd2">element_text</span>(hjust <span style="color:#719e07">=</span> <span style="color:#2aa198">0.5</span>)
+)
+</code></pre></div><p><img src="images/map.png" alt=""></p>
+<blockquote>
+<p>Note, there is an open issue with the MGRS grid where certain codes are missing from the shapefile near Austrailia. <a href="https://github.com/ngageoint/mgrs-java/issues/4">https://github.com/ngageoint/mgrs-java/issues/4</a></p>
+</blockquote>
+<p>Here we can see that a few areas with likely data gaps for Amphibians. By only including areas where there have been more than 1000 occurrence records for Amphibians in the last 10 years, I have somewhat accounted for flat curves due to low sampling effort. Of course one should not interpret every grid-cell completely literally because data quality issues, such as a few mis-indentifications, could create a high slope artificially. However, clusters of grid-cells with red gaps are likely to be more indicative of real data gaps in GBIF mediated data.</p>
+<h2 id="heading"></h2>
+    </div>
+
+    
+    
+
+    
+    
+
+    <footer class="post-footer">
+      
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/2025-05-21-dealing-with-sampling-bias-gbif-mediated-occurrence-records/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Dealing with sampling bias GBIF mediated occurrence records</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/2025-01-29-understanding-google-earth-engine-gee-and-its-python-api-a-primer-for-gbif-users/">
+            <span class="next-text nav-default">Understanding Google Earth Engine (GEE) and Its Python API</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      
+
+
+
+<div>
+<h3>This post represents the ideas of the author.</h3>
+</div>
+<div id='discourse-comments'></div>
+<script type="text/javascript">
+  DiscourseEmbed = { discourseUrl: 'https://discourse.gbif.org/',
+                     discourseEmbedUrl: 'https://data-blog.gbif.org\/post\/2025-03-26-species-accumulations-curves-with-gbif-sql-downloads\/' };
+
+  (function() {
+    var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+    d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+  })();
+</script>
+
+
+<div class = "copyright">
+	<a class="theme-link" href="https://www.gbif.org/what-is-gbif">What is GBIF?</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://www.gbif.org/developer/summary">API</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://www.gbif.org/faq">FAQ</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://discourse.gbif.org/">Community-Forum</a>
+</div>
+
+<div class = "copyright">
+	<span class="theme-info">GBIF Secretariat</span>
+	<span class="theme-info">Universitetsparken 15</span>
+	<span class="theme-info">DK-2100 Copenhagen Ø</span>
+	<span class="theme-info" >Denmark</span>
+</div>
+
+<div class="copyright">
+	<span class="power-by">
+	Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+	</span>
+	<span class="division">|</span>
+	<span class="theme-info">
+	Theme -
+	<a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+	</span>
+
+</div>
+
+<script defer data-domain="data-blog.gbif.org,gbif.org" src="https://plausible.io/js/script.file-downloads.js"></script>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+<script type="text/javascript" src="/dist/even.min.js?v=3.2.0"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

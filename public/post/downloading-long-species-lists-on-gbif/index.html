@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Downloading occurrences from a long list of species in R and Python - GBIF Data Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="John Waller and Marie Grosjean" />
+  <meta name="description" content=" It is now possible to download up to 100,000 names on GBIF!
+ Until recently it was not possible to download occurrences for more than a few hundred species at the same time, but it is now possible to request more species names (up to 100,000 taxonkeys).
+" />
+
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.91.2" />
+
+
+<link rel="canonical" href="https://data-blog.gbif.org/post/downloading-long-species-lists-on-gbif/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.2.0" rel="stylesheet">
+
+
+
+
+<link rel="stylesheet" href="/css//custom.css">
+
+
+<meta property="og:title" content="Downloading occurrences from a long list of species in R and Python" />
+<meta property="og:description" content="
+It is now possible to download up to 100,000 names on GBIF!
+
+Until recently it was not possible to download occurrences for more than a few hundred species at the same time, but it is now possible to request more species names (up to 100,000 taxonkeys)." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://data-blog.gbif.org/post/downloading-long-species-lists-on-gbif/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2019-09-04T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-08-28T16:26:18+02:00" />
+
+<meta itemprop="name" content="Downloading occurrences from a long list of species in R and Python">
+<meta itemprop="description" content="
+It is now possible to download up to 100,000 names on GBIF!
+
+Until recently it was not possible to download occurrences for more than a few hundred species at the same time, but it is now possible to request more species names (up to 100,000 taxonkeys)."><meta itemprop="datePublished" content="2019-09-04T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2019-08-28T16:26:18+02:00" />
+<meta itemprop="wordCount" content="1097">
+<meta itemprop="keywords" content="API,downloads,tree list," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Downloading occurrences from a long list of species in R and Python"/>
+<meta name="twitter:description" content="
+It is now possible to download up to 100,000 names on GBIF!
+
+Until recently it was not possible to download occurrences for more than a few hundred species at the same time, but it is now possible to request more species names (up to 100,000 taxonkeys)."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">GBIF Data Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/categories/gbif/">
+        <li class="mobile-menu-item">posts</li>
+      </a><a href="https://discourse.gbif.org/c/data-blog">
+        <li class="mobile-menu-item">community-forum</li>
+      </a><a href="https://www.gbif.org/">
+        <li class="mobile-menu-item">gbif.org</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">about</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">
+	<img src= "/logo.png" alt="GBIF-analytics-blog" style ="width:20%;">
+  </a>
+  
+	
+  
+  
+</div>
+
+<nav class="site-navbar">
+
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/categories/gbif/">posts</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://discourse.gbif.org/c/data-blog">community-forum</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://www.gbif.org/">gbif.org</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">about</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+	
+    <header class="post-header">
+      <h1 class="post-title">Downloading occurrences from a long list of species in R and Python</h1>
+	  
+	  
+      <div class="post-author">John Waller and Marie Grosjean</div>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-09-04 </span>
+        <div class="post-category">
+            
+              <a href="/categories/gbif/"> GBIF </a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    
+    
+
+    
+    <div class="post-content">
+      <blockquote>
+<p>It is now possible to download up to <strong>100,000</strong> names on <strong>GBIF!</strong></p>
+</blockquote>
+<p>Until recently it was not possible to download occurrences for more than a few hundred species at the same time, but it is now possible to request more species names (<strong>up to 100,000 taxonkeys</strong>).</p>
+<blockquote>
+<p><strong>NOTE:</strong> If your request can easily be summarized into higher taxon groups, it still makes more sense to download just that taxon group. For example, if you just want to download all <a href="https://www.gbif.org/occurrence/search?taxon_key=789">dragonflies</a>, all <br> <a href="https://www.gbif.org/occurrence/search?taxon_key=359">mammals</a>, or all <a href="https://www.gbif.org/occurrence/search?taxon_key=7707728">vascular plants</a>. These requests don&rsquo;t require anything special.</p>
+</blockquote>
+<p>Downloads through the <a href="https://www.gbif.org/occurrence/search">web interface</a> are still <strong>limited to around 200 names (taxonkeys)</strong> (species, genus, family, kingdom). This is due to <a href="https://stackoverflow.com/questions/812925/what-is-the-maximum-possible-length-of-a-query-string">limitations in browser</a>. A search for <a href="https://www.gbif.org/occurrence/search?taxon_key=2103261&amp;taxon_key=2473325&amp;taxon_key=2473332&amp;taxon_key=2473336&amp;taxon_key=2473337&amp;taxon_key=2473339&amp;taxon_key=2473341&amp;taxon_key=2473353&amp;taxon_key=2473356&amp;taxon_key=2473362&amp;taxon_key=2473365&amp;taxon_key=2473421&amp;taxon_key=2473442&amp;taxon_key=2473446&amp;taxon_key=2473447&amp;taxon_key=2473454&amp;taxon_key=2473455&amp;taxon_key=2473463&amp;taxon_key=2473465&amp;taxon_key=2473477&amp;taxon_key=2473479&amp;taxon_key=2473482&amp;taxon_key=2473483&amp;taxon_key=2473484&amp;taxon_key=2473492&amp;taxon_key=2473507&amp;taxon_key=2473510&amp;taxon_key=2473514&amp;taxon_key=2473529&amp;taxon_key=2473534&amp;taxon_key=2473535&amp;taxon_key=2473539&amp;taxon_key=2473540&amp;taxon_key=2473543&amp;taxon_key=2473544&amp;taxon_key=2473545&amp;taxon_key=2473559&amp;taxon_key=2473562&amp;taxon_key=2473574&amp;taxon_key=2473577&amp;taxon_key=2473588&amp;taxon_key=2473599&amp;taxon_key=2473605&amp;taxon_key=2473606&amp;taxon_key=2473612&amp;taxon_key=2473613&amp;taxon_key=2473614&amp;taxon_key=2473621&amp;taxon_key=2473622&amp;taxon_key=2473628&amp;taxon_key=2473629&amp;taxon_key=2473633&amp;taxon_key=2473641&amp;taxon_key=2473642&amp;taxon_key=2473645&amp;taxon_key=2473646&amp;taxon_key=2473647&amp;taxon_key=2473648&amp;taxon_key=2473649&amp;taxon_key=2473650&amp;taxon_key=2473654&amp;taxon_key=2473655&amp;taxon_key=2473657&amp;taxon_key=2473659&amp;taxon_key=2473663&amp;taxon_key=2473678&amp;taxon_key=2473680&amp;taxon_key=2473682&amp;taxon_key=2473695&amp;taxon_key=2473696&amp;taxon_key=2473700&amp;taxon_key=2473702&amp;taxon_key=2473719&amp;taxon_key=2473732&amp;taxon_key=2473733&amp;taxon_key=2473744&amp;taxon_key=2473776&amp;taxon_key=2473958&amp;taxon_key=2474021&amp;taxon_key=2474029&amp;taxon_key=2474045&amp;taxon_key=2474051&amp;taxon_key=2474055&amp;taxon_key=2474060&amp;taxon_key=2474074&amp;taxon_key=2474075&amp;taxon_key=2474077&amp;taxon_key=2474078&amp;taxon_key=2474079&amp;taxon_key=2474084&amp;taxon_key=2474087&amp;taxon_key=2474089&amp;taxon_key=2474095&amp;taxon_key=2474096&amp;taxon_key=2474098&amp;taxon_key=2474099&amp;taxon_key=2474100&amp;taxon_key=2474101&amp;taxon_key=2474107&amp;taxon_key=2474113&amp;taxon_key=2474120&amp;taxon_key=2474127&amp;taxon_key=2474128&amp;taxon_key=2474138&amp;taxon_key=2474139&amp;taxon_key=2474141&amp;taxon_key=2474145&amp;taxon_key=2474156&amp;taxon_key=2474162&amp;taxon_key=2474163&amp;taxon_key=2474165&amp;taxon_key=2474170&amp;taxon_key=2474238&amp;taxon_key=2474251&amp;taxon_key=2474252&amp;taxon_key=2474259&amp;taxon_key=2474263&amp;taxon_key=2474264&amp;taxon_key=2474320&amp;taxon_key=2474328&amp;taxon_key=2474332&amp;taxon_key=2474337&amp;taxon_key=2474343&amp;taxon_key=2474345&amp;taxon_key=2474351&amp;taxon_key=2474354&amp;taxon_key=2474356&amp;taxon_key=2474360&amp;taxon_key=2474363&amp;taxon_key=2474370&amp;taxon_key=2474372&amp;taxon_key=2474377&amp;taxon_key=2474381&amp;taxon_key=2474382&amp;taxon_key=2474383&amp;taxon_key=2474386&amp;taxon_key=2474388&amp;taxon_key=2474389&amp;taxon_key=2474390&amp;taxon_key=2474391&amp;taxon_key=2474392&amp;taxon_key=2474393&amp;taxon_key=2474398&amp;taxon_key=2474400&amp;taxon_key=2474404&amp;taxon_key=2474407&amp;taxon_key=2474416&amp;taxon_key=2474443&amp;taxon_key=2474448&amp;taxon_key=2474453&amp;taxon_key=2474455&amp;taxon_key=2474460&amp;taxon_key=2474468&amp;taxon_key=2474472&amp;taxon_key=2474478&amp;taxon_key=2474479&amp;taxon_key=2474481&amp;taxon_key=2474482&amp;taxon_key=2474484&amp;taxon_key=2474486&amp;taxon_key=2474489&amp;taxon_key=2474493&amp;taxon_key=2474520&amp;taxon_key=2474521&amp;taxon_key=2474522&amp;taxon_key=2474523&amp;taxon_key=2474524&amp;taxon_key=2474525&amp;taxon_key=2474533&amp;taxon_key=2474535&amp;taxon_key=2474540&amp;taxon_key=2474542&amp;taxon_key=2474543&amp;taxon_key=2474544&amp;taxon_key=2474547&amp;taxon_key=2474548&amp;taxon_key=2474558&amp;taxon_key=2474575&amp;taxon_key=2474585&amp;taxon_key=2474588&amp;taxon_key=2474589&amp;taxon_key=2474590&amp;taxon_key=2474596&amp;taxon_key=2474597&amp;taxon_key=2474598&amp;taxon_key=2474599&amp;taxon_key=2474603&amp;taxon_key=2474605&amp;taxon_key=2474607&amp;taxon_key=2474611&amp;taxon_key=2474612&amp;taxon_key=2474614&amp;taxon_key=2474615&amp;taxon_key=2474616&amp;taxon_key=2474619&amp;taxon_key=2474620&amp;taxon_key=2474622&amp;taxon_key=2474627&amp;taxon_key=2474628&amp;taxon_key=2474636&amp;taxon_key=2474638&amp;taxon_key=2474639&amp;taxon_key=2474640&amp;taxon_key=2474648&amp;taxon_key=2474653&amp;taxon_key=2474656&amp;taxon_key=2474657&amp;taxon_key=2474658&amp;taxon_key=2474659&amp;taxon_key=2474669&amp;taxon_key=2474670&amp;taxon_key=2474671&amp;taxon_key=2474681&amp;taxon_key=2474684&amp;taxon_key=2474685&amp;taxon_key=2474702&amp;taxon_key=2474703&amp;taxon_key=2474707&amp;taxon_key=2474711&amp;taxon_key=2474715&amp;taxon_key=2474724&amp;taxon_key=2474728&amp;taxon_key=2474732&amp;taxon_key=2474736&amp;taxon_key=2474738&amp;taxon_key=2474747&amp;taxon_key=2474748&amp;taxon_key=2474750&amp;taxon_key=2474754&amp;taxon_key=2474795&amp;taxon_key=2474796&amp;taxon_key=2474797&amp;taxon_key=2474801&amp;taxon_key=2474825&amp;taxon_key=2474830&amp;taxon_key=2474831&amp;taxon_key=2474836&amp;taxon_key=2474837&amp;taxon_key=2474842&amp;taxon_key=2474844&amp;taxon_key=2474846&amp;taxon_key=2474848&amp;taxon_key=2474850&amp;taxon_key=2474855&amp;taxon_key=2474863&amp;taxon_key=2474864&amp;taxon_key=2474868&amp;taxon_key=2474872&amp;taxon_key=2474873&amp;taxon_key=2474874&amp;taxon_key=2474878&amp;taxon_key=2474880&amp;taxon_key=2474882&amp;taxon_key=2474884&amp;taxon_key=2474887&amp;taxon_key=2474890&amp;taxon_key=2474896&amp;taxon_key=2474897&amp;taxon_key=2474898&amp;taxon_key=2474902&amp;taxon_key=2474903&amp;taxon_key=2474904&amp;taxon_key=2474909&amp;taxon_key=2474913&amp;taxon_key=2474918&amp;taxon_key=2474921&amp;taxon_key=2474925&amp;taxon_key=2474936&amp;taxon_key=2474937&amp;taxon_key=2474941&amp;taxon_key=2474942&amp;taxon_key=2474943&amp;taxon_key=2474944&amp;taxon_key=2474945&amp;taxon_key=2474949&amp;taxon_key=2474950&amp;taxon_key=2474953&amp;taxon_key=2474960&amp;taxon_key=2474961&amp;taxon_key=2474963&amp;taxon_key=2474965&amp;taxon_key=2474966&amp;taxon_key=2474967&amp;taxon_key=2474968&amp;taxon_key=2474971&amp;taxon_key=2474976&amp;taxon_key=2474981&amp;taxon_key=2474982&amp;taxon_key=2475001&amp;taxon_key=2475012&amp;taxon_key=2475016&amp;taxon_key=2475017&amp;taxon_key=2475033&amp;taxon_key=2475035&amp;taxon_key=2475036&amp;taxon_key=2475038&amp;taxon_key=2475040&amp;taxon_key=2475049&amp;taxon_key=2475050&amp;taxon_key=2475051">300 bird species</a> <strong>fails</strong>.</p>
+<h1 id="downloading-occurrences-for-60000-tree-species-using-rgbif-and-taxize">Downloading occurrences for 60,000 tree species using rgbif and taxize</h1>
+<blockquote>
+<p><strong>NOTE:</strong> This post has been updated on Feb 9 2022. Please use the lastest version of rgbif.</p>
+</blockquote>
+<p>One good reason to download data using a long list of names, would be if your group of interest is non-monophyletic. <strong>Trees</strong> are a non-monophyletic group that include a variety of plant species that have independently evolved a trunk and branches. The 
+<a href="https://www.bgci.org/">Botanic Gardens Conservation <br> International</a> maintains a <a href="https://tools.bgci.org/global_tree_search.php">long list</a> of <strong>&gt;60,000</strong> tree species. You can download a csv <a href="https://tools.bgci.org/global_tree_search_trees_1_3.csv">here</a> or the one I used for the example below <a href="/post/2019-07-11-downloading-long-species-lists-on-gbif_files/global_tree_search_trees_1_3.csv">here</a>.</p>
+<p>Matching and downloading takes around <strong>30 minutes</strong>, so run with fewer names if you don&rsquo;t want to wait that long. This requires the latest version of <code>rgbif</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#268bd2">install.packages</span>(<span style="color:#2aa198">&#34;rgbif&#34;</span>)
+</code></pre></div><p>The important part here is to use <code>rgbif::occ_download</code> with <code>pred_in</code> and to <strong>fill in your gbif credentials</strong>. Or follow instructions <a href="https://docs.ropensci.org/rgbif/articles/gbif_credentials.html">here</a>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#586e75"># fill in your gbif.org credentials </span>
+user <span style="color:#719e07">&lt;-</span> <span style="color:#2aa198">&#34;&#34;</span> <span style="color:#586e75"># your gbif.org username </span>
+pwd <span style="color:#719e07">&lt;-</span> <span style="color:#2aa198">&#34;&#34;</span> <span style="color:#586e75"># your gbif.org password</span>
+email <span style="color:#719e07">&lt;-</span> <span style="color:#2aa198">&#34;&#34;</span> <span style="color:#586e75"># your email </span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#268bd2">library</span>(dplyr)
+<span style="color:#268bd2">library</span>(readr)  
+<span style="color:#268bd2">library</span>(rgbif) <span style="color:#586e75"># for occ_download</span>
+
+<span style="color:#586e75"># The 60,000 tree names file I downloaded from BGCI</span>
+file_url <span style="color:#719e07">&lt;-</span> <span style="color:#2aa198">&#34;https://data-blog.gbif.org/post/2019-07-11-downloading-long-species-lists-on-gbif_files/global_tree_search_trees_1_3.csv&#34;</span>
+
+<span style="color:#586e75"># match the names </span>
+gbif_taxon_keys <span style="color:#719e07">&lt;-</span> 
+readr<span style="color:#719e07">::</span><span style="color:#268bd2">read_csv</span>(file_url) <span style="color:#719e07">%&gt;%</span>
+<span style="color:#268bd2">head</span>(<span style="color:#2aa198">1000</span>) <span style="color:#719e07">%&gt;%</span> <span style="color:#586e75"># use only first 1000 names for testing</span>
+<span style="color:#268bd2">pull</span>(<span style="color:#2aa198">&#34;Taxon name&#34;</span>) <span style="color:#719e07">%&gt;%</span> <span style="color:#586e75"># use fewer names if you want to just test </span>
+<span style="color:#268bd2">name_backbone_checklist</span>()  <span style="color:#719e07">%&gt;%</span> <span style="color:#586e75"># match to backbone</span>
+<span style="color:#268bd2">filter</span>(<span style="color:#719e07">!</span>matchType <span style="color:#719e07">==</span> <span style="color:#2aa198">&#34;NONE&#34;</span>) <span style="color:#719e07">%&gt;%</span> <span style="color:#586e75"># get matched names</span>
+<span style="color:#268bd2">pull</span>(usageKey) <span style="color:#586e75"># get the gbif taxonkeys</span>
+
+<span style="color:#586e75"># gbif_taxon_keys should be a long vector like this c(2977832,2977901,2977966,2977835,2977863)</span>
+
+<span style="color:#586e75"># !!very important here to use pred_in!!</span>
+<span style="color:#268bd2">occ_download</span>(
+<span style="color:#268bd2">pred_in</span>(<span style="color:#2aa198">&#34;taxonKey&#34;</span>, gbif_taxon_keys),
+format <span style="color:#719e07">=</span> <span style="color:#2aa198">&#34;SIMPLE_CSV&#34;</span>,
+user<span style="color:#719e07">=</span>user,pwd<span style="color:#719e07">=</span>pwd,email<span style="color:#719e07">=</span>email
+)
+</code></pre></div><p>The results should now be on your downloads user page <a href="https://www.gbif.org/user/download">https://www.gbif.org/user/download</a>.</p>
+<p><strong>More complex downloads</strong> are also possible with the new <code>rgbif</code> <code>occ_download</code> interface:</p>
+<p>In the example below, I download all <strong>tree species</strong> which are</p>
+<ul>
+<li>Matched tree species from above <code>pred_in(&quot;taxonKey&quot;, gbif_taxon_keys)</code></li>
+<li>With these basis of record <code>pred_in(&quot;basisOfRecord&quot;, c('PRESERVED_SPECIMEN','HUMAN_OBSERVATION','OBSERVATION','MACHINE_OBSERVATION'))</code></li>
+<li>Greater than 5000 meters elevation <code>pred_gt(&quot;elevation&quot;, 5000)</code></li>
+<li>Is found in the United States <code>pred(&quot;country&quot;, &quot;US&quot;)</code></li>
+<li>Has coordinates <code>pred(&quot;hasCoordinate&quot;, TRUE)</code></li>
+<li>Has no gbif geospatial issues <code>pred(&quot;hasGeospatialIssue&quot;, FALSE)</code></li>
+<li>Is greater than or equal to the year 1990 <code>pred_gte(&quot;year&quot;, 1990)</code></li>
+</ul>
+<pre tabindex="0"><code># use matched gbif_taxon_keys from above 
+occ_download(
+pred_in(&quot;taxonKey&quot;, gbif_taxon_keys),
+pred_in(&quot;basisOfRecord&quot;, c('PRESERVED_SPECIMEN','HUMAN_OBSERVATION','OBSERVATION','MACHINE_OBSERVATION')),
+pred_gt(&quot;elevation&quot;, 5000),
+pred(&quot;country&quot;, &quot;US&quot;),
+pred(&quot;hasCoordinate&quot;, TRUE),
+pred(&quot;hasGeospatialIssue&quot;, FALSE),
+pred_gte(&quot;year&quot;, 1990),
+format = &quot;SIMPLE_CSV&quot;,
+user=user,pwd=pwd,email=email
+)
+
+</code></pre><h1 id="building-a-complex-download-requests-without-rgbif-in-r">Building a complex download requests without rgbif in R</h1>
+<p>You also make complex downloads without using rgbif. In this example I download all tree species that occur inside Chile(CL). Some other predicate examples can be found here <a href="https://www.gbif.org/developer/occurrence#download">https://www.gbif.org/developer/occurrence#download</a>.</p>
+<p>Fill in your gbif.org credentials</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">user <span style="color:#719e07">&lt;-</span> <span style="color:#2aa198">&#34;&#34;</span> <span style="color:#586e75"># your gbif.org username </span>
+pwd <span style="color:#719e07">&lt;-</span> <span style="color:#2aa198">&#34;&#34;</span> <span style="color:#586e75"># your gbif.org password</span>
+email <span style="color:#719e07">&lt;-</span> <span style="color:#2aa198">&#34;&#34;</span> <span style="color:#586e75"># your email </span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#268bd2">library</span>(taxize)
+<span style="color:#268bd2">library</span>(purrr)
+<span style="color:#268bd2">library</span>(tibble)
+<span style="color:#268bd2">library</span>(dplyr)
+<span style="color:#268bd2">library</span>(magrittr) <span style="color:#586e75"># fot the %T&gt;% pipe</span>
+<span style="color:#268bd2">library</span>(roperators) <span style="color:#586e75"># for %+% string operator</span>
+
+<span style="color:#586e75"># pipeline for processing sci names -&gt; downloads </span>
+
+<span style="color:#586e75"># The 60,000 tree names file I downloaded from BGCI</span>
+file_url <span style="color:#719e07">&lt;-</span> <span style="color:#2aa198">&#34;https://data-blog.gbif.org/post/2019-07-11-downloading-long-species-lists-on-gbif_files/global_tree_search_trees_1_3.csv&#34;</span>
+
+<span style="color:#586e75"># match the names </span>
+readr<span style="color:#719e07">::</span><span style="color:#268bd2">read_csv</span>(file_url) <span style="color:#719e07">%&gt;%</span> 
+<span style="color:#268bd2">pull</span>(<span style="color:#2aa198">&#34;Taxon name&#34;</span>) <span style="color:#719e07">%&gt;%</span> <span style="color:#586e75"># use fewer names if you want to just test </span>
+taxize<span style="color:#719e07">::</span><span style="color:#268bd2">get_gbifid_</span>(method<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;backbone&#34;</span>) <span style="color:#719e07">%&gt;%</span> <span style="color:#586e75"># match names to the GBIF backbone to get taxonkeys</span>
+<span style="color:#268bd2">imap</span>(<span style="color:#719e07">~</span> .x <span style="color:#719e07">%&gt;%</span> <span style="color:#268bd2">mutate</span>(original_sciname <span style="color:#719e07">=</span> .y)) <span style="color:#719e07">%&gt;%</span> <span style="color:#586e75"># add original name back into data.frame</span>
+<span style="color:#268bd2">bind_rows</span>() <span style="color:#719e07">%T&gt;%</span> <span style="color:#586e75"># combine all data.frames into one</span>
+readr<span style="color:#719e07">::</span><span style="color:#268bd2">write_tsv</span>(path <span style="color:#719e07">=</span> <span style="color:#2aa198">&#34;all_matches.tsv&#34;</span>) <span style="color:#719e07">%&gt;%</span> <span style="color:#586e75"># save as side effect for you to inspect if you want</span>
+<span style="color:#268bd2">filter</span>(matchtype <span style="color:#719e07">==</span> <span style="color:#2aa198">&#34;EXACT&#34;</span> <span style="color:#719e07">&amp;</span> status <span style="color:#719e07">==</span> <span style="color:#2aa198">&#34;ACCEPTED&#34;</span>) <span style="color:#719e07">%&gt;%</span> <span style="color:#586e75"># get only accepted and matched names</span>
+<span style="color:#268bd2">filter</span>(kingdom <span style="color:#719e07">==</span> <span style="color:#2aa198">&#34;Plantae&#34;</span>) <span style="color:#719e07">%&gt;%</span> <span style="color:#586e75"># remove anything that might have matched to a non-plant</span>
+<span style="color:#268bd2">pull</span>(usagekey) <span style="color:#719e07">%&gt;%</span> <span style="color:#586e75"># get the gbif taxonkeys</span>
+<span style="color:#268bd2">paste</span>(collapse<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;,&#34;</span>) <span style="color:#719e07">%&gt;%</span> 
+<span style="color:#268bd2">paste</span>(<span style="color:#2aa198">&#39;{
+</span><span style="color:#2aa198">&#34;creator&#34;: &#34;&#39;</span> <span style="color:#719e07">%+%</span> user <span style="color:#719e07">%+%</span><span style="color:#2aa198">&#39;&#34;,
+</span><span style="color:#2aa198">&#34;notification_address&#34;: [
+</span><span style="color:#2aa198">&#34;&#39;</span> <span style="color:#719e07">%+%</span> email <span style="color:#719e07">%+%</span> <span style="color:#2aa198">&#39;&#34;
+</span><span style="color:#2aa198">],
+</span><span style="color:#2aa198">&#34;sendNotification&#34;: true,
+</span><span style="color:#2aa198">&#34;format&#34;: &#34;SIMPLE_CSV&#34;,
+</span><span style="color:#2aa198">&#34;predicate&#34;: {
+</span><span style="color:#2aa198">&#34;type&#34;: &#34;and&#34;,
+</span><span style="color:#2aa198">&#34;predicates&#34;: [
+</span><span style="color:#2aa198">{
+</span><span style="color:#2aa198">&#34;type&#34;: &#34;in&#34;,
+</span><span style="color:#2aa198">&#34;key&#34;: &#34;COUNTRY&#34;,
+</span><span style="color:#2aa198">&#34;values&#34;: [&#34;CL&#34;]
+</span><span style="color:#2aa198">},
+</span><span style="color:#2aa198">{
+</span><span style="color:#2aa198">&#34;type&#34;: &#34;in&#34;,
+</span><span style="color:#2aa198">&#34;key&#34;: &#34;TAXON_KEY&#34;,
+</span><span style="color:#2aa198">&#34;values&#34;: [&#39;</span>,.,<span style="color:#2aa198">&#39;]
+</span><span style="color:#2aa198">}
+</span><span style="color:#2aa198">]}}&#39;</span>,collapse<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;&#34;</span>) <span style="color:#719e07">%&gt;%</span> <span style="color:#586e75"># create json sring </span>
+<span style="color:#268bd2">writeLines</span>(<span style="color:#268bd2">file</span>(<span style="color:#2aa198">&#34;request.json&#34;</span>)) <span style="color:#586e75"># save the json request to use in httr::POST</span>
+</code></pre></div><p><strong>request.json</strong> will look like this but with many more values for <code>TAXON_KEY</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">
+{
+<span style="color:#268bd2">&#34;creator&#34;</span>: <span style="color:#2aa198">&#34;jwaller&#34;</span>,
+<span style="color:#268bd2">&#34;notification_address&#34;</span>: [
+<span style="color:#2aa198">&#34;jwaller@gbif.org&#34;</span>
+],
+<span style="color:#268bd2">&#34;sendNotification&#34;</span>: <span style="color:#cb4b16">true</span>,
+<span style="color:#268bd2">&#34;format&#34;</span>: <span style="color:#2aa198">&#34;SIMPLE_CSV&#34;</span>,
+<span style="color:#268bd2">&#34;predicate&#34;</span>: {
+<span style="color:#268bd2">&#34;type&#34;</span>: <span style="color:#2aa198">&#34;and&#34;</span>,
+<span style="color:#268bd2">&#34;predicates&#34;</span>: [
+{
+<span style="color:#268bd2">&#34;type&#34;</span>: <span style="color:#2aa198">&#34;in&#34;</span>,
+<span style="color:#268bd2">&#34;key&#34;</span>: <span style="color:#2aa198">&#34;COUNTRY&#34;</span>,
+<span style="color:#268bd2">&#34;values&#34;</span>: [<span style="color:#2aa198">&#34;CL&#34;</span>]
+},
+{
+<span style="color:#268bd2">&#34;type&#34;</span>: <span style="color:#2aa198">&#34;in&#34;</span>,
+<span style="color:#268bd2">&#34;key&#34;</span>: <span style="color:#2aa198">&#34;TAXON_KEY&#34;</span>,
+<span style="color:#268bd2">&#34;values&#34;</span>: [ <span style="color:#2aa198">2977832</span>,<span style="color:#2aa198">2977901</span>,<span style="color:#2aa198">2977966</span>,<span style="color:#2aa198">2977835</span>,<span style="color:#2aa198">2977863</span>,<span style="color:#2aa198">2977814</span>,<span style="color:#2aa198">8322626</span> ]
+}
+]}}
+
+
+</code></pre></div><p>Now run the download job.</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">url <span style="color:#719e07">=</span> <span style="color:#2aa198">&#34;http://api.gbif.org/v1/occurrence/download/request&#34;</span>
+
+<span style="color:#268bd2">library</span>(httr)
+
+<span style="color:#268bd2">POST</span>(url <span style="color:#719e07">=</span> url, 
+config <span style="color:#719e07">=</span> <span style="color:#268bd2">authenticate</span>(user, pwd), 
+<span style="color:#268bd2">add_headers</span>(<span style="color:#2aa198">&#34;Content-Type: application/json&#34;</span>),
+body <span style="color:#719e07">=</span> <span style="color:#268bd2">upload_file</span>(<span style="color:#2aa198">&#34;request.json&#34;</span>), <span style="color:#586e75"># path to your local file</span>
+encode <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39;json&#39;</span>) <span style="color:#719e07">%&gt;%</span> 
+<span style="color:#268bd2">content</span>(as <span style="color:#719e07">=</span> <span style="color:#2aa198">&#34;text&#34;</span>)
+</code></pre></div><p>The results should now be on your downloads user page <a href="https://www.gbif.org/user/download">https://www.gbif.org/user/download</a>.</p>
+<h1 id="example-using-python">Example using Python</h1>
+<p>The same example is also available in Python <a href="https://github.com/ManonGros/Small-scripts-using-GBIF-API/tree/master/query_species_list">here</a>. Note that this particular code doesn&rsquo;t use the <code>pygbif</code> library but <code>request</code> and the GBIF API. It calls two functions available in the same folder, just download <br><a href="https://github.com/ManonGros/Small-scripts-using-GBIF-API/blob/master/query_species_list/functions_query_from_species_list.py">this file</a> before running the following code:</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python"><span style="color:#719e07">import</span> pandas <span style="color:#719e07">as</span> pd
+<span style="color:#719e07">import</span> requests
+<span style="color:#719e07">import</span> json
+<span style="color:#719e07">import</span> io
+<span style="color:#719e07">from</span> functions_query_from_species_list <span style="color:#719e07">import</span> <span style="color:#719e07">*</span>
+
+login <span style="color:#719e07">=</span> <span style="color:#2aa198">&#34;&#34;</span>
+password <span style="color:#719e07">=</span> <span style="color:#2aa198">&#34;&#34;</span>
+URL_species_file <span style="color:#719e07">=</span> <span style="color:#2aa198">&#34;https://data-blog.gbif.org/post/2019-07-11-downloading-long-species-lists-on-gbif_files/global_tree_search_trees_1_3.csv&#34;</span>
+
+<span style="color:#586e75"># Get Taxon Keys</span>
+species_list <span style="color:#719e07">=</span> pd<span style="color:#719e07">.</span>read_csv(URL_species_file, encoding<span style="color:#719e07">=</span><span style="color:#2aa198">&#39;latin-1&#39;</span>)
+taxon_keys <span style="color:#719e07">=</span> match_species(species_list, <span style="color:#2aa198">&#34;Taxon name&#34;</span>)
+
+<span style="color:#586e75"># filter keys however you see fit</span>
+key_list <span style="color:#719e07">=</span> taxon_keys<span style="color:#719e07">.</span>loc[(taxon_keys[<span style="color:#2aa198">&#34;matchType&#34;</span>]<span style="color:#719e07">==</span><span style="color:#2aa198">&#34;EXACT&#34;</span>) <span style="color:#719e07">&amp;</span> (taxon_keys[<span style="color:#2aa198">&#34;status&#34;</span>]<span style="color:#719e07">==</span><span style="color:#2aa198">&#34;ACCEPTED&#34;</span>)]<span style="color:#719e07">.</span>usageKey<span style="color:#719e07">.</span>tolist()
+
+<span style="color:#586e75"># Make download query</span>
+download_query <span style="color:#719e07">=</span> {}
+download_query[<span style="color:#2aa198">&#34;creator&#34;</span>] <span style="color:#719e07">=</span> <span style="color:#2aa198">&#34;&#34;</span>
+download_query[<span style="color:#2aa198">&#34;notificationAddresses&#34;</span>] <span style="color:#719e07">=</span> [<span style="color:#2aa198">&#34;&#34;</span>]
+download_query[<span style="color:#2aa198">&#34;sendNotification&#34;</span>] <span style="color:#719e07">=</span> <span style="color:#cb4b16">False</span> <span style="color:#586e75"># if set to be True, don&#39;t forget to add a notificationAddresses above</span>
+download_query[<span style="color:#2aa198">&#34;format&#34;</span>] <span style="color:#719e07">=</span> <span style="color:#2aa198">&#34;SIMPLE_CSV&#34;</span>
+download_query[<span style="color:#2aa198">&#34;predicate&#34;</span>] <span style="color:#719e07">=</span> {
+    <span style="color:#2aa198">&#34;type&#34;</span>: <span style="color:#2aa198">&#34;in&#34;</span>,
+    <span style="color:#2aa198">&#34;key&#34;</span>: <span style="color:#2aa198">&#34;TAXON_KEY&#34;</span>,
+    <span style="color:#2aa198">&#34;values&#34;</span>: key_list
+}
+
+<span style="color:#586e75"># Generate download</span>
+create_download_given_query(login, password, download_query)
+</code></pre></div><h1 id="citing-your-download">Citing your download</h1>
+<p>If you end up using your <strong>download in a research paper</strong>, you will want to cite the download&rsquo;s <strong>DOI</strong>. Please see these <a href="https://www.gbif.org/citation-guidelines">citation guidelines</a> for properly citing your download. Good citation practices ensure scientific transparency and reproducibility by guiding other researchers to the original sources of information.</p>
+<h1 id="acknowledgements">Acknowledgements</h1>
+<p>GBIF thanks the project <a href="https://www.gbif.org/network/b153643d-735a-440f-a0e9-428b4f9d1cd2">Tracking Invasive Alien Species (TrIAS)</a> for funding the work required to provide these enhancements to all users of GBIF. TrIAS is a Belgian open science project that makes extensive use of GBIF services, see e.g. the <a href="https://www.gbif.org/dataset/6d9e952f-948c-4483-9807-575348147c7e#methodology">methodology for their national checklist of alien species</a>.</p>
+<!--more-->
+    </div>
+
+    
+    
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/api/">API</a>
+          
+          <a href="/tags/downloads/">downloads</a>
+          
+          <a href="/tags/tree-list/">tree list</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/gbif-backbone-taxonomy/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Six questions answered about the GBIF Backbone Taxonomy</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/citizen-science-on-gbif-2019/">
+            <span class="next-text nav-default">Citizen Science on GBIF - 2019</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      
+
+
+
+<div>
+<h3>This post represents the ideas of the author.</h3>
+</div>
+<div id='discourse-comments'></div>
+<script type="text/javascript">
+  DiscourseEmbed = { discourseUrl: 'https://discourse.gbif.org/',
+                     discourseEmbedUrl: 'https://data-blog.gbif.org\/post\/downloading-long-species-lists-on-gbif\/' };
+
+  (function() {
+    var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+    d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+  })();
+</script>
+
+
+<div class = "copyright">
+	<a class="theme-link" href="https://www.gbif.org/what-is-gbif">What is GBIF?</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://www.gbif.org/developer/summary">API</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://www.gbif.org/faq">FAQ</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://discourse.gbif.org/">Community-Forum</a>
+</div>
+
+<div class = "copyright">
+	<span class="theme-info">GBIF Secretariat</span>
+	<span class="theme-info">Universitetsparken 15</span>
+	<span class="theme-info">DK-2100 Copenhagen Ø</span>
+	<span class="theme-info" >Denmark</span>
+</div>
+
+<div class="copyright">
+	<span class="power-by">
+	Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+	</span>
+	<span class="division">|</span>
+	<span class="theme-info">
+	Theme -
+	<a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+	</span>
+
+</div>
+
+<script defer data-domain="data-blog.gbif.org,gbif.org" src="https://plausible.io/js/script.file-downloads.js"></script>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+<script type="text/javascript" src="/dist/even.min.js?v=3.2.0"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
