@@ -109,6 +109,7 @@ TNFD ensures that **biodiversity dependencies and impacts** are disclosed in a s
 - Company **annual or ESG reports** (e.g. [Nestlé's Sustainability Report](https://www.nestle.com/sustainability))
 - **Voluntary platforms**, e.g., [Carbon Disclosure Project (CDP)](https://www.cdp.net/en), [Global Reporting Initiative (GRI)](https://www.globalreporting.org/)
 - **Regulatory filings**, e.g., under EU's Corporate Sustainability Reporting Directive (CSRD)
+- **Best practice requirements**, e.g., as required by EBRD in its [2024 Environmental and Social Policy (including the ESR6 Guidance Note)](https://www.ebrd.com/home/news-and-events/publications/institutional-documents/environmental-and-social-policy-2024.html) and described in the [technical guidance on uploading biodiversity data](https://www.ebrd.com/content/dam/ebrd_dxp/assets/pdfs/environment---sustainability/implement-performance-requirements/prs/pr6/Technical-guidance-on-uploading-biodiversity-data.pdf)
 
 Below is an example of regulatory frameworks in different jurisdictions:
 
