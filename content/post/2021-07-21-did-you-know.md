@@ -298,9 +298,10 @@ Notes:<br>
 > 2. go to the tab "Institutions"<br>
 > 3. search for the institution name, and <br>
 > 4. open that page by clicking on the name in the results list: [Royal Belgian Institute of Natural  Sciences](https://www.gbif.org/grscicoll/institution/c2bfdeef-9c03-435e-8465-c483dadd6995) <br>
-> 5. open the [metrics tab](https://www.gbif.org/grscicoll/institution/c2bfdeef-9c03-435e-8465-c483dadd6995/metrics), and <br>
-> 6. scroll down to "occurrences per collection code" to pick the entry with the most occurrence records <br>
+> 5. open the [collection tab](https://scientific-collections.gbif.org/institution/c2bfdeef-9c03-435e-8465-c483dadd6995/collections), and <br>
+> 6. scroll down to to pick the entry with the most occurrence records <br>
 > **bonus**: clicking on the name or count here will lead you to the occurrence records filtered for this entry <br>
+> [Edit 2025-12-18:] Note that you can also work with the customizable dashboard function. See [and example](https://scientific-collections.gbif.org/institution/c2bfdeef-9c03-435e-8465-c483dadd6995/specimens?view=dashboard&layout=W1t7ImlkIjoicnh0aHMiLCJwIjp7fSwidCI6ImRhdGFzZXRLZXkifSx7ImlkIjoieW1oa2giLCJwIjp7fSwidCI6InR5cGVTdGF0dXMifV0sW3siaWQiOiJhMTJraCIsInAiOnt9LCJ0cmFuc2xhdGlvbiI6ImRhc2hib2FyZC5yaWNobmVzcyIsInQiOiJkYXRhUXVhbGl0eSJ9LHsiaWQiOiJhMGs3ZiIsInAiOnt9LCJ0cmFuc2xhdGlvbiI6ImRhc2hib2FyZC5zdGF0aXN0aWNzIiwidCI6Im9jY3VycmVuY2VTdW1tYXJ5In0seyJpZCI6ImY3dTA0IiwicCI6eyJ2aWV3IjoiUElFIn0sInRyYW5zbGF0aW9uIjoiZmlsdGVycy5pdWNuUmVkTGlzdENhdGVnb3J5Lm5hbWUiLCJ0IjoiaXVjbkNvdW50cyJ9XSxbeyJpZCI6IjJ4anA4IiwicCI6e30sInRyYW5zbGF0aW9uIjoic2VhcmNoLnRhYnMubWFwIiwiciI6dHJ1ZSwidCI6Im1hcCJ9LHsiaWQiOiI3b2lhOSIsInAiOnt9LCJ0IjoieWVhciJ9XV0%3D).
 
 <div></div>
 
