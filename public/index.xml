@@ -6,7 +6,7 @@
     <description>Recent content on GBIF Data Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 28 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://data-blog.gbif.org/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 21 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://data-blog.gbif.org/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>about</title>
       <link>https://data-blog.gbif.org/about/</link>
@@ -20,266 +20,27 @@ What about the developer blog? Currently the developer blog no longer being upda
     </item>
     
     <item>
+      <title>Introducing Rule-based Annotations</title>
+      <link>https://data-blog.gbif.org/post/2026-01-21-rule-based-annotations/</link>
+      <pubDate>Wed, 21 Jan 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://data-blog.gbif.org/post/2026-01-21-rule-based-annotations/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; This is &lt;strong&gt;experimental&lt;/strong&gt;, and the implementation may change. Please see the &lt;a href=&#34;https://techdocs.gbif.org/en/tools/rule-based-annotations&#34;&gt;GBIF technical documentation&lt;/a&gt; for the latest updates on the tool. GBIF makes no guarantees about the availability or stability of this tool.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Rule based annotations&lt;/strong&gt; is an experimental tool that will allow users to mark certain occurrence data as suspicious. The main goal of the project is to facilitate data cleaning and user feedback to publishers.&lt;/p&gt;
+&lt;div style=&#34;text-align: center;&#34;&gt;
+  &lt;big&gt;&lt;strong&gt;&lt;a href=&#34;https://labs.gbif.org/annotations/#/&#34;&gt;Link to UI&lt;/a&gt;&lt;/strong&gt;&lt;/big&gt;
+&lt;/div&gt;&lt;br&gt;</description>
+    </item>
+    
+    <item>
       <title>Species Occurrence Data and Corporate Sustainability Frameworks</title>
       <link>https://data-blog.gbif.org/post/2025-10-28-species-occurrence-data-and-corporate-sustainability-frameworks/</link>
       <pubDate>Tue, 28 Oct 2025 00:00:00 +0000</pubDate>
       
       <guid>https://data-blog.gbif.org/post/2025-10-28-species-occurrence-data-and-corporate-sustainability-frameworks/</guid>
-      <description>&lt;!-- Add your content here --&gt;
-&lt;h1 id=&#34;species-occurrence-data-and-corporate-sustainability-frameworks&#34;&gt;Species Occurrence Data and Corporate Sustainability Frameworks&lt;/h1&gt;
-&lt;p&gt;As the business and financial sectors increasingly look towards integrating biodiversity within their sustainability frameworks, this overview outlines the different frameworks that exist, the sectors they belong to, and how the &lt;strong&gt;GBIF infrastructure&lt;/strong&gt; and the &lt;strong&gt;data it provides&lt;/strong&gt; can support these sectors.&lt;/p&gt;
-&lt;p&gt;It is important to say upfront how &lt;strong&gt;GBIF-mediated data&lt;/strong&gt; fits within the wider biodiversity data landscape in order to prevent confusion on what one can, and cannot, do with the data. GBIF-mediated data provides records of &lt;strong&gt;where and when species have been observed or collected&lt;/strong&gt; from data-holding organizations across the globe.&lt;/p&gt;
-&lt;p&gt;At a minimum, data will have:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;a &lt;strong&gt;species name&lt;/strong&gt; (Latin binomial),&lt;/li&gt;
-&lt;li&gt;a &lt;strong&gt;timestamp&lt;/strong&gt; of when the observation occurred, and&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;location information&lt;/strong&gt; (often latitude–longitude coordinates).&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Although not limited to these, other information from the time of collection or observation can also be shared. GBIF is the &lt;strong&gt;world’s largest aggregator&lt;/strong&gt; of such data and is used as the basis for derived information products that support biodiversity disclosures such as &lt;strong&gt;ecological niche models&lt;/strong&gt; and &lt;strong&gt;Red Lists&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;The reliability of such derived products is directly correlated to the availability of GBIF-mediated data, and GBIF-mediated data can be seen as a &lt;strong&gt;complementary data source&lt;/strong&gt; for ground-truthing these derived products.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;safeguard-frameworks&#34;&gt;Safeguard Frameworks&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;Multilateral Development Banks (MDBs)&lt;/strong&gt; employ environmental and social safeguard frameworks for their financed projects—both public and private. Projects must demonstrate how they plan to mitigate environmental and social impacts of their activities.&lt;/p&gt;
-&lt;p&gt;In the case of biodiversity, MDB standards typically require clients to follow the &lt;strong&gt;mitigation hierarchy&lt;/strong&gt; when implementing projects:&lt;br&gt;
-&lt;strong&gt;Avoid → Minimise → Restore → Offset.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;These standards also compel financiers to fund projects that:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;reduce biodiversity impacts, or&lt;/li&gt;
-&lt;li&gt;commit to &lt;em&gt;no net loss in natural habitat&lt;/em&gt; or &lt;em&gt;net gain in critical habitat.&lt;/em&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Below is a list of some commonly used safeguard frameworks used by MDBs:&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Level&lt;/th&gt;
-&lt;th&gt;Institution / Framework&lt;/th&gt;
-&lt;th&gt;Who It Applies To&lt;/th&gt;
-&lt;th&gt;Scope &amp;amp; Instruments&lt;/th&gt;
-&lt;th&gt;Safeguard / Framework&lt;/th&gt;
-&lt;th&gt;Biodiversity Expectations&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Project-level finance (public)&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;World Bank (IBRD/IDA)&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;Governments (sovereign borrowers, public projects)&lt;/td&gt;
-&lt;td&gt;Loans, grants, guarantees&lt;/td&gt;
-&lt;td&gt;Environmental &amp;amp; Social Framework (ESF) → Financed projects must meet 10 ESS*&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;ESS6&lt;/strong&gt; - Avoid/minimize biodiversity impacts, sustainable natural resource use; use of offsets less prescriptive; relies on national systems&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Project-level finance (private)&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;IFC (International Finance Corporation)&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;Private companies, PPPs, private equity funds, banks&lt;/td&gt;
-&lt;td&gt;Loans, equity, advisory, syndicated finance&lt;/td&gt;
-&lt;td&gt;IFC Performance Standards (PSs) → Financed projects must meet 8 PSs (last update, 2012)&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;PS6&lt;/strong&gt; - Strong mitigation hierarchy; no net loss in natural habitats, net gain in critical habitats&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Regional project-level (public &amp;amp; private)**&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;EBRD (European Bank for Reconstruction and Development)&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;Private and public clients in EBRD region (Eastern Europe, Central Asia, Southern and Eastern Mediterranean, Northern Africa, Sub-Saharan Africa)&lt;/td&gt;
-&lt;td&gt;Loans, equity, bonds, guarantees, syndicated finance&lt;/td&gt;
-&lt;td&gt;EBRD 10 Environmental and Social Requirements (PRs) → Financed projects must meet 10 ESRs&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;ESR6&lt;/strong&gt; - reviewed in 2024; similar to but more up to date than IFC PS6; plus EU law compliance (Habitats/Birds Directives, Natura 2000); strict on protected areas&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;*Environmental and Social Standards&lt;br&gt;
-**Other regional major MDB Safeguard Frameworks include:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;ADB&lt;/strong&gt; (Asian Development Bank): Safeguard Policy Statement (updated 2024)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;AfDB&lt;/strong&gt; (African Development Bank): Integrated Safeguards System (5 Operational Safeguards)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;IDB&lt;/strong&gt; (Inter-American Development Bank): Environmental and Social Policy Framework (2021, aligned with IFC PSs)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;IsDB&lt;/strong&gt; (Islamic Development Bank): Environmental &amp;amp; Social Framework&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;EIB&lt;/strong&gt; (European Investment Bank): Environmental and Social Standards (10 standards, EU-aligned)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;In addition, these MDB safeguard frameworks are extended into:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Commercial banking&lt;/strong&gt; via the voluntary &lt;em&gt;Equator Principles&lt;/em&gt;, which require borrowers to apply IFC Performance Standards (e.g., PS6).&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Export credit agencies&lt;/strong&gt; of OECD countries through &lt;em&gt;OECD Common Approaches&lt;/em&gt;, which encourage benchmarking against IFC/WB standards (though biodiversity safeguards are less prescriptive).&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;how-financial-institutions-vet-projects&#34;&gt;How Financial Institutions Vet Projects&lt;/h3&gt;
-&lt;p&gt;Below is an outline of an idealised evaluation process outlining opportunities for GBIF-mediated data to support financial institutions in making appropriate investment decisions.&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Step&lt;/th&gt;
-&lt;th&gt;Process&lt;/th&gt;
-&lt;th&gt;Role of GBIF&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;Screening &amp;amp; Categorization&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;Bank assigns a risk category (A/B/C, or High/Medium/Low) based on environmental &amp;amp; social risk, which determines the level of safeguard requirements. &lt;br&gt;Example: WB: High risk → full ESIA; IFC: Category A → significant biodiversity/habitat risks.&lt;/td&gt;
-&lt;td&gt;GBIF-mediated data can provide known presences (and, in some cases, absences) of species, including those of conservation importance (e.g., threatened or invasive species) at the proposed project.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;Environmental &amp;amp; Social Impact Assessment (ESIA)&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;The borrower must prepare an ESIA identifying biodiversity, habitat, and ecosystem impacts and proposing mitigation following the mitigation hierarchy.&lt;/td&gt;
-&lt;td&gt;GBIF-mediated data can help assess the &lt;em&gt;state of nature before the project&lt;/em&gt;, providing known species occurrences, including those of conservation importance, to support “no net loss” or “net gain” goals. Baseline data collected should be shared publicly.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;Safeguard Action Plans&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;If risks are found, banks require Environmental and Social Management Plans (ESMPs) or Biodiversity Action Plans (BAPs) with mitigation commitments.&lt;/td&gt;
-&lt;td&gt;GBIF-mediated data can help design biodiversity indicators for monitoring “no net loss” or “net gain” by identifying where and what needs monitoring. Publishing monitoring data via GBIF facilitates compliance checks.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;Loan/Investment Conditions&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;Safeguard compliance is written into the loan or investment contract. Failure to comply can lead to suspension or cancellation.&lt;/td&gt;
-&lt;td&gt;GBIF-mediated data can provide evidence that clients are meeting biodiversity-related loan stipulations.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;Independent Review &amp;amp; Due Diligence&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;Independent check of borrower’s studies.&lt;/td&gt;
-&lt;td&gt;Independent datasets like GBIF reduce reliance on consultant-provided, opaque data.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;Monitoring &amp;amp; Supervision&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;Borrowers must report regularly; banks may conduct audits, site visits, or consultations.&lt;/td&gt;
-&lt;td&gt;Borrowers can share monitoring data through GBIF to facilitate audits and adaptive management.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;Grievance Mechanisms&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;Banks (e.g., WB Inspection Panel, IFC’s CAO, EBRD’s IPAM) allow affected communities or NGOs to file complaints.&lt;/td&gt;
-&lt;td&gt;GBIF can provide a data source for validating claims, especially when project data is shared through it.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; To achieve &lt;em&gt;no net loss in natural habitats&lt;/em&gt; and &lt;em&gt;net gains in critical habitats&lt;/em&gt;, clients must assess the &lt;strong&gt;biodiversity baseline&lt;/strong&gt; in the area to be affected by the project (EAAA).&lt;br&gt;
-That baseline assessment produces invaluable biodiversity data that should be &lt;strong&gt;publicly shared&lt;/strong&gt;.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;environmental-social-and-governance-esg-frameworks&#34;&gt;Environmental, Social and Governance (ESG) Frameworks&lt;/h2&gt;
-&lt;p&gt;MDB safeguard mechanisms ensure biodiversity is considered in project financing. Parallel to these, &lt;strong&gt;business ESG frameworks&lt;/strong&gt; guide corporate sustainability performance.&lt;/p&gt;
-&lt;h3 id=&#34;disclosure-frameworks&#34;&gt;Disclosure Frameworks&lt;/h3&gt;
-&lt;p&gt;Disclosure frameworks set standards on how companies should report on specific ESG issues.&lt;/p&gt;
-&lt;p&gt;The &lt;strong&gt;Taskforce for Nature-related Financial Disclosure (TNFD)&lt;/strong&gt; develops the biodiversity component of these frameworks, building on the &lt;strong&gt;Taskforce for Climate-related Financial Disclosure (TCFD)&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;TNFD ensures that &lt;strong&gt;biodiversity dependencies and impacts&lt;/strong&gt; are disclosed in a standardised manner across sectors. While voluntary, ESG disclosures are typically made through:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Company &lt;strong&gt;annual or ESG reports&lt;/strong&gt; (e.g. &lt;a href=&#34;https://www.nestle.com/sustainability&#34;&gt;Nestlé’s Sustainability Report&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Voluntary platforms&lt;/strong&gt;, e.g., Carbon Disclosure Project (CDP), Global Reporting Initiative (GRI)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Regulatory filings&lt;/strong&gt;, e.g., under EU’s Corporate Sustainability Reporting Directive (CSRD)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Below is an example of regulatory frameworks in different jurisdictions:&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Jurisdiction&lt;/th&gt;
-&lt;th&gt;Framework / Scope&lt;/th&gt;
-&lt;th&gt;Status of Disclosures&lt;/th&gt;
-&lt;th&gt;Who Must Comply&lt;/th&gt;
-&lt;th&gt;Filing / Regulator&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;UK&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;TCFD-aligned climate disclosure (mandatory since 2022)&lt;/td&gt;
-&lt;td&gt;Climate = mandatory; Biodiversity = voluntary (TNFD encouraged)&lt;/td&gt;
-&lt;td&gt;Premium-listed companies, large private firms, banks, insurers&lt;/td&gt;
-&lt;td&gt;FCA (Financial Conduct Authority)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;New Zealand&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;Climate-Related Disclosures (CRD), TCFD/ISSB-aligned&lt;/td&gt;
-&lt;td&gt;Climate = mandatory; Biodiversity = not yet mandatory (TNFD next)&lt;/td&gt;
-&lt;td&gt;Large listed companies, banks, insurers, asset managers&lt;/td&gt;
-&lt;td&gt;FMA (Financial Markets Authority)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;Japan&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;TCFD-aligned disclosure in securities reports (since 2022)&lt;/td&gt;
-&lt;td&gt;Climate = mandatory; Biodiversity = voluntary (TNFD pilots)&lt;/td&gt;
-&lt;td&gt;All companies on TSE Prime Market&lt;/td&gt;
-&lt;td&gt;FSA (Financial Services Agency)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;EU&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;Corporate Sustainability Reporting Directive (CSRD) – mandatory ESRS&lt;/td&gt;
-&lt;td&gt;Climate = mandatory; Biodiversity = mandatory under ESRS E4&lt;/td&gt;
-&lt;td&gt;Companies with &amp;gt;1000 employees, &amp;gt;€50M turnover or &amp;gt;€25M balance sheet, EU-listed&lt;/td&gt;
-&lt;td&gt;National regulators under CSRD&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;USA&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;SEC Climate Disclosure Rule (adopted 2024)&lt;/td&gt;
-&lt;td&gt;Climate = mandatory (under challenge); Biodiversity = voluntary&lt;/td&gt;
-&lt;td&gt;Public companies (registrants)&lt;/td&gt;
-&lt;td&gt;SEC&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;Brazil&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;Emerging ESG/nature disclosure rules&lt;/td&gt;
-&lt;td&gt;Biodiversity-related disclosures expanding (e.g., deforestation risk)&lt;/td&gt;
-&lt;td&gt;Banks &amp;amp; listed companies&lt;/td&gt;
-&lt;td&gt;Banco Central, B3&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;Indonesia&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;OJK sustainability disclosure rules&lt;/td&gt;
-&lt;td&gt;Includes biodiversity aspects (forestry, palm oil, extractives)&lt;/td&gt;
-&lt;td&gt;Large listed &amp;amp; financial institutions&lt;/td&gt;
-&lt;td&gt;OJK&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;China&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;Draft ESG/nature disclosure guidelines (2023–2024)&lt;/td&gt;
-&lt;td&gt;Biodiversity included; expected to be mandatory soon&lt;/td&gt;
-&lt;td&gt;Listed companies (esp. resource-intensive sectors)&lt;/td&gt;
-&lt;td&gt;CSRC &amp;amp; Stock Exchanges&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;science-based-targets-and-the-tnfd&#34;&gt;Science-Based Targets and the TNFD&lt;/h3&gt;
-&lt;p&gt;Through the TNFD, companies are encouraged to adopt &lt;strong&gt;Science Based Targets for Nature (SBTN)&lt;/strong&gt; to set &lt;strong&gt;measurable, science-based biodiversity goals&lt;/strong&gt;, e.g.:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;restore &lt;em&gt;X&lt;/em&gt; hectares,&lt;/li&gt;
-&lt;li&gt;reduce water withdrawal by &lt;em&gt;Y%&lt;/em&gt;, or&lt;/li&gt;
-&lt;li&gt;eliminate deforestation from supply chains.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;SBTN aligns with the &lt;strong&gt;Kunming-Montreal Global Biodiversity Framework&lt;/strong&gt; and complements TNFD by helping companies &lt;em&gt;set internal goals (SBTN)&lt;/em&gt; and &lt;em&gt;disclose them externally (TNFD).&lt;/em&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;how-gbif-supports-business-biodiversity-disclosures&#34;&gt;How GBIF Supports Business Biodiversity Disclosures&lt;/h2&gt;
-&lt;p&gt;Many of the uses of GBIF listed for safeguards apply equally to corporate disclosures:&lt;/p&gt;
-&lt;h3 id=&#34;screening&#34;&gt;Screening&lt;/h3&gt;
-&lt;p&gt;The spatial–temporal nature of GBIF data allows companies to determine known species presences (and, in some cases, absences), including species of conservation importance.&lt;br&gt;
-This enables biodiversity baseline assessments across a company’s operations, helping to &lt;strong&gt;avoid and minimise biodiversity impacts&lt;/strong&gt;.&lt;/p&gt;
-&lt;h3 id=&#34;biodiversity-monitoring&#34;&gt;Biodiversity Monitoring&lt;/h3&gt;
-&lt;p&gt;Using data coverage and availability over a company’s footprint, companies can design monitoring systems to &lt;strong&gt;measure biodiversity impact&lt;/strong&gt; over time and &lt;strong&gt;track progress&lt;/strong&gt; towards targets.&lt;/p&gt;
-&lt;h3 id=&#34;data-access&#34;&gt;Data Access&lt;/h3&gt;
-&lt;p&gt;GBIF provides the infrastructure through which &lt;strong&gt;species occurrence data&lt;/strong&gt; used in company assessments can be shared.&lt;br&gt;
-While not all required data will be found in GBIF, additional company-collected data can be &lt;strong&gt;published through GBIF&lt;/strong&gt;, increasing &lt;strong&gt;transparency&lt;/strong&gt; and supporting the broader data ecosystem.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;gbif-recommendations-to-improve-biodiversity-disclosure-reporting&#34;&gt;GBIF Recommendations to Improve Biodiversity Disclosure Reporting&lt;/h2&gt;
-&lt;p&gt;It is encouraging that businesses recognise GBIF as a data source and infrastructure for sharing species occurrence data. To strengthen the link between business biodiversity reporting and the GBIF infrastructure, we recommend:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Transparency across all biodiversity disclosures&lt;/strong&gt;&lt;br&gt;
-Biodiversity disclosures should be traceable, with sources and data clearly cited. The issuing of &lt;strong&gt;DOIs&lt;/strong&gt; by GBIF provides a mechanism for traceability.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Companies should acknowledge data gaps and set collection targets&lt;/strong&gt;&lt;br&gt;
-Address &lt;strong&gt;taxonomic, spatial, and temporal biases&lt;/strong&gt; in occurrence data through targeted collection efforts. Companies can help fill data gaps that support robust science and contribute to &lt;strong&gt;Target 21&lt;/strong&gt; of the Kunming-Montreal Global Biodiversity Framework.&lt;br&gt;
-GBIF &lt;strong&gt;nodes&lt;/strong&gt; should build capacity to support company data sharing.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Adherence to data licensing&lt;/strong&gt;&lt;br&gt;
-Though GBIF data is freely available, downstream users must &lt;strong&gt;adhere to GBIF data licences&lt;/strong&gt; and respect attribution and reuse conditions.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Capacity building within companies&lt;/strong&gt;&lt;br&gt;
-Strengthen internal capacity to &lt;strong&gt;use and interpret GBIF-mediated data&lt;/strong&gt; and understand its limitations to ensure responsible use in biodiversity reporting.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Accessible, standardised reports&lt;/strong&gt;&lt;br&gt;
-Biodiversity disclosure reports should be &lt;strong&gt;machine-readable&lt;/strong&gt; (e.g., digital XML/JSON/CSV) and accessible through open repositories (e.g., &lt;strong&gt;Zenodo&lt;/strong&gt;)—as mandated under frameworks like &lt;strong&gt;CSRD&lt;/strong&gt;—to ensure public access to underlying data.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr&gt;</description>
+      <description>&lt;p&gt;As the business and financial sectors increasingly look towards integrating biodiversity within their sustainability frameworks, this overview outlines the different frameworks that exist, the sectors they belong to, and how the &lt;strong&gt;GBIF infrastructure&lt;/strong&gt; and the &lt;strong&gt;data it provides&lt;/strong&gt; can support these sectors.&lt;/p&gt;</description>
     </item>
     
     <item>

@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Introducing Rule-based Annotations - GBIF Data Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="John Waller" />
+  <meta name="description" content=" NOTE: This is experimental, and the implementation may change. Please see the GBIF technical documentation for the latest updates on the tool. GBIF makes no guarantees about the availability or stability of this tool.
+ Rule based annotations is an experimental tool that will allow users to mark certain occurrence data as suspicious. The main goal of the project is to facilitate data cleaning and user feedback to publishers.
+Link to UI
+" />
+
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.91.2" />
+
+
+<link rel="canonical" href="https://data-blog.gbif.org/post/2026-01-21-rule-based-annotations/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.2.0" rel="stylesheet">
+
+
+
+
+<link rel="stylesheet" href="/css//custom.css">
+
+
+<meta property="og:title" content="Introducing Rule-based Annotations" />
+<meta property="og:description" content="
+NOTE: This is experimental, and the implementation may change. Please see the GBIF technical documentation for the latest updates on the tool. GBIF makes no guarantees about the availability or stability of this tool.
+
+Rule based annotations is an experimental tool that will allow users to mark certain occurrence data as suspicious. The main goal of the project is to facilitate data cleaning and user feedback to publishers.
+
+  Link to UI
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://data-blog.gbif.org/post/2026-01-21-rule-based-annotations/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2026-01-21T00:00:00+00:00" />
+<meta property="article:modified_time" content="2026-01-21T15:51:13+02:00" />
+
+<meta itemprop="name" content="Introducing Rule-based Annotations">
+<meta itemprop="description" content="
+NOTE: This is experimental, and the implementation may change. Please see the GBIF technical documentation for the latest updates on the tool. GBIF makes no guarantees about the availability or stability of this tool.
+
+Rule based annotations is an experimental tool that will allow users to mark certain occurrence data as suspicious. The main goal of the project is to facilitate data cleaning and user feedback to publishers.
+
+  Link to UI
+"><meta itemprop="datePublished" content="2026-01-21T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2026-01-21T15:51:13+02:00" />
+<meta itemprop="wordCount" content="952">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Introducing Rule-based Annotations"/>
+<meta name="twitter:description" content="
+NOTE: This is experimental, and the implementation may change. Please see the GBIF technical documentation for the latest updates on the tool. GBIF makes no guarantees about the availability or stability of this tool.
+
+Rule based annotations is an experimental tool that will allow users to mark certain occurrence data as suspicious. The main goal of the project is to facilitate data cleaning and user feedback to publishers.
+
+  Link to UI
+"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">GBIF Data Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/categories/gbif/">
+        <li class="mobile-menu-item">posts</li>
+      </a><a href="https://discourse.gbif.org/c/data-blog">
+        <li class="mobile-menu-item">community-forum</li>
+      </a><a href="https://www.gbif.org/">
+        <li class="mobile-menu-item">gbif.org</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">about</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">
+	<img src= "/logo.png" alt="GBIF-analytics-blog" style ="width:20%;">
+  </a>
+  
+	
+  
+  
+</div>
+
+<nav class="site-navbar">
+
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/categories/gbif/">posts</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://discourse.gbif.org/c/data-blog">community-forum</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://www.gbif.org/">gbif.org</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">about</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+	
+    <header class="post-header">
+      <h1 class="post-title">Introducing Rule-based Annotations</h1>
+	  
+	  
+      <div class="post-author">John Waller</div>
+
+      <div class="post-meta">
+        <span class="post-time"> 2026-01-21 </span>
+        <div class="post-category">
+            
+              <a href="/categories/gbif/"> GBIF </a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    
+    
+
+    
+    <div class="post-content">
+      <blockquote>
+<p><strong>NOTE:</strong> This is <strong>experimental</strong>, and the implementation may change. Please see the <a href="https://techdocs.gbif.org/en/tools/rule-based-annotations">GBIF technical documentation</a> for the latest updates on the tool. GBIF makes no guarantees about the availability or stability of this tool.</p>
+</blockquote>
+<p><strong>Rule based annotations</strong> is an experimental tool that will allow users to mark certain occurrence data as suspicious. The main goal of the project is to facilitate data cleaning and user feedback to publishers.</p>
+<div style="text-align: center;">
+  <big><strong><a href="https://labs.gbif.org/annotations/#/">Link to UI</a></strong></big>
+</div><br>
+<video controls autoplay loop muted playsinline width="800" onloadedmetadata="this.playbackRate = 1.5;">
+  <source src="screen-recording.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
+<h2 id="how-to-make-rules">How to make rules</h2>
+<p>To make a simple rule:</p>
+<ol>
+<li>
+<p>Visit <a href="https://labs.gbif.org/annotations/#/">labs.gbif.org/annotations</a></p>
+</li>
+<li>
+<p>Log in with your GBIF username and password.</p>
+</li>
+<li>
+<p>Select the taxon you want to make rules for.</p>
+</li>
+<li>
+<p>Draw a polygon of a region you want to make the rule about.</p>
+</li>
+<li>
+<p>Save the rule to GBIF.</p>
+</li>
+</ol>
+<img src="make_rule.png" alt="Example rule marking future and past occurrence records of class Amphibia on Iceland as Suspicious" width="70%">
+<p><em>Example rule marking <strong>future</strong> and <strong>past</strong> occurrence records of class Amphibia on Iceland as Suspicious.</em></p>
+<h1 id="user-guide">User Guide</h1>
+<h2 id="basic-rule-structure">Basic Rule Structure</h2>
+<p>A basic <strong>rule</strong> in our system looks like this:</p>
+<blockquote>
+<p><strong>rule</strong> → <strong>taxon</strong> in <strong>geo-polygon</strong> are <strong>controlled vocab</strong></p>
+</blockquote>
+<p>In our system a <code>geo-polygon</code> is a <a href="https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry">Well-Known Text</a> (WKT) object.</p>
+<p><strong>Simple example rules:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Rule</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>rule</code> → <strong>Amphibians</strong> in <strong>Greenland</strong> are <strong>suspicious</strong></td>
+</tr>
+<tr>
+<td><code>rule</code> → <strong>Penguins</strong> in <strong>Norway</strong> are <strong>suspicious</strong></td>
+</tr>
+<tr>
+<td><code>rule</code> → <strong>Lions</strong> in <strong>Ocean</strong> are <strong>suspicious</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="creating-rules">Creating rules</h2>
+<p>Rules are required to be linked to a taxon in the GBIF taxonomy. Users can search for taxa using the search box in the top left corner of the page. Once a taxon is selected, users can create rules by drawing polygons on the map.</p>
+<p>The default annotation type for making rules is <strong>suspicious</strong>. This is because the annotation system is primarily intended to be a data cleaning tool. It is possible to select another annotation type after clicking &ldquo;add more complexity&rdquo; in the save to GBIF dialogue pop up.</p>
+<p>We believe that is easier to mark areas as suspicious rather than trying to create uncontroversial native range maps. So we discourage users from using other annotations types unless absolutely necessary.</p>
+<p>Users can view and edit their rules by clicking on their username in the top right corner of the map page.</p>
+<video controls autoplay loop muted playsinline width="800" onloadedmetadata="this.playbackRate = 1.5;">
+  <source src="screen-recording-table.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
+<!-- <img src="jwaller_page.png" alt="Example user page showing all rules created by user jwaller" width="70%"> -->
+<p><em>Example user page showing all rules created by user jwaller. Users can also edit rules on this page.</em></p>
+<p><a href="https://labs.gbif.org/annotations/#/user/jwaller">jwaller rules page</a></p>
+<h2 id="inverting-polygons">Inverting polygons</h2>
+<p>It is often quite useful invert a selection, so that everywhere but the polygon area is marked as suspicious.</p>
+<video controls autoplay loop muted playsinline width="800" onloadedmetadata="this.playbackRate = 1.5;">
+  <source src="screen-recording-inverted.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
+<p><em>This species is only found in Mexico, so all occurrences outside of Mexico are suspicious.</em></p>
+<!-- 
+<img src="inverted_polygon.png" alt="This species is only found in Mexico, so all occurrences outside of Mexico are suspicious" width="70%"> -->
+<p>This can be done after drawing the polygon by clicking the &ldquo;invert polygon&rdquo; button in the edit polygon drop down.</p>
+<h2 id="complex-rules">Complex rules</h2>
+<p>Sometimes it is useful to <strong>add more complexity</strong> to a rule. For example, you might want to mark all occurrences of a taxon in a polygon as suspicious only for occurrences that are from a certain dataset or have a certain basis of record.</p>
+<video controls autoplay loop muted playsinline width="800" onloadedmetadata="this.playbackRate = 1.5;">
+  <source src="screen-recording-complex.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
+<p><em>There are no extant Amphibian populations in Svalbard, but there are legitimate fossil records.</em></p>
+<!-- 
+<img src="not_fossil.png" alt="There are no extant Amphibian populations in Greenland but there are fossil records" width="70%"> -->
+<p>This is possible by using the &ldquo;add more complexity&rdquo; button in the save to GBIF dialogue pop up.</p>
+<!-- <img src="complex_rules_dialogue.png" alt="The complex rules dialogue" width="70%"> -->
+<!-- *The complex rules dialogue.* -->
+<p>With complex rules user can restrict the rule to only apply to certain <strong>basisOfRecord</strong>, <strong>datasetKey</strong>, or <strong>year ranges</strong>.</p>
+<h2 id="voting">Voting</h2>
+<p>For downstream users, deciding which <strong>rules</strong> to use might become challenging without some quality control. Currently, we have implemented a simple upvote-downvote system for rules. With voting users could see what annotations are supported by the broader community, and create cleaning scripts that are only use annotations supported by the community.</p>
+<h2 id="higher-taxonomy">Higher taxonomy</h2>
+<p>Creating rules for every species in a group can be slow and inefficient. For this reason, our systems allows users to create rules using higher taxonomy. For example, it is well known that there are no Amphibians in Antarctica, so rather than creating a separate rule for every species, one can write one rule for the whole group.</p>
+<p><code>rule</code> → <strong>Amphibians</strong> in <strong>Antarctica</strong> are <strong>Suspicious</strong></p>
+<video controls autoplay loop muted playsinline width="800" onloadedmetadata="this.playbackRate = 1.5;">
+  <source src="screen-recording-higherrank.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
+<p><em>Rules can be created for higherrank taxa that can then be used to filter occurrence records on lower ranks. The UI allows users to toggle between viewing rules already created at a higher level.</em></p>
+<p>Now users making rules for lower level groups or species don&rsquo;t need to worry about making rules about Antarctica.</p>
+<h2 id="using-projects">Using projects</h2>
+<p>A <strong>project</strong> is a collection of rules. Projects are intended to allow for collaboration between users and logical grouping of rules. Projects can be created and browsed using the user interface at <a href="https://labs.gbif.org/annotations/#/projects">labs.gbif.org/annotations/projects</a>. Users can set the active project so that any rules they create are added to that project. Users can also add pre-existing rules to a project by editing the rule and selecting the project from a drop down menu.</p>
+<video controls autoplay loop muted playsinline width="800" onloadedmetadata="this.playbackRate = 1.5;">
+  <source src="screen-recording-project.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
+<p><em>Projects can be created on user pages. Users can set the default project they want to create rules in.</em></p>
+<p>Only members of a project can create and edit rules within that project. However, all projects and their rules are publicly available for browsing and use. Any user can create a project and invite other GBIF users to collaborate.</p>
+<h2 id="cleaning-gbif-downloads-with-r">Cleaning GBIF downloads with R</h2>
+<p>User created rules can be used to clean GBIF downloads with the R package <code>gbifrules</code>. <a href="https://github.com/gbif/occurrence-annotation/tree/main/r-package/gbifrules">The R package gbifrules</a> provides functions to clean GBIF downloads using user created rules.</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#268bd2">library</span>(gbifrules)
+<span style="color:#268bd2">library</span>(rgbif)
+<span style="color:#586e75"># Ambystoma mexicanum</span>
+<span style="color:#586e75"># occ_download(</span>
+<span style="color:#586e75"># pred(taxonKey,&#34;2431950&#34;),</span>
+<span style="color:#586e75"># pred_default(),</span>
+<span style="color:#586e75"># format = &#34;SIMPLE_CSV&#34;</span>
+<span style="color:#586e75"># )</span>
+ 
+<span style="color:#586e75"># Download and clean</span>
+<span style="color:#586e75"># Download was already made earlier </span>
+d <span style="color:#719e07">&lt;-</span> <span style="color:#268bd2">occ_download_get</span>(<span style="color:#2aa198">&#39;0051416-241126133413365&#39;</span>) <span style="color:#719e07">%&gt;%</span>
+<span style="color:#268bd2">occ_download_import</span>()
+
+<span style="color:#268bd2">clean_download</span>(d)
+</code></pre></div><pre tabindex="0"><code>── Cleaning Summary ──────────────────────────────────────────────────────────────────────────────
+• Records in original download: 720,217
+✖ Suspicious records removed: 14 (0.0019%)
+✔ Records remaining: 720,203
+
+Kept: ██████████████████████████████
+</code></pre>
+    </div>
+
+    
+    
+
+    
+    
+
+    <footer class="post-footer">
+      
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/2025-10-28-species-occurrence-data-and-corporate-sustainability-frameworks/">
+            <span class="next-text nav-default">Species Occurrence Data and Corporate Sustainability Frameworks</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      
+
+
+
+<div>
+<h3>This post represents the ideas of the author.</h3>
+</div>
+<div id='discourse-comments'></div>
+<script type="text/javascript">
+  DiscourseEmbed = { discourseUrl: 'https://discourse.gbif.org/',
+                     discourseEmbedUrl: 'https://data-blog.gbif.org\/post\/2026-01-21-rule-based-annotations\/' };
+
+  (function() {
+    var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+    d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+  })();
+</script>
+
+
+<div class = "copyright">
+	<a class="theme-link" href="https://www.gbif.org/what-is-gbif">What is GBIF?</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://www.gbif.org/developer/summary">API</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://www.gbif.org/faq">FAQ</a>
+	<span class="division">|</span>
+	<a class="theme-link" href="https://discourse.gbif.org/">Community-Forum</a>
+</div>
+
+<div class = "copyright">
+	<span class="theme-info">GBIF Secretariat</span>
+	<span class="theme-info">Universitetsparken 15</span>
+	<span class="theme-info">DK-2100 Copenhagen Ø</span>
+	<span class="theme-info" >Denmark</span>
+</div>
+
+<div class="copyright">
+	<span class="power-by">
+	Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+	</span>
+	<span class="division">|</span>
+	<span class="theme-info">
+	Theme -
+	<a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+	</span>
+
+</div>
+
+<script defer data-domain="data-blog.gbif.org,gbif.org" src="https://plausible.io/js/script.file-downloads.js"></script>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+
+
+<script type="text/javascript" src="/dist/even.min.js?v=3.2.0"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -10,27 +10,55 @@
   
   <url>
     <loc>https://data-blog.gbif.org/author/</loc>
-    <lastmod>2025-10-28T15:51:13+02:00</lastmod>
+    <lastmod>2026-01-21T15:51:13+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/categories/</loc>
+    <lastmod>2026-01-21T15:51:13+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/categories/gbif/</loc>
+    <lastmod>2026-01-21T15:51:13+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://data-blog.gbif.org/</loc>
-    <lastmod>2025-10-28T15:51:13+02:00</lastmod>
+    <lastmod>2026-01-21T15:51:13+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/post/2026-01-21-rule-based-annotations/</loc>
+    <lastmod>2026-01-21T15:51:13+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://data-blog.gbif.org/author/john-waller/</loc>
-    <lastmod>2025-10-28T15:51:13+02:00</lastmod>
+    <lastmod>2026-01-21T15:51:13+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://data-blog.gbif.org/post/</loc>
+    <lastmod>2026-01-21T15:51:13+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://data-blog.gbif.org/author/andrew-rodrigues/</loc>
     <lastmod>2025-10-28T15:51:13+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -46,20 +74,6 @@
   <url>
     <loc>https://data-blog.gbif.org/post/2025-05-21-dealing-with-sampling-bias-gbif-mediated-occurrence-records/</loc>
     <lastmod>2025-05-21T15:51:13+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://data-blog.gbif.org/categories/</loc>
-    <lastmod>2025-03-26T15:53:38+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://data-blog.gbif.org/categories/gbif/</loc>
-    <lastmod>2025-03-26T15:53:38+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -283,13 +297,6 @@
   
   <url>
     <loc>https://data-blog.gbif.org/post/accessing-occurrence-data-to-conserve-edge-species/</loc>
-    <lastmod>2023-05-02T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://data-blog.gbif.org/author/andrew-rodrigues/</loc>
     <lastmod>2023-05-02T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
