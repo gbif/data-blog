@@ -154,7 +154,6 @@ Creating rules for every species in a group can be slow and inefficient. For thi
 `rule` → **Amphibians** in **Antarctica** are **Suspicious**
 
 <video controls autoplay loop muted playsinline width="800" onloadedmetadata="this.playbackRate = 1.5;">
-  <source src="screen-recording-higherrank.mp4" type="video/mp4">
   <source src="screen-recording-higherrank.webm" type="video/webm">
   Your browser does not support the video tag.
 </video>
@@ -168,7 +167,6 @@ Now users making rules for lower level groups or species don't need to worry abo
 A **project** is a collection of rules. Projects are intended to allow for collaboration between users and logical grouping of rules. Projects can be created and browsed using the user interface at [labs.gbif.org/annotations/projects](https://labs.gbif.org/annotations/#/projects). Users can set the active project so that any rules they create are added to that project. Users can also add pre-existing rules to a project by editing the rule and selecting the project from a drop down menu.
 
 <video controls autoplay loop muted playsinline width="800" onloadedmetadata="this.playbackRate = 1.5;">
-  <source src="screen-recording-project.mp4" type="video/mp4">
   <source src="screen-recording-project.webm" type="video/webm">
   Your browser does not support the video tag.
 </video>

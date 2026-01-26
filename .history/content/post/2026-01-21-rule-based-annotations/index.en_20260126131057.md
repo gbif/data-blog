@@ -94,7 +94,6 @@ We believe that is easier to mark areas as suspicious rather than trying to crea
 Users can view and edit their rules by clicking on their username in the top right corner of the map page.
 
 <video controls autoplay loop muted playsinline width="800" onloadedmetadata="this.playbackRate = 1.5;">
-  <source src="screen-recording-table.mp4" type="video/mp4">
   <source src="screen-recording-table.webm" type="video/webm">
   Your browser does not support the video tag.
 </video>
@@ -110,7 +109,6 @@ Users can view and edit their rules by clicking on their username in the top rig
 It is often quite useful invert a selection, so that everywhere but the polygon area is marked as suspicious.
 
 <video controls autoplay loop muted playsinline width="800" onloadedmetadata="this.playbackRate = 1.5;">
-  <source src="screen-recording-inverted.mp4" type="video/mp4">
   <source src="screen-recording-inverted.webm" type="video/webm">
   Your browser does not support the video tag.
 </video>
@@ -127,7 +125,6 @@ This can be done after drawing the polygon by clicking the "invert polygon" butt
 Sometimes it is useful to **add more complexity** to a rule. For example, you might want to mark all occurrences of a taxon in a polygon as suspicious only for occurrences that are from a certain dataset or have a certain basis of record.
 
 <video controls autoplay loop muted playsinline width="800" onloadedmetadata="this.playbackRate = 1.5;">
-  <source src="screen-recording-complex.mp4" type="video/mp4">
   <source src="screen-recording-complex.webm" type="video/webm">
   Your browser does not support the video tag.
 </video>
@@ -154,7 +151,6 @@ Creating rules for every species in a group can be slow and inefficient. For thi
 `rule` → **Amphibians** in **Antarctica** are **Suspicious**
 
 <video controls autoplay loop muted playsinline width="800" onloadedmetadata="this.playbackRate = 1.5;">
-  <source src="screen-recording-higherrank.mp4" type="video/mp4">
   <source src="screen-recording-higherrank.webm" type="video/webm">
   Your browser does not support the video tag.
 </video>
@@ -168,7 +164,6 @@ Now users making rules for lower level groups or species don't need to worry abo
 A **project** is a collection of rules. Projects are intended to allow for collaboration between users and logical grouping of rules. Projects can be created and browsed using the user interface at [labs.gbif.org/annotations/projects](https://labs.gbif.org/annotations/#/projects). Users can set the active project so that any rules they create are added to that project. Users can also add pre-existing rules to a project by editing the rule and selecting the project from a drop down menu.
 
 <video controls autoplay loop muted playsinline width="800" onloadedmetadata="this.playbackRate = 1.5;">
-  <source src="screen-recording-project.mp4" type="video/mp4">
   <source src="screen-recording-project.webm" type="video/webm">
   Your browser does not support the video tag.
 </video>

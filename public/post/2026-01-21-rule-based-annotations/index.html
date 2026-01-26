@@ -76,7 +76,7 @@ Rule based annotations is an experimental tool that will allow users to mark cer
   Link to UI
 "><meta itemprop="datePublished" content="2026-01-21T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2026-01-21T15:51:13+02:00" />
-<meta itemprop="wordCount" content="952">
+<meta itemprop="wordCount" content="1073">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Introducing Rule-based Annotations"/>
 <meta name="twitter:description" content="
@@ -189,6 +189,7 @@ Rule based annotations is an experimental tool that will allow users to mark cer
   <big><strong><a href="https://labs.gbif.org/annotations/#/">Link to UI</a></strong></big>
 </div><br>
 <video controls autoplay loop muted playsinline width="800" onloadedmetadata="this.playbackRate = 1.5;">
+  <source src="screen-recording.mp4" type="video/mp4">
   <source src="screen-recording.webm" type="video/webm">
   Your browser does not support the video tag.
 </video>
@@ -245,6 +246,7 @@ Rule based annotations is an experimental tool that will allow users to mark cer
 <p>We believe that is easier to mark areas as suspicious rather than trying to create uncontroversial native range maps. So we discourage users from using other annotations types unless absolutely necessary.</p>
 <p>Users can view and edit their rules by clicking on their username in the top right corner of the map page.</p>
 <video controls autoplay loop muted playsinline width="800" onloadedmetadata="this.playbackRate = 1.5;">
+  <source src="screen-recording-table.mp4" type="video/mp4">
   <source src="screen-recording-table.webm" type="video/webm">
   Your browser does not support the video tag.
 </video>
@@ -254,6 +256,7 @@ Rule based annotations is an experimental tool that will allow users to mark cer
 <h2 id="inverting-polygons">Inverting polygons</h2>
 <p>It is often quite useful invert a selection, so that everywhere but the polygon area is marked as suspicious.</p>
 <video controls autoplay loop muted playsinline width="800" onloadedmetadata="this.playbackRate = 1.5;">
+  <source src="screen-recording-inverted.mp4" type="video/mp4">
   <source src="screen-recording-inverted.webm" type="video/webm">
   Your browser does not support the video tag.
 </video>
@@ -264,6 +267,7 @@ Rule based annotations is an experimental tool that will allow users to mark cer
 <h2 id="complex-rules">Complex rules</h2>
 <p>Sometimes it is useful to <strong>add more complexity</strong> to a rule. For example, you might want to mark all occurrences of a taxon in a polygon as suspicious only for occurrences that are from a certain dataset or have a certain basis of record.</p>
 <video controls autoplay loop muted playsinline width="800" onloadedmetadata="this.playbackRate = 1.5;">
+  <source src="screen-recording-complex.mp4" type="video/mp4">
   <source src="screen-recording-complex.webm" type="video/webm">
   Your browser does not support the video tag.
 </video>
@@ -280,6 +284,7 @@ Rule based annotations is an experimental tool that will allow users to mark cer
 <p>Creating rules for every species in a group can be slow and inefficient. For this reason, our systems allows users to create rules using higher taxonomy. For example, it is well known that there are no Amphibians in Antarctica, so rather than creating a separate rule for every species, one can write one rule for the whole group.</p>
 <p><code>rule</code> → <strong>Amphibians</strong> in <strong>Antarctica</strong> are <strong>Suspicious</strong></p>
 <video controls autoplay loop muted playsinline width="800" onloadedmetadata="this.playbackRate = 1.5;">
+  <source src="screen-recording-higherrank.mp4" type="video/mp4">
   <source src="screen-recording-higherrank.webm" type="video/webm">
   Your browser does not support the video tag.
 </video>
@@ -288,35 +293,42 @@ Rule based annotations is an experimental tool that will allow users to mark cer
 <h2 id="using-projects">Using projects</h2>
 <p>A <strong>project</strong> is a collection of rules. Projects are intended to allow for collaboration between users and logical grouping of rules. Projects can be created and browsed using the user interface at <a href="https://labs.gbif.org/annotations/#/projects">labs.gbif.org/annotations/projects</a>. Users can set the active project so that any rules they create are added to that project. Users can also add pre-existing rules to a project by editing the rule and selecting the project from a drop down menu.</p>
 <video controls autoplay loop muted playsinline width="800" onloadedmetadata="this.playbackRate = 1.5;">
+  <source src="screen-recording-project.mp4" type="video/mp4">
   <source src="screen-recording-project.webm" type="video/webm">
   Your browser does not support the video tag.
 </video>
 <p><em>Projects can be created on user pages. Users can set the default project they want to create rules in.</em></p>
 <p>Only members of a project can create and edit rules within that project. However, all projects and their rules are publicly available for browsing and use. Any user can create a project and invite other GBIF users to collaborate.</p>
 <h2 id="cleaning-gbif-downloads-with-r">Cleaning GBIF downloads with R</h2>
-<p>User created rules can be used to clean GBIF downloads with the R package <code>gbifrules</code>. <a href="https://github.com/gbif/occurrence-annotation/tree/main/r-package/gbifrules">The R package gbifrules</a> provides functions to clean GBIF downloads using user created rules.</p>
-<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#268bd2">library</span>(gbifrules)
+<p>User created rules can be used to clean GBIF downloads with the R package <code>gbifrules</code>. <a href="https://github.com/gbif/occurrence-annotation/tree/main/r-package/gbifrules">The R package gbifrules</a> provides functions to clean GBIF downloads using user created rules. At the time of writing this post, the <code>clean_download()</code> function in the <code>gbifrules</code> package is the only way to filter GBIF downloads using user created rules. See below for future plans for integration into GBIF.org.</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#586e75"># Install </span>
+pak<span style="color:#719e07">::</span><span style="color:#268bd2">pak</span>(<span style="color:#2aa198">&#34;gbif/occurrence-annotation/r-package/gbifrules&#34;</span>)
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#268bd2">library</span>(gbifrules)
 <span style="color:#268bd2">library</span>(rgbif)
 <span style="color:#586e75"># Ambystoma mexicanum</span>
 <span style="color:#586e75"># occ_download(</span>
-<span style="color:#586e75"># pred(taxonKey,&#34;2431950&#34;),</span>
+<span style="color:#586e75"># pred(&#34;taxonKey&#34;,&#34;2431950&#34;),</span>
 <span style="color:#586e75"># pred_default(),</span>
 <span style="color:#586e75"># format = &#34;SIMPLE_CSV&#34;</span>
 <span style="color:#586e75"># )</span>
  
 <span style="color:#586e75"># Download and clean</span>
 <span style="color:#586e75"># Download was already made earlier </span>
-d <span style="color:#719e07">&lt;-</span> <span style="color:#268bd2">occ_download_get</span>(<span style="color:#2aa198">&#39;0051416-241126133413365&#39;</span>) <span style="color:#719e07">%&gt;%</span>
+d <span style="color:#719e07">&lt;-</span> <span style="color:#268bd2">occ_download_get</span>(<span style="color:#2aa198">&#39;0004693-260120142942310&#39;</span>) <span style="color:#719e07">%&gt;%</span>
 <span style="color:#268bd2">occ_download_import</span>()
 
 <span style="color:#268bd2">clean_download</span>(d)
+
+<span style="color:#586e75"># Or filter your data using only rules from a specific project:</span>
+<span style="color:#268bd2">clean_download</span>(d, project_id <span style="color:#719e07">=</span> <span style="color:#2aa198">1</span>)
 </code></pre></div><pre tabindex="0"><code>── Cleaning Summary ──────────────────────────────────────────────────────────────────────────────
 • Records in original download: 720,217
 ✖ Suspicious records removed: 14 (0.0019%)
 ✔ Records remaining: 720,203
 
 Kept: ██████████████████████████████
-</code></pre>
+</code></pre><h2 id="next-steps-and-integration-into-gbiforg">Next Steps and Integration into GBIF.org</h2>
+<p>Currently, rules are only available through the <a href="https://labs.gbif.org/annotations/#/">labs.gbif.org/annotations</a> interface and the R package <code>gbifrules</code>. Rules <strong>do not</strong> appear on or get used on the main GBIF.org site or appear on maps or filter occurrences in downloads. It is anticipated that if the tool becomes popular and widely used, that rules will be integrated into the main GBIF.org systems in the future.</p>
     </div>
 
     
