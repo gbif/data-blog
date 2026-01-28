@@ -91,7 +91,7 @@ The default annotation type for making rules is **suspicious**. This is because 
 
 We believe that is easier to mark areas as suspicious rather than trying to create uncontroversial native range maps. So we discourage users from using other annotations types unless absolutely necessary.
 
-> **All rules created by any user are publicly available for everyone to use for cleaning downloads or annotating records.** While only the rule creator can edit their rules, all users can benefit from the community's collective knowledge when filtering their data. See the **gbifrules R package** section below for how to use rules to clean GBIF downloads.
+> **All rules created by any user are publicly available for everyone to use for cleaning downloads or annotating records.** While only the rule creator can edit their rules, all users can benefit from the community's collective knowledge when filtering their data.
 
 Users can view and edit their rules by clicking on their username in the top right corner of the map page.
 
@@ -144,32 +144,6 @@ This is possible by using the "add more complexity" button in the save to GBIF d
 <!-- *The complex rules dialogue.* -->
 
 With complex rules user can restrict the rule to only apply to certain **basisOfRecord**, **datasetKey**, or **year ranges**.
-
-## Why Not Annotate Individual Occurrences?
-
-A common question is: **"Can I annotate a specific occurrence record?"** 
-
-Unfortunately, this is not currently possible due to **occurrence ID instability** in GBIF's data indexing system.
-
-GBIF occurrence IDs are not permanent identifiers. When datasets are republished or reindexed, occurrence IDs can change even if the underlying occurrence data remains the same. 
-
-For example:
-- A dataset is published with occurrence ID `12345678`
-- You annotate this record as suspicious
-- The publisher updates their dataset and changes their identifiers
-- The same biological record now has occurrence ID `87654321`
-- Your annotation is lost
-
-While we cannot annotate individual occurrences, you can create **highly specific rules** that effectively target problematic records from a particular dataset. The key is to combine multiple filters to narrow the scope:
-
-**Example scenario:** You've found a single suspicious *Panthera leo* record within the normal range of the species from dataset a specific dataset.
-
-Instead of annotating that one occurrence, create a rule that:
-1. Targets the taxon (*Panthera leo*)
-2. Draws a small polygon around the suspicious location
-3. Restricts to the specific **datasetKey** 
-
-By combining geographic, taxonomic, and dataset filters, you can create rules that are nearly as specific as individual occurrence annotations while remaining robust to `gbifid` instability and future legitimate occurrence coming from other sources.
 
 ## Voting
 
@@ -244,14 +218,7 @@ clean_download(d, project_id = 1)
 Kept: ██████████████████████████████
 ```
 
-### How clean_download() Works
-
-1. **Fetches rules** from the GBIF API for taxon keys in your data
-2. **Applies spatial filters** using polygon geometries from annotation rules
-3. **Evaluates additional criteria** like basisOfRecord and datasetKey if specified
-4. **Returns cleaned data** with suspicious records removed or flagged
-
 ## Next Steps and Integration into GBIF.org
 
-Currently, rules are only available through the [labs.gbif.org/annotations](https://labs.gbif.org/annotations/#/) interface and the R package `gbifrules`. Rules **do not** appear on or get used on the main **GBIF.org** site or appear on maps or filter occurrences in downloads. It is anticipated that if the tool becomes popular and widely used, that rules will be integrated into the main GBIF.org systems in the future. 
+Currently, rules are only available through the [labs.gbif.org/annotations](https://labs.gbif.org/annotations/#/) interface and the R package `gbifrules`. Rules **do not** appear on or get used on the main GBIF.org site or appear on maps or filter occurrences in downloads. It is anticipated that if the tool becomes popular and widely used, that rules will be integrated into the main GBIF.org systems in the future. 
 

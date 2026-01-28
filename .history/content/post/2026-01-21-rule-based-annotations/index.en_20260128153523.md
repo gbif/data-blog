@@ -147,29 +147,27 @@ With complex rules user can restrict the rule to only apply to certain **basisOf
 
 ## Why Not Annotate Individual Occurrences?
 
-A common question is: **"Can I annotate a specific occurrence record?"** 
-
-Unfortunately, this is not currently possible due to **occurrence ID instability** in GBIF's data indexing system.
+A common question is: **"Can I annotate a specific occurrence record?"** Unfortunately, this is not currently possible due to **occurrence ID instability** in GBIF's data indexing system.
 
 GBIF occurrence IDs are not permanent identifiers. When datasets are republished or reindexed, occurrence IDs can change even if the underlying occurrence data remains the same. 
 
 For example:
 - A dataset is published with occurrence ID `12345678`
 - You annotate this record as suspicious
-- The publisher updates their dataset and changes their identifiers
+- The publisher updates their dataset
 - The same biological record now has occurrence ID `87654321`
 - Your annotation is lost
 
 While we cannot annotate individual occurrences, you can create **highly specific rules** that effectively target problematic records from a particular dataset. The key is to combine multiple filters to narrow the scope:
 
-**Example scenario:** You've found a single suspicious *Panthera leo* record within the normal range of the species from dataset a specific dataset.
+**Example scenario:** You've found a single suspicious *Panthera leo* record in northern Greenland from dataset a specific dataset.
 
 Instead of annotating that one occurrence, create a rule that:
 1. Targets the taxon (*Panthera leo*)
 2. Draws a small polygon around the suspicious location
 3. Restricts to the specific **datasetKey** 
 
-By combining geographic, taxonomic, and dataset filters, you can create rules that are nearly as specific as individual occurrence annotations while remaining robust to `gbifid` instability and future legitimate occurrence coming from other sources.
+By combining geographic, taxonomic, and dataset filters, you can create rules that are nearly as specific as individual occurrence annotations while remaining robust to `gbifid` instability.
 
 ## Voting
 

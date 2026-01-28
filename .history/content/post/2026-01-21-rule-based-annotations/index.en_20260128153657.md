@@ -169,7 +169,7 @@ Instead of annotating that one occurrence, create a rule that:
 2. Draws a small polygon around the suspicious location
 3. Restricts to the specific **datasetKey** 
 
-By combining geographic, taxonomic, and dataset filters, you can create rules that are nearly as specific as individual occurrence annotations while remaining robust to `gbifid` instability and future legitimate occurrence coming from other sources.
+By combining geographic, taxonomic, and dataset filters, you can create rules that are nearly as specific as individual occurrence annotations while remaining robust to `gbifid` instability.
 
 ## Voting
 
