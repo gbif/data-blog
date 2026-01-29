@@ -173,9 +173,36 @@ By combining geographic, taxonomic, and dataset filters, you can create rules th
 
 ## What About Filtering Ocean Records?
 
-While it's technically possible to create rules marking terrestrial species in ocean areas as suspicious, **we recommend using specialized cleaning tools for this task** instead of the GBIF rule-based annotation system. 
+While it's technically possible to create rules marking terrestrial species in ocean areas as suspicious, **we recommend using specialized cleaning tools for this task** instead of the rule-based annotation system.
 
-The [CoordinateCleaner R package](https://ropensci.github.io/CoordinateCleaner/) is great for detecting common spatial errors in occurrence data, including ocean records for terrestrial species. 
+### Why Not Use Rules for Ocean Filtering?
+
+Ocean-based filtering presents several challenges:
+
+1. **Coastline complexity** - Creating accurate polygons that cover all ocean areas while avoiding legitimate coastal records is extremely difficult and time-consuming
+2. **Marine vs terrestrial species** - Some species legitimately occur in both environments (e.g., sea turtles, seals, coastal plants)
+3. **Island records** - Small islands can easily be missed when drawing large ocean polygons
+4. **Better tools exist** - Specialized packages have already solved these problems
+
+### Recommended Alternative: CoordinateCleaner
+
+The [CoordinateCleaner R package](https://ropensci.github.io/CoordinateCleaner/) is purpose-built for detecting common spatial errors in occurrence data, including ocean records for terrestrial species. It provides:
+
+- **`cc_sea()`** - Identifies records in the ocean for non-marine species
+- **Automated land-sea detection** - Uses detailed coastline data
+- **Additional spatial checks** - Country centroids, capitals, institutions, etc.
+
+```r
+library(CoordinateCleaner)
+
+# Flag terrestrial species records that fall in the ocean
+cleaned_data <- cc_sea(data, 
+                       lon = "decimalLongitude", 
+                       lat = "decimalLatitude",
+                       ref = NULL)  # uses default reference
+```
+
+CoordinateCleaner is designed specifically for coordinate validation and will be more accurate and efficient than manually drawing ocean polygons. **Use rule-based annotations for taxonomic and geographic knowledge** (like "no Amphibians in Antarctica"), and use CoordinateCleaner for **systematic coordinate error detection**.
 
 ## Voting
 

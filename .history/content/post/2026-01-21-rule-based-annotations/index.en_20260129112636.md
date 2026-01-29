@@ -173,7 +173,7 @@ By combining geographic, taxonomic, and dataset filters, you can create rules th
 
 ## What About Filtering Ocean Records?
 
-While it's technically possible to create rules marking terrestrial species in ocean areas as suspicious, **we recommend using specialized cleaning tools for this task** instead of the GBIF rule-based annotation system. 
+While it's technically possible to create rules marking terrestrial species in ocean areas as suspicious, **we recommend using specialized cleaning tools for this task** instead of the GBIF rule-based annotation system. Don't waste your time. 
 
 The [CoordinateCleaner R package](https://ropensci.github.io/CoordinateCleaner/) is great for detecting common spatial errors in occurrence data, including ocean records for terrestrial species. 
 
