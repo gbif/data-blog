@@ -91,7 +91,9 @@ The default annotation type for making rules is **suspicious**. This is because 
 
 We believe that is easier to mark areas as suspicious rather than trying to create uncontroversial native range maps. So we discourage users from using other annotations types unless absolutely necessary.
 
-> **All rules created by any user are publicly available for everyone to use for cleaning downloads or annotating records.** While only the rule creator can edit their rules, all users can benefit from the community's collective knowledge when filtering their data. See the **gbifrules R package** section below for how to use rules to clean GBIF downloads.
+> **All rules created by any user are publicly available for everyone to use for cleaning downloads or annotating records.** 
+
+While only the rule creator can edit their rules, all users can benefit from the community's collective knowledge when filtering their data. See the **gbifrules R package** section below for how to use rules to clean GBIF downloads.
 
 Users can view and edit their rules by clicking on their username in the top right corner of the map page.
 
@@ -171,9 +173,15 @@ Instead of annotating that one occurrence, create a rule that:
 
 By combining geographic, taxonomic, and dataset filters, you can create rules that are nearly as specific as individual occurrence annotations while remaining robust to `gbifid` instability and future legitimate occurrences coming from other sources.
 
+## Rules are not range maps
+
+Rules can look like range maps at first glance because they use polygons on a map. But **rules are not range maps**. They are more flexible and more powerful than traditional range maps because they are designed for **data cleaning**, not for defining a full distribution. 
+
+Rules can **express uncertainty** in a way range maps usually cannot. Often you don't need to be an expert to create useful rules for a species or group. Drawing a rough inverted box around a continent is sometimes very helpful. Rules can also be **narrowly targeted** to specific datasets, time periods, or record attributes, which makes them useful for addressing known data issues without having to make a definitive range.
+
 ## What About Filtering Ocean Records?
 
-While it's technically possible to create rules marking terrestrial species in ocean areas as suspicious, **we recommend using specialized cleaning tools for this task** instead of the GBIF rule-based annotation system. 
+While it's technically possible to create rules marking terrestrial species in ocean areas as suspicious, **we recommend using specialized cleaning tools for this task** instead of the GBIF rule-based annotation system. It is quite tedious to trace the coastline, and this isn't really necessary given the availability of tools that can automatically flag records with coordinates in the ocean as suspicious.
 
 The [CoordinateCleaner R package](https://ropensci.github.io/CoordinateCleaner/) is great for detecting common spatial errors in occurrence data, including ocean records for terrestrial species. 
 
