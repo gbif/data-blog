@@ -286,4 +286,4 @@ Currently, rules are only available through the [labs.gbif.org/annotations](http
 
 ## How to Provide Feedback
 
-If you have any suggestions for improving this tool, please create an issue on our GitHub repository at [github.com/gbif/occurrence-annotation](https://github.com/gbif/occurrence-annotation).
+If you have any suggestions for improving this tool, please create an issue on our GitHub repository at [github.com/gbif/occurrence-annotation](https://github.com/gbif/occurrence-annotation) 

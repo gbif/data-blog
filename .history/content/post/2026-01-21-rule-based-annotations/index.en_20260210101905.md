@@ -90,7 +90,7 @@ Rules are required to be linked to a taxon in the GBIF taxonomy. Users can searc
 
 The default annotation type for making rules is **suspicious**. This is because the annotation system is primarily intended to be a data cleaning tool. It is possible to select another annotation type after clicking "add more complexity" in the save to GBIF dialogue pop up.
 
-We believe that it is easier to mark areas as suspicious rather than trying to create uncontroversial native range maps. So we discourage users from using other annotations types unless absolutely necessary.
+We believe that is easier to mark areas as suspicious rather than trying to create uncontroversial native range maps. So we discourage users from using other annotations types unless absolutely necessary.
 
 > **All rules created by any user are publicly available for everyone to use for cleaning downloads or annotating records.** 
 
@@ -146,7 +146,7 @@ This is possible by using the "add more complexity" button in the save to GBIF d
 <!-- <img src="complex_rules_dialogue.png" alt="The complex rules dialogue" width="70%"> -->
 <!-- *The complex rules dialogue.* -->
 
-With complex rules users can restrict the rule to only apply to certain **basisOfRecord**, **datasetKey**, or **year ranges**.
+With complex rules user can restrict the rule to only apply to certain **basisOfRecord**, **datasetKey**, or **year ranges**.
 
 ## Why Not Annotate Individual Occurrences?
 
@@ -188,9 +188,9 @@ Rules can **express uncertainty** in a way range maps usually cannot. Often you 
 
 ## What is a Suspicious Record?
 
-Determining whether an occurrence record is suspicious can be somewhat subjective, and there is often a gray area between clearly legitimate and clearly problematic records. Common examples of suspicious records include mis-identifications, locality coordinate disagreements, obvious outliers, records from zoos or botanical gardens, and records that provide the location of the museum housing a specimen rather than where it was originally collected.  
+Determining whether an occurrence record is suspicious can be somewhat subjective, and there is often a gray area between clearly legitimate and clearly problematic records. Common examples of suspicious records include mis-identifications, locality coordinate disagreements, obvious outliers, records from zoos or botanical gardens, and records that provide the location of the museum housing a specimen rather than where it was originally collected. It's important to note that a suspicious record is different from a legitimate occurrence that may seem unusual—for instance, an invasive species appearing outside its native range is not suspicious if properly documented, whereas a native species with coordinates that don't match its stated location would be considered suspicious regardless of the species' typical distribution.
 
-While GBIF already implements some [automated flagging of some suspicious records](https://techdocs.gbif.org/en/data-processing/#suspicious-records), the rule-based annotation tool is designed to complement these existing checks by allowing users to create bespoke rules that are limited to specific taxa and datasets. 
+While GBIF already implements some [automated flagging of suspicious records](https://data-blog.gbif.org/post/issues-and-flags/), the rule-based annotation tool is designed to complement these existing checks by allowing users to create bespoke rules that are limited to specific taxa and datasets. 
 
 The community-driven nature of rule-based annotations means that experts familiar with particular species or geographic areas can contribute their knowledge to help identify records that automated systems might miss, while still acknowledging that not all flagged records will be definitively wrong and some legitimate records may occasionally be caught by overly broad rules.
 
@@ -202,11 +202,11 @@ The [CoordinateCleaner R package](https://ropensci.github.io/CoordinateCleaner/)
 
 ## Voting
 
-For downstream users, deciding which **rules** to use might become challenging without some quality control. Currently, we have implemented a simple upvote-downvote system for rules. With voting users could see what annotations are supported by the broader community, and create cleaning scripts that only use annotations supported by the community.
+For downstream users, deciding which **rules** to use might become challenging without some quality control. Currently, we have implemented a simple upvote-downvote system for rules. With voting users can see what annotations are supported by the broader community, and create cleaning scripts that only use annotations supported by the community.
 
-## Higher taxonomy
+## Higher Taxonomy
 
-Creating rules for every species in a group can be slow and inefficient. For this reason, our system allows users to create rules using higher taxonomy. For example, it is well known that there are no Amphibians in Antarctica, so rather than creating a separate rule for every species, one can write one rule for the whole group.
+Creating rules for every species in a group can be slow and inefficient. For this reason, our systems allows users to create rules using higher taxonomy. For example, it is well known that there are no Amphibians in Antarctica, so rather than creating a separate rule for every species, one can write one rule for the whole group.
 
 `rule` → **Amphibians** in **Antarctica** are **Suspicious**
 
@@ -234,7 +234,7 @@ A **project** is a collection of rules. Projects are intended to allow for colla
 
 Only members of a project can create and edit rules within that project. However, all projects and their rules are publicly available for browsing and use. Any user can create a project and invite other GBIF users to collaborate.
 
-## Cleaning GBIF downloads with R
+## Cleaning GBIF Downloads with R
 
 User created rules can be used to clean GBIF downloads with the R package `gbifrules`. [The R package gbifrules](https://github.com/gbif/occurrence-annotation/tree/main/r-package/gbifrules) provides functions to clean GBIF downloads using user created rules. At the time of writing this post, the `clean_download()` function in the `gbifrules` package is the only way to filter GBIF downloads using user created rules. See below for future plans for integration into GBIF.org.
 
@@ -282,8 +282,9 @@ Kept: ████████████████████████�
 
 ## Next Steps and Integration into GBIF.org
 
-Currently, rules are only available through the [labs.gbif.org/annotations](https://labs.gbif.org/annotations/#/) interface and the R package `gbifrules`. Rules **do not** appear on or get used on the main **GBIF.org** site or appear on maps or filter occurrences in downloads. It is anticipated that if the tool becomes popular and widely used, that rules will be integrated into the main GBIF.org systems in the future. 
+Currently, rules are only available through the [labs.gbif.org/annotations](https://labs.gbif.org/annotations/#/) interface and the R package `gbifrules`. Rules **do not** appear on or get used on the main **GBIF.org** site or appear on maps or filter occurrences in downloads. It is anticipated that if the tool becomes popular and widely used, that rules will be integrated into the main GBIF.org systems in the future.
 
-## How to Provide Feedback
+## Try It Out and Share Your Feedback
 
-If you have any suggestions for improving this tool, please create an issue on our GitHub repository at [github.com/gbif/occurrence-annotation](https://github.com/gbif/occurrence-annotation).
+We encourage you to explore the rule-based annotations tool at [labs.gbif.org/annotations](https://labs.gbif.org/annotations/#/) and help improve data quality by creating rules for your areas of expertise. Your feedback is essential to refining this experimental tool. Please share your experiences, suggestions, and any issues you encounter by [opening an issue on GitHub](https://github.com/gbif/occurrence-annotation/issues) or contacting us through the [GBIF Help Desk](https://www.gbif.org/contact-us). Whether you're identifying suspicious records, testing the interface, or using the `gbifrules` R package, your input will help shape the future development of this tool. 
+
