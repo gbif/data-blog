@@ -148,14 +148,17 @@ This is possible by using the "add more complexity" button in the save to GBIF d
 
 With complex rules users can restrict the rule to only apply to certain **basisOfRecord**, **datasetKey**, or **year ranges**.
 
-
-## Why not annotating individual occurrence records?
+## Why Rules Instead of Individual Occurrence Annotations?
 
 The rule-based approach offers significant advantages over annotating individual occurrence records, making it a more powerful and forward-looking solution for data quality management.
 
-Rules can **pre-catch future issues** in data that haven't even been published yet. When you create a rule marking penguins in Norway as suspicious, it will automatically flag any future penguin records from Norway that get added to GBIF, without requiring manual review of each new occurrence. 
+**Proactive data quality:** Rules can **pre-catch future issues** in data that haven't even been published yet. When you create a rule marking penguins in Norway as suspicious, it will automatically flag any future penguin records from Norway that get added to GBIF, without requiring manual review of each new occurrence. This proactive approach scales far better than reactive occurrence-by-occurrence annotations.
 
-With rules, you can still create **highly specific rules** that effectively target problematic individual records from a particular dataset by combining multiple filters to narrow the scope:
+**Self-correcting annotations:** When publishers correct their data, rule-based annotations automatically stop applying without any manual intervention. If a misidentified penguin in Norway gets corrected to a seabird, the rule no longer flags it—the annotation naturally falls away because the record no longer matches the rule criteria. With occurrence-level annotations, corrected records would still carry outdated flags that would need to be manually removed, creating long-term maintenance burden.
+
+**Practical considerations:** While occurrence-level annotations face technical challenges due to GBIF ID instability (IDs can change when datasets are republished or reindexed), the rule-based approach is fundamentally stronger regardless of these limitations. Rules are more efficient, more maintainable, and more effective at improving data quality at scale.
+
+You can create **highly specific rules** that effectively target problematic records from a particular dataset by combining multiple filters to narrow the scope:
 
 **Example scenario:** You've found a single suspicious *Panthera leo* record within the normal range of the species from a specific dataset.
 
