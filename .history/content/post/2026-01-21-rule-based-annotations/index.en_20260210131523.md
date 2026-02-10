@@ -152,7 +152,7 @@ With complex rules users can restrict the rule to only apply to certain **basisO
 
 The rule-based approach offers significant advantages over annotating individual occurrence records, making it a more powerful and forward-looking solution for data quality management.
 
-Rules can **pre-catch future issues** in data that haven't even been published yet. When you create a rule marking penguins in Norway as suspicious, it will automatically flag any future penguin records from Norway that get added to GBIF, without requiring manual review of each new occurrence. On the other hand, if records that previously got caught in a rule have been corrected, they will automatically no longer be flagged, contrary to occurrence annotations that would still persist even though they are no longer valid. 
+Rules can **pre-catch future issues** in data that haven't even been published yet. When you create a rule marking penguins in Norway as suspicious, it will automatically flag any future penguin records from Norway that get added to GBIF, without requiring manual review of each new occurrence. On the other hand, if records that previously got caught in a rule have been corrected, they will automatically no longer be flagged, contrary to occurrence annotations that would still cling even though they are no longer valid. 
 
 With rules, you can still create **highly specific rules** that effectively target problematic individual records from a particular dataset by combining multiple filters to narrow the scope:
 
