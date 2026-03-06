@@ -63,7 +63,7 @@ All the images belonging to a single dataset are visible on [its page](https://w
 
 Sounds and videos can be directly played from a given occurrence page through a media player.
 
-For example, by clicking on [this occurrence](https://www.gbif.org/occurrence/1934990970) from [Xeno-canto - Bird sounds from around the world](https://www.gbif.org/dataset/b1047888-ae52-4179-9dd5-5448ea342a24), you can listen to a kookaburra call.
+For example, by clicking on [this occurrence](https://www.gbif.org/occurrence/5151722445) from [Xeno-canto - Bird sounds from around the world](https://www.gbif.org/dataset/b1047888-ae52-4179-9dd5-5448ea342a24), you can listen to a kookaburra call.
 
 You can also take a look at some videos showing the 3D reconstruction of a specimen of sand flea by clicking on [this occurrence](https://www.gbif.org/occurrence/863580710) from [the Museum of Comparative Zoology, Harvard University](https://www.gbif.org/dataset/4bfac3ea-8763-4f4b-a71a-76a6f5f243d3)
 
