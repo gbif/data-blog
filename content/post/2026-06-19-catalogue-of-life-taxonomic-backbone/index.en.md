@@ -53,11 +53,7 @@ https://www.gbif.org/occurrence/search?occurrenceStatus=present&taxonKey=1427067
 If however, you use the COL XR taxonKey for **Calopteryx splendens (Harris, 1780)** which is **Q2M4** you will get the new results:
 https://www.gbif.org/occurrence/search?occurrenceStatus=present&taxonKey=Q2M4
 
-No checklistKey is needed here because the COL XR is now the default taxonomy on GBIF.org.
-
-If you have old links to species pages that use GBIF backbone taxonKeys, these will automatically redirect to corresponding COL XR **taxon** pages. 
-
-For example, if you have a link that uses an old GBIF backbone taxonKey: 
+No checklistKey is needed here because the COL XR is now the default taxonomy on GBIF.org. If you have old links to species pages that use GBIF backbone taxonKeys, these will automatically redirect to corresponding COL XR **taxon** pages. For example, if you have a link that uses an old GBIF backbone taxonKey: 
 https://www.gbif.org/species/1427067
 
 It will redirect to the corresponding taxon page using the COL XR taxonKey:
