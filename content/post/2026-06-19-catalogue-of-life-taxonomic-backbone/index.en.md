@@ -36,6 +36,8 @@ sequenceDiagrams:
 Recently [GBIF.org](https://www.gbif.org/occurrence/search?occurrenceStatus=present) has updated the default taxonomy it uses to organize occurrence records to the [Catalogue of Life Extended Release](https://www.catalogueoflife.org/building/releases) (COL XR). The [GBIF backbone](https://doi.org/10.15468/39omei)
 was last updated in 2023, and **will not be updated again**. We encourage users of our APIs to [migrate towards](https://techdocs.gbif.org/en/data-processing/taxonomy-interpretation) using the COL XR, namely by switching the **checklistKey** parameter to `checklistKey=7ddf754f-d193-4cc9-b351-99906754a03b`.
 
+{{< vimeo 1029184370 >}}
+
 <!--more-->
 
 The COL XR is a more up-to-date and comprehensive taxonomy than the GBIF backbone. It includes more species, more ranks, and will be updated [more frequently](https://www.catalogueoflife.org/building/releases). The COL XR is more maintainable and will allow GBIF to address taxonomic issues more quickly and effectively.
@@ -64,7 +66,7 @@ https://www.gbif.org/taxon/Q2M4
 All occurrence records are now organized against both the GBIF backbone taxonomy and the COL XR. The API response now has a `classifications` block including two taxonomies. You can see this on a simple occurrence API lookup: 
 https://api.gbif.org/v1/occurrence/4021395742 
 
-To use the **occurrence search API** you can use the COL identifiers (`623RM`) and COL XR the checklistKey (`7ddf754f-d193-4cc9-b351-99906754a03b`):
+To use the **occurrence search API** you can use the COL identifiers (`623RM`) and the COL XR checklistKey (`7ddf754f-d193-4cc9-b351-99906754a03b`):
 https://api.gbif.org/v1/occurrence/search?familykey=623RM&checklistKey=7ddf754f-d193-4cc9-b351-99906754a03b
 
 For occurrence search API, the GBIF backbone taxonomy is still the default, so if you want to use the COL XR taxonomy you will need to add the checklistKey parameter.
@@ -72,7 +74,7 @@ For occurrence search API, the GBIF backbone taxonomy is still the default, so i
 ## How to do taxon matching 
 
 If you have a list of names, the **species match tool** can be used to match them to the COL XR taxonomy
-https://demo.gbif.org/tools/species-lookup
+https://www.gbif.org/tools/species-lookup
 
 To use the species match API to lookup a taxon identifier you can use:
 https://api.gbif.org/v2/species/match?scientificName=Felidae&checklistKey=7ddf754f-d193-4cc9-b351-99906754a03b 
