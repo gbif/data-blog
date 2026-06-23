@@ -51,7 +51,6 @@ However, if you add the checklistKey for old GBIF backbone you will get the old 
 https://www.gbif.org/occurrence/search?occurrenceStatus=present&taxonKey=1427067&checklistKey=d7dddbf4-2cf0-4f39-9b2a-bb099caae36c
 
 If however, you use the COL XR taxonKey for **Calopteryx splendens (Harris, 1780)** which is **Q2M4** you will get the new results:
-
 https://www.gbif.org/occurrence/search?occurrenceStatus=present&taxonKey=Q2M4
 
 No checklistKey is needed here because the COL XR is now the default taxonomy on GBIF.org.
