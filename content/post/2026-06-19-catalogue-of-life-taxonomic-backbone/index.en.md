@@ -85,16 +85,14 @@ https://demo.gbif.org/tools/species-lookup
 
 To use the species match API to lookup a taxon identifier you can use:
 
-```html 
 https://api.gbif.org/v2/species/match?scientificName=Felidae&checklistKey=7ddf754f-d193-4cc9-b351-99906754a03b 
-```
 
 A mapping file has also been generated that maps taxon identifiers from the legacy GBIF Backbone Taxonomy taxonKeys (integer) to their corresponding COL XR identifiers (alpha-numeric).
 https://download.checklistbank.org/col/gbif/README.html
 
 ## GBIF Maps API 
 
-When using the [GBIF maps api](https://techdocs.gbif.org/en/openapi/v2/maps) with a COL XR taxonKey (`taxonKey=623RM`) the addition of a checklistKey (`checklistKey=7ddf754f-d193-4cc9-b351-99906754a03b`) will return the COL XR map. If omitted the GBIF backbone will be used to maintain backwards compatibility, but you will need to use the GBIF backbone taxonKey. 
+When using the [GBIF maps api](https://techdocs.gbif.org/en/openapi/v2/maps) with a COL XR taxonKey (`taxonKey=623RM`) the addition of a checklistKey (`checklistKey=7ddf754f-d193-4cc9-b351-99906754a03b`) will return the COL XR map. If omitted the GBIF backbone will be used to maintain backwards compatibility, but you will need to use the GBIF backbone (integer) taxonKey. 
 
 ```html
 <img src="https://api.gbif.org/v2/map/occurrence/density/{z}/{x}/{y}@1x.png?taxonKey=623RM&checklistKey=7ddf754f-d193-4cc9-b351-99906754a03b&style=purpleYellow.point" />
@@ -178,6 +176,6 @@ A new package [rcol](https://www.catalogueoflife.org/2026/06/20/rcol-r-package) 
 library(rcol)
 
 col_search(q = "Calopteryx splendens")
-col_usage("Q2M4")
 col_suggest(q = "Calopteryx splendens")
+col_usage("Q2M4")
 ```
