@@ -1,5 +1,5 @@
 ---
-title: How to migrate to Catalogue of Life Extended Release from the legacy GBIF Backbone Taxonomy
+title: How to migrate from the legacy GBIF Backbone Taxonomy to Catalogue of Life Extended Release 
 author: 
 date: '2026-06-23'
 slug: catalogue-of-life-taxonomic-backbone
@@ -33,9 +33,7 @@ sequenceDiagrams:
   options: ''
 ---
 
-Recently [GBIF.org](https://www.gbif.org/occurrence/search?occurrenceStatus=present) has updated the default taxonomy it uses to organize occurrence records to the [Catalogue of Life Extended Release](https://www.catalogueoflife.org/building/releases) (COL XR). 
-
-The [GBIF backbone](https://doi.org/10.15468/39omei)
+Recently [GBIF.org](https://www.gbif.org/occurrence/search?occurrenceStatus=present) has updated the default taxonomy it uses to organize occurrence records to the [Catalogue of Life Extended Release](https://www.catalogueoflife.org/building/releases) (COL XR). The [GBIF backbone](https://doi.org/10.15468/39omei)
 was last updated in 2023, and **will not be updated again**. We encourage users of our APIs to [migrate towards](https://techdocs.gbif.org/en/data-processing/taxonomy-interpretation) using the COL XR, namely by switching the **checklistKey** parameter to `checklistKey=7ddf754f-d193-4cc9-b351-99906754a03b`.
 
 <!--more-->
