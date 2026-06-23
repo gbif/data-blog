@@ -67,18 +67,14 @@ https://www.gbif.org/taxon/Q2M4
 
 ## Occurrence record processing 
 
-All occurrence records are now organized against both the GBIF backbone taxonomy and the COL XR.
-
-You can see this on a simple occurrence API lookup: 
+All occurrence records are now organized against both the GBIF backbone taxonomy and the COL XR. You can see this on a simple occurrence API lookup: 
 https://api.gbif.org/v1/occurrence/4021395742 
 
 In the API which now has a `classifications` block including two taxonomies.
 
 To use the **occurrence search API** you can use the COL identifiers (`623RM`) and COL XR the checklistKey (`7ddf754f-d193-4cc9-b351-99906754a03b`):
 
-```html
 https://api.gbif.org/v1/occurrence/search?familykey=623RM&checklistKey=7ddf754f-d193-4cc9-b351-99906754a03b
-```
 
 For occurrence search API, the GBIF backbone taxonomy is still the default, so if you want to use the COL XR taxonomy you will need to add the checklistKey parameter.
 
