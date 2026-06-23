@@ -82,7 +82,7 @@ https://download.checklistbank.org/col/gbif/README.html
 
 ## GBIF Maps API 
 
-When using the [GBIF maps api](https://techdocs.gbif.org/en/openapi/v2/maps) with a COL XR taxonKey (`taxonKey=623RM`) the addition of a checklistKey (`checklistKey=7ddf754f-d193-4cc9-b351-99906754a03b`) will return the COL XR map. If omitted the GBIF backbone will be used to maintain backwards compatibility, but you will need to use the GBIF backbone (integer) taxonKey. 
+When using the [GBIF maps api](https://techdocs.gbif.org/en/openapi/v2/maps) with a COL XR taxonKey (`taxonKey=623RM`) the addition of a checklistKey (`checklistKey=7ddf754f-d193-4cc9-b351-99906754a03b`) will return the COL XR map. If omitted the GBIF backbone will be used to maintain backwards compatibility, but you will also need to use the GBIF backbone (integer) taxonKey. 
 
 ```html
 <img src="https://api.gbif.org/v2/map/occurrence/density/{z}/{x}/{y}@1x.png?taxonKey=623RM&checklistKey=7ddf754f-d193-4cc9-b351-99906754a03b&style=purpleYellow.point" />
