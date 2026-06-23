@@ -38,30 +38,22 @@ was last updated in 2023, and **will not be updated again**. We encourage users 
 
 <!--more-->
 
-## Why change?  
-
 The COL XR is a more up-to-date and comprehensive taxonomy than the GBIF backbone. It includes more species, more ranks, and will be updated [more frequently](https://www.catalogueoflife.org/building/releases). The COL XR is more maintainable and will allow GBIF to address taxonomic issues more quickly and effectively.
 
 ## What happens with old links and old taxonKeys?
 
-GBIF.org has already switched to using the COL XR as the default. So now when you search for occurrences on GBIF.org you are seeing the taxonomy from COL XR instead of the out-of-date GBIF backbone.
-
-For example, the GBIF backbone taxonKey for **Calopteryx splendens (Harris, 1780)** is **1427067**.
+GBIF.org has already switched to using the COL XR as the default. So now when you search for occurrences on GBIF.org you are seeing them organized against the taxonomy from COL XR instead of the out-of-date GBIF backbone. For example, the GBIF backbone taxonKey for **Calopteryx splendens (Harris, 1780)** is **1427067**.
 
 An old occurrence search link without the checklistKey parameter will return **nothing**: 
 https://www.gbif.org/occurrence/search?occurrenceStatus=present&taxonKey=1427067
 
 However, if you add the checklistKey for old GBIF backbone you will get the old results:
 
-```html
 https://www.gbif.org/occurrence/search?occurrenceStatus=present&taxonKey=1427067&checklistKey=d7dddbf4-2cf0-4f39-9b2a-bb099caae36c
-```
 
 If however, you use the COL XR taxonKey for **Calopteryx splendens (Harris, 1780)** which is **Q2M4** you will get the new results:
 
-```html
 https://www.gbif.org/occurrence/search?occurrenceStatus=present&taxonKey=Q2M4
-```
 
 No checklistKey is needed here because the COL XR is now the default taxonomy on GBIF.org.
 
