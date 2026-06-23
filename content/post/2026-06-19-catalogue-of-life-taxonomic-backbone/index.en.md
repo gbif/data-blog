@@ -67,13 +67,10 @@ https://www.gbif.org/taxon/Q2M4
 
 ## Occurrence record processing 
 
-All occurrence records are now organized against both the GBIF backbone taxonomy and the COL XR. You can see this on a simple occurrence API lookup: 
+All occurrence records are now organized against both the GBIF backbone taxonomy and the COL XR. The API response now has a `classifications` block including two taxonomies. You can see this on a simple occurrence API lookup: 
 https://api.gbif.org/v1/occurrence/4021395742 
 
-In the API which now has a `classifications` block including two taxonomies.
-
 To use the **occurrence search API** you can use the COL identifiers (`623RM`) and COL XR the checklistKey (`7ddf754f-d193-4cc9-b351-99906754a03b`):
-
 https://api.gbif.org/v1/occurrence/search?familykey=623RM&checklistKey=7ddf754f-d193-4cc9-b351-99906754a03b
 
 For occurrence search API, the GBIF backbone taxonomy is still the default, so if you want to use the COL XR taxonomy you will need to add the checklistKey parameter.
@@ -84,7 +81,6 @@ If you have a list of names, the **species match tool** can be used to match the
 https://demo.gbif.org/tools/species-lookup
 
 To use the species match API to lookup a taxon identifier you can use:
-
 https://api.gbif.org/v2/species/match?scientificName=Felidae&checklistKey=7ddf754f-d193-4cc9-b351-99906754a03b 
 
 A mapping file has also been generated that maps taxon identifiers from the legacy GBIF Backbone Taxonomy taxonKeys (integer) to their corresponding COL XR identifiers (alpha-numeric).
