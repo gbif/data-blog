@@ -52,8 +52,10 @@ https://www.gbif.org/occurrence/search?occurrenceStatus=present&taxonKey=1427067
 However, if you add the checklistKey for old GBIF backbone you will get the old results:
 https://www.gbif.org/occurrence/search?occurrenceStatus=present&taxonKey=1427067&checklistKey=d7dddbf4-2cf0-4f39-9b2a-bb099caae36c
 
-If however, you use the COL XR taxonKey for **Calopteryx splendens (Harris, 1780)** which is **Q2M4** you will get the new results:
+If however, you use the COL XR taxonKey for **Calopteryx splendens (Harris, 1780)** which is **Q2M4** you will get the newly organized results:
 https://www.gbif.org/occurrence/search?occurrenceStatus=present&taxonKey=Q2M4
+
+If there is no difference between the GBIF backbone and COL XR taxonomies for a given taxon, the results will be the same. 
 
 No checklistKey is needed here because the COL XR is now the default taxonomy on GBIF.org. If you have old links to species pages that use GBIF backbone taxonKeys, these will automatically redirect to corresponding COL XR **taxon** pages. For example, if you have a link that uses an old GBIF backbone taxonKey: 
 https://www.gbif.org/species/1427067
@@ -96,15 +98,17 @@ For the [occurrence download services](https://techdocs.gbif.org/en/data-process
 
 ```json
 {
-  "notificationAddresses": [ "userEmail@example.org" ],
-  "sendNotification": true,
-  "format": "SIMPLE_CSV",
-  "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b",
-  "predicate": {
-    "type": "equals",
-    "key": "COUNTRY",
-    "value": "AD"
-  }
+ "creator": "jwaller",
+ "notification_address": [
+  "jwaller@gbif.org"
+ ],
+ "format": "DWCA",
+ "predicate": {
+  "type": "equals",
+  "key": "TAXON_KEY",
+  "value": "Q2M4"
+ },
+ "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b"
 }
 ```
 
