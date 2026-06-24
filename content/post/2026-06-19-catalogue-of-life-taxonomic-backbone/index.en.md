@@ -175,3 +175,9 @@ col_search(q = "Calopteryx splendens")
 col_suggest(q = "Calopteryx splendens")
 col_usage("Q2M4")
 ```
+
+## Further reading 
+
+- [GBIF techdocs article on taxonomy interpretation](https://techdocs.gbif.org/en/data-processing/taxonomy-interpretation)
+- [Catalogue of Life Extended Release](https://www.catalogueoflife.org/building/releases)
+
