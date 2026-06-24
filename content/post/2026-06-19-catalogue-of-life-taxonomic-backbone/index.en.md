@@ -106,7 +106,8 @@ For the [occurrence download services](https://techdocs.gbif.org/en/data-process
  "predicate": {
   "type": "equals",
   "key": "TAXON_KEY",
-  "value": "Q2M4"
+  "value": "Q2M4",
+  "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b"
  },
  "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b"
 }
