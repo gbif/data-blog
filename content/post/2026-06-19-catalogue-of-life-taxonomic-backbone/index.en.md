@@ -81,6 +81,11 @@ https://www.gbif.org/tools/species-lookup
 To use the species match API to lookup a taxon identifier you can use:
 https://api.gbif.org/v2/species/match?scientificName=Felidae&checklistKey=7ddf754f-d193-4cc9-b351-99906754a03b 
 
+If you have an old GBIF backbone integer taxonKey and want to resolve it to the new COL XR identifier, you can use the `scientificNameID` parameter with the matching service:
+https://api.gbif.org/v2/species/match?checklistKey=7ddf754f-d193-4cc9-b351-99906754a03b&scientificNameID=gbif:1427067
+
+This will return the corresponding COL XR taxonKey (`Q2M4`) for the old GBIF backbone taxonKey (`1427067`).
+
 A mapping file has also been generated that maps taxon identifiers from the legacy GBIF Backbone Taxonomy taxonKeys (integer) to their corresponding COL XR identifiers (alpha-numeric).
 https://download.checklistbank.org/col/gbif/README.html
 
@@ -136,11 +141,11 @@ occ_search(
 
 # Occurrence download using COL XR taxon keys
 occ_download(
-  pred("taxonKey", "Q2M4"),
-  checklistKey = "7ddf754f-d193-4cc9-b351-99906754a03b"
+  pred("taxonKey", "Q2M4", 
+       checklistKey = "7ddf754f-d193-4cc9-b351-99906754a03b"),
+  checklistKey = "7ddf754f-d193-4cc9-b351-99906754a03b"   
 )
 ```
-
 
 ```python
 from pygbif import species, occurrences
