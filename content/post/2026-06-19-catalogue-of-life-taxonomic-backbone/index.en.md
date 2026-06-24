@@ -10,7 +10,7 @@ tags:
   - taxonomy
   - catalogue-of-life
 lastmod: '2026-06-19T10:00:00+02:00'
-draft: yes
+draft: no
 keywords: []
 description: ''
 authors: ''
