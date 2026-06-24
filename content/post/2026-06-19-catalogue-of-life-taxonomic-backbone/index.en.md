@@ -1,6 +1,6 @@
 ---
 title: How to migrate from the legacy GBIF Backbone Taxonomy to Catalogue of Life Extended Release 
-author: 
+author: John Waller
 date: '2026-06-23'
 slug: catalogue-of-life-taxonomic-backbone
 categories:
