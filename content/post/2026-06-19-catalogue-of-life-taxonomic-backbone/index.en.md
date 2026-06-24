@@ -127,7 +127,7 @@ library(rgbif)
 
 # Species match using COL XR
 name_backbone(
-  name = "*Calopteryx splendens*",
+  name = "Calopteryx splendens",
   checklistKey = "7ddf754f-d193-4cc9-b351-99906754a03b"
 )
 # Q2M4
@@ -152,7 +152,7 @@ from pygbif import species, occurrences
 
 # Species match using COL XR
 species.name_backbone(
-  scientificName="*Calopteryx splendens*",
+  scientificName="Calopteryx splendens",
   checklistKey="7ddf754f-d193-4cc9-b351-99906754a03b"
 )
 
@@ -185,8 +185,8 @@ A new package [rcol](https://www.catalogueoflife.org/2026/06/20/rcol-r-package) 
 ```r
 library(rcol)
 
-col_search(q = "*Calopteryx splendens*")
-col_suggest(q = "*Calopteryx splendens*")
+col_search(q = "Calopteryx splendens")
+col_suggest(q = "Calopteryx splendens")
 col_usage("Q2M4")
 ```
 
