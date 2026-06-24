@@ -168,6 +168,14 @@ occurrences.download(
   "taxonKey = Q2M4",
   checklistKey = "7ddf754f-d193-4cc9-b351-99906754a03b"
 )
+query = {
+    "type": "equals",
+    "key": "TAXON_KEY",
+    "value": "5WZLF",
+    "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b"  # Used for filtering
+}
+occurrences.download(query, checklistKey="7ddf754f-d193-4cc9-b351-99906754a03b")
+
 ```
 
 Certain rgbif and pygbif functions will not return COL XR results even with a checklistKey parameter. For example, `name_lookup()`, `name_suggest()`, and `name_usage()` will only return results from the out-of-date GBIF backbone taxonomy, and will not accept a checklistKey parameter. 
