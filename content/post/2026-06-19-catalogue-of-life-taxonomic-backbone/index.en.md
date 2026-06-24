@@ -44,7 +44,7 @@ The COL XR is a more up-to-date and comprehensive taxonomy than the GBIF backbon
 
 ## What happens with old links and old taxonKeys?
 
-GBIF.org has already switched to using the COL XR as the default. So now when you search for occurrences on GBIF.org you are seeing them organized against the taxonomy from COL XR instead of the out-of-date GBIF backbone. For example, the GBIF backbone taxonKey for **Calopteryx splendens (Harris, 1780)** is **1427067**.
+GBIF.org has already switched to using the COL XR as the default. So now when you search for occurrences on GBIF.org you are seeing them organized against the taxonomy from COL XR instead of the out-of-date GBIF backbone. For example, the GBIF backbone taxonKey for ***Calopteryx splendens* (Harris, 1780)** is **1427067**.
 
 An old occurrence search link without the checklistKey parameter will return **nothing**: 
 https://www.gbif.org/occurrence/search?occurrenceStatus=present&taxonKey=1427067
@@ -52,7 +52,7 @@ https://www.gbif.org/occurrence/search?occurrenceStatus=present&taxonKey=1427067
 However, if you add the checklistKey for old GBIF backbone you will get the old results:
 https://www.gbif.org/occurrence/search?occurrenceStatus=present&taxonKey=1427067&checklistKey=d7dddbf4-2cf0-4f39-9b2a-bb099caae36c
 
-If however, you use the COL XR taxonKey for **Calopteryx splendens (Harris, 1780)** which is **Q2M4** you will get the newly organized results:
+If however, you use the COL XR taxonKey for ***Calopteryx splendens* (Harris, 1780)** which is **Q2M4** you will get the newly organized results:
 https://www.gbif.org/occurrence/search?occurrenceStatus=present&taxonKey=Q2M4
 
 If there is no difference between the GBIF backbone and COL XR taxonomies for a given taxon, the results will be the same. 
@@ -86,7 +86,7 @@ https://download.checklistbank.org/col/gbif/README.html
 
 ## GBIF Maps API 
 
-When using the [GBIF maps api](https://techdocs.gbif.org/en/openapi/v2/maps) with a COL XR taxonKey (`taxonKey=623RM`) the addition of a checklistKey (`checklistKey=7ddf754f-d193-4cc9-b351-99906754a03b`) will return the COL XR map. If omitted the GBIF backbone will be used to maintain backwards compatibility, but you will also need to use the GBIF backbone (integer) taxonKey. 
+When using the [GBIF Maps API](https://techdocs.gbif.org/en/openapi/v2/maps) with a COL XR taxonKey (`taxonKey=623RM`) the addition of a checklistKey (`checklistKey=7ddf754f-d193-4cc9-b351-99906754a03b`) will return the COL XR map. If omitted the GBIF backbone will be used to maintain backwards compatibility, but you will also need to use the GBIF backbone (integer) taxonKey. 
 
 ```html
 <img src="https://api.gbif.org/v2/map/occurrence/density/{z}/{x}/{y}@1x.png?taxonKey=623RM&checklistKey=7ddf754f-d193-4cc9-b351-99906754a03b&style=purpleYellow.point" />
@@ -121,7 +121,7 @@ library(rgbif)
 
 # Species match using COL XR
 name_backbone(
-  name = "Calopteryx splendens",
+  name = "*Calopteryx splendens*",
   checklistKey = "7ddf754f-d193-4cc9-b351-99906754a03b"
 )
 # Q2M4
@@ -146,7 +146,7 @@ from pygbif import species, occurrences
 
 # Species match using COL XR
 species.name_backbone(
-  scientificName="Calopteryx splendens",
+  scientificName="*Calopteryx splendens*",
   checklistKey="7ddf754f-d193-4cc9-b351-99906754a03b"
 )
 
@@ -171,8 +171,8 @@ A new package [rcol](https://www.catalogueoflife.org/2026/06/20/rcol-r-package) 
 ```r
 library(rcol)
 
-col_search(q = "Calopteryx splendens")
-col_suggest(q = "Calopteryx splendens")
+col_search(q = "*Calopteryx splendens*")
+col_suggest(q = "*Calopteryx splendens*")
 col_usage("Q2M4")
 ```
 
