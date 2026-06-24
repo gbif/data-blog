@@ -171,7 +171,7 @@ occurrences.download(
 query = {
     "type": "equals",
     "key": "TAXON_KEY",
-    "value": "5WZLF",
+    "value": "Q2M4",
     "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b"  # Used for filtering
 }
 occurrences.download(query, checklistKey="7ddf754f-d193-4cc9-b351-99906754a03b")
