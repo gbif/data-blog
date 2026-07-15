@@ -12,7 +12,7 @@ tags:
   - Darwin Core
   - DwCA
   - publish
-lastmod: '2019-04-23'
+lastmod: '2026-07-15'
 keywords: ['Survey And Monitoring', 'Humbolt Extension', 'Data modelling']
 description: ''
 comment: no
@@ -66,13 +66,12 @@ Imagine that you come to GBIF.org to map the distribution of a butterfly. (You m
 
 You find three occurrences for this species in GBIF. How would you draw a map?
 
-
-<img src="/post/2026-07-15-sam-intoduction/tentative_maps.PNG" alt="Which distribution map to draw?" width="300"/>
+<img align="center" src="/post/2026-07-15-sam-intoduction/tentative_maps.PNG" alt="Which distribution map to draw?" width="300"/>
 
 
 But you discover that these three occurrences are the result of Sam’s work, and Sam surveyed two more locations and didn’t find any butterflies there?
 
-<img src="/post/2026-07-15-sam-intoduction/additional_sampling.PNG" alt="Additional sampling location" width="300"/>
+<img align="center" src="/post/2026-07-15-sam-intoduction/additional_sampling.PNG" alt="Additional sampling location" width="300"/>
 
 In fact, Sam was looking for imagos (a fancy word for adult or fully mature butterflies) belonging to that specific species (along with another species of butterfly) and didn’t find a specimen.
 
@@ -83,18 +82,18 @@ For one of the additional locations surveyed, Sam only had a small net and five 
 
 For the next location, Sam knew better and finally convinced their supervisors to get proper equipment. They were able to use a machine to catch all butterflies and had two eight hour days to survey the same area three times.
 
-<img src="/post/2026-07-15-sam-intoduction/sam_doom_machine.PNG" alt="Second sampling protocol"/>
+<img align="center" src="/post/2026-07-15-sam-intoduction/sam_doom_machine.PNG" alt="Second sampling protocol"/>
 
 
 Happy with this new, updated protocol, Sam came back to the previous location to re-survey the areas. Unfortunately, the weather wasn’t on Sam’s side and once again, no butterflies were found.
 
-<img src="/post/2026-07-15-sam-intoduction/sam_snow.PNG" alt="Bad weather for butterfly catching" width="300"/>
+<img align="center" src="/post/2026-07-15-sam-intoduction/sam_snow.PNG" alt="Bad weather for butterfly catching" width="300"/>
 
 If you only had access to the occurrences, you wouldn’t be able to differentiate between absences and lack of sampling. The documented protocol and efforts also give you more context for quantitative analysis and comparison across studies.
 
 At last, thanks to all that additional SAM data, you can make a refined map and no-one (not even the vice chair of the FlyGuys) will be able to deny your contribution to the club.
 
-<img src="/post/2026-07-15-sam-intoduction/final_map.PNG" alt="Final map" width="300"/>
+<img align="center" src="/post/2026-07-15-sam-intoduction/final_map.PNG" alt="Final map" width="300"/>
 
 The good news is that any bit of data provided is already helping a lot! Data publishers don’t need to map everything all at once.
 
