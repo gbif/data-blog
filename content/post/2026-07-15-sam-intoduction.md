@@ -10,7 +10,7 @@ tags:
   - Humbolt
   - DwC-DP
   - Darwin Core
-  - DwCA
+  - DwC-A
   - publish
 lastmod: '2026-07-15'
 keywords: ['Survey And Monitoring', 'Humbolt Extension', 'Data modelling']
