@@ -19,7 +19,7 @@ comment: no
 toc: ''
 autoCollapseToc: no
 postMetaInFooter: no
-hiddenFromHomePage: yes
+hiddenFromHomePage: no
 draft: no
 contentCopyright: no
 reward: no
@@ -52,7 +52,8 @@ If you are the type of person who doesn’t enjoy fluffy writing and goofy doodl
 For everyone else, let me introduce you to our new SAM data mascot: Sam the Secretary bird. Sam is here to illustrate some points in my post and to bring joy into the world. If you like having Sam here, let me know (I have a lot of fun creating drawings).
 
 
-Today is a short introduction to survey and monitoring data and why they matter.
+
+**Today is a short introduction to survey and monitoring data and why they matter.**
 
 Mapping and sharing SAM data takes time and resources, so why it is it important? Is having events and Humbolt files much better than just occurrences?
 
