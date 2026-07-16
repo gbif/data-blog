@@ -20,7 +20,7 @@ toc: ''
 autoCollapseToc: no
 postMetaInFooter: no
 hiddenFromHomePage: yes
-draft: yes
+draft: no
 contentCopyright: no
 reward: no
 mathjax: no
