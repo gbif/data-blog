@@ -75,7 +75,7 @@ But you discover that these three occurrences are the result of Sam’s work, an
 
 In fact, Sam was looking for imagos (a fancy word for adult or fully mature butterflies) belonging to that specific species (along with another species of butterfly) and didn’t find a specimen.
 
-<img align="left" style="padding: 15px" src="/post/2026-07-15-sam-intoduction/intro_sam.PNG" alt="First survey protocol" width="300"/>
+<img align="left" style="padding: 15px" src="/post/2026-07-15-sam-intoduction/sam_butterfly_net.PNG" alt="First survey protocol" width="300"/>
 
 For one of the additional locations surveyed, Sam only had a small net and five minutes to survey 1,000 square meters (about 10,763 square feet). Perhaps it comes as no surprise that this terrible protocol resulted in no specimens being collected. 
 
