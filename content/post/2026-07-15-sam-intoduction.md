@@ -43,7 +43,7 @@ I am on a mission to learn everything there is to know about publishing SAM data
 
 
 Before we get started, here is a little disclaimer: I am trying to make this series of post somewhat entertaining.
-If you are the type of person who doesn’t enjoy fluffy writing and goofy doodles, this post isn’t for you. Kate wrote an excellent comprehensive guide here (https://doi.org/10.35035/doc-ynvs-eh84). I highly recommend you read it as it is the basis for most of what is written here (but straight to the point).
+If you are the type of person who doesn’t enjoy fluffy writing and goofy doodles, this post isn’t for you. Kate wrote an excellent comprehensive guide here ([https://doi.org/10.35035/doc-ynvs-eh84](https://doi.org/10.35035/doc-ynvs-eh84)). I highly recommend you read it as it is the basis for most of what is written here (but straight to the point).
 
 
 <img align="right" style="padding: 15px" src="/post/2026-07-15-sam-intoduction/intro_sam.PNG" alt="SAM the Secretary bird" width="300"/>
