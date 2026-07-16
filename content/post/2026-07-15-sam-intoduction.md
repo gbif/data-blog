@@ -1,6 +1,6 @@
 ---
 title: Good SAMaritans - Introduction to best practices for publishing Survey and Monitoring (SAM) data to GBIF
-author: Marie Grosjean
+author: Marie Grosjean and Kate Ingenloff 
 date: '2026-07-15'
 slug: sam-introduction
 categories:
