@@ -7,13 +7,13 @@ categories:
   - GBIF
 tags:
   - SAM
-  - Humbolt
+  - Humboldt
   - DwC-DP
   - Darwin Core
   - DwC-A
   - publish
 lastmod: '2026-07-15'
-keywords: ['Survey And Monitoring', 'Humbolt Extension', 'Data modelling']
+keywords: ['Survey And Monitoring', 'Humboldt Extension', 'Data modelling']
 description: ''
 comment: no
 toc: ''
@@ -35,7 +35,7 @@ sequenceDiagrams:
   options: ''
 ---
 
-Perhaps, like me, you don’t know much about publishing Survey and Monitoring data(“SAM data” ). Maybe you have heard about event cores and Humbolt extensions, and you aren’t quite sure how to fit data into these.
+Perhaps, like me, you don’t know much about publishing Survey and Monitoring data(“SAM data” ). Maybe you have heard about event cores and Humboldt extensions, and you aren’t quite sure how to fit data into these.
 Trust me, this is about to change!
 
 
@@ -55,7 +55,7 @@ For everyone else, let me introduce you to our new SAM data mascot: Sam the Secr
 
 **Today is a short introduction to survey and monitoring data and why they matter.**
 
-Mapping and sharing SAM data takes time and resources, so why it is it important? Is having events and Humbolt files much better than just occurrences?
+Mapping and sharing SAM data takes time and resources, so why it is it important? Is having events and Humboldt files much better than just occurrences?
 
 
 Yes, and here is an example.
