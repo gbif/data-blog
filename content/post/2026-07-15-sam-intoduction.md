@@ -70,7 +70,7 @@ You find three occurrences for this species in GBIF. How would you draw a map?
 <img align="center" src="/post/2026-07-15-sam-intoduction/tentative_maps.PNG" alt="Which distribution map to draw?" width="300"/>
 
 
-But you discover that these three occurrences are the result of Sam’s work, and Sam surveyed two more locations and didn’t find any butterflies there?
+But you discover that these three occurrences are the result of Sam’s work, and Sam surveyed two more locations and didn’t find any butterflies there.
 
 <img align="center" src="/post/2026-07-15-sam-intoduction/additional_sampling.PNG" alt="Additional sampling location" width="300"/>
 
