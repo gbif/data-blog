@@ -19,8 +19,8 @@ comment: no
 toc: ''
 autoCollapseToc: no
 postMetaInFooter: no
-hiddenFromHomePage: yes
-draft: yes
+hiddenFromHomePage: no
+draft: no
 contentCopyright: no
 reward: no
 mathjax: no
@@ -64,6 +64,7 @@ Let’s continue with the example of Sam’s butterfly survey introduced in the 
 Sam was looking for two species of butterfly: this is the **taxonomic scope** of the survey. After an initial failed attempt at using a net, Sam acquired a portable doomsday vacuum (called a LepiPro Proton Pack) to catch flying insects. With that protocol, Sam didn’t specifically exclude any species from the survey.
 
 What Sam did exclude from his survey were eggs, caterpillars and chrysalids. Sam only caught imago specimens (the adults). Which brings us to our second category of scope, **organismal scope**, which entails
+
 •	The **life stage** of an organism (like Sam only looking for imago specimens)
 •	The **growth form** of an organism (surveying shrubs in a forest for example)
 •	The **degree of establishment** of an organism (like only surveying native species).
