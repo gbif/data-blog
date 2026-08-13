@@ -50,7 +50,7 @@ I am not a field ecologist. The closest I get to conducting surveys is foraging 
 
 “What you look for” in Darwin Core language can translate to either “survey scope” or “survey target” depending on the model you choose to work with. We will come back to the terms for each model later. For now, I will call it “survey scope” (as this matches wording in Kate’s guide).
 
-> 	Reporting survey scope (when there is one) is as important as reporting what was found during a survey. Without that information, it is impossible to infer absences or to even assess whether absences can be inferred.
+> Reporting survey scope (when there is one) is as important as reporting what was found during a survey. Without that information, it is impossible to infer absences or to even assess whether absences can be inferred.
 
 Now, what exactly do you need to report when it comes to survey scope and how?
 
@@ -73,7 +73,7 @@ What Sam did exclude from his survey were eggs, caterpillars and chrysalids. Sam
 
 You don’t know because I haven’t told you yet, but Sam also excluded agricultural lands from the survey. This last bit of information can be categorized as **habitat scope**.
 
-> 	Note, survey scopes or targets should be clearly identified before the survey is conducted.
+> Note, survey scopes or targets should be clearly identified before the survey is conducted.
 
 Sam, with the LepiPro Proton Pack, caught many other species too: some mosquitoes, horseflies, midges, hoverflies, dragonflies, etc. These are called **bycatch**; they are specimens or occurrences that weren’t part of the survey scope and were captured or observed during the survey. If Sam were to capture one of his target butterfly species as a chrysalid, this could also be reported as bycatch as it is outside the organismal scope targeted for sampling.
 
