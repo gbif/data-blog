@@ -12,6 +12,8 @@ tags:
   - Darwin Core
   - DwC-A
   - publish
+  - sope
+  - target
 lastmod: '2026-08-13'
 keywords: ['Survey And Monitoring', 'Humboldt Extension', 'Data modelling']
 description: ''
