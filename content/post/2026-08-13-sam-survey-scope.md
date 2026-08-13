@@ -39,10 +39,6 @@ Welcome to the second installment of our series on publishing Survey and Monitor
 
 If you haven’t already, you can read our first post: https://data-blog.gbif.org/post/sam-introduction/ in which I introduce our mascot, Sam the Secretary bird. If you prefer learning the art of publishing SAM data without fluffy writing and doodles, I recommend reading Kate’s comprehensive guide here: https://doi.org/10.35035/doc-ynvs-eh84.
 
-Today, we will talk about survey scopes and targets and how to model them as a Darwin Core Archive (DwC-A) and a Darwin Core Data Package (DwC-DP).
-
-I am not a field ecologist. The closest I get to conducting surveys is foraging mushrooms (mostly for frying and soups, please share recipes.) But what I know is that what you look for and what you actually find are often different in the field. Here Sam is illustrating the concept for us:
-
 Today, we will talk about **survey scopes and targets** and how to model them as a Darwin Core Archive (DwC-A) and a Darwin Core Data Package (DwC-DP).
 
 I am not a field ecologist. The closest I get to conducting surveys is foraging mushrooms (mostly for frying and soups, please share recipes.) But what I know is that what you look for and what you actually find are often different in the field. Here Sam is illustrating the concept for us:
