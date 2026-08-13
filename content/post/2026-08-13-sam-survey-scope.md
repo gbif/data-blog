@@ -94,7 +94,7 @@ At this point, looking at the DwC-DP documentation might induce some heart palpi
 
 Luckily, Kate has us covered! She generated two complete examples on how to model Sam’s data with both DwC-A and DwC-DP (you can see it bigger [here](https://github.com/gbif/data-blog/blob/master/content/post/2026-08-13-sam-survey-scope/model_Sam_survey_scope.png)).
 
-<img src="/post/2026-08-13-sam-survey-scope/sam_survey_scope.png" alt="Sam's data in DwC-A and DwC-DP"/>
+<img src="/post/2026-08-13-sam-survey-scope/model_Sam_survey_scope.png" alt="Sam's data in DwC-A and DwC-DP"/>
 
 Don’t miss our next instalment in the Good SAMaritans series! We will talk about how to model and share survey sites, dates and time. I hope you are looking forward!
 
