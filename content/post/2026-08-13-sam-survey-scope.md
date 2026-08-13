@@ -64,7 +64,9 @@ Sam was looking for two species of butterfly: this is the **taxonomic scope** of
 What Sam did exclude from his survey were eggs, caterpillars and chrysalids. Sam only caught imago specimens (the adults). Which brings us to our second category of scope, **organismal scope**, which entails
 
 •	The **life stage** of an organism (like Sam only looking for imago specimens)
+
 •	The **growth form** of an organism (surveying shrubs in a forest for example)
+
 •	The **degree of establishment** of an organism (like only surveying native species).
 
 <img align="center" src="/post/2026-08-13-sam-survey-scope/no_caterpillar.PNG" alt="No caterpillar" width="300"/>
