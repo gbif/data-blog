@@ -33,7 +33,7 @@ sequenceDiagrams:
 
 The newest version of **rgbif** (3.9.0 - planned release to CRAN the end of September) introduces **breaking changes** because the default taxonomy has changed from the **GBIF Backbone Taxonomy** to the **COL (Catalogue of Life) Extended Release**. 
 
-To test out the latest version before it is release to CRAN, you can download the development version:
+To test out the latest version before it is released to CRAN, you can download the development version:
 
 ```R 
 # Using remotes
