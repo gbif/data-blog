@@ -223,6 +223,12 @@ name_usage(key="Q2M4",datasetKey="7ddf754f-d193-4cc9-b351-99906754a03b")
 rcol::col_usage("Q2M4")
 ```
 
+## pygbif Moving to COL XR
+
+**pygbif** is also planned to move to using the **COL Extended Release** as the default taxonomy in an upcoming release, but the timeline is not yet finalized.
+
+Stay tuned for announcements about the pygbif release timeline and migration guide.
+
 ### Feedback or questions
 
 If you have any feedback or questions about the upcoming changes in rgbif 3.9.0, please reach out to the [rgbif GitHub repository](https://github.com/ropensci/rgbif/issues/895). 
