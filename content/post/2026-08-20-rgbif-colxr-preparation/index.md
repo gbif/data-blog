@@ -3,7 +3,8 @@ title: Preparing for rgbif v3.9.0 Moving to COL Extended Release
 author: 
 date: '2026-08-20'
 slug: rgbif-colxr-preparation
-categories: []
+categories:
+  - GBIF
 tags:
   - rstats
   - gbif
