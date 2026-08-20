@@ -227,8 +227,6 @@ rcol::col_usage("Q2M4")
 
 **pygbif** is also planned to move to using the **COL Extended Release** as the default taxonomy in an upcoming release, but the timeline is not yet finalized.
 
-Stay tuned for announcements about the pygbif release timeline and migration guide.
-
 ### Feedback or questions
 
 If you have any feedback or questions about the upcoming changes in rgbif 3.9.0, please reach out to the [rgbif GitHub repository](https://github.com/ropensci/rgbif/issues/895). 
