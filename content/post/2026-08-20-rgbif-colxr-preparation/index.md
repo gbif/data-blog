@@ -9,7 +9,7 @@ tags:
   - rstats
   - gbif
 lastmod: '2026-08-20'
-draft: yes
+draft: no
 keywords: []
 description: ''
 comment: no
