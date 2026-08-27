@@ -1,5 +1,5 @@
 ---
-title: Preparing for rgbif v3.9.0 Moving to COL Extended Release 
+title: Preparing for rgbif v3.9.0 and pygbif v0.7.0 Moving to COL Extended Release 
 author: 
 date: '2026-08-20'
 slug: rgbif-colxr-preparation
@@ -33,7 +33,9 @@ sequenceDiagrams:
 
 The newest version of **rgbif** (3.9.0 - planned release to CRAN the end of September) introduces **breaking changes** because the default taxonomy has changed from the **GBIF Backbone Taxonomy** to the **COL (Catalogue of Life) Extended Release**. 
 
-To test out the latest version before it is released to CRAN, you can download the development version:
+Similarly, **pygbif v0.7.0** is also making the same transition to COL XR ([see details here](https://github.com/gbif/pygbif/issues/211)).
+
+To test out the latest version of **rgbif** before it is released to CRAN, you can download the development version:
 
 ```R 
 # Using remotes
@@ -226,7 +228,7 @@ rcol::col_usage("Q2M4")
 
 ## pygbif Moving to COL XR
 
-**pygbif** is also planned to move to using the **COL Extended Release** as the default taxonomy in an upcoming release, but the timeline is not yet finalized.
+**pygbif v0.7.0** is also moving to using the **COL Extended Release** as the default taxonomy. You can read more about the planned changes in [this GitHub issue](https://github.com/gbif/pygbif/issues/211).
 
 ### Feedback or questions
 
