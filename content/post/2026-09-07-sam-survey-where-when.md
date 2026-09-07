@@ -133,16 +133,19 @@ Kate modelled Sam’s data for us both in DwC-A and DwC-DP, thank you Kate!
 Here is how the Survey Island sites were modelled in DwC-A:
 
 <img align="center" src="/post/2026-09-07-sam-survey-where-when/sites_in_DwCA.png" alt="Locations in DwC-A">
+
 (See it bigger [here](https://github.com/gbif/data-blog/blob/master/content/post/2026-09-07-sam-survey-where-when/sites_in_DwCA.png))
 
 Here is how the Survey sites were modelled in DwC-DP:
 
 <img align="center" src="/post/2026-09-07-sam-survey-where-when/sites_in_DwCDP.png" alt="Locations in DwC-DP">
+
 (See it bigger [here](https://github.com/gbif/data-blog/blob/master/content/post/2026-09-07-sam-survey-where-when/sites_in_DwCDP.png))
 
 And here is how is the date and duration part of the data both in DwC-A and DwC-DP:
 
 <img align="center" src="/post/2026-09-07-sam-survey-where-when/date_in_DwCA_and_DwCDP.png" alt="Dates and time in DwC-A and DwC-DP">
+
 (See it bigger [here](https://github.com/gbif/data-blog/blob/master/content/post/2026-09-07-sam-survey-where-when/date_in_DwCA_and_DwCDP.png))
 
 The next installment in the series will be about survey protocols, I hope you are looking forward to it!
