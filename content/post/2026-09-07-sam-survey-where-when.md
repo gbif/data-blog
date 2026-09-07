@@ -105,7 +105,7 @@ Of course, the information about **when** the sites were surveyed is essential!
 
 The survey **date**, **time** and **duration** should also be reported.
 
-As for our previous posts, I have prepared a [printable cheat](https://gbif.box.com/s/xyh5jj0x5yxpyqoveg7wfma75qsylybp) sheet for you.
+As for our previous posts, I have prepared a [printable cheat sheet](https://gbif.box.com/s/xyh5jj0x5yxpyqoveg7wfma75qsylybp) for you.
 
 <img align="center" src="/post/2026-09-07-sam-survey-where-when/sam_survey_where_when.png" alt="Sam's cheatsheet - when & where">
 
