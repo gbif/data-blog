@@ -23,8 +23,8 @@ comment: no
 toc: ''
 autoCollapseToc: no
 postMetaInFooter: no
-hiddenFromHomePage: yes
-draft: yes
+hiddenFromHomePage: no
+draft: no
 contentCopyright: no
 reward: no
 mathjax: no
