@@ -44,7 +44,7 @@ If you are new here, this post is the third installment in a series about modell
 
 In my quest to improve my SAM data literacy skills, I am accompanied by the wise [**Kate Ingenloff**](https://orcid.org/0000-0001-5942-9053), our SAM data modelling expert as well as Sam the Secretary Bird, our silly mascot. You can get to know Sam in [our first two blog posts](https://data-blog.gbif.org/tags/sam/).
 
-This series is meant to be a fun and entertaining introduction to sharing SAM data. If you prefer a comprehensive, straight to the point approach to the topic, Kate wrote an [excellent guide](https://doi.org/10.35035/doc-ynvs-eh84) although the guide is not yet updated with guidance for the Darwin Core Data Package whereas you will get guidance for sharing data with Darwin Core Archives and Data Packages here).
+This series is meant to be a fun and entertaining introduction to sharing SAM data. If you prefer a comprehensive, straight to the point approach to the topic, Kate wrote an [excellent guide](https://doi.org/10.35035/doc-ynvs-eh84) although the guide is not yet updated with guidance for the Darwin Core Data Package.
 
 Now, today we are going to talk about space and time!
 
