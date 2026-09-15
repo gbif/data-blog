@@ -1,7 +1,7 @@
 ---
 title: Community Metrics
 author: Andrew Rodrigues and John Waller 
-date: '2026-06-10'
+date: '2026-09-14'
 slug: community-metrics
 categories:
   - GBIF
