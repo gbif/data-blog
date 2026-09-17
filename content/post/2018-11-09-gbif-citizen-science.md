@@ -10,7 +10,7 @@ tags:
   - citizen
   - dataset
   - API
-lastmod: '2018-11-09'
+lastmod: '2026-09-17'
 keywords: ['Citizen Science', 'prediction', 'machine learning']
 description: ''
 comment: no
@@ -31,6 +31,8 @@ sequenceDiagrams:
   enable: no
   options: ''
 ---
+
+> **Update (September 2026):** Citizen science datasets in GBIF are now maintained using the [DatasetCategory vocabulary](https://registry.gbif.org/vocabulary/DatasetCategory), where `CitizenScience` is one of the supported categories. The category assignments are managed through the [dataset-category-management](https://github.com/gbif/dataset-category-management) project. This post is retained as a historical description of an earlier approach to finding citizen science datasets.
 
 # Can we automatically label citizen science datasets?
 
