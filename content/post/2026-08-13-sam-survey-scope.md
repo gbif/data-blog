@@ -14,7 +14,7 @@ tags:
   - publish
   - sope
   - target
-lastmod: '2026-08-13'
+lastmod: '2026-09-23'
 keywords: ['Survey And Monitoring', 'Humboldt Extension', 'Data modelling']
 description: ''
 comment: no
@@ -88,6 +88,11 @@ Once again, I have prepared a printable cheat sheet for you which you can downlo
 In DwC-A, the Humboldt extension has a series of terms you can use for reporting the survey scope (targetTaxonomicScope, excludedTaxonomicScope, etc.). You can refer directly to the Humboldt documentation [here](https://eco.tdwg.org/terms/) or [this chapter](https://docs.gbif.org/guide-publishing-survey-data/en/#scope-and-completeness) in Kate’s guide.
 
 DwC-DP has two dedicated tables (“classes”) for reporting survey scope: [survey target](https://gbif.github.io/dwc-dp/qrg/#Survey%20Target) and [survey target descriptor](https://gbif.github.io/dwc-dp/qrg/#Survey%20Target%20Descriptor) (plus [one table](https://gbif.github.io/dwc-dp/qrg/#Survey%20Survey%20Target) to join the information to the survey).
+
+You can think of each row in [survey target descriptor](https://gbif.github.io/dwc-dp/qrg/#Survey%20Target%20Descriptor) table correspond to a "block" or a "piece" that are put together in the [survey target](https://gbif.github.io/dwc-dp/qrg/#Survey%20Target). For example, one descriptor row can be for the lifeStage (for example, adult) and another for the taxon (butterfly), then both are linking to the same row in the [survey target](https://gbif.github.io/dwc-dp/qrg/#Survey%20Target), which would correspond to the "adult butterflies" which can then be linked to one or several entries in the survey table. A survey can be linked to several targets and several surveys can share the same target.
+
+The idea is that anyone interested in butterfly surveys will have an easier time looking for the data.
+
 At this point, looking at the DwC-DP documentation might induce some heart palpitations and panic (those are typical symptoms of data modelling).
 
 <img align="center" src="/post/2026-08-13-sam-survey-scope/panic.png" alt="Panic!" width="300"/>
