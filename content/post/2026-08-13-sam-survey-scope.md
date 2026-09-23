@@ -89,7 +89,9 @@ In DwC-A, the Humboldt extension has a series of terms you can use for reporting
 
 DwC-DP has two dedicated tables (“classes”) for reporting survey scope: [survey target](https://gbif.github.io/dwc-dp/qrg/#Survey%20Target) and [survey target descriptor](https://gbif.github.io/dwc-dp/qrg/#Survey%20Target%20Descriptor) (plus [one table](https://gbif.github.io/dwc-dp/qrg/#Survey%20Survey%20Target) to join the information to the survey).
 
-You can think of each row in [survey target descriptor](https://gbif.github.io/dwc-dp/qrg/#Survey%20Target%20Descriptor) table correspond to a "block" or a "piece" that are put together in the [survey target](https://gbif.github.io/dwc-dp/qrg/#Survey%20Target). For example, one descriptor row can be for the lifeStage (for example, adult) and another for the taxon (butterfly), then both are linking to the same row in the [survey target](https://gbif.github.io/dwc-dp/qrg/#Survey%20Target), which would correspond to the "adult butterflies" which can then be linked to one or several entries in the survey table. A survey can be linked to several targets and several surveys can share the same target.
+You can think of each row in [survey target descriptor](https://gbif.github.io/dwc-dp/qrg/#Survey%20Target%20Descriptor) table correspond to a "block" or a "piece" that are put together in the [survey target](https://gbif.github.io/dwc-dp/qrg/#Survey%20Target). For example, one descriptor row can be for the lifeStage (for example, adult) and another for the taxon (butterfly), then both are linking to the same row in the [survey target](https://gbif.github.io/dwc-dp/qrg/#Survey%20Target), which would correspond to the "adult butterflies".
+
+The survey target row (for example "adult butterflies") can then be linked to one or several entries in the survey table. A survey can be linked to several targets and several surveys can share the same target.
 
 The idea is that anyone interested in butterfly surveys will have an easier time looking for the data.
 
