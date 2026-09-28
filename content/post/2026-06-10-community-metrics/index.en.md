@@ -1,13 +1,13 @@
 ---
 title: Community Metrics
 author: Andrew Rodrigues and John Waller 
-date: '2026-09-14'
+date: '2026-09-28'
 slug: community-metrics
 categories:
   - GBIF
 tags: []
 lastmod: '2026-06-10T11:23:00+02:00'
-draft: yes
+draft: no
 keywords: []
 description: ''
 authors: ''
