@@ -65,7 +65,7 @@ The proposed Parquet format has three significant changes:
 
 ### 1. Coordinate column and precalculated grids
 
-A column `coordinates` contains the interpreted coordinates (Darwin Core `decimalLatitude` and `decimalLongitude`).  Rows are ordered using `ST_Hilbert(coordinates, …)`.
+A column `coordinates` contains the interpreted coordinates using the `decimalLatitude` and `decimalLongitude` values.  Rows are ordered using `ST_Hilbert(coordinates, …)`.
 
 There are also additional columns for [A5](https://a5geo.org) or [H3](https://h3geo.org) discrete global grids (DGGSs).
 
@@ -137,12 +137,12 @@ Zstd compression is used.  The Parquet files are significantly smaller than with
 
 ## Additional examples
 
-1. Using a Python notebook to query and analyse some data
+### 1. Using a Python notebook to query and analyse some data
 
 This Python notebook queries for the verbatim (published) coordinates of records in Brazil and displays them on a map.  Note the mirror image copies of the country with negated or transposed coordinates.
 
 <details>
-    <summary>Expand to show setup</summary>
+    <summary style="font-style: italic">Click to expand and show setup</summary>
 
 ```python
 import duckdb
@@ -196,7 +196,7 @@ print(f"Aggregated into {len(df_grid)} 1° grid cells.")
     Aggregated into 6706 1° grid cells.
 
 <details>
-    <summary>Expand to show figure generation</summary>
+    <summary style="font-style: italic">Click to expand and show figure generation</summary>
 
 ```python
 import urllib.request
@@ -277,7 +277,7 @@ plt.show()
 
 ![Heat map of GBIF coordinate fixes in Brazil](2026-10-02-extending-parquet-snapshots/coordinate-fixes-brazil.png)
 
-2. Create a small dashboard for a country
+### 2. Create a small dashboard for a country
 
 First, a Parquet data cube is created using DuckDB.  This stores counts of occurrences, species and the highest event date within different A5 cells for each kingdom and basis of record.
 
