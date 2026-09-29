@@ -143,6 +143,7 @@ This Python notebook queries for the verbatim (published) coordinates of records
 
 <details>
     <summary>Expand to show setup</summary>
+
 ```python
 import duckdb
 import pandas as pd
@@ -162,6 +163,7 @@ print("DuckDB initialized.")
 ```
 
     DuckDB initialized.
+
 </details>
 
 ```python
@@ -195,6 +197,7 @@ print(f"Aggregated into {len(df_grid)} 1° grid cells.")
 
 <details>
     <summary>Expand to show figure generation</summary>
+
 ```python
 import urllib.request
 import io
@@ -265,6 +268,7 @@ plt.tight_layout()
 plt.show()
 
 ```
+
 </details>
 
 ![Heat map of GBIF coordinate fixes in Brazil](2026-10-02-extending-parquet-snapshots/coordinate-fixes-brazil.png)
