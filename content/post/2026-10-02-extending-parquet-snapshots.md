@@ -63,7 +63,7 @@ WHERE taxonPartition = 'Animalia'
 
 The proposed Parquet format has three significant changes:
 
-1. Coordinate column and precalculated grids
+### 1. Coordinate column and precalculated grids
 
 A column `coordinates` contains the interpreted coordinates (Darwin Core `decimalLatitude` and `decimalLongitude`).  Rows are ordered using `ST_Hilbert(coordinates, …)`.
 
@@ -71,7 +71,7 @@ There are also additional columns for [A5](https://a5geo.org) or [H3](https://h3
 
 This allows geographic functions such as `ST_Within` (see below) to be used directly, as well as faster generation of maps and some general statistical analysis.
 
-2. Taxonomy and grid partitions
+### 2. Taxonomy and grid partitions
 
 The tables use Hive partitioning to split the data into very roughly equal chunks.  These are at different ranks, since some bird families contain more occurrences than other entire kingdoms.
 
@@ -118,7 +118,7 @@ LIMIT 5;
 
 This should give a similar result to [the same polygon on www.GBIF.org](https://www.gbif.org/occurrence/search?geometry=POLYGON%28%28-9.9+49.3%2C2.8+49.3%2C2.8+59.6%2C-9.9+59.6%2C-9.9+49.3%29%29&view=dashboard&layout=country.v-TABLE) (counts have increased since the snapshot was taken).
 
-3. Inclusion of Verbatim and Multimedia tables
+### 3. Inclusion of Verbatim and Multimedia tables
 
 These are stored as separate tables, partitioned into `gbifid // 1000000` chunks (the record with `gbifid = 12345678` will be stored in the partition with `gbifid_div1000000 = 12000000`).  Access them within DuckDB like this:
 
@@ -131,7 +131,7 @@ SELECT occ.*, ver.*, mul.*
   LIMIT 10;
 ```
 
-4. Improved compression
+### 4. Improved compression
 
 Zstd compression is used.  The Parquet files are significantly smaller than with the previous Snappy compression.  Tools supporting Parquet should handle this change automatically.
 
