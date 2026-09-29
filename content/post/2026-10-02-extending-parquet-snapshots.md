@@ -1,12 +1,12 @@
 ---
 title: Extending the Parquet data snapshots
 author: Matthew Blissett
-date: '2026-10-02'
+date: '2026-09-29'
 slug: extending-parquet-snapshots
 categories:
   - GBIF
 tags: []
-lastmod: '2026-10-02T10:00:00+01:00'
+lastmod: '2026-09-29T10:00:00+02:00'
 draft: yes
 keywords: []
 description: ''
@@ -34,7 +34,7 @@ In April 2021, GBIF began exporting [monthly data snapshots](https://www.gbif.or
 
 Since then, the Parquet format has gained support for geographic data types and tooling has improved to support partitioning, better compression and indexing features.  These allow for faster querying, potentially directly within websites without needing web services.  Tools such as ArcGIS and QGIS are also introducing support for working with data in Parquet format, and GBIF users have requested additional fields be added to the download format and cloud snapshots.
 
-We are therefore seeking feedback for an expanded Parquet download format containing similar data columns to a Darwin Core Archive format download.  This will initially be made available on the three cloud platforms.
+**We are therefore seeking feedback for an expanded Parquet download format containing similar data columns to a Darwin Core Archive format download.  A preview of the new format is available (see [specification](#specification) below).**
 
 ## Quick example
 
@@ -228,6 +228,10 @@ raster_df = raster_df.reindex(range(-179, 179), axis=1)
 cmap = plt.get_cmap('YlOrRd').copy()
 cmap.set_bad(color='none')  # Transparent
 
+for x in range(-179, 179):
+    raster_df.at[x, 90] = 0
+    raster_df.at[-179, x] = 0
+
 # Sort index ascending so lowest latitude is at the bottom (for origin='lower')
 raster_df_sorted = raster_df.sort_index(ascending=True)
 
@@ -306,7 +310,7 @@ An LLM-generated dashboard exposes the cube on a map, with all queries running i
 
 ## Specification
 
-Two snapshots are provided.  During development, they are available on an Amazon S3 bucket.  They are both derived from the https://doi.org/10.15468/dl.8yrbe7[1 August 2026 DWCA snapshot], and should be cited with that DOI if used in a publication.
+Two snapshots are provided.  During development, they are available on an Amazon S3 bucket.  They are both derived from the [1 August 2026 DWCA snapshot](https://doi.org/10.15468/dl.8yrbe7), and should be cited with that DOI if used in a publication.
 
 The first export has A5 almost-equal-area pentagonal grid cells precalculated, and is partitioned by selected taxa and the A5 R2 cell.
 
