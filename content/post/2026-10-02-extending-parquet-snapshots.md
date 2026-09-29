@@ -310,7 +310,7 @@ An LLM-generated dashboard exposes the cube on a map, with all queries running i
 
 ## Specification
 
-Two snapshots are provided.  During development, they are available on an Amazon S3 bucket.  They are both derived from the [1 August 2026 DWCA snapshot](https://doi.org/10.15468/dl.8yrbe7), and should be cited with that DOI if used in a publication.
+Two snapshots are provided.  During development, they are available on an Amazon S3 bucket.  They are both derived from the [1 August 2026 DWCA snapshot <https://doi.org/10.15468/dl.8yrbe7>](https://doi.org/10.15468/dl.8yrbe7), and should be cited with that DOI if used in a publication.
 
 The first export has A5 almost-equal-area pentagonal grid cells precalculated, and is partitioned by selected taxa and the A5 R2 cell.
 
