@@ -275,7 +275,7 @@ plt.show()
 
 </details>
 
-![Heat map of GBIF coordinate fixes in Brazil](2026-10-02-extending-parquet-snapshots/coordinate-fixes-brazil.png)
+![Heat map of GBIF coordinate fixes in Brazil](/post/2026-10-02-extending-parquet-snapshots/coordinate-fixes-brazil.png)
 
 ### 2. Create a small dashboard for a country
 
@@ -304,7 +304,7 @@ The query takes about 4 minutes to run, and the result is a 1 MB file.
 
 An LLM-generated dashboard exposes the cube on a map, with all queries running in the user's browser.  This could be added to any static site, without any need for APIs or web services.
 
-![Example dashboard for Portugal](2026-10-02-extending-parquet-snapshots/portugal-cube.png)
+![Example dashboard for Portugal](/post/2026-10-02-extending-parquet-snapshots/portugal-cube.png)
 
 [View the dashboard](https://labs.gbif.org/~mblissett/2026/10/dashboard-example.html)
 
