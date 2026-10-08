@@ -93,26 +93,27 @@ The sample tables use Hive partitioning to split the data into files of very rou
 The `p_taxon` table has 194 taxon partitions:
 
 ```
-(NB if you just want to see the partitions, remove the COUNT(*).)
-
 SELECT taxonPartition, COUNT(*) FROM read_parquet('s3://gbif-public-data/development/2026-08-01-DWCA/p_taxon/*/*', hive_partitioning = true) GROUP BY taxonPartition ORDER BY taxonPartition;
-┌─────────────────────────────────────────────────────────────────────────────┬──────────────┐
-│                               taxonpartition                                │ count_star() │
-├─────────────────────────────────────────────────────────────────────────────┼──────────────┤
-│ Animalia_Arthropoda_Arachnida                                               │     12881848 │
-│ Animalia_Arthropoda_Insecta_Coleoptera                                      │     40077484 │
-│ Animalia_Arthropoda_Insecta_Diptera                                         │     44954416 │
-│ Animalia_Arthropoda_Insecta_Hemiptera                                       │     14090381 │
-│ Animalia_Arthropoda_Insecta_Hymenoptera                                     │     31157056 │
-│ Animalia_Arthropoda_Insecta_Lepidoptera_Geometridae                         │     24782143 │
-│ Animalia_Arthropoda_Insecta_Lepidoptera_Lycaenidae                          │     11146761 │
-│ Animalia_Arthropoda_Insecta_Lepidoptera_Noctuidae                           │     33646170 │
-│ Animalia_Arthropoda_Insecta_Lepidoptera_Nymphalidae                         │     40565469 │
-│ Animalia_Arthropoda_Insecta_Lepidoptera_Pieridae                            │     16239755 │
-│ Animalia_Arthropoda_Insecta_Lepidoptera__PARTIAL                            │     43939419 │
-│ Animalia_Arthropoda_Insecta_Odonata                                         │     16923162 │
-│ Animalia_Arthropoda_Insecta__PARTIAL                                        │     19455416 │
-│ Animalia_Arthropoda_Malacostraca_Decapoda                                   │     14943063 │
+
+(NB if you just want to see the partitions, remove the COUNT(*).)
+```
+
+|                               taxonpartition                                | count_star() |
+|-----------------------------------------------------------------------------|--------------|
+| Animalia_Arthropoda_Arachnida                                               |     12881848 |
+| Animalia_Arthropoda_Insecta_Coleoptera                                      |     40077484 |
+| Animalia_Arthropoda_Insecta_Diptera                                         |     44954416 |
+| Animalia_Arthropoda_Insecta_Hemiptera                                       |     14090381 |
+| Animalia_Arthropoda_Insecta_Hymenoptera                                     |     31157056 |
+| Animalia_Arthropoda_Insecta_Lepidoptera_Geometridae                         |     24782143 |
+| Animalia_Arthropoda_Insecta_Lepidoptera_Lycaenidae                          |     11146761 |
+| Animalia_Arthropoda_Insecta_Lepidoptera_Noctuidae                           |     33646170 |
+| Animalia_Arthropoda_Insecta_Lepidoptera_Nymphalidae                         |     40565469 |
+| Animalia_Arthropoda_Insecta_Lepidoptera_Pieridae                            |     16239755 |
+| Animalia_Arthropoda_Insecta_Lepidoptera__PARTIAL                            |     43939419 |
+| Animalia_Arthropoda_Insecta_Odonata                                         |     16923162 |
+| Animalia_Arthropoda_Insecta__PARTIAL                                        |     19455416 |
+| Animalia_Arthropoda_Malacostraca_Decapoda                                   |     14943063 |
 …
 (194 partitions in total.)
 ```
@@ -125,29 +126,28 @@ The `p_taxon_a5` and `p_taxon_h3` tables have a smaller number of taxon partitio
 
 ```
 SELECT taxonPartition, COUNT(*) FROM read_parquet('s3://gbif-public-data/development/2026-08-01-DWCA/occurrence/p_taxon_a5/*/*', hive_partitioning = true) GROUP BY taxonPartition ORDER BY taxonPartition;
-┌────────────────────────────────────────────────────┬──────────────┐
-│                   taxonpartition                   │ count_star() │
-├────────────────────────────────────────────────────┼──────────────┤
-│ Animalia_Chordata_Aves_Accipitriformes             │    115363647 │
-│ Animalia_Chordata_Aves_Anseriformes                │    206440050 │
-│ Animalia_Chordata_Aves_Charadriiformes             │    201986217 │
-│ Animalia_Chordata_Aves_Passeriformes_Cardinalidae  │     45628746 │
-│ Animalia_Chordata_Aves_Passeriformes_Corvidae      │    119908434 │
-│ Animalia_Chordata_Aves_Passeriformes_Fringillidae  │    100596559 │
-│ Animalia_Chordata_Aves_Passeriformes_Furnariidae   │     50158466 │
-│ Animalia_Chordata_Aves_Passeriformes_Icteridae     │     70873667 │
-│ Animalia_Chordata_Aves_Passeriformes_Paridae       │     79916224 │
-│ Animalia_Chordata_Aves_Passeriformes_Passerellidae │    104560140 │
-│ Animalia_Chordata_Aves_Passeriformes_Turdidae      │     82524897 │
-│ Animalia_Chordata_Aves_Passeriformes_Tyrannidae    │     57808529 │
-│ Animalia_Chordata_Aves_Passeriformes__PARTIAL      │    576966491 │
-│ Animalia_Chordata_Aves__PARTIAL                    │    541973016 │
-│ Animalia_Chordata__PARTIAL                         │    185949778 │
-│ Animalia__PARTIAL                                  │    483652533 │
-│ Plantae                                            │    638966421 │
-│ NULL                                               │    246739000 │
-└────────────────────────────────────────────────────┴──────────────┘
 ```
+
+|                   taxonpartition                   | count_star() |
+|----------------------------------------------------|--------------|
+| Animalia_Chordata_Aves_Accipitriformes             |    115363647 |
+| Animalia_Chordata_Aves_Anseriformes                |    206440050 |
+| Animalia_Chordata_Aves_Charadriiformes             |    201986217 |
+| Animalia_Chordata_Aves_Passeriformes_Cardinalidae  |     45628746 |
+| Animalia_Chordata_Aves_Passeriformes_Corvidae      |    119908434 |
+| Animalia_Chordata_Aves_Passeriformes_Fringillidae  |    100596559 |
+| Animalia_Chordata_Aves_Passeriformes_Furnariidae   |     50158466 |
+| Animalia_Chordata_Aves_Passeriformes_Icteridae     |     70873667 |
+| Animalia_Chordata_Aves_Passeriformes_Paridae       |     79916224 |
+| Animalia_Chordata_Aves_Passeriformes_Passerellidae |    104560140 |
+| Animalia_Chordata_Aves_Passeriformes_Turdidae      |     82524897 |
+| Animalia_Chordata_Aves_Passeriformes_Tyrannidae    |     57808529 |
+| Animalia_Chordata_Aves_Passeriformes__PARTIAL      |    576966491 |
+| Animalia_Chordata_Aves__PARTIAL                    |    541973016 |
+| Animalia_Chordata__PARTIAL                         |    185949778 |
+| Animalia__PARTIAL                                  |    483652533 |
+| Plantae                                            |    638966421 |
+| NULL                                               |    246739000 |
 
 These geo-partitioned tables are also partitioned on either A5 (resolution 2) or H3 (resolution 0) cells.  For geographic queries, calculate the complete coverage in cells for your query and add this to the WHERE clause. For example, to query for occurrences in the polygon `'POLYGON ((-9.9 49.3, 2.8 49.3, 2.8 59.6, -9.9 59.6, -9.9 49.3))'`:
 
