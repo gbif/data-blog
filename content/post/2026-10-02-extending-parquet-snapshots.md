@@ -34,77 +34,129 @@ In April 2021, GBIF began exporting [monthly data snapshots](https://www.gbif.or
 
 Since then, the Parquet format has gained support for geographic data types and tooling has improved to support partitioning, better compression and indexing features.  These allow for faster querying, potentially directly within websites without needing web services.  Tools such as ArcGIS and QGIS are also introducing support for working with data in Parquet format, and GBIF users have requested additional fields be added to the download format and cloud snapshots.
 
-**We are therefore seeking feedback for an expanded Parquet download format containing similar data columns to a Darwin Core Archive format download.  A preview of the new format is available (see [specification](#specification) below).**
+**We are therefore seeking feedback for an expanded Parquet download format containing similar data columns to a Darwin Core Archive format download.  Previews of three possible structures are available and described here.**
 
 ## Quick example
 
 [DuckDB](https://duckdb.org) is a command-line database tool with built-in support for querying Parquet files on cloud data systems.
 
-[Install DuckDB](https://duckdb.org/install/), run it, and search for spider occurrences with CC0 licenced media – a query that is not possible through the GBIF API or website.
+[Install DuckDB](https://duckdb.org/install/), run it, and search for spider occurrences with CC0-licenced media – a query that is not possible through the GBIF API or website.
 
 ```
+INSTALL parquet,
+LOAD parquet;
 INSTALL httpfs;
 LOAD httpfs;
 
+WITH spiders AS (
+  SELECT
+    gbifid,
+    datasetKey,
+    scientificName,
+    unnest(multimedia) AS multimedia
+  FROM read_parquet('s3://gbif-public-data/development/2026-08-01-DWCA/p_taxon/*/*', hive_partitioning = true)
+  WHERE taxonPartition LIKE '%Arachnida%'
+    AND classKey = 'CCQKT'
+)
 SELECT
-  occ.gbifid,
-  occ.datasetKey,
-  occ.scientificName,
-  'https://api.gbif.org/v1/image/cache/occurrence/' || occ.gbifid || '/media/' || MD5(mul.identifier) AS apiUrl
-FROM read_parquet('s3://gbif-public-data/development/2026-08-01-DWCA/occurrence/p_taxon_a5/*/*/*', hive_partitioning = true, hive_types = {'a5_r2': UBIGINT}) occ
-LEFT JOIN read_parquet('s3://gbif-public-data/development/2026-08-01-DWCA/multimedia/p_gbifid1000000/*/*', hive_partitioning = true, hive_types = {'gbifid_div1000000': UBIGINT}) mul ON (occ.gbifid//1000000) = mul.gbifid_div1000000 AND occ.gbifid = mul.gbifid
-WHERE taxonPartition = 'Animalia'
-  AND occ.taxonKey = 'CCQKT'
-  AND mul.license LIKE 'http://creativecommons.org/publicdomain/zero%'
-  LIMIT 1000;
+  gbifid,
+  datasetKey,
+  scientificName,
+  'https://api.gbif.org/v1/image/cache/occurrence/' || gbifid || '/media/' || MD5(multimedia.identifier) AS apiUrl
+FROM spiders
+WHERE multimedia.license LIKE 'http://creativecommons.org/publicdomain/zero%'
+LIMIT 1000;
 ```
 
-## Overview of changes
+## Overview of the data tables
 
-The proposed Parquet format has three significant changes:
+Three tables are provided, containing the same data but using different structure and partitioning.  The first table (`p_taxon`) has taxon partitioning and includes verbatim and multimedia data as additional columns.  The second (`p_taxon_a5`) and third (`p_taxon_h3`) tables have a combined taxonomic and geographic partitioning, with verbatim and multimedia data as separate tables.
 
-### 1. Coordinate column and precalculated grids
+In each case there are five significant changes compared to the current Parquet exports.
 
-A column `coordinates` contains the interpreted coordinates using the `decimalLatitude` and `decimalLongitude` values.  Rows are ordered using `ST_Hilbert(coordinates, …)`.
+### 1. Almost all columns are included
+
+Rather than the "simple" view, these exports contain the same columns as a Darwin Core Archive download from GBIF.
+
+### 2. Coordinate column and precalculated grids
+
+A column `coordinates` contains the interpreted coordinates (the `decimalLatitude` and `decimalLongitude` values).
 
 There are also additional columns for [A5](https://a5geo.org) or [H3](https://h3geo.org) discrete global grids (DGGSs).
 
-This allows geographic functions such as `ST_Within` (see below) to be used directly, as well as faster generation of maps and some general statistical analysis.
+This allows geographic functions such as `ST_Within` (see below) to be used directly, as well as faster generation of maps and some general statistical analysis, and use in GIS software.
 
-### 2. Taxonomy and grid partitions
+### 3. Taxonomy and grid partitions
 
-The tables use Hive partitioning to split the data into very roughly equal chunks.  These are at different ranks, since some bird families contain more occurrences than other entire kingdoms.
+The sample tables use Hive partitioning to split the data into files of very roughly equal chunks.  Taxonomy partitioning is at different ranks, since some bird families contain more occurrences than other entire kingdoms.
 
-```
-┌─────────────────┬──────────────┐
-│ taxonpartition  │     count    │
-├─────────────────┼──────────────┤
-│ Cardinalidae    │     45628746 │
-│ Hirundinidae    │     50158466 │
-│ Tyrannidae      │     57808529 │
-│ Icteridae       │     70873667 │
-│ Paridae         │     79916224 │
-│ Turdidae        │     82524897 │
-│ Fringillidae    │    100596559 │
-│ Passerellidae   │    104560140 │
-│ Accipitriformes │    115363647 │
-│ Corvidae        │    119908434 │
-│ Chordata        │    185949778 │
-│ Charadriiformes │    201986217 │
-│ Anseriformes    │    206440050 │
-│ NULL            │    246739000 │
-│ Animalia        │    483652533 │
-│ Aves            │    541973016 │
-│ Passeriformes   │    576966491 │
-│ Plantae         │    638966421 │
-└─────────────────┴──────────────┘
-```
-
-Specifying the appropriate partition will save a lot of time when querying, e.g. to query for foxes ([taxonKey 87C5](https://www.gbif.org/taxon/87C5)) use `taxonPartition = 'Chordata' AND genusKey = '87C5'`.
-
-There is also a partition on either A5 (resolution 2) or H3 (resolution 0) cells.  For geographic queries, calculate the complete coverage in cells for your query and add this to the WHERE clause. For example, to query for occurrences in the polygon `'POLYGON ((-9.9 49.3, 2.8 49.3, 2.8 59.6, -9.9 59.6, -9.9 49.3))'`:
+The `p_taxon` table has 194 taxon partitions:
 
 ```
+(NB if you just want to see the partitions, remove the COUNT(*).)
+
+SELECT taxonPartition, COUNT(*) FROM read_parquet('s3://gbif-public-data/development/2026-08-01-DWCA/p_taxon/*/*', hive_partitioning = true) GROUP BY taxonPartition ORDER BY taxonPartition;
+┌─────────────────────────────────────────────────────────────────────────────┬──────────────┐
+│                               taxonpartition                                │ count_star() │
+├─────────────────────────────────────────────────────────────────────────────┼──────────────┤
+│ Animalia_Arthropoda_Arachnida                                               │     12881848 │
+│ Animalia_Arthropoda_Insecta_Coleoptera                                      │     40077484 │
+│ Animalia_Arthropoda_Insecta_Diptera                                         │     44954416 │
+│ Animalia_Arthropoda_Insecta_Hemiptera                                       │     14090381 │
+│ Animalia_Arthropoda_Insecta_Hymenoptera                                     │     31157056 │
+│ Animalia_Arthropoda_Insecta_Lepidoptera_Geometridae                         │     24782143 │
+│ Animalia_Arthropoda_Insecta_Lepidoptera_Lycaenidae                          │     11146761 │
+│ Animalia_Arthropoda_Insecta_Lepidoptera_Noctuidae                           │     33646170 │
+│ Animalia_Arthropoda_Insecta_Lepidoptera_Nymphalidae                         │     40565469 │
+│ Animalia_Arthropoda_Insecta_Lepidoptera_Pieridae                            │     16239755 │
+│ Animalia_Arthropoda_Insecta_Lepidoptera__PARTIAL                            │     43939419 │
+│ Animalia_Arthropoda_Insecta_Odonata                                         │     16923162 │
+│ Animalia_Arthropoda_Insecta__PARTIAL                                        │     19455416 │
+│ Animalia_Arthropoda_Malacostraca_Decapoda                                   │     14943063 │
+…
+(194 partitions in total.)
+```
+
+Note some groups like *Lepidoptera* are partitioned into lower rank groups (*Geometridae*, *Lycaenidae*, *Noctuidae*, *Nymphalidae*, *Pieridae*), with a group containing all other *Lepidoptera* (`Animalia_Arthropoda_Insecta_Lepidoptera__PARTIAL`).
+
+Specifying the appropriate partition will save a lot of time when querying. For example, to query for foxes ([taxonKey 87C5](https://www.gbif.org/taxon/87C5)) use `taxonPartition = 'Animalia_Chordata_Mammalia__PARTIAL' AND genusKey = '87C5'`.  The database can then completely ignore hundreds of files containing birds, insects, plants etc.
+
+The `p_taxon_a5` and `p_taxon_h3` tables have a smaller number of taxon partitions:
+
+```
+SELECT taxonPartition, COUNT(*) FROM read_parquet('s3://gbif-public-data/development/2026-08-01-DWCA/occurrence/p_taxon_a5/*/*', hive_partitioning = true) GROUP BY taxonPartition ORDER BY taxonPartition;
+┌────────────────────────────────────────────────────┬──────────────┐
+│                   taxonpartition                   │ count_star() │
+├────────────────────────────────────────────────────┼──────────────┤
+│ Animalia_Chordata_Aves_Accipitriformes             │    115363647 │
+│ Animalia_Chordata_Aves_Anseriformes                │    206440050 │
+│ Animalia_Chordata_Aves_Charadriiformes             │    201986217 │
+│ Animalia_Chordata_Aves_Passeriformes_Cardinalidae  │     45628746 │
+│ Animalia_Chordata_Aves_Passeriformes_Corvidae      │    119908434 │
+│ Animalia_Chordata_Aves_Passeriformes_Fringillidae  │    100596559 │
+│ Animalia_Chordata_Aves_Passeriformes_Furnariidae   │     50158466 │
+│ Animalia_Chordata_Aves_Passeriformes_Icteridae     │     70873667 │
+│ Animalia_Chordata_Aves_Passeriformes_Paridae       │     79916224 │
+│ Animalia_Chordata_Aves_Passeriformes_Passerellidae │    104560140 │
+│ Animalia_Chordata_Aves_Passeriformes_Turdidae      │     82524897 │
+│ Animalia_Chordata_Aves_Passeriformes_Tyrannidae    │     57808529 │
+│ Animalia_Chordata_Aves_Passeriformes__PARTIAL      │    576966491 │
+│ Animalia_Chordata_Aves__PARTIAL                    │    541973016 │
+│ Animalia_Chordata__PARTIAL                         │    185949778 │
+│ Animalia__PARTIAL                                  │    483652533 │
+│ Plantae                                            │    638966421 │
+│ NULL                                               │    246739000 │
+└────────────────────────────────────────────────────┴──────────────┘
+```
+
+These geo-partitioned tables are also partitioned on either A5 (resolution 2) or H3 (resolution 0) cells.  For geographic queries, calculate the complete coverage in cells for your query and add this to the WHERE clause. For example, to query for occurrences in the polygon `'POLYGON ((-9.9 49.3, 2.8 49.3, 2.8 59.6, -9.9 59.6, -9.9 49.3))'`:
+
+```
+INSTALL a5;
+LOAD a5;
+INSTALL spatial;
+LOAD spatial;
+
 SELECT
   COUNT(*) AS count,
   countryCode
@@ -118,20 +170,22 @@ LIMIT 5;
 
 This should give a similar result to [the same polygon on www.GBIF.org](https://www.gbif.org/occurrence/search?geometry=POLYGON%28%28-9.9+49.3%2C2.8+49.3%2C2.8+59.6%2C-9.9+59.6%2C-9.9+49.3%29%29&view=dashboard&layout=country.v-TABLE) (counts have increased since the snapshot was taken).
 
-### 3. Inclusion of Verbatim and Multimedia tables
+### 4. Inclusion of Verbatim and Multimedia tables
 
-These are stored as separate tables, partitioned into `gbifid // 1000000` chunks (the record with `gbifid = 12345678` will be stored in the partition with `gbifid_div1000000 = 12000000`).  Access them within DuckDB like this:
+In `p_taxon`, verbatim data (as provided to GBIF by the publisher) is included as a `struct` named `verbatim`, e.g. `verbatim.eventDate` to see the original value for this column.  Interpreted multimedia data is included in a struct array named `multimedia`.  (See the [quick example above](#quick-example).)
+
+In `p_taxon_a5` and `p_taxon_h3`, verbatim and multimedia data are stored as separate tables, partitioned into `gbifid // 1000000` chunks (the record with `gbifid = 12345678` will be stored in the partition with `gbifid_div1000000 = 12000000`).  Access them within DuckDB like this:
 
 ```
 SELECT occ.*, ver.*, mul.*
   FROM read_parquet('s3://gbif-public-data/development/2026-08-01-DWCA/occurrence/p_taxon_a5/*/*/*', hive_partitioning = true, hive_types = {'a5_r2': UBIGINT}) occ
   INNER JOIN read_parquet('s3://gbif-public-data/development/2026-08-01-DWCA/verbatim/p_gbifid1000000/*/*', hive_partitioning = true, hive_types = {'gbifid_div1000000': UBIGINT}) ver ON (occ.gbifid//1000000) = ver.gbifid_div1000000 AND occ.gbifid = ver.gbifid
   LEFT JOIN read_parquet('s3://gbif-public-data/development/2026-08-01-DWCA/multimedia/p_gbifid1000000/*/*', hive_partitioning = true, hive_types = {'gbifid_div1000000': UBIGINT}) mul ON (occ.gbifid//1000000) = mul.gbifid_div1000000 AND occ.gbifid = mul.gbifid
-  WHERE taxonPartition = 'Chordata' AND genusKey = '87C5'
+  WHERE taxonPartition LIKE '%Chordata' AND genusKey = '87C5'
   LIMIT 10;
 ```
 
-### 4. Improved compression
+### 5. Improved compression
 
 Zstd compression is used.  The Parquet files are significantly smaller than with the previous Snappy compression.  Tools supporting Parquet should handle this change automatically.
 
@@ -178,7 +232,7 @@ SELECT
        ELSE FLOOR(decimalLatitude)
   END AS lat_bin,
   COUNT(*) AS record_count
-FROM read_parquet('s3://gbif-public-data/development/2026-08-01-DWCA/occurrence/p_taxon_h3/*/*/*') occ
+FROM read_parquet('s3://gbif-public-data/development/2026-08-01-DWCA/occurrence/p_taxon_a5/*/*') occ
 WHERE occ.countryCode = 'BR'
   AND occ.decimalLatitude IS NOT NULL
   AND occ.decimalLongitude IS NOT NULL
@@ -292,11 +346,11 @@ COPY (
     MAX("year") AS max_year,
     COUNT(*) AS occurrence_count,
     COUNT(DISTINCT speciesKey) AS species_count
-  FROM read_parquet('s3://gbif-public-data/development/2026-08-01-DWCA/occurrence/p_taxon_h3/*/*/*', hive_partitioning = true, hive_types = {'h3_r0': UBIGINT})
+  FROM read_parquet('s3://gbif-public-data/development/2026-08-01-DWCA/p_taxon/*/*', hive_partitioning = true)
   WHERE
     countryCode = 'PT'
     AND NOT hasGeospatialIssues
-  GROUP BY CUBE (a5_r6, a5_r7, a5_r8, kingdomKey, basisOfRecord)
+  GROUP BY CUBE (a5.r6, a5.r7, a5.r8, kingdomKey, basisOfRecord)
 ) TO 'portugal-cube-x.parquet' (FORMAT 'PARQUET', COMPRESSION 'ZSTD', COMPRESSION_LEVEL 8);
 ```
 
@@ -308,24 +362,33 @@ An LLM-generated dashboard exposes the cube on a map, with all queries running i
 
 [View the dashboard](https://labs.gbif.org/~mblissett/2026/10/dashboard-example.html)
 
-## Specification
+## Summary
 
-Two snapshots are provided.  During development, they are available on an Amazon S3 bucket.  They are both derived from the [1 August 2026 DWCA snapshot <https://doi.org/10.15468/dl.8yrbe7>](https://doi.org/10.15468/dl.8yrbe7), and should be cited with that DOI if used in a publication.
+Three snapshots are provided.  During development, they are available on an Amazon S3 bucket.  They are both derived from the [1 August 2026 DWCA snapshot <https://doi.org/10.15468/dl.8yrbe7>](https://doi.org/10.15468/dl.8yrbe7), and should be cited with that DOI if used in a publication.
 
-The first export has A5 almost-equal-area pentagonal grid cells precalculated, and is partitioned by selected taxa and the A5 R2 cell.
+**The first export is partitioned by taxonomic groups** at different levels, stored in a `taxonPartition` (virtual) column.  Within each partition, data are ordered by taxonomy.
 
-The second export uses the more widely supported H3 grid and precalculated columns, and is partitioned by the same selected taxa and the H3 R0 cell.
+**The second export is partitioned by A5 almost-equal-area pentagonal grid cells** at R2 level.  Data are ordered by coordinate (Hilbert curve).
 
-Either of these may be joined to the verbatim and/or multimedia tables, which are partitioned into groups of up to 1,000,000 gbifid rows.
+**The third export uses the more widely supported H3 grid cells** at R0 level.  Data are ordered by coordinate (Hilbert curve).
+
+The second and third exports can be joined to separate verbatim and multimedia tables.  Data in these tables is ordered by `gbifid`.
+
+Paths for all of these:
 
 ```
+s3://gbif-public-data/development/2026-08-01-DWCA/p_taxon/*/*
+
 s3://gbif-public-data/development/2026-08-01-DWCA/occurrence/p_taxon_a5/*/*/*
+
 s3://gbif-public-data/development/2026-08-01-DWCA/occurrence/p_taxon_h3/*/*/*
+
 s3://gbif-public-data/development/2026-08-01-DWCA/verbatim/p_gbifid1000000/*/*
+
 s3://gbif-public-data/development/2026-08-01-DWCA/multimedia/p_gbifid1000000/*/*
 ```
 
-Column names are the same as for GBIF downloads (generally Darwin Core term short names), with the addition of the partitioning columns, a `coordinates` column and `a5_r2` … `a5_r23` or `h3_r0` … `h3_r15` columns.  Array, numeric and timestamp data types have been used where appropriate.
+Column names are the same as for GBIF downloads (generally Darwin Core term short names), with the addition of the partitioning columns, a `coordinates` column and columns for A5 and H3 cell identifiers.  Array, numeric and timestamp data types have been used where appropriate.
 
 ## Feedback
 
@@ -337,4 +400,4 @@ Are the DGGS (A5 and H3) columns useful, and do you have a preference for one or
 
 Should the verbatim Darwin Core extensions supported by GBIF be added?
 
-Instead of joining multiple tables, should the occurrence table include the verbatim, multimedia and potential other extensions?
+Is the increased size of the combined `p_taxon` table worth not needing to join to other tables for verbatim and multimedia data?
