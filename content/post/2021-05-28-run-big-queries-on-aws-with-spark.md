@@ -31,6 +31,8 @@ sequenceDiagrams:
   options: ''
 ---
 
+> Some queries in this post can also be done using [GBIF SQL downloads](https://data-blog.gbif.org/post/2024-06-24-gbif-sql-downloads/). SQL downloads now use COL XR taxonomy by default; see [recent changes to SQL downloads](/post/sql-downloads-col-xr/) if your queries use GBIF Backbone keys.
+
 > Some queries in the blog post can be done for free using a new feature called [GBIF SQL downloads](https://data-blog.gbif.org/post/2024-06-24-gbif-sql-downloads/). 
 
 **GBIF** has [snapshots](https://registry.opendata.aws/gbif/) of billions occurrence records on **Amazon Web Services** (AWS). This guide will take you through running **Spark notebooks** on AWS. The GBIF snapshot is documented : [here](https://github.com/gbif/occurrence/blob/master/aws-public-data.md).

@@ -30,6 +30,8 @@ sequenceDiagrams:
   options: ''
 ---
 
+> **Update:** SQL download taxonomy columns now use COL XR by default. If your existing queries use GBIF Backbone keys, see [recent changes to SQL downloads](/post/sql-downloads-col-xr/).
+
 > GBIF has an experimental feature that allows users to download data from the GBIF database in SQL format. Contact [helpdesk\@gbif.org](mailto:helpdesk@gbif.org) to request access. <https://techdocs.gbif.org/en/data-use/api-sql-downloads>
 
 > If your download can be formulated using the traditional predicate downloads, it is usually going to be faster to use regular downloads.

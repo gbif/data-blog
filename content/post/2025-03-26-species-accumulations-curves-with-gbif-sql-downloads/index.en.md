@@ -30,6 +30,8 @@ sequenceDiagrams:
   options: ''
 ---
 
+> **Update:** GBIF SQL downloads now use COL XR taxonomy by default. If you maintain SQL queries that use GBIF Backbone keys, see [recent changes to SQL downloads](/post/sql-downloads-col-xr/).
+
 With GBIF's new SQL downloads feature, it is now possible to easily create useful custom metrics. In this post, I will create species accumulation curves for various countries/areas using [GBIF SQL downloads](https://techdocs.gbif.org/en/data-use/api-sql-downloads) and R.
 
 > GBIF now has a new [repository](https://github.com/gbif/CommunityMetrics), **Community Metrics**, for collecting input from the GBIF community on the creation of data products derived from GBIF-mediated data that can complement those already provided through GBIF's [data analytics](https://www.gbif.org/analytics/global). The goal of this work is to produce new or further develop existing metrics, indicators and time series (trend) data products to support decision making.
