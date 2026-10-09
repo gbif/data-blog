@@ -98,7 +98,7 @@ SELECT taxonPartition, COUNT(*) FROM read_parquet('s3://gbif-public-data/develop
 (NB if you just want to see the partitions, remove the COUNT(*).)
 ```
 
-|                               taxonpartition                                | count_star() |
+|                               taxonpartition                                |     count    |
 |-----------------------------------------------------------------------------|--------------|
 | Animalia_Arthropoda_Arachnida                                               |     12881848 |
 | Animalia_Arthropoda_Insecta_Coleoptera                                      |     40077484 |
@@ -116,7 +116,6 @@ SELECT taxonPartition, COUNT(*) FROM read_parquet('s3://gbif-public-data/develop
 | Animalia_Arthropoda_Malacostraca_Decapoda                                   |     14943063 |
 …
 (194 partitions in total.)
-```
 
 Note some groups like *Lepidoptera* are partitioned into lower rank groups (*Geometridae*, *Lycaenidae*, *Noctuidae*, *Nymphalidae*, *Pieridae*), with a group containing all other *Lepidoptera* (`Animalia_Arthropoda_Insecta_Lepidoptera__PARTIAL`).
 
@@ -128,7 +127,7 @@ The `p_taxon_a5` and `p_taxon_h3` tables have a smaller number of taxon partitio
 SELECT taxonPartition, COUNT(*) FROM read_parquet('s3://gbif-public-data/development/2026-08-01-DWCA/occurrence/p_taxon_a5/*/*', hive_partitioning = true) GROUP BY taxonPartition ORDER BY taxonPartition;
 ```
 
-|                   taxonpartition                   | count_star() |
+|                   taxonpartition                   |     count    |
 |----------------------------------------------------|--------------|
 | Animalia_Chordata_Aves_Accipitriformes             |    115363647 |
 | Animalia_Chordata_Aves_Anseriformes                |    206440050 |
