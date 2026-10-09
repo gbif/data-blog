@@ -191,12 +191,7 @@ GROUP BY ALL
 print("Executing spatial aggregation query...")
 df_grid = con.execute(query_heatmap).df()
 print(f"Aggregated into {len(df_grid)} 1° grid cells.")
-
 ```
-
-    Executing spatial aggregation query...
-    FloatProgress(value=0.0, layout=Layout(width='auto'), style=ProgressStyle(bar_color='black'))
-    Aggregated into 6706 1° grid cells.
 
 <details>
     <summary style="font-style: italic">Click to expand and show figure generation</summary>
@@ -303,7 +298,7 @@ COPY (
 ) TO 'portugal-cube-x.parquet' (FORMAT 'PARQUET', COMPRESSION 'ZSTD', COMPRESSION_LEVEL 8);
 ```
 
-The query takes about 4 minutes to run, and the result is a 1 MB file.
+The query takes about 4 minutes to run, and the result is a 1 MB file.  This could be automated with a cronjob, GitHub action or similar to keep the dashboard up-to-date.
 
 An LLM-generated dashboard exposes the cube on a map, with all queries running in the user's browser.  This could be added to any static site, without any need for APIs or web services.
 
@@ -341,12 +336,12 @@ Column names are the same as for GBIF downloads (generally Darwin Core term shor
 
 ## Feedback
 
-Feedback on this data format is appreciated.
+Feedback on this data format is appreciated. In particular,
 
-In particular, would the partitioning suit the queries you would make, or would you suggest a different partitioning?
+1. Does the partitioning suit the queries you would make, or would you suggest a different partitioning?
 
-Are the DGGS (A5 and H3) columns useful, and do you have a preference for one or the other?
+2. Are the DGGS (A5 and H3) columns useful, and do you have a preference for one or the other?
 
-Should the verbatim Darwin Core extensions supported by GBIF be added?
+3. Should the verbatim Darwin Core extensions supported by GBIF be added?
 
-Is the increased size of the combined `p_taxon` table worth not needing to join to other tables for verbatim and multimedia data?
+4. Is the increased size of the combined `p_taxon` table worth not needing to join to other tables for verbatim and multimedia data?
