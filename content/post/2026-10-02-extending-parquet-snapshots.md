@@ -92,7 +92,7 @@ The sample tables use Hive partitioning to split the data into files of very rou
 
 The `p_taxon` table has 194 taxon partitions with names like `Animalia_Arthropoda_Arachnida`.  Use `SELECT DISTINCT taxonPartition FROM read_parquet('s3://gbif-public-data/development/2026-08-01-DWCA/p_taxon/*/*', hive_partitioning = true) ORDER BY taxonPartition;` to see them.
 
-Note some groups like *Lepidoptera* are partitioned into lower rank groups (`Animalia_Arthropoda_Insecta_Lepidoptera_Geometridae` etc), and another partition containing all other *Lepidoptera* (`Animalia_Arthropoda_Insecta_Lepidoptera__PARTIAL`).
+Note some groups like *Lepidoptera* are partitioned into one or more lower rank groups (`Animalia_Arthropoda_Insecta_Lepidoptera_Geometridae` etc), with another partition containing all other *Lepidoptera* (`Animalia_Arthropoda_Insecta_Lepidoptera__PARTIAL`).
 
 Specifying the appropriate partition will save a lot of time when querying. For example, to query for foxes ([taxonKey 87C5](https://www.gbif.org/taxon/87C5)) use `taxonPartition = 'Animalia_Chordata_Mammalia__PARTIAL' AND genusKey = '87C5'`.  The database can then completely ignore hundreds of files containing birds, insects, plants etc.
 
@@ -140,7 +140,7 @@ Zstd compression is used.  The Parquet files are significantly smaller than with
 
 ## Additional examples
 
-### 1. Using a Python notebook to query and analyse some data
+### 1. Using a Python notebook to query and analyse occurrence data
 
 This Python notebook queries for the verbatim (published) coordinates of records in Brazil and displays them on a map.  Note the mirror image copies of the country with negated or transposed coordinates.
 
@@ -277,7 +277,9 @@ plt.show()
 
 ### 2. Create a small dashboard for a country
 
-First, a Parquet data cube is created using DuckDB.  This stores counts of occurrences, species and the highest event date within different A5 cells for each kingdom and basis of record.
+**Parquet files can be used to create an interactive dashboard, without any dependency on the live GBIF APIs.**  Some queries may be able to use the cloud files directly, but for better performance we can create a Parquet data cube.
+
+The Parquet data cube is created using DuckDB.  This stores counts of occurrences, species and the highest event date within different A5 cells for each kingdom and basis of record.
 
 ```
 COPY (
@@ -295,7 +297,7 @@ COPY (
     countryCode = 'PT'
     AND NOT hasGeospatialIssues
   GROUP BY CUBE (a5.r6, a5.r7, a5.r8, kingdomKey, basisOfRecord)
-) TO 'portugal-cube-x.parquet' (FORMAT 'PARQUET', COMPRESSION 'ZSTD', COMPRESSION_LEVEL 8);
+) TO 'portugal-cube-a5.parquet' (FORMAT 'PARQUET', COMPRESSION 'ZSTD', COMPRESSION_LEVEL 8);
 ```
 
 The query takes about 4 minutes to run, and the result is a 1 MB file.  This could be automated with a cronjob, GitHub action or similar to keep the dashboard up-to-date.
@@ -305,6 +307,8 @@ An LLM-generated dashboard exposes the cube on a map, with all queries running i
 ![Example dashboard for Portugal](/post/2026-10-02-extending-parquet-snapshots/portugal-cube.png)
 
 [View the dashboard](https://labs.gbif.org/~mblissett/2026/10/dashboard-example.html)
+
+You can also [view and query the cube](https://www.parquet-viewer.com/online-parquet-viewer#v=1&url=https%3A%2F%2Flabs.gbif.org%2F%7Emblissett%2F2026%2F10%2Fportugal-cube-a5.parquet) using one of several online Parquet file viewers.
 
 ## Summary
 
