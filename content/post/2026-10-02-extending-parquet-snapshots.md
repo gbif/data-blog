@@ -181,7 +181,7 @@ SELECT
        ELSE FLOOR(decimalLatitude)
   END AS lat_bin,
   COUNT(*) AS record_count
-FROM read_parquet('s3://gbif-public-data/development/2026-08-01-DWCA/occurrence/p_taxon_a5/*/*') occ
+FROM read_parquet('s3://gbif-public-data/development/2026-08-01-DWCA/occurrence/p_taxon_a5/*/*/*') occ
 WHERE occ.countryCode = 'BR'
   AND occ.decimalLatitude IS NOT NULL
   AND occ.decimalLongitude IS NOT NULL
@@ -284,19 +284,20 @@ The Parquet data cube is created using DuckDB.  This stores counts of occurrence
 ```
 COPY (
   SELECT
-    a5_lonlat_to_cell(decimalLongitude, decimalLatitude, 6) AS a5_r6,
-    a5_lonlat_to_cell(decimalLongitude, decimalLatitude, 7) AS a5_r7,
-    a5_lonlat_to_cell(decimalLongitude, decimalLatitude, 8) AS a5_r8,
+    a5_r6,
+    a5_r7,
+    a5_r8,
     kingdomKey,
     basisOfRecord,
     MAX("year") AS max_year,
     COUNT(*) AS occurrence_count,
     COUNT(DISTINCT speciesKey) AS species_count
-  FROM read_parquet('s3://gbif-public-data/development/2026-08-01-DWCA/p_taxon/*/*', hive_partitioning = true)
+  FROM read_parquet('s3://gbif-public-data/development/2026-08-01-DWCA/occurrence/p_taxon_a5/*/*/*', hive_partitioning = true, hive_types = {'a5_r2': UBIGINT})
   WHERE
-    countryCode = 'PT'
+    a5_r2 IN a5_geometry_to_cells('POLYGON ((-37.177734 30.145127, -5.712891 30.145127, -5.712891 44.402392, -37.177734 44.402392, -37.177734 30.145127))'::GEOMETRY, 2)
+    AND countryCode = 'PT'
     AND NOT hasGeospatialIssues
-  GROUP BY CUBE (a5.r6, a5.r7, a5.r8, kingdomKey, basisOfRecord)
+  GROUP BY CUBE (a5_r6, a5_r7, a5_r8, kingdomKey, basisOfRecord)
 ) TO 'portugal-cube-a5.parquet' (FORMAT 'PARQUET', COMPRESSION 'ZSTD', COMPRESSION_LEVEL 8);
 ```
 
