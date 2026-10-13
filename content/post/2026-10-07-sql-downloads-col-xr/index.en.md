@@ -34,11 +34,9 @@ sequenceDiagrams:
   options: ''
 ---
 
-GBIF SQL downloads now use the [Catalogue of Life Extended Release (COL XR)](https://www.catalogueoflife.org/building/releases) as the default taxonomy to organize results, and importantly COL XR taxon keys for queries. 
+GBIF SQL downloads now use the [Catalogue of Life Extended Release (COL XR)](https://www.catalogueoflife.org/building/releases) as the default taxonomy to organize results, and **most importantly** now use COL XR taxonKeys by default for queries. [See previous post for more info.](https://data-blog.gbif.org/post/catalogue-of-life-taxonomic-backbone/)
 
-If you have a existing SQL queries that use numeric GBIF Backbone taxon keys, you will need to update them to use alpha-numeric COL XR keys instead or use our helper function `gbif_classification`. 
-
-Since the GBIF backbone will not be updated in the future, it is probably a good idea to transition your queries and scripts to use COL XR. 
+If you have a existing SQL queries that use numeric GBIF Backbone taxon keys, you will need to update them to use alpha-numeric COL XR keys instead or use the field `gbif_classification`.  Since the GBIF backbone will not be updated in the future, it is probably a good idea to transition your queries and scripts to use COL XR. 
 
 <!--more-->
 
@@ -95,7 +93,7 @@ GROUP BY familykey, family
 ORDER BY species_count DESC
 ```
 
-To find corresponding COL XR taxonKeys from existing backbone taxonKeys, you can use the **rgbif** function `gbif_to_col()`. Or you can endpoint below: 
+To find corresponding COL XR taxonKeys from existing backbone taxonKeys, you can use the **rgbif** function [`gbif_to_col()`](https://docs.ropensci.org/rgbif/reference/gbif_to_col.html). Or you can endpoint below: 
 
 ```url
 https://api.gbif.org/v2/species/match?checklistKey=7ddf754f-d193-4cc9-b351-99906754a03b&scientificNameID=gbif:212
