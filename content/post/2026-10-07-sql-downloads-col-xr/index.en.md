@@ -34,15 +34,15 @@ sequenceDiagrams:
   options: ''
 ---
 
-GBIF SQL downloads now use the [Catalogue of Life Extended Release (COL XR)](https://www.catalogueoflife.org/building/releases) as the default taxonomy to organize results, and **most importantly** now use COL XR taxonKeys by default for queries. [See previous post for more info.](https://data-blog.gbif.org/post/catalogue-of-life-taxonomic-backbone/)
+GBIF SQL downloads now use the [Catalogue of Life Extended Release (COL XR)](https://www.catalogueoflife.org/building/releases) as the default taxonomy for organizing results. They also use COL XR taxon keys by default. [See the previous post for more information.](https://data-blog.gbif.org/post/catalogue-of-life-taxonomic-backbone/)
 
-If you have a existing SQL queries that use numeric GBIF Backbone taxon keys, you will need to update them to use alpha-numeric COL XR keys instead or use the field `gbif_classification`.  Since the GBIF backbone will not be updated in the future, it is probably a good idea to transition your queries and scripts to use COL XR. 
+If you have existing SQL queries that use numeric GBIF Backbone taxon keys, update them to use alphanumeric COL XR keys or reference the `gbif_classification` field to continue using the GBIF Backbone taxonomy. Because the GBIF Backbone will not be updated, we recommend transitioning your queries and scripts to COL XR.
 
 <!--more-->
 
 ## Examples 
 
-Let's say that you have an existing query that counts the number of species in each bird family using the old GBIF backbone taxonKey for birds (classkey = '212').
+Suppose you have an existing query that counts the number of species in each bird family using the old GBIF Backbone taxon key for birds (`classkey = '212'`).
 
 
 ```sql 
@@ -62,7 +62,7 @@ ORDER BY species_count DESC
 To continue using the backbone taxonomy, you need to qualify each taxonomy field with `occurrence.gbif_classification` as shown below:
 
 ```sql 
--- use this query to continue using the GBIF Backbone taxonomy
+-- Use this query to continue using the GBIF Backbone taxonomy
 SELECT
   occurrence.gbif_classification.familykey AS familykey,
   occurrence.gbif_classification.family AS family,
@@ -93,13 +93,13 @@ GROUP BY familykey, family
 ORDER BY species_count DESC
 ```
 
-To find corresponding COL XR taxonKeys from existing backbone taxonKeys, you can use the **rgbif** function [`gbif_to_col()`](https://docs.ropensci.org/rgbif/reference/gbif_to_col.html). Or you can endpoint below: 
+To find corresponding COL XR taxon keys for existing GBIF Backbone taxon keys, use the **rgbif** function [`gbif_to_col()`](https://docs.ropensci.org/rgbif/reference/gbif_to_col.html). Alternatively, use the endpoint below:
 
 ```url
 https://api.gbif.org/v2/species/match?checklistKey=7ddf754f-d193-4cc9-b351-99906754a03b&scientificNameID=gbif:212
 ```
 
-Or just copy the last bit of the URL after doing a **taxon search** on [GBIF](https://www.gbif.org/taxon/V2).
+Alternatively, copy the final part of the URL after searching for the taxon on [GBIF](https://www.gbif.org/taxon/V2).
 
 ```url
 https://www.gbif.org/taxon/V2
