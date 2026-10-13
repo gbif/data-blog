@@ -34,7 +34,7 @@ In April 2021, GBIF began exporting [monthly data snapshots](https://www.gbif.or
 
 Since then, the Parquet format has gained support for geographic data types and tooling has improved to support partitioning, better compression and indexing features.  These allow for faster querying, potentially directly within websites without needing web services.  Tools such as ArcGIS and QGIS are also introducing support for working with data in Parquet format, and GBIF users have requested additional fields be added to the download format and cloud snapshots.
 
-**We are therefore seeking feedback for an expanded Parquet download format containing similar data columns to a Darwin Core Archive format download.  Previews of three possible structures are available and described here.**
+**We are therefore seeking feedback for an expanded Parquet download format containing similar data columns to a Darwin Core Archive format download.**  Previews of three possible structures are available and described here, with questions for feedback at the end.
 
 ## Quick example
 
