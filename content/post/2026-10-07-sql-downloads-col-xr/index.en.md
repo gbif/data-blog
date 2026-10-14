@@ -139,6 +139,10 @@ GROUP BY genus
 
 Excluding authorship means there might be **homonym issues**, so it is usually a better idea to always use COL taxon keys or use a more complex query like `WHERE class = 'Mammalia' AND genus = 'Puma'`.
 
+## Additional up-coming changes expected for the occurrence table
+
+In the near future, the column `OccurrenceStatus` with values "Present" and "Absent" will be changed to "Detected" and "NotDetected". 
+
 ## More information
 
 See the [SQL downloads documentation](https://techdocs.gbif.org/en/data-use/api-sql-downloads#taxonomy-columns) for the complete list of taxonomy columns and examples. 
