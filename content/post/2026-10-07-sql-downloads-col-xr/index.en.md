@@ -1,7 +1,7 @@
 ---
 title: Recent breaking changes to SQL downloads to support the COL XR
 author: 'John Waller'
-date: '2026-10-07'
+date: '2026-10-14'
 slug: sql-downloads-col-xr
 categories:
   - GBIF
@@ -11,7 +11,7 @@ tags:
   - taxonomy
   - Catalogue of Life
 lastmod: '2026-10-07T10:00:00+02:00'
-draft: yes
+draft: no
 keywords: []
 description: ''
 authors: ''
