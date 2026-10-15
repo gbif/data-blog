@@ -14,7 +14,7 @@ tags:
   - publish
   - sope
   - target
-lastmod: '2026-09-23'
+lastmod: '2026-10-15'
 keywords: ['Survey And Monitoring', 'Humboldt Extension', 'Data modelling']
 description: ''
 comment: no
@@ -63,11 +63,15 @@ Sam was looking for two species of butterfly: this is the **taxonomic scope** of
 
 What Sam did exclude from his survey were eggs, caterpillars and chrysalids. Sam only caught imago specimens (the adults). Which brings us to our second category of scope, **organismal scope**, which entails
 
-•	The **life stage** of an organism (like Sam only looking for imago specimens)
+*	The **life stage** of an organism (like Sam only looking for imago specimens)
 
-•	The **growth form** of an organism (surveying shrubs in a forest for example)
+*	The **growth form** of an organism (surveying shrubs in a forest for example)
 
-•	The **degree of establishment** of an organism (like only surveying native species).
+*	The **degree of establishment** of an organism (like only surveying native species).
+
+* The **behavior** of an organism (for example, `flying` insects or `foraging` squirrel)
+
+* The **vitality** of an organism (e.g., dead animals in a roadkill survey)
 
 <img align="center" src="/post/2026-08-13-sam-survey-scope/no_caterpillar.PNG" alt="No caterpillar" width="300"/>
 
