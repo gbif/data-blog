@@ -1,13 +1,16 @@
 ---
 title: Extending the Parquet data snapshots
 author: Matthew Blissett
-date: '2026-09-29'
+date: '2026-10-19'
 slug: extending-parquet-snapshots
 categories:
   - GBIF
-tags: []
-lastmod: '2026-09-29T10:00:00+02:00'
-draft: yes
+tags:
+  - cloud computing
+  - downloads
+  - aws
+lastmod: '2026-10-19T11:20:00+02:00'
+draft: no
 keywords: []
 description: ''
 authors: ''
@@ -15,7 +18,7 @@ comment: no
 toc: no
 autoCollapseToc: no
 postMetaInFooter: no
-hiddenFromHomePage: yes
+hiddenFromHomePage: no
 contentCopyright: no
 reward: no
 mathjax: no
