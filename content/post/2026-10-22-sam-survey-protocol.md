@@ -66,7 +66,7 @@ And to be honest, bad protocols can be a little bit scary. Let me tell you this 
 > 
 > But, when Sam came to the initial location, intending to complete the project before early autumn, a snowy blizzard swept across Survey Island. To this day, no one knows if the butterflies inhabit this part of the Island…
 
-<img align="center" src="/post/2026-09-07-sam-survey-where-when/discarded_net.png" alt="The cursed net" width="300"/>
+<img align="center" src="/post/2026-10-22-sam-survey-protocol/discarded_net.png" alt="The cursed net" width="300"/>
 
 I wish I could write the entire post as a spooky tale but alas, I don’t have the talent needed. So, I will go back to my regular prose.
 
