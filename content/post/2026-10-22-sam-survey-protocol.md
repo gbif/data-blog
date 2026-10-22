@@ -55,15 +55,20 @@ And to be honest, bad protocols can be a little bit scary. Let me tell you this 
 <img align="center" src="/post/2026-10-22-sam-survey-protocol/tale_survey_island.png" alt="Spooky tale title">
 
 > There was once a young bird named Sam who wanted to map two species of butterflies on a little isolated island. Sam selected five locations on the Island and set out to catch the winged creatures.
->  
+>
+> 
 > The adventure started on a beautiful summer day, but little did Sam know that it was doomed to fail. For, you see, Sam’s work was cursed.
->  
+>
+> 
 > It was a curse with many facets: budgetary restrictions, lack of planning, absent supervisor… and it manifested as a Dreadful Protocol. Such protocols are known to haunt students all over the globe and Sam was one the victims.
->  
+>
+> 
 > Sam was given a small net and five minutes to survey 1000 m2.
->  
+>
+> 
 > At the first site he visited, Sam ran and jumped but the sun was burning and not one butterfly was caught. Sam, in a fit of rage, cast the foul net away and, against all odds, managed to get better equipment and protocol. Four more sites were surveyed successfully.
->  
+>
+> 
 > But, when Sam came to the initial location, intending to complete the project before early autumn, a snowy blizzard swept across Survey Island. To this day, no one knows if the butterflies inhabit this part of the Island…
 
 <img align="center" src="/post/2026-10-22-sam-survey-protocol/discarded_net.png" alt="The cursed net" width="450"/>
