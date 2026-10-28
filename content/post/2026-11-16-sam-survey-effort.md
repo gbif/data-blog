@@ -80,3 +80,29 @@ Note that there are some specific fields relating to **area** surveyed but you c
 
 For example, since Sam is using a special kind of portable vacuum (the LepiPro Proton Pack) to suck in all flying insects, Sam could report the volume of air sucked in as a sample size. This is of course assuming that the flow sensor works properly (they are notoriously unreliable). If they’re not working, Sam might have to leave the quantity fields blank and instead make a comment in the event remarks field about the malfunctioning sensors.
 
+<img align="center" src="/post/2026-11-16-sam-survey-effort/sad_sam.png" alt="Another sensor malfunction" width="300"/>
+
+Finally, if the information is available, we should always give credit to who (or what) put in the effort to make a survey happen. Sam could record their own name and OrcID.
+
+If you need help with modelling protocols and everything relating to survey sites and duration, I suggest checking our previous posts or Kate’s guide mentioned at the start of this post.
+
+When it comes to reporting efforts, you need to specify:
+
+* The **effort** **value** and **units** (for example, the number of traps deployed for a site)
+* The **method** used to determine the **survey efforts**, this is an extension of the protocol, but it focuses specifically on the elements relating to effort. You can be very specific here with numbers, durations, etc.
+* The** people who performed the survey** and sampling (this gives the credit to people who work in the fields but also helps aggregation and comparison, if the same person performed the sampling, you would expect less variation).
+
+As usual, is [here](https://gbif.box.com/s/a7rqbtdhl2l1utu2rgpltkup43mj8j7y) a downloadable cheat sheet I prepared as well as Sam’s sheet.
+
+<img align="center" src="/post/2026-11-16-sam-survey-effort/sam_survey_how_much.png" alt="Sam's cheatsheet">
+
+In **Darwin Core Archives** (DwC-A), all the sampling efforts can be modelled in the Humboldt extension, see the following terms:
+
+* [samplingEffortValue](https://rs.tdwg.org/eco/terms/samplingEffortValue) and [samplingEffortUnit](https://rs.tdwg.org/eco/terms/samplingEffortUnit)
+* [samplingEffortProtocol](https://rs.tdwg.org/eco/terms/samplingEffortProtocol) should be used to report the method of the survey efforts
+* [samplingPerformedBy](https://rs.tdwg.org/eco/terms/samplingPerformedBy) should be to report people who performed the survey
+
+But sometimes life gets in the way and there is no time for the Humboldt extension. If that’s your case, I suggest using at least the [samplingEffort](https://dwc.tdwg.org/terms/#dwc:samplingEffort) term in the event table and the [recordedBy](https://dwc.tdwg.org/terms/#dwc:recordedBy) term in the occurrence table.
+
+Once again, the information the **Darwin Core Data Package** (DwC-DP) will be similar. Everything can be included the survey table. The mapping is the same as DwC-A since the [survey](https://gbif.github.io/dwc-dp/qrg/#Survey) table includes the Humbolt extension terms.
+
