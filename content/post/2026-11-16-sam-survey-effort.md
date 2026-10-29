@@ -106,3 +106,46 @@ But sometimes life gets in the way and there is no time for the Humboldt extensi
 
 Once again, the information the **Darwin Core Data Package** (DwC-DP) will be similar. Everything can be included the survey table. The mapping is the same as DwC-A since the [survey](https://gbif.github.io/dwc-dp/qrg/#Survey) table includes the Humbolt extension terms.
 
+> Note that you can decide to make your DwC-DP a bit more complicated (or smart depending on how you look at it) should you wish to.
+> You can do so in two ways:
+>
+> * Adding an [Agent](https://gbif.github.io/dwc-dp/qrg/#Agent) and a [Survey Agent Role](https://gbif.github.io/dwc-dp/qrg/#Survey%20Agent%20Role) tables
+> * Adding a [Protocol](https://gbif.github.io/dwc-dp/qrg/#Protocol) table.
+>
+> 
+> If you were to make an Agent table, you would need to list in the table the people that performed the survey (one per row) and link these people to the Survey table by specifying their role in the Survey Agent Role table.
+>
+> 
+> **When would you want to use Agent and Survey Agent Role tables?** I suggest making a separate agent table if you meet one of these criteria:
+>
+> 
+> * You would like to **enrich** the information associated with your agents (surveyors), for example, list everyone together with their ORCIDs
+> * You might want to specify **other types of agents** (for example list people or programs involved in identifying the species in the samples)
+> * You want to be **specific** about the **role** of each agent in the survey.
+> * You really like relational databases and would like to make the modelling as efficient as possible.
+> 
+> You could also make a protocol table containing the effort protocol. You would need to make one row for each distinct protocol and link the surveys to the protocols via the [samplingEffortProtocol_fk](https://gbif.github.io/dwc-dp/qrg/#Survey__samplingEffortProtocol_fk) field.
+>
+> **When would you want to use a protocol table?** I suggest making a separate protocol table if you meet one of these criteria:
+> * You would like to share multiple types of protocols (for example survey or georeferencing protocols)
+> * You would like to share protocol remarks
+> * You really like relational databases and would like to make the modelling as efficient as possible.
+
+You can now check Kate’s examples.
+
+Here is the DwC-A version:
+
+<img align="center" src="/post/2026-11-16-sam-survey-effort/effort_in_DwCA.png" alt="Survey efforts in DwC-A">
+
+See it bigger [here](https://github.com/gbif/data-blog/blob/master/content/post/2026-11-16-sam-survey-effort/effort_in_DwCA.png).
+
+Here is the DwC-DP version:
+
+<img align="center" src="/post/2026-11-16-sam-survey-effort/effort_in_DwCDP.png" alt="Survey efforts in DwC-DP">
+
+See it bigger [here](https://github.com/gbif/data-blog/blob/master/content/post/2026-11-16-sam-survey-effort/effort_in_DwCDP.png).
+
+Join us next time as we will be explaining how to model the physical samples collected during a survey.
+
+
+
