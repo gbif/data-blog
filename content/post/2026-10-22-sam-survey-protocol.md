@@ -149,5 +149,5 @@ Here are the extended protocol terms in the survey table:
 
 See it bigger [here](https://github.com/gbif/data-blog/blob/master/content/post/2026-10-22-sam-survey-protocol/protocol_in_DwCDP_extended.png).
 
-Please join us next time as we talk about how model efforts!
+Please join us next time as we talk about how to model survey effort!
 
