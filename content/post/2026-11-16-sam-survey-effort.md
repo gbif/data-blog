@@ -22,8 +22,8 @@ comment: no
 toc: ''
 autoCollapseToc: no
 postMetaInFooter: no
-hiddenFromHomePage: yes
-draft: yes
+hiddenFromHomePage: no
+draft: no
 contentCopyright: no
 reward: no
 mathjax: no
@@ -101,6 +101,8 @@ In **Darwin Core Archives** (DwC-A), all the sampling efforts can be modelled in
 * [samplingEffortValue](https://rs.tdwg.org/eco/terms/samplingEffortValue) and [samplingEffortUnit](https://rs.tdwg.org/eco/terms/samplingEffortUnit)
 * [samplingEffortProtocol](https://rs.tdwg.org/eco/terms/samplingEffortProtocol) should be used to report the method of the survey efforts
 * [samplingPerformedBy](https://rs.tdwg.org/eco/terms/samplingPerformedBy) should be to report people who performed the survey
+
+Note that you are very welcome to share additional, structured details for your sampling efforts in the [measurements or fact extension](https://rs.gbif.org/extension/dwc/measurements_or_facts_2025-07-10.xml).
 
 But sometimes life gets in the way and there is no time for the Humboldt extension. If that’s your case, I suggest using at least the [samplingEffort](https://dwc.tdwg.org/terms/#dwc:samplingEffort) term in the event table and the [recordedBy](https://dwc.tdwg.org/terms/#dwc:recordedBy) term in the occurrence table.
 
